@@ -25,7 +25,7 @@
         <custom-favicons>favicon.png</custom-favicons>
         <header-logo>banner.svg</header-logo>
         <download-title>Install Azd</download-title>
-        <download-page>https://plugins.jetbrains.com/assets/scripts/mp-widget.js</download-page>
+        <download-page>https://plugins.jetbrains.com/plugin/22319-azd</download-page>
         <showDownloadButton>true</showDownloadButton>
 
         <noindex-content>false</noindex-content>
