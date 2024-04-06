@@ -18,17 +18,15 @@
         <link href="https://dorkag.com/services-terms-and-conditions">Terms and conditions</link>
     </footer>
 
-    <variables>
-        <algolia-id>5A7JDZV3EQ</algolia-id>
-        <algolia-index>Dorkag</algolia-index>
-        <algolia-api-key>c83b9b9ab1130676442b2c25f51e9a60</algolia-api-key>
-        <web-root>https://edgafner.github.io</web-root>
-    </variables>
 
     <build-profile instance="dorkag">
         <variables>
             <noindex-content>false</noindex-content>
             <offline-docs>false</offline-docs>
+            <algolia-id>5A7JDZV3EQ</algolia-id>
+            <algolia-index>Dorkag</algolia-index>
+            <algolia-api-key>c83b9b9ab1130676442b2c25f51e9a60</algolia-api-key>
+            <web-root>https://edgafner.github.io</web-root>
         </variables>
     </build-profile>
 
