@@ -3,7 +3,7 @@
     SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Dorkag" id="Dorkag">
+       title="DORKAG" id="DORKAG" help-id="Dorkag">
 
   <p>Hi there, I'm <a
       href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">Jonathan
@@ -15,22 +15,27 @@
   <p>
     The following is a list of plugins I have developed:</p>
 
-  <list type="none" columns="3">
-    <li>
-      <p>
-        <a href="Azd.topic"/>
-        <img src="azd_icon.png" alt="azd_icon" style="block"/>
-      </p>
-    </li>
+  <list type="none" columns="4">
     <li>
       <p>
         <a href="GBrowser.topic"/>
         <img src="gbrowser_icon.png" alt="gbrowser_icon" style="block"/>
       </p>
     </li>
+    <li>
+      <p>
+        <a href="Azd.topic"/>
+        <img src="azd_icon.svg" alt="azd_icon" style="block"/>
+      </p>
+    </li>
     <li><p>
       <a href="Codecov.topic"/>
       <img src="code_cov.svg" alt="code_cov" style="block"/>
     </p></li>
+    <li><p>
+      <a href="QueryFlag.topic"/>
+      <img src="queryflag.svg" alt="queryflag" style="block"/>
+    </p></li>
+
   </list>
 </topic>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Work with QureyFlag " id="Work-with-QueryFlag" help-id="Work-with-QureyFlag">
+
+  <p>
+    With the QueryFlag plugin, you can define and execute template-based queries on selected text, making it easy to
+    replace a single query parameter from within your editor. By following a few simple steps, you can streamline your
+    workflow and improve productivity.
+  </p>
+
+
+  <chapter title="Configure the Plugin" id="configuration-queryflag">
+    <procedure>
+      <step>
+        <p>Open the IDE settings and navigate to the plugin tab:
+          <ui-path> Tools | Databases | QueryFlag</ui-path>
+        </p>
+      </step>
+      <step>
+        <p>Click on the <img src="add.svg" alt="add"/> to add a new query flag entry</p>
+        <img src="addQueryFlagEntry.png" alt="addQueryFlagEntry"/>
+        <p>Enter the following information:</p>
+        <list>
+          <li>Name: Give a short and useful name - (db-table names is consider a good practice)</li>
+          <li>Datasource: Select your existing datasource in the DataSource combo-box</li>
+          <li><p>Add a query with the fix token of &lt;QUERY_FLAG_TOKEN&gt; to be replaced with selected string.</p>
+            <p>For example:</p>
+            <code>
+              SELECT * FROM dorkgadb where name like &lt;QUERY_FLAG_TOKEN&gt;
+              db.getSiblingDB("dorkag-db").getCollection("dorkag-collection").find({"name": {$regex: &lt;QUERY_FLAG_TOKEN&gt;}})
+            </code>
+          </li>
+        </list>
+      </step>
+    </procedure>
+  </chapter>
+
+  <chapter title="Run Query" id="run-query">
+    <p>
+      Once you DB and your QueryFlag is configured, you can run the query on selected text by following these steps:
+    </p>
+    <procedure id="steps-sequence">
+      <step>
+        <p>Select a string in the text editor you want use with the query flag.</p>
+      </step>
+
+      <step>
+        <p>Right click on it and select Query Flag in DB and the Query Flag name you chose.</p>
+        <img src="editorquery.png" alt="editorquery"/>
+      </step>
+
+      <step>
+        <p>Now Query Flag will run you query replacing the token with the selected string, and you will be able to see
+          the results in your IDE</p>
+      </step>
+    </procedure>
+  </chapter>
+</topic>

@@ -34,4 +34,8 @@
         <description>Created after removal of "Azd" from Documentation</description>
         <accepts>AZD.html</accepts>
     </rule>
+    <rule id="1d1c3fdf">
+        <description>Created after removal of "QueryFlag Installation" from Documentation</description>
+        <accepts>QueryFlag-Installation.html</accepts>
+    </rule>
 </rules>

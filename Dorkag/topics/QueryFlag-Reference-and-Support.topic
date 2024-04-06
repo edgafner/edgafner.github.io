@@ -3,11 +3,10 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Codecov Reference and Support" id="Codecov-Reference-and-Support">
-
+       title="QueryFlag Reference and Support" id="QueryFlag-Reference-and-Support">
 
   <p>
-    If you're encountering issues with the Codecov IntelliJ Plugin or have suggestions for improvements, we're here to help!
+    If you're encountering issues with the QueryFlag IntelliJ Plugin or have suggestions for improvements, we're here to help!
   </p>
 
   <chapter title="Feature Requests and Bugs" id="feature_request_and_bug">
@@ -29,9 +28,8 @@
 
 
   <seealso>
-    <!--Provide links to related how-to guides, overviews, and tutorials.-->
     <category ref="external" sorted="asc">
-      <a href="https://plugins.jetbrains.com/plugin/23390-codecov">Codecov on Marketplace</a>
+      <a href="https://plugins.jetbrains.com/plugin/18269-queryflag">QueryFlag on Marketplace</a>
       <a href="https://dorkag.com">Dorkag Home Page</a>
       <a href="https://github.com/sponsors/edgafner">Sponsor Me</a>
     </category>

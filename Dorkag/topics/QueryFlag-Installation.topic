@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="QueryFlag Installation" id="QueryFlag-Installation">
+
+  <p>This guide will walk you through the process of installing the <ui-path>QueryFlag</ui-path> plugin.
+  </p>
+
+
+
+  <chapter title="Install the QueryFlag plugin" id="install">
+    <procedure id="QueryFlag-installation">
+      <step><p>Open JetBrains IDE
+      </p>
+        <list type="bullet">
+          <li>
+            <p>Launch your JetBrains IDE and navigate to the
+              <ui-path>Plugins</ui-path>
+              section.
+            </p>
+          </li>
+        </list>
+      </step>
+      <step><p>Search for QueryFlag Plugin
+      </p>
+        <list type="bullet">
+          <li>
+            <p>Under the plugins marketplace tab search, type in
+              <ui-path>QueryFlag</ui-path>
+              and click on the
+              <ui-path>Install</ui-path>
+              button.
+            </p>
+          </li>
+          <li><p>Wait for the installation to complete and restart your IDE when prompted.</p>
+          </li>
+        </list>
+      </step>
+    </procedure>
+  </chapter>
+
+
+</topic>
