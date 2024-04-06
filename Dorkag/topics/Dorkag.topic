@@ -19,18 +19,18 @@
     <li>
       <p>
         <a href="Azd.topic"/>
-        <img src="azd_icon.png" alt="azd_icon" style="inline"/>
+        <img src="azd_icon.png" alt="azd_icon" style="block"/>
       </p>
     </li>
     <li>
       <p>
         <a href="GBrowser.topic"/>
-        <img src="gbrowser_icon.png" alt="gbrowser_icon" style="inline"/>
+        <img src="gbrowser_icon.png" alt="gbrowser_icon" style="block"/>
       </p>
     </li>
     <li><p>
       <a href="Codecov.topic"/>
-      <img src="code_cov.svg" alt="code_cov" style="inline"/>
+      <img src="code_cov.svg" alt="code_cov" style="block"/>
     </p></li>
   </list>
 </topic>
