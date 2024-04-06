@@ -13,12 +13,12 @@ env:
   INSTANCE: 'Dorkag/dorkag'
   ARTIFACT: 'webHelpDORKAG2-all.zip'
   DOCKER_VERSION: '233.14938'
-  ALGOLIA_ARTIFACT: 'algolia-indexes-dorkag.zip'
-  ALGOLIA_APP_NAME: 5A7JDZV3EQ
-  ALGOLIA_INDEX_NAME: Dorkag
+  ALGOLIA_ARTIFACT: 'algolia-indexes-Dorkag.zip'
+  ALGOLIA_APP_NAME: '5A7JDZV3EQ'
+  ALGOLIA_INDEX_NAME: 'Dorkag'
   ALGOLIA_KEY: '${{ secrets.ALGOLIA_KEY }}'
-  CONFIG_JSON_PRODUCT: dorkag
-  CONFIG_JSON_VERSION: 2
+  CONFIG_JSON_PRODUCT: 'Dorkag'
+  CONFIG_JSON_VERSION: '2'
 
 jobs:
   build:
@@ -43,7 +43,6 @@ jobs:
             artifacts/report.json
             artifacts/${{ env.ALGOLIA_ARTIFACT }}
           retention-days: 7
-
   test:
     needs: build
     runs-on: ubuntu-latest
