@@ -21,7 +21,7 @@
     <!--    Add several topics that are most important for this section.    -->
     <primary>
       <title>Get started</title>
-      <a href="Codecov-Usage.topic" summary="With a custom card summary"/>
+      <a href="Codecov-Usage.topic" type="learn" summary="Codecov features">Codecov How to</a>
     </primary>
 
     <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->

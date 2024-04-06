@@ -11,7 +11,8 @@
 
     <footer>
         <copyright>Dorkag</copyright>
-        <link href="https://dorkag.com/">Dorkag Home Page</link>
+        <link href="https://dorkag.com/">Dorkag</link>
+        <link href="https://plugins.jetbrains.com/organizations/jonatha1983">Marketplace</link>
         <social type="twitter" href="https://twitter.com/Jongafner"/>
         <social type="facebook" href="https://www.facebook.com/dorkaag"/>
         <link href="https://dorkag.com/services-terms-and-conditions">Terms and conditions</link>
