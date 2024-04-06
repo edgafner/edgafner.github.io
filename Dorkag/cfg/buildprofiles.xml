@@ -22,6 +22,9 @@
         <primary-color>aqua</primary-color>
         <custom-favicons>favicon.png</custom-favicons>
         <header-logo>banner.svg</header-logo>
+        <download-title>Install Azd</download-title>
+        <download-page>https://plugins.jetbrains.com/assets/scripts/mp-widget.js</download-page>
+        <showDownloadButton>true</showDownloadButton>
     </variables>
 
     <build-profile instance="dorkag">
