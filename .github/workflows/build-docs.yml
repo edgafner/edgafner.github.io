@@ -17,8 +17,8 @@ env:
   ALGOLIA_APP_NAME: 'ALGOLIA_KEY'
   ALGOLIA_INDEX_NAME: 'Dorkag'
   ALGOLIA_KEY: '${{ secrets.ALGOLIA_KEY }}'
-  CONFIG_JSON_PRODUCT: 'HI'
-  CONFIG_JSON_VERSION: '1.0'
+  CONFIG_JSON_PRODUCT: 'edgafner.github.io'
+  CONFIG_JSON_VERSION: '2.0'
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build docs using Dorkag Docker builder
+      - name: Build docs using Writerside Docker builder
         uses: JetBrains/writerside-github-action@v4
         with:
           instance: ${{ env.INSTANCE }}
