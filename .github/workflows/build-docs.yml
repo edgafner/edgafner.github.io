@@ -13,7 +13,7 @@ env:
   INSTANCE: 'Dorkag/dorkag'
   ARTIFACT: 'webHelpDORKAG2-all.zip'
   DOCKER_VERSION: '233.14938'
-  ALGOLIA_ARTIFACT: 'algolia-indexes-Dorkag.zip'
+  ALGOLIA_ARTIFACT: 'algolia-indexes-DORKAG.zip'
   ALGOLIA_APP_NAME: '5A7JDZV3EQ'
   ALGOLIA_INDEX_NAME: 'Dorkag'
   ALGOLIA_KEY: '${{ secrets.ALGOLIA_KEY }}'
