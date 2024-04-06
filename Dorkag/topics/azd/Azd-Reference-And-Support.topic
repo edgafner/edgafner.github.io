@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Azd Reference and Support" id="Azd-Reference-And-Support" help-id="Reference-And-Support">
+
+  <p>
+    If you're encountering issues with the AZD IntelliJ Plugin or have suggestions for improvements, we're here to help!
+  </p>
+
+  <chapter title="Feature Requests and Bugs" id="feature_request_and_bug">
+    <p>
+      If you have a feature request or have found a bug, please submit an issue on our <a
+        href="https://github.com/edgafner/dorkag/issues">GitHub repository</a>.
+    </p>
+    <p>Please use the Feature Request or Bug Report template when submitting an issue, and provide as much detail as
+      possible.
+    </p>
+  </chapter>
+
+  <chapter title="Contact Me" id="contact_me">
+    <p>If you have specific concerns, questions, or require immediate assistance, please get in touch with me directly
+      at
+      <emphasis><b>jgafner@dorkag.com</b></emphasis>
+    </p>
+  </chapter>
+
+
+  <seealso>
+    <!--Provide links to related how-to guides, overviews, and tutorials.-->
+    <category ref="external" sorted="asc">
+      <a href="https://plugins.jetbrains.com/plugin/22319-azd">Azd on Marketplace</a>
+      <a href="https://plugins.jetbrains.com/plugin/22319-azd/reviews">Azd Reviews</a>
+      <a href="https://dorkag.com">Dorkag Home Page</a>
+      <a href="https://github.com/sponsors/edgafner">Sponsor Me</a>
+    </category>
+  </seealso>
+</topic>

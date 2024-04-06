@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Azd Installation" id="Azd-Installation" help-id="Installation">
+
+  <p>Installing the Azd plugin is straightforward. This guide will walk you through the process of installing the plugin
+    and connecting it to your Azure DevOps account.
+  </p>
+
+  <note>
+    <p>
+      <control>Requirements</control>
+    </p>
+    <p>A JetBrains' IDE (version 2023.2+) and an active
+      <control>Azure DevOps Service</control>
+      or
+      <control>Azure DevOps Server (version 2020+)</control>
+      account
+    </p>
+  </note>
+
+
+  <chapter title="Install the Azd plugin" id="install">
+    <procedure id="azd-installation">
+      <step><p>Open JetBrains IDE
+      </p>
+        <list type="bullet">
+          <li>
+            <p>Launch your JetBrains IDE and navigate to the
+              <ui-path>Plugins</ui-path>
+              section.
+            </p>
+          </li>
+        </list>
+      </step>
+      <step><p>Search for Azd Plugin
+      </p>
+        <list type="bullet">
+          <li>
+            <p>Under the plugins marketplace tab search, type in
+              <ui-path>Azd</ui-path>
+              and click on the
+              <ui-path>Install</ui-path>
+              button.
+            </p>
+          </li>
+          <li><p>Wait for the installation to complete and restart your IDE when prompted.</p>
+          </li>
+        </list>
+      </step>
+    </procedure>
+  </chapter>
+
+  <chapter title="Generating a Personal Access Token for the Azd Plugin" id="generate_pat">
+    <p> In order to properly connect to your Azure DevOps account, you will need to generate a Personal Access Token
+      (PAT) with the following scopes:</p>
+    <list type="bullet" columns="3" sorted="asc">
+      <li>
+        <p>vso.code_write</p>
+      </li>
+      <li>
+        <p>vso.code_status</p>
+      </li>
+      <li>
+        <p>vso.graph</p>
+      </li>
+      <li>
+        <p>vso.build_execute</p>
+      </li>
+      <li>
+        <p>vso.identity</p>
+      </li>
+      <li>
+        <p>vso.project</p>
+      </li>
+      <li>
+        <p>vso.threads_full</p>
+      </li>
+      <li>
+        <p>vso.profile</p>
+      </li>
+      <li>
+        <p>vso.work_write</p>
+      </li>
+      <li>
+        <p>vso.security_manage</p>
+      </li>
+    </list>
+
+    <warning>
+      <p>Because Microsoft Azure Devops team doesn't want to solve this <a
+          href="https://developercommunity.visualstudio.com/t/Profiles-REST-does-not-work-with-PAT-for/10384195">ticket</a>
+        You must create the PAT when the
+        <ui-path> Organizations ComboBox</ui-path>
+        option is set to
+        <ui-path>All Accessible organizations</ui-path>
+        , otherwise, the plugin will not be able to authenticate with the Azure DevOps server.
+      </p>
+      <img src="all_organization_pat.png" alt="all_organization_pat"/>
+    </warning>
+
+
+  </chapter>
+
+  <chapter title="Connect to Azure DevOps" id="connect">
+    <p>Now that the IDE is running with the
+      <ui-path>Azd</ui-path>
+      plugin, and you have your
+      <ui-path>PAT</ui-path>
+      ready, you can connect to your
+      <ui-path>Azure DevOps</ui-path>
+      account.
+    </p>
+    <p>You can Log in either from the
+      <ui-path>ToolWindow</ui-path>
+      or from the
+      <ui-path>Settings</ui-path>
+      :
+    </p>
+    <tabs>
+      <tab title="ToolWindow">
+        <procedure title="Login from Azure DevOps ToolWindow" id="login-from-toolwindow">
+          <step>
+            <p>Open the Azd ToolWindow:</p>
+            <img src="pat_from_toolWindow.png" alt="pat_from_toolWindow" border-effect="line"/>
+          </step>
+          <step>
+            <p>Click on the
+              <ui-path>Log In</ui-path>
+              button to add a new Azure DevOps account.
+            </p>
+          </step>
+          <step>
+            <p>In the
+              <ui-path>Add AZD Account</ui-path>
+              panel set the url and your secret
+              <ui-path>PAT.</ui-path>
+            </p>
+            <img src="azd_login_panel_toolWindow.png" alt="azd_login_panel_toolWindow"
+                 border-effect="line"/>
+            <note>
+              <p>
+                <control>Note</control>
+              </p>
+              <p>When connecting from the toolwindow the plugins append the detected Azure Devops'
+                Organization/Collection name automatically. So only in case you have multiple organizations and the
+                selected one is not the one you want to connect to, you will have to change it manually.
+              </p>
+            </note>
+          </step>
+        </procedure>
+      </tab>
+      <tab title="Settings">
+        <procedure title="Login from Azure DevOps Settings" id="login-from-settings">
+          <step>
+            <p>Navigate to:
+              <ui-path>Settings | Version Control | Azure DevOps</ui-path>
+            </p>
+            <img src="azd_main_settings.png" alt="azd_main_settings" border-effect="line"/>
+          </step>
+          <step>
+            <p>Click on the <img src="add.svg" alt="add"/> button to add a new Azure DevOps account.
+            </p>
+          </step>
+          <step>
+            <p>In the
+              <ui-path>Add AZD Account</ui-path>
+              panel set the url and your secret PAT.
+            </p>
+            <img src="azd_add_account_panel_settings.png" alt="azd_add_account_panel_settings"
+                 border-effect="line"/>
+            <warning>
+              <p>
+                <control>Important</control>
+              </p>
+              <p>When connecting from the settings the plugins does not append the Azure Devops'
+                Organization/Collection name automatically to server URL, so you will have to fill that manually,
+              </p>
+              <p>For clarification the above image shows the URL without the organization name so the user must add it
+                manually in order to successfully connect to the Azure DevOps.
+              </p>
+            </warning>
+          </step>
+        </procedure>
+      </tab>
+    </tabs>
+  </chapter>
+
+
+</topic>

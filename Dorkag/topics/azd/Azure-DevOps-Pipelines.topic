@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Azure DevOps Pipelines" id="Azure-DevOps-Pipelines">
+
+  <p>
+    Currently, the Azd plugin supports Azure DevOps Pipelines YAML injection.
+    But we are working on adding support for interaction with Azure DevOps Pipelines.
+  </p>
+
+  <chapter title="Pipelines YAML schema injection" id="pipelines_yaml_injections">
+    <p>Inject Azure DevOps pipelines YAML schema in your IDE</p>
+    <list>
+      <li><p>By default, the plugin will inject the latest Azure DevOps pipelines YAML schema in your IDE.</p></li>
+      <li>
+        <p>When you open an
+          <ui-path>azure-pipelines.yml</ui-path>
+          file, the plugin will inject the schema so you can use code completion and validation.
+        </p>
+        <img src="pipeline_injections.png" alt="pipeline_injections"/>
+      </li>
+
+    </list>
+    <note><p>You can turn this off in the plugin settings.</p></note>
+
+  </chapter>
+</topic>

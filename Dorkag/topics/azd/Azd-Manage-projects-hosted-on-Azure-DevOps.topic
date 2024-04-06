@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Manage projects hosted on Azure DevOps" id="Azd-Manage-projects-hosted-on-Azure-DevOps"
+       help-id="Manage-projects-hosted-on-Azure-DevOps">
+
+  <chapter title="Check out a project (clone)" id="checkout">
+    <p>You can clone a <a
+        href="https://learn.microsoft.com/en-us/azure/devops/repos/get-started/what-is-repos?view=azure-devops">repository</a>
+      that you want to contribute to directly from IntelliJ IDEA and create a new project
+      based on it.</p>
+
+    <procedure id="clone-steps">
+      <step>
+        <p>In the main menu, go to
+          <ui-path>Git | Clone</ui-path>
+          . If the
+          <ui-path>Git</ui-path>
+          menu is not available, choose
+          <ui-path>VCS | Get from Version Control.</ui-path>
+        </p>
+      </step>
+
+      <step>
+        In the
+        <ui-path>Get from Version Control</ui-path>
+        dialog, choose
+        <ui-path>Azure DevOps</ui-path>
+        on the left.
+      </step>
+
+      <step>
+        <p>Log in to Azure DevOps by pasting your
+          <ui-path>PAT</ui-path>
+          in the
+          <ui-path>Token</ui-path>
+          field, and click Log In
+        </p>
+      </step>
+      <step>
+        <p>Select a repository from the list of all Azure DevOps projects associated with your account and the
+          organization
+          that your account belongs to.</p>
+      </step>
+      <step>
+        <p>In the
+          <ui-path>Directory</ui-path>
+          field, enter the path to the folder where your local Git repository will be created.
+        </p>
+      </step>
+      <step>
+        <p>Click
+          <ui-path>Clone.</ui-path>
+        </p>
+        <p>If you want to create a project based on these sources, click Yes in the confirmation dialog. IntelliJ IDEA
+          will automatically set Git root mapping to the project root directory.</p>
+      </step>
+    </procedure>
+  </chapter>
+
+  <chapter title="Jump to the Azure DevOps version of a file" id="jump-to">
+    <p>
+      You can jump from IntelliJ IDEA to the Azure DevOps version of a file. IntelliJ IDEA detects which branch is
+      currently
+      active as well as the latest revision of the file, and opens the Azure DevOps copy of the selected file in the
+      corresponding commit in your web browser.
+    </p>
+
+    <procedure id="jump-sequence">
+      <step>
+        <p>Do one of the following:</p>
+        <list>
+          <li>
+            <p>Select
+              <ui-path>Git | Azure DevOps | Open on Azure DevOps</ui-path>
+              from the main menu.
+            </p>
+          </li>
+          <li>
+            <p>Select a file in the editor or in the Project view, and choose
+              <ui-path>Open In | Azure DevOps</ui-path>
+              from the context menu.
+            </p>
+          </li>
+          <li>
+            <p>Select the file in the Project view, press , and type
+              <shortcut>⌘Cmd</shortcut>
+              <shortcut>⇧Shift</shortcut>
+              <shortcut>A</shortcut>
+              , and type Open on Azure DevOps.
+            </p>
+          </li>
+        </list>
+      </step>
+
+      <step>
+        <p>If you are signed in to Azure DevOps, the remote version of the file will open in the browser.</p>
+        <p>Otherwise:</p>
+        <list type="bullet">
+          <li>Enter your Azure DevOps Personal Access Token in the browser window that opens.</li>
+        </list>
+      </step>
+    </procedure>
+  </chapter>
+</topic>

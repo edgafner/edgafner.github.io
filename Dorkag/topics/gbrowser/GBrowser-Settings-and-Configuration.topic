@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="GBrowser Settings and Configuration" id="GBrowser-Settings-and-Configuration">
+
+  <p>
+    Withing the GBrowser settings, you can configure the behavior of the GBrowser tool window.
+    This topic describes the available settings and how to configure them.
+  </p>
+
+  <chapter title="GBrowser Settings" id="gbrowser_settings">
+    <p>Open the IDE settings and navigate to
+      <ui-path>Tools | GBrowser</ui-path>
+      .
+    </p>
+
+    <p>The GBrowse settings are divided into the following sections:</p>
+    <list columns="2">
+      <li><a href="#default-home-page">Default Home Page</a></li>
+      <li><a href="#search-settings">Search Settings</a></li>
+      <li><a href="#developer-options">Developer Options</a></li>
+      <li><a href="#toolwindow-settings">Toolwindow Settings</a></li>
+      <li><a href="#bookmarks-management">Bookmarks Management</a></li>
+      <li><a href="#http-response-headers">Http Response Headers</a></li>
+    </list>
+    <img src="gbrowser_settings.png" alt="gbrowser_settings"/>
+  </chapter>
+
+  <chapter title="Default Home Page" id="default-home-page">
+    <p>
+      The Default Home Page section allows you to configure the default home page that opens when you start the GBrowser
+      tool window.
+    </p>
+  </chapter>
+
+  <chapter title="Search Settings" id="search-settings">
+    <p>
+      The Search Settings section allows you to configure the search settings appearance and the browser history
+      behavior.
+    </p>
+    <p>Search Settings options:</p>
+    <deflist collapsible="true">
+      <def title="Highlight URL host">Highlight the URL host in the address bar.</def>
+      <def title="Enable suggestion search">When enabled, the GBrowser tool window suggests search queries based on
+        Google search engine.
+      </def>
+      <def title="Hide URL protocol">Hide the URL protocol in the address bar.</def>
+      <def title="Load favicon in popup">Load the favicon in the popup search.</def>
+      <def title="Highlight suggestion query">Highlight the suggestion query in the search results.</def>
+      <def title="Life Span in new tab">Set the life span to be a new tab instead of standalone JFrame.</def>
+    </deflist>
+    <p>Browser History options:</p>
+    <deflist collapsible="true">
+      <def title="Enable browser history">When enabled, the GBrowser tool window saves under the IDE configuration
+        folder your browser history.
+      </def>
+      <def title="Amount of History">Set the amount of history to be saved in the browser history.</def>
+    </deflist>
+    <img src="search_options.png" alt="search_options"/>
+  </chapter>
+
+  <chapter title="Developer Options" id="developer-options">
+    <p>
+      When you enable the Developer Options you can debug the Web Page directly from the GBrowser tool window.
+      Enable and set the port number for debugging.
+    </p>
+  </chapter>
+
+  <chapter title="Toolwindow Settings" id="toolwindow-settings">
+    <p>
+      The Toolwindow Settings section allows you to configure the appearance and the UI of the GBrowser tool window.
+    </p>
+    <p> The following options are available:</p>
+    <deflist collapsible="true">
+      <def title="Hide tool window label">Show or hide the tool window label in the GBrowser tool window.</def>
+      <def title="Show tab icon">Show or hide the tab icon in the GBrowser tool window.</def>
+      <def title="Show bookmarks toolbar">Show or hide the bookmarks toolbar in the GBrowser tool window.</def>
+      <def title="Enable drag and drop tabs">When enabled, you can drag and drop tabs in the GBrowser tool window.</def>
+      <def title="Reload previous tabs">
+        When enabled, the GBrowser tool window reloads the previous tabs when you start the GBrowser tool window.
+        Up to 20 tabs are saved.
+      </def>
+    </deflist>
+  </chapter>
+
+
+  <chapter title="Bookmarks Management" id="bookmarks-management">
+    <p>
+      The Bookmarks Management section allows you to manage the bookmarks in the GBrowser tool window.
+    </p>
+  </chapter>
+
+  <chapter title="Http Response Headers" id="http-response-headers">
+    <p>
+      The Http Response Headers section allows you to view the HTTP response headers in the GBrowser tool window.
+    </p>
+  </chapter>
+
+</topic>

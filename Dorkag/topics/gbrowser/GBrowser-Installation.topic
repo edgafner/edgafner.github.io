@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="GBrowser Installation" id="GBrowser-Installation">
+
+  <p>Installing the GBrowser plugin is straightforward.</p>
+
+
+  <chapter title="How to install GBrowser" id="install">
+    <p>In order to install the GBrowser plugin, follow these steps:</p>
+
+    <list type="decimal" start="1">
+      <li><p>Open JetBrains IDE
+      </p>
+        <list type="bullet">
+          <li>
+            <p>Launch your JetBrains IDE and navigate to the
+              <ui-path>Plugins</ui-path>
+              section.
+            </p>
+          </li>
+        </list>
+      </li>
+      <li><p>Search for GBrowser Plugin
+      </p>
+        <list type="bullet">
+          <li>
+            <p>Under the plugins
+              <ui-path>marketplace</ui-path>
+              tab search, type in
+              <ui-path>GBrowser</ui-path>
+              and click on the
+              <ui-path>Install</ui-path>
+              button.
+            </p>
+          </li>
+          <li><p>Wait for the installation to complete and restart your IDE when prompted.</p>
+          </li>
+        </list>
+      </li>
+    </list>
+  </chapter>
+
+
+</topic>

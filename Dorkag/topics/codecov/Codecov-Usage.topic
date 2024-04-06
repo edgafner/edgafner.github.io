@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Codecov Usage" id="Codecov-Usage">
+
+  <p>
+    Create, manage, and validate the codecov.yml right in Jetbrains's IDE. Make sure you don't commit any mistakes and
+    accidentally change Codecov’s behavior due to an invalid configuration.
+  </p>
+
+  <chapter title="Codecov features" id="codecov-features">
+    <p>Currently, the following are the features available with the Codecov plugin:</p>
+    <list>
+      <li><p>Validation codecov.yml file with a simple right click. See the validation JSON
+        result in the IDE's editor</p></li>
+      <li><p>Get code completion for codecov.yml injected.</p></li>
+      <li><p>Report issues to the plugin's GitHub repository with the Jetbrains's ErrorReportSubmitter extension
+        point</p></li>
+    </list>
+  </chapter>
+
+  <chapter title="Edit Codecov.yml file" id="codecov-injection">
+    <p>
+      Just start typing and the plugin will suggest the available options for you.
+    </p>
+    <img src="autocomplete.png" alt="autocomplete"/>
+  </chapter>
+  <chapter title="Validation" id="codecov-validation">
+    <p>
+      Check your configuration:
+    </p>
+    <img src="validate.png" alt="validate"/>
+  </chapter>
+</topic>

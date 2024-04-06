@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Work with Azure DevOps pull requests" id="Work-with-Azure-DevOps-pull-requests">
+
+  <p>
+    Pull requests are used in open-source projects or in some corporate workflows to manage changes from contributors
+    and to initiate code review before such changes are merged.
+  </p>
+
+  <p>
+    By creating a pull request, you tell others about the changes you want to push to the original repository, so that
+    the maintainers of that repository can review your changes, discuss them, and integrate them into the base branch.
+  </p>
+
+  <chapter title="Create a Pull Request" id="create_pr">
+    <procedure>
+      <step>
+        <p>In the main menu, go to Git | Azure DevOps | Create Pull Request. The Pull Requests tool window opens with a
+          pull request draft.</p>
+        <img src="create_pr_draft.png" alt="create_pr_draft"/>
+        <p>Alternatively, open the Pull Requests tool window and click <img src="add.svg" alt="add"/> Create Pull
+          Request
+          in the top-right
+          corner.</p>
+        <tip>
+          <p>After you push changes to the remote repository, IntelliJ IDEA will show you a notification with an option
+            to open a new pull request.</p>
+        </tip>
+        <p>
+          In the
+          <ui-path>New Pull Request Tab</ui-path>
+          , the repository on the left is the target repository that will receive the updates.
+          The repository on the right is the source repository with the changes that will be added to the target
+          repository.
+        </p>
+      </step>
+      <step>
+        <p>Click the name of the target repository on the left.
+          In the popup that opens, specify the branch to which you want to apply your changes.</p>
+        <img src="click_target_name_pr_create.png" alt="click_target_name_pr_create"/>
+      </step>
+      <step>
+        <p>Click the name of the source repository on the right. In the popup that opens, specify the branch that
+          contains
+          the changes you want to apply.</p>
+        <img src="click_source_name_pr_create.png" alt="click_source_name_pr_create"/>
+        <p>
+          If you have a project that uses multiple remote repositories, you can change the head repository in this popup
+          as well.
+        </p>
+      </step>
+      <step>
+        <p>
+          Specify the name for your pull request in the Title field, and, optionally, provide a description of the
+          changes to be applied through your request.
+        </p>
+      </step>
+      <step>
+        <p>Optionally, add reviewers, assign your pull request to someone or add a label to your pull request.</p>
+      </step>
+      <step>
+        <p>Click
+          <ui-path>Create Pull Request.</ui-path>
+        </p>
+        <p>If you are not yet ready to push your pull request, you can save it as a draft.</p>
+        <list>
+          <li>Click on <img src="down.svg" alt="down"/> next to the
+            <ui-path>Create Pull Request</ui-path>
+            button.
+          </li>
+          <li>
+            <p>In the menu that opens, select
+              <ui-path>Create Draft Pull Request</ui-path>
+            </p>
+          </li>
+        </list>
+      </step>
+    </procedure>
+  </chapter>
+
+  <chapter title="Manage incoming pull requests" id="manage_incoming_pull_requests">
+    <p>If you're a project maintainer, and you have an Azure DevOps remote configured for your project, you can view and
+      manage incoming pull requests directly from Jetbrains' IDEA.
+    </p>
+    <p>To view incoming pull requests, select
+      <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>
+      from the main menu.
+    </p>
+    <img src="manage_pr_list.png" alt="manage_pr_list"/>
+    <p>Use the
+      <ui-path>Azure DevOps Pull Requests</ui-path>
+      tool window to:
+    </p>
+    <list>
+      <li>
+        <ui-path>Filter requests</ui-path>
+        by state, author, assignee, and review status.
+      </li>
+      <li>
+        <ui-path>Jump to a pull request on Azure DevOps</ui-path>
+        : select a pull request and choose
+        <ui-path>Open on Azure DevOps</ui-path>
+        from the context
+        menu.
+      </li>
+      <li>
+        <ui-path>View diff</ui-path>
+        between the suggested changes and the base revision: click the name of a pull request, select a file
+        and double-click it or press
+        <shortcut>⌘Cmd</shortcut>
+        <shortcut>D</shortcut>
+        .
+      </li>
+      <li>
+        <ui-path>Create a local branch</ui-path>
+        based on incoming changes: open a pull request, click the branch with incoming changes
+        and choose
+        <ui-path>Checkout 'branch name'…</ui-path>
+        in the context menu.
+        <img src="create_local_branch_based_on_source.png" alt="create_local_branch_based_on_source"/>
+      </li>
+    </list>
+  </chapter>
+
+  <chapter title="View and apply the suggested changes" id="view_and_apply_changes">
+    <p>If the maintainers of the original repository left comments or made suggestions with regard to your changes, you
+      can view and apply them directly from Jetbrains' IDEA.</p>
+    <procedure>
+      <step>
+        <p>In the main menu, go to
+          <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>
+          .
+        </p>
+      </step>
+      <step>
+        <p>In the list of pull requests, select the one you want to work with and double-click it.</p>
+        <p>The IDE opens an overview of the selected pull request.</p>
+        <img src="view_and_apply_single_pr.png" alt="view_and_apply_single_pr"/>
+        <list>
+          <li><p>Next to the title, there is the pull request id number. Click it if you want to open the pull request
+            on
+            Azure DevOps.</p></li>
+          <li>
+            <p>Click the
+              <ui-path>View Timeline</ui-path>
+              button to open the pull request timeline.
+            </p>
+          </li>
+          <li>
+            <p>To filter the list of changed files, select the commit you want to investigate in
+              <ui-path>Changes from</ui-path>
+              .
+            </p>
+          </li>
+          <li><p>Right-click any file to open the context menu for this file.</p></li>
+          <li><p>In case a reviewer has left any comments or suggestions, there is a counter with the number of comments
+            in the list of files.</p></li>
+        </list>
+      </step>
+      <step>
+        <p>Double-click a file to view the suggested changes and comments.</p>
+      </step>
+      <step>
+        <p>You can either resolve a comment, reply to it or add or remove a Like emoji <img src="like.svg" alt="like"/>.
+        </p>
+        <img src="comment_in_editor_diff.png" alt="comment_in_editor_diff"/>
+        <p>If you are the comment author you can
+          <ui-path>Edit</ui-path>
+          or
+          <ui-path>Delete</ui-path>
+          it as well
+        </p>
+      </step>
+      <step>
+        <p>If the reviewer has left a suggestion, you'll see the diff between your code and suggested one and can either
+          Apply locally (applies a patch to the working copy) or Commit (opens a commit message pop-up).</p>
+        <img src="apply_suggestion_diff_editor.png" alt="apply_suggestion_diff_editor"/>
+        <note><p>The Suggestion feature is available only in case the current branch is the same as the source branch of
+          the pull request.
+        </p></note>
+      </step>
+      <step>
+        <p>After you finished working on the pull request, you can re-request review, vote by approving or rejecting the
+          pull request, merge pull request or close it.</p>
+        <img src="vote_status_options.png" alt="vote_status_options"/>
+      </step>
+    </procedure>
+  </chapter>
+
+  <chapter title="Pull Request Timeline" id="pull_request_timeline">
+    <p>The timeline provides a chronological overview of significant events and interactions within a pull request. It's
+      a key
+      tool for tracking
+      the progress, understanding the history, and identifying areas of discussion or contention in a pull request.</p>
+
+    <procedure>
+      <step><p>Accessing the Timeline</p>
+        <list>
+          <li><p>Open a pull request to view its details.</p></li>
+          <li><p>Navigate to the 'Timeline' file editor.</p></li>
+        </list>
+      </step>
+      <step>
+        <p>Understanding Timeline Entries</p>
+        <p>The timeline will display a variety of events, including:</p>
+        <list type="bullet">
+          <li><p>Comments and replies made by reviewers and contributors.</p>
+          </li>
+          <li><p>Commits added or associated with the pull request.</p></li>
+          <li><p>Status updates, such as when a pull request is opened, reviewed, or merged.</p></li>
+          <li><p>System notifications, like CI/CD results or automated checks.</p></li>
+          <li><p>Manual events like label additions or changes in assignees.</p></li>
+        </list>
+      </step>
+      <step>
+        <p>Interacting with Timeline Entries</p>
+        <list>
+          <li><p>You can click on specific timeline entries to view more details or jump to related files or
+            discussions.</p></li>
+          <li><p>Some entries allow for direct interaction, like replying to comments or viewing commit diffs.</p></li>
+        </list>
+        <p>The pull request timeline is an invaluable tool for staying updated on the progression and discussions
+          surrounding your
+          code changes.</p>
+      </step>
+    </procedure>
+  </chapter>
+  <chapter title="Pull Request Status" id="pull_request_status">
+    <p>When you are reviewing a pull request, you can see the status of the pull request in the Pull Requests tool
+      window.</p>
+    <p>The status of a pull request is displayed based on the checks that are configured in the Azure DevOps
+      repository.</p>
+    <p>For example, you can see the following statuses:</p>
+    <list>
+      <li><p>Build and Check status</p>
+        <p>An Action link is attached to this status when clicked a clickable list of Azure DevOps pipelines are
+          presented. Click on one of them to open them in the browser.</p>
+      </li>
+      <li><p>Work Items linked to the pull request</p>
+        <p>If your Project's admin has set a blocking merge for unlinked work items, you will see an error in the
+          pull request status.</p>
+        <tip><p>Right-click on the opened Pull request and select the link work items option to link work items to the
+          pull request.</p>
+          <img src="link_work_item.png" alt="link_work_item"/>
+        </tip>
+      </li>
+      <li><p>Reviewers votes</p></li>
+      <li><p>Other statuses</p></li>
+    </list>
+
+  </chapter>
+</topic>

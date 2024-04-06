@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <shortcuts>
+        <src>keymap.xml</src>
+        <layout name="Windows" display-name="Windows"/>
+        <layout name="macOS" display-name="MacOS"/>
+        <layout name="Linux" display-name="Linux"/>
+    </shortcuts>
+
+    <footer>
+        <copyright>Dorkag</copyright>
+        <link href="https://dorkag.com/">Dorkag Home Page</link>
+        <social type="twitter" href="https://twitter.com/Jongafner"/>
+        <social type="facebook" href="https://www.facebook.com/dorkaag"/>
+        <link href="https://dorkag.com/services-terms-and-conditions">Terms and conditions</link>
+    </footer>
+
+    <variables>
+        <algolia-id>5A7JDZV3EQ</algolia-id>
+        <algolia-index>Dorkag</algolia-index>
+        <algolia-api-key>c83b9b9ab1130676442b2c25f51e9a60</algolia-api-key>
+        <web-root>https://edgafner.github.io</web-root>
+    </variables>
+
+    <build-profile instance="dorkag">
+        <variables>
+            <noindex-content>false</noindex-content>
+            <offline-docs>false</offline-docs>
+        </variables>
+    </build-profile>
+
+</buildprofiles>

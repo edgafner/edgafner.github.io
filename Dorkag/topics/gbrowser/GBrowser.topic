@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="GBrowser" id="GBrowser">
+  <section-starting-page>
+    <title>GBrowser</title>
+    <description>An embedded web browser window within your IDE. Cut the context switch between the browser and you IDE.
+    </description>
+
+    <spotlight>
+      <a href="GBrowser-Installation.topic" type="start" summary="Install the GBrowser plugin">GBrowser Installation</a>
+      <a href="GBrowser-Settings-and-Configuration.topic" type="settings" summary="Settings and Configuration">GBrowser
+        Configuration</a>
+    </spotlight>
+
+    <!--    Add several topics that are most important for this section.    -->
+    <primary>
+      <title>Get started</title>
+      <a href="Work-with-GBrowser.topic" type="tools"
+         summary="Stop the context switch between the browser and your IDE">Features and Usage</a>
+    </primary>
+
+    <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->
+    <secondary>
+      <title>Support and references</title>
+      <a href="GBrowser-Reference-and-Support.topic" type="support" summary="Contact us for help">Reference and
+        Support</a>
+    </secondary>
+
+  </section-starting-page>
+
+</topic>

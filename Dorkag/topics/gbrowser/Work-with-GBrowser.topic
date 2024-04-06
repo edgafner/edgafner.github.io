@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="GBrowser Features" id="Work-with-GBrowser">
+
+  <p>
+    Using the GBrowser plugin is straightforward same as using any browser but within the IDE.
+  </p>
+
+  <chapter title="Open GBrowser" id="open-gbrowser">
+    <p>
+      To open the GBrowser, click the GBrowser icon on the toolbar.
+      And that is it! You can start navigating the web.
+    </p>
+    <img src="gbrowser_main_view.png" alt="gbrowser_main_view"/>
+  </chapter>
+
+  <chapter title="GBrowser Actions" id="gbrowser-actions">
+    <p>In the top right corner of the GBrowser, you can find the
+      <shortcut>more actions</shortcut>
+      button
+      <img src="down.svg" alt="down"/>
+    </p>
+    <p>The more actions let you do additional configurations and actions such as:</p>
+      <list columns="2">
+        <li>Navigate to the home page</li>
+        <li>Find and search</li>
+        <li>Open in default browser</li>
+        <li>Reload/Stop Loading Page</li>
+        <li>Open DevTools toolwindow</li>
+        <li>Clear Cookies and History</li>
+        <li>BookMarks functionalities</li>
+        <li>Add/Close/Duplicate Tab</li>
+        <li>Zoom functionality</li>
+        <li>Open Settings</li>
+      </list>
+    <img src="more_actions.png" alt="more_actions"/>
+
+
+  </chapter>
+</topic>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="268379a3">
+        <description>Created after removal of "Dorkag Overview" from Dorkag Documentation</description>
+        <accepts>Dorkag-Overview.html</accepts>
+    </rule>
+    <rule id="32872dc0">
+        <description>Created after removal of "Installation" from Dorkag Documentation</description>
+        <accepts>Installation.html</accepts>
+    </rule>
+    <rule id="26774d8a">
+        <description>Created after removal of "Usage" from Dorkag Documentation</description>
+        <accepts>Usage.html</accepts>
+    </rule>
+    <rule id="31066401">
+        <description>Created after removal of "Usage" from Dorkag Documentation</description>
+        <accepts>Usage.html</accepts>
+    </rule>
+    <rule id="4d4d0ea">
+        <description>Created after removal of "Dorkag Overview" from Dorkag Documentation</description>
+        <accepts>Overview.html</accepts>
+    </rule>
+    <rule id="574d2c5e">
+        <description>Created after removal of "Dorkag" from Dorkag Documentation</description>
+        <accepts>Default-topic.html</accepts>
+    </rule>
+    <rule id="4a44bbcb">
+        <description>Created after removal of "Azd" from Dorkag Documentation</description>
+        <accepts>AZD.html</accepts>
+    </rule>
+</rules>
