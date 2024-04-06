@@ -18,6 +18,11 @@
         <link href="https://dorkag.com/services-terms-and-conditions">Terms and conditions</link>
     </footer>
 
+    <variables>
+        <primary-color>aqua</primary-color>
+        <custom-favicons>favicon.png</custom-favicons>
+        <header-logo>banner.svg</header-logo>
+    </variables>
 
     <build-profile instance="dorkag">
         <variables>

@@ -7,31 +7,31 @@
     </rule>
     -->
     <rule id="268379a3">
-        <description>Created after removal of "Dorkag Overview" from Dorkag Documentation</description>
+        <description>Created after removal of "Dorkag Overview" from Documentation</description>
         <accepts>Dorkag-Overview.html</accepts>
     </rule>
     <rule id="32872dc0">
-        <description>Created after removal of "Installation" from Dorkag Documentation</description>
+        <description>Created after removal of "Installation" from Documentation</description>
         <accepts>Installation.html</accepts>
     </rule>
     <rule id="26774d8a">
-        <description>Created after removal of "Usage" from Dorkag Documentation</description>
+        <description>Created after removal of "Usage" from Documentation</description>
         <accepts>Usage.html</accepts>
     </rule>
     <rule id="31066401">
-        <description>Created after removal of "Usage" from Dorkag Documentation</description>
+        <description>Created after removal of "Usage" from Documentation</description>
         <accepts>Usage.html</accepts>
     </rule>
     <rule id="4d4d0ea">
-        <description>Created after removal of "Dorkag Overview" from Dorkag Documentation</description>
+        <description>Created after removal of "Dorkag Overview" from Documentation</description>
         <accepts>Overview.html</accepts>
     </rule>
     <rule id="574d2c5e">
-        <description>Created after removal of "Dorkag" from Dorkag Documentation</description>
+        <description>Created after removal of "Dorkag" from Documentation</description>
         <accepts>Default-topic.html</accepts>
     </rule>
     <rule id="4a44bbcb">
-        <description>Created after removal of "Azd" from Dorkag Documentation</description>
+        <description>Created after removal of "Azd" from Documentation</description>
         <accepts>AZD.html</accepts>
     </rule>
 </rules>
