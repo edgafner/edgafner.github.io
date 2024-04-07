@@ -3,8 +3,8 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="dorkag"
-                 name="Dorkag"
-                 start-page="Dorkag.topic">
+                  name="Dorkag"
+                  start-page="Dorkag.topic">
 
     <toc-element topic="Dorkag.topic">
         <toc-element topic="Azd.topic">

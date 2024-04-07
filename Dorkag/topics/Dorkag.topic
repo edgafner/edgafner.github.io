@@ -3,7 +3,7 @@
     SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Dorkag" id="Dorkag" help-id="Dorkag">
+       title="Dorkag" id="Dorkag">
 
   <p>Hi there, I'm <a
       href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">Jonathan
