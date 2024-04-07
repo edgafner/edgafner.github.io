@@ -10,6 +10,8 @@
     accidentally change Codecov’s behavior due to an invalid configuration.
   </p>
 
+  <video src="https://youtu.be/-ho6JGw0D9M"/>
+
   <chapter title="Codecov features" id="codecov-features">
     <p>Currently, the following are the features available with the Codecov plugin:</p>
     <list>
