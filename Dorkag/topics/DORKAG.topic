@@ -15,27 +15,57 @@
   <p>
     The following is a list of plugins I have developed:</p>
 
-  <list type="none" columns="4">
-    <li>
-      <p>
-        <a href="GBrowser.topic"/>
-        <img src="gbrowser_icon.png" alt="gbrowser_icon" style="block"/>
-      </p>
-    </li>
-    <li>
-      <p>
-        <a href="Azd.topic"/>
-        <img src="azd_icon.svg" alt="azd_icon" style="block"/>
-      </p>
-    </li>
-    <li><p>
-      <a href="Codecov.topic"/>
-      <img src="code_cov.svg" alt="code_cov" style="block"/>
-    </p></li>
-    <li><p>
-      <a href="QueryFlag.topic"/>
-      <img src="queryflag.svg" alt="queryflag" style="block"/>
-    </p></li>
-
-  </list>
+  <deflist>
+    <def>
+      <title caps="sentence">
+        <icon src="../images/empty.svg"/>
+      </title>
+      <list columns="4" type="none">
+        <li>
+          <list type="none">
+            <li><a href="Azd.topic"/></li>
+            <li>
+              <icon src="../images/empty.svg"/>
+            </li>
+            <li><a href="Azd.topic" summary="">
+              <img src="azd_icon.svg" alt="azd_icon"/>
+            </a></li>
+          </list>
+        </li>
+        <li>
+          <list type="none">
+            <li><a href="GBrowser.topic"/></li>
+            <li>
+              <icon src="../images/empty.svg"/>
+            </li>
+            <li><a href="GBrowser.topic" summary="">
+              <img src="gbrowser_icon.png" alt="gbrowser_icon"/>
+            </a></li>
+          </list>
+        </li>
+        <li>
+          <list type="none">
+            <li><a href="Codecov.topic"/></li>
+            <li>
+              <icon src="../images/empty.svg"/>
+            </li>
+            <li><a href="Codecov.topic" summary="">
+              <img src="code_cov.svg" alt="code_cov"/>
+            </a></li>
+          </list>
+        </li>
+        <li>
+          <list type="none">
+            <li><a href="QueryFlag.topic"/></li>
+            <li>
+              <icon src="../images/empty.svg"/>
+            </li>
+            <li><a href="QueryFlag.topic" summary="">
+              <img src="queryflag.svg" alt="queryflag"/>
+            </a></li>
+          </list>
+        </li>
+      </list>
+    </def>
+  </deflist>
 </topic>
