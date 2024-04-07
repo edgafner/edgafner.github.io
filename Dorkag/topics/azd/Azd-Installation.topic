@@ -21,7 +21,6 @@
     </p>
   </note>
 
-
   <chapter title="Install the Azd plugin" id="install">
     <procedure id="azd-installation">
       <step><p>Open JetBrains IDE
@@ -56,7 +55,7 @@
   <chapter title="Generating a Personal Access Token for the Azd Plugin" id="generate_pat">
     <p> In order to properly connect to your Azure DevOps account, you will need to generate a Personal Access Token
       (PAT) with the following scopes:</p>
-    <list type="bullet" columns="3" sorted="asc">
+    <list type="bullet" columns="2" sorted="asc">
       <li>
         <p>vso.code_write</p>
       </li>

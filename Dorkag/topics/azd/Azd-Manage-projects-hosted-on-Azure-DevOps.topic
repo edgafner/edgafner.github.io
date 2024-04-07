@@ -6,6 +6,8 @@
        title="Manage projects hosted on Azure DevOps" id="Azd-Manage-projects-hosted-on-Azure-DevOps"
        help-id="Manage-projects-hosted-on-Azure-DevOps">
 
+  <video src="https://youtu.be/cboZs7iyA7Y"/>
+
   <chapter title="Check out a project (clone)" id="checkout">
     <p>You can clone a <a
         href="https://learn.microsoft.com/en-us/azure/devops/repos/get-started/what-is-repos?view=azure-devops">repository</a>

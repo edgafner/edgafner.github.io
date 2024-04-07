@@ -4,9 +4,9 @@
 
 <instance-profile id="dorkag"
                  name="Dorkag"
-                 start-page="DORKAG.topic">
+                 start-page="Dorkag.topic">
 
-    <toc-element topic="DORKAG.topic">
+    <toc-element topic="Dorkag.topic">
         <toc-element topic="Azd.topic">
             <toc-element topic="Azd-Installation.topic"/>
             <toc-element topic="Azd-Manage-projects-hosted-on-Azure-DevOps.topic"/>
