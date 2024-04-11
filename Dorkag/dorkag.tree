@@ -9,8 +9,8 @@
     <toc-element topic="Dorkag.topic">
         <toc-element topic="Azd.topic">
             <toc-element topic="Azd-Installation.topic"/>
-            <toc-element topic="Azd-Settings-Configuration.topic"/>
             <toc-element topic="Azd-Manage-projects-hosted-on-Azure-DevOps.topic"/>
+            <toc-element topic="Azd-Settings-Configuration.topic"/>
             <toc-element topic="Work-with-Azure-DevOps-pull-requests.topic"/>
             <toc-element topic="Azure-DevOps-Pipelines.topic"/>
             <toc-element topic="Azd-Reference-And-Support.topic"/>

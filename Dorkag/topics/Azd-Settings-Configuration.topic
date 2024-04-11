@@ -37,11 +37,18 @@
 
     <deflist>
       <def title="Adopt Azure DevOps UI style">
-        <p>Enable this option to change the plugin UI to look more like Azure DevOps UI. This adjustment will align the
+        <p>When enabled, this option to change the plugin UI to look more like Azure DevOps UI.</p>
+        <p>This adjustment will align the
           visual elements and layout of the plugin with Azure DevOps, offering a more familiar interface for Azure
           DevOps users.</p>
+
+        <img src="azd-ui_like_settings.png" alt="azd-ui_like_settings" style="inline" border-effect="line"/>
+        <note>It may require a restart of the IDE to apply the changes.
+        </note>
       </def>
     </deflist>
+
+
   </chapter>
 
   <chapter title="Boards and Work Items" id="boards-and-work-ites">
@@ -54,6 +61,7 @@
       <def title="Show work Items from all Projects">
         <p>When enabled, work items from other projects available in the selected Organization/Collection will be
           displayed for linking Pull Requests.</p>
+        <img src="link_work_item_panel.png" alt="link_work_item_panel"/>
       </def>
     </deflist>
 
