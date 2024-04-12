@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="codecovlib"
+                  name="codecovlib"
+                  start-page="Codecov.topic">
+
+    <snippet id="codecovsn.tree">
+        <toc-element topic="Codecov.topic">
+            <toc-element topic="Codecov-Installation.topic"/>
+            <toc-element topic="Codecov-Usage.topic"/>
+            <toc-element topic="Codecov-Reference-and-Support.topic"/>
+        </toc-element>
+    </snippet>
+</instance-profile>

@@ -12,60 +12,59 @@
   </p>
   <p>
     On my free time I love to build JetBrains IDE plugins mainly to boost development productivity.</p>
-  <p>
-    The following is a list of plugins I have developed:</p>
 
-  <deflist>
-    <def>
-      <title caps="sentence">
-        <icon src="../images/empty.svg"/>
-      </title>
-      <list columns="4" type="none">
+  <p>The following is a list of plugins I have developed:</p>
+  <list columns="4" type="none">
+    <li>
+      <list type="none">
+        <li><a href="Azd.topic" summary="">
+          <img src="azd_icon.svg" alt="azd_icon"/>
+        </a></li>
         <li>
-          <list type="none">
-            <li><a href="Azd.topic"/></li>
-            <li>
-              <icon src="../images/empty.svg"/>
-            </li>
-            <li><a href="Azd.topic" summary="">
-              <img src="azd_icon.svg" alt="azd_icon"/>
-            </a></li>
-          </list>
-        </li>
-        <li>
-          <list type="none">
-            <li><a href="GBrowser.topic"/></li>
-            <li>
-              <icon src="../images/empty.svg"/>
-            </li>
-            <li><a href="GBrowser.topic" summary="">
-              <img src="gbrowser_icon.png" alt="gbrowser_icon"/>
-            </a></li>
-          </list>
-        </li>
-        <li>
-          <list type="none">
-            <li><a href="Codecov.topic"/></li>
-            <li>
-              <icon src="../images/empty.svg"/>
-            </li>
-            <li><a href="Codecov.topic" summary="">
-              <img src="code_cov.svg" alt="code_cov"/>
-            </a></li>
-          </list>
-        </li>
-        <li>
-          <list type="none">
-            <li><a href="QueryFlag.topic"/></li>
-            <li>
-              <icon src="../images/empty.svg"/>
-            </li>
-            <li><a href="QueryFlag.topic" summary="">
-              <img src="queryflag.svg" alt="queryflag"/>
-            </a></li>
-          </list>
+          <a href="Azd.topic">
+            <ui-path xml:space="preserve">AZD</ui-path>
+          </a>
         </li>
       </list>
-    </def>
-  </deflist>
+    </li>
+    <li>
+      <list type="none">
+        <li><a href="GBrowser.topic" summary="">
+          <img src="gbrowser_icon.png" alt="gbrowser_icon"/>
+        </a></li>
+
+        <li>
+          <a href="GBrowser.topic">
+            <ui-path xml:space="preserve">GBrowser</ui-path>
+          </a>
+        </li>
+      </list>
+    </li>
+    <li>
+      <list type="none">
+        <li><a href="Codecov.topic" summary="">
+          <img src="code_cov.svg" alt="code_cov"/>
+        </a></li>
+        <li>
+          <a href="Codecov.topic">
+            <ui-path xml:space="preserve">Codecov</ui-path>
+          </a>
+        </li>
+      </list>
+    </li>
+    <li>
+      <list type="none">
+
+        <li><a href="QueryFlag.topic" summary="">
+          <img src="queryflag.svg" alt="queryflag"/>
+        </a></li>
+        <li>
+          <a href="QueryFlag.topic">
+            <ui-path xml:space="preserve">QueryFlag</ui-path>
+          </a>
+        </li>
+      </list>
+    </li>
+  </list>
+
 </topic>

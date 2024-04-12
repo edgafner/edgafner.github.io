@@ -3,33 +3,13 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="dorkag"
-                  name="Dorkag"
+                  name="DORKAG"
                   start-page="Dorkag.topic">
 
     <toc-element topic="Dorkag.topic">
-        <toc-element topic="Azd.topic">
-            <toc-element topic="Azd-Installation.topic"/>
-            <toc-element topic="Azd-Manage-projects-hosted-on-Azure-DevOps.topic"/>
-            <toc-element topic="Azd-Settings-Configuration.topic"/>
-            <toc-element topic="Work-with-Azure-DevOps-pull-requests.topic"/>
-            <toc-element topic="Azure-DevOps-Pipelines.topic"/>
-            <toc-element topic="Azd-Reference-And-Support.topic"/>
-        </toc-element>
-        <toc-element topic="GBrowser.topic">
-            <toc-element topic="GBrowser-Installation.topic"/>
-            <toc-element topic="GBrowser-Settings-and-Configuration.topic"/>
-            <toc-element topic="Work-with-GBrowser.topic"/>
-            <toc-element topic="GBrowser-Reference-and-Support.topic"/>
-        </toc-element>
-        <toc-element topic="Codecov.topic">
-            <toc-element topic="Codecov-Installation.topic"/>
-            <toc-element topic="Codecov-Usage.topic"/>
-            <toc-element topic="Codecov-Reference-and-Support.topic"/>
-        </toc-element>
-        <toc-element topic="QueryFlag.topic">
-            <toc-element topic="QueryFlag-Installation.topic"/>
-            <toc-element topic="Work-with-QueryFlag.topic"/>
-            <toc-element topic="QueryFlag-Reference-and-Support.topic"/>
-        </toc-element>
+        <include from="azdlib" element-id="azdsn.tree"/>
+        <include from="gbrowserlib.tree" element-id="gbrowsersn.tree"/>
+        <include from="codecovlib" element-id="codecovsn.tree"/>
+        <include from="queryflaglib" element-id="queryflagsn.tree"/>
     </toc-element>
 </instance-profile>

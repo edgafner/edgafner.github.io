@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="gbrowserlib"
+                  name="gbrowserlib"
+                  start-page="GBrowser.topic" >
+
+
+    <snippet id="gbrowsersn.tree">
+        <toc-element topic="GBrowser.topic">
+            <toc-element topic="GBrowser-Installation.topic"/>
+            <toc-element topic="GBrowser-Settings-and-Configuration.topic"/>
+            <toc-element topic="Work-with-GBrowser.topic"/>
+            <toc-element topic="GBrowser-Reference-and-Support.topic"/>
+        </toc-element>
+    </snippet>
+</instance-profile>
