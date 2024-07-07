@@ -6,9 +6,10 @@
                   name="DORKAG"
                   start-page="Dorkag.topic">
 
+
     <toc-element topic="Dorkag.topic">
         <include from="azdlib" element-id="azdsn.tree"/>
-        <include from="gbrowserlib.tree" element-id="gbrowsersn.tree"/>
+        <include from="gbrowserlib" element-id="gbrowsersn.tree"/>
         <include from="codecovlib" element-id="codecovsn.tree"/>
         <include from="queryflaglib" element-id="queryflagsn.tree"/>
     </toc-element>

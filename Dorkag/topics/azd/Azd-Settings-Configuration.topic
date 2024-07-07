@@ -14,13 +14,13 @@
   <chapter title="General Configuration" id="general-configuration">
     <p>The following options are available:</p>
     <deflist>
-      <def title="Show all Projects members">
+      <def title="Show all Projects members" id="show-all-projects-members">
         <p>When disabled, only users that belong to the current repository's project are shown. Enabling this option
           will display all members across different projects, not just those from the current project. Be aware that
           enabling this feature may affect performance, especially if there are a large number of users across
           projects.</p>
       </def>
-      <def title="Send usage and exceptions statistics">
+      <def title="Send usage and exceptions statistics" id="send-usage-and-exceptions-statistics">
         <p>When enable you help improve the plugin by sending anonymous data about exceptions and actions
           statistics.Note that this will not include personal data or sensitive
           information.</p>
@@ -36,7 +36,7 @@
     </p>
 
     <deflist>
-      <def title="Adopt Azure DevOps UI style">
+      <def title="Adopt Azure DevOps UI style" id="adopt-azure-devops-ui-style">
         <p>When enabled, this option to change the plugin UI to look more like Azure DevOps UI.</p>
         <p>This adjustment will align the
           visual elements and layout of the plugin with Azure DevOps, offering a more familiar interface for Azure
@@ -51,14 +51,14 @@
 
   </chapter>
 
-  <chapter title="Boards and Work Items" id="boards-and-work-ites">
+  <chapter title="Boards and Work Items" id="boards-and-work-items">
 
     <p>
       The following options are available:
     </p>
 
     <deflist>
-      <def title="Show work Items from all Projects">
+      <def title="Show work Items from all Projects" id="show-work-items-from-all-projects">
         <p>When enabled, work items from other projects available in the selected Organization/Collection will be
           displayed for linking Pull Requests.</p>
         <img src="link_work_item_panel.png" alt="link_work_item_panel"/>

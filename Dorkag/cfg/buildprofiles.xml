@@ -37,7 +37,6 @@
             <download-title>Install AZD</download-title>
             <showDownloadButton>true</showDownloadButton>
             <noindex-content>false</noindex-content>
-            <offline-docs>false</offline-docs>
         </variables>
     </build-profile>
     <build-profile instance="gbrowserlib">
@@ -46,19 +45,16 @@
             <download-page>https://plugins.jetbrains.com/plugin/22319-azd</download-page>
             <showDownloadButton>true</showDownloadButton>
             <noindex-content>false</noindex-content>
-            <offline-docs>false</offline-docs>
         </variables>
     </build-profile>
     <build-profile instance="queryflaglib">
         <variables>
             <noindex-content>false</noindex-content>
-            <offline-docs>false</offline-docs>
         </variables>
     </build-profile>
     <build-profile instance="codecovlib">
         <variables>
             <noindex-content>false</noindex-content>
-            <offline-docs>false</offline-docs>
         </variables>
     </build-profile>
 
