@@ -61,7 +61,7 @@
       <def title="Show work Items from all Projects" id="show-work-items-from-all-projects">
         <p>When enabled, work items from other projects available in the selected Organization/Collection will be
           displayed for linking Pull Requests.</p>
-        <img src="link_work_item_panel.png" alt="link_work_item_panel"/>
+        <img src="link_work_item_panel.png" alt="link_work_item_panel" style="block" thumbnail="true" />
       </def>
     </deflist>
 

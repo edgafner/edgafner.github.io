@@ -24,7 +24,7 @@
                 <p>In the main menu, go to Git | Azure DevOps | Create Pull Request. The Pull Requests tool window opens
                     with a
                     pull request draft.
-                    <img src="create_pr_draft.png" alt="create_pr_draft" style="block"/>
+                    <img src="create_pr_draft.png" alt="create_pr_draft" style="block" thumbnail="true"/>
                 </p>
                 <p>Alternatively, open the Pull Requests tool window and click <img src="add.svg" alt="add"/> Create
                     Pull
@@ -104,7 +104,7 @@
             <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>
             from the main menu.
         </p>
-        <img src="manage_pr_list.png" alt="manage_pr_list"/>
+        <img src="manage_pr_list.png" alt="manage_pr_list" thumbnail="true" style="block"/>
         <p>Use the
             <ui-path>Azure DevOps Pull Requests</ui-path>
             tool window to:
@@ -135,7 +135,7 @@
                 and choose
                 <ui-path>Checkout 'branch name'…</ui-path>
                 in the context menu.
-                <img src="create_local_branch_based_on_source.png" alt="create_local_branch_based_on_source"/>
+                <img src="create_local_branch_based_on_source.png" alt="create_local_branch_based_on_source" style="block" thumbnail="true"/>
             </li>
         </list>
     </chapter>
@@ -154,7 +154,7 @@
             <step>
                 <p>In the list of pull requests, select the one you want to work with and double-click it.</p>
                 <p>The IDE opens an overview of the selected pull request.
-                <img src="view_and_apply_single_pr.png" alt="view_and_apply_single_pr" style="block"/>
+                <img src="view_and_apply_single_pr.png" alt="view_and_apply_single_pr" style="block" thumbnail="true"/>
                 </p>
                 <list>
                     <li><p>Next to the title, there is the pull request id number. Click it if you want to open the pull

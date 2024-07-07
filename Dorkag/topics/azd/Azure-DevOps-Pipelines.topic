@@ -12,26 +12,35 @@
 
     <chapter title="View all your Pipelines" id="azd_pipelines_new_features">
         <p>Now you can see all your Azure DevOps Pipelines right in the IDE.
-            <img src="pipeline_list.png" alt="azure devops pipelines" style="block"/>
+            <img src="pipeline_list.png" alt="azure devops pipelines" style="block" thumbnail="true"/>
         </p>
     </chapter>
     <chapter title="Open a specific Pipeline Run" id="azd_pipelines_details">
         <p>From the list you can now open a specific Pipeline run directly in your IDE
-            <img src="pipeline_details.png" alt="azure devops pipelines" style="block"/>
+            <img src="pipeline_details.png" alt="azure devops pipelines" style="block" thumbnail="true"/>
+        </p>
+        <p>
+            Download the stage's log or jump to the azure-pipeline.yml file
+            <img src="pipelines_details_actions.png" alt="pipelines_details_actions" style="block" thumbnail="true"/>
         </p>
         Get an intuitive overview with the Pipeline Stage Diagram.
-        <img src="pipeline_diagram.png" alt="pipeline diagram" style="block"/>
+        <img src="pipeline_diagram.png" alt="pipeline diagram" style="block" thumbnail="true" />
         <p>
             See the result of the Pipeline tests, jump to a specific test or analyze the stack trace for a failed
             one.
             <img src="pipeline_tests.png" alt="pipeline tests" style="block" thumbnail="true"/>
+        </p>
+        <p>
+            When selecting a test from the test panel, you can jump to the test file or download the stacktrace if it
+            failed.
+            <img src="pipeline_test_actions.png" alt="pipeline_test_actions" style="block" thumbnail="true"/>
         </p>
     </chapter>
 
 
     <chapter title="Run a specific Pipeline Run" id="azd_pipelines_run">
         <p>You can select a branch and a pipeline to run right from the IDE
-            <img src="pipeline_run.png" alt="azure devops run pipelines" style="block"/>
+            <img src="pipeline_run.png" alt="azure devops run pipelines" style="block" thumbnail="true"/>
         </p>
         <note>
             In case the pipeline has parameters you can set them as well before running.
@@ -49,7 +58,7 @@
                     <ui-path>azure-pipelines.yml</ui-path>
                     file, the plugin will inject the schema, so you can use code completion and validation.
                 </p>
-                <img src="pipeline_injections.png" alt="pipeline_injections"/>
+                <img src="pipeline_injections.png" alt="pipeline_injections" style="block" thumbnail="true"/>
             </li>
 
         </list>
