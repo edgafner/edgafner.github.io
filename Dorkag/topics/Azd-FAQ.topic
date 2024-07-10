@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Azd - FAQ" id="Azd-FAQ">
+
+
+    <chapter title="Why do I need to create a PAT with 'All accessible organizations' selected?" id="creating_pat">
+        <p>
+            Because the Azure Devops Microsoft team doesn't want to solve <a
+                href="https://developercommunity.visualstudio.com/t/Profiles-REST-does-not-work-with-PAT-for/10384195">this</a>
+            ticket
+        </p>
+    </chapter>
+
+
+    <chapter title="Resolving Token Issues with Azure DevOps Server" id="token_issue">
+        <p>
+            When working with Azure DevOps Server within an organization, it may occur that the library used for
+            credential storage is disabled.
+        </p>
+        <p>If you are experiencing difficulties related to your tokens or credentials,
+            this is one of the first areas to check.
+
+            To resolve this problem, you will need to modify your IDE's password settings. Below are the steps you can
+            follow in IntelliJ IDEA to amend these settings:
+        </p>
+        <list type="decimal">
+            <li> Navigate to
+                <ui-path>Settings</ui-path>
+            </li>
+            <li>In the dialog that opens, go to
+                <ui-path>Appearance/System Settings</ui-path>
+            </li>
+            <li> Under the System Settings, locate and click on
+                <ui-path>Password</ui-path>
+            </li>
+        </list>
+        Inside the
+        <ui-path>Password</ui-path>
+        settings, you can manage how your credentials are stored.
+        In case your organization does not support the native Keychain, you can try with the KeyPass.
+        <img alt="token_password.png" src="token_password.png"/>
+    </chapter>
+
+
+    <chapter title="What is a Personal Access Token (PAT)?" id="what_is_pat">
+        <p>
+            A Personal Access Token (PAT) is a secure way to authenticate Azure DevOps. It provides a way to access
+            your Azure DevOps resources without using your username and password, which can enhance security by limiting
+            the scope and duration of access.
+        </p>
+    </chapter>
+
+    <chapter title="How to Create a PAT in Azure DevOps?" id="create_pat">
+        <p>
+            To create a PAT in Azure DevOps, follow these steps:
+        </p>
+        <list type="decimal">
+            <li>Navigate to your Azure DevOps organization.</li>
+            <li>Click on your profile picture in the upper-right corner and select
+                <ui-path>Security</ui-path>
+            </li>
+            <li>In the "Personal Access Tokens" section, click "New Token."</li>
+            <li>Specify a name for your token, set the expiration date, and select the scopes required for your tasks.
+            </li>
+            <li>Click "Create" and copy the token for use in your applications.</li>
+        </list>
+        <p>
+            Note: Keep your PAT secure and treat it like a password. Do not share it or expose it in your code.
+        </p>
+    </chapter>
+
+    <chapter title="Common Issues with Login and How to Resolve Them" id="login_pat_issues">
+        <p>
+            If you encounter issues when trying to log in, consider the following troubleshooting steps:
+        </p>
+        <list type="bullet">
+            <li>Ensure the PAT has not expired. PATs have a limited lifespan and need to be renewed periodically.</li>
+            <li>Verify that the PAT has the necessary permissions for the tasks you are performing.</li>
+            <li>Check for any typos or errors in the PAT when entering it into your application.</li>
+            <li>Make sure the PAT was created with 'All accessible organization'</li>
+            <li>If you clone with the IDE Version control, make sure that you checked/unchecked the ssh</li>
+            <li>If you are using http is highly recommended to use enable the usage of Git Helper Credential in the
+                <ui-path>setting/version control</ui-path>
+                >
+            </li>
+        </list>
+    </chapter>
+
+    <chapter title="How to Open a Bug or Feature Request" id="bug_feature_request">
+        <p>
+            If you encounter a bug or have a feature request for the AZD IntelliJ plugin, you can report it on the
+            project's GitHub issues page. Follow these steps:
+        </p>
+        <list type="decimal">
+            <li>Go to the GitHub issues page: <a href="https://github.com/edgafner/dorkag/issues">https://github.com/edgafner/dorkag/issues</a>
+            </li>
+            <li>Click on "New issue."</li>
+            <li>Select "Bug report" or "Feature request" as appropriate.</li>
+            <li>Fill in the required information and submit the issue.</li>
+        </list>
+    </chapter>
+
+    <chapter title="Why Isn't the Plugin Free?" id="why_not_free">
+        <p>
+            The plugin is not free because its development requires significant time and resources.
+        </p>
+        <p>
+            I have also tried to reach out to potential investors from Microsoft to JetBrains and other tech giants, but
+            for now, no luck.
+        </p>
+    </chapter>
+
+    <chapter title="Is there anything I can help for making the plugin free?" id="sponsor_plugin">
+        <p>
+            The goal is to keep trying to reach out to potential investors hoping this community will be big enough
+            to make the plugin free.
+            For now, what you can do is add a nice review on the <a
+                href="https://plugins.jetbrains.com/plugin/22319-azd/reviews">Azd</a>.
+        </p>
+    </chapter>
+
+
+</topic>

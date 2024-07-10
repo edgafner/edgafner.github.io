@@ -38,4 +38,8 @@
         <description>Created after removal of "QueryFlag Installation" from Documentation</description>
         <accepts>QueryFlag-Installation.html</accepts>
     </rule>
+    <rule id="1f78b414">
+        <description>Created after removal of "Azd – FAQ" from azdlib</description>
+        <accepts>AZD-–-FAQ.html</accepts>
+    </rule>
 </rules>
