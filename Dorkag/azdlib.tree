@@ -4,7 +4,7 @@
 
 <instance-profile id="azdlib"
                   name="azdlib"
-                  start-page="Azd-FAQ.topic" >
+                  start-page="Azd.topic">
 
 
     <snippet id="azdsn.tree">
