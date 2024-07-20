@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Run Like Me Generate Run Configurations" id="Run-Like-Me-Generate-Run-Configurations"
+       help-id="Run-Like-Me">
+
+    <chapter title="Generate Run Configurations" id="runlikeme-generate-rc-from-template">
+        <p>
+            This is the main feature of the Run Like Me plugin, you can generate Run Configurations from your or your
+            team's templates. <br/>
+            <img border-effect="line" src="run-like-me-main-action.png" alt="run-like-me-main-action.png" style="block"
+                 />
+        </p>
+
+        <p>
+            When invoked, a dialog will appear and prompt you to select the source template<br/><br/>
+            <img src="run-like-me-action-from-vcs.png" alt="run-like-me-action-from-vcs.png" style="block"
+                 thumbnail="true"/>
+        </p>
+
+
+    </chapter>
+</topic>

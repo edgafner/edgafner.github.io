@@ -12,5 +12,6 @@
         <include from="gbrowserlib" element-id="gbrowsersn.tree"/>
         <include from="codecovlib" element-id="codecovsn.tree"/>
         <include from="queryflaglib" element-id="queryflagsn.tree"/>
+        <include from="runlikemelib" element-id="runlikeme.tree"/>
     </toc-element>
 </instance-profile>

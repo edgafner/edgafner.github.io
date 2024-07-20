@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Initialize Template Folder" id="Initialize-Template-Folder">
+
+    <chapter title="Initialize Template Environment" id="runlikeme-initialize-template">
+        <p>
+            Click the "Initialize Template Environment" button to create a sample source template folder structure.
+            This action will create a new Template folder and empty Run Like Me target folder in the project.
+        </p>
+        <img src="runlikeme-group-actions.png" alt="runlikeme-group" style="block" thumbnail="true"/>
+
+        <p>
+            When invoked, a dialog will appear and prompt you to select the type and location of the template
+            folder,<br/><br/>
+            First you can select the location type where the template folder will be created, under the current Project
+            or
+            external on your local File System.
+        </p>
+        <tabs>
+            <tab title="Shared in VCS" id="shared-in-vcs">
+
+                <p>
+                    Generate a template folder in the project and share it with your team using VCS.
+                    <img src="init_template_dialog.png" alt="runlikeme-group" style="block" thumbnail="true"/>
+                </p>
+
+                <table style="header-row">
+                    <tr>
+                        <td>Item</td>
+                        <td>Description</td>
+
+                    </tr>
+                    <tr>
+                        <td>Location Type</td>
+                        <td>Shared in VCS</td>
+                    </tr>
+                    <tr>
+                        <td>Add a .gitignore</td>
+                        <td>Check this option to add a .gitignore file to the target folder to exclude all generated run
+                            configurations.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Add a README.md</td>
+                        <td>Select this option to add a README.md file to the template folder to provide information
+                            about
+                            the new template folder that this action is about to create.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Use custom location</td>
+                        <td>Set the name of the template folder that will be created under the root template source
+                            define
+                            in the
+                            settings.<br/>
+                            <a href="RunLikeMe-Installation.topic" anchor="runlikeme-settings">See the settings
+                                chapter</a>
+                        </td>
+
+                    </tr>
+                </table>
+            </tab>
+
+            <tab title="Local File System" id="local-file-system">
+                <p>
+                    Generate a template folder externally on your local file system.
+                    <img src="init_template_local_fs_dialog.png" alt="runlikeme-group" style="block" thumbnail="true"/>
+                </p>
+
+                <table style="header-row">
+                    <tr>
+                        <td>Item</td>
+                        <td>Description</td>
+
+                    </tr>
+                    <tr>
+                        <td>Location Type</td>
+                        <td>Local File System</td>
+                    </tr>
+                    <tr>
+                        <td>Add a README.md</td>
+                        <td>Select this option to add a README.md file to the template folder to provide information
+                            about
+                            the new template folder that this action is about to create.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Template location</td>
+                        <td>Select a folder in which the template folder will be created.
+                        </td>
+
+                    </tr>
+                </table>
+            </tab>
+        </tabs>
+
+
+    </chapter>
+
+    <chapter title="The Output" id="runlikeme-initialize-action-output">
+        <p>
+            The Initialize Template Environment action will always create two folders.
+            Depending on the selected location type and the other configuration options, the folders will be created
+            in one of the following ways:
+        </p>
+        <tabs>
+            <tab title="Shared in VCS" id="shared-in-vcs-1">
+                <code-block lang="mermaid">
+                    graph TB
+                    A[Project]
+                    A --> B[Templates] --> C[.runlikeme/templates]
+                    A --> D[Generated RC location] --> E[.runlikeme/generated]
+                </code-block>
+                <img src="init-shared-output.png" alt="init-shared-output.png"/>
+                <note>
+                    The Source folder is the template folder that will be shared with your team using VCS.<br/>
+                    The Target folder is the folder where the generated run configurations will be stored you
+                    can define the location in the Run Like Me settings.
+                </note>
+            </tab>
+            <tab title="Local File System" id="local-file-system-1">
+                <code-block lang="mermaid">
+                    graph TB
+                    A[Project]
+                    A --> B[Templates] --> C[ any folder on your local file system]
+                    A --> D[Generated RC location] --> E[.runlikeme/generated]
+                </code-block>
+                <img src="init-ext-output.png" alt="init-ext-output.png"/>
+                <note>
+                    The Source folder is the template folder that will be created in the selected location on your local
+                    file system.<br/>
+                    The Target folder is the folder where the generated run configurations will be stored you
+                    can define the location in the Run Like Me settings.
+                </note>
+
+                <warning>
+                    <p>
+                        When initializing the template folder on the local file system, the plugin will not add a
+                        .gitignore file to the target folder.
+                        You can add it manually to exclude the generated run configurations from the VCS.
+                    </p>
+                </warning>
+            </tab>
+        </tabs>
+    </chapter>
+
+</topic>

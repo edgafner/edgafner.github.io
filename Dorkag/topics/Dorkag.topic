@@ -8,13 +8,14 @@
   <p>Hi there, I'm <a
       href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">Jonathan
     Gafner</a>,
-    a husband,a father of two, and a software engineer. I have been working in the software industry for over 10 years.
+    a husband, a father of two, and a software engineer.
+    I have been working in the software industry for over 10 years.
   </p>
   <p>
-    On my free time I love to build JetBrains IDE plugins mainly to boost development productivity.</p>
+    In my free time, I love to build JetBrains IDE plugins mainly to boost development productivity.</p>
 
   <p>The following is a list of plugins I have developed:</p>
-  <list columns="4" type="none">
+  <list columns="5" type="none">
     <li>
       <list type="none">
         <li><a href="Azd.topic" summary="">
@@ -54,13 +55,24 @@
     </li>
     <li>
       <list type="none">
-
         <li><a href="QueryFlag.topic" summary="">
           <img src="queryflag.svg" alt="queryflag"/>
         </a></li>
         <li>
           <a href="QueryFlag.topic">
             <ui-path xml:space="preserve">QueryFlag</ui-path>
+          </a>
+        </li>
+      </list>
+    </li>
+    <li>
+      <list type="none">
+        <li><a href="RunLikeMe.topic" summary="">
+          <img src="runlikeme.svg" alt="runlikeme"/>
+        </a></li>
+        <li>
+          <a href="RunLikeMe.topic">
+            <ui-path xml:space="preserve">RunLikeMe</ui-path>
           </a>
         </li>
       </list>

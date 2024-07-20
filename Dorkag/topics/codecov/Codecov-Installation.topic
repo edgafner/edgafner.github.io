@@ -5,41 +5,41 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Codecov Installation" id="Codecov-Installation">
 
-  <p>Installing the Codecov plugin is straightforward.</p>
+    <p>Installing the Codecov plugin is straightforward.</p>
 
 
-  <chapter title="How to install Codecov" id="install">
-    <p>In order to install the Codecov plugin, follow these steps:</p>
+    <chapter title="How to install Codecov" id="install">
+        <p>To install the Codecov plugin, follow these steps:</p>
 
-    <list type="decimal" start="1">
-      <li><p>Open JetBrains IDE
-      </p>
-        <list type="bullet">
-          <li>
-            <p>Launch your JetBrains IDE and navigate to the
-              <ui-path>Plugins</ui-path>
-              section.
+        <list type="decimal" start="1">
+            <li><p>Open JetBrains IDE
             </p>
-          </li>
-        </list>
-      </li>
-      <li><p>Search for Codecov Plugin
-      </p>
-        <list type="bullet">
-          <li>
-            <p>Under the plugins
-              <ui-path>marketplace</ui-path>
-              tab search, type in
-              <ui-path>Codecov</ui-path>
-              and click on the
-              <ui-path>Install</ui-path>
-              button.
+                <list type="bullet">
+                    <li>
+                        <p>Launch your JetBrains IDE and navigate to the
+                            <ui-path>Plugins</ui-path>
+                            section.
+                        </p>
+                    </li>
+                </list>
+            </li>
+            <li><p>Search for Codecov Plugin
             </p>
-          </li>
-          <li><p>Wait for the installation to complete and restart your IDE when prompted.</p>
-          </li>
+                <list type="bullet">
+                    <li>
+                        <p>Under the plugins
+                            <ui-path>marketplace</ui-path>
+                            tab search, type in
+                            <ui-path>Codecov</ui-path>
+                            and click on the
+                            <ui-path>Install</ui-path>
+                            button.
+                        </p>
+                    </li>
+                    <li><p>Wait for the installation to complete and restart your IDE when prompted.</p>
+                    </li>
+                </list>
+            </li>
         </list>
-      </li>
-    </list>
-  </chapter>
+    </chapter>
 </topic>

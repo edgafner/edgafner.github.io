@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="RunLikeMe Usage" id="RunLikeMe-Usage">
+
+    <p>Learn how to use the <b>Run Like Me</b> plugin to manage and generate Run Configurations efficiently.</p>
+
+    <video src="https://youtu.be/oVIWxN3t6iQ" width="600"/>
+
+    <chapter title="Run Like Me features" id="runlikeme-features">
+        <p>The Run Like Me plugin offers several features to streamline your workflow:</p>
+        <list>
+
+            <li><p><a href="Initialize-Template-Folder.topic"><b>Initialize Template Environment:</b></a></p>
+                <p>Click the "Initialize Template Environment" button to create a sample template folder structure</p>
+
+            </li>
+            <li><p><a href="Create-Run-Configuration-Templates.topic"><b>Create Run Configuration Templates</b></a></p>
+                <p>Convert existing Run Configurations into templates by selecting them and clicking "Create Run
+                    Configuration Templates</p></li>
+            <li><p><a href="Run-Like-Me-Generate-Run-Configurations.topic"><b>Run Like Me</b></a></p>
+                <p>Generate Run Configurations from the selected template by clicking the "Run Like Me" button</p>
+            </li>
+
+
+        </list>
+    </chapter>
+
+
+</topic>

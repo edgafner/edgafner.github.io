@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Installation and Settings" id="RunLikeMe-Installation">
+
+    <p>Installing the Run Like Me plugin is straightforward.</p>
+
+
+    <chapter title="How to install Run Like Me" id="install">
+
+        <p>Welcome to the <b>Run Like Me</b> plugin for IntelliJ IDEA! Follow these steps to install the plugin and get
+            started with enhancing your development experience.</p>
+
+        <list type="decimal" start="1">
+            <li><p>Open JetBrains IDE
+            </p>
+                <list type="bullet">
+                    <li>
+                        <p>Launch your JetBrains IDE and navigate to the
+                            <ui-path>Plugins</ui-path>
+                            section.
+                        </p>
+                    </li>
+                </list>
+            </li>
+            <li><p>Search for Run Like Me Plugin
+            </p>
+                <list type="bullet">
+                    <li>
+                        <p>Under the plugin's
+                            <ui-path>marketplace</ui-path>
+                            tab search, type in
+                            <ui-path>Run Like Me</ui-path>
+                            and click on the
+                            <ui-path>Install</ui-path>
+                            button.
+                        </p>
+                    </li>
+                    <li><p>Wait for the installation to complete, you don't need to restart your IDE when prompted.</p>
+                    </li>
+                </list>
+            </li>
+        </list>
+    </chapter>
+
+    <chapter title="Run Like Me Settings" id="runlikeme-settings">
+        <p>After you have installed the plugin, check the settings under
+            <ui-path>Tools/ Run Like Me</ui-path>
+        </p>
+        <tip>
+            The main purpose of the plugin is to generate Run Configurations from the source templates into a target
+            folder.
+        </tip>
+        <img src="runlikeme-settings.png" alt="runlikeme-settings" style="block" thumbnail="true"/>
+
+        <p>Here you can configure the two default inputs of the plugin:</p>
+        <list>
+            <li><b>Target</b> - Run configuration Generated location</li>
+            <li><b>Source</b> - Run Like Me source template locations</li>
+        </list>
+
+
+        <note>
+            So the VCS should manage the template source folder, but the target, where the run configurations are
+            generated to, should be excluded from the VCS.
+        </note>
+
+
+    </chapter>
+
+
+</topic>

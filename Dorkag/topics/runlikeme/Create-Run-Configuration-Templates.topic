@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Create Run Configuration Templates" id="Create-Run-Configuration-Templates">
+
+    <chapter title="Generate Templates from Run Configurations" id="runlikeme-generate-templates-from-rc">
+        <p>
+            Click the "Create Run Configuration Templates" button to convert existing Run Configurations into templates.
+            <br/><br/>
+            Use this action when you have already Run Configurations defined in your project, you can select them and
+            generate templates from them so that you can reuse them later.
+        </p>
+        <img src="runlikeme-group-actions-generate.png" alt="runlikeme-group" style="block" thumbnail="true"/>
+
+        <p>
+            When invoked, a dialog will appear and prompt you to select the type and location of the template
+            folder,<br/><br/>
+            First you can select the location type where the template folder will be created, under the current Project
+            or
+            external on your local File System.
+        </p>
+        <p>
+            Set the template folder location and check all the existing Run Configurations that you want to convert into
+            templates.
+            <img src="generate-from-rc-to-templates.png" alt="generate-from-rc-to-templates.png" style="block"
+                 thumbnail="true"/>
+        </p>
+        <table style="header-row">
+            <tr>
+                <td>Item</td>
+                <td>Description</td>
+
+            </tr>
+            <tr>
+                <td>Select the Run Like Me Template Location</td>
+                <td>You can select the location type where
+                    the template folder will be created, under the current Project or external on your local File
+                    System.
+                </td>
+            </tr>
+            <tr>
+                <td>Run Configurations</td>
+                <td>All the existing Run Configurations in the project will be listed here, you can select the ones
+                    you want to convert into templates.
+                </td>
+            </tr>
+        </table>
+
+
+    </chapter>
+</topic>

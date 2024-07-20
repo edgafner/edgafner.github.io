@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="runlikemelib"
+                  name="runlikemelib"
+                  start-page="Run-Like-Me-Reference-And-Support.topic">
+
+    <snippet id="runlikeme.tree">
+        <toc-element topic="RunLikeMe.topic">
+            <toc-element topic="RunLikeMe-Installation.topic"/>
+            <toc-element topic="RunLikeMe-Usage.topic"/>
+            <toc-element topic="Initialize-Template-Folder.topic"/>
+            <toc-element topic="Create-Run-Configuration-Templates.topic"/>
+            <toc-element topic="Run-Like-Me-Generate-Run-Configurations.topic"/>
+            <toc-element topic="Run-Like-Me-Reference-And-Support.topic"/>
+        </toc-element>
+    </snippet>
+</instance-profile>
