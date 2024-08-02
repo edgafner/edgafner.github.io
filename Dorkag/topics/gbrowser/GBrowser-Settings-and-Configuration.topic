@@ -4,7 +4,7 @@
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="GBrowser Settings and Configuration" id="GBrowser-Settings-and-Configuration">
-
+  <primary-label ref="gbrowser"/>
   <p>
     Withing the GBrowser settings, you can configure the behavior of the GBrowser tool window.
     This topic describes the available settings and how to configure them.

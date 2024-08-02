@@ -5,6 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="QueryFlag Installation" id="QueryFlag-Installation">
 
+  <primary-label ref="queryflag"/>
   <p>This guide will walk you through the process of installing the <ui-path>QueryFlag</ui-path> plugin.
   </p>
 

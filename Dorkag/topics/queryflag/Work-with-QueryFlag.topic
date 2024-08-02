@@ -5,6 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Work with QueryFlag " id="Work-with-QueryFlag" help-id="Work-with-QureyFlag">
 
+    <primary-label ref="queryflag"/>
     <p>
         With the QueryFlag plugin, you can define and execute template-based queries on selected text, making it easy to
         replace a single query parameter from within your editor. By following a few simple steps, you can streamline

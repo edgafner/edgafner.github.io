@@ -5,6 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="GBrowser Installation" id="GBrowser-Installation">
 
+  <primary-label ref="gbrowser"/>
   <p>Installing the GBrowser plugin is straightforward.</p>
 
 

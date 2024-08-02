@@ -5,6 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Initialize Template Folder" id="Initialize-Template-Folder">
 
+    <primary-label ref="rlm"/>
     <chapter title="Initialize Template Environment" id="runlikeme-initialize-template">
         <p>
             Click the "Initialize Template Environment" button to create a sample source template folder structure.

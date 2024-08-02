@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Azd" id="Azd">
+    <section-starting-page>
+        <title>Azd</title>
+        <description>
+            Based on Jetbrains' GitHub Pull Request and GitLab Merge Request plugins, Azd will streamline your
+            development
+            with Azure
+            DevOps Pull Request.
+        </description>
 
-  <section-starting-page>
-    <title>Azd</title>
-    <description>
-      Based on Jetbrains' GitHub Pull Request and GitLab Merge Request plugins, Azd will streamline your development
-      with Azure
-      DevOps Pull Request.
-    </description>
+        <!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
+        <spotlight>
+            <a href="Azd-Installation.topic" type="start" summary="Install the Azd plugin">Azd Installation</a>
+            <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" type="settings"
+               summary="Configure your development environment">Azd Configuration</a>
+        </spotlight>
 
-    <!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
-    <spotlight>
-      <a href="Azd-Installation.topic" type="start" summary="Install the Azd plugin">Azd Installation</a>
-      <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" type="settings"
-         summary="Configure your development environment">Azd Configuration</a>
-    </spotlight>
+        <!--    Add several topics that are most important for this section.    -->
+        <primary>
+            <title>Get started</title>
+            <a href="Work-with-Azure-DevOps-pull-requests.topic" type="tools" summary="Azd features and capabilities">Features
+                and Usage</a>
+            <a href="Azure-DevOps-Pipelines.topic" type="cloud"
+               summary="Use IDEA capabilities to ease your Azure DevOps pipelines journey">Azure DevOps Pipelines
+                Injection</a>
+        </primary>
 
-    <!--    Add several topics that are most important for this section.    -->
-    <primary>
-      <title>Get started</title>
-      <a href="Work-with-Azure-DevOps-pull-requests.topic" type="tools" summary="Azd features and capabilities">Features
-        and Usage</a>
-      <a href="Azure-DevOps-Pipelines.topic" type="cloud"
-         summary="Use IDEA capabilities to ease your Azure DevOps pipelines journey">Azure DevOps Pipelines
-        Injection</a>
-    </primary>
+        <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->
+        <secondary>
+            <title>Support and references</title>
+            <a href="Azd-Reference-And-Support.topic" type="support" summary="Contact us for help">Reference and
+                Support</a>
+        </secondary>
 
-    <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->
-    <secondary>
-      <title>Support and references</title>
-      <a href="Azd-Reference-And-Support.topic" type="support" summary="Contact us for help">Reference and Support</a>
-    </secondary>
-
-    <!--    Optionally add additional cards and links to topics that are not in this section but may be relevant.    -->
-  </section-starting-page>
-
+        <!--    Optionally add additional cards and links to topics that are not in this section but may be relevant.    -->
+    </section-starting-page>
 
 
 </topic>

@@ -4,7 +4,7 @@
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Azd Reference and Support" id="Azd-Reference-And-Support" help-id="Reference-And-Support">
-
+  <primary-label ref="azd"/>
   <p>
     If you're encountering issues with the AZD IntelliJ Plugin or have suggestions for improvements, we're here to help!
   </p>

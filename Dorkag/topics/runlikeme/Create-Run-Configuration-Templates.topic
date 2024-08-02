@@ -5,6 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Create Run Configuration Templates" id="Create-Run-Configuration-Templates">
 
+    <primary-label ref="rlm"/>
     <chapter title="Generate Templates from Run Configurations" id="runlikeme-generate-templates-from-rc">
         <p>
             Click the "Create Run Configuration Templates" button to convert existing Run Configurations into templates.

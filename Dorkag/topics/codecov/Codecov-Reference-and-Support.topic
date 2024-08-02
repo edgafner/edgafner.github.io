@@ -5,7 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Codecov Reference and Support" id="Codecov-Reference-and-Support">
 
-
+  <primary-label ref="codecov"/>
   <p>
     If you're encountering issues with the Codecov IntelliJ Plugin or have suggestions for improvements, we're here to help!
   </p>

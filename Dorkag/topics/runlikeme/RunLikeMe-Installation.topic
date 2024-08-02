@@ -5,6 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Installation and Settings" id="RunLikeMe-Installation">
 
+    <primary-label ref="rlm"/>
     <p>Installing the Run Like Me plugin is straightforward.</p>
 
 

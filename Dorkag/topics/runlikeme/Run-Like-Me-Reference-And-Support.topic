@@ -5,6 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Run Like Me Reference And Support" id="Run-Like-Me-Reference-And-Support">
 
+    <primary-label ref="rlm"/>
     <p>
         If you're encountering issues with the Run Like Me IntelliJ Plugin or have suggestions for improvements, we're
         here

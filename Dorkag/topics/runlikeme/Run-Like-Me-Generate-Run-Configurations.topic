@@ -6,6 +6,7 @@
        title="Run Like Me Generate Run Configurations" id="Run-Like-Me-Generate-Run-Configurations"
        help-id="Run-Like-Me">
 
+    <primary-label ref="rlm"/>
     <chapter title="Generate Run Configurations" id="runlikeme-generate-rc-from-template">
         <p>
             This is the main feature of the Run Like Me plugin, you can generate Run Configurations from your or your

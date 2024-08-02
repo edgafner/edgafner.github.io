@@ -5,6 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="RunLikeMe Usage" id="RunLikeMe-Usage">
 
+    <primary-label ref="rlm"/>
     <p>Learn how to use the <b>Run Like Me</b> plugin to manage and generate Run Configurations efficiently.</p>
 
     <video src="https://youtu.be/oVIWxN3t6iQ" width="600"/>
