@@ -6,7 +6,7 @@
        title="GBrowser" id="GBrowser">
   <section-starting-page>
     <title>GBrowser</title>
-    <description>An embedded web browser window within your IDE. Cut the context switch between the browser and you IDE.
+    <description>An embedded web browser window within your IDE. Cut the context switch between the browser and your IDE.
     </description>
 
     <spotlight>

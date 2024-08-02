@@ -39,7 +39,7 @@
             </p>
                 <list type="bullet">
                     <li>
-                        <p>Under the plugins marketplace tab search, type in
+                        <p>Under the plugins' marketplace tab search, type in
                             <ui-path>Azd</ui-path>
                             and click on the
                             <ui-path>Install</ui-path>
@@ -54,7 +54,7 @@
     </chapter>
 
     <chapter title="Generating a Personal Access Token for the Azd Plugin" id="generate_pat">
-        <p> In order to properly connect to your Azure DevOps account, you will need to generate a Personal Access Token
+        <p> To properly connect to your Azure DevOps account, you will need to generate a Personal Access Token
             (PAT) with the following scopes:</p>
         <list type="bullet" columns="2" sorted="asc">
             <li>
@@ -90,13 +90,11 @@
         </list>
 
         <warning>
-            <p>Because Microsoft Azure Devops team doesn't want to solve this <a
-                    href="https://developercommunity.visualstudio.com/t/Profiles-REST-does-not-work-with-PAT-for/10384195">ticket</a>
-                You must create the PAT when the
-                <ui-path> Organizations ComboBox</ui-path>
-                option is set to
+            <p>Due to an unresolved issue with the Microsoft Azure DevOps team, you must create the PAT with the
+                <ui-path>Organizations ComboBox</ui-path>
+                option set to
                 <ui-path>All Accessible organizations</ui-path>
-                , otherwise, the plugin will not be able to authenticate with the Azure DevOps server.
+                .Otherwise, the plugin will not be able to authenticate with the Azure DevOps server.
             </p>
             <img src="all_organization_pat.png" alt="all_organization_pat"/>
         </warning>
@@ -146,7 +144,7 @@
                             <p>
                                 <control>Note</control>
                             </p>
-                            <p>When connecting from the toolwindow the plugins append the detected Azure Devops'
+                            <p>When connecting from the toolwindow, the plugins append the detected Azure Devops'
                                 Organization/Collection name automatically. So only in case you have multiple
                                 organizations and the
                                 selected one is not the one you want to connect to, you will have to change it manually.
@@ -165,7 +163,7 @@
                         </p>
                     </step>
                     <step>
-                        <p>Click on the <img src="add.svg" alt="add"/> button to add a new Azure DevOps account.
+                        <p>Click on <img src="add.svg" alt="add"/> button to add a new Azure DevOps account.
                         </p>
                     </step>
                     <step>
@@ -179,13 +177,13 @@
                             <p>
                                 <control>Important</control>
                             </p>
-                            <p>When connecting from the settings the plugins does not append the Azure Devops'
+                            <p>When connecting from the settings, the plugin does not append the Azure Devops'
                                 Organization/Collection name automatically to server URL, so you will have to fill that
                                 manually,
                             </p>
-                            <p>For clarification the above image shows the URL without the organization name so the user
+                            <p>For clarification, the above image shows the URL without the organization name so the user
                                 must add it
-                                manually in order to successfully connect to the Azure DevOps.
+                                manually to successfully connect to the Azure DevOps.
                             </p>
                         </warning>
                     </step>

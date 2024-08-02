@@ -48,7 +48,7 @@
       </def>
       <def title="Hide URL protocol" id="hide-url-protocol">Hide the URL protocol in the address bar.</def>
       <def title="Load favicon in popup" id="load-favicon-in-popup">Load the favicon in the popup search.</def>
-      <def title="Highlight suggestion query" id="highlight-suggestion-query">Highlight the suggestion query in the search results.</def>
+      <def title="Highlight a suggestion query" id="highlight-suggestion-query">Highlight the suggestion query in the search results.</def>
       <def title="Life Span in new tab" id="life-span-in-new-tab">Set the life span to be a new tab instead of standalone JFrame.</def>
     </deflist>
     <p>Browser History options:</p>
@@ -63,7 +63,7 @@
 
   <chapter title="Developer Options" id="developer-options">
     <p>
-      When you enable the Developer Options you can debug the Web Page directly from the GBrowser tool window.
+      When you enable the Developer Options, you can debug the Web Page directly from the GBrowser tool window.
       Enable and set the port number for debugging.
     </p>
   </chapter>
@@ -76,7 +76,7 @@
     <deflist collapsible="true">
       <def title="Hide tool window label" id="hide-tool-window-label">Show or hide the tool window label in the GBrowser tool window.</def>
       <def title="Show tab icon" id="show-tab-icon">Show or hide the tab icon in the GBrowser tool window.</def>
-      <def title="Show bookmarks toolbar" id="show-bookmarks-toolbar">Show or hide the bookmarks toolbar in the GBrowser tool window.</def>
+      <def title="Show bookmarks toolbar" id="show-bookmarks-toolbar">Show or hide the bookmarks' toolbar in the GBrowser tool window.</def>
       <def title="Enable drag and drop tabs" id="enable-drag-and-drop-tabs">When enabled, you can drag and drop tabs in the GBrowser tool window.</def>
       <def title="Reload previous tabs" id="reload-previous-tabs">
         When enabled, the GBrowser tool window reloads the previous tabs when you start the GBrowser tool window.
@@ -88,7 +88,7 @@
 
   <chapter title="Bookmarks Management" id="bookmarks-management">
     <p>
-      The Bookmarks Management section allows you to manage the bookmarks in the GBrowser tool window.
+      The Bookmarks' Management section allows you to manage the bookmarks in the GBrowser tool window.
     </p>
   </chapter>
 

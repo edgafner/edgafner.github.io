@@ -27,7 +27,7 @@
             </p>
                 <list type="bullet">
                     <li>
-                        <p>Under the plugins
+                        <p>Under the plugins'
                             <ui-path>marketplace</ui-path>
                             tab search, type in
                             <ui-path>Codecov</ui-path>

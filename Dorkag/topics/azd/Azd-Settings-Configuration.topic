@@ -21,9 +21,7 @@
           projects.</p>
       </def>
       <def title="Send usage and exceptions statistics" id="send-usage-and-exceptions-statistics">
-        <p>When enable you help improve the plugin by sending anonymous data about exceptions and actions
-          statistics.Note that this will not include personal data or sensitive
-          information.</p>
+        <p>When enabled, you help improve the plugin by sending anonymous data about exceptions and action statistics. Note that this will not include personal data or sensitive information.</p>
       </def>
     </deflist>
 

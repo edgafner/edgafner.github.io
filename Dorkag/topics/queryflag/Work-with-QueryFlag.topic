@@ -21,12 +21,12 @@
                 </p>
             </step>
             <step>
-                <p>Click on the <img src="add.svg" alt="add"/> to add a new query flag entry
+                <p>Click on <img src="add.svg" alt="add"/> to add a new query flag entry.
                     <img src="addQueryFlagEntry.png" alt="addQueryFlagEntry" style="block"/>
                 </p>
                 <p>Enter the following information:</p>
                 <list>
-                    <li>Name: Give a short and useful name - (db-table names is consider a good practice)</li>
+                    <li>Name: Give a short and useful name - (db-table names is considered a good practice)</li>
                     <li>Datasource: Select your existing datasource in the DataSource combo-box</li>
                     <li><p>Add a query with the fix token of &lt;QUERY_FLAG_TOKEN&gt; to be replaced with selected
                         string.</p>
@@ -48,17 +48,17 @@
         </p>
         <procedure id="steps-sequence">
             <step>
-                <p>Select a string in the text editor you want use with the query flag.</p>
+                <p>Select a string in the text editor you want to use with the query flag.</p>
             </step>
 
             <step>
                 <p>Right click on it and select Query Flag in DB and the Query Flag name you chose.
-                <img src="editorquery.png" alt="editorquery" style="block"/>
+                    <img src="editorquery.png" alt="editorquery" style="block"/>
                 </p>
             </step>
 
             <step>
-                <p>Now Query Flag will run you query replacing the token with the selected string, and you will be able
+                <p>Now QueryFlag will run your query replacing the token with the selected string, and you will be able
                     to see
                     the results in your IDE</p>
             </step>

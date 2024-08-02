@@ -9,7 +9,7 @@
 
 
   <chapter title="How to install GBrowser" id="install">
-    <p>In order to install the GBrowser plugin, follow these steps:</p>
+    <p>To install the GBrowser plugin, follow these steps:</p>
 
     <list type="decimal" start="1">
       <li><p>Open JetBrains IDE
@@ -27,7 +27,7 @@
       </p>
         <list type="bullet">
           <li>
-            <p>Under the plugins
+            <p>Under the plugins'
               <ui-path>marketplace</ui-path>
               tab search, type in
               <ui-path>GBrowser</ui-path>

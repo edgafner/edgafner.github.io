@@ -9,7 +9,7 @@
   <section-starting-page>
     <title>QueryFlag</title>
     <description>
-      The QueryFlag plugin let you define and execute template-based queries on selected text, making it easy to
+      The QueryFlag plugin lets you define and execute template-based queries on selected text, making it easy to
       replace a single query
       parameter from within your editor. By following a few simple steps, you can streamline your workflow and improve
       productivity.

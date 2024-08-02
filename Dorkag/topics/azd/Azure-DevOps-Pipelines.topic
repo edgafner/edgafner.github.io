@@ -43,7 +43,7 @@
             <img src="pipeline_run.png" alt="azure devops run pipelines" style="block" thumbnail="true"/>
         </p>
         <note>
-            In case the pipeline has parameters you can set them as well before running.
+            In case the pipeline has parameters, you can set them as well before running.
         </note>
     </chapter>
 

@@ -107,7 +107,7 @@
         <img src="manage_pr_list.png" alt="manage_pr_list" thumbnail="true" style="block"/>
         <p>Use the
             <ui-path>Azure DevOps Pull Requests</ui-path>
-            tool window to:
+            toolwindow to:
         </p>
         <list>
             <li>
@@ -188,11 +188,11 @@
 
                 <img src="comment_in_editor_diff.png" alt="comment_in_editor_diff" style="block"/>
                 </p>
-                <p>If you are the comment author you can
+                <p>If you are the comment author, you can
                     <ui-path>Edit</ui-path>
                     or
                     <ui-path>Delete</ui-path>
-                    it as well
+                    the comment as well.
                 </p>
             </step>
             <step>
