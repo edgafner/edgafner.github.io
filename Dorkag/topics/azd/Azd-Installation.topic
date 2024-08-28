@@ -87,6 +87,9 @@
             <li>
                 <p>vso.security_manage</p>
             </li>
+            <li>
+                <p>vso.test</p>
+            </li>
         </list>
 
         <warning>
