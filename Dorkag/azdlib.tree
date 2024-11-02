@@ -4,7 +4,7 @@
 
 <instance-profile id="azdlib"
                   name="azdlib"
-                  start-page="Azd.topic">
+                  start-page="Pull-Request-Details.topic">
 
 
     <snippet id="azdsn.tree">
@@ -12,7 +12,9 @@
             <toc-element topic="Azd-Installation.topic"/>
             <toc-element topic="Azd-Manage-projects-hosted-on-Azure-DevOps.topic"/>
             <toc-element topic="Azd-Settings-Configuration.topic"/>
-            <toc-element topic="Work-with-Azure-DevOps-pull-requests.topic"/>
+            <toc-element topic="Work-with-Azure-DevOps-pull-requests.topic">
+                <toc-element topic="Pull-Request-Details.topic"/>
+            </toc-element>
             <toc-element topic="Azure-DevOps-Pipelines.topic"/>
             <toc-element topic="Azd-Reference-And-Support.topic"/>
             <toc-element topic="Azd-FAQ.topic"/>

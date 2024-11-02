@@ -1,68 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Azd Settings Configuration" id="Azd-Settings-Configuration">
-  <primary-label ref="azd"/>
-  <p>
-    Under
-    <ui-path>Settings | Version Control | Azure DevOps</ui-path>
-    , you can configure the plugin in different ways.
-  </p>
-
-  <chapter title="General Configuration" id="general-configuration">
-    <p>The following options are available:</p>
-    <deflist>
-      <def title="Show all Projects members" id="show-all-projects-members">
-        <p>When disabled, only users that belong to the current repository's project are shown. Enabling this option
-          will display all members across different projects, not just those from the current project. Be aware that
-          enabling this feature may affect performance, especially if there are a large number of users across
-          projects.</p>
-      </def>
-      <def title="Send usage and exceptions statistics" id="send-usage-and-exceptions-statistics">
-        <p>When enabled, you help improve the plugin by sending anonymous data about exceptions and action statistics. Note that this will not include personal data or sensitive information.</p>
-      </def>
-    </deflist>
-
-  </chapter>
-
-  <chapter title="UI Customization" id="ui-customization">
-
+    <primary-label ref="azd"/>
     <p>
-      You can customize the appearance of the plugin by changing the following settings:
+        Under
+        <ui-path>Settings | Version Control | Azure DevOps</ui-path>
+        , you can configure the plugin in different ways.
     </p>
 
-    <deflist>
-      <def title="Adopt Azure DevOps UI style" id="adopt-azure-devops-ui-style">
-        <p>When enabled, this option to change the plugin UI to look more like Azure DevOps UI.</p>
-        <p>This adjustment will align the
-          visual elements and layout of the plugin with Azure DevOps, offering a more familiar interface for Azure
-          DevOps users.</p>
-
-        <img src="azd-ui_like_settings.png" alt="azd-ui_like_settings" style="inline" border-effect="line"/>
-        <note>It may require a restart of the IDE to apply the changes.
+    <chapter title="Azure DevOps" id="general-azure-devops-configuration">
+        <p>Here you can add or remove Azure DevOps accounts</p>
+        <note>If you log in from this section, you will need to add the Azure DevOps Organization/Collection
+            name to be included in the URL.
         </note>
-      </def>
-    </deflist>
+        <deflist>
+            <def title="Clone Git Using SSH" id="clone-git-using-ssh">
+                <p>When enabled, the plugin will use SSH to clone Git repositories from Azure DevOps.</p>
+            </def>
+            <def title="Automatically mark opened files as viewed" id="automatically-mark-opened-files-as-viewed">
+                <p>When enabled, the plugin will automatically mark opened files as viewed
+                    when you open them in the editor.
+
+                </p>
+                <warning>The marked as view is not sync with Azure DevOps as this data cannot be provided with
+                    the current API.
+                </warning>
+            </def>
+            <def title="Enable automatic update" id="enable-automatic-update">
+                <p>When enabled, the plugin will automatically check for updates when Pull Request details are
+                    opened.
+                    You can set the update interval in the settings.</p>
+            </def>
+        </deflist>
+    </chapter>
+    <chapter title="General Preferences Configuration" id="general-configuration">
+        <p>The following options are available:</p>
+        <deflist>
+            <def title="Show all Projects members" id="show-all-projects-members">
+                <p>When disabled, only users that belong to the current repository's project are shown.Enabling this
+                    option
+                    will display all members across different projects, not just those from the current project.Be
+                    aware that
+                    enabling this feature may affect performance, especially if there are a large number of users across
+                    projects.</p>
+            </def>
+            <def title="Respect Proxy Configuration" id="respect-proxy-configuration">
+                <p>When enabled, the plugin will use the proxy settings configured in the IDE.This is useful when you
+                    are
+                    behind a proxy server and need to access Azure DevOps services.</p>
+            </def>
+            <def title="Send usage and exceptions statistics" id="send-usage-and-exceptions-statistics">
+                <p>When enabled, you help improve the plugin by sending anonymous data about exceptions and action
+                    statistics.Note that this will not include personal data or sensitive information.</p>
+            </def>
+        </deflist>
+
+    </chapter>
+
+    <chapter title="UI Customization" id="ui-customization">
+
+        <p>
+            You can customize the appearance of the plugin by changing the following settings:
+        </p>
+
+        <deflist>
+            <def title="Adopt Azure DevOps UI style" id="adopt-azure-devops-ui-style">
+                <p>When enabled, this option to change the plugin UI to look more like Azure DevOps UI.</p>
+                <p>This adjustment will align the
+                    visual elements and layout of the plugin with Azure DevOps, offering a more familiar interface for
+                    Azure
+                    DevOps users.</p>
+
+                <img src="azd-ui_like_settings.png" alt="azd-ui_like_settings" style="inline" border-effect="line"/>
+                <note>It may require a restart of the IDE to apply the changes.
+                </note>
+            </def>
+        </deflist>
 
 
-  </chapter>
+    </chapter>
 
-  <chapter title="Boards and Work Items" id="boards-and-work-items">
+    <chapter title="Boards and Work Items" id="boards-and-work-items">
 
-    <p>
-      The following options are available:
-    </p>
+        <p>
+            The following options are available:
+        </p>
 
-    <deflist>
-      <def title="Show work Items from all Projects" id="show-work-items-from-all-projects">
-        <p>When enabled, work items from other projects available in the selected Organization/Collection will be
-          displayed for linking Pull Requests.</p>
-        <img src="link_work_item_panel.png" alt="link_work_item_panel" style="block" thumbnail="true" />
-      </def>
-    </deflist>
+        <deflist>
+            <def title="Show work Items from all Projects" id="show-work-items-from-all-projects">
+                <p>When enabled, work items from other projects available in the selected Organization/Collection will
+                    be
+                    displayed for linking Pull Requests.</p>
+                <img src="link_work_item_panel.png" alt="link_work_item_panel" style="block" thumbnail="true"/>
+            </def>
+        </deflist>
 
 
-  </chapter>
+    </chapter>
+
+    <chapter title="Pipeline and Tests" id="pipeline-and-tests">
+
+        <p>
+            The following options are available:
+        </p>
+
+        <deflist>
+            <def title="Show Pipelines from all repositories" id="show-all-pipelines">
+                <p>By default, only pipelines from the current repository are displayed in the plugin.
+                    When enabled,
+                    all pipelines will be displayed in the plugin.</p>
+            </def>
+            <def title="Tests Extension" id="test-extension">
+                <p>This text field helps the plugin to identify a local Test and connect to the Azure DevOps
+                    Test response body to enable a smooth navigation between the test show
+                    from the AZD Pipeline UI.
+                </p>
+                <img src="test_context.png" alt="test_context" style="block" thumbnail="true"/>
+            </def>
+        </deflist>
+    </chapter>
 </topic>
