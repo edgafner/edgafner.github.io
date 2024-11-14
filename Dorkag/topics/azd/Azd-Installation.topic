@@ -56,41 +56,94 @@
     <chapter title="Generating a Personal Access Token for the Azd Plugin" id="generate_pat">
         <p> To properly connect to your Azure DevOps account, you will need to generate a Personal Access Token
             (PAT) with the following scopes:</p>
-        <list type="bullet" columns="2" sorted="asc">
-            <li>
-                <p>vso.code_write</p>
-            </li>
-            <li>
-                <p>vso.code_status</p>
-            </li>
-            <li>
-                <p>vso.graph</p>
-            </li>
-            <li>
-                <p>vso.build_execute</p>
-            </li>
-            <li>
-                <p>vso.identity</p>
-            </li>
-            <li>
-                <p>vso.project</p>
-            </li>
-            <li>
-                <p>vso.threads_full</p>
-            </li>
-            <li>
-                <p>vso.profile</p>
-            </li>
-            <li>
-                <p>vso.work_write</p>
-            </li>
-            <li>
-                <p>vso.security_manage</p>
-            </li>
-            <li>
-                <p>vso.test</p>
-            </li>
-        </list>
+        <table style="header-row">
+            <tr>
+                <td>REST API Scope Name</td>
+                <td>Azure DevOps Portal Scope</td>
+                <td>Description</td>
+            </tr>
+            <tr>
+                <td>vso.code_write</td>
+                <td>Code (Read &amp; write)</td>
+                <td>
+                    Allows the plugin reading and writing code, including cloning repositories and pushing changes.
+                    Needed for interacting with the source code in repositories.
+                </td>
+            </tr>
+            <tr>
+                <td>vso.code_status</td>
+                <td>Code (Status)</td>
+                <td>
+                    Allows the plugin reading and updating the build and release status associated with a commit.
+                    Needed for updating pull request statuses and build statuses.
+                </td>
+            </tr>
+            <tr>
+                <td>vso.graph</td>
+                <td>Graph (Read)</td>
+                <td>
+                    Allows the plugin reading graph data such as users, groups, and memberships.
+                    Needed for rendering identity and membership in the UI.
+                </td>
+            </tr>
+            <tr>
+                <td>vso.build_execute</td>
+                <td>Build (Read &amp; execute)</td>
+                <td>
+                    Allows the plugin reading build definitions and queues, and queuing builds.
+                    Needed for triggering and monitoring builds.
+                </td>
+            </tr>
+            <tr>
+                <td>vso.identity</td>
+                <td>Identity (Read)</td>
+                <td>
+                    Allows the plugin reading identity information, including users and groups.
+                    Needed for retrieving user profiles and identity details.
+                </td>
+            </tr>
+            <tr>
+                <td>vso.project</td>
+                <td>Project and Team (Read, write, &amp; manage)</td>
+                <td>
+                    Allows the plugin managing projects and teams.
+                    Needed for interacting with project-level data, settings, and policies.
+                </td>
+            </tr>
+            <tr>
+                <td>vso.threads_full</td>
+                <td>Pull Request and Threads (Read &amp; write</td>
+                <td>
+                    Allows the plugin full access to code discussions and comments (threads) in pull requests.
+                    Needed for managing comments and discussions on code and pull requests.
+                </td>
+            </tr>
+            <tr>
+                <td>vso.profile</td>
+                <td>Profile (Read)</td>
+                <td>
+                    Allows the plugin reading your profile information.
+                    Needed for displaying user profile details within the plugin.
+                </td>
+            </tr>
+            <tr>
+                <td>vso.work_write</td>
+                <td>Work Items (Read &amp; write)</td>
+                <td>
+                    Allows the plugin reading and writing work items.
+                    Needed for creating and updating tasks, bugs, and other work items.
+                </td>
+            </tr>
+            <tr>
+                <td>vso.test</td>
+                <td>Test Management (Read)</td>
+                <td>
+                    Allows the plugin reading test plans, suites, cases, and results.
+                    Needed for accessing test management features and data.
+                </td>
+            </tr>
+        </table>
+
 
         <warning>
             <p>Due to an unresolved issue with the Microsoft Azure DevOps team, you must create the PAT with the
@@ -184,7 +237,8 @@
                                 Organization/Collection name automatically to server URL, so you will have to fill that
                                 manually,
                             </p>
-                            <p>For clarification, the above image shows the URL without the organization name so the user
+                            <p>For clarification, the above image shows the URL without the organization name so the
+                                user
                                 must add it
                                 manually to successfully connect to the Azure DevOps.
                             </p>
