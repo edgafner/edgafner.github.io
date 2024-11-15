@@ -3,8 +3,10 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Work with Azure DevOps pull requests" id="Work-with-Azure-DevOps-pull-requests">
+       title="Work with Pull Requests" id="Work-with-Azure-DevOps-pull-requests">
+
     <primary-label ref="azd"/>
+    <secondary-label ref="2024.3"/>
     <p>
         Pull requests are used in open-source projects or in some corporate workflows to manage changes from
         contributors
@@ -48,7 +50,7 @@
             <step>
                 <p>Click the name of the target repository on the left.
                     In the popup that opens, specify the branch to which you want to apply your changes.
-                <img src="click_target_name_pr_create.png" alt="click_target_name_pr_create" style="block"/>
+                    <img src="click_target_name_pr_create.png" alt="click_target_name_pr_create" style="block"/>
                 </p>
             </step>
             <step>
@@ -56,7 +58,7 @@
                     that
                     contains
                     the changes you want to apply.
-                <img src="click_source_name_pr_create.png" alt="click_source_name_pr_create" style="block"/>
+                    <img src="click_source_name_pr_create.png" alt="click_source_name_pr_create" style="block"/>
                 </p>
                 <p>
                     If you have a project that uses multiple remote repositories, you can change the head repository in
@@ -106,8 +108,8 @@
         </p>
         <img src="manage_pr_list.png" alt="manage_pr_list" thumbnail="true" style="block"/>
         <p>Use the
-            <ui-path>Azure DevOps Pull Requests</ui-path>
-            toolwindow to:
+            <ui-path>Azure DevOps PullRequest</ui-path>
+            tool window to:
         </p>
         <list>
             <li>
@@ -135,12 +137,11 @@
                 and choose
                 <ui-path>Checkout 'branch name'…</ui-path>
                 in the context menu.
-                <img src="create_local_branch_based_on_source.png" alt="create_local_branch_based_on_source" style="block" thumbnail="true"/>
+                <img src="create_local_branch_based_on_source.png" alt="create_local_branch_based_on_source"
+                     style="block" thumbnail="true"/>
             </li>
         </list>
     </chapter>
-
-
 
 
 </topic>

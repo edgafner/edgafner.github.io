@@ -3,11 +3,14 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Pull Request Details" id="Pull-Request-Details">
-
-
+       title="Pull Request Review" id="Pull-Request-Details">
+    <primary-label ref="azd"/>
+    <secondary-label ref="2024.3"/>
     <chapter title="Pull Request Timeline" id="pull_request_timeline">
-        <p>The timeline provides a chronological overview of significant events and interactions within a pull request.
+        <p>When it comes to reviewing code changes, the pull request timeline is an essential tool for tracking the
+            progression of a pull request.</p>
+        <p>
+            The timeline provides a chronological overview of significant events and interactions within a pull request.
             It's
             a key
             tool for tracking
@@ -75,6 +78,59 @@
 
     </chapter>
 
+    <chapter title="Review Actions" id="review-actions">
+        <p>
+            With AZD you can review a Pull Request without leaving your IDE, it lets you do all the following:
+        </p>
+        <deflist collapsible="true">
+            <def title="Comment Actions" id="comment">
+                <p>Comment on a change made by the author, or comment on the Pull Request as a whole.<br/>
+                    <img src="commentPRLevel.png" alt="comment-on-pr" style="block" border-effect="line"/>
+                    You can reply, edit, delete your comments, or thumbs up the comments left by others.
+                </p>
+                <p>You can resolve a comment with all the statuses comment supported in Azure DevOps.</p>
+                <note>
+                    Version 2024.3.1+ you can also mention a user in your comment.
+                </note>
+            </def>
+            <def title="Vote Actions" id="vote">
+                <p>Approve, Approve with suggestions, Reset your vote, Wait for changes or Reject the Pull Request.<br/>
+                </p>
+                <img src="vote_status_options.png" alt="approve-reject"/>
+            </def>
+            <def title="Request Review Actions" id="request-review">
+                <p>Request a review from a specific reviewer or from all reviewers.<br/>
+                </p>
+                <img src="request-review.png" alt="request-review"/>
+            </def>
+            <def title="Merge Actions" id="merge">
+                <p>Merge, Rebase, Squash the Pull Request, or close it without merging.<br/>
+                    <img src="merge_operations.png" alt="merge-pr" style="block" theme="dark"
+                         border-effect="line"/> <br/>
+                    You can also delete the source branch after merging,
+                    edit the merge commit message, and choose to close associated work items.
+                </p>
+
+                <note>From version 2024.3.8, you can set Auto Complete with setting the Merge strategy
+                    following the same capability as in the Azure DevOps portal
+                    <img src="set-auto-complete.png" alt="set-auto-complete" border-effect="line"/>
+                </note>
+            </def>
+            <def title="Publish Draft Actions" id="publish-draft">
+                <p>When you are ready to share your draft Pull Request, you can publish it to make it visible to others.
+                    You can also go the other way around and save a published Pull Request as a draft.
+                </p>
+                <img src="publish_draft_actions.png" alt="publish-draft"/>
+            </def>
+            <def title="Description Actions" id="description">
+                <p>Edit the description of the Pull Request, or add a description if it's missing.
+                </p>
+                When creating the PR from the IDE, AZD is filling the description with the commit messages.
+                You can edit the description before triggering the PR creation.
+            </def>
+
+        </deflist>
+    </chapter>
     <chapter title="View and apply the suggested changes" id="view_and_apply_changes">
         <p>If the maintainers of the original repository left comments or made suggestions with regard to your changes,
             you
@@ -89,7 +145,8 @@
             <step>
                 <p>In the list of pull requests, select the one you want to work with and double-click it.</p>
                 <p>The IDE opens an overview of the selected pull request.
-                    <img src="view_and_apply_single_pr.png" alt="view_and_apply_single_pr" style="block" thumbnail="true"/>
+                    <img src="view_and_apply_single_pr.png" alt="view_and_apply_single_pr" style="block"
+                         thumbnail="true"/>
                 </p>
                 <list>
                     <li><p>Next to the title, there is the pull request id number. Click it if you want to open the pull

@@ -3,8 +3,10 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Azd Settings Configuration" id="Azd-Settings-Configuration">
+       title="Settings Configuration" id="Azd-Settings-Configuration">
+
     <primary-label ref="azd"/>
+    <secondary-label ref="2024.3"/>
     <p>
         Under
         <ui-path>Settings | Version Control | Azure DevOps</ui-path>
@@ -40,9 +42,11 @@
         <p>The following options are available:</p>
         <deflist>
             <def title="Show all Projects members" id="show-all-projects-members">
-                <p>When disabled, only users that belong to the current repository's project are shown.Enabling this
+                <p>When disabled, only users that belong to the current repository's project are shown.
+                    Enabling this
                     option
-                    will display all members across different projects, not just those from the current project.Be
+                    will display all members across different projects, not just those from the current project.
+                    Be
                     aware that
                     enabling this feature may affect performance, especially if there are a large number of users across
                     projects.</p>
@@ -54,7 +58,8 @@
             </def>
             <def title="Send usage and exceptions statistics" id="send-usage-and-exceptions-statistics">
                 <p>When enabled, you help improve the plugin by sending anonymous data about exceptions and action
-                    statistics.Note that this will not include personal data or sensitive information.</p>
+                    statistics.Note that this will not include personal data or sensitive
+                    information.</p>
             </def>
         </deflist>
 

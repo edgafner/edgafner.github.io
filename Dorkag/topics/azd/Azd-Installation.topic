@@ -3,12 +3,17 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Azd Installation" id="Azd-Installation" help-id="Installation">
+       title="Installation" id="Azd-Installation" help-id="Installation">
+
     <primary-label ref="azd"/>
-    <p>Installing the Azd plugin is straightforward. This guide will walk you through the process of installing the
-        plugin
-        and connecting it to your Azure DevOps account.
+    <p>Installing the AZD plugin is straightforward.
+        This guide will walk you through the process of installing the
+        plugin and connecting it to your Azure DevOps account.<br/>
+        For more information on JetBrains' plugins' installation, refer to the official
+        <a href="https://www.jetbrains.com/help/idea/managing-plugins.html">documentation</a>.
     </p>
+
+    <secondary-label ref="2024.3"/>
 
     <note>
         <p>
@@ -18,233 +23,358 @@
             <control>Azure DevOps Service</control>
             or
             <control>Azure DevOps Server (version 2020+)</control>
-            account
+            account.
         </p>
     </note>
 
-    <chapter title="Install the Azd plugin" id="install">
-        <procedure id="azd-installation">
-            <step><p>Open JetBrains IDE
-            </p>
+    <chapter title="Install the AZD plugin" id="install">
+        <tabs>
+            <tab title="From IDE Settings" id="from-ide-settings">
+                <procedure id="azd-installation-procedure">
+                    <step><p>Open JetBrains IDE.</p>
+                        <list type="bullet">
+                            <li>
+                                <p>Open your JetBrains' IDE and navigate to the
+                                    <ui-path>Plugins</ui-path>
+                                    section under the Settings dialog.
+                                </p>
+                            </li>
+                        </list>
+                    </step>
+                    <step><p>Search for Azd Plugin.</p>
+                        <list type="bullet">
+                            <li>
+                                <p>Under the plugins' marketplace tab search, type in
+                                    <ui-path>Azd</ui-path>
+                                    and click on the
+                                    <ui-path>Install</ui-path>
+                                    button.
+                                </p>
+                            </li>
+                            <li><p>Wait for the installation to complete and restart your IDE when prompted.</p>
+                            </li>
+                        </list>
+                    </step>
+                </procedure>
+            </tab>
+            <tab title="From AZD Marketplace Page" id="from-azd-marketplace-page">
+                <p>You can also install the plugin from the JetBrains' marketplace.</p>
                 <list type="bullet">
                     <li>
-                        <p>Launch your JetBrains IDE and navigate to the
-                            <ui-path>Plugins</ui-path>
-                            section.
+                        <p>Open the <a href="https://plugins.jetbrains.com/plugin/22319-azd">AZD plugin webpage</a> on
+                            the
+                            JetBrains' marketplace.
                         </p>
                     </li>
-                </list>
-            </step>
-            <step><p>Search for Azd Plugin
-            </p>
-                <list type="bullet">
                     <li>
-                        <p>Under the plugins' marketplace tab search, type in
-                            <ui-path>Azd</ui-path>
-                            and click on the
+                        <p>Click on the
                             <ui-path>Install</ui-path>
-                            button.
+                            or
+                            <ui-path>Download</ui-path>
+                            button and follow the installation instructions.
                         </p>
                     </li>
-                    <li><p>Wait for the installation to complete and restart your IDE when prompted.</p>
-                    </li>
                 </list>
-            </step>
-        </procedure>
+            </tab>
+        </tabs>
     </chapter>
 
-    <chapter title="Generating a Personal Access Token for the Azd Plugin" id="generate_pat">
-        <p> To properly connect to your Azure DevOps account, you will need to generate a Personal Access Token
-            (PAT) with the following scopes:</p>
-        <table style="header-row">
-            <tr>
-                <td>REST API Scope Name</td>
-                <td>Azure DevOps Portal Scope</td>
-                <td>Description</td>
-            </tr>
-            <tr>
-                <td>vso.code_write</td>
-                <td>Code (Read &amp; write)</td>
-                <td>
-                    Allows the plugin reading and writing code, including cloning repositories and pushing changes.
-                    Needed for interacting with the source code in repositories.
-                </td>
-            </tr>
-            <tr>
-                <td>vso.code_status</td>
-                <td>Code (Status)</td>
-                <td>
-                    Allows the plugin reading and updating the build and release status associated with a commit.
-                    Needed for updating pull request statuses and build statuses.
-                </td>
-            </tr>
-            <tr>
-                <td>vso.graph</td>
-                <td>Graph (Read)</td>
-                <td>
-                    Allows the plugin reading graph data such as users, groups, and memberships.
-                    Needed for rendering identity and membership in the UI.
-                </td>
-            </tr>
-            <tr>
-                <td>vso.build_execute</td>
-                <td>Build (Read &amp; execute)</td>
-                <td>
-                    Allows the plugin reading build definitions and queues, and queuing builds.
-                    Needed for triggering and monitoring builds.
-                </td>
-            </tr>
-            <tr>
-                <td>vso.identity</td>
-                <td>Identity (Read)</td>
-                <td>
-                    Allows the plugin reading identity information, including users and groups.
-                    Needed for retrieving user profiles and identity details.
-                </td>
-            </tr>
-            <tr>
-                <td>vso.project</td>
-                <td>Project and Team (Read, write, &amp; manage)</td>
-                <td>
-                    Allows the plugin managing projects and teams.
-                    Needed for interacting with project-level data, settings, and policies.
-                </td>
-            </tr>
-            <tr>
-                <td>vso.threads_full</td>
-                <td>Pull Request and Threads (Read &amp; write</td>
-                <td>
-                    Allows the plugin full access to code discussions and comments (threads) in pull requests.
-                    Needed for managing comments and discussions on code and pull requests.
-                </td>
-            </tr>
-            <tr>
-                <td>vso.profile</td>
-                <td>Profile (Read)</td>
-                <td>
-                    Allows the plugin reading your profile information.
-                    Needed for displaying user profile details within the plugin.
-                </td>
-            </tr>
-            <tr>
-                <td>vso.work_write</td>
-                <td>Work Items (Read &amp; write)</td>
-                <td>
-                    Allows the plugin reading and writing work items.
-                    Needed for creating and updating tasks, bugs, and other work items.
-                </td>
-            </tr>
-            <tr>
-                <td>vso.test</td>
-                <td>Test Management (Read)</td>
-                <td>
-                    Allows the plugin reading test plans, suites, cases, and results.
-                    Needed for accessing test management features and data.
-                </td>
-            </tr>
-        </table>
+    <chapter title="Generating a Personal Access Token for the AZD Plugin" id="generate_pat">
+        <note>From version
+            <ui-path>2024.3.8</ui-path>
+            of the plugin, we reduce the required scopes to the minimum necessary for the
+            plugin to work.
+        </note>
+        <p> To properly connect to your Azure DevOps account, you will need to generate a
+            Personal Access Token (A.K.A
+            <ui-path>PAT</ui-path>
+            )
+            with the following scopes:
+        </p>
+        <list columns="2" type="bullet">
+            <li>vso.build_execute</li>
+            <li>vso.code_status</li>
+            <li>vso.code_write</li>
+            <li>vso.graph</li>
+            <li>vso.identity</li>
+            <li>vso.profile</li>
+            <li>vso.project</li>
+            <li>vso.test</li>
+            <li>vso.threads_full</li>
+            <li>vso.work_write</li>
+        </list>
+        <chapter title="More details about each scope" id="more-details-about-each-scope" collapsible="true">
+            <table style="header-row" border="true">
+                <tr>
+                    <td>REST API Scope Name</td>
+                    <td>Azure DevOps Portal Scope</td>
+                    <td>Description</td>
+                </tr>
+                <tr>
+                    <td>vso.code_write</td>
+                    <td>Code (Read &amp; write)</td>
+                    <td>
+                        Allows the plugin reading and writing code, including cloning repositories and pushing changes.
+                        Needed for interacting with the source code in repositories.
+                    </td>
+                </tr>
+                <tr>
+                    <td>vso.code_status</td>
+                    <td>Code (Status)</td>
+                    <td>
+                        Allows the plugin reading and updating the build and release status associated with a commit.
+                        Needed for updating pull request statuses and build statuses.
+                    </td>
+                </tr>
+                <tr>
+                    <td>vso.graph</td>
+                    <td>Graph (Read)</td>
+                    <td>
+                        Allows the plugin reading graph data such as users, groups, and memberships.
+                        Needed for rendering identity and membership in the UI.
+                    </td>
+                </tr>
+                <tr>
+                    <td>vso.build_execute</td>
+                    <td>Build (Read &amp; execute)</td>
+                    <td>
+                        Allows the plugin reading build definitions and queues, and queuing builds.
+                        Needed for triggering and monitoring builds.
+                    </td>
+                </tr>
+                <tr>
+                    <td>vso.identity</td>
+                    <td>Identity (Read)</td>
+                    <td>
+                        Allows the plugin reading identity information, including users and groups.
+                        Needed for retrieving user profiles and identity details.
+                    </td>
+                </tr>
+                <tr>
+                    <td>vso.project</td>
+                    <td>Project and Team (Read, write, &amp; manage)</td>
+                    <td>
+                        Allows the plugin managing projects and teams.
+                        Needed for interacting with project-level data, settings, and policies.
+                    </td>
+                </tr>
+                <tr>
+                    <td>vso.threads_full</td>
+                    <td>Pull Request and Threads (Read &amp; write</td>
+                    <td>
+                        Allows the plugin full access to code discussions and comments (threads) in pull requests.
+                        Needed for managing comments and discussions on code and pull requests.
+                    </td>
+                </tr>
+                <tr>
+                    <td>vso.profile</td>
+                    <td>Profile (Read)</td>
+                    <td>
+                        Allows the plugin reading your profile information.
+                        Needed for displaying user profile details within the plugin.
+                    </td>
+                </tr>
+                <tr>
+                    <td>vso.work_write</td>
+                    <td>Work Items (Read &amp; write)</td>
+                    <td>
+                        Allows the plugin reading and writing work items.
+                        Needed for creating and updating tasks, bugs, and other work items.
+                    </td>
+                </tr>
+                <tr>
+                    <td>vso.test</td>
+                    <td>Test Management (Read)</td>
+                    <td>
+                        Allows the plugin reading test plans, suites, cases, and results.
+                        Needed for accessing test management features and data.
+                    </td>
+                </tr>
+            </table>
+        </chapter>
 
 
-        <warning>
-            <p>Due to an unresolved issue with the Microsoft Azure DevOps team, you must create the PAT with the
-                <ui-path>Organizations ComboBox</ui-path>
-                option set to
-                <ui-path>All Accessible organizations</ui-path>
-                .Otherwise, the plugin will not be able to authenticate with the Azure DevOps server.
-            </p>
-            <img src="all_organization_pat.png" alt="all_organization_pat"/>
-        </warning>
+        <chapter title="PAT Accessibility" id="all-accessible-organization" collapsible="true">
+            <tabs>
+                <tab title="2024.3.8+" id="2024-3-8">
+                    <p>You can now restrict the
+                        <ui-path>PAT</ui-path>
+                        to a specific organization, and the plugin
+                        will work as expected.
+                    </p>
+                </tab>
+                <tab title="Earlier version" id="earlier-version">
+                    <p>Due to an unresolved issue with the Microsoft Azure DevOps team, you must create the PAT with the
+                        <ui-path>Organizations ComboBox</ui-path>
+                        option set to
+                        <ui-path>All Accessible organizations</ui-path>
+                        .Otherwise, the plugin will not be able to authenticate with the Azure DevOps server.
+                    </p>
+                    <warning title="Important Note">
+                        <p>Due to an unresolved issue with the Microsoft Azure DevOps team, you must create the PAT with
+                            the
+                            <ui-path>Organizations ComboBox</ui-path>
+                            option set to
+                            <ui-path>All Accessible organizations</ui-path>
+                            .Otherwise, the plugin will not be able to authenticate with the Azure DevOps server.
+                        </p>
+                        <img src="all_organization_pat.png" alt="all_organization_pat"/>
+                    </warning>
+                </tab>
+            </tabs>
 
-
+        </chapter>
     </chapter>
 
     <chapter title="Connect to Azure DevOps" id="connect">
         <p>Now that the IDE is running with the
-            <ui-path>Azd</ui-path>
+            <ui-path>AZD</ui-path>
             plugin, and you have your
             <ui-path>PAT</ui-path>
             ready, you can connect to your
             <ui-path>Azure DevOps</ui-path>
             account.
         </p>
-        <p>You can Log in either from the
+        <p>You can
+            <ui-path>Log in</ui-path>
+            either from the
             <ui-path>ToolWindow</ui-path>
             or from the
             <ui-path>Settings</ui-path>
-            :
+            <br/>
+            Follow the procedure below to connect to your Azure DevOps account.
+
         </p>
         <tabs>
-            <tab title="ToolWindow" id="toolwindow">
-                <procedure title="Login from Azure DevOps ToolWindow" id="login-from-toolwindow">
-                    <step>
-                        <p>Open the Azd ToolWindow:
-                            <img src="pat_from_toolWindow.png" alt="pat_from_toolWindow" border-effect="line"
-                                 style="block"/>
-                        </p>
-                    </step>
-                    <step>
-                        <p>Click on the
-                            <ui-path>Login</ui-path>
-                            button to add a new Azure DevOps account.
-                        </p>
-                    </step>
-                    <step>
-                        <p>In the
-                            <ui-path>Add AZD Account</ui-path>
-                            panel set the url and your secret
-                            <ui-path>PAT.</ui-path>
-                            <img src="azd_login_panel_toolWindow.png" alt="azd_login_panel_toolWindow"
-                                 border-effect="line" style="block"/>
-                        </p>
-                        <note>
-                            <p>
-                                <control>Note</control>
-                            </p>
-                            <p>When connecting from the toolwindow, the plugins append the detected Azure Devops'
-                                Organization/Collection name automatically. So only in case you have multiple
-                                organizations and the
-                                selected one is not the one you want to connect to, you will have to change it manually.
-                            </p>
-                        </note>
-                    </step>
-                </procedure>
+            <tab title="Azure DevOps Service" id="azure-devops-service">
+                <tabs>
+                    <tab title="ToolWindow" id="azure-devops-service-toolwindow">
+                        <procedure title="Login from Azure DevOps ToolWindow" id="login-from-toolwindow-service">
+                            <step>
+                                <p>Open the Azd ToolWindow:
+                                    <img src="pat_from_toolWindow.png" alt="pat_from_toolWindow" border-effect="line"
+                                         style="block"/>
+                                </p>
+                            </step>
+                            <step>
+                                <p>Click on the
+                                    <ui-path>Login</ui-path>
+                                    button to add a new Azure DevOps account.
+                                </p>
+                            </step>
+                            <step>
+                                <p>In the
+                                    <b>Add AZD Account</b>
+                                    dialog, change the Server URL if needed, and paste your personal Token.
+                                    <img src="azd_login_panel_toolWindow.png" alt="azd_login_panel_toolWindow"
+                                         border-effect="line" style="block"/>
+                                </p>
+                            </step>
+                        </procedure>
+                    </tab>
+                    <tab title="Settings" id="azure-devops-service-settings">
+                        <procedure title="Login from Azure DevOps Settings" id="login-from-settings">
+                            <step>
+                                <p>Navigate to:
+                                    <ui-path>Settings | Version Control | Azure DevOps</ui-path>
+                                    <img src="azd_main_settings.png" alt="azd_main_settings" border-effect="line"
+                                         style="block"/>
+                                </p>
+                            </step>
+                            <step>
+                                <p>Click on <img src="add.svg" alt="add"/> button to add a new Azure DevOps account.
+                                </p>
+                            </step>
+                            <step>
+                                <p>In the
+                                    <ui-path>Add AZD Account</ui-path>
+                                    dialog,
+                                    set the url and add your personal token.
+                                    <img src="azd_add_account_panel_settings.png" alt="azd_add_account_panel_settings"
+                                         border-effect="line" style="block"/>
+                                </p>
+                            </step>
+                        </procedure>
+                    </tab>
+                </tabs>
+                <warning title="Important">
+                    <list type="bullet">
+                        <li>When connecting from the <b>AZD Toolwindow</b>, the plugins detect and append your Azure
+                            Devops organization name (only if necessary, see a bullet below).<br/>
+                            When connecting from the <b>Settings Dialog</b>, the plugin does not append the Azure
+                            Devops organization name
+                            because it can't detect the organization name during the Settings
+                            session,
+                            so <b>you will have to fill that</b>.
+                        </li>
+                        <li> For some legacy organizations, the new Azure DevOps base URL
+                            <ui-path>
+                                <b>https://dev.azure.com</b>
+                            </ui-path>
+                            might not work.
+                            If this is your case, the format should be:
+                            <ui-path><b>https://
+                                <emphasis>ORGANIZATION_NAME</emphasis>
+                                .visualstudio.com
+                            </b></ui-path>
+
+                            For this case, there is no need to append the organization name manually.
+                        </li>
+                    </list>
+                </warning>
             </tab>
-            <tab title="Settings" id="settings">
-                <procedure title="Login from Azure DevOps Settings" id="login-from-settings">
-                    <step>
-                        <p>Navigate to:
-                            <ui-path>Settings | Version Control | Azure DevOps</ui-path>
-                            <img src="azd_main_settings.png" alt="azd_main_settings" border-effect="line"
-                                 style="block"/>
-                        </p>
-                    </step>
-                    <step>
-                        <p>Click on <img src="add.svg" alt="add"/> button to add a new Azure DevOps account.
-                        </p>
-                    </step>
-                    <step>
-                        <p>In the
-                            <ui-path>Add AZD Account</ui-path>
-                            panel set the url and your secret PAT.
-                            <img src="azd_add_account_panel_settings.png" alt="azd_add_account_panel_settings"
-                                 border-effect="line" style="block"/>
-                        </p>
-                        <warning>
-                            <p>
-                                <control>Important</control>
-                            </p>
-                            <p>When connecting from the settings, the plugin does not append the Azure Devops'
-                                Organization/Collection name automatically to server URL, so you will have to fill that
-                                manually,
-                            </p>
-                            <p>For clarification, the above image shows the URL without the organization name so the
-                                user
-                                must add it
-                                manually to successfully connect to the Azure DevOps.
-                            </p>
-                        </warning>
-                    </step>
-                </procedure>
+            <tab title="Azure DevOps Server" id="azure-devops-server">
+                <tabs>
+                    <tab title="ToolWindow" id="azure-devops-server-toolwindow">
+                        <procedure title="Login from Azure DevOps ToolWindow" id="login-from-toolwindow-server">
+                            <step>
+                                <p>Open the Azd ToolWindow:
+                                    <img src="pat_from_toolWindow.png" alt="pat_from_toolWindow" border-effect="line"
+                                         style="block"/>
+                                </p>
+                            </step>
+                            <step>
+                                <p>Click on the
+                                    <ui-path>Login</ui-path>
+                                    button to add a new Azure DevOps account.
+                                </p>
+                            </step>
+                            <step>
+                                <p>In the
+                                    <b>Add AZD Account</b>
+                                    dialog, change the Server URL if needed, and paste your personal Token.
+                                    <img src="azd_login_panel_server_toolwindow.png" alt="azd_login_panel_toolWindow"
+                                         border-effect="line" style="block"/>
+                                </p>
+                            </step>
+                        </procedure>
+                    </tab>
+                    <tab title="Settings" id="azure-devops-server-settings">
+                        <procedure title="Login from Azure DevOps Settings" id="login-from-settings-service">
+                            <step>
+                                <p>Navigate to:
+                                    <ui-path>Settings | Version Control | Azure DevOps</ui-path>
+                                    <img src="azd_main_settings.png" alt="azd_main_settings" border-effect="line"
+                                         style="block"/>
+                                </p>
+                            </step>
+                            <step>
+                                <p>Click on <img src="add.svg" alt="add"/> button to add a new Azure DevOps account.
+                                </p>
+                            </step>
+                            <step>
+                                <p>In the
+                                    <ui-path>Add AZD Account</ui-path>
+                                    panel set the url and your secret PAT.
+                                    <img src="azd_add_account_panel_server_settings.png"
+                                         alt="azd_add_account_panel_settings"
+                                         border-effect="line" style="block"/>
+                                </p>
+                            </step>
+                        </procedure>
+                    </tab>
+                </tabs>
+
             </tab>
         </tabs>
     </chapter>

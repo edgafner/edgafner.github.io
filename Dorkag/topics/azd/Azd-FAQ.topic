@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
-<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Azd - FAQ" id="Azd-FAQ">
+<topic id="Azd-FAQ"
+       title="FAQ and Troubleshooting"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd">
+    <primary-label ref="azd"/>
+    <secondary-label ref="2024.3"/>
 
-
-    <chapter title="Why do I need to create a PAT with 'All accessible organizations' selected?" id="creating_pat">
-        <p>
-            Because the Azure Devops Microsoft team doesn't want to solve <a
-                href="https://developercommunity.visualstudio.com/t/Profiles-REST-does-not-work-with-PAT-for/10384195">this</a>
-            ticket
-        </p>
-    </chapter>
-
-
-    <chapter title="Resolving Token Issues with Azure DevOps Server" id="token_issue">
+    <chapter id="token_issue" title="Resolving Token Issues with Azure DevOps Server">
         <p>
             When working with Azure DevOps Server within an organization, it may occur that the library used for
             credential storage is disabled.
@@ -44,8 +37,7 @@
         <img alt="token_password.png" src="token_password.png"/>
     </chapter>
 
-
-    <chapter title="What is a Personal Access Token (PAT)?" id="what_is_pat">
+    <chapter id="what_is_pat" title="What is a Personal Access Token (PAT)?">
         <p>
             A Personal Access Token (PAT) is a secure way to authenticate Azure DevOps. It provides a way to access
             your Azure DevOps resources without using your username and password, which can enhance security by limiting
@@ -53,7 +45,7 @@
         </p>
     </chapter>
 
-    <chapter title="How to Create a PAT in Azure DevOps?" id="create_pat">
+    <chapter id="create_pat" title="How to Create a PAT in Azure DevOps?">
         <p>
             To create a PAT in Azure DevOps, follow these steps:
         </p>
@@ -72,7 +64,7 @@
         </p>
     </chapter>
 
-    <chapter title="Common Issues with Login and How to Resolve Them" id="login_pat_issues">
+    <chapter id="login_pat_issues" title="Common Issues with Login and How to Resolve Them">
         <p>
             If you encounter issues when trying to log in, consider the following troubleshooting steps:
         </p>
@@ -80,22 +72,45 @@
             <li>Ensure the PAT has not expired. PATs have a limited lifespan and need to be renewed periodically.</li>
             <li>Verify that the PAT has the necessary permissions for the tasks you are performing.</li>
             <li>Check for any typos or errors in the PAT when entering it into your application.</li>
-            <li>Make sure the PAT was created with 'All accessible organization'</li>
             <li>If you clone with the IDE Version control, make sure that you checked/unchecked the ssh</li>
-            <li>If you are using http is highly recommended to use enable the usage of Git Helper Credential in the
-                <ui-path>setting/version control</ui-path>
-                >
+            <li>If you are using http is highly recommended to enable the usage of Git Credential Helper by checking
+                the
+                <ui-path>User credential helper</ui-path>
+                checkbox under
+                <ui-path>Setting | Version Control | Git</ui-path>
             </li>
         </list>
     </chapter>
 
-    <chapter title="How to Open a Bug or Feature Request" id="bug_feature_request">
+    <chapter id="performance_issues" title="Resolving Performance Issues with the Plugin">
+        <p>
+            If you are experiencing performance issues with the AZD IntelliJ plugin, you can try the following steps to
+            improve performance:
+        </p>
+        <list type="bullet">
+            <li>Ensure you are using the latest version of the plugin. Updates may include performance improvements.
+            </li>
+            <li>If your team is creating large Pull Requests with many files and many comments, it is recommended to:
+                <list type="bullet">
+                    <li>Increase the VM memory settings so the IDE can run with at least
+                        <ui-path>6GB</ui-path>
+                    </li>
+                    <li>Unselect the
+                        <ui-path>Show all files in one diff view</ui-path>
+                        mode
+                    </li>
+                </list>
+            </li>
+        </list>
+    </chapter>
+
+    <chapter id="bug_feature_request" title="How to Open a Bug or Feature Request">
         <p>
             If you encounter a bug or have a feature request for the AZD IntelliJ plugin, you can report it on the
             project's GitHub issues page. Follow these steps:
         </p>
         <list type="decimal">
-            <li>Go to the GitHub issues page: <a href="https://github.com/edgafner/dorkag/issues">https://github.com/edgafner/dorkag/issues</a>
+            <li>Go to the GitHub issues page: <a href="https://github.com/edgafner/dorkag/issues"/>
             </li>
             <li>Click on "New issue."</li>
             <li>Select "Bug report" or "Feature request" as appropriate.</li>
@@ -103,7 +118,7 @@
         </list>
     </chapter>
 
-    <chapter title="Why Isn't the Plugin Free?" id="why_not_free">
+    <chapter id="why_not_free" title="Why Isn't the Plugin Free?">
         <p>
             The plugin is not free because its development requires significant time and resources.
         </p>
@@ -113,7 +128,7 @@
         </p>
     </chapter>
 
-    <chapter title="Is there anything I can help for making the plugin free?" id="sponsor_plugin">
+    <chapter id="sponsor_plugin" title="Is there anything I can help for making the plugin free?">
         <p>
             The goal is to keep trying to reach out to potential investors hoping this community will be big enough
             to make the plugin free.
@@ -121,6 +136,5 @@
                 href="https://plugins.jetbrains.com/plugin/22319-azd/reviews">Azd</a>.
         </p>
     </chapter>
-
 
 </topic>

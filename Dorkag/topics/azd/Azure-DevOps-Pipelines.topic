@@ -3,8 +3,9 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="AZD Pipelines" id="Azure-DevOps-Pipelines">
+       title="Work with Pipelines" id="Azure-DevOps-Pipelines">
     <primary-label ref="azd"/>
+    <secondary-label ref="2024.3"/>
     <video src="https://youtu.be/tYCUkYnahjA?si=-1KqOPwddpgpNeVS"/>
     <p>AZD Pipelines new features</p>
     <p>We are presenting a dedicate Pipeline Tool Window for a centralized and organized view.</p>
@@ -24,7 +25,7 @@
             <img src="pipelines_details_actions.png" alt="pipelines_details_actions" style="block" thumbnail="true"/>
         </p>
         Get an intuitive overview with the Pipeline Stage Diagram.
-        <img src="pipeline_diagram.png" alt="pipeline diagram" style="block" thumbnail="true" />
+        <img src="pipeline_diagram.png" alt="pipeline diagram" style="block" thumbnail="true"/>
         <p>
             See the result of the Pipeline tests, jump to a specific test or analyze the stack trace for a failed
             one.
