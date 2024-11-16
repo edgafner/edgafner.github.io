@@ -41,16 +41,6 @@
     <chapter title="General Preferences Configuration" id="general-configuration">
         <p>The following options are available:</p>
         <deflist>
-            <def title="Show all Projects members" id="show-all-projects-members">
-                <p>When disabled, only users that belong to the current repository's project are shown.
-                    Enabling this
-                    option
-                    will display all members across different projects, not just those from the current project.
-                    Be
-                    aware that
-                    enabling this feature may affect performance, especially if there are a large number of users across
-                    projects.</p>
-            </def>
             <def title="Respect Proxy Configuration" id="respect-proxy-configuration">
                 <p>When enabled, the plugin will use the proxy settings configured in the IDE.This is useful when you
                     are
