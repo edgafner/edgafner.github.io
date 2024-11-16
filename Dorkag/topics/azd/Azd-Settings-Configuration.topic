@@ -22,6 +22,11 @@
             <def title="Clone Git Using SSH" id="clone-git-using-ssh">
                 <p>When enabled, the plugin will use SSH to clone Git repositories from Azure DevOps.</p>
             </def>
+        </deflist>
+    </chapter>
+    <chapter title="General Preferences Configuration" id="general-configuration">
+        <p>The following options are available:</p>
+        <deflist>
             <def title="Automatically mark opened files as viewed" id="automatically-mark-opened-files-as-viewed">
                 <p>When enabled, the plugin will automatically mark opened files as viewed
                     when you open them in the editor.
@@ -36,11 +41,6 @@
                     opened.
                     You can set the update interval in the settings.</p>
             </def>
-        </deflist>
-    </chapter>
-    <chapter title="General Preferences Configuration" id="general-configuration">
-        <p>The following options are available:</p>
-        <deflist>
             <def title="Respect Proxy Configuration" id="respect-proxy-configuration">
                 <p>When enabled, the plugin will use the proxy settings configured in the IDE.This is useful when you
                     are
