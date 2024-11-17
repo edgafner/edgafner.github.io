@@ -6,7 +6,7 @@
        title="Reference and Support" id="Azd-Reference-And-Support"
        help-id="Reference-And-Support">
     <primary-label ref="azd"/>
-    <secondary-label ref="2024.3"/>
+    <secondary-label ref="azd_version"/>
     <p>
         If you're encountering issues with the AZD IntelliJ Plugin or have suggestions for improvements, we're here to
         help!

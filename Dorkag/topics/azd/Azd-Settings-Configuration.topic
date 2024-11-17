@@ -6,7 +6,7 @@
        title="Settings Configuration" id="Azd-Settings-Configuration">
 
     <primary-label ref="azd"/>
-    <secondary-label ref="2024.3"/>
+    <secondary-label ref="azd_version"/>
     <p>
         Under
         <ui-path>Settings | Version Control | Azure DevOps</ui-path>

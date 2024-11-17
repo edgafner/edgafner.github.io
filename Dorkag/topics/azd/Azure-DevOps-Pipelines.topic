@@ -5,7 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Work with Pipelines" id="Azure-DevOps-Pipelines">
     <primary-label ref="azd"/>
-    <secondary-label ref="2024.3"/>
+    <secondary-label ref="azd_version"/>
     <video src="https://youtu.be/tYCUkYnahjA?si=-1KqOPwddpgpNeVS"/>
     <p>AZD Pipelines new features</p>
     <p>We are presenting a dedicate Pipeline Tool Window for a centralized and organized view.</p>

@@ -31,7 +31,7 @@
         <accepts>Default-topic.html</accepts>
     </rule>
     <rule id="4a44bbcb">
-        <description>Created after removal of "Azd" from Documentation</description>
+        <description>Created after removal of "AZD" from Documentation</description>
         <accepts>AZD.html</accepts>
     </rule>
     <rule id="1d1c3fdf">

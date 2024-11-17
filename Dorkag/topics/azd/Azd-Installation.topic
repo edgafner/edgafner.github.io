@@ -13,7 +13,7 @@
         <a href="https://www.jetbrains.com/help/idea/managing-plugins.html">documentation</a>.
     </p>
 
-    <secondary-label ref="2024.3"/>
+    <secondary-label ref="azd_version"/>
 
     <note>
         <p>
@@ -41,11 +41,11 @@
                             </li>
                         </list>
                     </step>
-                    <step><p>Search for Azd Plugin.</p>
+                    <step><p>Search for AZD Plugin.</p>
                         <list type="bullet">
                             <li>
                                 <p>Under the plugins' marketplace tab search, type in
-                                    <ui-path>Azd</ui-path>
+                                    <ui-path>AZD</ui-path>
                                     and click on the
                                     <ui-path>Install</ui-path>
                                     button.
@@ -251,7 +251,7 @@
                     <tab title="ToolWindow" id="azure-devops-service-toolwindow">
                         <procedure title="Login from Azure DevOps ToolWindow" id="login-from-toolwindow-service">
                             <step>
-                                <p>Open the Azd ToolWindow:
+                                <p>Open the AZD ToolWindow:
                                     <img src="pat_from_toolWindow.png" alt="pat_from_toolWindow" border-effect="line"
                                          style="block"/>
                                 </p>
@@ -328,7 +328,7 @@
                     <tab title="ToolWindow" id="azure-devops-server-toolwindow">
                         <procedure title="Login from Azure DevOps ToolWindow" id="login-from-toolwindow-server">
                             <step>
-                                <p>Open the Azd ToolWindow:
+                                <p>Open the AZD ToolWindow:
                                     <img src="pat_from_toolWindow.png" alt="pat_from_toolWindow" border-effect="line"
                                          style="block"/>
                                 </p>

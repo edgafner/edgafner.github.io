@@ -5,29 +5,32 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Azd" id="Azd">
     <section-starting-page>
-        <title>Azd</title>
+        <title>AZD</title>
         <description>
-            Based on Jetbrains' GitHub Pull Request and GitLab Merge Request plugins, Azd will streamline your
-            development
-            with Azure
-            DevOps Pull Request.
+            Based on Jetbrains' GitHub Pull Request and GitLab Merge Request plugins, AZD lets you manage Git projects
+            hosted on Azure DevOps directly from the IDE:
+            clone repositories, share your projects, create pull requests,and review incoming pull requests.
+            In addition, it lets you manage your Azure DevOps pipelines and provides support for your development
+            right from the IDE.
         </description>
 
-        <!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
+
         <spotlight>
-            <a href="Azd-Installation.topic" type="start" summary="Install the Azd plugin">Azd Installation</a>
+            <a href="Azd-Installation.topic" type="start" summary="Install the AZD plugin"/>
             <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" type="settings"
-               summary="Configure your development environment">Azd Configuration</a>
+               summary="Configure your development environment">Configuration</a>
         </spotlight>
 
         <!--    Add several topics that are most important for this section.    -->
         <primary>
-            <title>Get started</title>
-            <a href="Work-with-Azure-DevOps-pull-requests.topic" type="tools" summary="Azd features and capabilities">Features
-                and Usage</a>
+            <title>AZD in action</title>
+            <a href="Work-with-Azure-DevOps-pull-requests.topic" type="tools"
+               summary="Pull requests without leaving the IDE">
+                Pull Requests</a>
+            <a href="Pull-Request-Details.topic" type="integration" summary="Review Pull Request">Review
+                a Pull Request</a>
             <a href="Azure-DevOps-Pipelines.topic" type="cloud"
-               summary="Use IDEA capabilities to ease your Azure DevOps pipelines journey">Azure DevOps Pipelines
-                Injection</a>
+               summary="Pipelines without leaving the IDE">Pipelines</a>
         </primary>
 
         <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->
@@ -37,7 +40,6 @@
                 Support</a>
         </secondary>
 
-        <!--    Optionally add additional cards and links to topics that are not in this section but may be relevant.    -->
     </section-starting-page>
 
 

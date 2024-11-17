@@ -6,7 +6,7 @@
        title="Work with Pull Requests" id="Work-with-Azure-DevOps-pull-requests">
 
     <primary-label ref="azd"/>
-    <secondary-label ref="2024.3"/>
+    <secondary-label ref="azd_version"/>
     <p>
         Pull requests are used in open-source projects or in some corporate workflows to manage changes from
         contributors

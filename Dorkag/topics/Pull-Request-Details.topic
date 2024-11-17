@@ -5,7 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Pull Request Review" id="Pull-Request-Details">
     <primary-label ref="azd"/>
-    <secondary-label ref="2024.3"/>
+    <secondary-label ref="azd_version"/>
     <chapter title="Pull Request Timeline" id="pull_request_timeline">
         <p>When it comes to reviewing code changes, the pull request timeline is an essential tool for tracking the
             progression of a pull request.</p>
