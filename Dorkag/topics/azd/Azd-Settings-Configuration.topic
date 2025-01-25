@@ -46,11 +46,6 @@
                     are
                     behind a proxy server and need to access Azure DevOps services.</p>
             </def>
-            <def title="Send usage and exceptions statistics" id="send-usage-and-exceptions-statistics">
-                <p>When enabled, you help improve the plugin by sending anonymous data about exceptions and action
-                    statistics.Note that this will not include personal data or sensitive
-                    information.</p>
-            </def>
         </deflist>
 
     </chapter>
