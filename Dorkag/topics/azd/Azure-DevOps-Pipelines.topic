@@ -38,6 +38,12 @@
         </p>
     </chapter>
 
+    <chapter title="Pipeline Opening Behavior" id="pipeline_opening_behavior">
+        <p>Pipelines now open in the Pipeline Tool Window by default instead of in the browser, providing a more integrated development experience.</p>
+        <note>
+            <p>You can change this behavior in the plugin settings if you prefer to open pipelines in the browser.</p>
+        </note>
+    </chapter>
 
     <chapter title="Run a specific Pipeline Run" id="azd_pipelines_run">
         <p>You can select a branch and a pipeline to run right from the IDE

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AI for Title and Description Generation" id="AI-Title-Description-Generation">
+    <primary-label ref="azd"/>
+    <secondary-label ref="azd_version"/>
+    <p>AZD now includes AI-powered title and description generation for your work items and pull requests.</p>
+    <p>This feature helps you create more descriptive and standardized titles and descriptions with minimal effort.</p>
+
+    <chapter title="Generate AI Titles and Descriptions" id="ai_title_description_generation">
+        <p>Automatically generate meaningful titles and descriptions for your work items and pull requests using AI:
+            <img src="ai_title_description.png" alt="AI title and description generation" style="block"
+                 thumbnail="true"/>
+        </p>
+    </chapter>
+
+    <chapter title="How It Works" id="how_it_works">
+        <p>The AI analyzes the context of your changes and suggests appropriate titles and descriptions:</p>
+        <list>
+            <li>
+                <p>It analyzes the code changes and commit messages</p>
+            </li>
+            <li>
+                <p>You can accept the suggestions as-is or modify them before saving</p>
+            </li>
+        </list>
+    </chapter>
+
+    <chapter title="Customizing AI Suggestions" id="customizing_ai_suggestions">
+        <p>You can customize how the AI generates titles and descriptions:</p>
+        <list>
+            <li>
+                <p>Configure the style and format of generated content in the settings</p>
+            </li>
+            <li>
+                <p>Set up templates that the AI will follow for different types of items</p>
+            </li>
+            <li>
+                <p>Adjust the level of detail included in the generated descriptions</p>
+            </li>
+        </list>
+        <note>
+            <p>The AI suggestions are based on your project's context and can be refined over time based on your usage
+                patterns.</p>
+        </note>
+    </chapter>
+
+    <chapter title="AI Provider Options" id="ai_provider_options">
+        <p>You can select from multiple AI providers for the title and description generation feature:</p>
+        <list>
+            <li>
+                <p><b>Claude:</b> Use Anthropic's Claude for generating titles and descriptions. Requires setting up
+                    your own API key.</p>
+            </li>
+            <li>
+                <p><b>OpenAI:</b> Use OpenAI's models for generating titles and descriptions. Requires setting up your
+                    own API key.</p>
+            </li>
+            <li>
+                <p><b>AZD AI Provider:</b> Use the default provider included with the plugin. This is a proxy to GPT-O1
+                    through the plugin author's subscription, so no API key is required.</p>
+            </li>
+        </list>
+        <p>Configure your preferred AI provider in the settings:
+            <img src="ai_provider_settings.png" alt="AI provider settings" style="block" thumbnail="true"/>
+        </p>
+        <note>
+            <p>For Claude and OpenAI options, you'll need to provide your own API keys in the settings.</p>
+        </note>
+    </chapter>
+</topic>

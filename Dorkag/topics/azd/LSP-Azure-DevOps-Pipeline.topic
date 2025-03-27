@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="LSP for Azure DevOps Pipeline" id="LSP-Azure-DevOps-Pipeline">
+    <primary-label ref="azd"/>
+    <secondary-label ref="azd_version"/>
+    <p>AZD now includes Language Server Protocol (LSP) support for Azure DevOps Pipeline YAML files.</p>
+    <p>This feature enhances your pipeline development experience with advanced language features like code completion, validation, and navigation.</p>
+
+    <chapter title="LSP Support for Pipeline YAML" id="lsp_support_pipeline_yaml">
+        <p>Get comprehensive language support for your Azure DevOps pipeline YAML files:
+            <img src="lsp_pipeline.png" alt="LSP for Azure DevOps Pipeline" style="block" thumbnail="true"/>
+        </p>
+    </chapter>
+
+    <chapter title="Key Features" id="key_features">
+        <p>The LSP integration for Azure DevOps Pipelines offers several powerful capabilities:</p>
+        <list>
+            <li>
+                <p>Intelligent code completion for pipeline syntax, tasks, and variables</p>
+            </li>
+            <li>
+                <p>Real-time validation and error checking for pipeline configurations</p>
+            </li>
+            <li>
+                <p>Hover information with documentation for pipeline elements</p>
+            </li>
+            <li>
+                <p>Go-to-definition and find-references for pipeline components</p>
+            </li>
+            <li>
+                <p>Code formatting and organization for pipeline YAML files</p>
+            </li>
+        </list>
+    </chapter>
+
+    <chapter title="Using LSP Features" id="using_lsp_features">
+        <p>Take advantage of LSP capabilities when working with pipeline files:</p>
+        <list>
+            <li>
+                <p>Access context-aware suggestions by pressing Ctrl+Space in pipeline YAML files</p>
+            </li>
+            <li>
+                <p>View documentation by hovering over pipeline elements</p>
+            </li>
+            <li>
+                <p>Navigate between pipeline definitions with Ctrl+Click</p>
+            </li>
+            <li>
+                <p>Format your pipeline YAML with standard IDE formatting shortcuts</p>
+            </li>
+        </list>
+        <note>
+            <p>LSP features are automatically enabled for files with the naming pattern *azure-pipelines*.yml or *azure-pipelines*.yaml.</p>
+        </note>
+    </chapter>
+
+    <chapter title="Advanced Configuration" id="advanced_configuration">
+        <p>Customize the LSP behavior for your specific needs:</p>
+        <list>
+            <li>
+                <p>Configure validation rules and severity levels</p>
+            </li>
+            <li>
+                <p>Set up custom task definitions for your organization's pipeline tasks</p>
+            </li>
+            <li>
+                <p>Define project-specific variable sets for improved completion</p>
+            </li>
+            <li>
+                <p>Integrate with custom pipeline templates and libraries</p>
+            </li>
+        </list>
+    </chapter>
+</topic>

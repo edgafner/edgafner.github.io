@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AI for Pull Request Review" id="AI-Pull-Request-Review">
+    <primary-label ref="azd"/>
+    <secondary-label ref="azd_version"/>
+    <p>AZD now includes AI-powered pull request review capabilities to enhance your code review process.</p>
+    <p>This feature helps you identify potential issues, suggest improvements, and streamline the review workflow.</p>
+
+    <chapter title="AI-Assisted Code Reviews" id="ai_assisted_code_reviews">
+        <p>Get intelligent feedback on your pull requests with AI-powered code analysis:
+            <img src="ai_pr_review.png" alt="AI pull request review" style="block" thumbnail="true"/>
+        </p>
+    </chapter>
+
+    <chapter title="Key Features" id="key_features">
+        <p>The AI pull request review offers several powerful capabilities:</p>
+        <list>
+            <li>
+                <p>Automated code quality checks and best practice suggestions</p>
+            </li>
+            <li>
+                <p>Detection of potential bugs, security vulnerabilities, and performance issues</p>
+            </li>
+            <li>
+                <p>Suggestions for code improvements and refactoring opportunities</p>
+            </li>
+            <li>
+                <p>Summary of changes with highlighted critical areas for human review</p>
+            </li>
+        </list>
+    </chapter>
+
+    <chapter title="Using AI Reviews" id="using_ai_reviews">
+        <p>Integrate AI reviews into your pull request workflow:</p>
+        <img src="ai-chat-review.png" alt="ai-chat-review"/>
+        <list>
+            <li>
+                <p>When you request an AI review, the changes from your pull request are sent to the AI chat</p>
+            </li>
+            <li>
+                <p>A chat tab is automatically opened in the IDE</p>
+            </li>
+            <li>
+                <p>After the analysis is complete, you can chat with the AI to ask for suggestions and other details
+                    about your PR</p>
+            </li>
+            <li>
+                <p>Review AI suggestions directly in the IDE's pull request interface</p>
+            </li>
+            <li>
+                <p>Use the chat to get more context and explanations about the AI's recommendations</p>
+            </li>
+        </list>
+        <note>
+            <p>AI reviews are meant to complement, not replace, human code reviews. Always verify AI suggestions before
+                accepting them.</p>
+        </note>
+    </chapter>
+
+    <chapter title="Customizing AI Reviews" id="customizing_ai_reviews">
+        <p>Configure the AI review system to match your team's needs:</p>
+        <list>
+            <li>
+                <p>Set the scope and depth of AI analysis</p>
+            </li>
+            <li>
+                <p>Define custom rules and coding standards for the AI to enforce</p>
+            </li>
+            <li>
+                <p>Adjust sensitivity for different types of suggestions</p>
+            </li>
+        </list>
+    </chapter>
+
+    <chapter title="AI Provider Options" id="ai_provider_options">
+        <p>You can select from multiple AI providers for the pull request review feature:</p>
+        <list>
+            <li>
+                <p><b>Claude:</b> Use Anthropic's Claude for your AI reviews. Requires setting up your own API key.</p>
+            </li>
+            <li>
+                <p><b>OpenAI:</b> Use OpenAI's models for your AI reviews. Requires setting up your own API key.</p>
+            </li>
+            <li>
+                <p><b>AZD AI Provider:</b> Use the default provider included with the plugin. This is a proxy to GPT-O1
+                    through the plugin author's subscription, so no API key is required.</p>
+            </li>
+        </list>
+        <p>Configure your preferred AI provider in the settings:
+            <img src="ai_provider_settings.png" alt="AI provider settings" style="block" thumbnail="true"/>
+        </p>
+        <note>
+            <p>For Claude and OpenAI options, you'll need to provide your own API keys in the settings.</p>
+        </note>
+    </chapter>
+</topic>
