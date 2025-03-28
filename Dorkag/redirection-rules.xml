@@ -42,4 +42,8 @@
         <description>Created after removal of "Azd – FAQ" from azdlib</description>
         <accepts>AZD-–-FAQ.html</accepts>
     </rule>
+    <rule id="6c5a1bd9">
+        <description>Created after removal of "LSP for Azure DevOps Pipeline" from azdlib</description>
+        <accepts>LSP-Azure-DevOps-Pipeline.html</accepts>
+    </rule>
 </rules>

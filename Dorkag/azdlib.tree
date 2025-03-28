@@ -18,7 +18,6 @@
                 <toc-element topic="AI-Pull-Request-Review.topic"/>
             </toc-element>
             <toc-element topic="Azure-DevOps-Pipelines.topic">
-                <toc-element topic="LSP-Azure-DevOps-Pipeline.topic"/>
             </toc-element>
             <toc-element topic="Azd-Reference-And-Support.topic"/>
             <toc-element topic="Azd-FAQ.topic"/>
