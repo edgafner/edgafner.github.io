@@ -15,9 +15,25 @@
 
     <chapter title="Azure DevOps" id="general-azure-devops-configuration">
         <p>Here you can add or remove Azure DevOps accounts</p>
-        <note>If you log in from this section, you will need to add the Azure DevOps Organization/Collection
-            name to be included in the URL.
-        </note>
+
+        <chapter title="Improved Login Flow" id="improved_login_flow">
+            <p>The latest version introduces an improved login flow with explicit organization/collection selection:</p>
+            <list>
+                <li>
+                    <p>Clearer organization/collection selection during the login process</p>
+                </li>
+                <li>
+                    <p>Ability to easily switch between multiple organizations/collections</p>
+                </li>
+                <li>
+                    <p>More intuitive UI for managing multiple Azure DevOps accounts</p>
+                </li>
+                <li>
+                    <p>Streamlined authentication process with better error handling</p>
+                </li>
+            </list>
+        </chapter>
+
         <deflist>
             <def title="Clone Git Using SSH" id="clone-git-using-ssh">
                 <p>When enabled, the plugin will use SSH to clone Git repositories from Azure DevOps.</p>
@@ -32,7 +48,7 @@
                     when you open them in the editor.
 
                 </p>
-                <warning>The marked as view is not sync with Azure DevOps as this data cannot be provided with
+                <warning>The marked as view is not synced with Azure DevOps as this data cannot be provided with
                     the current API.
                 </warning>
             </def>
@@ -42,7 +58,7 @@
                     You can set the update interval in the settings.</p>
             </def>
             <def title="Respect Proxy Configuration" id="respect-proxy-configuration">
-                <p>When enabled, the plugin will use the proxy settings configured in the IDE.This is useful when you
+                <p>When enabled, the plugin will use the proxy settings configured in the IDE. This is useful when you
                     are
                     behind a proxy server and need to access Azure DevOps services.</p>
             </def>
@@ -58,7 +74,7 @@
 
         <deflist>
             <def title="Adopt Azure DevOps UI style" id="adopt-azure-devops-ui-style">
-                <p>When enabled, this option to change the plugin UI to look more like Azure DevOps UI.</p>
+                <p>When enabled, this option is to change the plugin UI to look more like Azure DevOps UI.</p>
                 <p>This adjustment will align the
                     visual elements and layout of the plugin with Azure DevOps, offering a more familiar interface for
                     Azure
@@ -105,7 +121,7 @@
             </def>
             <def title="Tests Extension" id="test-extension">
                 <p>This text field helps the plugin to identify a local Test and connect to the Azure DevOps
-                    Test response body to enable a smooth navigation between the test show
+                    Test response body to enable a smooth navigation between the test shown
                     from the AZD Pipeline UI.
                 </p>
                 <img src="test_context.png" alt="test_context" style="block" thumbnail="true"/>

@@ -1,147 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Work with Pull Requests" id="Work-with-Azure-DevOps-pull-requests">
 
-    <primary-label ref="azd"/>
-    <secondary-label ref="azd_version"/>
-    <p>
-        Pull requests are used in open-source projects or in some corporate workflows to manage changes from
-        contributors
-        and to initiate code review before such changes are merged.
-    </p>
+  <primary-label ref="azd"/>
+  <secondary-label ref="azd_version"/>
+  <p>
+    Pull requests are used in open-source projects or in some corporate workflows to manage changes from
+    contributors
+    and to initiate code review before such changes are merged.
+  </p>
 
-    <p>
-        By creating a pull request, you tell others about the changes you want to push to the original repository, so
-        that
-        the maintainers of that repository can review your changes, discuss them, and integrate them into the base
-        branch.
-    </p>
+  <p>
+    By creating a pull request, you tell others about the changes you want to push to the original repository, so
+    that
+    the maintainers of that repository can review your changes, discuss them, and integrate them into the base
+    branch.
+  </p>
 
-    <chapter title="Create a Pull Request" id="create_pr">
-        <procedure id="0procedure0-1">
-            <step>
-                <p>In the main menu, go to Git | Azure DevOps | Create Pull Request. The Pull Requests tool window opens
-                    with a
-                    pull request draft.
-                    <img src="create_pr_draft.png" alt="create_pr_draft" style="block" thumbnail="true"/>
-                </p>
-                <p>Alternatively, open the Pull Requests tool window and click <img src="add.svg" alt="add"/> Create
-                    Pull
-                    Request
-                    in the top-right
-                    corner.</p>
-                <tip>
-                    <p>After you push changes to the remote repository, IntelliJ IDEA will show you a notification with
-                        an option
-                        to open a new pull request.</p>
-                </tip>
-                <p>
-                    In the
-                    <ui-path>New Pull Request Tab</ui-path>
-                    , the repository on the left is the target repository that will receive the updates.
-                    The repository on the right is the source repository with the changes that will be added to the
-                    target
-                    repository.
-                </p>
-            </step>
-            <step>
-                <p>Click the name of the target repository on the left.
-                    In the popup that opens, specify the branch to which you want to apply your changes.
-                    <img src="click_target_name_pr_create.png" alt="click_target_name_pr_create" style="block"/>
-                </p>
-            </step>
-            <step>
-                <p>Click the name of the source repository on the right. In the popup that opens, specify the branch
-                    that
-                    contains
-                    the changes you want to apply.
-                    <img src="click_source_name_pr_create.png" alt="click_source_name_pr_create" style="block"/>
-                </p>
-                <p>
-                    If you have a project that uses multiple remote repositories, you can change the head repository in
-                    this popup
-                    as well.
-                </p>
-            </step>
-            <step>
-                <p>
-                    Specify the name for your pull request in the Title field, and, optionally, provide a description of
-                    the
-                    changes to be applied through your request.
-                </p>
-            </step>
-            <step>
-                <p>Optionally, add reviewers, assign your pull request to someone or add a label to your pull
-                    request.</p>
-            </step>
-            <step>
-                <p>Click
-                    <ui-path>Create Pull Request.</ui-path>
-                </p>
-                <p>If you are not yet ready to push your pull request, you can save it as a draft.</p>
-                <list>
-                    <li>Click on <img src="down.svg" alt="down"/> next to the
-                        <ui-path>Create Pull Request</ui-path>
-                        button.
-                    </li>
-                    <li>
-                        <p>In the menu that opens, select
-                            <ui-path>Create Draft Pull Request</ui-path>
-                        </p>
-                    </li>
-                </list>
-            </step>
-        </procedure>
-    </chapter>
-
-    <chapter title="Manage incoming pull requests" id="manage_incoming_pull_requests">
-        <p>If you're a project maintainer, and you have an Azure DevOps remote configured for your project, you can view
-            and
-            manage incoming pull requests directly from Jetbrains' IDEA.
+  <chapter title="Create a Pull Request" id="create_pr">
+    <procedure id="0procedure0-1">
+      <step>
+        <p>In the main menu, go to Git | Azure DevOps | Create Pull Request. The Pull Requests tool window opens
+          with a
+          pull request draft.
+          <img src="create_pr_draft.png" alt="create_pr_draft" style="block" thumbnail="true"/>
         </p>
-        <p>To view incoming pull requests, select
-            <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>
-            from the main menu.
+        <p>Alternatively, open the Pull Requests tool window and click <img src="add.svg" alt="add"/> Create
+          Pull
+          Request
+          in the top-right
+          corner.</p>
+        <tip>
+          <p>After you push changes to the remote repository, IntelliJ IDEA will show you a notification with
+            an option
+            to open a new pull request.</p>
+        </tip>
+        <p>
+          In the
+          <ui-path>New Pull Request Tab</ui-path>
+          , the repository on the left is the target repository that will receive the updates.
+          The repository on the right is the source repository with the changes that will be added to the
+          target
+          repository.
         </p>
-        <img src="manage_pr_list.png" alt="manage_pr_list" thumbnail="true" style="block"/>
-        <p>Use the
-            <ui-path>Azure DevOps PullRequest</ui-path>
-            tool window to:
+      </step>
+      <step>
+        <p>Click the name of the target repository on the left.
+          In the popup that opens, specify the branch to which you want to apply your changes.
+          <img src="click_target_name_pr_create.png" alt="click_target_name_pr_create" style="block"/>
         </p>
+      </step>
+      <step>
+        <p>Click the name of the source repository on the right. In the popup that opens, specify the branch
+          that
+          contains
+          the changes you want to apply.
+          <img src="click_source_name_pr_create.png" alt="click_source_name_pr_create" style="block"/>
+        </p>
+        <p>
+          If you have a project that uses multiple remote repositories, you can change the head repository in
+          this popup
+          as well.
+        </p>
+      </step>
+      <step>
+        <p>
+          Specify the name for your pull request in the Title field, and, optionally, provide a description of
+          the
+          changes to be applied through your request.
+        </p>
+      </step>
+      <step>
+        <p>Optionally, add reviewers, assign your pull request to someone or add a label to your pull
+          request.</p>
+      </step>
+      <step>
+        <p>Click
+          <ui-path>Create Pull Request.</ui-path>
+        </p>
+        <p>If you are not yet ready to push your pull request, you can save it as a draft.</p>
         <list>
-            <li>
-                <ui-path>Filter requests</ui-path>
-                by state, author, reviewer, source branch and target branch.
-            </li>
-            <li>
-                <ui-path>Jump to a pull request on Azure DevOps</ui-path>
-                : select a pull request and choose
-                <ui-path>Open on Azure DevOps</ui-path>
-                from the context
-                menu.
-            </li>
-            <li>
-                <ui-path>View diff</ui-path>
-                between the suggested changes and the base revision: click the name of a pull request, select a file
-                and double-click it or press
-                <shortcut>⌘Cmd</shortcut>
-                <shortcut>D</shortcut>
-                .
-            </li>
-            <li>
-                <ui-path>Create a local branch</ui-path>
-                based on incoming changes: open a pull request, click the branch with incoming changes
-                and choose
-                <ui-path>Checkout 'branch name'…</ui-path>
-                in the context menu.
-                <img src="create_local_branch_based_on_source.png" alt="create_local_branch_based_on_source"
-                     style="block" thumbnail="true"/>
-            </li>
+          <li>Click on <img src="down.svg" alt="down"/> next to the
+            <ui-path>Create Pull Request</ui-path>
+            button.
+          </li>
+          <li>
+            <p>In the menu that opens, select
+              <ui-path>Create Draft Pull Request</ui-path>
+            </p>
+          </li>
         </list>
-    </chapter>
+      </step>
+    </procedure>
+  </chapter>
+
+  <chapter title="Manage incoming pull requests" id="manage_incoming_pull_requests">
+    <p>If you're a project maintainer, and you have an Azure DevOps remote configured for your project, you can view
+      and
+      manage incoming pull requests directly from Jetbrains' IDEA.
+    </p>
+    <p>To view incoming pull requests, select
+      <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>
+      from the main menu.
+    </p>
+    <img src="manage_pr_list.png" alt="manage_pr_list" thumbnail="true" style="block"/>
+    <p>Use the
+      <ui-path>Azure DevOps Pull Requests</ui-path>
+      tool window to:
+    </p>
+    <list>
+      <li>
+        <ui-path>Filter requests</ui-path>
+                by state, author, reviewer, source branch and target branch.
+      </li>
+      <li>
+        <ui-path>Jump to a pull request on Azure DevOps</ui-path>
+        : select a pull request and choose
+        <ui-path>Open on Azure DevOps</ui-path>
+        from the context
+        menu.
+      </li>
+      <li>
+        <ui-path>View diff</ui-path>
+        between the suggested changes and the base revision: click the name of a pull request, select a file
+        and double-click it or press
+        <shortcut>⌘Cmd</shortcut>
+        <shortcut>D</shortcut>
+        .
+      </li>
+      <li>
+        <ui-path>Create a local branch</ui-path>
+        based on incoming changes: open a pull request, click the branch with incoming changes
+        and choose
+        <ui-path>Checkout 'branch name'…</ui-path>
+        in the context menu.
+        <img src="create_local_branch_based_on_source.png" alt="create_local_branch_based_on_source" style="block" thumbnail="true"/>
+      </li>
+    </list>
+  </chapter>
+
+
 
 
 </topic>

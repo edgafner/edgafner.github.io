@@ -59,8 +59,13 @@
         <p>For example, you can see the following statuses:</p>
         <list>
             <li><p>Build and Check status</p>
-                <p>An Action link is attached to this status when clicked a clickable list of Azure DevOps pipelines are
+                <p>An Action link is attached to this status when clicked a clickable list of Azure DevOps pipelines is
                     presented. Click on one of them to open them in the browser.</p>
+            </li>
+            <li><p>Static checks and validation results</p>
+                <p>The latest version now shows static code analysis results and validation checks directly in the PR
+                    details tab,
+                    allowing you to quickly identify and address issues without leaving the IDE.</p>
             </li>
             <li><p>Work Items linked to the pull request</p>
                 <p>If your Project's admin has set a blocking merge for unlinked work items, you will see an error in
@@ -80,21 +85,35 @@
 
     <chapter title="Review Actions" id="review-actions">
         <p>
-            With AZD you can review a Pull Request without leaving your IDE, it lets you do all the following:
+            With AZD you can review a Pull Request without leaving your IDE. It lets you do all the following:
         </p>
         <deflist collapsible="true">
             <def title="Comment Actions" id="comment">
                 <p>Comment on a change made by the author, or comment on the Pull Request as a whole.<br/>
                     <img src="commentPRLevel.png" alt="comment-on-pr" style="block" border-effect="line"/>
-                    You can reply, edit, delete your comments, or thumbs up the comments left by others.
+                    You can reply, edit, delete your comments, or thumb up the comments left by others.
                 </p>
                 <p>You can resolve a comment with all the statuses comment supported in Azure DevOps.</p>
+                <p>New features in the latest version:</p>
+                <list>
+                    <li>
+                        <p><b>Attach images to comments:</b> You can now attach images directly to your comments right
+                            from the IDE, making it easier to provide visual context for your feedback.</p>
+                        <img src="attachimagecomment.png" alt="attachimagecomment.png"/>
+                    </li>
+                    <li>
+                        <p><b>Fix/Polish comment grammar with AI:</b> Before posting a comment, you can use AI to check
+                            and improve the grammar and clarity of your comment text, ensuring your feedback is
+                            professional and easy to understand.</p>
+                    </li>
+                </list>
                 <note>
                     Version 2024.3.1+ you can also mention a user in your comment.
                 </note>
             </def>
             <def title="Vote Actions" id="vote">
-                <p>Approve, Approve with suggestions, Reset your vote, Wait for changes or Reject the Pull Request.<br/>
+                <p>Approve, Approve with suggestions, Reset your vote, Wait for changes, or Reject the Pull
+                    Request.<br/>
                 </p>
                 <img src="vote_status_options.png" alt="approve-reject"/>
             </def>
@@ -123,7 +142,7 @@
                 <img src="publish_draft_actions.png" alt="publish-draft"/>
             </def>
             <def title="Description Actions" id="description">
-                <p>Edit the description of the Pull Request, or add a description if it's missing.
+                <p>Edit the description of the Pull Request or add a description if it's missing.
                 </p>
                 When creating the PR from the IDE, AZD is filling the description with the commit messages.
                 You can edit the description before triggering the PR creation.
@@ -138,8 +157,7 @@
         <procedure id="1procedure0-1">
             <step>
                 <p>In the main menu, go to
-                    <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>
-                    .
+                    <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>.
                 </p>
             </step>
             <step>
@@ -161,8 +179,7 @@
                     </li>
                     <li>
                         <p>To filter the list of changed files, select the commit you want to investigate in
-                            <ui-path>Changes from</ui-path>
-                            .
+                            <ui-path>Changes from</ui-path>.
                         </p>
                     </li>
                     <li><p>Right-click any file to open the context menu for this file.</p></li>
@@ -188,7 +205,8 @@
                 </p>
             </step>
             <step>
-                <p>If the reviewer has left a suggestion, you'll see the diff between your code and suggested one and
+                <p>If the reviewer has left a suggestion, you'll see the diff between your code and the suggested one
+                    and
                     can either
                     Apply locally (applies a patch to the working copy) or Commit (opens a commit message pop-up).
                     <img src="apply_suggestion_diff_editor.png" alt="apply_suggestion_diff_editor" style="block"/>
@@ -201,7 +219,7 @@
             <step>
                 <p>After you finished working on the pull request, you can re-request review, vote by approving or
                     rejecting the
-                    pull request, merge pull request or close it.
+                    pull request, merge the pull request, or close it.
                     <img src="vote_status_options.png" alt="vote_status_options" style="block"/>
                 </p>
             </step>

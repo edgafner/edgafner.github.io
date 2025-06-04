@@ -41,11 +41,11 @@
                             </li>
                         </list>
                     </step>
-                    <step><p>Search for AZD Plugin.</p>
+                    <step><p>Search for Azd Plugin.</p>
                         <list type="bullet">
                             <li>
                                 <p>Under the plugins' marketplace tab search, type in
-                                    <ui-path>AZD</ui-path>
+                                    <ui-path>Azd</ui-path>
                                     and click on the
                                     <ui-path>Install</ui-path>
                                     button.
@@ -249,7 +249,7 @@
             <tab title="Azure DevOps Service" id="azure-devops-service">
                 <tabs>
                     <tab title="ToolWindow" id="azure-devops-service-toolwindow">
-                        <procedure title="Login from Azure DevOps ToolWindow" id="login-from-toolwindow-service">
+                        <procedure title="Login from the Azure DevOps ToolWindow" id="login-from-toolwindow-service">
                             <step>
                                 <p>Open the AZD ToolWindow:
                                     <img src="pat_from_toolWindow.png" alt="pat_from_toolWindow" border-effect="line"
@@ -326,7 +326,7 @@
             <tab title="Azure DevOps Server" id="azure-devops-server">
                 <tabs>
                     <tab title="ToolWindow" id="azure-devops-server-toolwindow">
-                        <procedure title="Login from Azure DevOps ToolWindow" id="login-from-toolwindow-server">
+                        <procedure title="Login from the Azure DevOps ToolWindow" id="login-from-toolwindow-server">
                             <step>
                                 <p>Open the AZD ToolWindow:
                                     <img src="pat_from_toolWindow.png" alt="pat_from_toolWindow" border-effect="line"

@@ -47,27 +47,54 @@
         </note>
     </chapter>
 
-    <chapter title="AI Provider Options" id="ai_provider_options">
-        <p>You can select from multiple AI providers for the title and description generation feature:</p>
+    <chapter title="Commit Message Generation with AI" id="commit_message_generation">
+        <p>The latest version introduces AI-powered commit message generation to help you create more descriptive and
+            standardized commit messages:</p>
         <list>
             <li>
-                <p><b>Claude:</b> Use Anthropic's Claude for generating titles and descriptions. Requires setting up
-                    your own API key.</p>
+                <p>Automatically generate meaningful commit messages based on your code changes</p>
             </li>
             <li>
-                <p><b>OpenAI:</b> Use OpenAI's models for generating titles and descriptions. Requires setting up your
-                    own API key.</p>
+                <p>Save time and ensure consistency in your commit history</p>
             </li>
             <li>
-                <p><b>AZD AI Provider:</b> Use the default provider included with the plugin. This is a proxy to GPT-O1
-                    through the plugin author's subscription, so no API key is required.</p>
+                <p>Get suggestions that follow best practices for commit message formatting</p>
+            </li>
+            <li>
+                <p>Edit and refine the AI-generated messages before committing</p>
+            </li>
+        </list>
+        <note>
+            <p>You can customize the style and format of generated commit messages in the settings.</p>
+        </note>
+    </chapter>
+
+    <chapter title="AI Provider Options" id="ai_provider_options">
+        <p>You can select from multiple AI providers for the title, description, and commit message generation features,
+            now with support for the latest AI models:</p>
+        <list>
+            <li>
+                <p><b>Claude:</b> Use Anthropic's Claude models including the latest versions for generating content.
+                    Requires setting up your own API key.</p>
+            </li>
+            <li>
+                <p><b>OpenAI:</b> Use OpenAI's models including the latest GPT versions for generating content. Requires
+                    setting up your own API key.</p>
+            </li>
+            <li>
+                <p><b>Gemini:</b> Use Google's Gemini models for generating content. Requires setting up your own API
+                    key.</p>
+            </li>
+            <li>
+                <p><b>AZD AI Provider:</b> Use the default provider included with the plugin. This is a proxy to the
+                    latest AI models through the plugin author's subscription, so no API key is required.</p>
             </li>
         </list>
         <p>Configure your preferred AI provider in the settings:
             <img src="ai_provider_settings.png" alt="AI provider settings" style="block" thumbnail="true"/>
         </p>
         <note>
-            <p>For Claude and OpenAI options, you'll need to provide your own API keys in the settings.</p>
+            <p>For Claude, OpenAI, and Gemini options, you'll need to provide your own API keys in the settings.</p>
         </note>
     </chapter>
 </topic>

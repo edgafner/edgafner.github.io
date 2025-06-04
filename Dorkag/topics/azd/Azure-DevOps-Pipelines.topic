@@ -8,7 +8,7 @@
     <secondary-label ref="azd_version"/>
     <video src="https://youtu.be/tYCUkYnahjA?si=-1KqOPwddpgpNeVS"/>
     <p>AZD Pipelines new features</p>
-    <p>We are presenting a dedicate Pipeline Tool Window for a centralized and organized view.</p>
+    <p>We are presenting a dedicated Pipeline Tool Window for a centralized and organized view.</p>
 
 
     <chapter title="View all your Pipelines" id="azd_pipelines_new_features">
@@ -39,7 +39,8 @@
     </chapter>
 
     <chapter title="Pipeline Opening Behavior" id="pipeline_opening_behavior">
-        <p>Pipelines now open in the Pipeline Tool Window by default instead of in the browser, providing a more integrated development experience.</p>
+        <p>Pipelines now open in the Pipeline Tool Window by default instead of in the browser, providing a more
+            integrated development experience.</p>
         <note>
             <p>You can change this behavior in the plugin settings if you prefer to open pipelines in the browser.</p>
         </note>
@@ -49,8 +50,29 @@
         <p>You can select a branch and a pipeline to run right from the IDE
             <img src="pipeline_run.png" alt="azure devops run pipelines" style="block" thumbnail="true"/>
         </p>
+    </chapter>
+
+    <chapter title="Configure Pipeline Parameters and Variables" id="pipeline_parameters_variables">
+        <p>The latest version allows you to configure Pipeline parameters and variables directly before running, all
+            within the IDE:</p>
+        <list>
+            <li>
+                <p>Set custom parameter values for your pipeline runs</p>
+            </li>
+            <li>
+                <p>Configure pipeline variables without leaving the IDE</p>
+            </li>
+            <li>
+                <p>Save commonly used configurations for quick access</p>
+            </li>
+            <li>
+                <p>Override default values for specific runs</p>
+            </li>
+        </list>
+        <img src="runpipelinewithparams.png" alt="runpipelinewithparams"/>
         <note>
-            In case the pipeline has parameters, you can set them as well before running.
+            <p>This feature streamlines the pipeline execution workflow by eliminating the need to switch to the Azure
+                DevOps web interface for parameter configuration.</p>
         </note>
     </chapter>
 
