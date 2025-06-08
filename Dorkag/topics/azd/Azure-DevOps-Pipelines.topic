@@ -36,6 +36,12 @@
             failed.
             <img src="pipeline_test_actions.png" alt="pipeline_test_actions" style="block" thumbnail="true"/>
         </p>
+        <p><b>Associate Tests with Test Cases</b></p>
+        <p>
+            You can now associate a test with an Azure DevOps test case. This allows you to track test execution
+            and maintain traceability between your automated tests and test cases in Azure DevOps.
+            <img src="test_case_association.png" alt="Test case association" style="block" thumbnail="true"/>
+        </p>
     </chapter>
 
     <chapter title="Pipeline Opening Behavior" id="pipeline_opening_behavior">

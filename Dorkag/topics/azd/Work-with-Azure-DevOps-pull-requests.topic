@@ -111,18 +111,21 @@
       <ui-path>Azure DevOps Pull Requests</ui-path>
       tool window to:
     </p>
-    <list>
-      <li>
-        <ui-path>Filter requests</ui-path>
-                by state, author, reviewer, source branch and target branch.
-      </li>
-      <li>
-        <ui-path>Jump to a pull request on Azure DevOps</ui-path>
-        : select a pull request and choose
-        <ui-path>Open on Azure DevOps</ui-path>
-        from the context
-        menu.
-      </li>
+     <list>
+            <li>
+                <ui-path>Filter requests</ui-path>
+                by state, author, reviewer, source or target branch.
+            </li>
+            <li>
+                <ui-path>Sort the list</ui-path>
+                by updated time, created time, and alphabetically.
+            </li>
+            <li>
+                <ui-path>Jump to a pull request on Azure DevOps</ui-path>: select a pull request and choose
+                <ui-path>Open on Azure DevOps</ui-path>
+                from the context
+                menu.
+            </li>
       <li>
         <ui-path>View diff</ui-path>
         between the suggested changes and the base revision: click the name of a pull request, select a file
