@@ -157,7 +157,8 @@
         <procedure id="1procedure0-1">
             <step>
                 <p>In the main menu, go to
-                    <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>.
+                    <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>
+                    .
                 </p>
             </step>
             <step>
@@ -179,7 +180,8 @@
                     </li>
                     <li>
                         <p>To filter the list of changed files, select the commit you want to investigate in
-                            <ui-path>Changes from</ui-path>.
+                            <ui-path>Changes from</ui-path>
+                            .
                         </p>
                     </li>
                     <li><p>Right-click any file to open the context menu for this file.</p></li>
@@ -189,7 +191,16 @@
                 </list>
             </step>
             <step>
-                <p>Double-click a file to view the suggested changes and comments.</p>
+                <p>Double-click a file to open the diff view. This view shows you the changes made in the pull request,
+                    highlighting what was added, modified, or removed in the file.</p>
+                <p>In the diff view, you can:</p>
+                <list>
+                    <li><p>See the exact changes made to the file, with additions highlighted in green and deletions in
+                        red</p></li>
+                    <li><p>Add comments to specific lines by clicking on the line number or selecting a block of
+                        code</p></li>
+                    <li><p>View existing comments from reviewers</p></li>
+                </list>
             </step>
             <step>
                 <p>You can either resolve a comment, reply to it or add or remove a Like emoji <img src="like.svg"
@@ -203,6 +214,18 @@
                     <ui-path>Delete</ui-path>
                     the comment as well.
                 </p>
+                <p>When there are multiple comments in a file, you can navigate between them using the arrow buttons in
+                    the comment panel or use keyboard shortcuts to move to the next or previous comment.</p>
+                <img src="navigate_between_comments.png" alt="navigate_between_comments" style="block"/>
+                <note>
+                    <p>This feature allows you to efficiently review all comments in a file without having to manually
+                        search for them.</p>
+                    <p>
+                        <emphasis>Note for documentation: A dedicated image showing the comment navigation controls will
+                            be added here.
+                        </emphasis>
+                    </p>
+                </note>
             </step>
             <step>
                 <p>If the reviewer has left a suggestion, you'll see the diff between your code and the suggested one
