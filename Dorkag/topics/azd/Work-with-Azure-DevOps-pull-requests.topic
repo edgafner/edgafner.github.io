@@ -147,6 +147,31 @@
                 </list>
             </li>
          <li>
+             <ui-path>Jump to a pull request on Azure DevOps</ui-path>
+             : select a pull request and choose
+             <ui-path>Open on Azure DevOps</ui-path>
+             from the context
+             menu.
+         </li>
+         <li>
+             <ui-path>View diff</ui-path>
+             between the suggested changes and the base revision: click the name of a pull request, select a file
+             and double-click it or press
+             <shortcut>⌘Cmd</shortcut>
+             <shortcut>D</shortcut>
+             .
+         </li>
+         <li>
+             <ui-path>Create a local branch</ui-path>
+             based on incoming changes: open a pull request, click the branch with incoming changes
+             and choose
+             <ui-path>Checkout 'branch name'…</ui-path>
+             in the context menu.
+             <img src="create_local_branch_based_on_source.png" alt="create_local_branch_based_on_source" style="block"
+                  thumbnail="true"/>
+         </li>
+     </list>
+      <chapter title="Customize View" id="customize_section">
              <ui-path>Create customized quick filters</ui-path>
              by clicking on
              <ui-path>Customize Quick Filter</ui-path>
@@ -159,30 +184,7 @@
              for easy access.
              <img src="customize_quick_filter_toolbar.png" alt="customize_quick_filter_toolbar" style="block"
                   thumbnail="true"/>
-            </li>
-            <li>
-                <ui-path>Jump to a pull request on Azure DevOps</ui-path>: select a pull request and choose
-                <ui-path>Open on Azure DevOps</ui-path>
-                from the context
-                menu.
-            </li>
-      <li>
-        <ui-path>View diff</ui-path>
-        between the suggested changes and the base revision: click the name of a pull request, select a file
-        and double-click it or press
-        <shortcut>⌘Cmd</shortcut>
-          <shortcut>D</shortcut>
-          .
-      </li>
-      <li>
-        <ui-path>Create a local branch</ui-path>
-        based on incoming changes: open a pull request, click the branch with incoming changes
-        and choose
-        <ui-path>Checkout 'branch name'…</ui-path>
-        in the context menu.
-        <img src="create_local_branch_based_on_source.png" alt="create_local_branch_based_on_source" style="block" thumbnail="true"/>
-      </li>
-    </list>
+      </chapter>
   </chapter>
 
 
