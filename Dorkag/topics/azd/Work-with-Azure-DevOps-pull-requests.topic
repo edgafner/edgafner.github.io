@@ -40,8 +40,8 @@
         </tip>
         <p>
           In the
-          <ui-path>New Pull Request Tab</ui-path>
-          , the repository on the left is the target repository that will receive the updates.
+            <ui-path>New Pull Request Tab</ui-path>
+            , the repository on the left is the target repository that will receive the updates.
           The repository on the right is the source repository with the changes that will be added to the
           target
           repository.
@@ -74,8 +74,8 @@
         </p>
       </step>
       <step>
-        <p>Optionally, add reviewers, assign your pull request to someone or add a label to your pull
-          request.</p>
+          <p>Optionally, add reviewers, assign your pull request to someone, add a label to your pull request or
+              associate a work item with your pull request.</p>
       </step>
       <step>
         <p>Click
@@ -118,7 +118,47 @@
             </li>
             <li>
                 <ui-path>Sort the list</ui-path>
-                by updated time, created time, and alphabetically.
+                using the following options:
+                <list>
+                    <li>
+                        <ui-path>CREATED_ASC</ui-path>
+                        Sort by creation date (oldest first)
+                    </li>
+                    <li>
+                        <ui-path>CREATED_DESC</ui-path>
+                        Sort by creation date (newest first)
+                    </li>
+                    <li>
+                        <ui-path>UPDATED_ASC</ui-path>
+                        Sort by last update date (oldest first)
+                    </li>
+                    <li>
+                        <ui-path>UPDATED_DESC</ui-path>
+                        Sort by last update date (newest first)
+                    </li>
+                    <li>
+                        <ui-path>TITLE_ASC</ui-path>
+                        Sort by title (A-Z)
+                    </li>
+                    <li>
+                        <ui-path>TITLE_DESC</ui-path>
+                        Sort by title (Z-A)
+                    </li>
+                </list>
+            </li>
+         <li>
+             <ui-path>Create customized quick filters</ui-path>
+             by clicking on
+             <ui-path>Customize Quick Filter</ui-path>
+             from the top right-wheel button.
+             This allows you to create a custom filter with a personalized name using any combination of the
+             available filter options and save it for future use.
+             <img src="customize_quick_filter_dialog.png" alt="customize_quick_filter_dialog" style="block"
+                  thumbnail="true"/>
+             Once saved, your custom filters will appear under the quick filter action in the PR tool window toolbar
+             for easy access.
+             <img src="customize_quick_filter_toolbar.png" alt="customize_quick_filter_toolbar" style="block"
+                  thumbnail="true"/>
             </li>
             <li>
                 <ui-path>Jump to a pull request on Azure DevOps</ui-path>: select a pull request and choose
@@ -131,8 +171,8 @@
         between the suggested changes and the base revision: click the name of a pull request, select a file
         and double-click it or press
         <shortcut>⌘Cmd</shortcut>
-        <shortcut>D</shortcut>
-        .
+          <shortcut>D</shortcut>
+          .
       </li>
       <li>
         <ui-path>Create a local branch</ui-path>

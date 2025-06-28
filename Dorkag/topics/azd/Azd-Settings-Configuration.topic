@@ -16,7 +16,7 @@
     <chapter title="Azure DevOps" id="general-azure-devops-configuration">
         <p>Here you can add or remove Azure DevOps accounts</p>
 
-        <chapter title="Improved Login Flow" id="improved_login_flow">
+        <chapter title="Login Flow" id="improved_login_flow">
             <p>The latest version introduces an improved login flow with explicit organization/collection selection:</p>
             <list>
                 <li>
@@ -25,20 +25,8 @@
                 <li>
                     <p>Ability to easily switch between multiple organizations/collections</p>
                 </li>
-                <li>
-                    <p>More intuitive UI for managing multiple Azure DevOps accounts</p>
-                </li>
-                <li>
-                    <p>Streamlined authentication process with better error handling</p>
-                </li>
             </list>
         </chapter>
-
-        <deflist>
-            <def title="Clone Git Using SSH" id="clone-git-using-ssh">
-                <p>When enabled, the plugin will use SSH to clone Git repositories from Azure DevOps.</p>
-            </def>
-        </deflist>
     </chapter>
     <chapter title="General Preferences Configuration" id="general-configuration">
         <p>The following options are available:</p>

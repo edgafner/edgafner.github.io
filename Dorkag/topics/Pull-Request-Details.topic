@@ -89,6 +89,7 @@
                     You can reply, edit, delete your comments, or thumbs up the comments left by others.
                 </p>
                 <p>You can resolve a comment with all the statuses comment supported in Azure DevOps.</p>
+                <p><b>Draft Comments Review:</b> You can now review the entire pull request and add draft comments while going over all the files. This allows you to thoroughly examine all changes and prepare your feedback before submitting. Once you've reviewed all files and added your draft comments, you can submit all comments at once using the submit review button, providing a comprehensive review in a single action.</p>
                 <note>
                     Version 2024.3.1+ you can also mention a user in your comment.
                 </note>

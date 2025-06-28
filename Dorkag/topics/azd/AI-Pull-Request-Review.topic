@@ -97,6 +97,33 @@
         </note>
     </chapter>
 
+    <chapter title="AI Draft Comments" id="ai_draft_comments">
+        <p>The AI can now assist you in creating draft comments for pull request reviews, streamlining your review
+            process:</p>
+        <list>
+            <li>
+                <p><b>Bulk Draft Comments:</b> Ask the AI to analyze and post draft comments on all files changed in the
+                    pull request. This provides comprehensive feedback across the entire PR.</p>
+            </li>
+            <li>
+                <p><b>Single File Analysis:</b> When viewing a specific file in the diff editor, you can request the AI
+                    to generate draft comments for that particular file only.</p>
+            </li>
+            <li>
+                <p>Review and edit the AI-generated draft comments before submitting them as part of your review.</p>
+            </li>
+            <li>
+                <p>Use the Submit Comments button to publish all draft comments at once, providing a complete review
+                    workflow.</p>
+            </li>
+        </list>
+        <img src="ai_draft_comments.png" alt="AI draft comments feature" style="block" thumbnail="true"/>
+        <note>
+            <p>AI-generated draft comments should be reviewed and edited as needed before submitting to ensure they
+                align with your review standards and project requirements.</p>
+        </note>
+    </chapter>
+
     <chapter title="AI Provider Options" id="ai_provider_options">
         <p>You can select from multiple AI providers for the pull request review feature, now with support for the latest AI models:</p>
         <list>
@@ -110,7 +137,9 @@
                 <p><b>Gemini:</b> Use Google's Gemini models for your AI reviews. Requires setting up your own API key.</p>
             </li>
             <li>
-                <p><b>AZD AI Provider:</b> Use the default provider included with the plugin. This is a proxy to the latest AI models through the plugin author's subscription, so no API key is required.</p>
+                <p><b>AZD AI Provider:</b> Use the default provider included with the plugin. This is a proxy to the
+                    latest OpenAI gpt-4.1 models through the plugin author's subscription, so no API key is required.
+                </p>
             </li>
         </list>
         <p>Configure your preferred AI provider in the settings:
