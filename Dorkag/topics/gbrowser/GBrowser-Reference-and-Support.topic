@@ -5,7 +5,9 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="GBrowser Reference and Support" id="GBrowser-Reference-and-Support" help-id="Reference-and-Support">
   <primary-label ref="gbrowser"/>
-  <p>
+    <secondary-label ref="gbrowser_version"/>
+
+    <p>
     If you're encountering issues with the GBrowser IntelliJ Plugin or have suggestions for improvements, we're here to
     help!
   </p>

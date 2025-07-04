@@ -6,6 +6,7 @@
        title="Codecov Reference and Support" id="Codecov-Reference-and-Support">
 
   <primary-label ref="codecov"/>
+    <secondary-label ref="codecov_version"/>
   <p>
     If you're encountering issues with the Codecov IntelliJ Plugin or have suggestions for improvements, we're here to help!
   </p>

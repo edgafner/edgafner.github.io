@@ -6,6 +6,7 @@
        title="Codecov Usage" id="Codecov-Usage">
 
   <primary-label ref="codecov"/>
+    <secondary-label ref="codecov_version"/>
   <p>
     Create, manage, and validate the codecov.yml right in Jetbrains's IDE. Make sure you don't commit any mistakes and
     accidentally change Codecov’s behavior due to an invalid configuration.

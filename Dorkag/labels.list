@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE labels SYSTEM "https://resources.jetbrains.com/writerside/1.0/labels-list.dtd">
+<!--suppress XmlUnresolvedReference -->
 <labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
     <primary-label id="azd" short-name="azd" name="Azd" color="green">Azd</primary-label>
@@ -14,6 +15,12 @@
 
     <secondary-label id="experimental" name="Experimental" color="purple">This is an experimental feature
     </secondary-label>
-    <secondary-label id="azd_version" name="V2025.2.22" color="blue">New in version 2025.2
+    <secondary-label id="azd_version" name="V2025.2.24" color="blue">New in version 2025.2
+    </secondary-label>
+    <secondary-label id="gbrowser_version" name="V2025.2.2" color="tangerine">New in version 2025.2
+    </secondary-label>
+    <secondary-label id="codecov_version" name="V2025.2.1" color="green">New in version 2025.2
+    </secondary-label>
+    <secondary-label id="queryflag_version" name="V2025.2.1" color="blue">New in version 2025.2
     </secondary-label>
 </labels>

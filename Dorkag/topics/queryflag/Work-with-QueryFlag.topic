@@ -6,6 +6,7 @@
        title="Work with QueryFlag " id="Work-with-QueryFlag" help-id="Work-with-QureyFlag">
 
     <primary-label ref="queryflag"/>
+    <secondary-label ref="queryflag_version"/>
     <p>
         With the QueryFlag plugin, you can define and execute template-based queries on selected text, making it easy to
         replace a single query parameter from within your editor. By following a few simple steps, you can streamline

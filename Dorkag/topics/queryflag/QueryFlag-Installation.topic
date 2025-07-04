@@ -6,6 +6,7 @@
        title="QueryFlag Installation" id="QueryFlag-Installation">
 
   <primary-label ref="queryflag"/>
+    <secondary-label ref="queryflag_version"/>
   <p>This guide will walk you through the process of installing the <ui-path>QueryFlag</ui-path> plugin.
   </p>
 

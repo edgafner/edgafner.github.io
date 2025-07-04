@@ -6,9 +6,12 @@
        title="QueryFlag Reference and Support" id="QueryFlag-Reference-and-Support">
 
   <primary-label ref="queryflag"/>
+    <secondary-label ref="queryflag_version"/>
+
   <p>
     If you're encountering issues with the QueryFlag IntelliJ Plugin or have suggestions for improvements, we're here to help!
   </p>
+
 
   <chapter title="Feature Requests and Bugs" id="feature_request_and_bug">
     <p>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Privacy Policy" id="privacy-policy">
+
+    <p><control>Last Updated: March 21, 2025</control></p>
+
+    <chapter title="Introduction" id="introduction">
+        <p>Dorkag ("we", "our", or "us") is committed to protecting your privacy and ensuring the security of your data. This Privacy Policy outlines our approach to data collection and privacy for our AZD plugin for the JetBrains suite and other software products and services ("Products and Services").</p>
+    </chapter>
+
+    <chapter title="No Data Collection Policy" id="no-data-collection-policy">
+        <p><control>We do not collect any user data or information through our AZD plugin or other Products and Services.</control></p>
+
+        <p>Specifically:</p>
+        <list type="bullet">
+            <li>We do not collect, access, store, process, or transmit your source code, project files, or other intellectual property</li>
+            <li>We do not collect personal information such as names, email addresses, or contact details</li>
+            <li>We do not collect usage statistics, analytics, or user behavior data</li>
+            <li>We do not use cookies or similar tracking technologies</li>
+            <li>We do not monitor your activities or interactions with our Products and Services</li>
+        </list>
+
+        <p>Our Products and Services operate entirely on your local systems, and no data is transmitted to our servers or third parties.</p>
+    </chapter>
+
+    <chapter title="Software Operation" id="software-operation">
+        <p>Our AZD plugin operates exclusively within your development environment. All operations, processes, and data remain within your infrastructure and under your control.</p>
+    </chapter>
+
+    <chapter title="Third-Party Services" id="third-party-services">
+        <p>Our Products and Services do not integrate with or transmit data to third-party services. We do not share any information with third parties because we do not collect any information to share.</p>
+    </chapter>
+
+    <chapter title="Changes to This Policy" id="changes-to-this-policy">
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on our website. We recommend that you review this Privacy Policy periodically for any changes.</p>
+    </chapter>
+
+    <chapter title="Contact Us" id="contact-us">
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+
+        <p><control>Email</control>: jgafner@dorkag.com</p>
+    </chapter>
+
+    <chapter title="Conclusion" id="conclusion">
+        <p>We are committed to maintaining the trust and confidence of our users by respecting your privacy completely. Our Products and Services are designed to function without collecting or processing any of your data.</p>
+    </chapter>
+
+</topic>

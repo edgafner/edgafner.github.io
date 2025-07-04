@@ -6,6 +6,7 @@
        title="Codecov Installation" id="Codecov-Installation">
 
     <primary-label ref="codecov"/>
+    <secondary-label ref="codecov_version"/>
     <p>Installing the Codecov plugin is straightforward.</p>
 
 

@@ -14,4 +14,6 @@
         <include from="queryflaglib" element-id="queryflagsn.tree"/>
         <include from="runlikemelib" element-id="runlikeme.tree"/>
     </toc-element>
+    <toc-element topic="privacy-policy.topic"/>
+    <toc-element topic="terms-of-service.topic"/>
 </instance-profile>
