@@ -29,11 +29,9 @@
             </p>
                 <list type="bullet">
                     <li>
-                        <p>Under the plugins'
-                            <ui-path>Marketplace</ui-path>
-                            tab search, type in
+                        <p>Under the <ui-path>Marketplace</ui-path> tab, type
                             <ui-path>Codecov</ui-path>
-                            and click on the
+                            and click the
                             <ui-path>Install</ui-path>
                             button.
                         </p>

@@ -47,7 +47,7 @@
                 </p>
             </li>
         </list>
-        <p>See <a href="Codecov-Installation.topic#codecov-sign-in"/> for step-by-step instructions.</p>
+        <p>See <a href="Codecov-Installation.topic#codecov-sign-in">Sign in to Codecov with a personal token</a> for step-by-step instructions.</p>
     </chapter>
 
     <chapter title="View coverage for your repository" id="view-coverage">
