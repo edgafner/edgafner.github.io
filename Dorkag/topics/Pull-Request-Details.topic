@@ -49,6 +49,10 @@
                     surrounding your
                     code changes.</p>
             </step>
+            <tip>
+                You can filter the timeline entries for a specific type:
+                <img src="filter_timeline.png" alt="filter_timeline"/>
+            </tip>
         </procedure>
     </chapter>
     <chapter title="Pull Request Status" id="pull_request_status">
@@ -80,7 +84,7 @@
 
     <chapter title="Review Actions" id="review-actions">
         <p>
-            With AZD you can review a Pull Request without leaving your IDE, it lets you do all the following:
+            With AZD you can review a Pull Request without leaving your IDE. It lets you do all the following:
         </p>
         <deflist collapsible="true">
             <def title="Comment Actions" id="comment">
@@ -89,10 +93,11 @@
                     You can reply, edit, delete your comments, or thumbs up the comments left by others.
                 </p>
                 <p>You can resolve a comment with all the statuses comment supported in Azure DevOps.</p>
-                <p><b>Draft Comments Review:</b> You can now review the entire pull request and add draft comments while going over all the files. This allows you to thoroughly examine all changes and prepare your feedback before submitting. Once you've reviewed all files and added your draft comments, you can submit all comments at once using the submit review button, providing a comprehensive review in a single action.</p>
-                <note>
-                    Version 2024.3.1+ you can also mention a user in your comment.
-                </note>
+                <p><b>Draft Comments Review:</b> You can now review the entire pull request and add draft comments while
+                    going over all the files. This allows you to thoroughly examine all changes and prepare your
+                    feedback before submitting. Once you've reviewed all files and added your draft comments, you can
+                    submit all comments at once using the submit review button, providing a comprehensive review in a
+                    single action.</p>
             </def>
             <def title="Vote Actions" id="vote">
                 <p>Approve, Approve with suggestions, Reset your vote, Wait for changes or Reject the Pull Request.<br/>

@@ -42,7 +42,7 @@
             </def>
             <def title="Enable automatic update" id="enable-automatic-update">
                 <p>When enabled, the plugin will automatically check for updates when Pull Request details are
-                    opened.
+                    opened or when a Pipeline Run tab is opened and running.
                     You can set the update interval in the settings.</p>
             </def>
             <def title="Respect Proxy Configuration" id="respect-proxy-configuration">

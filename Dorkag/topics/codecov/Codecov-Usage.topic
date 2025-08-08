@@ -8,21 +8,47 @@
   <primary-label ref="codecov"/>
     <secondary-label ref="codecov_version"/>
   <p>
-    Create, manage, and validate the codecov.yml right in Jetbrains's IDE. Make sure you don't commit any mistakes and
-    accidentally change Codecov’s behavior due to an invalid configuration.
+    View coverage from your Codecov account directly in the IDE. Sign in with your Codecov personal token, let the plugin detect your current repository,
+    and see coverage for your working branch (or the repository's default branch when the current branch has no data). Create, manage, and validate the codecov.yml right in JetBrains IDEs.
   </p>
 
-  <video src="https://youtu.be/-ho6JGw0D9M" width="600"/>
+  <video src="https://youtu.be/hNEkKONumZg" width="600"/>
 
   <chapter title="Codecov features" id="codecov-features">
     <p>Currently, the following are the features available with the Codecov plugin:</p>
     <list>
-      <li><p>Validation codecov.yml file with a simple right click. See the validation JSON
-        result in the IDE's editor</p></li>
-      <li><p>Get code completion for codecov.yml injected.</p></li>
-      <li><p>Report issues to the plugin's GitHub repository with the Jetbrains's ErrorReportSubmitter extension
-        point</p></li>
+      <li><p>Sign in with a Codecov personal token to access your repositories' coverage data.</p></li>
+      <li><p>Automatic detection of the repository you are working on in the IDE.</p></li>
+      <li><p>Fetch and display coverage for your current Git branch when available, or fall back to the repository's default branch.</p></li>
+      <li><p>Validate codecov.yml with a simple right click and see the JSON result in the editor.</p></li>
+      <li><p>Get code completion for codecov.yml (schema-based injection).</p></li>
+      <li><p>Report issues to the plugin's GitHub repository via JetBrains ErrorReportSubmitter.</p></li>
     </list>
+  </chapter>
+
+  <chapter title="Sign in with a Codecov personal token" id="sign-in-token">
+    <p>To enable coverage retrieval from your Codecov account, sign in using a personal token and select your service provider (GitHub, GitLab, or Bitbucket).</p>
+    <list type="bullet">
+      <li><p>Set the provider and token in <ui-path>Settings | Tools | Codecov</ui-path>, then click <ui-path>Save</ui-path>.</p></li>
+      <li><p>Click <ui-path>Test connection</ui-path>. On success, the plugin shows that it connected and displays the detected Codecov repository for your project.</p></li>
+    </list>
+    <p>See <a href="Codecov-Installation.topic#codecov-sign-in"/> for step-by-step instructions.</p>
+  </chapter>
+
+  <chapter title="View coverage for your repository" id="view-coverage">
+    <p>After you sign in, the plugin automatically identifies the repository of your current project and retrieves
+      coverage from Codecov.</p>
+    <list type="bullet">
+      <li><p><b>Branch selection:</b> If coverage exists for your current branch, that coverage is shown. If not, the plugin
+        falls back to the repository's <emphasis>default branch</emphasis>.</p></li>
+      <li><p><b>Repository detection:</b> The plugin matches your local Git remotes with the repository in Codecov. If multiple
+        remotes exist, the primary <code>origin</code> remote is used.</p></li>
+      <li><p><b>Permissions:</b> The visibility of repositories and coverage data depends on your Codecov account permissions and the
+        token you provided.</p></li>
+    </list>
+    <note>
+      <p>If the current branch has no coverage reports uploaded to Codecov, you'll see the default branch coverage instead.</p>
+    </note>
   </chapter>
 
   <chapter title="Edit Codecov.yml file" id="codecov-injection">
@@ -31,10 +57,19 @@
     </p>
     <img src="autocomplete.png" alt="autocomplete"/>
   </chapter>
+
   <chapter title="Validation" id="codecov-validation">
     <p>
       Check your configuration:
     </p>
     <img src="validate.png" alt="validate"/>
+  </chapter>
+
+  <chapter title="Troubleshooting" id="troubleshooting">
+    <list>
+      <li><p><b>Repository not found:</b> Ensure your project is a Git repository and the remote URL matches the repository configured in Codecov.</p></li>
+      <li><p><b>No coverage for branch:</b> Make sure your CI uploads reports to Codecov for this branch. The plugin will show default branch coverage otherwise.</p></li>
+      <li><p><b>Unauthorized:</b> Verify your personal token is valid and has access to the repository. Re-enter the token in <ui-path>Settings | Tools | Codecov</ui-path>.</p></li>
+    </list>
   </chapter>
 </topic>

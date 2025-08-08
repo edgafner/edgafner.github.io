@@ -33,6 +33,8 @@
     <!--Provide links to related how-to guides, overviews, and tutorials.-->
     <category ref="external" sorted="asc">
       <a href="https://plugins.jetbrains.com/plugin/23390-codecov">Codecov on Marketplace</a>
+      <a href="https://docs.codecov.com/reference/overview">Codecov Personal Access Tokens</a>
+      <a href="https://docs.codecov.com/docs/branches">Codecov Branches and default branch</a>
       <a href="https://dorkag.com">Dorkag Home Page</a>
       <a href="https://github.com/sponsors/edgafner">Sponsor Me</a>
     </category>

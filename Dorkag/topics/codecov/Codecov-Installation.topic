@@ -30,7 +30,7 @@
                 <list type="bullet">
                     <li>
                         <p>Under the plugins'
-                            <ui-path>marketplace</ui-path>
+                            <ui-path>Marketplace</ui-path>
                             tab search, type in
                             <ui-path>Codecov</ui-path>
                             and click on the
@@ -43,5 +43,72 @@
                 </list>
             </li>
         </list>
+    </chapter>
+
+    <chapter title="Sign in to Codecov with a personal token" id="codecov-sign-in">
+        <p>To view coverage from your Codecov account inside the IDE, sign in using your Codecov personal token and
+            select your service provider.</p>
+        <list type="decimal" start="1">
+            <li>
+                <p>Create or copy your personal token from Codecov:</p>
+                <list type="bullet">
+                    <li>
+                        <p>Go to your Codecov account settings and generate a
+                            <emphasis>Personal Access Token</emphasis>
+                            (PAT).
+                        </p>
+                    </li>
+                    <li><p>Ensure the token has access to the repositories you want to view in the IDE.</p></li>
+                </list>
+            </li>
+            <li>
+                <p>Open
+                    <ui-path>Settings | Tools | Codecov</ui-path>
+                    and configure the connection:
+                </p>
+                <list type="bullet">
+                    <li><p>Select your <b>Service provider</b>: <code>GitHub</code>, <code>GitLab</code>, or <code>Bitbucket</code>.
+                    </p></li>
+                    <li>
+                        <p>Paste your token into the <b>Token</b> field and click
+                            <ui-path>Save</ui-path>
+                            .
+                        </p>
+                    </li>
+                    <li>
+                        <p>After provider and token are set, the
+                            <ui-path>Test connection</ui-path>
+                            button becomes enabled.
+                        </p>
+                    </li>
+                </list>
+            </li>
+            <li>
+                <p>Click
+                    <ui-path>Test connection</ui-path>
+                    :
+                </p>
+                <list type="bullet">
+                    <li><p>On success, the plugin confirms it connected to Codecov and displays the detected <b>Codecov
+                        repository</b> that matches your current project (for example: <code>owner/repo</code>).</p>
+                    </li>
+                    <li><p>If the test fails, verify the provider selection, the token, and your repository
+                        permissions.</p></li>
+                </list>
+            </li>
+            <li>
+                <p>Once the connection test succeeds, the plugin will detect your current project repository and show
+                    coverage for your working branch when available (or the repository’s default branch when the current
+                    branch has no data).</p>
+            </li>
+        </list>
+        <note>
+            <p>Your token is stored securely by the IDE, following JetBrains <a
+                    href="https://plugins.jetbrains.com/docs/intellij/persisting-sensitive-data.html">guidelines</a>.
+                You can sign out or replace the token at any time from
+                <ui-path>Settings | Tools | Codecov</ui-path>
+                .
+            </p>
+        </note>
     </chapter>
 </topic>

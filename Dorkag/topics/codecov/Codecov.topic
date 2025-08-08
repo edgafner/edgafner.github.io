@@ -8,20 +8,20 @@
   <section-starting-page>
     <title>Codecov IDEA Plugin</title>
     <description>
-      Create, manage, and validate the codecov.yml right in Jetbrains's IDE. Make sure you don't commit any mistakes and
-      accidentally change Codecov’s behavior due to an invalid configuration.
+      View coverage from your Codecov account directly in the IDE. Sign in with your Codecov personal token, let the plugin detect your current repository,
+      and see coverage for your working branch (or the repository's default branch when the current branch has no data). Create, manage, and validate the codecov.yml right in JetBrains IDEs.
     </description>
 
     <!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
     <spotlight>
       <a href="Codecov-Installation.topic" type="start" summary="How to install Codecov plugin">Installation Guide</a>
-      <a href="Codecov-Usage.topic" type="learn" summary="Codecov features">Codecov How to</a>
+      <a href="Codecov-Usage.topic" type="learn" summary="Codecov features and account sign-in">Codecov How to</a>
     </spotlight>
 
     <!--    Add several topics that are most important for this section.    -->
     <primary>
       <title>Get started</title>
-      <a href="Codecov-Usage.topic" type="learn" summary="Codecov features">Codecov How to</a>
+      <a href="Codecov-Usage.topic" type="learn" summary="Sign in and view coverage from Codecov">Codecov How to</a>
     </primary>
 
     <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->
