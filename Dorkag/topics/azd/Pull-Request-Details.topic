@@ -49,6 +49,10 @@
                     surrounding your
                     code changes.</p>
             </step>
+            <tip>
+                You can filter the timeline entries for a specific type:
+                <img src="filter_timeline.png" alt="filter_timeline"/>
+            </tip>
         </procedure>
     </chapter>
     <chapter title="Pull Request Status" id="pull_request_status">
@@ -91,13 +95,15 @@
             <def title="Comment Actions" id="comment">
                 <p>Comment on a change made by the author, or comment on the Pull Request as a whole.<br/>
                     <img src="commentPRLevel.png" alt="comment-on-pr" style="block" border-effect="line"/>
-                    You can reply, edit, delete your comments, or thumb up the comments left by others.
+                    You can reply, edit, delete your comments, or thumbs up the comments left by others.
                 </p>
                 <p>You can resolve a comment with all the statuses comment supported in Azure DevOps.</p>
-                <p>New features in the latest version:</p>
+                <p>New features since 2025.2+ versions:</p>
                 <list>
                     <li>
-                        <p><b>Paste or attach images in comments:</b> You can now paste images directly from your clipboard into PR comments, or attach image files from disk — all right from the IDE. This makes it easier to provide visual context for your feedback.</p>
+                        <p><b>Paste or attach images in comments:</b> You can now paste images directly from your
+                            clipboard into PR comments, or attach image files from disk — all right from the IDE. This
+                            makes it easier to provide visual context for your feedback.</p>
                         <img src="attachimagecomment.png" alt="attachimagecomment.png"/>
                     </li>
                     <li>
@@ -106,7 +112,19 @@
                             professional and easy to understand.</p>
                     </li>
                     <li>
-                        <p><b>Multi-line comment positions:</b> Multi-line comments now keep the correct position and remain aligned with the selected code block. Previous inaccuracies with multi-line comment placement have been fixed.</p>
+                        <p><b>Multi-line comment positions:</b> Multi-line comments now keep the correct position and
+                            remain aligned with the selected code block. Previous inaccuracies with multi-line comment
+                            placement have been fixed.</p>
+                    </li>
+                    <li>
+                        <p><b>Draft Comments Review:</b> You can now review the entire pull request and add draft
+                            comments while
+                            going over all the files. This allows you to thoroughly examine all changes and prepare your
+                            feedback before submitting. Once you've reviewed all files and added your draft comments,
+                            you can
+                            submit all comments at once using the submit review button, providing a comprehensive review
+                            in a
+                            single action.</p>
                     </li>
                 </list>
                 <note>
@@ -114,8 +132,7 @@
                 </note>
             </def>
             <def title="Vote Actions" id="vote">
-                <p>Approve, Approve with suggestions, Reset your vote, Wait for changes, or Reject the Pull
-                    Request.<br/>
+                <p>Approve, Approve with suggestions, Reset your vote, Wait for changes or Reject the Pull Request.<br/>
                 </p>
                 <img src="vote_status_options.png" alt="approve-reject"/>
             </def>
@@ -144,7 +161,7 @@
                 <img src="publish_draft_actions.png" alt="publish-draft"/>
             </def>
             <def title="Description Actions" id="description">
-                <p>Edit the description of the Pull Request or add a description if it's missing.
+                <p>Edit the description of the Pull Request, or add a description if it's missing.
                 </p>
                 When creating the PR from the IDE, AZD is filling the description with the commit messages.
                 You can edit the description before triggering the PR creation.
