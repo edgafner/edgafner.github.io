@@ -7,33 +7,31 @@
   <primary-label ref="gbrowser"/>
     <secondary-label ref="gbrowser_version"/>
   <p>
-    Using the GBrowser plugin is straightforward same as using any browser but within the IDE.
+    Using the GBrowser plugin is straightforward — just like using a browser, but inside the IDE.
   </p>
 
   <chapter title="Open GBrowser" id="open-gbrowser">
     <p>
-      To open the GBrowser, click the GBrowser icon on the toolbar.
-      And that is it! You can start navigating the web.
+      To open GBrowser, click the GBrowser icon on the toolbar.
+      That's it — you can start navigating the web.
     </p>
     <img src="gbrowser_main_view.png" alt="gbrowser_main_view"/>
   </chapter>
 
   <chapter title="GBrowser Actions" id="gbrowser-actions">
-    <p>In the top right corner of the GBrowser, you can find the
-      <shortcut>more actions</shortcut>
-      button
+    <p>In the top-right corner of GBrowser, you can find the More actions button
       <img src="down.svg" alt="down"/>
     </p>
-    <p>The more actions let you do additional configurations and actions such as:</p>
+    <p>The More actions menu lets you perform additional configurations and actions such as:</p>
       <list columns="2">
         <li>Navigate to the home page</li>
-        <li>Find and search</li>
+        <li>Find on page and search</li>
         <li>Open in default browser</li>
         <li>Reload/Stop Loading Page</li>
-        <li>Open DevTools toolwindow</li>
-        <li>Clear Cookies and History</li>
-        <li>BookMarks functionalities</li>
-        <li>Add/Close/Duplicate Tab</li>
+        <li>Open DevTools tool window</li>
+        <li>Clear cookies and history</li>
+        <li>Bookmark functionality</li>
+        <li>Add/Close/Duplicate tab</li>
         <li>Zoom functionality</li>
         <li>Open Settings</li>
       </list>
