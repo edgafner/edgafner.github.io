@@ -97,14 +97,16 @@
                 <p>New features in the latest version:</p>
                 <list>
                     <li>
-                        <p><b>Attach images to comments:</b> You can now attach images directly to your comments right
-                            from the IDE, making it easier to provide visual context for your feedback.</p>
+                        <p><b>Paste or attach images in comments:</b> You can now paste images directly from your clipboard into PR comments, or attach image files from disk — all right from the IDE. This makes it easier to provide visual context for your feedback.</p>
                         <img src="attachimagecomment.png" alt="attachimagecomment.png"/>
                     </li>
                     <li>
                         <p><b>Fix/Polish comment grammar with AI:</b> Before posting a comment, you can use AI to check
                             and improve the grammar and clarity of your comment text, ensuring your feedback is
                             professional and easy to understand.</p>
+                    </li>
+                    <li>
+                        <p><b>Multi-line comment positions:</b> Multi-line comments now keep the correct position and remain aligned with the selected code block. Previous inaccuracies with multi-line comment placement have been fixed.</p>
                     </li>
                 </list>
                 <note>
