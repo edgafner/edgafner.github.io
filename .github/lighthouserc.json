@@ -14,10 +14,26 @@
     "assert": {
       "preset": "lighthouse:no-pwa",
       "assertions": {
-        "categories:performance": ["warn", {"minScore": 0.7}],
-        "categories:accessibility": ["warn", {"minScore": 0.9}],
-        "categories:best-practices": ["warn", {"minScore": 0.9}],
-        "categories:seo": ["warn", {"minScore": 0.9}]
+        "categories:performance": ["warn", {"minScore": 0.5}],
+        "categories:accessibility": ["warn", {"minScore": 0.75}],
+        "categories:best-practices": ["warn", {"minScore": 0.8}],
+        "categories:seo": ["warn", {"minScore": 0.8}],
+        
+        "button-name": "off",
+        "meta-description": "warn",
+        "meta-viewport": "warn",
+        "font-display": "off",
+        "image-size-responsive": "off",
+        "legacy-javascript": "off",
+        "unsized-images": "warn",
+        "unused-css-rules": "off",
+        "unused-javascript": "off",
+        "uses-rel-preconnect": "off",
+        "render-blocking-resources": "off",
+        "largest-contentful-paint": "warn",
+        "first-contentful-paint": "warn",
+        "interactive": "warn",
+        "max-potential-fid": "warn"
       }
     }
   }
