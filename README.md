@@ -8,7 +8,7 @@
 
 ## 📚 Documentation
 
-Visit our documentation site: [https://edgafner.github.io](https://edgafner.github.io)
+Visit the documentation site: [https://edgafner.github.io](https://edgafner.github.io)
 
 ## 🔌 Plugins Suite
 
