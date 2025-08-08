@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta-tags>
+    <!-- Open Graph tags for better social media sharing -->
+    <meta property="og:title" content="DORKAG JetBrains IDE Plugins Documentation"/>
+    <meta property="og:description" content="Complete documentation for AZD, GBrowser, Codecov, QueryFlag, and RunLikeMe plugins for JetBrains IDEs"/>
+    <meta property="og:image" content="https://edgafner.github.io/images/banner.svg"/>
+    <meta property="og:url" content="https://edgafner.github.io"/>
+    <meta property="og:type" content="website"/>
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@Jongafner"/>
+    <meta name="twitter:title" content="DORKAG JetBrains IDE Plugins"/>
+    <meta name="twitter:description" content="Azure DevOps, Browser Integration, Code Coverage, and more for your JetBrains IDE"/>
+    <meta name="twitter:image" content="https://edgafner.github.io/images/banner.svg"/>
+    
+    <!-- Additional SEO tags -->
+    <meta name="description" content="DORKAG plugins suite: AZD for Azure DevOps, GBrowser for browser integration, Codecov for code coverage, QueryFlag for query management, RunLikeMe for run configurations"/>
+    <meta name="keywords" content="JetBrains, IntelliJ IDEA, Azure DevOps, AZD, GBrowser, Codecov, QueryFlag, RunLikeMe, IDE plugins, developer tools"/>
+    <meta name="author" content="DORKAG Team"/>
+</meta-tags>
