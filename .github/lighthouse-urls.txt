@@ -1,0 +1,4 @@
+# URLs to test with Lighthouse CI
+# Add new URLs here as they become available
+https://edgafner.github.io
+https://edgafner.github.io/dorkag.html

@@ -4,7 +4,8 @@
       "Bash(find:*)",
       "Bash(curl:*)",
       "Bash(gh pr view:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }
