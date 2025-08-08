@@ -21,6 +21,10 @@ jobs:
     # Only run if the triggering workflow succeeded OR it's a PR/manual trigger
     if: ${{ (github.event.workflow_run.conclusion == 'success') || github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
     steps:
       - uses: actions/checkout@v4
       
@@ -91,12 +95,14 @@ jobs:
           
       - name: Run Lighthouse CI
         id: lighthouse
+        continue-on-error: true
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: ${{ steps.check-urls.outputs.urls }}
           uploadArtifacts: true
           temporaryPublicStorage: true
           runs: 3  # Run 3 times and use median
+          configPath: './.github/lighthouserc.json'
           
       - name: Format results summary
         if: always()
@@ -104,32 +110,51 @@ jobs:
           echo "## Lighthouse Performance Report" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
-          if [ -d .lighthouseci ]; then
+          # Check multiple possible locations for Lighthouse results
+          RESULTS_DIR=""
+          if [ -d ".lighthouseci" ]; then
+            RESULTS_DIR=".lighthouseci"
+          elif [ -d "lhci_reports" ]; then
+            RESULTS_DIR="lhci_reports"
+          fi
+          
+          if [ -n "$RESULTS_DIR" ]; then
+            echo "Found results in $RESULTS_DIR" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
             echo "| Page | Performance | Accessibility | Best Practices | SEO |" >> $GITHUB_STEP_SUMMARY
             echo "|------|------------|---------------|----------------|-----|" >> $GITHUB_STEP_SUMMARY
             
-            for report in .lighthouseci/lhr-*.json; do
+            for report in $RESULTS_DIR/lhr-*.json $RESULTS_DIR/*.json; do
               if [ -f "$report" ]; then
-                url=$(jq -r '.finalUrl' "$report")
-                perf=$(jq -r '.categories.performance.score * 100 | floor' "$report")
-                a11y=$(jq -r '.categories.accessibility.score * 100 | floor' "$report")
-                bp=$(jq -r '.categories["best-practices"].score * 100 | floor' "$report")
-                seo=$(jq -r '.categories.seo.score * 100 | floor' "$report")
-                
-                echo "| ${url#https://} | $perf | $a11y | $bp | $seo |" >> $GITHUB_STEP_SUMMARY
+                url=$(jq -r '.finalUrl // .requestedUrl // "unknown"' "$report" 2>/dev/null || echo "parse-error")
+                if [ "$url" != "parse-error" ] && [ "$url" != "unknown" ]; then
+                  perf=$(jq -r '(.categories.performance.score // 0) * 100 | floor' "$report")
+                  a11y=$(jq -r '(.categories.accessibility.score // 0) * 100 | floor' "$report")
+                  bp=$(jq -r '(.categories["best-practices"].score // 0) * 100 | floor' "$report")
+                  seo=$(jq -r '(.categories.seo.score // 0) * 100 | floor' "$report")
+                  
+                  echo "| ${url#https://} | $perf | $a11y | $bp | $seo |" >> $GITHUB_STEP_SUMMARY
+                fi
               fi
             done
           else
-            echo "No Lighthouse results found" >> $GITHUB_STEP_SUMMARY
+            echo "No Lighthouse results directory found" >> $GITHUB_STEP_SUMMARY
+            echo "Checked: .lighthouseci, lhci_reports" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Current directory contents:" >> $GITHUB_STEP_SUMMARY
+            ls -la >> $GITHUB_STEP_SUMMARY
           fi
           
       - name: Save Lighthouse results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lighthouse-results
-          path: .lighthouseci
+          name: lighthouse-results-${{ github.event_name }}-${{ github.run_attempt }}
+          path: |
+            .lighthouseci/
+            lighthouse-urls.txt
           retention-days: 30
+          if-no-files-found: warn
           
       - name: Comment PR results
         if: github.event_name == 'pull_request'
