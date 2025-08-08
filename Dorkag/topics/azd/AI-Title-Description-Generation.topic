@@ -71,7 +71,7 @@
 
     <chapter title="AI Provider Options" id="ai_provider_options">
         <p>You can select from multiple AI providers for the title, description, and commit message generation features,
-            now with support for the latest AI models:</p>
+            now with support for the latest AI models and local providers:</p>
         <list>
             <li>
                 <p><b>Claude:</b> Use Anthropic's Claude models including the latest versions for generating content.
@@ -86,6 +86,10 @@
                     key.</p>
             </li>
             <li>
+                <p><b>Ollama (local):</b> Use locally running models via Ollama on your machine. No cloud API key is
+                    required, but you need the Ollama runtime installed and a model pulled (for example, "llama3").</p>
+            </li>
+            <li>
                 <p><b>AZD AI Provider:</b> Use the default provider included with the plugin. This is a proxy to the
                     latest AI models through the plugin author's subscription, so no API key is required.</p>
             </li>
@@ -94,7 +98,7 @@
             <img src="ai_provider_settings.png" alt="AI provider settings" style="block" thumbnail="true"/>
         </p>
         <note>
-            <p>For Claude, OpenAI, and Gemini options, you'll need to provide your own API keys in the settings.</p>
+            <p>For Claude, OpenAI, and Gemini options, you'll need to provide your own API keys in the settings. Ollama and the AZD AI Provider do not require cloud API keys.</p>
         </note>
     </chapter>
 </topic>
