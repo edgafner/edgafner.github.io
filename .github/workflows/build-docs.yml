@@ -130,10 +130,10 @@ jobs:
           
       - name: Upload to Dorka Repository
         env:
-          GITHUB_TOKEN: ${{ secrets.DORKA_UPLOAD_TOKEN }}
+          DORKA_TOKEN: ${{ secrets.DORKA_UPLOAD_TOKEN }}
         run: |
           # Check if the DORKA_UPLOAD_TOKEN is set
-          if [ -z "$GITHUB_TOKEN" ]; then
+          if [ -z "$DORKA_TOKEN" ]; then
             echo "DORKA_UPLOAD_TOKEN not configured, skipping upload to Dorka repository"
             exit 0
           fi
@@ -148,7 +148,7 @@ jobs:
           # Delete existing "docs-latest" release if it exists
           echo "Checking for existing docs-latest release..."
           RELEASE_ID=$(curl -s \
-            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Authorization: token $DORKA_TOKEN" \
             -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/repos/edgafner/dorka/releases/tags/docs-latest \
             | jq -r '.id // empty')
@@ -156,7 +156,7 @@ jobs:
           if [ -n "$RELEASE_ID" ]; then
             echo "Deleting existing docs-latest release (ID: $RELEASE_ID)..."
             curl -X DELETE \
-              -H "Authorization: token $GITHUB_TOKEN" \
+              -H "Authorization: token $DORKA_TOKEN" \
               -H "Accept: application/vnd.github.v3+json" \
               https://api.github.com/repos/edgafner/dorka/releases/$RELEASE_ID
           fi
@@ -164,7 +164,7 @@ jobs:
           # Create new release with "docs-latest" tag
           echo "Creating new docs-latest release..."
           RESPONSE=$(curl -X POST \
-            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Authorization: token $DORKA_TOKEN" \
             -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/repos/edgafner/dorka/releases \
             -d '{
@@ -187,7 +187,7 @@ jobs:
           # Upload the documentation artifact
           echo "Uploading documentation artifact..."
           curl -X POST \
-            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Authorization: token $DORKA_TOKEN" \
             -H "Content-Type: application/zip" \
             --data-binary @"artifacts/${{ env.ARTIFACT }}" \
             "${UPLOAD_URL}?name=${{ env.ARTIFACT }}"
