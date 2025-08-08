@@ -172,7 +172,7 @@
     <chapter title="View and apply the suggested changes" id="view_and_apply_changes">
         <p>If the maintainers of the original repository left comments or made suggestions with regard to your changes,
             you
-            can view and apply them directly from Jetbrains' IDEA.</p>
+            can view and apply them directly from a JetBrains IDE.</p>
         <procedure id="1procedure0-1">
             <step>
                 <p>In the main menu, go to

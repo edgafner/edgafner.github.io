@@ -8,9 +8,9 @@
     <section-starting-page>
         <title>AZD</title>
         <description>
-            Based on Jetbrains' GitHub Pull Request and GitLab Merge Request plugins, AZD lets you manage Git projects
+            Based on JetBrains' GitHub Pull Request and GitLab Merge Request plugins, AZD lets you manage Git projects
             hosted on Azure DevOps directly from the IDE:
-            clone repositories, share your projects, create pull requests,and review incoming pull requests.
+            clone repositories, share your projects, create pull requests, and review incoming pull requests.
             In addition, it lets you manage your Azure DevOps pipelines and provides support for your development
             right from the IDE.
         </description>

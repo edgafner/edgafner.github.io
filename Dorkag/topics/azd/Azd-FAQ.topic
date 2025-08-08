@@ -77,7 +77,7 @@
                 the
                 <ui-path>User credential helper</ui-path>
                 checkbox under
-                <ui-path>Setting | Version Control | Git</ui-path>
+                <ui-path>Settings | Version Control | Git</ui-path>
             </li>
         </list>
     </chapter>

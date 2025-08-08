@@ -9,7 +9,7 @@
     <p>Installing the AZD plugin is straightforward.
         This guide will walk you through the process of installing the
         plugin and connecting it to your Azure DevOps account.<br/>
-        For more information on JetBrains' plugins' installation, refer to the official
+        For more information on JetBrains plugin installation, refer to the official
         <a href="https://www.jetbrains.com/help/idea/managing-plugins.html">documentation</a>.
     </p>
 
@@ -19,7 +19,7 @@
         <p>
             <control>Requirements</control>
         </p>
-        <p>A JetBrains' IDE (version 2023.2+) and an active
+        <p>A JetBrains IDE (version 2023.2+) and an active
             <control>Azure DevOps Service</control>
             or
             <control>Azure DevOps Server (version 2020+)</control>
@@ -34,7 +34,7 @@
                     <step><p>Open JetBrains IDE.</p>
                         <list type="bullet">
                             <li>
-                                <p>Open your JetBrains' IDE and navigate to the
+                                <p>Open your JetBrains IDE and navigate to the
                                     <ui-path>Plugins</ui-path>
                                     section under the Settings dialog.
                                 </p>
@@ -44,9 +44,9 @@
                     <step><p>Search for Azd Plugin.</p>
                         <list type="bullet">
                             <li>
-                                <p>Under the plugins' marketplace tab search, type in
+                                <p>Under the <ui-path>Marketplace</ui-path> tab, type
                                     <ui-path>Azd</ui-path>
-                                    and click on the
+                                    and click the
                                     <ui-path>Install</ui-path>
                                     button.
                                 </p>
@@ -58,12 +58,12 @@
                 </procedure>
             </tab>
             <tab title="From AZD Marketplace Page" id="from-azd-marketplace-page">
-                <p>You can also install the plugin from the JetBrains' marketplace.</p>
+                <p>You can also install the plugin from the JetBrains Marketplace.</p>
                 <list type="bullet">
                     <li>
                         <p>Open the <a href="https://plugins.jetbrains.com/plugin/22319-azd">AZD plugin webpage</a> on
                             the
-                            JetBrains' marketplace.
+                            JetBrains Marketplace.
                         </p>
                     </li>
                     <li>
@@ -300,9 +300,9 @@
                 <warning title="Important">
                     <list type="bullet">
                         <li>When connecting from the <b>AZD Toolwindow</b>, the plugins detect and append your Azure
-                            Devops organization name (only if necessary, see a bullet below).<br/>
+                            DevOps organization name (only if necessary, see a bullet below).<br/>
                             When connecting from the <b>Settings Dialog</b>, the plugin does not append the Azure
-                            Devops organization name
+                            DevOps organization name
                             because it can't detect the organization name during the Settings
                             session,
                             so <b>you will have to fill that</b>.

@@ -100,7 +100,7 @@
   <chapter title="Manage incoming pull requests" id="manage_incoming_pull_requests">
     <p>If you're a project maintainer, and you have an Azure DevOps remote configured for your project, you can view
       and
-      manage incoming pull requests directly from Jetbrains' IDEA.
+      manage incoming pull requests directly from a JetBrains IDE.
     </p>
     <p>To view incoming pull requests, select
       <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>
