@@ -2,7 +2,7 @@ name: Claude Code Review
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [ opened, synchronize ]
     # Optional: Only run on specific file changes
     # paths:
     #   - "src/**/*.ts"
@@ -42,17 +42,22 @@ jobs:
 
           # Direct prompt for automated review (no @claude mention needed)
           direct_prompt: |
-            Please review this pull request and provide feedback on:
-            - Code quality and best practices
-            - Potential bugs or issues
-            - Performance considerations
-            - Security concerns
-            - Test coverage
+            Please review this pull request for our GitHub Pages documentation site and provide feedback on:
+            - Documentation structure and Writerside XML validity
+            - GitHub Actions workflow configuration and optimization
+            - SEO and meta tags implementation
+            - Static site performance and accessibility
+            - Security headers and CSP considerations
+            - Broken links and asset references
+            - Mobile responsiveness and cross-browser compatibility
+            - Search functionality (Algolia) integration
+            - Build artifacts and deployment configuration
             
+            Focus on GitHub Pages specific concerns like build times, artifact sizes, and CDN caching.
             Be constructive and helpful in your feedback.
 
           # Optional: Use sticky comments to make Claude reuse the same comment on subsequent pushes to the same PR
-          # use_sticky_comment: true
+          use_sticky_comment: true
           
           # Optional: Customize review based on file types
           # direct_prompt: |

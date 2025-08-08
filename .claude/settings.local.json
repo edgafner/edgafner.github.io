@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(find:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh api:*)"
     ],
     "deny": []
   }
