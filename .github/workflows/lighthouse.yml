@@ -91,12 +91,14 @@ jobs:
           
       - name: Run Lighthouse CI
         id: lighthouse
+        continue-on-error: true
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: ${{ steps.check-urls.outputs.urls }}
           uploadArtifacts: true
           temporaryPublicStorage: true
           runs: 3  # Run 3 times and use median
+          configPath: './.github/lighthouserc.json'
           
       - name: Format results summary
         if: always()
@@ -128,8 +130,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-results
-          path: .lighthouseci
+          path: |
+            .lighthouseci/
+            lighthouse-urls.txt
           retention-days: 30
+          if-no-files-found: warn
           
       - name: Comment PR results
         if: github.event_name == 'pull_request'

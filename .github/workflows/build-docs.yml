@@ -126,6 +126,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: docs
+          path: artifacts
           
       - name: Upload to Dorka Repository
         env:
@@ -135,6 +136,13 @@ jobs:
           if [ -z "$GITHUB_TOKEN" ]; then
             echo "DORKA_UPLOAD_TOKEN not configured, skipping upload to Dorka repository"
             exit 0
+          fi
+          
+          # Verify artifact exists
+          if [ ! -f "artifacts/${{ env.ARTIFACT }}" ]; then
+            echo "Artifact not found at artifacts/${{ env.ARTIFACT }}"
+            ls -la artifacts/
+            exit 1
           fi
           
           # Delete existing "docs-latest" release if it exists
