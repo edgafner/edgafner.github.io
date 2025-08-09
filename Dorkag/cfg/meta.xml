@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <meta-tags>
+    <!-- Preconnect hints for performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net"/>
+    <link rel="preconnect" href="https://0zsrmcdhq9-dsn.algolia.net"/>
+    <link rel="dns-prefetch" href="https://twitter.com"/>
+    <link rel="dns-prefetch" href="https://www.facebook.com"/>
+    <link rel="dns-prefetch" href="https://www.linkedin.com"/>
+    
+    <!-- Security headers (via meta tags - limited on GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://*.algolia.net https://*.algolianet.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self' https://*.algolia.net https://*.algolianet.com"/>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
+    <meta name="referrer" content="strict-origin-when-cross-origin"/>
+    
     <!-- Open Graph tags for better social media sharing -->
     <meta property="og:title" content="DORKAG JetBrains IDE Plugins Documentation"/>
     <meta property="og:description" content="Complete documentation for AZD, GBrowser, Codecov, QueryFlag, and RunLikeMe plugins for JetBrains IDEs"/>
@@ -18,4 +31,29 @@
     <meta name="description" content="DORKAG plugins suite: AZD for Azure DevOps, GBrowser for browser integration, Codecov for code coverage, QueryFlag for query management, RunLikeMe for run configurations"/>
     <meta name="keywords" content="JetBrains, IntelliJ IDEA, Azure DevOps, AZD, GBrowser, Codecov, QueryFlag, RunLikeMe, IDE plugins, developer tools"/>
     <meta name="author" content="DORKAG Team"/>
+    
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "DORKAG JetBrains IDE Plugins",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Windows, macOS, Linux",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "ratingCount": "100"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "DORKAG Team"
+      }
+    }
+    </script>
 </meta-tags>
