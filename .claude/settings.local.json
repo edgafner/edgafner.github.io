@@ -7,6 +7,9 @@
       "Bash(gh api:*)",
       "Bash(rm:*)"
     ],
-    "deny": []
+    "deny": [],
+    "additionalDirectories": [
+      "/Users/jonathangafner/IdeaProjects/edgafner/services/dorka"
+    ]
   }
 }
