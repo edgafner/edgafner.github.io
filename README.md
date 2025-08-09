@@ -12,24 +12,24 @@ Visit the documentation site: [https://edgafner.github.io](https://edgafner.gith
 
 ## 🔌 Plugins Suite
 
-### [AZD - Azure DevOps Integration](https://edgafner.github.io/azdlib.html)
+### [AZD - Azure DevOps Integration](https://edgafner.github.io/azd.html)
 
 Complete Azure DevOps integration for JetBrains IDEs. Manage pull requests, pipelines, and work items without leaving
 your IDE.
 
-### [GBrowser - Browser Integration](https://edgafner.github.io/gbrowserlib.html)
+### [GBrowser - Browser Integration](https://edgafner.github.io/gbrowser.html)
 
 Seamlessly integrate browser functionality into your development workflow.
 
-### [Codecov - Code Coverage](https://edgafner.github.io/codecovlib.html)
+### [Codecov - Code Coverage](https://edgafner.github.io/codecov.html)
 
 Visualize and track code coverage directly in your IDE.
 
-### [QueryFlag - Query Management](https://edgafner.github.io/queryflaglib.html)
+### [QueryFlag - Query Management](https://edgafner.github.io/queryflag.html)
 
 Efficient query management and execution tools.
 
-### [RunLikeMe - Run Configuration Management](https://edgafner.github.io/runlikemelib.html)
+### [RunLikeMe - Run Configuration Management](https://edgafner.github.io/runlikeme.html)
 
 Share and manage run configurations across your team.
 
