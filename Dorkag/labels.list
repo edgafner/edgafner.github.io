@@ -19,8 +19,8 @@
     </secondary-label>
     <secondary-label id="gbrowser_version" name="V2025.2.4" color="tangerine">New in version 2025.2
     </secondary-label>
-    <secondary-label id="codecov_version" name="V2025.2.12" color="green">New in version 2025.2
+    <secondary-label id="codecov_version" name="V2025.2.13" color="green">New in version 2025.2
     </secondary-label>
-    <secondary-label id="queryflag_version" name="V2025.2.5" color="blue">New in version 2025.2
+    <secondary-label id="queryflag_version" name="V2025.2.6" color="blue">New in version 2025.2
     </secondary-label>
 </labels>
