@@ -13,12 +13,6 @@ env:
   INSTANCE: 'Dorkag/dorkag'
   ARTIFACT: 'webHelpDORKAG2-all.zip'
   DOCKER_VERSION: '241.18775'
-  ALGOLIA_ARTIFACT: 'algolia-indexes-DORKAG.zip'
-  ALGOLIA_APP_NAME: '0ZSRMCDHQ9'
-  ALGOLIA_INDEX_NAME: 'Dorkag'
-  ALGOLIA_KEY: '${{ secrets.ALGOLIA_KEY }}'
-  CONFIG_JSON_PRODUCT: 'Dorkag'
-  CONFIG_JSON_VERSION: '2'
 
 jobs:
   build:
@@ -43,8 +37,6 @@ jobs:
           instance: ${{ env.INSTANCE }}
           artifact: ${{ env.ARTIFACT }}
           docker-version: ${{ env.DOCKER_VERSION }}
-        env:
-          ALGOLIA_KEY: ${{ secrets.ALGOLIA_KEY }}
 
       - name: Save artifact with build results
         uses: actions/upload-artifact@v4
@@ -53,7 +45,6 @@ jobs:
           path: |
             artifacts/${{ env.ARTIFACT }}
             artifacts/report.json
-            artifacts/${{ env.ALGOLIA_ARTIFACT }}
           retention-days: 7
           compression-level: 9  # Maximum compression
   test:
@@ -97,28 +88,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-  publish-indexes:
-    needs: [ build, test, deploy ]
-    runs-on: ubuntu-latest
-    container:
-      image: registry.jetbrains.team/p/writerside/builder/algolia-publisher:2.0.32-3
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: docs
-      - name: Unzip artifact
-        run: |
-          unzip -O UTF-8 -qq '${{ env.ALGOLIA_ARTIFACT }}' -d algolia-indexes
-          env algolia-key='${{env.ALGOLIA_KEY}}' java -jar /opt/builder/help-publication-agent.jar \
-          update-index \
-          --application-name '${{env.ALGOLIA_APP_NAME}}' \
-          --index-name '${{env.ALGOLIA_INDEX_NAME}}' \
-          --product '${{env.CONFIG_JSON_PRODUCT}}' \
-          --version '${{env.CONFIG_JSON_VERSION}}' \
-          --index-directory algolia-indexes/ \
-          2>&1 | tee algolia-update-index-log.txt
 
   upload-to-dorka:
     needs: [ build, test, deploy ]
