@@ -89,7 +89,6 @@ We welcome contributions! Here's how you can help:
 
 - **Documentation Engine**: [JetBrains Writerside](https://www.jetbrains.com/writerside/)
 - **Hosting**: GitHub Pages
-- **Search**: Algolia DocSearch
 - **CI/CD**: GitHub Actions
 - **Format**: XML-based topics with semantic markup
 
@@ -100,7 +99,7 @@ The documentation is automatically built and deployed on every push to the main 
 - Building documentation with Writerside
 - Validating content structure
 - Deploying to GitHub Pages
-- Updating Algolia search indexes
+- Uploading artifacts to external repositories
 
 ## 📝 License
 

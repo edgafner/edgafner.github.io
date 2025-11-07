@@ -49,12 +49,9 @@ The `.github/workflows/build-docs.yml` workflow handles:
 1. **Build**: Uses JetBrains/writerside-github-action to build documentation
 2. **Test**: Validates documentation with writerside-checker-action
 3. **Deploy**: Publishes to GitHub Pages
-4. **Algolia**: Updates search indexes
-5. **Release**: Creates GitHub releases with documentation artifacts
-6. **Trigger**: Optionally triggers deployment to external Dorka system
+4. **Upload**: Uploads artifacts to external Dorka repository
 
 ### Key Configuration Variables
-- **Algolia Search**: Configured with app ID `0ZSRMCDHQ9` and index `Dorkag`
 - **Web Root**: https://edgafner.github.io
 - **Docker Version**: 241.18775
 - **Primary Color**: Aqua theme
@@ -77,12 +74,10 @@ The GitHub Actions workflow automatically:
 - Builds documentation on push to main
 - Tests documentation validity
 - Deploys to GitHub Pages
-- Updates Algolia search indexes
-- Creates release artifacts
+- Uploads artifacts to external repositories
 
 ## Important Notes
 - Documentation is written in Writerside XML format, not Markdown
 - All topics must validate against Writerside DTD schemas
 - Images should be placed in appropriate subdirectories under `Dorkag/images/`
-- The site uses Algolia for search functionality
 - GitHub Pages deployment is automatic on main branch updates
