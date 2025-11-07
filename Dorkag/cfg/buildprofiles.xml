@@ -25,9 +25,6 @@
 
         <noindex-content>false</noindex-content>
         <offline-docs>false</offline-docs>
-        <algolia-id>0ZSRMCDHQ9</algolia-id>
-        <algolia-index>Dorkag</algolia-index>
-        <algolia-api-key>${ALGOLIA_KEY}</algolia-api-key>
         <web-root>https://edgafner.github.io</web-root>
     </variables>
 

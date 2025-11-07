@@ -50,9 +50,8 @@ jobs:
             - Security headers and CSP considerations
             - Broken links and asset references
             - Mobile responsiveness and cross-browser compatibility
-            - Search functionality (Algolia) integration
             - Build artifacts and deployment configuration
-            
+
             Focus on GitHub Pages specific concerns like build times, artifact sizes, and CDN caching.
             Be constructive and helpful in your feedback.
 
