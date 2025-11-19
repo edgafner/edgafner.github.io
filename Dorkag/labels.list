@@ -15,12 +15,12 @@
 
     <secondary-label id="experimental" name="Experimental" color="purple">This is an experimental feature
     </secondary-label>
-    <secondary-label id="azd_version" name="V2025.2.57" color="blue">New in version 2025.2
+    <secondary-label id="azd_version" name="V2025.3.16" color="blue">New in version 2025.3
     </secondary-label>
-    <secondary-label id="gbrowser_version" name="V2025.2.8" color="tangerine">New in version 2025.2
+    <secondary-label id="gbrowser_version" name="V2025.3.7" color="tangerine">New in version 2025.3
     </secondary-label>
-    <secondary-label id="codecov_version" name="V2025.2.16" color="green">New in version 2025.2
+    <secondary-label id="codecov_version" name="V2025.2.17" color="green">New in version 2025.2
     </secondary-label>
-    <secondary-label id="queryflag_version" name="V2025.2.7" color="blue">New in version 2025.2
+    <secondary-label id="queryflag_version" name="V2025.2.8" color="blue">New in version 2025.2
     </secondary-label>
 </labels>
