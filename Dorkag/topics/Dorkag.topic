@@ -14,7 +14,7 @@
     <p>
         In my free time, I like to create JetBrains IDE plugins mainly to boost development productivity.</p>
     <p>The following is a list of plugins I have developed:</p>
-    <list columns="5" type="none">
+    <list columns="4" type="none">
         <li>
             <list type="none">
                 <li><a href="Azd.topic" summary="">
@@ -60,18 +60,6 @@
                 <li>
                     <a href="QueryFlag.topic">
                         <ui-path>QueryFlag</ui-path>
-                    </a>
-                </li>
-            </list>
-        </li>
-        <li>
-            <list type="none">
-                <li><a href="RunLikeMe.topic" summary="">
-                    <img src="runlikeme.svg" alt="runlikeme"/>
-                </a></li>
-                <li>
-                    <a href="RunLikeMe.topic">
-                        <ui-path>RunLikeMe</ui-path>
                     </a>
                 </li>
             </list>
