@@ -24,7 +24,12 @@
             Download the stage's log or jump to the azure-pipeline.yml file
             <img src="pipelines_details_actions.png" alt="pipelines_details_actions" style="block" thumbnail="true"/>
         </p>
-        Get an intuitive overview with the Pipeline Stage Diagram.
+        Get an intuitive overview with the Pipeline Stage Diagram. Right-click on any stage to access
+        context menu actions:
+        <list>
+            <li><p><b>Open Stage in Browser</b> — opens the stage details directly in Azure DevOps</p></li>
+            <li><p><b>Copy Stage Link</b> — copies the Azure DevOps URL for the stage to your clipboard</p></li>
+        </list>
         <img src="pipeline_diagram.png" alt="pipeline diagram" style="block" thumbnail="true"/>
         <p>
             See the result of the Pipeline tests, jump to a specific test or analyze the stack trace for a failed
@@ -46,7 +51,8 @@
 
     <chapter title="Pipeline Opening Behavior" id="pipeline_opening_behavior">
         <p>Pipelines now open in the Pipeline Tool Window by default instead of in the browser, providing a more
-            integrated development experience.</p>
+            integrated development experience. When multiple IDE instances are open, the pipeline tab opens in the
+            correct project instance.</p>
         <note>
             <p>You can change this behavior in the plugin settings if you prefer to open pipelines in the browser.</p>
         </note>

@@ -140,6 +140,9 @@
                 <p>Request a review from a specific reviewer or from all reviewers.<br/>
                 </p>
                 <img src="request-review.png" alt="request-review"/>
+                <p>The reviewer search uses Azure DevOps Subject Query API to find users, including
+                    users who have access to the project via <b>Active Directory groups</b>.
+                    This means you can find and add reviewers even if they are not directly listed as project members.</p>
             </def>
             <def title="Merge Actions" id="merge">
                 <p>Merge, Rebase, Squash the Pull Request, or close it without merging.<br/>

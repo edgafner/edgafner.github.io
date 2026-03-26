@@ -23,6 +23,8 @@
             <li><p>Automatic detection of the repository you are working on in the IDE.</p></li>
             <li><p>Fetch and display coverage for your current Git branch when available, or fall back to the
                 repository's default branch.</p></li>
+            <li><p>Visualize coverage directly in the editor with line-by-line coverage decorations.</p></li>
+            <li><p>Toggle coverage visualization on/off with a keyboard shortcut or context menu.</p></li>
             <li><p>Validate codecov.yml with a simple right click and see the JSON result in the editor.</p></li>
             <li><p>Get code completion for codecov.yml (schema-based injection).</p></li>
             <li><p>Report issues to the plugin's GitHub repository via JetBrains ErrorReportSubmitter.</p></li>
@@ -73,6 +75,20 @@
             <p>If the current branch has no coverage reports uploaded to Codecov, you'll see the default branch coverage
                 instead.</p>
         </note>
+    </chapter>
+
+    <chapter title="Coverage Visualization in the Editor" id="coverage-visualization">
+        <p>The plugin can display coverage data directly in your code editor with line-by-line coverage decorations,
+            giving you immediate visual feedback on which lines are covered, partially covered, or missed.</p>
+        <list>
+            <li><p><b>Line-by-line decorations:</b> Coverage status is shown in the editor gutter with color-coded
+                indicators for covered, uncovered, and partially covered lines.</p></li>
+            <li><p><b>Toggle visualization:</b> You can toggle coverage decorations on and off using the right-click
+                context menu or the keyboard shortcut
+                <shortcut>⌃Ctrl</shortcut><shortcut>⇧Shift</shortcut><shortcut>⌥Alt</shortcut><shortcut>C</shortcut>.</p></li>
+            <li><p><b>Automatic repository detection:</b> The plugin detects your repository from Git remotes,
+                so coverage data is matched automatically without manual configuration.</p></li>
+        </list>
     </chapter>
 
     <chapter title="Edit the codecov.yml file" id="codecov-injection">

@@ -72,6 +72,11 @@
           the
           changes to be applied through your request.
         </p>
+        <tip>
+            <p><b>Pull Request Templates:</b> If your repository has PR templates configured in Azure DevOps,
+                the plugin will automatically load and apply them when creating a new pull request,
+                pre-filling the description with your team's template.</p>
+        </tip>
       </step>
       <step>
           <p>Optionally, add reviewers, assign your pull request to someone, add a label to your pull request or

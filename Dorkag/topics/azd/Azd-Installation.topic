@@ -79,6 +79,16 @@
         </tabs>
     </chapter>
 
+    <chapter title="Authentication" id="authentication">
+        <p>AZD supports two authentication methods to connect to Azure DevOps:</p>
+        <list>
+            <li><p><b>Microsoft Entra ID (OAuth)</b> — Sign in with your Microsoft account using a secure OAuth flow.
+                This is the recommended method for Azure DevOps Services (cloud).</p></li>
+            <li><p><b>Personal Access Token (PAT)</b> — Generate a token from Azure DevOps and paste it into the plugin.
+                Required for Azure DevOps Server (on-premises).</p></li>
+        </list>
+    </chapter>
+
     <chapter title="Generating a Personal Access Token for the AZD Plugin" id="generate_pat">
         <note>From version
             <ui-path>2024.3.8</ui-path>
@@ -103,6 +113,18 @@
             <li>vso.threads_full</li>
             <li>vso.work_write</li>
         </list>
+        <warning title="Mark file as viewed requires Full Access PAT">
+            <p>The <b>Mark file as viewed</b> feature uses an internal Azure DevOps API
+                (<code>Contribution/HierarchyQuery</code>) that requires a <b>Full Access</b> PAT.
+                No combination of individual scopes is sufficient — this is a
+                <a href="https://github.com/microsoft/azure-devops-node-api/issues/448">known Azure DevOps limitation</a>.
+            </p>
+            <p>If you do not grant Full Access, all other plugin features will work normally, but marking files as
+                viewed will fall back to local-only tracking (not synced with Azure DevOps).</p>
+            <p>For <b>OAuth</b> users, the plugin handles this automatically via incremental consent — you will be
+                prompted to grant elevated permissions only when needed.</p>
+        </warning>
+
         <chapter title="More details about each scope" id="more-details-about-each-scope" collapsible="true">
             <table style="header-row" border="true">
                 <tr>
@@ -229,78 +251,104 @@
     <chapter title="Connect to Azure DevOps" id="connect">
         <p>Now that the IDE is running with the
             <ui-path>AZD</ui-path>
-            plugin, and you have your
-            <ui-path>PAT</ui-path>
-            ready, you can connect to your
+            plugin, you can connect to your
             <ui-path>Azure DevOps</ui-path>
             account.
-        </p>
-        <p>You can
-            <ui-path>Log in</ui-path>
-            either from the
+            You can log in either from the
             <ui-path>ToolWindow</ui-path>
             or from the
-            <ui-path>Settings</ui-path>
-            <br/>
-            Follow the procedure below to connect to your Azure DevOps account.
-
+            <ui-path>Settings</ui-path>.
         </p>
         <tabs>
             <tab title="Azure DevOps Service" id="azure-devops-service">
-                <tabs>
-                    <tab title="ToolWindow" id="azure-devops-service-toolwindow">
-                        <procedure title="Login from the Azure DevOps ToolWindow" id="login-from-toolwindow-service">
-                            <step>
-                                <p>Open the AZD ToolWindow:
-                                    <img src="pat_from_toolWindow.png" alt="pat_from_toolWindow" border-effect="line"
-                                         style="block"/>
-                                </p>
-                            </step>
-                            <step>
-                                <p>Click on the
-                                    <ui-path>Login</ui-path>
-                                    button to add a new Azure DevOps account.
-                                </p>
-                            </step>
-                            <step>
-                                <p>In the
-                                    <b>Add AZD Account</b>
-                                    dialog, change the Server URL if needed, and paste your personal Token.
-                                    <img src="azd_login_panel_toolWindow.png" alt="azd_login_panel_toolWindow"
-                                         border-effect="line" style="block"/>
-                                </p>
-                            </step>
-                        </procedure>
-                    </tab>
-                    <tab title="Settings" id="azure-devops-service-settings">
-                        <procedure title="Login from Azure DevOps Settings" id="login-from-settings">
-                            <step>
-                                <p>Navigate to:
-                                    <ui-path>Settings | Version Control | Azure DevOps</ui-path>
-                                    <img src="azd_main_settings.png" alt="azd_main_settings" border-effect="line"
-                                         style="block"/>
-                                </p>
-                            </step>
-                            <step>
-                                <p>Click on <img src="add.svg" alt="add"/> button to add a new Azure DevOps account.
-                                </p>
-                            </step>
-                            <step>
-                                <p>In the
-                                    <ui-path>Add AZD Account</ui-path>
-                                    dialog,
-                                    set the url and add your personal token.
-                                    <img src="azd_add_account_panel_settings.png" alt="azd_add_account_panel_settings"
-                                         border-effect="line" style="block"/>
-                                </p>
-                            </step>
-                        </procedure>
-                    </tab>
-                </tabs>
+                <chapter title="Sign in with Microsoft (OAuth)" id="oauth-login">
+                    <p>The recommended way to connect to Azure DevOps Services (cloud). Uses Microsoft Entra ID
+                        with a secure Auth Code + PKCE flow.</p>
+                    <procedure id="login-oauth-procedure">
+                        <step>
+                            <p>Open the AZD ToolWindow or the Clone dialog.</p>
+                        </step>
+                        <step>
+                            <p>Click
+                                <ui-path>Sign in with Microsoft</ui-path>.
+                                Your browser will open the Microsoft login page.
+                            </p>
+                        </step>
+                        <step>
+                            <p>Authenticate with your Microsoft account and approve the requested permissions.
+                                The consent screen lists the specific scopes the plugin needs
+                                (code, build, identity, work items, etc.).</p>
+                        </step>
+                        <step>
+                            <p>After successful authentication, the plugin automatically discovers your
+                                Azure DevOps organizations and connects.</p>
+                        </step>
+                    </procedure>
+                    <tip>
+                        <p>OAuth accounts are displayed with an <b>[OAuth]</b> label in the settings panel.
+                            You can manage multiple accounts (both OAuth and PAT) from
+                            <ui-path>Settings | Version Control | Azure DevOps</ui-path>.</p>
+                    </tip>
+                </chapter>
+
+                <chapter title="Use a Personal Access Token" id="pat-login-service">
+                    <p>If you prefer to use a PAT, or if OAuth is not available in your environment:</p>
+                    <tabs>
+                        <tab title="ToolWindow" id="azure-devops-service-toolwindow">
+                            <procedure title="Login from the Azure DevOps ToolWindow" id="login-from-toolwindow-service">
+                                <step>
+                                    <p>Open the AZD ToolWindow and click
+                                        <ui-path>Use token...</ui-path>
+                                        (or
+                                        <ui-path>Login</ui-path>
+                                        in the Clone dialog):
+                                        <img src="pat_from_toolWindow.png" alt="pat_from_toolWindow" border-effect="line"
+                                             style="block"/>
+                                    </p>
+                                </step>
+                                <step>
+                                    <p>In the
+                                        <b>Add AZD Account</b>
+                                        dialog, change the Server URL if needed, and paste your personal Token.
+                                        <img src="azd_login_panel_toolWindow.png" alt="azd_login_panel_toolWindow"
+                                             border-effect="line" style="block"/>
+                                    </p>
+                                </step>
+                            </procedure>
+                        </tab>
+                        <tab title="Settings" id="azure-devops-service-settings">
+                            <procedure title="Login from Azure DevOps Settings" id="login-from-settings">
+                                <step>
+                                    <p>Navigate to:
+                                        <ui-path>Settings | Version Control | Azure DevOps</ui-path>
+                                        <img src="azd_main_settings.png" alt="azd_main_settings" border-effect="line"
+                                             style="block"/>
+                                    </p>
+                                </step>
+                                <step>
+                                    <p>Click <img src="add.svg" alt="add"/> and select
+                                        <ui-path>PAT</ui-path>
+                                        from the popup to add a new Azure DevOps account.
+                                    </p>
+                                </step>
+                                <step>
+                                    <p>In the
+                                        <ui-path>Add AZD Account</ui-path>
+                                        dialog,
+                                        set the url and add your personal token.
+                                        <img src="azd_add_account_panel_settings.png" alt="azd_add_account_panel_settings"
+                                             border-effect="line" style="block"/>
+                                    </p>
+                                </step>
+                            </procedure>
+                        </tab>
+                    </tabs>
+                </chapter>
+
                 <warning title="Important">
                     <list type="bullet">
-                        <li>When connecting from the <b>AZD Toolwindow</b>, the plugins detect and append your Azure
-                            DevOps organization name (only if necessary, see a bullet below).<br/>
+                        <li>When connecting from the <b>AZD Toolwindow</b>, the plugin detects and appends your Azure
+                            DevOps organization name (only if necessary, see below).<br/>
                             When connecting from the <b>Settings Dialog</b>, the plugin does not append the Azure
                             DevOps organization name
                             because it can't detect the organization name during the Settings
@@ -320,10 +368,15 @@
 
                             For this case, there is no need to append the organization name manually.
                         </li>
+                        <li>The plugin automatically normalizes Azure DevOps URLs, including handling mismatches
+                            between SSH and HTTPS host formats. You do not need to worry about
+                            the exact URL format when cloning via different protocols.
+                        </li>
                     </list>
                 </warning>
             </tab>
             <tab title="Azure DevOps Server" id="azure-devops-server">
+                <p>Azure DevOps Server (on-premises) requires a Personal Access Token for authentication.</p>
                 <tabs>
                     <tab title="ToolWindow" id="azure-devops-server-toolwindow">
                         <procedure title="Login from the Azure DevOps ToolWindow" id="login-from-toolwindow-server">
