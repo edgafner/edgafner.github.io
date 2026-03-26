@@ -55,11 +55,6 @@
             <noindex-content>false</noindex-content>
         </variables>
     </build-profile>
-    <build-profile instance="runlikeme">
-        <variables>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
 
 
     <shortcuts>

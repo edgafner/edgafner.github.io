@@ -14,13 +14,21 @@
     </p>
 
     <chapter title="Azure DevOps" id="general-azure-devops-configuration">
-        <p>Here you can add or remove Azure DevOps accounts</p>
+        <p>Here you can add or remove Azure DevOps accounts. The plugin supports both
+            <b>Microsoft Entra ID (OAuth)</b> and <b>Personal Access Token (PAT)</b> authentication.
+            Accounts are displayed with an <b>[OAuth]</b> or <b>[PAT]</b> label for clarity.</p>
 
         <chapter title="Login Flow" id="improved_login_flow">
-            <p>The latest version introduces an improved login flow with explicit organization/collection selection:</p>
+            <p>The login flow provides:</p>
             <list>
                 <li>
-                    <p>Clearer organization/collection selection during the login process</p>
+                    <p><b>Sign in with Microsoft</b> — OAuth with Entra ID (recommended for Azure DevOps Services)</p>
+                </li>
+                <li>
+                    <p><b>Use token</b> — Personal Access Token authentication (required for Azure DevOps Server)</p>
+                </li>
+                <li>
+                    <p>Explicit organization/collection selection during the login process</p>
                 </li>
                 <li>
                     <p>Ability to easily switch between multiple organizations/collections</p>
@@ -33,11 +41,16 @@
         <deflist>
             <def title="Automatically mark opened files as viewed" id="automatically-mark-opened-files-as-viewed">
                 <p>When enabled, the plugin will automatically mark opened files as viewed
-                    when you open them in the editor.
-
-                </p>
-                <warning>The marked as view is not synced with Azure DevOps as this data cannot be provided with
-                    the current API.
+                    when you open them in the editor.</p>
+                <p>The plugin attempts to sync the viewed state with Azure DevOps. If syncing fails
+                    (e.g., due to insufficient PAT permissions), the plugin falls back to local-only tracking.</p>
+                <warning>
+                    <p>Syncing with Azure DevOps requires a <b>Full Access</b> PAT due to a
+                        <a href="https://github.com/microsoft/azure-devops-node-api/issues/448">known Azure DevOps API limitation</a>.
+                        Individual scopes are not sufficient for this feature.
+                        See the <a href="Azd-Installation.topic" anchor="generate_pat">PAT scopes documentation</a> for details.</p>
+                    <p>For <b>OAuth</b> users, the plugin handles this via incremental consent — you will be prompted to
+                        grant elevated permissions when first using this feature.</p>
                 </warning>
             </def>
             <def title="Enable automatic update" id="enable-automatic-update">

@@ -10,7 +10,6 @@ This is a Writerside documentation site for DORKAG JetBrains IDE plugins hosted 
 - **GBrowser**: Browser integration plugin  
 - **Codecov**: Code coverage plugin
 - **QueryFlag**: Query management plugin
-- **RunLikeMe**: Run configuration management plugin
 
 ## Key Commands
 
@@ -18,7 +17,7 @@ This is a Writerside documentation site for DORKAG JetBrains IDE plugins hosted 
 ```bash
 # Documentation is built automatically via GitHub Actions
 # Manual build requires Writerside Docker
-docker run --rm -v $PWD:/opt/sources jetbrains/writerside-builder:241.18775 /opt/builder.sh
+docker run --rm -v $PWD:/opt/sources jetbrains/writerside-builder:2026.02.8644 /opt/builder.sh
 ```
 
 ### Deploy Documentation
@@ -34,7 +33,7 @@ To preview documentation locally, use the Writerside IDE plugin or the Writersid
 - **Build Profiles**: `Dorkag/cfg/buildprofiles.xml` - Defines build settings, variables, and footer configuration
 - **Instance Trees**: Each plugin has its own `.tree` file defining documentation structure:
   - `dorkag.tree` - Main documentation tree
-  - `azdlib.tree`, `gbrowserlib.tree`, `codecovlib.tree`, `queryflaglib.tree`, `runlikemelib.tree` - Plugin-specific trees
+  - `azdlib.tree`, `gbrowserlib.tree`, `codecovlib.tree`, `queryflaglib.tree` - Plugin-specific trees
 
 ### Content Organization
 - **Topics**: `Dorkag/topics/` - Contains all documentation content in `.topic` XML files
@@ -53,7 +52,7 @@ The `.github/workflows/build-docs.yml` workflow handles:
 
 ### Key Configuration Variables
 - **Web Root**: https://edgafner.github.io
-- **Docker Version**: 241.18775
+- **Docker Version**: 2026.02.8644
 - **Primary Color**: Aqua theme
 
 ## Working with Documentation

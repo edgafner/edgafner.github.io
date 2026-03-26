@@ -29,9 +29,6 @@ Visualize and track code coverage directly in your IDE.
 
 Efficient query management and execution tools.
 
-### [RunLikeMe - Run Configuration Management](https://edgafner.github.io/runlikeme.html)
-
-Share and manage run configurations across your team.
 
 ## 🚀 Quick Start
 
@@ -51,7 +48,7 @@ cd edgafner.github.io
 
 # Documentation is built with Writerside
 # View locally using Writerside IDE plugin or Docker
-docker run --rm -v $PWD:/opt/sources jetbrains/writerside-builder:241.18775 /opt/builder.sh
+docker run --rm -v $PWD:/opt/sources jetbrains/writerside-builder:2026.02.8644 /opt/builder.sh
 ```
 
 ## 📖 Documentation Structure
@@ -63,7 +60,6 @@ Dorkag/
 │   ├── gbrowser/    # GBrowser plugin documentation
 │   ├── codecov/     # Codecov plugin documentation
 │   ├── queryflag/   # QueryFlag plugin documentation
-│   └── runlikeme/   # RunLikeMe plugin documentation
 ├── images/          # Documentation images and screenshots
 ├── writerside.cfg   # Writerside configuration
 └── cfg/            # Build profiles and configuration

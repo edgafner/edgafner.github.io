@@ -79,7 +79,35 @@
                 checkbox under
                 <ui-path>Settings | Version Control | Git</ui-path>
             </li>
+            <li>If your PAT is not persisting across IDE restarts and you have <b>Backup and Sync</b> (Settings Sync)
+                enabled, update to the latest plugin version. Earlier versions could have the local account storage
+                overwritten by Settings Sync.</li>
+            <li>Consider using <b>Sign in with Microsoft</b> (OAuth) as an alternative to PAT for Azure DevOps
+                Services — it avoids token expiration and scope management issues entirely.</li>
         </list>
+    </chapter>
+
+    <chapter id="mark_file_viewed_401" title="Why does 'Mark file as viewed' fail with a 401 error?">
+        <p>
+            The <b>Mark file as viewed</b> feature uses an internal Azure DevOps API
+            (<code>Contribution/HierarchyQuery</code>) that requires a <b>Full Access</b> PAT.
+            No combination of individual scopes works — this is a
+            <a href="https://github.com/microsoft/azure-devops-node-api/issues/448">known Azure DevOps limitation</a>.
+        </p>
+        <p>To resolve this:</p>
+        <list type="bullet">
+            <li>
+                <p><b>PAT users:</b> Regenerate your PAT with the <ui-path>Full access</ui-path> scope enabled
+                    in Azure DevOps. Individual scopes (even all of them checked) will not work for this specific feature.</p>
+            </li>
+            <li>
+                <p><b>OAuth users:</b> When the feature fails, the plugin displays a notification with a
+                    <ui-path>Grant Full Access</ui-path> action. Click it to re-authenticate with the required elevated
+                    permissions.</p>
+            </li>
+        </list>
+        <p>If you choose not to grant Full Access, the plugin falls back to local-only tracking — files will be
+            marked as viewed in your IDE but the state will not sync with Azure DevOps.</p>
     </chapter>
 
     <chapter id="performance_issues" title="Resolving Performance Issues with the Plugin">
