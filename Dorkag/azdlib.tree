@@ -4,23 +4,23 @@
 
 <instance-profile id="azdlib"
                   name="azdlib"
-                  start-page="Pull-Request-Details.topic">
+                  start-page="Azd.topic">
 
 
     <snippet id="azdsn.tree">
-        <toc-element topic="Azd.topic">
-            <toc-element topic="Azd-Installation.topic"/>
-            <toc-element topic="Azd-Manage-projects-hosted-on-Azure-DevOps.topic"/>
-            <toc-element topic="Work-with-Azure-DevOps-pull-requests.topic">
-                <toc-element topic="Pull-Request-Details.topic"/>
-                <toc-element topic="AI-Title-Description-Generation.topic"/>
-                <toc-element topic="AI-Pull-Request-Review.topic"/>
+        <toc-element topic="Azd.topic" id="toc_azd_landing" id="toc_azd_root">
+            <toc-element topic="Azd-Whats-New.topic" id="toc_azd_whats_new"/>
+            <toc-element topic="Azd-Installation.topic" id="toc_azd_installation"/>
+            <toc-element topic="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" id="toc_azd_manage"/>
+            <toc-element topic="Work-with-Azure-DevOps-pull-requests.topic" id="toc_azd_pr_usage">
+                <toc-element topic="Pull-Request-Details.topic" id="toc_azd_pr_details"/>
+                <toc-element topic="AI-Title-Description-Generation.topic" id="toc_azd_ai_title"/>
+                <toc-element topic="AI-Pull-Request-Review.topic" id="toc_azd_ai_review"/>
             </toc-element>
-            <toc-element topic="Azure-DevOps-Pipelines.topic">
-            </toc-element>
-            <toc-element topic="Azd-Settings-Configuration.topic"/>
-            <toc-element topic="Azd-Reference-And-Support.topic"/>
-            <toc-element topic="Azd-FAQ.topic"/>
+            <toc-element topic="Azure-DevOps-Pipelines.topic" id="toc_azd_pipelines"/>
+            <toc-element topic="Azd-Settings-Configuration.topic" id="toc_azd_settings"/>
+            <toc-element topic="Azd-Reference-And-Support.topic" id="toc_azd_support"/>
+            <toc-element topic="Azd-FAQ.topic" id="toc_azd_faq"/>
         </toc-element>
     </snippet>
 </instance-profile>

@@ -3,31 +3,28 @@
     SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Codecov" id="Codecov">
+       title="Codecov" id="Codecov_Landing_Page">
 
   <section-starting-page>
     <title>Codecov IDEA Plugin</title>
     <description>
-      View coverage from your Codecov account directly in the IDE. Sign in with your Codecov personal token, let the plugin detect your current repository,
-      and see coverage for your working branch (or the repository's default branch when the current branch has no data). Create, manage, and validate the codecov.yml right in JetBrains IDEs.
+      Bring Codecov insights directly into your IDE. Visualize line-by-line coverage, analyze PR impact, and monitor project health without leaving your editor.
     </description>
 
-    <!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
     <spotlight>
-      <a href="Codecov-Installation.topic" type="start" summary="How to install Codecov plugin">Installation Guide</a>
-      <a href="Codecov-Usage.topic" type="learn" summary="Codecov features and account sign-in">Codecov How to</a>
+      <a href="Codecov-Whats-New.topic" type="learn" summary="Discover the latest V2026.1.13 features">What's New</a>
+      <a href="Codecov-Installation.topic" type="start" summary="Quick setup and account connection">Installation Guide</a>
     </spotlight>
 
-    <!--    Add several topics that are most important for this section.    -->
     <primary>
-      <title>Get started</title>
-      <a href="Codecov-Usage.topic" type="learn" summary="Sign in and view coverage from Codecov">Codecov How to</a>
+      <title>Core Features</title>
+      <a href="Codecov-Usage.topic" type="learn">Usage Guide</a>
+      <a href="Codecov-FAQ.topic" type="support">FAQ &amp; Troubleshooting</a>
     </primary>
 
-    <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->
     <secondary>
-      <title>Reference and Support</title>
-      <a href="Codecov-Reference-and-Support.topic" summary="References and Support"/>
+      <title>Reference &amp; Support</title>
+      <a href="Codecov-Reference-and-Support.topic" type="support">Support Channels</a>
     </secondary>
 
   </section-starting-page>

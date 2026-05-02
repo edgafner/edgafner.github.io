@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Codecov FAQ" id="Codecov-FAQ">
+
+    <primary-label ref="codecov"/>
+    <secondary-label ref="codecov_version"/>
+
+    <chapter title="Why can't I see coverage for my branch?" id="missing-coverage">
+        <p>The plugin retrieves coverage data from the Codecov API. If you don't see coverage:</p>
+        <list type="bullet">
+            <li><p>Ensure your CI pipeline successfully uploaded a coverage report to Codecov for the current branch.</p></li>
+            <li><p>Check if the branch name in your local Git matches the branch name in Codecov.</p></li>
+            <li><p>If no coverage is found for the active branch, the plugin will fall back to showing coverage for the <b>default branch</b>.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="How do I resolve 'Unauthorized' errors?" id="auth-errors">
+        <p>This usually means your Personal Access Token is invalid or has expired.</p>
+        <procedure id="refresh-token">
+            <step><p>Generate a new token in your <a href="https://app.codecov.io/account/access">Codecov settings</a>.</p></step>
+            <step><p>Go to <ui-path>Settings | Tools | Codecov</ui-path>.</p></step>
+            <step><p>Paste the new token and click <ui-path>Test connection</ui-path>.</p></step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Does the plugin support private repositories?" id="private-repos">
+        <p>Yes. As long as your Personal Access Token has the necessary permissions to access your private repositories on Codecov, the plugin will detect and display them.</p>
+    </chapter>
+
+    <chapter title="How do I report a bug?" id="codecov_report_bug">
+        <p>Please use the built-in JetBrains ErrorReportSubmitter or open an issue on our <a href="https://github.com/edgafner/dorkag/issues">GitHub repository</a>. Including your IDE logs and the version of the plugin you are using will help us diagnose the issue faster.</p>
+    </chapter>
+
+</topic>

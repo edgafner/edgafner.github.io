@@ -6,7 +6,7 @@
        title="Pull Request Review" id="Pull-Request-Details">
     <primary-label ref="azd"/>
     <secondary-label ref="azd_version"/>
-    <chapter title="Pull Request Timeline" id="pull_request_timeline">
+    <chapter title="Pull Request Timeline" id="azd_pull_request_timeline">
         <p>When it comes to reviewing code changes, the pull request timeline is an essential tool for tracking the
             progression of a pull request.</p>
         <p>
@@ -17,7 +17,7 @@
             the progress, understanding the history, and identifying areas of discussion or contention in a pull
             request.</p>
 
-        <procedure id="1procedure0">
+        <procedure id="azd-timeline-procedure">
             <step><p>Accessing the Timeline</p>
                 <list>
                     <li><p>Open a pull request to view its details.</p></li>
@@ -49,13 +49,15 @@
                     surrounding your
                     code changes.</p>
             </step>
-            <tip>
-                You can filter the timeline entries for a specific type:
-                <img src="filter_timeline.png" alt="filter_timeline"/>
-            </tip>
+            <step>
+                <tip>
+                    You can filter the timeline entries for a specific type:
+                    <img src="filter_timeline.png" alt="filter_timeline"/>
+                </tip>
+            </step>
         </procedure>
     </chapter>
-    <chapter title="Pull Request Status" id="pull_request_status">
+    <chapter title="Pull Request Status" id="azd_pull_request_status">
         <p>When you are reviewing a pull request, you can see the status of the pull request in the Pull Requests tool
             window.</p>
         <p>The status of a pull request is displayed based on the checks that are configured in the Azure DevOps
@@ -87,12 +89,12 @@
 
     </chapter>
 
-    <chapter title="Review Actions" id="review-actions">
+    <chapter title="Review Actions" id="azd_review-actions">
         <p>
             With AZD you can review a Pull Request without leaving your IDE. It lets you do all the following:
         </p>
         <deflist collapsible="true">
-            <def title="Comment Actions" id="comment">
+            <def title="Comment Actions" id="azd_comment">
                 <p>Comment on a change made by the author, or comment on the Pull Request as a whole.<br/>
                     <img src="commentPRLevel.png" alt="comment-on-pr" style="block" border-effect="line"/>
                     You can reply, edit, delete your comments, or thumbs up the comments left by others.
@@ -122,7 +124,7 @@
                             going over all the files. This allows you to thoroughly examine all changes and prepare your
                             feedback before submitting. Once you've reviewed all files and added your draft comments,
                             you can
-                            submit all comments at once using the submit review button, providing a comprehensive review
+                            submit all comments at once using the submit review button, providing a complete review
                             in a
                             single action.</p>
                     </li>
@@ -131,12 +133,12 @@
                     Version 2024.3.1+ you can also mention a user in your comment.
                 </note>
             </def>
-            <def title="Vote Actions" id="vote">
+            <def title="Vote Actions" id="azd_vote">
                 <p>Approve, Approve with suggestions, Reset your vote, Wait for changes or Reject the Pull Request.<br/>
                 </p>
                 <img src="vote_status_options.png" alt="approve-reject"/>
             </def>
-            <def title="Request Review Actions" id="request-review">
+            <def title="Request Review Actions" id="azd_request-review">
                 <p>Request a review from a specific reviewer or from all reviewers.<br/>
                 </p>
                 <img src="request-review.png" alt="request-review"/>
@@ -144,7 +146,7 @@
                     users who have access to the project via <b>Active Directory groups</b>.
                     This means you can find and add reviewers even if they are not directly listed as project members.</p>
             </def>
-            <def title="Merge Actions" id="merge">
+            <def title="Merge Actions" id="azd_merge">
                 <p>Merge, Rebase, Squash the Pull Request, or close it without merging.<br/>
                     <img src="merge_operations.png" alt="merge-pr" style="block" theme="dark"
                          border-effect="line"/> <br/>
@@ -157,13 +159,13 @@
                     <img src="set-auto-complete.png" alt="set-auto-complete" border-effect="line"/>
                 </note>
             </def>
-            <def title="Publish Draft Actions" id="publish-draft">
+            <def title="Publish Draft Actions" id="azd_publish-draft">
                 <p>When you are ready to share your draft Pull Request, you can publish it to make it visible to others.
                     You can also go the other way around and save a published Pull Request as a draft.
                 </p>
                 <img src="publish_draft_actions.png" alt="publish-draft"/>
             </def>
-            <def title="Description Actions" id="description">
+            <def title="Description Actions" id="azd_description">
                 <p>Edit the description of the Pull Request, or add a description if it's missing.
                 </p>
                 When creating the PR from the IDE, AZD is filling the description with the commit messages.
@@ -172,11 +174,11 @@
 
         </deflist>
     </chapter>
-    <chapter title="View and apply the suggested changes" id="view_and_apply_changes">
+    <chapter title="View and apply the suggested changes" id="azd_view_and_apply_changes">
         <p>If the maintainers of the original repository left comments or made suggestions with regard to your changes,
             you
             can view and apply them directly from a JetBrains IDE.</p>
-        <procedure id="1procedure0-1">
+        <procedure id="azd-view-apply-procedure">
             <step>
                 <p>In the main menu, go to
                     <ui-path>Git | Azure DevOps | View Pull Requests</ui-path>
@@ -242,11 +244,6 @@
                 <note>
                     <p>This feature allows you to efficiently review all comments in a file without having to manually
                         search for them.</p>
-                    <p>
-                        <emphasis>Note for documentation: A dedicated image showing the comment navigation controls will
-                            be added here.
-                        </emphasis>
-                    </p>
                 </note>
             </step>
             <step>

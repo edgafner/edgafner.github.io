@@ -7,16 +7,54 @@
     <primary-label ref="azd"/>
     <secondary-label ref="azd_version"/>
     <p>AZD now includes AI-powered pull request review capabilities to enhance your code review process.</p>
-    <p>This feature helps you identify potential issues, suggest improvements, and streamline the review workflow.</p>
 
-    <chapter title="AI-Assisted Code Reviews" id="ai_assisted_code_reviews">
-        <p>Get intelligent feedback on your pull requests with AI-powered code analysis:
-            <img src="ai_pr_review.png" alt="AI pull request review" style="block" thumbnail="true"/>
-        </p>
+    <chapter title="AI Provider Options" id="ai_review_provider_options">
+        <p>Before using the AI review features, you need to configure your preferred AI provider in the settings:</p>
+        <img src="ai_configuration_settings.png" alt="AI Configuration Settings" style="block" thumbnail="true"/>
+        <p>You can select from multiple providers, including support for the latest models and local execution:</p>
+        <list>
+            <li>
+                <p><b>Claude:</b> Use Anthropic's Claude models, including the latest versions. Requires an API key.</p>
+            </li>
+            <li>
+                <p><b>OpenAI:</b> Use OpenAI's models including the latest GPT versions. Requires an API key.</p>
+            </li>
+            <li>
+                <p><b>Gemini:</b> Use Google's Gemini models. Requires an API key.</p>
+            </li>
+            <li>
+                <p><b>Ollama (Local):</b> Run models locally on your machine for maximum privacy. No API key is required, but you need the Ollama runtime and a model (e.g., <code>llama3</code>) installed.</p>
+            </li>
+            <li>
+                <p><b>AZD AI Provider:</b> The default built-in provider. This is a proxy to the latest AI models provided via the plugin subscription (no personal API key required).</p>
+            </li>
+        </list>
+        <img src="ai_setting_provider.png" alt="AI Provider Settings" style="block" thumbnail="true"/>
+        <tip>
+            <p>For providers like OpenAI or Claude, you can also specify a <b>Local URL</b> if you are running a compatible model locally or through a custom proxy.</p>
+        </tip>
+        <note>
+            <p>For Claude, OpenAI, and Gemini options, you'll need to provide your own API keys in the settings.</p>
+        </note>
+    </chapter>
+
+    <chapter title="Customizing AI Reviews" id="ai_review_customization">
+        <p>Configure the AI review system to match your team's needs:</p>
+        <list>
+            <li>
+                <p>Set the scope and depth of AI analysis</p>
+            </li>
+            <li>
+                <p>Define custom rules and coding standards for the AI to enforce</p>
+            </li>
+            <li>
+                <p>Adjust sensitivity for different types of suggestions</p>
+            </li>
+        </list>
     </chapter>
 
     <chapter title="Key Features" id="key_features">
-        <p>The AI pull request review offers several powerful capabilities:</p>
+        <p>Once configured, the AI pull request review offers several powerful capabilities:</p>
         <list>
             <li>
                 <p>Automated code quality checks and best practice suggestions</p>
@@ -31,6 +69,12 @@
                 <p>Summary of changes with highlighted critical areas for human review</p>
             </li>
         </list>
+    </chapter>
+
+    <chapter title="AI-Assisted Code Reviews" id="ai_assisted_code_reviews">
+        <p>Get intelligent feedback on your pull requests with AI-powered code analysis:
+            <img src="ai_pr_review.png" alt="AI pull request review" style="block" thumbnail="true"/>
+        </p>
     </chapter>
 
     <chapter title="Using AI Reviews" id="using_ai_reviews">
@@ -54,25 +98,6 @@
                 <p>Use the chat to get more context and explanations about the AI's recommendations</p>
             </li>
         </list>
-        <note>
-            <p>AI reviews are meant to complement, not replace, human code reviews. Always verify AI suggestions before
-                accepting them.</p>
-        </note>
-    </chapter>
-
-    <chapter title="Customizing AI Reviews" id="customizing_ai_reviews">
-        <p>Configure the AI review system to match your team's needs:</p>
-        <list>
-            <li>
-                <p>Set the scope and depth of AI analysis</p>
-            </li>
-            <li>
-                <p>Define custom rules and coding standards for the AI to enforce</p>
-            </li>
-            <li>
-                <p>Adjust sensitivity for different types of suggestions</p>
-            </li>
-        </list>
     </chapter>
 
     <chapter title="AI-Generated Comments on Code Diffs" id="ai_generated_comments">
@@ -93,7 +118,7 @@
         </list>
         <img src="generatediffcomment.png" alt="generatediffcomment"/>
         <note>
-            <p>AI-generated comments are meant to help in the review process and should be reviewed before posting.</p>
+            <p>AI-generated comments are initially posted in a <control>draft state</control>. You must click <ui-path>Post Now</ui-path> or <ui-path>Submit All</ui-path> to make them visible to other users on the pull request.</p>
         </note>
     </chapter>
 
@@ -113,40 +138,9 @@
                 <p>Review and edit the AI-generated draft comments before submitting them as part of your review.</p>
             </li>
             <li>
-                <p>Use the Submit Comments button to publish all draft comments at once, providing a complete review
-                    workflow.</p>
+                <p>Use the <ui-path>Submit Comments</ui-path> button to publish all draft comments at once, making them visible to your team.</p>
             </li>
         </list>
         <img src="ai_draft_comments.png" alt="AI draft comments feature" style="block" thumbnail="true"/>
-        <note>
-            <p>AI-generated draft comments should be reviewed and edited as needed before submitting to ensure they
-                align with your review standards and project requirements.</p>
-        </note>
-    </chapter>
-
-    <chapter title="AI Provider Options" id="ai_provider_options">
-        <p>You can select from multiple AI providers for the pull request review feature, now with support for the latest AI models:</p>
-        <list>
-            <li>
-                <p><b>Claude:</b> Use Anthropic's Claude models, including the latest versions for your AI reviews. Requires setting up your own API key.</p>
-            </li>
-            <li>
-                <p><b>OpenAI:</b> Use OpenAI's models including the latest GPT versions for your AI reviews. Requires setting up your own API key.</p>
-            </li>
-            <li>
-                <p><b>Gemini:</b> Use Google's Gemini models for your AI reviews. Requires setting up your own API key.</p>
-            </li>
-            <li>
-                <p><b>AZD AI Provider:</b> Use the default provider included with the plugin. This is a proxy to the
-                    latest OpenAI gpt-4.1 models through the plugin author's subscription, so no API key is required.
-                </p>
-            </li>
-        </list>
-        <p>Configure your preferred AI provider in the settings:
-            <img src="ai_provider_settings.png" alt="AI provider settings" style="block" thumbnail="true"/>
-        </p>
-        <note>
-            <p>For Claude, OpenAI, and Gemini options, you'll need to provide your own API keys in the settings.</p>
-        </note>
     </chapter>
 </topic>

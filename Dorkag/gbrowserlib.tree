@@ -8,11 +8,11 @@
 
 
     <snippet id="gbrowsersn.tree">
-        <toc-element topic="GBrowser.topic">
-            <toc-element topic="GBrowser-Installation.topic"/>
-            <toc-element topic="GBrowser-Settings-and-Configuration.topic"/>
-            <toc-element topic="Work-with-GBrowser.topic"/>
-            <toc-element topic="GBrowser-Reference-and-Support.topic"/>
+        <toc-element topic="GBrowser.topic" id="toc_gbrowser_root">
+            <toc-element topic="GBrowser-Installation.topic" id="toc_gbrowser_installation"/>
+            <toc-element topic="GBrowser-Settings-and-Configuration.topic" id="toc_gbrowser_settings"/>
+            <toc-element topic="Work-with-GBrowser.topic" id="toc_gbrowser_usage"/>
+            <toc-element topic="GBrowser-Reference-and-Support.topic" id="toc_gbrowser_support"/>
         </toc-element>
     </snippet>
 </instance-profile>

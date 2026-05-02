@@ -3,130 +3,37 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Settings Configuration" id="Azd-Settings-Configuration">
-
+       title="Settings and Configuration" id="Azd-Settings-Configuration">
     <primary-label ref="azd"/>
     <secondary-label ref="azd_version"/>
-    <p>
-        Under
-        <ui-path>Settings | Version Control | Azure DevOps</ui-path>
-        , you can configure the plugin in different ways.
-    </p>
+    <p>Configure the AZD plugin to match your development workflow.</p>
 
-    <chapter title="Azure DevOps" id="general-azure-devops-configuration">
-        <p>Here you can add or remove Azure DevOps accounts. The plugin supports both
-            <b>Microsoft Entra ID (OAuth)</b> and <b>Personal Access Token (PAT)</b> authentication.
-            Accounts are displayed with an <b>[OAuth]</b> or <b>[PAT]</b> label for clarity.</p>
-
-        <chapter title="Login Flow" id="improved_login_flow">
-            <p>The login flow provides:</p>
-            <list>
-                <li>
-                    <p><b>Sign in with Microsoft</b> — OAuth with Entra ID (recommended for Azure DevOps Services)</p>
-                </li>
-                <li>
-                    <p><b>Use token</b> — Personal Access Token authentication (required for Azure DevOps Server)</p>
-                </li>
-                <li>
-                    <p>Explicit organization/collection selection during the login process</p>
-                </li>
-                <li>
-                    <p>Ability to easily switch between multiple organizations/collections</p>
-                </li>
-            </list>
-        </chapter>
-    </chapter>
-    <chapter title="General Preferences Configuration" id="general-configuration">
-        <p>The following options are available:</p>
-        <deflist>
-            <def title="Automatically mark opened files as viewed" id="automatically-mark-opened-files-as-viewed">
-                <p>When enabled, the plugin will automatically mark opened files as viewed
-                    when you open them in the editor.</p>
-                <p>The plugin attempts to sync the viewed state with Azure DevOps. If syncing fails
-                    (e.g., due to insufficient PAT permissions), the plugin falls back to local-only tracking.</p>
-                <warning>
-                    <p>Syncing with Azure DevOps requires a <b>Full Access</b> PAT due to a
-                        <a href="https://github.com/microsoft/azure-devops-node-api/issues/448">known Azure DevOps API limitation</a>.
-                        Individual scopes are not sufficient for this feature.
-                        See the <a href="Azd-Installation.topic" anchor="generate_pat">PAT scopes documentation</a> for details.</p>
-                    <p>For <b>OAuth</b> users, the plugin handles this via incremental consent — you will be prompted to
-                        grant elevated permissions when first using this feature.</p>
-                </warning>
-            </def>
-            <def title="Enable automatic update" id="enable-automatic-update">
-                <p>When enabled, the plugin will automatically check for updates when Pull Request details are
-                    opened or when a Pipeline Run tab is opened and running.
-                    You can set the update interval in the settings.</p>
-            </def>
-            <def title="Respect Proxy Configuration" id="respect-proxy-configuration">
-                <p>When enabled, the plugin will use the proxy settings configured in the IDE. This is useful when you
-                    are
-                    behind a proxy server and need to access Azure DevOps services.</p>
-            </def>
-        </deflist>
-
+    <chapter title="General Settings" id="general-settings">
+        <p>Manage your Azure DevOps accounts and general preferences in <ui-path>Settings | Version Control | Azure DevOps</ui-path>.</p>
+        <img src="azd_main_settings.png" alt="Main Settings" style="block" thumbnail="true"/>
     </chapter>
 
-    <chapter title="UI Customization" id="ui-customization">
-
-        <p>
-            You can customize the appearance of the plugin by changing the following settings:
-        </p>
-
-        <deflist>
-            <def title="Adopt Azure DevOps UI style" id="adopt-azure-devops-ui-style">
-                <p>When enabled, this option is to change the plugin UI to look more like Azure DevOps UI.</p>
-                <p>This adjustment will align the
-                    visual elements and layout of the plugin with Azure DevOps, offering a more familiar interface for
-                    Azure
-                    DevOps users.</p>
-
-                <img src="azd-ui_like_settings.png" alt="azd-ui_like_settings" style="inline" border-effect="line"/>
-                <note>It may require a restart of the IDE to apply the changes.
-                </note>
-            </def>
-        </deflist>
-
-
+    <chapter title="OAuth Authentication" id="oauth-settings">
+        <p>For Azure DevOps Services, you can use the secure OAuth flow for a more convenient login experience.</p>
+        <img src="welcome_login.png" alt="OAuth Welcome" style="block" thumbnail="true"/>
+        <p>You can choose the level of access required when signing in.</p>
+        <img src="oath_scope_login_dialog.png" alt="OAuth Scope Dialog" style="block" thumbnail="true"/>
     </chapter>
 
-    <chapter title="Boards and Work Items" id="boards-and-work-items">
-
-        <p>
-            The following options are available:
-        </p>
-
-        <deflist>
-            <def title="Show work Items from all Projects" id="show-work-items-from-all-projects">
-                <p>When enabled, work items from other projects available in the selected Organization/Collection will
-                    be
-                    displayed for linking Pull Requests.</p>
-                <img src="link_work_item_panel.png" alt="link_work_item_panel" style="block" thumbnail="true"/>
-            </def>
-        </deflist>
-
-
+    <chapter title="AI Settings" id="ai-settings">
+        <p>Configure your AI providers and feature toggles in <ui-path>Settings | Tools | Azure DevOps | AI</ui-path>.</p>
+        <img src="ai_configuration_settings.png" alt="AI Configuration" style="block" thumbnail="true"/>
+        <list>
+            <li>
+                <p><b>AI Providers:</b> Add and manage configurations for OpenAI, Claude, Gemini, or local Ollama instances.</p>
+                <img src="ai_setting_provider.png" alt="AI Providers" style="block" thumbnail="true"/>
+            </li>
+            <li><p><b>Feature Toggles:</b> Enable or disable specific AI features like commit message generation, PR description generation, and code review.</p></li>
+            <li><p><b>Analyze Issues:</b> Enable this to allow the AI to read linked work items for better context.</p></li>
+        </list>
     </chapter>
 
-    <chapter title="Pipeline and Tests" id="pipeline-and-tests">
-
-        <p>
-            The following options are available:
-        </p>
-
-        <deflist>
-            <def title="Show Pipelines from all repositories" id="show-all-pipelines">
-                <p>By default, only pipelines from the current repository are displayed in the plugin.
-                    When enabled,
-                    all pipelines will be displayed in the plugin.</p>
-            </def>
-            <def title="Tests Extension" id="test-extension">
-                <p>This text field helps the plugin to identify a local Test and connect to the Azure DevOps
-                    Test response body to enable a smooth navigation between the test shown
-                    from the AZD Pipeline UI.
-                </p>
-                <img src="test_context.png" alt="test_context" style="block" thumbnail="true"/>
-            </def>
-        </deflist>
+    <chapter title="Pipeline Settings" id="pipeline-settings">
+        <p>Configure pipeline-specific behaviors, such as whether to open runs in the IDE or the browser.</p>
     </chapter>
 </topic>
