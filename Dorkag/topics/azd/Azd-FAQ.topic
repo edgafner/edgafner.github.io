@@ -14,7 +14,7 @@
         <procedure id="fix-password-settings">
             <step><p>Navigate to <ui-path>Settings | Appearance &amp; Behavior | System Settings | Passwords</ui-path>.</p></step>
             <step><p>Switch to <ui-path>In KeePass</ui-path> or clear existing passwords if they are corrupted.</p>
-                <img src="alt="token_password.png" src="token_password.png"/>
+                <img alt="Password settings" src="token_password.png"/>
             </step>
         </procedure>
     </chapter>
@@ -32,7 +32,7 @@
     <chapter id="login_pat_issues" title="Common Login Issues">
         <list type="bullet">
             <li><p><b>Expired Token:</b> Verify the expiration date in Azure DevOps.</p></li>
-            <li><p><b>Missing Scopes:</b> Ensure all required scopes are selected (see <a href="Azd-Installation.topic#generate_pat">Installation</a>).</p></li>
+            <li><p><b>Missing Scopes:</b> Ensure all required scopes are selected (see <a href="Azd-Installation.topic#azd_generate_pat">Installation</a>).</p></li>
             <li><p><b>Credential Helper:</b> Enable <ui-path>Use credential helper</ui-path> in <ui-path>Settings | Version Control | Git</ui-path>.</p></li>
             <li><p><b>Settings Sync:</b> If your account disappears, ensure you're on the latest plugin version to avoid Sync conflicts.</p></li>
         </list>
