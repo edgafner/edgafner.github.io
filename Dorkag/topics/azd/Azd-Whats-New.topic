@@ -13,11 +13,7 @@
     <chapter title="Enhanced AI Capabilities" id="enhanced-ai">
         <p>This release brings significant updates to our AI-powered features, including support for the latest models and local providers.</p>
         <img src="ai_configuration_settings.png" alt="AI Configuration Settings" style="block" thumbnail="true"/>
-        <list>
-            <li><p><b>Support for Latest Models:</b> Now supporting GPT-4o and the latest Claude 3.5 models.</p></li>
-            <li><p><b>Analyze Issues:</b> A new toggle in settings allows the AI to automatically analyze linked work items to provide better context for PR descriptions.</p></li>
-            <li><p><b>MCP Support:</b> Experimental support for Model Context Protocol (MCP) to allow AI models to interact with external tools.</p></li>
-        </list>
+        <p><b>Support for Latest Models:</b> Ships with the pre-configured AZD GPT-5.4 Mini provider out of the box, plus support for the latest model families across providers — OpenAI GPT-5.4 (including Pro and Codex variants), Anthropic Claude Opus 4.6 / Sonnet 4.5 / Haiku 4.5, Google Gemini 3 Pro and Flash, and local Ollama models (Llama 4, Qwen 3, DeepSeek R1).</p>
         <img src="ai_setting_provider.png" alt="AI Provider Settings" style="block" thumbnail="true"/>
     </chapter>
 
