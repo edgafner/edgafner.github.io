@@ -7,7 +7,51 @@
     <primary-label ref="azd"/>
     <secondary-label ref="azd_version"/>
     <p>AZD now includes AI-powered title and description generation for your work items and pull requests.</p>
-    <p>This feature helps you create more descriptive and standardized titles and descriptions with minimal effort.</p>
+
+    <chapter title="AI Provider Options" id="ai_gen_provider_options">
+        <p>Before using the generation features, you need to configure your preferred AI provider in the settings:</p>
+        <img src="ai_configuration_settings.png" alt="AI Configuration Settings" style="block" thumbnail="true"/>
+        <p>You can select from multiple providers, including support for the latest models and local execution:</p>
+        <list>
+            <li>
+                <p><b>Claude:</b> Use Anthropic's Claude models including the latest versions. Requires an API key.</p>
+            </li>
+            <li>
+                <p><b>OpenAI:</b> Use OpenAI's models including the latest GPT versions. Requires an API key.</p>
+            </li>
+            <li>
+                <p><b>Gemini:</b> Use Google's Gemini models. Requires an API key.</p>
+            </li>
+            <li>
+                <p><b>Ollama (Local):</b> Run models locally on your machine for maximum privacy. Requires the Ollama runtime and a model (e.g., <code>llama3</code>).</p>
+            </li>
+            <li>
+                <p><b>AZD AI Provider:</b> The default built-in provider. This is a proxy to the latest AI models provided via the plugin subscription.</p>
+            </li>
+        </list>
+        <img src="ai_setting_provider.png" alt="AI Provider Settings" style="block" thumbnail="true"/>
+        <tip>
+            <p>You can also configure <b>Local URLs</b> for providers like OpenAI or Claude if you are running compatible models through a local server or proxy.</p>
+        </tip>
+        <note>
+            <p>For Claude, OpenAI, and Gemini options, you'll need to provide your own API keys in the settings.</p>
+        </note>
+    </chapter>
+
+    <chapter title="Customizing AI Suggestions" id="ai_gen_customization">
+        <p>You can customize how the AI generates titles and descriptions:</p>
+        <list>
+            <li>
+                <p>Configure the style and format of generated content in the settings</p>
+            </li>
+            <li>
+                <p>Set up templates that the AI will follow for different types of items</p>
+            </li>
+            <li>
+                <p>Adjust the level of detail included in the generated descriptions</p>
+            </li>
+        </list>
+    </chapter>
 
     <chapter title="Generate AI Titles and Descriptions" id="ai_title_description_generation">
         <p>Automatically generate meaningful titles and descriptions for your work items and pull requests using AI:
@@ -28,25 +72,6 @@
         </list>
     </chapter>
 
-    <chapter title="Customizing AI Suggestions" id="customizing_ai_suggestions">
-        <p>You can customize how the AI generates titles and descriptions:</p>
-        <list>
-            <li>
-                <p>Configure the style and format of generated content in the settings</p>
-            </li>
-            <li>
-                <p>Set up templates that the AI will follow for different types of items</p>
-            </li>
-            <li>
-                <p>Adjust the level of detail included in the generated descriptions</p>
-            </li>
-        </list>
-        <note>
-            <p>The AI suggestions are based on your project's context and can be refined over time based on your usage
-                patterns.</p>
-        </note>
-    </chapter>
-
     <chapter title="Commit Message Generation with AI" id="commit_message_generation">
         <p>The latest version introduces AI-powered commit message generation to help you create more descriptive and
             standardized commit messages:</p>
@@ -64,41 +89,5 @@
                 <p>Edit and refine the AI-generated messages before committing</p>
             </li>
         </list>
-        <note>
-            <p>You can customize the style and format of generated commit messages in the settings.</p>
-        </note>
-    </chapter>
-
-    <chapter title="AI Provider Options" id="ai_provider_options">
-        <p>You can select from multiple AI providers for the title, description, and commit message generation features,
-            now with support for the latest AI models and local providers:</p>
-        <list>
-            <li>
-                <p><b>Claude:</b> Use Anthropic's Claude models including the latest versions for generating content.
-                    Requires setting up your own API key.</p>
-            </li>
-            <li>
-                <p><b>OpenAI:</b> Use OpenAI's models including the latest GPT versions for generating content. Requires
-                    setting up your own API key.</p>
-            </li>
-            <li>
-                <p><b>Gemini:</b> Use Google's Gemini models for generating content. Requires setting up your own API
-                    key.</p>
-            </li>
-            <li>
-                <p><b>Ollama (local):</b> Use locally running models via Ollama on your machine. No cloud API key is
-                    required, but you need the Ollama runtime installed and a model pulled (for example, "llama3").</p>
-            </li>
-            <li>
-                <p><b>AZD AI Provider:</b> Use the default provider included with the plugin. This is a proxy to the
-                    latest AI models through the plugin author's subscription, so no API key is required.</p>
-            </li>
-        </list>
-        <p>Configure your preferred AI provider in the settings:
-            <img src="ai_provider_settings.png" alt="AI provider settings" style="block" thumbnail="true"/>
-        </p>
-        <note>
-            <p>For Claude, OpenAI, and Gemini options, you'll need to provide your own API keys in the settings. Ollama and the AZD AI Provider do not require cloud API keys.</p>
-        </note>
     </chapter>
 </topic>

@@ -7,10 +7,10 @@
                   start-page="QueryFlag.topic">
 
     <snippet id="queryflagsn.tree">
-        <toc-element topic="QueryFlag.topic">
-            <toc-element topic="QueryFlag-Installation.topic"/>
-            <toc-element topic="Work-with-QueryFlag.topic"/>
-            <toc-element topic="QueryFlag-Reference-and-Support.topic"/>
+        <toc-element topic="QueryFlag.topic" id="toc_queryflag_root">
+            <toc-element topic="QueryFlag-Installation.topic" id="toc_queryflag_installation"/>
+            <toc-element topic="Work-with-QueryFlag.topic" id="toc_queryflag_usage"/>
+            <toc-element topic="QueryFlag-Reference-and-Support.topic" id="toc_queryflag_support"/>
         </toc-element>
     </snippet>
 </instance-profile>

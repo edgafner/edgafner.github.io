@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="What's New in Codecov" id="Codecov-Whats-New">
+
+    <primary-label ref="codecov"/>
+    <secondary-label ref="codecov_version"/>
+
+    <p>Discover the latest features and enhancements in the Codecov plugin V2026.1.13.</p>
+
+    <chapter title="Metrics and Visual Trends" id="metrics-graphs">
+        <p>We've introduced new metrics and graphs to help you visualize coverage trends across your project. Get a high-level overview of your code's health directly within the IDE.</p>
+        <img src="metrics-and-folder-icon-annotation.png" alt="Codecov Metrics and Graphs" style="block" thumbnail="true"/>
+    </chapter>
+
+    <chapter title="Folder Color Customization" id="folder-colors">
+        <p>You can now customize how coverage status is reflected in your project tree. Configure folder color intensity and style to match your preferences.</p>
+        <img src="codecov-folder-color-settings.png" alt="Folder Color Settings" style="block" thumbnail="true"/>
+    </chapter>
+
+    <chapter title="Improved Workflow Integration" id="ui-ux">
+        <list>
+            <li><p><b>Performance Improvements:</b> Significant performance enhancements and bug fixes for large repositories and complex project structures.</p></li>
+            <li><p><b>Streamlined Settings:</b> Configuration has been simplified for a faster initial setup.</p></li>
+        </list>
+    </chapter>
+
+</topic>

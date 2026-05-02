@@ -7,10 +7,12 @@
                   start-page="Codecov.topic">
 
     <snippet id="codecovsn.tree">
-        <toc-element topic="Codecov.topic">
-            <toc-element topic="Codecov-Installation.topic"/>
-            <toc-element topic="Codecov-Usage.topic"/>
-            <toc-element topic="Codecov-Reference-and-Support.topic"/>
+        <toc-element topic="Codecov.topic" id="toc_codecov_landing" id="toc_codecov_root">
+            <toc-element topic="Codecov-Whats-New.topic" id="toc_codecov_whats_new"/>
+            <toc-element topic="Codecov-Installation.topic" id="toc_codecov_installation"/>
+            <toc-element topic="Codecov-Usage.topic" id="toc_codecov_usage"/>
+            <toc-element topic="Codecov-FAQ.topic" id="toc_codecov_faq"/>
+            <toc-element topic="Codecov-Reference-and-Support.topic" id="toc_codecov_support"/>
         </toc-element>
     </snippet>
 </instance-profile>

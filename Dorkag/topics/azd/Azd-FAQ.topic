@@ -2,167 +2,60 @@
 <!DOCTYPE topic
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic id="Azd-FAQ"
-       title="FAQ and Troubleshooting"
+       title="Azd FAQ"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd">
     <primary-label ref="azd"/>
     <secondary-label ref="azd_version"/>
 
     <chapter id="token_issue" title="Resolving Token Issues with Azure DevOps Server">
-        <p>
-            When working with Azure DevOps Server within an organization, it may occur that the library used for
-            credential storage is disabled.
-        </p>
-        <p>If you are experiencing difficulties related to your tokens or credentials,
-            this is one of the first areas to check.
-
-            To resolve this problem, you will need to modify your IDE's password settings. Below are the steps you can
-            follow in IntelliJ IDEA to amend these settings:
-        </p>
-        <list type="decimal">
-            <li> Navigate to
-                <ui-path>Settings</ui-path>
-            </li>
-            <li>In the dialog that opens, go to
-                <ui-path>Appearance/System Settings</ui-path>
-            </li>
-            <li> Under the System Settings, locate and click on
-                <ui-path>Password</ui-path>
-            </li>
-        </list>
-        Inside the
-        <ui-path>Password</ui-path>
-        settings, you can manage how your credentials are stored.
-        In case your organization does not support the native Keychain, you can try with the KeyPass.
-        <img alt="token_password.png" src="token_password.png"/>
-    </chapter>
-
-    <chapter id="what_is_pat" title="What is a Personal Access Token (PAT)?">
-        <p>
-            A Personal Access Token (PAT) is a secure way to authenticate Azure DevOps. It provides a way to access
-            your Azure DevOps resources without using your username and password, which can enhance security by limiting
-            the scope and duration of access.
-        </p>
+        <p>If your organization disables native credential storage, you may need to modify your IDE's password settings.</p>
+        
+        <procedure id="fix-password-settings">
+            <step><p>Navigate to <ui-path>Settings | Appearance &amp; Behavior | System Settings | Passwords</ui-path>.</p></step>
+            <step><p>Switch to <ui-path>In KeePass</ui-path> or clear existing passwords if they are corrupted.</p>
+                <img src="alt="token_password.png" src="token_password.png"/>
+            </step>
+        </procedure>
     </chapter>
 
     <chapter id="create_pat" title="How to Create a PAT in Azure DevOps?">
-        <p>
-            To create a PAT in Azure DevOps, follow these steps:
-        </p>
-        <list type="decimal">
-            <li>Navigate to your Azure DevOps organization.</li>
-            <li>Click on your profile picture in the upper-right corner and select
-                <ui-path>Security</ui-path>
-            </li>
-            <li>In the "Personal Access Tokens" section, click "New Token."</li>
-            <li>Specify a name for your token, set the expiration date, and select the scopes required for your tasks.
-            </li>
-            <li>Click "Create" and copy the token for use in your applications.</li>
-        </list>
-        <p>
-            Note: Keep your PAT secure and treat it like a password. Do not share it or expose it in your code.
-        </p>
+        <procedure id="create-pat-procedure">
+            <step><p>Log in to your Azure DevOps organization.</p></step>
+            <step><p>Click your profile picture (top-right) and select <ui-path>User settings | Personal access tokens</ui-path>.</p></step>
+            <step><p>Click <ui-path>New Token</ui-path>, specify a name, and select the required scopes.</p></step>
+            <step><p>Click <ui-path>Create</ui-path> and copy the token.</p></step>
+        </procedure>
+        <note>Treat your PAT like a password — never share it or commit it to source control.</note>
     </chapter>
 
-    <chapter id="login_pat_issues" title="Common Issues with Login and How to Resolve Them">
-        <p>
-            If you encounter issues when trying to log in, consider the following troubleshooting steps:
-        </p>
+    <chapter id="login_pat_issues" title="Common Login Issues">
         <list type="bullet">
-            <li>Ensure the PAT has not expired. PATs have a limited lifespan and need to be renewed periodically.</li>
-            <li>Verify that the PAT has the necessary permissions for the tasks you are performing.</li>
-            <li>Check for any typos or errors in the PAT when entering it into your application.</li>
-            <li>If you clone with the IDE Version control, make sure that you checked/unchecked the ssh</li>
-            <li>If you are using http is highly recommended to enable the usage of Git Credential Helper by checking
-                the
-                <ui-path>User credential helper</ui-path>
-                checkbox under
-                <ui-path>Settings | Version Control | Git</ui-path>
-            </li>
-            <li>If your PAT is not persisting across IDE restarts and you have <b>Backup and Sync</b> (Settings Sync)
-                enabled, update to the latest plugin version. Earlier versions could have the local account storage
-                overwritten by Settings Sync.</li>
-            <li>Consider using <b>Sign in with Microsoft</b> (OAuth) as an alternative to PAT for Azure DevOps
-                Services — it avoids token expiration and scope management issues entirely.</li>
+            <li><p><b>Expired Token:</b> Verify the expiration date in Azure DevOps.</p></li>
+            <li><p><b>Missing Scopes:</b> Ensure all required scopes are selected (see <a href="Azd-Installation.topic#generate_pat">Installation</a>).</p></li>
+            <li><p><b>Credential Helper:</b> Enable <ui-path>Use credential helper</ui-path> in <ui-path>Settings | Version Control | Git</ui-path>.</p></li>
+            <li><p><b>Settings Sync:</b> If your account disappears, ensure you're on the latest plugin version to avoid Sync conflicts.</p></li>
         </list>
     </chapter>
 
-    <chapter id="mark_file_viewed_401" title="Why does 'Mark file as viewed' fail with a 401 error?">
-        <p>
-            The <b>Mark file as viewed</b> feature uses an internal Azure DevOps API
-            (<code>Contribution/HierarchyQuery</code>) that requires a <b>Full Access</b> PAT.
-            No combination of individual scopes works — this is a
-            <a href="https://github.com/microsoft/azure-devops-node-api/issues/448">known Azure DevOps limitation</a>.
-        </p>
-        <p>To resolve this:</p>
+    <chapter id="mark_file_viewed_401" title="Why does 'Mark file as viewed' fail with a 401?">
+        <p>This feature requires a <ui-path>Full Access</ui-path> PAT due to a known Azure DevOps limitation.</p>
         <list type="bullet">
-            <li>
-                <p><b>PAT users:</b> Regenerate your PAT with the <ui-path>Full access</ui-path> scope enabled
-                    in Azure DevOps. Individual scopes (even all of them checked) will not work for this specific feature.</p>
-            </li>
-            <li>
-                <p><b>OAuth users:</b> When the feature fails, the plugin displays a notification with a
-                    <ui-path>Grant Full Access</ui-path> action. Click it to re-authenticate with the required elevated
-                    permissions.</p>
-            </li>
-        </list>
-        <p>If you choose not to grant Full Access, the plugin falls back to local-only tracking — files will be
-            marked as viewed in your IDE but the state will not sync with Azure DevOps.</p>
-    </chapter>
-
-    <chapter id="performance_issues" title="Resolving Performance Issues with the Plugin">
-        <p>
-            If you are experiencing performance issues with the AZD IntelliJ plugin, you can try the following steps to
-            improve performance:
-        </p>
-        <list type="bullet">
-            <li>Ensure you are using the latest version of the plugin. Updates may include performance improvements.
-            </li>
-            <li>If your team is creating large Pull Requests with many files and many comments, it is recommended to:
-                <list type="bullet">
-                    <li>Increase the VM memory settings so the IDE can run with at least
-                        <ui-path>6GB</ui-path>
-                    </li>
-                    <li>Unselect the
-                        <ui-path>Show all files in one diff view</ui-path>
-                        mode
-                    </li>
-                </list>
-            </li>
+            <li><p><b>PAT users:</b> Regenerate your token with Full Access.</p></li>
+            <li><p><b>OAuth users:</b> Use the <ui-path>Grant Full Access</ui-path> action in the notification.</p></li>
         </list>
     </chapter>
 
-    <chapter id="bug_feature_request" title="How to Open a Bug or Feature Request">
-        <p>
-            If you encounter a bug or have a feature request for the AZD IntelliJ plugin, you can report it on the
-            project's GitHub issues page. Follow these steps:
-        </p>
-        <list type="decimal">
-            <li>Go to the GitHub issues page: <a href="https://github.com/edgafner/dorkag/issues"/>
-            </li>
-            <li>Click on "New issue."</li>
-            <li>Select "Bug report" or "Feature request" as appropriate.</li>
-            <li>Fill in the required information and submit the issue.</li>
-        </list>
+    <chapter id="azd_bug_feature" title="How to Report a Bug or Request a Feature">
+        <procedure id="report-issue">
+            <step><p>Go to the <a href="https://github.com/edgafner/dorkag/issues">GitHub Issues</a> page.</p></step>
+            <step><p>Click <ui-path>New issue</ui-path> and select the appropriate template.</p></step>
+            <step><p>Provide logs and screenshots to help us diagnose the problem.</p></step>
+        </procedure>
     </chapter>
 
-    <chapter id="why_not_free" title="Why Isn't the Plugin Free?">
-        <p>
-            The plugin is not free because its development requires significant time and resources.
-        </p>
-        <p>
-            I have also tried to reach out to potential investors from Microsoft to JetBrains and other tech giants, but
-            for now, no luck.
-        </p>
-    </chapter>
-
-    <chapter id="sponsor_plugin" title="Is there anything I can help for making the plugin free?">
-        <p>
-            The goal is to keep trying to reach out to potential investors hoping this community will be big enough
-            to make the plugin free.
-            For now, what you can do is add a nice review on the <a
-                href="https://plugins.jetbrains.com/plugin/22319-azd/reviews">Azd</a>.
-        </p>
+    <chapter id="why_not_free" title="Pricing and Support">
+        <p>The plugin is a solo project and requires significant resources to maintain. Reviews on the <a href="https://plugins.jetbrains.com/plugin/22319-azd/reviews">Marketplace</a> are greatly appreciated!</p>
     </chapter>
 
 </topic>

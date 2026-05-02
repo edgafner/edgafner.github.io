@@ -7,103 +7,62 @@
     <primary-label ref="azd"/>
     <secondary-label ref="azd_version"/>
     <video src="https://youtu.be/tYCUkYnahjA?si=-1KqOPwddpgpNeVS"/>
-    <p>AZD Pipelines new features</p>
-    <p>We are presenting a dedicated Pipeline Tool Window for a centralized and organized view.</p>
 
+    <p>AZD provides a dedicated Pipeline Tool Window for a centralized view of your CI/CD workflows.</p>
 
-    <chapter title="View all your Pipelines" id="azd_pipelines_new_features">
-        <p>Now you can see all your Azure DevOps Pipelines right in the IDE.
-            <img src="pipeline_list.png" alt="azure devops pipelines" style="block" thumbnail="true"/>
-        </p>
+    <chapter title="View and Manage Pipelines" id="view-pipelines">
+        <p>Monitor all your Azure DevOps Pipelines directly in the IDE.</p>
+        <img src="pipeline_list.png" alt="Pipeline List" style="block" thumbnail="true"/>
+        
+        <procedure id="open-run">
+            <step><p>Select a pipeline from the list to view its latest runs.</p></step>
+            <step><p>Click a specific run to open the details view.</p>
+                <img src="pipeline_details_2026.png" alt="Pipeline Details" style="block" thumbnail="true"/>
+            </step>
+        </procedure>
     </chapter>
-    <chapter title="Open a specific Pipeline Run" id="azd_pipelines_details">
-        <p>From the list you can now open a specific Pipeline run directly in your IDE
-            <img src="pipeline_details.png" alt="azure devops pipelines" style="block" thumbnail="true"/>
-        </p>
-        <p>
-            Download the stage's log or jump to the azure-pipeline.yml file
-            <img src="pipelines_details_actions.png" alt="pipelines_details_actions" style="block" thumbnail="true"/>
-        </p>
-        Get an intuitive overview with the Pipeline Stage Diagram. Right-click on any stage to access
-        context menu actions:
+
+    <chapter title="Approvals and Validations" id="approvals">
+        <p>If a pipeline run requires an approval or a manual validation, you can handle it directly in the IDE.</p>
+        <img src="approva_bottom.png" alt="Pipeline Approvals" style="block" thumbnail="true"/>
+        <p>The approval panel appears at the bottom of the build header. You can review the instructions, add a comment, and approve or reject the request.</p>
+    </chapter>
+
+    <chapter title="Analyze Logs with AI" id="log-analysis">
+        <p>For failed pipeline runs, you can use the AI assistant to analyze the logs and identify the root cause of the failure.</p>
+        <img src="stage_logs_in_editor_with_pagination_and_ai_invocation.png" alt="AI Log Analysis" style="block" thumbnail="true"/>
+        <p>Click the AI icon in the log viewer to send the stage logs to the AI provider for analysis and chat about the results.</p>
+        <img src="pipeline_logs_ai_chat.png" alt="AI Log Chat" style="block" thumbnail="true"/>
+    </chapter>
+
+    <chapter title="Pipeline Stage Diagram" id="run-details">
+        <p>Get a visual overview of your pipeline's stages and their dependencies.</p>
+        <img src="pipeline_diagram.png" alt="Stage Diagram" style="block" thumbnail="true"/>
+        <p>Right-click any stage in the diagram to access context actions:</p>
         <list>
-            <li><p><b>Open Stage in Browser</b> — opens the stage details directly in Azure DevOps</p></li>
-            <li><p><b>Copy Stage Link</b> — copies the Azure DevOps URL for the stage to your clipboard</p></li>
+            <li><p><b>Open Stage in Browser:</b> Navigates to the stage details in Azure DevOps.</p></li>
+            <li><p><b>Copy Stage Link:</b> Copies the web URL for the stage.</p></li>
         </list>
-        <img src="pipeline_diagram.png" alt="pipeline diagram" style="block" thumbnail="true"/>
-        <p>
-            See the result of the Pipeline tests, jump to a specific test or analyze the stack trace for a failed
-            one.
-            <img src="pipeline_tests.png" alt="pipeline tests" style="block" thumbnail="true"/>
-        </p>
-        <p>
-            When selecting a test from the test panel, you can jump to the test file or download the stacktrace if it
-            failed.
-            <img src="pipeline_test_actions.png" alt="pipeline_test_actions" style="block" thumbnail="true"/>
-        </p>
-        <p><b>Associate Tests with Test Cases</b></p>
-        <p>
-            You can now associate a test with an Azure DevOps test case. This allows you to track test execution
-            and maintain traceability between your automated tests and test cases in Azure DevOps.
-            <img src="test_case_association.png" alt="Test case association" style="block" thumbnail="true"/>
-        </p>
     </chapter>
 
-    <chapter title="Pipeline Opening Behavior" id="pipeline_opening_behavior">
-        <p>Pipelines now open in the Pipeline Tool Window by default instead of in the browser, providing a more
-            integrated development experience. When multiple IDE instances are open, the pipeline tab opens in the
-            correct project instance.</p>
-        <note>
-            <p>You can change this behavior in the plugin settings if you prefer to open pipelines in the browser.</p>
-        </note>
+    <chapter title="Test Results and Association" id="tests">
+        <p>View pipeline test results with the updated test panel, which includes sorting, filtering, and a comprehensive test running summary.</p>
+        <img src="pipeline_test_results_v2.png" alt="Pipeline Test Results" style="block" thumbnail="true"/>
+        <p>Associate automated tests with Azure DevOps test cases to maintain traceability and track execution directly in the IDE.</p>
+        <img src="test_case_association_2026.png" alt="Test Case Association" style="block" thumbnail="true"/>
     </chapter>
 
-    <chapter title="Run a specific Pipeline Run" id="azd_pipelines_run">
-        <p>You can select a branch and a pipeline to run right from the IDE
-            <img src="pipeline_run.png" alt="azure devops run pipelines" style="block" thumbnail="true"/>
-        </p>
+    <chapter title="Trigger Pipelines" id="trigger-pipelines">
+        <procedure id="trigger-pipeline">
+            <step><p>Click the <ui-path>Run Pipeline</ui-path> button in the tool window.</p></step>
+            <step><p>Select the target branch and configure parameters or variables, just like in the Azure DevOps web interface.</p>
+                <img src="running_pipeline_with_variables.png" alt="Run Pipeline with Variables" style="block" thumbnail="true"/>
+            </step>
+        </procedure>
     </chapter>
 
-    <chapter title="Configure Pipeline Parameters and Variables" id="pipeline_parameters_variables">
-        <p>The latest version allows you to configure Pipeline parameters and variables directly before running, all
-            within the IDE:</p>
-        <list>
-            <li>
-                <p>Set custom parameter values for your pipeline runs</p>
-            </li>
-            <li>
-                <p>Configure pipeline variables without leaving the IDE</p>
-            </li>
-            <li>
-                <p>Save commonly used configurations for quick access</p>
-            </li>
-            <li>
-                <p>Override default values for specific runs</p>
-            </li>
-        </list>
-        <img src="runpipelinewithparams.png" alt="runpipelinewithparams"/>
-        <note>
-            <p>This feature streamlines the pipeline execution workflow by eliminating the need to switch to the Azure
-                DevOps web interface for parameter configuration.</p>
-        </note>
-    </chapter>
-
-
-    <chapter title="Pipelines YAML schema injection" id="pipelines_yaml_injections">
-        <p>Inject Azure DevOps pipelines YAML schema in your IDE</p>
-        <list>
-            <li><p>By default, the plugin will inject the latest Azure DevOps pipelines YAML schema in your IDE.</p>
-            </li>
-            <li>
-                <p>When you open an
-                    <ui-path>azure-pipelines.yml</ui-path>
-                    file, the plugin will inject the schema, so you can use code completion and validation.
-                </p>
-                <img src="pipeline_injections.png" alt="pipeline_injections" style="block" thumbnail="true"/>
-            </li>
-
-        </list>
-        <note><p>You can turn this off in the plugin settings.</p></note>
-
+    <chapter title="YAML Schema Injection" id="yaml-injection">
+        <p>Get full code completion and validation for <code>azure-pipelines.yml</code> files.</p>
+        <img src="pipeline_injections.png" alt="YAML Injection" style="block" thumbnail="true"/>
     </chapter>
 </topic>
