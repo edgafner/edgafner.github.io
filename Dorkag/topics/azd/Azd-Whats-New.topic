@@ -8,7 +8,7 @@
     <primary-label ref="azd"/>
     <secondary-label ref="azd_version"/>
 
-    <p>Discover the latest features and improvements in the AZD plugin V2026.1.45.</p>
+    <p>Discover the latest features and improvements in the AZD plugin V2026.1.78.</p>
 
     <chapter title="Enhanced AI Capabilities" id="enhanced-ai">
         <p>This release brings significant updates to our AI-powered features, including support for the latest models and local providers.</p>

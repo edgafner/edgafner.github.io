@@ -5,47 +5,169 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Privacy Policy" id="privacy-policy">
 
-    <p><control>Last Updated: March 21, 2025</control></p>
+    <p><control>Last Updated: June 10, 2026</control></p>
 
     <chapter title="Introduction" id="introduction">
-        <p>Dorkag ("we", "our", or "us") is committed to protecting your privacy and ensuring the security of your data. This Privacy Policy outlines our approach to data collection and privacy for our AZD plugin for the JetBrains suite and other software products and services ("Products and Services").</p>
+        <p>Dorkag ("we", "our", or "us") is committed to protecting your privacy and being transparent about how our
+            software handles data. This Privacy Policy describes the data flows of our AZD plugin for the JetBrains
+            suite and our other software products and services ("Products and Services").</p>
+
+        <p>In short:</p>
+        <list type="bullet">
+            <li>We do not require user accounts and do not collect personal information such as names or email
+                addresses
+            </li>
+            <li>We do not use cookies or similar tracking technologies</li>
+            <li>We do not store your source code or Azure DevOps content on Dorkag servers</li>
+            <li>We do not sell data to anyone</li>
+            <li>Optional AI features send the content you explicitly act on to an AI inference endpoint (see
+                <a anchor="ai-features">AI Features</a>)
+            </li>
+            <li>The plugin sends a small set of anonymous sign-in telemetry events, which you can switch off (see
+                <a anchor="anonymous-telemetry">Anonymous Telemetry</a>)
+            </li>
+        </list>
     </chapter>
 
-    <chapter title="No Data Collection Policy" id="no-data-collection-policy">
-        <p><control>We do not collect any user data or information through our AZD plugin or other Products and Services.</control></p>
+    <chapter title="Azure DevOps Data" id="azure-devops-data">
+        <p>The core functionality of the AZD plugin — pull requests, pipelines, boards, and work items — exchanges
+            data directly between your IDE and your own Azure DevOps organization (Azure DevOps Services or Azure
+            DevOps Server). No Dorkag server sits in between, and none of this data is transmitted to Dorkag.</p>
 
-        <p>Specifically:</p>
+        <p>Your credentials (Personal Access Tokens or OAuth tokens) are stored locally in the IDE's secure password
+            store using the JetBrains Credentials API. They never leave your machine except to authenticate directly
+            with your Azure DevOps organization.</p>
+    </chapter>
+
+    <chapter title="AI Features" id="ai-features">
+        <p>The plugin includes optional AI-powered features: commit-message generation, pull request title and
+            description generation, AI code review, pipeline log analysis, and AI chat.</p>
+
+        <p><control>AI features are enabled by default and are strictly user-triggered.</control> Nothing runs in the
+            background and nothing is scanned automatically. Data is sent only when you explicitly invoke an AI
+            action, and only the content needed for that action is sent.</p>
+
+        <chapter title="What is sent, and when" id="ai-data-sent">
+            <table style="header-row" border="true">
+                <tr>
+                    <td>AI action (user-triggered)</td>
+                    <td>Data sent for that request</td>
+                </tr>
+                <tr>
+                    <td>Commit message generation</td>
+                    <td>The code diff of your staged changes</td>
+                </tr>
+                <tr>
+                    <td>PR title / description generation</td>
+                    <td>The pull request's code diff, branch names, and commit messages</td>
+                </tr>
+                <tr>
+                    <td>AI code review</td>
+                    <td>The pull request's code diff, title, description, and author name</td>
+                </tr>
+                <tr>
+                    <td>Pipeline log analysis</td>
+                    <td>Excerpts of the pipeline log being analyzed</td>
+                </tr>
+                <tr>
+                    <td>AI chat</td>
+                    <td>Your chat prompts and any content you attach (for example diffs or work item text)</td>
+                </tr>
+            </table>
+        </chapter>
+
+        <chapter title="The default AZD provider" id="ai-default-provider">
+            <p>The plugin ships with a built-in "AZD" AI provider that is active by default so AI features work out of
+                the box. When you invoke an AI action on the default provider, the content listed above is sent over
+                HTTPS to an Azure AI (OpenAI-compatible) inference endpoint hosted in Dorkag's Microsoft Azure
+                subscription.</p>
+
+            <p>This is request/response only:</p>
+            <list type="bullet">
+                <li>Dorkag does not store, log, or train on any of this content</li>
+                <li>Chat history is kept in IDE memory only and is never persisted on Dorkag servers</li>
+                <li>Inference is processed by Microsoft Azure as a sub-processor under Microsoft's Azure OpenAI
+                    data-privacy terms: customer data is not used to train models, and Microsoft may temporarily
+                    retain requests for abuse monitoring under its own policies
+                </li>
+            </list>
+
+            <p>The plugin shows an in-IDE notification to users on the default provider explaining this, with
+                one-click actions to open the AI settings, disable the default provider, or dismiss the notice.</p>
+        </chapter>
+
+        <chapter title="Using your own provider" id="ai-own-provider">
+            <p>Instead of the default provider, you can configure your own AI provider — OpenAI, Anthropic Claude,
+                Google Gemini, or a local Ollama instance. In that case, data flows directly from your IDE to the
+                provider you chose, under that provider's terms; Dorkag is not involved in the request. Your API keys
+                are stored in the IDE's local secure storage and never sent to Dorkag.</p>
+
+            <p>With a local Ollama provider, AI requests never leave your machine.</p>
+        </chapter>
+
+        <chapter title="Disabling AI features" id="ai-disabling">
+            <p>You can disable AI features entirely in <ui-path>Settings | Azure DevOps | AI Settings</ui-path>.
+                Disabling the default AZD provider turns AI features off unless you have configured another
+                provider.</p>
+        </chapter>
+    </chapter>
+
+    <chapter title="Anonymous Telemetry" id="anonymous-telemetry">
+        <p>To measure sign-in reliability, the plugin sends anonymous OAuth sign-in telemetry events to a Dorkag
+            endpoint (dorkag.azurewebsites.net, backed by Azure Application Insights). This telemetry is enabled by
+            default and you can opt out at any time.</p>
+
+        <p>Each event contains only:</p>
         <list type="bullet">
-            <li>We do not collect, access, store, process, or transmit your source code, project files, or other intellectual property</li>
-            <li>We do not collect personal information such as names, email addresses, or contact details</li>
-            <li>We do not collect usage statistics, analytics, or user behavior data</li>
-            <li>We do not use cookies or similar tracking technologies</li>
-            <li>We do not monitor your activities or interactions with our Products and Services</li>
+            <li>Event name: sign-in started, completed, or failed</li>
+            <li>Consent type</li>
+            <li>Plugin version</li>
+            <li>IDE product</li>
+            <li>Operating system family</li>
         </list>
 
-        <p>Our Products and Services operate entirely on your local systems, and no data is transmitted to our servers or third parties.</p>
+        <p>These events contain no user identifiers, no source code, and no Azure DevOps content. Because the data
+            cannot be related to an identified or identifiable person, it is anonymous information in the sense of
+            GDPR Recital 26.</p>
+
+        <p>You can opt out by switching off <ui-path>Share anonymous usage statistics</ui-path> in the plugin
+            settings. No other usage analytics, crash reporting, or tracking exists in our Products and Services.</p>
     </chapter>
 
-    <chapter title="Software Operation" id="software-operation">
-        <p>Our AZD plugin operates exclusively within your development environment. All operations, processes, and data remain within your infrastructure and under your control.</p>
+    <chapter title="Third-Party Processing" id="third-party-processing">
+        <p>We use the following third parties, and only in the circumstances described:</p>
+        <list type="bullet">
+            <li><control>Microsoft Azure</control> — acts as a sub-processor when you use the default AZD AI provider
+                (inference under Microsoft's Azure OpenAI data-privacy terms) and hosts the anonymous telemetry
+                endpoint (Azure Application Insights)
+            </li>
+            <li><control>Your chosen AI provider</control> — if you configure OpenAI, Anthropic Claude, Google Gemini,
+                or another provider yourself, your AI requests go directly to that provider under its own terms;
+                Dorkag receives nothing
+            </li>
+        </list>
+
+        <p>We do not share, sell, or disclose any data to other third parties.</p>
     </chapter>
 
-    <chapter title="Third-Party Services" id="third-party-services">
-        <p>Our Products and Services do not integrate with or transmit data to third-party services. We do not share any information with third parties because we do not collect any information to share.</p>
+    <chapter title="Data Retention" id="data-retention">
+        <p>Dorkag retains nothing: AI requests are processed request/response only and are not stored, logged, or
+            used for training by Dorkag, and chat history exists only in your IDE's memory. Microsoft may temporarily
+            retain AI requests for abuse monitoring in accordance with its Azure OpenAI terms. Anonymous telemetry
+            events are retained as aggregate, non-identifiable statistics.</p>
     </chapter>
 
     <chapter title="Changes to This Policy" id="changes-to-this-policy">
-        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on our website. We recommend that you review this Privacy Policy periodically for any changes.</p>
+        <p>We may update this Privacy Policy from time to time, for example when features change the data flows
+            described here. We will notify you of any changes by posting the new Privacy Policy on our website. We
+            recommend that you review this Privacy Policy periodically for any changes.</p>
     </chapter>
 
     <chapter title="Contact Us" id="contact-us">
-        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices,
+            please contact us at:</p>
 
         <p><control>Email</control>: jgafner@dorkag.com</p>
-    </chapter>
-
-    <chapter title="Conclusion" id="conclusion">
-        <p>We are committed to maintaining the trust and confidence of our users by respecting your privacy completely. Our Products and Services are designed to function without collecting or processing any of your data.</p>
     </chapter>
 
 </topic>
