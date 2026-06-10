@@ -14,7 +14,7 @@
 
     <secondary-label id="experimental" name="Experimental" color="purple">This is an experimental feature
     </secondary-label>
-    <secondary-label id="azd_version" name="V2026.1.45" color="blue">New in version 2026.1
+    <secondary-label id="azd_version" name="V2026.1.78" color="blue">New in version 2026.1
     </secondary-label>
     <secondary-label id="gbrowser_version" name="V2026.1.8" color="tangerine">New in version 2026.1
     </secondary-label>
