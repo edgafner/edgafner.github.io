@@ -20,10 +20,12 @@
             <li>We do not use cookies or similar tracking technologies</li>
             <li>We do not store your source code or Azure DevOps content on Dorkag servers</li>
             <li>We do not sell data to anyone</li>
-            <li>Optional AI features send the content you explicitly act on to an AI inference endpoint (see
+            <li>Optional AI features send the content you explicitly act on directly to a stateless AI model
+                endpoint — there is no Dorkag backend behind it and nothing is stored (see
                 <a anchor="ai-features">AI Features</a>)
             </li>
-            <li>The plugin sends a small set of anonymous sign-in telemetry events, which you can switch off (see
+            <li>Only the new Microsoft Entra ID (OAuth) sign-in sends a small set of anonymous, temporary telemetry
+                events, which you can switch off; PAT and Azure CLI sign-ins send no telemetry at all (see
                 <a anchor="anonymous-telemetry">Anonymous Telemetry</a>)
             </li>
         </list>
@@ -79,11 +81,18 @@
         <chapter title="The default AZD provider" id="ai-default-provider">
             <p>The plugin ships with a built-in "AZD" AI provider that is active by default so AI features work out of
                 the box. When you invoke an AI action on the default provider, the content listed above is sent over
-                HTTPS to an Azure AI (OpenAI-compatible) inference endpoint hosted in Dorkag's Microsoft Azure
-                subscription.</p>
+                HTTPS directly from your IDE to an Azure AI Foundry (OpenAI-compatible) model inference endpoint
+                hosted in Dorkag's Microsoft Azure subscription.</p>
+
+            <p>This endpoint is a plain model deployment — currently a standard OpenAI GPT-5.4 model. There is no
+                Dorkag backend, application server, proxy, or database behind it: your IDE talks straight to the
+                model.</p>
 
             <p>This is request/response only:</p>
             <list type="bullet">
+                <li>Nothing is saved on Azure: the endpoint is stateless, with no storage, logging pipeline, or
+                    backend service attached in Dorkag's Azure subscription
+                </li>
                 <li>Dorkag does not store, log, or train on any of this content</li>
                 <li>Chat history is kept in IDE memory only and is never persisted on Dorkag servers</li>
                 <li>Inference is processed by Microsoft Azure as a sub-processor under Microsoft's Azure OpenAI
@@ -113,9 +122,16 @@
     </chapter>
 
     <chapter title="Anonymous Telemetry" id="anonymous-telemetry">
-        <p>To measure sign-in reliability, the plugin sends anonymous OAuth sign-in telemetry events to a Dorkag
-            endpoint (dorkag.azurewebsites.net, backed by Azure Application Insights). This telemetry is enabled by
-            default and you can opt out at any time.</p>
+        <p>Telemetry applies only to the new sign-in with Microsoft Entra ID (OAuth) feature. To measure the
+            reliability of this new sign-in flow, the plugin sends anonymous OAuth sign-in telemetry events to a
+            Dorkag endpoint (dorkag.azurewebsites.net, backed by Azure Application Insights). This telemetry is
+            enabled by default and you can opt out at any time.</p>
+
+        <p><control>Signing in with a Personal Access Token (PAT) or through the Azure CLI sends no telemetry at
+            all.</control></p>
+
+        <p>This telemetry is temporary: it exists only to stabilize the new OAuth sign-in feature, and we plan to
+            remove it by the end of 2026.</p>
 
         <p>Each event contains only:</p>
         <list type="bullet">
@@ -138,8 +154,8 @@
         <p>We use the following third parties, and only in the circumstances described:</p>
         <list type="bullet">
             <li><control>Microsoft Azure</control> — acts as a sub-processor when you use the default AZD AI provider
-                (inference under Microsoft's Azure OpenAI data-privacy terms) and hosts the anonymous telemetry
-                endpoint (Azure Application Insights)
+                (stateless model inference via Azure AI Foundry, under Microsoft's Azure OpenAI data-privacy terms)
+                and hosts the anonymous telemetry endpoint (Azure Application Insights)
             </li>
             <li><control>Your chosen AI provider</control> — if you configure OpenAI, Anthropic Claude, Google Gemini,
                 or another provider yourself, your AI requests go directly to that provider under its own terms;
@@ -152,9 +168,11 @@
 
     <chapter title="Data Retention" id="data-retention">
         <p>Dorkag retains nothing: AI requests are processed request/response only and are not stored, logged, or
-            used for training by Dorkag, and chat history exists only in your IDE's memory. Microsoft may temporarily
-            retain AI requests for abuse monitoring in accordance with its Azure OpenAI terms. Anonymous telemetry
-            events are retained as aggregate, non-identifiable statistics.</p>
+            used for training by Dorkag — neither on Dorkag servers nor anywhere in Dorkag's Azure subscription —
+            and chat history exists only in your IDE's memory. Microsoft may temporarily retain AI requests for
+            abuse monitoring in accordance with its Azure OpenAI terms. Anonymous telemetry events are retained as
+            aggregate, non-identifiable statistics, and the OAuth sign-in telemetry itself is planned for removal
+            by the end of 2026.</p>
     </chapter>
 
     <chapter title="Changes to This Policy" id="changes-to-this-policy">
