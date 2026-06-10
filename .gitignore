@@ -2,3 +2,4 @@
 
 # Claude local settings (contains machine-specific paths)
 .claude/settings.local.json
+.claude/worktrees/
