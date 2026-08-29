@@ -8,7 +8,13 @@
     <primary-label ref="codecov"/>
     <secondary-label ref="codecov_version"/>
 
-    <p>Discover the latest features and enhancements in the Codecov plugin V2026.1.13.</p>
+    <p>Discover the latest features and enhancements in the Codecov plugin V2026.2.5.</p>
+
+    <chapter title="New in 2026.2" id="codecov-new-in-2026-2">
+        <p>The 2026.2 line targets IntelliJ Platform 2026.2 and is a maintenance release: it brings the plugin onto
+            the new platform build and refreshes its dependencies, including security fixes. All of the features
+            below are unchanged and fully supported.</p>
+    </chapter>
 
     <chapter title="Metrics and Visual Trends" id="metrics-graphs">
         <p>We've introduced new metrics and graphs to help you visualize coverage trends across your project. Get a high-level overview of your code's health directly within the IDE.</p>
