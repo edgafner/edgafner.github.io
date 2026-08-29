@@ -8,7 +8,40 @@
     <primary-label ref="azd"/>
     <secondary-label ref="azd_version"/>
 
-    <p>Discover the latest features and improvements in the AZD plugin V2026.1.78.</p>
+    <p>Discover the latest features and improvements in the AZD plugin V2026.2.20.</p>
+
+    <chapter title="New in 2026.2" id="new-in-2026-2">
+        <p>The 2026.2 line targets IntelliJ Platform 2026.2 and adds new filters, board options, and pipeline
+            insights on top of the features described below.</p>
+
+        <list>
+            <li><p><b>Awaiting My Vote filter:</b> A new quick filter in the Pull Requests list shows only the pull
+                requests assigned to you that you have not voted on yet.</p></li>
+            <li><p><b>Zoomable comment images:</b> Click an image in a pull request comment to open it in an editor
+                tab, where you can zoom and pan it like any other image.</p></li>
+            <li><p><b>Per-pipeline approval muting:</b> Approval notifications can now be muted for an individual
+                pipeline, either straight from the notification or from Pipeline Settings.</p></li>
+            <li><p><b>Richer run list:</b> Pipeline runs now show their commit message and a colored status label
+                (Success, Failed, In progress, and so on). Runs on the default branch link back to the pull request
+                that triggered them.</p></li>
+            <li><p><b>Board improvements:</b> Open a Kanban board from any project in your organization, not just the
+                one the current repository belongs to, and filter work items by Iteration (Sprint), including
+                <code>@CurrentIteration</code>.</p></li>
+            <li><p><b>New pipeline metrics:</b> The Metrics view gained widgets for the top failure causes and the
+                slowest stages.</p></li>
+            <li><p><b>AI provider transparency:</b> A startup notice explains that AI features use a built-in cloud
+                provider by default, and lets you switch providers or disable them.</p></li>
+        </list>
+
+        <note>The Work Item to IDE Tasks integration is now optional. JetBrains unbundled the
+            <b>Task Management</b> plugin in 2026.2, so AZD loads normally without it and only that one integration
+            stays unavailable until you install Task Management.</note>
+
+        <p><b>Performance and reliability:</b> Watching a running build is much lighter on the IDE and no longer
+            leaks memory over long runs, filtering and sorting large test-result lists is significantly faster, and a
+            broad round of diff fixes covers completed pull requests, binary files, renamed and deleted files, and
+            files that switch between a symlink and a regular file.</p>
+    </chapter>
 
     <chapter title="Enhanced AI Capabilities" id="enhanced-ai">
         <p>This release brings significant updates to our AI-powered features, including support for the latest models and local providers.</p>
