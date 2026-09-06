@@ -3,141 +3,327 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Terms and Conditions of Service" id="terms-of-service">
+       title="Terms of Service and End User License Agreement" id="terms-of-service">
 
     <p>
-        <control>Last Updated: May 22, 2023</control>
+        <control>Last Updated: September 4, 2026</control>
     </p>
 
-    <chapter title="1. ACKNOWLEDGMENT AND ACCEPTANCE" id="acknowledgment-and-acceptance">
-        <p>1.1. PLEASE READ THESE TERMS AND CONDITIONS OF SERVICE AND END USER LICENSE AGREEMENT OF DORKAG'S PRODUCTS
-            AND SERVICES ("AGREEMENT" OR "TERMS") BEFORE USING OR ACCESSING IN ANY FORM ANY OF THE PRODUCTS,
-            APPLICATIONS, AND/OR SERVICES AVAILABLE THROUGH OR IN CONNECTION WITH DORKAG'S PRODUCTS, E.G., THE REAL-TIME
-            DEBUGGER (HEREINAFTER THE "PRODUCTS AND SERVICES"). THESE TERMS CONSTITUTE A BINDING AGREEMENT BETWEEN YOU
-            ("YOU" OR "CUSTOMER") AND DORKAG ORGANIZATION, A COMPANY INCORPORATED UNDER THE LAWS OF THE STATE OF ISRAEL
-            OR ANY OTHER AFFILIATE THEREOF EXECUTING THE ORDER FORM ("DORKAG" OR "COMPANY") AND BY USING AND/OR MERELY
-            DOWNLOADING ANY OF THE PRODUCTS AND SERVICES IN ANY FORM AND MANNER YOU AGREE TO ABIDE, AND THAT YOU ARE
-            BOUND, BY THESE TERMS. BY USING ANY OF THE PRODUCTS AND SERVICES YOU HEREBY DECLARE THAT YOU ARE AT LEAST 18
-            YEARS OLD. IF YOU ARE A MINOR, YOU ARE REQUIRED TO OBTAIN A PARENTAL CONSENT FOR AND PRIOR TO USING THE
-            PRODUCTS AND SERVICES.</p>
+    <p>These Terms of Service and End User License Agreement (the "Agreement") are a binding agreement between you
+        and Dorkag ("Dorkag", "we", "us") and govern your use of every Dorkag Product (defined below). Please read
+        them carefully. By installing, activating, evaluating or otherwise using a Product, you accept this
+        Agreement.</p>
 
-        <p>1.2. THIS AGREEMENT AND THE USE OF THE TERMS "YOU" OR "USERS" ARE APPLICABLE TO ALL TYPES OF USERS OF THE
-            PRODUCTS AND SERVICES, INCLUDING OWNERS WHO INITIALLY SET UP THE PRODUCTS AND SERVICES AND/OR ARE GRANTED
-            OWNERSHIP PRIVILEGES BY THE INITIAL OWNER(S), ADMINISTRATORS, WHO MANAGE AND RUN A TEAM, CHANNEL, OR GROUP
-            AND USERS WHO ARE INVITED TO JOIN AN EXISTING GROUP AND/OR TEAM THAT HAS ALREADY BEEN CREATED.</p>
+    <chapter title="1. DEFINITIONS" id="definitions">
+        <p>1.1. <control>"Products"</control> means all software developed and distributed by Dorkag, including
+            without limitation the plugins and extensions for JetBrains IDEs published by Dorkag on the JetBrains
+            Marketplace (such as the Azure DevOps plugin ("AZD") and the Jira plugin), the JetWings companion
+            application, and any related tools, together with all updates, upgrades, new versions, trial and
+            evaluation builds, early-access builds and components of any of them.</p>
 
-        <p>1.3. IF YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF A COMPANY OR ANOTHER LEGAL ENTITY, YOU REPRESENT
-            THAT YOU HAVE THE AUTHORITY TO BIND SUCH AN ENTITY, ITS AFFILIATES, AND USERS TO THIS AGREEMENT. IN SUCH
-            CASE, THE TERMS "YOU" OR "YOUR" SHALL ALSO REFER TO SUCH AN ENTITY, AND ITS AFFILIATES, AS APPLICABLE. IF
-            YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT AGREE WITH THIS AGREEMENT, YOU MAY NOT USE THE PRODUCTS AND
-            SERVICES.</p>
+        <p>1.2. <control>"Product Content"</control> means every protectable element of the Products and of their
+            presentation, including without limitation: object code and source code; the user interface and its
+            structure, screens, tool windows, editors, dialogs, tabs, tables, filters, menus, actions and their
+            arrangement; the selection, wording and ordering of labels, captions, column headings, filter and sort
+            options, tooltips, messages, notifications and other text; workflows and interaction sequences;
+            icons, graphics, animations and other visual assets; the overall look and feel; data models, schemas,
+            prompts and prompt templates used by AI-assisted features; and all compilations and arrangements of the
+            foregoing.</p>
 
-        <note>
-            <p>
-                <control>IMPORTANT NOTES:</control>
-            </p>
-            <p>ANY AND ALL USE OF THE PRODUCTS AND SERVICES SHALL BE SUBJECT TO THE FEES, FEATURES, SCOPE, DURATION, AND
-                SUCH ADDITIONAL TERMS AND CONDITIONS, WHICH ARE SPECIFIED UNDER A CORRESPONDING ORDER FORM, STATEMENT OF
-                WORK, INSERTION ORDER OR OTHER AGREEMENTS WITH THE COMPANY OR A CORRESPONDING COMPANY
-                RESELLER/DISTRIBUTOR ("ORDER FORM"), INCORPORATED BY REFERENCE TO THESE TERMS, WHICH YOU HAVE EXECUTED,
-                SIGNED OR OTHERWISE AUTHORIZED IN CONJUNCTION WITH THE PURCHASE OF THE RIGHT TO USE THE PRODUCTS AND
-                SERVICES. ANY REFERENCE TO "AGREEMENT" SHALL ALSO REFER TO THESE TERMS AS WELL AS TO THE ORDER FORM. IN
-                THE EVENT THAT THE PRODUCTS AND SERVICES ARE PROVIDED FREE OF CHARGE, SUCH ORDERS FORM MAY NOT BE
-                EXECUTED AND THE TERMS HEREIN SHALL APPLY.</p>
-        </note>
+        <p>1.3. <control>"Documentation"</control> means all documentation, guides, help content, release notes,
+            screenshots, videos, marketing material and website content relating to the Products, in any form and
+            wherever published, including on dorkag.com, on the JetBrains Marketplace, and in any public source
+            repository operated by Dorkag.</p>
+
+        <p>1.4. <control>"Dorkag Materials"</control> means the Products, the Product Content and the
+            Documentation, collectively.</p>
+
+        <p>1.5. <control>"Marketplace"</control> means the JetBrains Marketplace (plugins.jetbrains.com) and any
+            other distribution channel through which Dorkag makes a Product available.</p>
+
+        <p>1.6. <control>"Third-Party Services"</control> means services not operated by Dorkag that a Product
+            connects to on your behalf, including without limitation Azure DevOps Services, Azure DevOps Server,
+            Atlassian Jira, GitHub, Microsoft Entra ID, and AI model providers (for example OpenAI, Anthropic,
+            Google, or a locally hosted model runtime).</p>
     </chapter>
 
-    <chapter title="2. THE DORKAG SERVICE – GRANT OF RIGHTS; RIGHT TO MODIFICATION AND SHUT DOWN" id="dorkag-service">
-        <p>2.1.
-            <control>SaaS-Subscription.</control>
-            Subject to the terms and conditions hereunder, including timely payment of all applicable Fees (as defined
-            below), you are hereby granted with a personal, term-limited, revocable, non-exclusive, non-transferable,
-            and non-sublicensable right to access and use the Products and Services during the term specified under the
-            applicable Order Form as per the scope specified herein, for your own internal use ("SaaS Subscription").
-            Unless the Order Form expressly specifies an 'On-Prem License' or a similar designation, pursuant to Section
-            2.2 below, the Products and Services shall be provided as a SaaS Subscription.
-        </p>
+    <chapter title="2. ACCEPTANCE" id="acknowledgment-and-acceptance">
+        <p>2.1. You accept this Agreement by doing any of the following: installing a Product; starting a trial or
+            evaluation; purchasing, activating or renewing a license through the Marketplace; signing in to a
+            Third-Party Service through a Product; or otherwise using a Product or accessing the Dorkag Materials.
+            If you do not agree to this Agreement, do not install or use the Products.</p>
 
-        <p>2.2.
-            <control>On-Premise License.</control>
-            If the applicable Order Form expressly specifies an 'On-Prem License' or a similar designation, then, in
-            lieu of Section 2.1 above, and subject to the terms and conditions hereunder, including timely payment of
-            all applicable Fees, you are hereby granted with a personal, term-limited, revocable, non-exclusive,
-            non-transferable, and non-sublicensable license to download, install and use the Products and Services on
-            your systems and devices, during the term specified under the applicable Order Form as per the scope
-            specified herein, for your own internal use ("On-Premise License").
-        </p>
+        <p>2.2. If you are accepting on behalf of a company or other legal entity, you represent that you have
+            authority to bind that entity, and "you" refers to that entity and to every individual who uses the
+            Products under its license.</p>
 
-        <p>2.3.
-            <control>Modifications.</control>
-            We reserve the right to modify, update, enhance, improve, and/or change the Products and Services at any
-            time and from time to time, and for any reason, including, without limitation, error corrections and
-            updates, feature modifications, and the addition or removal of features and functionalities. Any
-            modifications to the Products and Services shall become effective immediately upon release.
-        </p>
+        <p>2.3. You must be at least 18 years old, or the age of majority in your jurisdiction, to use the
+            Products.</p>
 
-        <p>2.4.
-            <control>Shut Down.</control>
-            We reserve the right to shut down the Products and Services, in whole or in part, at any time and from time
-            to time, for any reason. In such an event, we will use commercially reasonable efforts to provide you with
-            prior notice.
-        </p>
+        <p>2.4. Purchases made through the Marketplace are also subject to the JetBrains Marketplace terms and the
+            JetBrains terms governing paid plugins, including their provisions on payment, renewal and refunds. In
+            the event of a conflict between those terms and this Agreement regarding the license to and use of the
+            Products, this Agreement prevails.</p>
     </chapter>
 
-    <chapter title="3. RESTRICTIONS" id="restrictions">
-        <p>3.1. You may not, and may not permit any third party to:</p>
+    <chapter title="3. LICENSE GRANT" id="license-grant">
+        <p>3.1. <control>License.</control> Subject to your continuing compliance with this Agreement and, for paid
+            Products, timely payment of all applicable fees, Dorkag grants you a personal, limited, non-exclusive,
+            non-transferable, non-sublicensable, revocable license to install and use the Products, in object code
+            form only, on devices you own or control, during the applicable license or trial term, solely for your
+            own internal business or personal purposes.</p>
+
+        <p>3.2. <control>Trials and evaluation builds.</control> Trial, evaluation and early-access builds are
+            licensed for the sole purpose of evaluating whether to purchase the Product, for the trial period
+            stated on the Marketplace, and are subject to all restrictions in this Agreement.</p>
+
+        <p>3.3. <control>Reservation of rights.</control> The Products are licensed, not sold. Dorkag reserves all
+            rights not expressly granted in this Agreement. No rights are granted by implication, estoppel or
+            otherwise.</p>
+
+        <p>3.4. <control>Updates.</control> Dorkag may provide updates, upgrades or new versions of a Product, which
+            are governed by this Agreement unless accompanied by different terms. Dorkag may add, change or remove
+            features at any time.</p>
+
+        <p>3.5. <control>Documentation.</control> You may view the Documentation for the purpose of using the
+            Products. No other right in the Documentation is granted. The Documentation and Dorkag's website are
+            not licensed under any open-source or Creative Commons license, regardless of where they are hosted.</p>
+    </chapter>
+
+    <chapter title="4. RESTRICTIONS" id="restrictions">
+        <p>4.1. Except as expressly permitted by this Agreement or by non-waivable provisions of applicable law,
+            you may not, and may not permit, assist or encourage any third party to:</p>
         <list type="bullet">
-            <li>Copy, modify, adapt, translate, or create derivative works based on the Products and Services</li>
-            <li>Reverse engineer, disassemble, decompile, or otherwise attempt to derive the source code of the Products
-                and Services
+            <li><control>Copy or derive.</control> Copy, reproduce, modify, adapt, translate, or create derivative
+                works of any of the Dorkag Materials, in whole or in part, in any medium.
             </li>
-            <li>Remove, alter, or obscure any proprietary notices on the Products and Services</li>
-            <li>Use the Products and Services for any illegal, harmful, or offensive purpose</li>
-            <li>Interfere with or disrupt the integrity or performance of the Products and Services</li>
-            <li>Attempt to gain unauthorized access to the Products and Services or related systems</li>
-            <li>Use the Products and Services in any manner that violates applicable laws or regulations</li>
+            <li><control>Reverse engineer.</control> Reverse engineer, disassemble, decompile, decrypt, unpack, or
+                otherwise attempt to derive the source code, algorithms, data structures, prompts, or internal
+                architecture of the Products, except to the limited extent that applicable law expressly permits
+                such acts notwithstanding this restriction and only after you have first requested the required
+                information from Dorkag in writing.
+            </li>
+            <li><control>Reproduce the user experience.</control> Reproduce, imitate, or substantially copy the
+                Product Content, including the user interface, screen layouts, feature set, feature composition,
+                workflows, or the selection, wording and ordering of labels, options, columns and messages, whether
+                by copying, transcription, description, or re-implementation in any programming language or
+                technology.
+            </li>
+            <li><control>Build a competing product.</control> Access, evaluate or use the Products, or any
+                information, knowledge or insight gained from them, for the purpose of designing, developing,
+                training, improving, or marketing any product or service that competes with or substitutes for a
+                Product, including any plugin or extension for JetBrains IDEs or any other IDE that integrates with
+                the same Third-Party Services.
+            </li>
+            <li><control>Reuse the Documentation.</control> Copy, republish, translate, or use as a template the
+                Documentation or any portion of it, including its structure, table of contents, page organisation,
+                configuration files, and source project files, whether published on dorkag.com, on the Marketplace
+                or in a source repository.
+            </li>
+            <li><control>Benchmark publicly.</control> Publish or disclose to any third party the results of any
+                benchmark, comparison, or performance test of the Products without Dorkag's prior written consent.
+            </li>
+            <li><control>Circumvent licensing.</control> Bypass, remove, disable, or circumvent any license
+                verification, trial limitation, feature gating, or other technical measure in the Products, or
+                share, sell, lease, lend, or make a license key or licensed installation available to persons not
+                covered by your license.
+            </li>
+            <li><control>Remove notices.</control> Remove, alter, or obscure any copyright, trademark, or other
+                proprietary notice on or in the Dorkag Materials.
+            </li>
+            <li><control>Redistribute.</control> Distribute, sell, rent, lease, sublicense, host, or otherwise make
+                the Products available to any third party, or bundle them with any other product.
+            </li>
+            <li><control>Extract assets.</control> Extract, scrape, or harvest icons, images, strings, resource
+                bundles, prompt templates, or other assets from the Products for use outside the Products.
+            </li>
+            <li><control>Misuse.</control> Use the Products for any unlawful purpose, to infringe the rights of any
+                person, or in violation of the terms of any Third-Party Service.
+            </li>
         </list>
+
+        <p>4.2. The restrictions in this Section 4 apply to any person who has installed, evaluated or used a
+            Product, including during a free trial, and survive termination or expiry of your license for as long
+            as Dorkag's rights in the relevant Dorkag Materials subsist.</p>
+
+        <p>4.3. The restrictions in this Section 4 apply in addition to, and do not limit, Dorkag's rights under
+            copyright, trademark, unfair-competition, trade-secret and other laws. Nothing in this Section 4
+            restricts the development of software that merely addresses the same problem domain as a Product
+            without copying or reproducing the Product Content or Documentation.</p>
     </chapter>
 
-    <chapter title="4. INTELLECTUAL PROPERTY" id="intellectual-property">
-        <p>4.1. All right, title, and interest in and to the Products and Services, including all intellectual property
-            rights therein, are and shall remain the exclusive property of Dorkag and its licensors.</p>
+    <chapter title="5. INTELLECTUAL PROPERTY" id="intellectual-property">
+        <p>5.1. All right, title and interest in and to the Dorkag Materials, including all copyrights, trademarks,
+            trade dress, design rights, database rights, trade secrets, and all other intellectual property and
+            proprietary rights therein, in every jurisdiction, are and shall remain the exclusive property of
+            Dorkag and its licensors.</p>
 
-        <p>4.2. These Terms do not grant you any rights to use Dorkag's trademarks, logos, or other brand features.</p>
+        <p>5.2. Without limiting Section 5.1, Dorkag asserts copyright and, where applicable, trade dress and design
+            rights in the Product Content, including the user interface, its labels and text, its icons and
+            graphics, and the Documentation, each as an original work and as a compilation.</p>
+
+        <p>5.3. "Dorkag", "AZD", "JetWings", and the associated logos and product names are trademarks or trade
+            names of Dorkag. You may not use them, or any confusingly similar names, marks, icons, or trade dress,
+            in connection with any product or service, or in any manner that suggests affiliation with or
+            endorsement by Dorkag, without Dorkag's prior written consent.</p>
+
+        <p>5.4. <control>Feedback.</control> If you provide suggestions, feature requests, bug reports, or other
+            feedback about the Products, you grant Dorkag a perpetual, irrevocable, worldwide, royalty-free license
+            to use and incorporate that feedback without restriction or attribution.</p>
+
+        <p>5.5. <control>Third-party components.</control> The Products may include third-party or open-source
+            components licensed under their own terms. Those terms govern the relevant components to the extent
+            they conflict with this Agreement. The presence of such components does not grant any right in the
+            remaining Dorkag Materials.</p>
+
+        <p>5.6. <control>Third-party marks.</control> JetBrains, IntelliJ IDEA, Rider and related marks are
+            trademarks of JetBrains s.r.o. Microsoft, Azure, and Azure DevOps are trademarks of the Microsoft group
+            of companies. Atlassian and Jira are trademarks of Atlassian Pty Ltd. Dorkag is not affiliated with,
+            sponsored by, or endorsed by any of them.</p>
     </chapter>
 
-    <chapter title="5. DISCLAIMER OF WARRANTIES" id="disclaimer-of-warranties">
-        <p>5.1. THE PRODUCTS AND SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER
-            EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-            PURPOSE, AND NON-INFRINGEMENT.</p>
+    <chapter title="6. THIRD-PARTY SERVICES AND CREDENTIALS" id="third-party-services">
+        <p>6.1. The Products connect to Third-Party Services using accounts and credentials that you supply, such as
+            personal access tokens, OAuth consents, or API keys. You are solely responsible for those accounts and
+            credentials, for the permissions you grant, and for complying with the terms of each Third-Party
+            Service.</p>
 
-        <p>5.2. DORKAG DOES NOT WARRANT THAT THE PRODUCTS AND SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, OR COMPLETELY
-            SECURE.</p>
+        <p>6.2. Credentials are stored using the credential storage of your IDE or operating system as described in
+            the <a href="privacy-policy.topic">Privacy Policy</a>. Dorkag does not receive, store or transmit your
+            credentials to its own servers.</p>
+
+        <p>6.3. Dorkag does not control Third-Party Services and is not responsible for their availability, changes
+            to their APIs, their content, or any loss resulting from their use. Actions performed through a Product
+            (for example approving a pull request, running a pipeline, or modifying a work item) are performed
+            under your account and are your responsibility.</p>
     </chapter>
 
-    <chapter title="6. LIMITATION OF LIABILITY" id="limitation-of-liability">
-        <p>6.1. TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL DORKAG BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
-            SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY
-            OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.</p>
+    <chapter title="7. AI-ASSISTED FEATURES" id="ai-features">
+        <p>7.1. Certain features send content that you select (for example diffs, commit messages, pull-request
+            metadata, or chat prompts) to an AI model provider that you configure, or to a model running on your own
+            machine. Which data is sent, and to whom, is described in the
+            <a href="privacy-policy.topic#ai-features">Privacy Policy</a>. You are responsible for choosing a
+            provider, for your agreement with that provider, and for any fees it charges.</p>
 
-        <p>6.2. IN NO EVENT SHALL DORKAG'S AGGREGATE LIABILITY EXCEED THE AMOUNTS ACTUALLY PAID BY YOU FOR THE PRODUCTS
-            AND SERVICES IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISES TO LIABILITY.</p>
+        <p>7.2. AI-generated output may be inaccurate, incomplete, or inappropriate. You must review all output
+            before relying on it or acting on it. Dorkag makes no warranty regarding AI-generated output.</p>
+
+        <p>7.3. You may not use AI-assisted features to process content that you do not have the right to share
+            with the selected provider, or in violation of that provider's terms.</p>
     </chapter>
 
-    <chapter title="7. INDEMNIFICATION" id="indemnification">
-        <p>7.1. You agree to indemnify, defend, and hold harmless Dorkag and its officers, directors, employees, agents,
-            and affiliates from and against any claims, liabilities, damages, losses, and expenses, including reasonable
-            attorney's fees, arising out of or in any way connected with your use of the Products and Services or
-            violation of these Terms.</p>
+    <chapter title="8. FEES, TERM, AND TERMINATION" id="term-and-termination">
+        <p>8.1. Fees for paid Products are set out on the Marketplace and are collected by JetBrains under the
+            Marketplace terms. Except where required by law or by the Marketplace terms, fees are non-refundable.</p>
+
+        <p>8.2. This Agreement is effective from the moment you accept it under Section 2.1 and continues until
+            terminated. Your license to a paid Product runs for the subscription or license term purchased; a trial
+            license ends at the end of the trial period.</p>
+
+        <p>8.3. Dorkag may suspend or terminate your license immediately, without notice and without refund, if
+            you breach Section 4 or Section 5 or otherwise materially breach this Agreement. Dorkag may also
+            terminate this Agreement on notice if it discontinues a Product.</p>
+
+        <p>8.4. Upon termination or expiry, you must stop using the Products and delete all copies in your
+            possession. Sections 1, 3.3, 3.5, 4, 5, 9, 10, 11, 12, 13, and 15 survive termination or expiry.</p>
     </chapter>
 
-    <chapter title="8. GOVERNING LAW" id="governing-law">
-        <p>8.1. These Terms shall be governed by and construed in accordance with the laws of the State of Israel,
-            without regard to its conflict of law provisions.</p>
+    <chapter title="9. DISCLAIMER OF WARRANTIES" id="disclaimer-of-warranties">
+        <p>9.1. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE DORKAG MATERIALS ARE PROVIDED "AS IS" AND "AS AVAILABLE"
+            WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING WITHOUT
+            LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
+            NON-INFRINGEMENT.</p>
+
+        <p>9.2. DORKAG DOES NOT WARRANT THAT THE PRODUCTS WILL BE UNINTERRUPTED, ERROR-FREE, SECURE, OR COMPATIBLE
+            WITH ANY PARTICULAR IDE VERSION, OPERATING SYSTEM, OR THIRD-PARTY SERVICE, OR THAT DEFECTS WILL BE
+            CORRECTED.</p>
     </chapter>
 
-    <chapter title="9. CONTACT INFORMATION" id="contact-information">
-        <p>If you have any questions about these Terms, please contact us at:</p>
+    <chapter title="10. LIMITATION OF LIABILITY" id="limitation-of-liability">
+        <p>10.1. TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL DORKAG OR ITS OWNERS, EMPLOYEES,
+            CONTRACTORS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR
+            PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, BUSINESS, DATA, USE, OR GOODWILL, ARISING OUT OF
+            OR RELATING TO THIS AGREEMENT OR THE DORKAG MATERIALS, WHETHER IN CONTRACT, TORT (INCLUDING
+            NEGLIGENCE), OR OTHERWISE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+        <p>10.2. TO THE MAXIMUM EXTENT PERMITTED BY LAW, DORKAG'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR
+            RELATING TO THIS AGREEMENT OR THE DORKAG MATERIALS SHALL NOT EXCEED THE AMOUNTS ACTUALLY PAID BY YOU TO
+            DORKAG (THROUGH THE MARKETPLACE OR OTHERWISE) FOR THE PRODUCT GIVING RISE TO THE CLAIM IN THE TWELVE
+            (12) MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY, OR, IF NO SUCH AMOUNTS WERE PAID, TEN US
+            DOLLARS (USD 10).</p>
+
+        <p>10.3. THE LIMITATIONS IN THIS SECTION 10 DO NOT APPLY TO LIABILITY THAT CANNOT BE LIMITED UNDER
+            APPLICABLE LAW, AND DO NOT LIMIT YOUR LIABILITY FOR BREACH OF SECTIONS 4 OR 5.</p>
+    </chapter>
+
+    <chapter title="11. INDEMNIFICATION" id="indemnification">
+        <p>11.1. You agree to indemnify, defend, and hold harmless Dorkag and its owners, employees, contractors,
+            and licensors from and against any claims, liabilities, damages, losses, and expenses, including
+            reasonable legal fees, arising out of or connected with (a) your use of the Products or Third-Party
+            Services, (b) your breach of this Agreement, or (c) your violation of any law or of the rights of any
+            third party.</p>
+    </chapter>
+
+    <chapter title="12. REMEDIES AND ENFORCEMENT" id="remedies">
+        <p>12.1. You acknowledge that a breach of Section 4 or Section 5 would cause Dorkag irreparable harm for
+            which monetary damages would be an inadequate remedy. Dorkag is therefore entitled, in addition to any
+            other remedy, to seek injunctive or other equitable relief in any court of competent jurisdiction,
+            without the need to post a bond or to prove actual damages.</p>
+
+        <p>12.2. Dorkag may report suspected violations of this Agreement to the operator of the Marketplace or any
+            other distribution channel, and may provide such operator with evidence in support of any request to
+            remove or suspend an infringing product or listing.</p>
+
+        <p>12.3. Any failure or delay by Dorkag in enforcing any provision of this Agreement is not a waiver of that
+            provision or of Dorkag's right to enforce it later.</p>
+    </chapter>
+
+    <chapter title="13. GOVERNING LAW AND JURISDICTION" id="governing-law">
+        <p>13.1. This Agreement is governed by the laws of the State of Israel, without regard to its conflict of
+            law rules. The United Nations Convention on Contracts for the International Sale of Goods does not
+            apply.</p>
+
+        <p>13.2. The competent courts of Tel Aviv-Jaffa, Israel, have exclusive jurisdiction over any dispute
+            arising out of or relating to this Agreement, provided that Dorkag may seek injunctive relief under
+            Section 12 in any jurisdiction where an infringement occurs or where the infringing party is
+            located.</p>
+
+        <p>13.3. Nothing in this Section deprives you of the protection of mandatory consumer-protection provisions
+            of the law of your country of residence, where applicable.</p>
+    </chapter>
+
+    <chapter title="14. CHANGES TO THIS AGREEMENT" id="changes">
+        <p>14.1. Dorkag may update this Agreement from time to time. The current version is always published at
+            dorkag.com and its "Last Updated" date indicates when it was last revised. Material changes will be
+            noted in the Product's release notes or on the Marketplace listing. Your continued use of a Product
+            after a revised Agreement is published constitutes acceptance of the revision.</p>
+    </chapter>
+
+    <chapter title="15. GENERAL" id="general">
+        <p>15.1. <control>Entire agreement.</control> This Agreement, together with the Privacy Policy and the
+            applicable Marketplace terms, is the entire agreement between you and Dorkag regarding the Products and
+            supersedes all prior agreements and understandings on that subject.</p>
+
+        <p>15.2. <control>Severability.</control> If any provision of this Agreement is held unenforceable, it will
+            be enforced to the maximum extent permissible and the remaining provisions will remain in full
+            force.</p>
+
+        <p>15.3. <control>Assignment.</control> You may not assign or transfer this Agreement or any license under
+            it without Dorkag's prior written consent. Dorkag may assign this Agreement without restriction.</p>
+
+        <p>15.4. <control>Export.</control> You must comply with all applicable export-control and sanctions laws in
+            connection with your use of the Products.</p>
+
+        <p>15.5. <control>No third-party beneficiaries.</control> Except as expressly stated, this Agreement confers
+            no rights on any third party.</p>
+
+        <p>15.6. <control>Language.</control> This Agreement is written in English. Any translation is provided for
+            convenience only; the English version prevails.</p>
+    </chapter>
+
+    <chapter title="16. CONTACT INFORMATION" id="contact-information">
+        <p>Questions about this Agreement, license inquiries, and reports of suspected infringement can be sent
+            to:</p>
 
         <p>
             <control>Email</control>
