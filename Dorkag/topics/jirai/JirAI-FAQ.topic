@@ -16,8 +16,8 @@
                 <p>No. JirAI is exclusively designed for <b>Jira Cloud</b> (<code>https://&lt;your-domain&gt;.atlassian.net</code>). Jira Server and Jira Data Center rely on distinct authentication mechanisms and legacy REST APIs that are not supported.</p>
             </def>
 
-            <def title="How does the 30-day free trial work?">
-                <p>When you install JirAI, the IDE presents JetBrains' standard license activation dialog with a <control>Start Trial</control> option. You receive 30 days of full, unrestricted access to all features without providing payment details upfront.</p>
+            <def title="How does the 7-day free trial work?">
+                <p>When you install JirAI, the IDE presents JetBrains' standard license activation dialog with a <control>Start Trial</control> option. You receive 7 days of full, unrestricted access to all features without providing payment details upfront.</p>
             </def>
 
             <def title="Does JirAI collect telemetry or send my code to third-party services?">
