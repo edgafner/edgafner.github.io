@@ -57,11 +57,6 @@
 
     <chapter title="Engineered for Remote Development &amp; Split Mode" id="jirai-split-mode">
         <p>JirAI is architected from the ground up for JetBrains Gateway and Remote Development:</p>
-        <note>
-            <p><b>[Screenshot Placeholder: Remote Development Split Mode]</b></p>
-            <p><i>Planned image: <code>jirai_remote_dev_split_mode.png</code></i></p>
-            <p><i>Capture: JirAI running inside JetBrains Client connected to a remote host, showing seamless UI rendering.</i></p>
-        </note>
         <list>
             <li><p><b>Client-Server Separation:</b> UI components run in JetBrains Client, while network calls and credential access remain securely on the host.</p></li>
             <li><p><b>Corporate Proxy Support:</b> Leverages the IDE's HTTP Proxy settings and answers authenticating proxies cleanly without disruptive dialog popups.</p></li>

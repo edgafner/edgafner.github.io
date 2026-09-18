@@ -12,11 +12,6 @@
 
     <chapter title="Modular Client-Server Architecture" id="architecture">
         <p>JirAI is architected with complete modular separation to provide first-class support for JetBrains Remote Development and Split Mode:</p>
-        <note>
-            <p><b>[Screenshot Placeholder: Remote Development Split Mode]</b></p>
-            <p><i>Planned image: <code>jirai_remote_dev_split_mode.png</code></i></p>
-            <p><i>Capture: JetBrains Client connected via JetBrains Gateway showing JirAI tool window and backend host synchronization.</i></p>
-        </note>
         <deflist>
             <def title="Jira.frontend">
                 <p>Runs inside the JetBrains Client or local IDE. Hosts tool windows, dialogs, custom renderers, and the description editor. Never handles plaintext credentials.</p>

@@ -40,11 +40,6 @@
 
     <chapter title="Attachments &amp; Thumbnails" id="attachments">
         <p>Manage file assets without leaving your IDE workspace:</p>
-        <note>
-            <p><b>[Screenshot Placeholder: Attachments and Issue Links]</b></p>
-            <p><i>Planned image: <code>jirai_attachments_and_links.png</code></i></p>
-            <p><i>Capture: Attachments section showing image thumbnails, download/delete buttons, drag-and-drop zone, and issue links panel.</i></p>
-        </note>
         <list>
             <li><p><b>Drag-and-Drop:</b> Drag files from your operating system or IDE project tree directly into the attachments zone.</p></li>
             <li><p><b>Image Thumbnails:</b> Inline previews for common image formats (PNG, JPEG, GIF, SVG) cached for the session.</p></li>
