@@ -1,21 +1,51 @@
-MIT License
+Copyright (c) 2023-2026 Dorkag. All rights reserved.
 
-Copyright (c) 2024 DORKAG Team
+This repository contains the source of the Dorkag documentation website
+(dorkag.com) for the Dorkag JetBrains plugins and related products.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+CONTENT LICENSE
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+All documentation, text, images, screenshots, icons, diagrams, videos, page
+structure, tables of contents, Writerside project and configuration files
+(including *.tree, *.list, *.cfg, *.topic, *.md and cfg/ files), and all
+other content in this repository (collectively, the "Content") are the
+copyrighted work of Dorkag and are provided for viewing only.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Except as expressly permitted below, no part of the Content may be copied,
+reproduced, modified, translated, republished, redistributed, used as a
+template, or used to create derivative works, in any form or by any means,
+without the prior written permission of Dorkag.
+
+PERMITTED USES
+
+1. You may view the Content and link to pages of dorkag.com.
+2. You may quote brief excerpts of the Content for the purpose of review,
+   commentary, or support discussion, with attribution to Dorkag and a link
+   to the source page.
+3. You may fork this repository on GitHub solely for the purpose of
+   proposing corrections or improvements back to Dorkag via a pull request.
+   Any contribution you submit is licensed to Dorkag under the terms of the
+   Dorkag Terms of Service (https://dorkag.com/terms-of-service.html).
+
+GOVERNING TERMS
+
+Use of the Dorkag products described in this documentation is governed by
+the Dorkag Terms of Service and End User License Agreement at
+https://dorkag.com/terms-of-service.html and the Privacy Policy at
+https://dorkag.com/privacy-policy.html.
+
+Trademarks: "Dorkag", "AZD", "JetWings" and associated logos are trademarks
+or trade names of Dorkag. JetBrains and related marks are trademarks of
+JetBrains s.r.o.; Microsoft, Azure and Azure DevOps are trademarks of the
+Microsoft group of companies; Atlassian and Jira are trademarks of Atlassian
+Pty Ltd. Dorkag is not affiliated with any of them.
+
+NO WARRANTY
+
+The Content is provided "as is", without warranty of any kind.
+
+Prior versions of this repository were published under the MIT License.
+That license continues to apply only to copies obtained while it was in
+effect; it does not apply to this or any later revision.
+
+Contact: jgafner@dorkag.com

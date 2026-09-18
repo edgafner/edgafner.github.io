@@ -19,7 +19,8 @@
         <p>
             <control>Requirements</control>
         </p>
-        <p>A JetBrains IDE (version 2023.2+) and an active
+        <p>A JetBrains IDE (version 2026.2 for the current release; the Marketplace serves earlier
+            builds automatically to IDEs from 2023.2 onwards) and an active
             <control>Azure DevOps Service</control>
             or
             <control>Azure DevOps Server (version 2020+)</control>
