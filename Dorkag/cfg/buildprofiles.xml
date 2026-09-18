@@ -55,6 +55,14 @@
             <noindex-content>false</noindex-content>
         </variables>
     </build-profile>
+    <build-profile instance="jirailib">
+        <variables>
+            <download-title>Install JirAI</download-title>
+            <download-page>https://plugins.jetbrains.com/plugin/33954-jirai</download-page>
+            <showDownloadButton>true</showDownloadButton>
+            <noindex-content>false</noindex-content>
+        </variables>
+    </build-profile>
 
 
     <shortcuts>

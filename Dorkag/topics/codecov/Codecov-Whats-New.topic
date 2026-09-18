@@ -8,7 +8,19 @@
     <primary-label ref="codecov"/>
     <secondary-label ref="codecov_version"/>
 
-    <p>Discover the latest features and enhancements in the Codecov plugin V2026.1.13.</p>
+    <p>Discover the latest features and enhancements in the Codecov plugin V2026.3.1.</p>
+
+    <chapter title="IntelliJ Platform 2026.3 &amp; 2026.2 Support" id="platform-support">
+        <p>Codecov now officially targets the latest IntelliJ Platform 2026.3 EAP and 2026.2 GA builds, ensuring compatibility across all current JetBrains IDEs.</p>
+    </chapter>
+
+    <chapter title="Performance &amp; Security Upgrades" id="performance-security">
+        <list>
+            <li><p><b>Large Repository Performance:</b> Major indexing and coverage parsing optimizations reduce memory pressure and background CPU usage in repositories with hundreds of thousands of lines of code.</p></li>
+            <li><p><b>Security and Dependency Alignments:</b> Upgraded to Jackson 2.22.1 for patched serialization security, Kotlin 2.4.10 runtime, and ProGuard Gradle 7.10.0.</p></li>
+            <li><p><b>Streamlined Settings:</b> Simplified configuration flow ensures swift initial token setup and repo linking.</p></li>
+        </list>
+    </chapter>
 
     <chapter title="Metrics and Visual Trends" id="metrics-graphs">
         <p>We've introduced new metrics and graphs to help you visualize coverage trends across your project. Get a high-level overview of your code's health directly within the IDE.</p>
@@ -18,13 +30,6 @@
     <chapter title="Folder Color Customization" id="folder-colors">
         <p>You can now customize how coverage status is reflected in your project tree. Configure folder color intensity and style to match your preferences.</p>
         <img src="codecov-folder-color-settings.png" alt="Folder Color Settings" style="block" thumbnail="true"/>
-    </chapter>
-
-    <chapter title="Improved Workflow Integration" id="ui-ux">
-        <list>
-            <li><p><b>Performance Improvements:</b> Significant performance enhancements and bug fixes for large repositories and complex project structures.</p></li>
-            <li><p><b>Streamlined Settings:</b> Configuration has been simplified for a faster initial setup.</p></li>
-        </list>
     </chapter>
 
 </topic>

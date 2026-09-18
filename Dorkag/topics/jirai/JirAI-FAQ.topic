@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI FAQ" id="JirAI-FAQ">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>Find quick answers to common questions about the JirAI plugin.</p>
+
+    <chapter title="General Questions" id="general-questions">
+        <deflist>
+            <def title="Does JirAI support Jira Server or Data Center?">
+                <p>No. JirAI is exclusively designed for <b>Jira Cloud</b> (<code>https://&lt;your-domain&gt;.atlassian.net</code>). Jira Server and Jira Data Center rely on distinct authentication mechanisms and legacy REST APIs that are not supported.</p>
+            </def>
+
+            <def title="How does the 30-day free trial work?">
+                <p>When you install JirAI, the IDE presents JetBrains' standard license activation dialog with a <control>Start Trial</control> option. You receive 30 days of full, unrestricted access to all features without providing payment details upfront.</p>
+            </def>
+
+            <def title="Does JirAI collect telemetry or send my code to third-party services?">
+                <p>No. JirAI contains <b>zero telemetry, analytics, or third-party tracking</b>. Authenticated network traffic is sent strictly to your configured Jira Cloud domain. Your source code is never read or transmitted.</p>
+            </def>
+
+            <def title="Why does the general issue list show issues from the last 365 days?">
+                <p>To preserve IDE responsiveness and minimize memory consumption, general queries load issues created within the past 365 days. However, you can instantly look up and load <b>any issue regardless of its age</b> simply by typing its exact issue key (e.g. <code>PROJ-123</code>) into the search box.</p>
+            </def>
+
+            <def title="Can I connect multiple Jira Cloud sites at once?">
+                <p>JirAI currently supports one active Jira Cloud site at a time. Signing in to another site switches your active workspace and refreshes local project caches.</p>
+            </def>
+
+            <def title="Can I see delivery metrics like cycle time or cumulative flow?">
+                <p>Yes. Open any Jira space's <a href="JirAI-Metrics.topic">Metrics</a> from the title bar for throughput, lead time, cycle time, on-time delivery, cumulative flow, and time-in-status charts, sourced from each work item's status history.</p>
+            </def>
+        </deflist>
+    </chapter>
+
+    <chapter title="Configuration &amp; Troubleshooting" id="troubleshooting-questions">
+        <deflist>
+            <def title="Where is my Atlassian API token stored?">
+                <p>Tokens are saved directly in the IDE's secure credential store (<code>PasswordSafe</code>, backed by the OS Keychain, KeePass, or Linux Secret Service). Under Remote Development, credentials stay securely on the host.</p>
+            </def>
+
+            <def title="How do I configure a corporate HTTP proxy?">
+                <p>JirAI automatically uses your IDE's proxy configuration in <ui-path>Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy</ui-path>. Stored proxy credentials are used seamlessly without extra prompts.</p>
+            </def>
+
+            <def title="How do I report bugs or submit logs?">
+                <p>Retrieve IDE logs via <ui-path>Help | Show Log in Finder / Explorer</ui-path> and report the issue on our <a href="https://github.com/edgafner/JirAI/issues">GitHub Issues page</a> or email <emphasis>jgafner@dorkag.com</emphasis>.</p>
+            </def>
+        </deflist>
+    </chapter>
+
+</topic>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Work with Jira Issues" id="Work-with-Jira-Issues">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>Manage, filter, search, and create Jira issues directly alongside your code in the IDE.</p>
+
+    <chapter title="The JirAI Tool Window" id="tool-window">
+        <p>The JirAI tool window lives on the left sidebar of your IDE, keeping your Jira queue in view while you write code.</p>
+        <img src="jirai_tool_window.png" alt="JirAI tool window with the issue list, quick filters, and search" style="block" thumbnail="true"/>
+    </chapter>
+
+    <chapter title="Quick Filters &amp; Filter Chips" id="filters">
+        <p>Triage your workload efficiently using pre-configured filters and granular dropdown chips:</p>
+        <list>
+            <li><p><b>Assigned to Me:</b> Displays all issues assigned to your active account with a single click.</p></li>
+            <li><p><b>Unassigned:</b> Shows tickets needing triage and assignment.</p></li>
+            <li><p><b>All Issues:</b> Clears assignment restrictions to display the broader team's issues.</p></li>
+            <li><p><b>Granular Filter Chips:</b> Filter by <control>Project</control>, <control>Status</control>, <control>Issue Type</control>, <control>Priority</control>, <control>Assignee</control>, <control>Reporter</control>, <control>Epic/Parent</control>, and <control>Unresolved only</control>. <control>Assignee</control> and <control>Reporter</control> accept multiple people at once.</p></li>
+            <li><p><b>Exclude a Value:</b> Click a filter value twice, or <shortcut>Shift</shortcut>-click it, to exclude it instead of including it. Each filter popup also has <ui-path>All</ui-path> and <ui-path>Clear</ui-path> shortcuts.</p></li>
+            <li><p><b>Per-Project Preferences:</b> Your selected filters are saved per IDE project in <code>workspace.xml</code>, so switching projects restores your desired context automatically.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Search, Direct Key Jump &amp; Sorting" id="search-and-sort">
+        <list>
+            <li><p><b>Text Search:</b> Type keywords to instantly match against issue summaries.</p></li>
+            <li><p><b>Direct Issue Key Navigation:</b> Enter an issue key (for example, <code>PROJ-123</code>) to immediately load that ticket, regardless of how long ago it was created.</p></li>
+            <li><p><b>Sorting &amp; Scrolling:</b> Sort tickets by Updated date, Created date, or Priority in ascending or descending order. More rows load seamlessly as you scroll down the list.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Context Actions" id="row-actions">
+        <p>Right-clicking any issue or clicking toolbar buttons exposes contextual actions:</p>
+        <list>
+            <li><p><b>Open Details:</b> Opens the comprehensive issue details tab in the IDE.</p></li>
+            <li><p><b>Open in Browser:</b> Opens the issue directly on your Jira Cloud web portal.</p></li>
+            <li><p><b>Copy Issue Key:</b> Copies the ticket identifier (e.g. <code>PROJ-123</code>) to your clipboard for commit messages or branch names.</p></li>
+            <li><p><b>Refresh:</b> Re-fetches the latest state from Jira Cloud.</p></li>
+            <li><p><b>Delete Issue:</b> Removes the issue, with a safety confirmation dialog listing affected subtasks and children.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Create New Issues" id="create-issue">
+        <p>Click the <ui-path>New Issue</ui-path> button on the tool window toolbar to create a ticket without leaving the IDE.</p>
+        <img src="jirai_create_issue_markdown_preview.png" alt="Create Task form with the Markdown Description Preview" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Dynamic Field Forms:</b> JirAI queries Jira's create metadata for the chosen project and dynamically renders required and optional fields.</p></li>
+            <li><p><b>Project &amp; Type Pickers:</b> Easily switch projects and target issue types (Task, Bug, Story, Epic, etc.).</p></li>
+            <li><p><b>Parent &amp; Epic Association:</b> Prefix-search and assign a parent issue or Epic directly upon creation.</p></li>
+            <li><p><b>Markdown Descriptions:</b> The Description field accepts Markdown — tables, nested and task lists, quotes, code blocks, and collapsible sections — converted to Jira formatting on create, with a Preview and warnings first.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Push a Markdown Document to Jira" id="push-to-jira">
+        <p>A <ui-path>Push to Jira</ui-path> button appears on <code>.md</code> editors, letting you create or update a Jira issue directly from a Markdown document.</p>
+        <list>
+            <li><p><b>Create or Update:</b> Pushing creates a new issue through the Create form, or updates the already-linked issue.</p></li>
+            <li><p><b>Conflict Warning:</b> If the linked issue was edited in Jira since your last push, JirAI warns you before overwriting it.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Next Steps" id="next">
+        <p>Learn how to view and edit fields in <a href="Jira-Issue-Details-and-Editing.topic">Issue Details and Editing</a>.</p>
+    </chapter>
+
+</topic>

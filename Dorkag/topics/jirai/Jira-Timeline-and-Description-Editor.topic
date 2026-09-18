@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Jira Timeline and Description Editor" id="Jira-Timeline-and-Description-Editor">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>Track complete issue discussions, audit historical changes, and edit descriptions using a full IDE editor tab.</p>
+
+    <chapter title="Unified Activity Timeline" id="timeline">
+        <p>Open the timeline from the details view to inspect a complete chronological history of the issue.</p>
+        <img src="jirai_issue_timeline_details.png" alt="Issue timeline showing the description and a posted comment" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Single Chronological Stream:</b> Merges discussions, status transitions, and field modifications into one readable feed.</p></li>
+            <li><p><b>Feed Filters:</b> Quick toggle between <control>All</control>, <control>Comments</control>, <control>Status changes</control>, or <control>Field changes</control>.</p></li>
+            <li><p><b>Collaborative Comments:</b> Post new comments with team <code>@mentions</code> and file attachments directly from the IDE.</p></li>
+            <li><p><b>Comment Deletion:</b> Remove your comments when permitted by Jira project permissions.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Full IDE Description Editor" id="description-editor">
+        <p>JirAI enables editing ticket descriptions inside a dedicated IDE editor tab rather than a cramped popup form.</p>
+        <note>
+            <p><b>[Screenshot Placeholder: Issue Description Markdown Editor]</b></p>
+            <p><i>Planned image: <code>jirai_description_markdown_editor.png</code></i></p>
+            <p><i>Capture: Description editor tab showing Markdown conversion, split preview, conflict warning bar, and visual diff confirmation.</i></p>
+        </note>
+        <list>
+            <li><p><b>Bidirectional Markdown Conversion:</b> Jira's Atlassian Document Format (ADF) is converted to clean Markdown for natural IDE editing, and converted back to ADF when saving.</p></li>
+            <li><p><b>Remote Conflict Detection:</b> JirAI verifies against remote modifications made by teammates since you loaded the issue, preventing accidental overwrites.</p></li>
+            <li><p><b>Visual Collapsible Diffs:</b> Review exact changes in a visual diff comparison before confirming your save.</p></li>
+            <li><p><b>Content Safety:</b> Descriptions containing complex structures not supported by the Markdown converter (e.g. nested panels or custom macros) are protected in read-only mode to prevent content loss.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Next Steps" id="next">
+        <p>Learn about running JirAI in <a href="JirAI-Remote-Development-and-Architecture.topic">Remote Development and Split Mode</a>.</p>
+    </chapter>
+
+</topic>

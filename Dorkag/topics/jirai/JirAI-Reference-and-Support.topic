@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI Reference and Support" id="JirAI-Reference-and-Support">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>Need help or have suggestions for the JirAI plugin? Here are all the resources and contact options available.</p>
+
+    <chapter title="Feature Requests and Bug Reports" id="feature-requests">
+        <p>If you encounter an issue, have feedback, or would like to request new capabilities, please submit an issue on our <a href="https://github.com/edgafner/JirAI/issues">GitHub Issue Tracker</a>.</p>
+        <p>When reporting issues, please include your IDE version, JirAI plugin version, and relevant excerpts from your IDE logs (<ui-path>Help | Show Log in Finder / Explorer</ui-path>).</p>
+    </chapter>
+
+    <chapter title="Contact and Vendor Support" id="contact">
+        <p>For licensing, enterprise inquiries, or immediate support, contact us directly at:</p>
+        <p><emphasis><b>jgafner@dorkag.com</b></emphasis></p>
+    </chapter>
+
+    <chapter title="Terms of Service and Privacy" id="legal">
+        <list>
+            <li><p><b>Licensing Terms:</b> Subject to the standard JetBrains Marketplace Developer EULA and Dorkag <a href="terms-of-service.topic">Terms of Service</a>.</p></li>
+            <li><p><b>Privacy Policy:</b> Read our commitment to zero tracking in the <a href="privacy-policy.topic">Privacy Policy</a>.</p></li>
+        </list>
+    </chapter>
+
+    <seealso>
+        <category ref="external" sorted="asc">
+            <a href="https://plugins.jetbrains.com/plugin/33954-jirai">JirAI on JetBrains Marketplace</a>
+            <a href="https://plugins.jetbrains.com/plugin/33954-jirai/reviews">JirAI Marketplace Reviews</a>
+            <a href="https://github.com/edgafner/JirAI">JirAI GitHub Repository</a>
+            <a href="https://dorkag.com">Dorkag Home Page</a>
+            <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian API Tokens Portal</a>
+        </category>
+    </seealso>
+
+</topic>

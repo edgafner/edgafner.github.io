@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Remote Development and Architecture" id="JirAI-Remote-Development-and-Architecture">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>Understand JirAI's client-server architecture, Split Mode operation with JetBrains Gateway, and security principles.</p>
+
+    <chapter title="Modular Client-Server Architecture" id="architecture">
+        <p>JirAI is architected with complete modular separation to provide first-class support for JetBrains Remote Development and Split Mode:</p>
+        <note>
+            <p><b>[Screenshot Placeholder: Remote Development Split Mode]</b></p>
+            <p><i>Planned image: <code>jirai_remote_dev_split_mode.png</code></i></p>
+            <p><i>Capture: JetBrains Client connected via JetBrains Gateway showing JirAI tool window and backend host synchronization.</i></p>
+        </note>
+        <deflist>
+            <def title="Jira.frontend">
+                <p>Runs inside the JetBrains Client or local IDE. Hosts tool windows, dialogs, custom renderers, and the description editor. Never handles plaintext credentials.</p>
+            </def>
+            <def title="Jira.backend">
+                <p>Runs on the remote host (or backend IDE process). Manages network communication with Jira Cloud, reads from <code>PasswordSafe</code>, handles HTTP proxy authentication, and caches session data.</p>
+            </def>
+            <def title="Jira.shared">
+                <p>Contains serializable wire contracts and RPC interfaces connecting frontend and backend modules over the IntelliJ Platform RPC.</p>
+            </def>
+        </deflist>
+    </chapter>
+
+    <chapter title="Split Mode Data Flow" id="data-flow">
+        <list>
+            <li><p><b>Authentication:</b> When you sign in via the JetBrains Client, the API token is sent securely across RPC to the host once, where it is stored in the host's <code>PasswordSafe</code>. It is never persisted on the client machine.</p></li>
+            <li><p><b>Attachment Streaming:</b> Files selected on the client machine are streamed over RPC to the host for upload to Jira. Similarly, downloads stream from Jira through the host to the client file system.</p></li>
+            <li><p><b>Proxy Settings:</b> Because all Jira API communication originates from the host process, the remote server's proxy configuration is utilized seamlessly.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Privacy and Zero Telemetry" id="privacy">
+        <p>JirAI is built with strict privacy and security standards:</p>
+        <list>
+            <li><p><b>Zero Telemetry:</b> JirAI contains no tracking code, usage analytics, error submitters, or telemetry beacons.</p></li>
+            <li><p><b>Strict Origin Enforcement:</b> Authenticated requests are strictly locked to your configured Jira Cloud domain (<code>*.atlassian.net</code>). The HTTP client strictly refuses any off-site redirect on authenticated routes.</p></li>
+            <li><p><b>Third-Party Assets:</b> User avatars are loaded directly from Atlassian's CDN without transmitting authentication tokens.</p></li>
+            <li><p><b>No Bundled External Dependencies:</b> Every runtime dependency is provided by the IntelliJ Platform itself, avoiding third-party dependency vulnerabilities.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Next Steps" id="next">
+        <p>Check our <a href="JirAI-FAQ.topic">Frequently Asked Questions</a> or <a href="JirAI-Reference-and-Support.topic">Reference and Support</a>.</p>
+    </chapter>
+
+</topic>

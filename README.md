@@ -29,6 +29,10 @@ Visualize and track code coverage directly in your IDE.
 
 Efficient query management and execution tools.
 
+### [JirAI - Jira Cloud Integration](https://edgafner.github.io/jirai.html)
+
+Complete Jira Cloud experience for JetBrains IDEs. Browse, filter, edit issues, and track discussions with native Split Mode and Remote Development support.
+
 
 ## 🚀 Quick Start
 

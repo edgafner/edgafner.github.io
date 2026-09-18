@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="What's New in JirAI" id="JirAI-Whats-New">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>Discover the latest features, enhancements, and architecture in the JirAI plugin V2026.3.10.</p>
+
+    <chapter title="Full Jira Cloud Experience in Your IDE" id="jirai-core-experience">
+        <p>JirAI brings your everyday Jira Cloud workflow directly into IntelliJ IDEA, PyCharm, WebStorm, GoLand, Rider, and the rest of the JetBrains IDE family. Stop alt-tabbing to your browser to check requirements, triage tickets, or update statuses.</p>
+        <img src="jirai_tool_window.png" alt="JirAI tool window with the issue list, quick filters, and search" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Instant Quick Filters:</b> One-click filtering for <emphasis>Assigned to Me</emphasis>, <emphasis>Unassigned</emphasis>, and <emphasis>All Issues</emphasis>.</p></li>
+            <li><p><b>Rich Filter Chips:</b> Filter simultaneously by Project, Status, Issue Type, Priority, Assignee, Reporter, Epic/Parent, and <emphasis>Unresolved only</emphasis>. Assignee and Reporter accept multiple people at once.</p></li>
+            <li><p><b>Exclude a Value:</b> Click a filter value twice, or <shortcut>Shift</shortcut>-click it, to exclude it, with <ui-path>All</ui-path> and <ui-path>Clear</ui-path> shortcuts at the top of every filter popup.</p></li>
+            <li><p><b>Instant Search &amp; Direct Key Jump:</b> Search issue summaries or jump immediately to any issue key (such as <code>PROJ-123</code>) regardless of creation date.</p></li>
+            <li><p><b>Dynamic Issue Creation:</b> Create new issues directly within the IDE using dynamic forms generated from your project's create metadata. The Description field accepts Markdown, with a Preview before you create.</p></li>
+            <li><p><b>Push a Markdown Doc to Jira:</b> A <ui-path>Push to Jira</ui-path> button on <code>.md</code> editors creates an issue from the document or updates the linked one, and warns if the issue changed in Jira since your last push.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Rich Details and In-Place Editing" id="jirai-rich-details">
+        <p>View standard and custom Jira fields formatted cleanly by declared type. Perform updates right from the IDE details pane without loading the web interface.</p>
+        <img src="jirai_issue_timeline_details.png" alt="Issue details with editable fields beside the issue timeline" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Inline Field Updates:</b> Modify summary, priority, labels, due date, components, fix versions, and parent with immediate feedback.</p></li>
+            <li><p><b>Workflow Transitions:</b> Transition issues across Jira workflow statuses, including screen dialogs for transitions requiring mandatory fields.</p></li>
+            <li><p><b>Attachments &amp; Thumbnails:</b> Drag and drop or browse files to attach, view image thumbnails, download, or delete attachments.</p></li>
+            <li><p><b>Issue Links:</b> Establish and remove links between related issues directly from the IDE.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Unified Timeline and Full Description Editor" id="jirai-timeline-and-description">
+        <p>Keep context with a unified activity feed and write thorough descriptions using a native IDE editor tab.</p>
+        <img src="jirai_issue_timeline_details.png" alt="Issue timeline showing the description and a posted comment" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Activity Stream:</b> View comments, status transitions, and field changes in a single chronological feed, with filters for Comments, Status changes, or Field changes.</p></li>
+            <li><p><b>Collaborative Comments:</b> Post comments with <code>@mentions</code> and file attachments; delete comments where permissions permit.</p></li>
+            <li><p><b>Full Editor Description Tab:</b> Edit issue descriptions in a real editor tab with Markdown conversion, conflict detection against remote changes, and visual collapsible diffs before saving.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Metrics for Every Space" id="jirai-metrics">
+        <p>Open a Jira space's Metrics from the title bar to see throughput, cycle time, and delivery charts without leaving the IDE.</p>
+        <img src="jirai_metrics_summary.png" alt="Metrics Summary tab with throughput and created-vs-completed charts" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Summary &amp; Reports Tabs:</b> Tiles and charts for throughput, work item age, and status distributions, plus lead time, cycle time, on-time delivery, a control chart, cumulative flow, and time in status.</p></li>
+            <li><p><b>Filter &amp; Sample:</b> Filter Reports by sprint, sprint status, fix version, component, and label; sample very large spaces from their newest or oldest work items in <ui-path>Settings | Tools | JirAI Metrics</ui-path>.</p></li>
+        </list>
+        <p>See <a href="JirAI-Metrics.topic">JirAI Metrics</a> for the full walkthrough.</p>
+    </chapter>
+
+    <chapter title="Engineered for Remote Development &amp; Split Mode" id="jirai-split-mode">
+        <p>JirAI is architected from the ground up for JetBrains Gateway and Remote Development:</p>
+        <note>
+            <p><b>[Screenshot Placeholder: Remote Development Split Mode]</b></p>
+            <p><i>Planned image: <code>jirai_remote_dev_split_mode.png</code></i></p>
+            <p><i>Capture: JirAI running inside JetBrains Client connected to a remote host, showing seamless UI rendering.</i></p>
+        </note>
+        <list>
+            <li><p><b>Client-Server Separation:</b> UI components run in JetBrains Client, while network calls and credential access remain securely on the host.</p></li>
+            <li><p><b>Corporate Proxy Support:</b> Leverages the IDE's HTTP Proxy settings and answers authenticating proxies cleanly without disruptive dialog popups.</p></li>
+            <li><p><b>Privacy &amp; Security:</b> API tokens are stored in the IDE's secure credential store (<code>PasswordSafe</code> / OS Keychain). Zero telemetry, zero third-party tracking.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Recent Improvements (2026.3.5 – 2026.3.10)" id="recent-improvements">
+        <list>
+            <li><p><b>Field Visibility:</b> Hide unneeded custom fields from an inline eye icon on each field row, and manage visibility for a whole site, project, or single issue under <ui-path>Tools | JirAI</ui-path>.</p></li>
+            <li><p><b>Faster Metrics:</b> A space downloads once for all its tabs; switching tabs, filters, and date ranges recompute locally without downloading again.</p></li>
+            <li><p><b>Capitalization Alignment:</b> Sign-in dialog title, gear menu entries, and IDE Notification settings now strictly follow JetBrains standard capitalization.</p></li>
+            <li><p><b>Special Character Tooltips:</b> Tooltips preserve field names and angle brackets (such as <code>List&lt;String&gt;</code>) without dropping text.</p></li>
+            <li><p><b>Multi-line Error Formatting:</b> Jira API error responses retain their formatting and line breaks in tooltips and notifications.</p></li>
+            <li><p><b>Strict HTTPS:</b> Ensures all connections to Jira sites use secure HTTPS encryption.</p></li>
+        </list>
+    </chapter>
+</topic>
