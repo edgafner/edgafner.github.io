@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Remote Development and Architecture" id="JirAI-Remote-Development-and-Architecture">
+       title="JirAI: Remote Development and Architecture" id="JirAI-Remote-Development-and-Architecture">
 
     <primary-label ref="jirai"/>
     <secondary-label ref="jirai_version"/>
