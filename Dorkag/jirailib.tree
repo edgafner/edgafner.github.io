@@ -11,12 +11,12 @@
             <toc-element topic="JirAI-Whats-New.topic" id="toc_jirai_whats_new"/>
             <toc-element topic="JirAI-Installation.topic" id="toc_jirai_installation"/>
             <toc-element topic="JirAI-Sign-In-and-Configuration.topic" id="toc_jirai_signin"/>
-            <toc-element topic="Work-with-Jira-Issues.topic" id="toc_jirai_issues"/>
-            <toc-element topic="Jira-Issue-Details-and-Editing.topic" id="toc_jirai_details"/>
-            <toc-element topic="Jira-Timeline-and-Description-Editor.topic" id="toc_jirai_timeline"/>
-            <toc-element topic="JirAI-AI-Workflows.topic" id="toc_jirai_ai_workflows"/>
+            <toc-element topic="Work-with-Jira-Issues.topic" toc-title="Work with Issues" id="toc_jirai_issues"/>
+            <toc-element topic="Jira-Issue-Details-and-Editing.topic" toc-title="Issue Details" id="toc_jirai_details"/>
+            <toc-element topic="Jira-Timeline-and-Description-Editor.topic" toc-title="Timeline &amp; Editor" id="toc_jirai_timeline"/>
+            <toc-element topic="JirAI-AI-Workflows.topic" toc-title="AI Workflows" id="toc_jirai_ai_workflows"/>
             <toc-element topic="JirAI-Metrics.topic" id="toc_jirai_metrics"/>
-            <toc-element topic="JirAI-Remote-Development-and-Architecture.topic" id="toc_jirai_remotedev"/>
+            <toc-element topic="JirAI-Remote-Development-and-Architecture.topic" toc-title="Remote Dev" id="toc_jirai_remotedev"/>
             <toc-element topic="JirAI-Reference-and-Support.topic" id="toc_jirai_support"/>
             <toc-element topic="JirAI-FAQ.topic" id="toc_jirai_faq"/>
         </toc-element>
