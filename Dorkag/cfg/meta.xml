@@ -14,7 +14,7 @@
     
     <!-- Open Graph tags for better social media sharing -->
     <meta property="og:title" content="DORKAG JetBrains IDE Plugins Documentation"/>
-    <meta property="og:description" content="Complete documentation for AZD, GBrowser, Codecov, and QueryFlag plugins for JetBrains IDEs"/>
+    <meta property="og:description" content="Complete documentation for AZD, GBrowser, JirAI, Codecov, and QueryFlag plugins for JetBrains IDEs"/>
     <meta property="og:image" content="https://edgafner.github.io/images/banner.svg"/>
     <meta property="og:url" content="https://edgafner.github.io"/>
     <meta property="og:type" content="website"/>
@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://edgafner.github.io/images/banner.svg"/>
     
     <!-- Additional SEO tags -->
-    <meta name="description" content="DORKAG plugins suite: AZD for Azure DevOps, GBrowser for browser integration, Codecov for code coverage, QueryFlag for query management"/>
+    <meta name="description" content="DORKAG plugins suite: AZD for Azure DevOps, GBrowser for browser integration, JirAI for Jira Cloud, Codecov for code coverage, QueryFlag for query management"/>
     <meta name="keywords" content="JetBrains, IntelliJ IDEA, Azure DevOps, AZD, GBrowser, Codecov, QueryFlag, IDE plugins, developer tools"/>
     <meta name="author" content="DORKAG Team"/>
     

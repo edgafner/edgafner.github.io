@@ -21,6 +21,7 @@
       <a href="Work-with-Jira-Issues.topic" type="tools" summary="Browse, filter, search, and create Jira issues in the IDE tool window">Issues Management</a>
       <a href="Jira-Issue-Details-and-Editing.topic" type="mixed" summary="View and edit fields, execute workflow transitions, manage attachments and links">Issue Details &amp; Editing</a>
       <a href="Jira-Timeline-and-Description-Editor.topic" type="development" summary="Unified activity stream, comments with mentions, and full Markdown description editor">Timeline &amp; Description Editor</a>
+      <a href="JirAI-AI-Workflows.topic" type="development" summary="Turn Markdown specs and plans into Jira work items, with presets and safe two-way conflict warnings">AI Workflows</a>
       <a href="JirAI-Metrics.topic" type="cloud" summary="Throughput, cycle time, and delivery charts for any Jira space">Metrics</a>
     </primary>
 

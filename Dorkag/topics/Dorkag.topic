@@ -42,6 +42,18 @@
         </li>
         <li>
             <list type="none">
+                <li><a href="JirAI.topic" summary="">
+                    <img src="jirai_icon.svg" alt="jirai_icon"/>
+                </a></li>
+                <li>
+                    <a href="JirAI.topic">
+                        <ui-path>JirAI</ui-path>
+                    </a>
+                </li>
+            </list>
+        </li>
+        <li>
+            <list type="none">
                 <li><a href="Codecov.topic" summary="">
                     <img src="code_cov.svg" alt="code_cov"/>
                 </a></li>
@@ -60,18 +72,6 @@
                 <li>
                     <a href="QueryFlag.topic">
                         <ui-path>QueryFlag</ui-path>
-                    </a>
-                </li>
-            </list>
-        </li>
-        <li>
-            <list type="none">
-                <li><a href="JirAI.topic" summary="">
-                    <img src="jirai_icon.svg" alt="jirai_icon"/>
-                </a></li>
-                <li>
-                    <a href="JirAI.topic">
-                        <ui-path>JirAI</ui-path>
                     </a>
                 </li>
             </list>

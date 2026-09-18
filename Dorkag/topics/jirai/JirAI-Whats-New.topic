@@ -20,6 +20,7 @@
             <li><p><b>Instant Search &amp; Direct Key Jump:</b> Search issue summaries or jump immediately to any issue key (such as <code>PROJ-123</code>) regardless of creation date.</p></li>
             <li><p><b>Dynamic Issue Creation:</b> Create new issues directly within the IDE using dynamic forms generated from your project's create metadata. The Description field accepts Markdown, with a Preview before you create.</p></li>
             <li><p><b>Push a Markdown Doc to Jira:</b> A <ui-path>Push to Jira</ui-path> button on <code>.md</code> editors creates an issue from the document or updates the linked one, and warns if the issue changed in Jira since your last push.</p></li>
+            <li><p><b>Doc Presets for AI Workflows:</b> Superpowers and spec-kit documents are recognized by path and open the Create form pre-filled with your project, issue type, labels, and components. Manage them in <ui-path>Settings | Tools | JirAI | Doc Push</ui-path>. See <a href="JirAI-AI-Workflows.topic">AI Workflows</a>.</p></li>
         </list>
     </chapter>
 

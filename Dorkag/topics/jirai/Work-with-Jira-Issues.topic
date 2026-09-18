@@ -62,7 +62,10 @@
         <list>
             <li><p><b>Create or Update:</b> Pushing creates a new issue through the Create form, or updates the already-linked issue.</p></li>
             <li><p><b>Conflict Warning:</b> If the linked issue was edited in Jira since your last push, JirAI warns you before overwriting it.</p></li>
+            <li><p><b>Presets:</b> Superpowers and spec-kit documents open the Create form with the project, issue type, labels, and components you use for that kind of document.</p></li>
+            <li><p><b>Size Check:</b> A document over Jira's 32,767-character description limit is blocked, with exact numbers and its largest sections.</p></li>
         </list>
+        <p>See <a href="JirAI-AI-Workflows.topic">AI Workflows</a> for the complete flow, presets, and settings.</p>
     </chapter>
 
     <chapter title="Next Steps" id="next">
