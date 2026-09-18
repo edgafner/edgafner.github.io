@@ -69,10 +69,10 @@
         </tabs>
     </chapter>
 
-    <chapter title="Licensing and 30-Day Free Trial" id="licensing-and-trial">
+    <chapter title="Licensing and 7-Day Free Trial" id="licensing-and-trial">
         <p>JirAI is a commercial plugin published by Dorkag on the JetBrains Marketplace. When you first install JirAI, the IDE displays the JetBrains standard license activation dialog.</p>
         <list>
-            <li><p><b>30-Day Free Trial:</b> You can activate a fully featured 30-day free trial directly within the IDE license dialog without entering payment details upfront.</p></li>
+            <li><p><b>7-Day Free Trial:</b> You can activate a fully featured 7-day free trial directly within the IDE license dialog without entering payment details upfront.</p></li>
             <li><p><b>Subscriptions:</b> Individual (Solo) and Team/Commercial licenses are available via the JetBrains Marketplace with monthly or annual billing.</p></li>
             <li><p><b>License Management:</b> Handled securely through your JetBrains Account or organizational license server.</p></li>
         </list>
