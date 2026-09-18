@@ -5,19 +5,19 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Dorkag" id="Dorkag">
 
-    <p>Hi there, I'm <a
-            href="https://www.linkedin.com/in/jonathan-gafner-3415974b">Jonathan
-        Gafner</a>,
-        a husband, a father of three, and a software engineer.
-        I have been working in the software industry for over 12 years.
+    <p>
+        DORKAG builds JetBrains IDE plugins that keep you in the editor:
+        <a href="Azd.topic">AZD</a>, <a href="GBrowser.topic">GBrowser</a>,
+        <a href="JirAI.topic">JirAI</a>, <a href="Codecov.topic">Codecov</a>, and
+        <a href="QueryFlag.topic">QueryFlag</a>.
     </p>
     <p>
-        In my free time, I like to create JetBrains IDE plugins mainly to boost development productivity.</p>
-    <p>The following is a list of plugins I have developed:</p>
+        Pick a plugin below for installation, configuration, and feature documentation.
+    </p>
     <list columns="5" type="none">
         <li>
             <list type="none">
-                <li><a href="Azd.topic" summary="">
+                <li><a href="Azd.topic" summary="Manage Azure DevOps projects from your JetBrains IDE">
                     <img src="azd_icon.svg" alt="azd_icon"/>
                 </a></li>
                 <li>
@@ -25,11 +25,12 @@
                         <ui-path>AZD</ui-path>
                     </a>
                 </li>
+                <li>Clone repositories, review pull requests, and manage pipelines in Azure DevOps.</li>
             </list>
         </li>
         <li>
             <list type="none">
-                <li><a href="GBrowser.topic" summary="">
+                <li><a href="GBrowser.topic" summary="An embedded web browser window within your IDE">
                     <img src="gbrowser_icon.png" alt="gbrowser_icon"/>
                 </a></li>
 
@@ -38,11 +39,12 @@
                         <ui-path>GBrowser</ui-path>
                     </a>
                 </li>
+                <li>An embedded web browser window inside your IDE, with no context switch.</li>
             </list>
         </li>
         <li>
             <list type="none">
-                <li><a href="JirAI.topic" summary="">
+                <li><a href="JirAI.topic" summary="The full Jira Cloud experience without leaving your IDE">
                     <img src="jirai_icon.svg" alt="jirai_icon"/>
                 </a></li>
                 <li>
@@ -50,11 +52,12 @@
                         <ui-path>JirAI</ui-path>
                     </a>
                 </li>
+                <li>Browse, filter, and edit Jira Cloud issues, with AI-assisted issue creation.</li>
             </list>
         </li>
         <li>
             <list type="none">
-                <li><a href="Codecov.topic" summary="">
+                <li><a href="Codecov.topic" summary="Bring Codecov insights directly into your IDE">
                     <img src="code_cov.svg" alt="code_cov"/>
                 </a></li>
                 <li>
@@ -62,11 +65,12 @@
                         <ui-path>Codecov</ui-path>
                     </a>
                 </li>
+                <li>Line-by-line coverage, PR impact, and project health in your editor.</li>
             </list>
         </li>
         <li>
             <list type="none">
-                <li><a href="QueryFlag.topic" summary="">
+                <li><a href="QueryFlag.topic" summary="Define and execute template-based queries on selected text">
                     <img src="queryflag.svg" alt="queryflag"/>
                 </a></li>
                 <li>
@@ -74,8 +78,14 @@
                         <ui-path>QueryFlag</ui-path>
                     </a>
                 </li>
+                <li>Define and run template-based queries on selected text, straight from the editor.</li>
             </list>
         </li>
     </list>
+
+    <p>
+        Built by Jonathan Gafner, a software engineer with 14+ years in the industry,
+        in his free time.
+    </p>
 
 </topic>
