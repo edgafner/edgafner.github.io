@@ -8,7 +8,7 @@
     <primary-label ref="jirai"/>
     <secondary-label ref="jirai_version"/>
 
-    <p>Discover the latest features, enhancements, and architecture in the JirAI plugin V2026.3.10.</p>
+    <p>Discover the latest features, enhancements, and architecture in the JirAI plugin V2026.3.11.</p>
 
     <chapter title="Full Jira Cloud Experience in Your IDE" id="jirai-core-experience">
         <p>JirAI brings your everyday Jira Cloud workflow directly into IntelliJ IDEA, PyCharm, WebStorm, GoLand, Rider, and the rest of the JetBrains IDE family. Stop alt-tabbing to your browser to check requirements, triage tickets, or update statuses.</p>
@@ -69,7 +69,7 @@
         </list>
     </chapter>
 
-    <chapter title="Recent Improvements (2026.3.5 – 2026.3.10)" id="recent-improvements">
+    <chapter title="Recent Improvements (2026.3.5 – 2026.3.11)" id="recent-improvements">
         <list>
             <li><p><b>Field Visibility:</b> Hide unneeded custom fields from an inline eye icon on each field row, and manage visibility for a whole site, project, or single issue under <ui-path>Tools | JirAI</ui-path>.</p></li>
             <li><p><b>Faster Metrics:</b> A space downloads once for all its tabs; switching tabs, filters, and date ranges recompute locally without downloading again.</p></li>
