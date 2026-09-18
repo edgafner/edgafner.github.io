@@ -10,6 +10,7 @@ This is a Writerside documentation site for DORKAG JetBrains IDE plugins hosted 
 - **GBrowser**: Browser integration plugin  
 - **Codecov**: Code coverage plugin
 - **QueryFlag**: Query management plugin
+- **JirAI**: Jira Cloud integration plugin
 
 ## Key Commands
 
@@ -33,7 +34,7 @@ To preview documentation locally, use the Writerside IDE plugin or the Writersid
 - **Build Profiles**: `Dorkag/cfg/buildprofiles.xml` - Defines build settings, variables, and footer configuration
 - **Instance Trees**: Each plugin has its own `.tree` file defining documentation structure:
   - `dorkag.tree` - Main documentation tree
-  - `azdlib.tree`, `gbrowserlib.tree`, `codecovlib.tree`, `queryflaglib.tree` - Plugin-specific trees
+  - `azdlib.tree`, `gbrowserlib.tree`, `codecovlib.tree`, `queryflaglib.tree`, `jirailib.tree` - Plugin-specific trees
 
 ### Content Organization
 - **Topics**: `Dorkag/topics/` - Contains all documentation content in `.topic` XML files

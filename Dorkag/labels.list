@@ -7,6 +7,7 @@
     <primary-label id="gbrowser" short-name="gbrowser" name="GBrowser" color="blue">GBrowser</primary-label>
     <primary-label id="codecov" short-name="codecov" name="Codecov" color="strawberry">Codecov</primary-label>
     <primary-label id="queryflag" short-name="queryflag" name="Queryflag" color="tangerine">Queryflag</primary-label>
+    <primary-label id="jirai" short-name="jirai" name="JirAI" color="blue">JirAI</primary-label>
 
 
     <secondary-label id="wip" name="WIP" color="purple">Work in progress</secondary-label>
@@ -14,12 +15,14 @@
 
     <secondary-label id="experimental" name="Experimental" color="purple">This is an experimental feature
     </secondary-label>
-    <secondary-label id="azd_version" name="V2026.2.20" color="blue">New in version 2026.2
+    <secondary-label id="azd_version" name="V2026.3.5" color="blue">New in version 2026.3
     </secondary-label>
-    <secondary-label id="gbrowser_version" name="V2026.2.3" color="tangerine">New in version 2026.2
+    <secondary-label id="gbrowser_version" name="V2026.3.1" color="tangerine">New in version 2026.3
     </secondary-label>
-    <secondary-label id="codecov_version" name="V2026.2.5" color="green">New in version 2026.2
+    <secondary-label id="codecov_version" name="V2026.3.1" color="green">New in version 2026.3
     </secondary-label>
-    <secondary-label id="queryflag_version" name="V2026.2.1" color="blue">New in version 2026.2
+    <secondary-label id="queryflag_version" name="V2026.3.1" color="blue">New in version 2026.3
+    </secondary-label>
+    <secondary-label id="jirai_version" name="V2026.3.10" color="blue">New in version 2026.3
     </secondary-label>
 </labels>

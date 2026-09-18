@@ -8,7 +8,7 @@
     <primary-label ref="azd"/>
     <secondary-label ref="azd_version"/>
 
-    <p>Discover the latest features and improvements in the AZD plugin V2026.2.20.</p>
+    <p>Discover the latest features and improvements in the AZD plugin V2026.3.5.</p>
 
     <chapter title="New in 2026.2" id="new-in-2026-2">
         <p>The 2026.2 line targets IntelliJ Platform 2026.2 and adds new filters, board options, and pipeline
@@ -43,11 +43,26 @@
             files that switch between a symlink and a regular file.</p>
     </chapter>
 
-    <chapter title="Enhanced AI Capabilities" id="enhanced-ai">
-        <p>This release brings significant updates to our AI-powered features, including support for the latest models and local providers.</p>
+    <chapter title="IntelliJ Platform 2026.3 &amp; 2026.2 Support" id="platform-support">
+        <p>AZD officially targets the latest IntelliJ Platform 2026.3 EAP as well as 2026.2 GA releases across all JetBrains IDEs. Performance optimizations have reduced the plugin download footprint by approximately 12%.</p>
+    </chapter>
+
+    <chapter title="Expanded AI Models &amp; Providers" id="enhanced-ai">
+        <p>This release brings significant updates to our AI-powered features, including support for the newest frontier models and local providers.</p>
         <img src="ai_configuration_settings.png" alt="AI Configuration Settings" style="block" thumbnail="true"/>
-        <p><b>Support for Latest Models:</b> Ships with the pre-configured AZD GPT-5.4 Mini provider out of the box, plus support for the latest model families across providers — OpenAI GPT-5.4 (including Pro and Codex variants), Anthropic Claude Opus 4.6 / Sonnet 4.5 / Haiku 4.5, Google Gemini 3 Pro and Flash, and local Ollama models (Llama 4, Qwen 3, DeepSeek R1).</p>
+        <p><b>Support for Latest Models:</b> Ships with the pre-configured AZD GPT-5.4 Mini provider out of the box, plus support for the latest model families across providers — OpenAI GPT-5.5 and GPT-5.4 (including Pro and Codex variants), Anthropic Claude Opus 4.7 / Sonnet 4.5 / Haiku 4.5, Google Gemini 3.5 Flash and Gemini 3 Pro, and local Ollama models (Llama 4, Qwen 3, DeepSeek R1).</p>
         <img src="ai_setting_provider.png" alt="AI Provider Settings" style="block" thumbnail="true"/>
+    </chapter>
+
+    <chapter title="Enhanced PR Review Experience" id="pr-review-improvements">
+        <list>
+            <li><p><b>Granular Reviewer Statuses:</b> Reviewer rows now differentiate between <emphasis>Rejected</emphasis>, <emphasis>Waiting for author</emphasis>, <emphasis>Approved with suggestions</emphasis>, and <emphasis>Declined</emphasis> reviewers.</p></li>
+            <li><p><b>Branch Policy Explanations:</b> Pull requests blocked by branch policies now clearly detail why the merge is blocked directly within the details panel.</p></li>
+            <li><p><b>Live Merge Evaluation:</b> Status indicators show when a PR merge is actively being evaluated by Azure DevOps.</p></li>
+            <li><p><b>Worktree Integration:</b> Open any pull request branch in an isolated git worktree directly from the branch popup.</p></li>
+            <li><p><b>Unresolved Comments Shortcut:</b> The unresolved comments counter row links directly to the conversation for immediate navigation.</p></li>
+            <li><p><b>File Review Status:</b> Deleted and moved files can now be marked as viewed in the PR changes tree.</p></li>
+        </list>
     </chapter>
 
     <chapter title="Pipeline Approvals and Validations" id="pipeline-approvals">
@@ -57,29 +72,30 @@
     </chapter>
 
     <chapter title="Advanced Pipeline Test Insights" id="pipeline-tests">
-        <p>The Pipeline test result panel has been overhauled with new features to improve traceability and analysis:</p>
+        <p>The Pipeline test result panel provides deep traceability and analysis:</p>
         <img src="pipeline_test_results_v2.png" alt="Pipeline Test Results" style="block" thumbnail="true"/>
         <list>
-            <li><p><b>Sorting and Filtering:</b> Quickly find failed or long-running tests with the new toolbar controls.</p></li>
-            <li><p><b>Test Summary:</b> A new header provides a real-time summary of test execution (passed, failed, skipped, and pass percentage).</p></li>
+            <li><p><b>Sorting and Filtering:</b> Quickly find failed or long-running tests with toolbar controls.</p></li>
+            <li><p><b>Test Summary:</b> Real-time summary of test execution (passed, failed, skipped, and pass percentage).</p></li>
             <li><p><b>Traceability:</b> Seamlessly link automated tests to Azure DevOps test cases.</p></li>
         </list>
     </chapter>
 
     <chapter title="AI-Powered Log Analysis" id="log-analysis">
-        <p>Get help diagnosing pipeline failures without leaving the IDE. The new AI chat integration for logs analyzes failed stages and suggests fixes.</p>
+        <p>Diagnose pipeline failures without leaving the IDE. The AI chat integration for logs analyzes failed stages and suggests fixes.</p>
         <img src="pipeline_logs_ai_chat.png" alt="AI Chat for Logs" style="block" thumbnail="true"/>
     </chapter>
 
     <chapter title="PR Metrics Dashboard" id="azd_pr_metrics">
-        <p>A new comprehensive dashboard to track your team's Pull Request metrics and performance.</p>
+        <p>Track team Pull Request velocity and review turnaround with the built-in metrics dashboard.</p>
         <img src="pr_metrics_dashboard.png" alt="PR Metrics Dashboard" style="block" thumbnail="true"/>
     </chapter>
 
-    <chapter title="Improved Navigation and UI" id="ui-improvements">
+    <chapter title="Authentication &amp; UI Reliability" id="ui-improvements">
         <list>
-            <li><p><b>Timeline Commit Links:</b> Clicking on commit SHAs in the PR timeline now opens the PR details view in the IDE instead of the browser.</p></li>
-            <li><p><b>Sort Controls:</b> PR and Pipeline lists now feature a dedicated sort button for easier organization.</p></li>
+            <li><p><b>Persistent Auth:</b> Sign-in with Microsoft Entra ID and Azure CLI tokens maintains reliable refresh cycles without hourly expiration.</p></li>
+            <li><p><b>Timeline Commit Links:</b> Clicking on commit SHAs in the PR timeline opens the details view in the IDE.</p></li>
+            <li><p><b>Dedicated Sort Controls:</b> PR and Pipeline lists feature inline sort buttons for fast organization.</p></li>
         </list>
         <img src="sort_pipeline_and_pr_inline_button.png" alt="New Sort Button" style="block" thumbnail="true"/>
     </chapter>

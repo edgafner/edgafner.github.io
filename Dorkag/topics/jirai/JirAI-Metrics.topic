@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI Metrics" id="JirAI-Metrics">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>Open throughput, cycle-time, and delivery charts for any Jira space without leaving your IDE.</p>
+
+    <chapter title="Opening Metrics" id="opening-metrics">
+        <p>Open a space's metrics from the title bar. JirAI opens the space in an editor tab named after it, with its avatar, star, and a link back to Jira.</p>
+        <img src="jirai_space_list.png" alt="Metrics editor tab with the Summary, Timeline, Board, List and Reports tabs" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Choose a Space:</b> Pick from your Jira starred spaces or all spaces, and star or unstar a space directly from JirAI.</p></li>
+            <li><p><b>Jira-style Tabs:</b> Each space opens with <control>Summary</control>, <control>Timeline</control>, <control>Board</control>, <control>List</control>, and <control>Reports</control> tabs, matching Jira's own layout.</p></li>
+            <li><p><b>Download Once:</b> A space downloads once for all its tabs; switching tabs, filters, and date ranges recompute locally without downloading again.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Summary Tab" id="summary-tab">
+        <p>The <control>Summary</control> tab surfaces tiles and charts for throughput, created vs. completed work, work item age, and status distributions.</p>
+        <img src="jirai_metrics_summary.png" alt="Metrics Summary tab with throughput and created-vs-completed charts" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Table or Chart View:</b> Every tile can be viewed as a chart or maximized into a table for closer inspection.</p></li>
+            <li><p><b>Filters &amp; Date Range:</b> Filter by work type and assignee and adjust the date range; your choices are remembered per space.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Reports Tab" id="reports-tab">
+        <p>The <control>Reports</control> tab reads each work item's status history to compute delivery metrics, with a switch between how reopened work is counted.</p>
+        <img src="jirai_metrics_reports_filtered.png" alt="Metrics Reports tab with a Sprint status filter chip applied" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Lead Time &amp; Cycle Time:</b> Track how long work items take from creation and from start to completion.</p></li>
+            <li><p><b>On-Time Delivery &amp; Control Chart:</b> See delivery predictability at a glance.</p></li>
+            <li><p><b>Cumulative Flow &amp; Time in Status:</b> Visualize work-in-progress and where items spend the most time.</p></li>
+            <li><p><b>Jira Default / First Pass:</b> Switch how reopened work is counted to match either Jira's own calculation or the first pass through a status.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Filtering and Sampling" id="filtering-and-sampling">
+        <list>
+            <li><p><b>Report Filters:</b> Filter Reports by sprint, sprint status, fix version, component, and label.</p></li>
+            <li><p><b>Exclude a Value:</b> Click a filter value twice, or <shortcut>Shift</shortcut>-click it, to exclude it from both the work-items list and Metrics.</p></li>
+            <li><p><b>All / Clear:</b> Use the <ui-path>All</ui-path> and <ui-path>Clear</ui-path> shortcuts at the top of each filter popup.</p></li>
+            <li><p><b>Large Space Sampling:</b> For very large spaces, <ui-path>Settings | Tools | JirAI Metrics</ui-path> lets you sample from the newest or oldest work items instead of loading everything.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Next Steps" id="next">
+        <p>Return to <a href="Work-with-Jira-Issues.topic">Working with Jira Issues</a> or check the <a href="JirAI-FAQ.topic">FAQ</a> for common questions.</p>
+    </chapter>
+
+</topic>

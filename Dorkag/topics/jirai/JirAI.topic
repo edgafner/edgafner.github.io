@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI" id="JirAI">
+
+  <section-starting-page>
+    <title>JirAI Plugin for JetBrains IDEs</title>
+    <description>
+      The full Jira Cloud experience — browse, filter, edit issues, and track discussions — without ever leaving your JetBrains IDE. Built natively for Split Mode and Remote Development.
+    </description>
+
+    <spotlight>
+      <a href="JirAI-Whats-New.topic" type="learn" summary="Discover the latest V2026.3.10 features and release notes">What's New</a>
+      <a href="JirAI-Installation.topic" type="start" summary="Install JirAI and start your 30-day free trial">Installation Guide</a>
+    </spotlight>
+
+    <primary>
+      <title>Core Features</title>
+      <a href="Work-with-Jira-Issues.topic" type="tools" summary="Browse, filter, search, and create Jira issues in the IDE tool window">Issues Management</a>
+      <a href="Jira-Issue-Details-and-Editing.topic" type="mixed" summary="View and edit fields, execute workflow transitions, manage attachments and links">Issue Details &amp; Editing</a>
+      <a href="Jira-Timeline-and-Description-Editor.topic" type="development" summary="Unified activity stream, comments with mentions, and full Markdown description editor">Timeline &amp; Description Editor</a>
+      <a href="JirAI-Metrics.topic" type="cloud" summary="Throughput, cycle time, and delivery charts for any Jira space">Metrics</a>
+    </primary>
+
+    <secondary>
+      <title>Configuration &amp; Architecture</title>
+      <a href="JirAI-Sign-In-and-Configuration.topic" type="settings" summary="Connect to Jira Cloud with API tokens and configure proxy settings">Sign-In &amp; Configuration</a>
+      <a href="JirAI-Remote-Development-and-Architecture.topic" type="server" summary="Learn about Split Mode, JetBrains Gateway &amp; Client, and zero-telemetry security">Remote Development &amp; Architecture</a>
+      <a href="JirAI-FAQ.topic" type="cross-platform" summary="Frequently asked questions, known limitations, and answers">FAQ</a>
+      <a href="JirAI-Reference-and-Support.topic" type="support" summary="Get help, report issues, and view licensing terms">Reference &amp; Support</a>
+    </secondary>
+
+  </section-starting-page>
+
+</topic>

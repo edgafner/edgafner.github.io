@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Jira Issue Details and Editing" id="Jira-Issue-Details-and-Editing">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>Inspect comprehensive issue details, edit fields in place, transition workflows, and manage attachments within your IDE.</p>
+
+    <chapter title="Issue Details View" id="details-view">
+        <p>Double-clicking an issue or clicking <ui-path>Open Details</ui-path> opens the issue inspector tab.</p>
+        <img src="jirai_issue_timeline_details.png" alt="Issue details with editable fields beside the issue timeline" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Type-Aware Field Rendering:</b> Standard and custom fields are displayed according to their declared Jira schema types (dates, text, single/multi-selects, user pickers, and tags).</p></li>
+            <li><p><b>Graceful Fallbacks:</b> If a field uses an unsupported custom renderer, JirAI displays a clean fallback with a direct <ui-path>Open in Jira</ui-path> link to view it on the web.</p></li>
+            <li><p><b>Field Visibility:</b> Hide a custom field you don't need from the inline eye icon on its row, or manage which fields are shown for a whole site, project, or single issue under <ui-path>Tools | JirAI</ui-path>.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="In-Place Field Editing" id="inline-editing">
+        <p>Edit issue attributes without switching to a web browser:</p>
+        <list>
+            <li><p><b>Summary &amp; Priority:</b> Click to edit the title or select a new priority from the dropdown.</p></li>
+            <li><p><b>Labels, Components &amp; Fix Versions:</b> Add or remove tags, components, and target releases with autocompleting chips.</p></li>
+            <li><p><b>Due Date &amp; Parent:</b> Pick due dates from a date picker, or reassign parent Epics/tasks with prefix search.</p></li>
+            <li><p><b>Assignee Management:</b> Reassign issues to team members using searchable user pickers showing team avatars.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Workflow Transitions" id="workflow-transitions">
+        <p>Advance issues through your team's Jira workflow directly from the details header:</p>
+        <list>
+            <li><p><b>Status Dropdown:</b> Select target statuses (e.g. <emphasis>In Progress</emphasis>, <emphasis>In Review</emphasis>, <emphasis>Closed</emphasis>).</p></li>
+            <li><p><b>Transition Screen Dialogs:</b> When a workflow transition enforces required fields (such as Resolution, fix version, or transition comment), JirAI prompts with a modal transition dialog so you can fulfill required fields before completing the transition.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Attachments &amp; Thumbnails" id="attachments">
+        <p>Manage file assets without leaving your IDE workspace:</p>
+        <note>
+            <p><b>[Screenshot Placeholder: Attachments and Issue Links]</b></p>
+            <p><i>Planned image: <code>jirai_attachments_and_links.png</code></i></p>
+            <p><i>Capture: Attachments section showing image thumbnails, download/delete buttons, drag-and-drop zone, and issue links panel.</i></p>
+        </note>
+        <list>
+            <li><p><b>Drag-and-Drop:</b> Drag files from your operating system or IDE project tree directly into the attachments zone.</p></li>
+            <li><p><b>Image Thumbnails:</b> Inline previews for common image formats (PNG, JPEG, GIF, SVG) cached for the session.</p></li>
+            <li><p><b>Download &amp; Delete:</b> Download attachments to your local disk or delete unwanted files with proper confirmation.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Issue Links" id="issue-links">
+        <list>
+            <li><p><b>View Relationships:</b> Browse blocks, blocked-by, relates-to, and duplicates associations.</p></li>
+            <li><p><b>Create Links:</b> Link related tickets with prefix-search on issue keys and summaries.</p></li>
+            <li><p><b>Remove Links:</b> Delete obsolete issue associations with one click.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Next Steps" id="next">
+        <p>Learn about comment discussions and the visual Markdown editor in <a href="Jira-Timeline-and-Description-Editor.topic">Timeline and Description Editor</a>.</p>
+    </chapter>
+
+</topic>

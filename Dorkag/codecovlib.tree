@@ -7,7 +7,7 @@
                   start-page="Codecov.topic">
 
     <snippet id="codecovsn.tree">
-        <toc-element topic="Codecov.topic" id="toc_codecov_landing" id="toc_codecov_root">
+        <toc-element topic="Codecov.topic" id="toc_codecov_root">
             <toc-element topic="Codecov-Whats-New.topic" id="toc_codecov_whats_new"/>
             <toc-element topic="Codecov-Installation.topic" id="toc_codecov_installation"/>
             <toc-element topic="Codecov-Usage.topic" id="toc_codecov_usage"/>

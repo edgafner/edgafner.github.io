@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI Installation and Licensing" id="JirAI-Installation">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>Install the JirAI plugin to bring Jira Cloud issue management directly into your JetBrains IDE.</p>
+
+    <chapter title="Requirements" id="requirements">
+        <list>
+            <li><p><b>JetBrains IDE:</b> Version 2026.2 or later (IntelliJ IDEA, WebStorm, PyCharm, GoLand, Rider, PhpStorm, etc.).</p></li>
+            <li><p><b>Jira Environment:</b> Jira Cloud (<code>https://&lt;your-domain&gt;.atlassian.net</code>). Jira Server and Data Center use differing APIs and are not supported.</p></li>
+            <li><p><b>Atlassian Account:</b> An Atlassian account with permission to access your Jira Cloud project and an API token.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Install JirAI" id="install-methods">
+        <tabs>
+            <tab title="From IDE Marketplace" id="install-ide">
+                <procedure id="install-from-ide-proc">
+                    <step>
+                        <p>Open your JetBrains IDE and open <ui-path>Settings</ui-path> (<shortcut>Ctrl+Alt+S</shortcut> on Windows/Linux or <shortcut>Cmd+,</shortcut> on macOS).</p>
+                    </step>
+                    <step>
+                        <p>Navigate to <ui-path>Plugins</ui-path> and select the <ui-path>Marketplace</ui-path> tab.</p>
+                    </step>
+                    <step>
+                        <p>Type <ui-path>JirAI</ui-path> into the search field.</p>
+                    </step>
+                    <step>
+                        <p>Click <ui-path>Install</ui-path> next to the JirAI plugin.</p>
+                    </step>
+                    <step>
+                        <p>Restart the IDE when prompted to complete the setup.</p>
+                    </step>
+                </procedure>
+            </tab>
+            <tab title="From JetBrains Marketplace Web" id="install-web">
+                <procedure id="install-from-web-proc">
+                    <step>
+                        <p>Visit the <a href="https://plugins.jetbrains.com/plugin/33954-jirai">JirAI JetBrains Marketplace page</a>.</p>
+                    </step>
+                    <step>
+                        <p>Click the <ui-path>Install to...</ui-path> button and select your running IDE instance.</p>
+                    </step>
+                    <step>
+                        <p>Confirm the installation prompt inside your IDE.</p>
+                    </step>
+                </procedure>
+            </tab>
+            <tab title="Install from Disk (ZIP)" id="install-disk">
+                <procedure id="install-from-disk-proc">
+                    <step>
+                        <p>Download or build the distribution ZIP archive (e.g. from <code>build/distributions/</code>).</p>
+                    </step>
+                    <step>
+                        <p>Open <ui-path>Settings | Plugins</ui-path>, click the gear icon, and choose <ui-path>Install Plugin from Disk...</ui-path>.</p>
+                    </step>
+                    <step>
+                        <p>Select the plugin ZIP file and restart the IDE.</p>
+                        <note><p>Under Remote Development, plugins installed from disk must be installed manually on both host and client machines.</p></note>
+                    </step>
+                </procedure>
+            </tab>
+        </tabs>
+    </chapter>
+
+    <chapter title="Licensing and 30-Day Free Trial" id="licensing-and-trial">
+        <p>JirAI is a commercial plugin published by Dorkag on the JetBrains Marketplace. When you first install JirAI, the IDE displays the JetBrains standard license activation dialog.</p>
+        <list>
+            <li><p><b>30-Day Free Trial:</b> You can activate a fully featured 30-day free trial directly within the IDE license dialog without entering payment details upfront.</p></li>
+            <li><p><b>Subscriptions:</b> Individual (Solo) and Team/Commercial licenses are available via the JetBrains Marketplace with monthly or annual billing.</p></li>
+            <li><p><b>License Management:</b> Handled securely through your JetBrains Account or organizational license server.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Next Steps" id="next-steps">
+        <p>Once installed, follow our <a href="JirAI-Sign-In-and-Configuration.topic">Sign-In and Configuration Guide</a> to connect your Jira Cloud site.</p>
+    </chapter>
+
+</topic>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI Sign-In and Configuration" id="JirAI-Sign-In-and-Configuration">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>Connect JirAI to your Jira Cloud workspace using secure API-token authentication.</p>
+
+    <chapter title="Sign In to Jira Cloud" id="sign-in">
+        <p>Open the <control>JirAI</control> tool window on the left side of your IDE and click <ui-path>Log In</ui-path>.</p>
+        <note>
+            <p><b>[Screenshot Placeholder: JirAI Sign-In Dialog]</b></p>
+            <p><i>Planned image: <code>jirai_sign_in_dialog.png</code></i></p>
+            <p><i>Capture: Modal sign-in dialog showing Server, Email, and API Token fields with the link to Atlassian API tokens.</i></p>
+        </note>
+
+        <p>The dialog requests three pieces of information:</p>
+        <deflist>
+            <def title="Server">
+                <p>Your Jira Cloud site domain (for example, <code>myorg.atlassian.net</code> or <code>https://myorg.atlassian.net</code>). Plain <code>http://</code> URLs are rejected to prevent unencrypted token transmission.</p>
+            </def>
+            <def title="Email">
+                <p>The email address associated with your Atlassian account.</p>
+            </def>
+            <def title="Token">
+                <p>An Atlassian API token. You can generate a token at <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian API Tokens</a> (the sign-in dialog provides a direct shortcut link).</p>
+            </def>
+        </deflist>
+
+        <note>
+            <p>JirAI immediately validates credentials against Jira's <code>GET /rest/api/3/myself</code> endpoint before persisting any settings. If validation succeeds, your issue view loads instantly.</p>
+        </note>
+    </chapter>
+
+    <chapter title="How Credentials and Settings Are Stored" id="credential-storage">
+        <list>
+            <li><p><b>Secure Token Storage:</b> Your Atlassian API token is saved inside the IDE's secure credential store (<code>PasswordSafe</code>, backed by the OS Keychain on macOS, KeePass, or Linux Secret Service). The secret is never saved in plaintext XML and is never exposed to the UI process.</p></li>
+            <li><p><b>Site Metadata:</b> Site URL, email, display name, account ID, and an internal site UUID are stored without secrets in <code>jira-sites.xml</code> in your IDE configuration directory.</p></li>
+            <li><p><b>Remote Development:</b> In Split Mode (JetBrains Gateway &amp; Client), the token and <code>jira-sites.xml</code> stay strictly on the remote host machine.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Account Management &amp; Sign Out" id="account-management">
+        <p>The JirAI tool window includes a gear menu on its toolbar displaying:</p>
+        <list>
+            <li><p>The active Jira Cloud site URL</p></li>
+            <li><p>Your signed-in display name and account email</p></li>
+            <li><p>A <ui-path>Sign Out</ui-path> action, which removes the stored token from <code>PasswordSafe</code> and resets local session caches</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Corporate Proxy Configuration" id="corporate-proxy">
+        <p>JirAI respects your IDE's system HTTP proxy settings configured under <ui-path>Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy</ui-path>.</p>
+        <list>
+            <li><p><b>Transparent Authentication:</b> JirAI uses existing credentials stored for the proxy without prompting with redundant UI popups.</p></li>
+            <li><p><b>Clear Diagnostic Errors:</b> If a corporate proxy blocks connection, error messages explicitly identify the proxy rather than reporting confusing Jira HTTP status codes.</p></li>
+            <li><p><b>Split Mode:</b> When running with JetBrains Gateway, network requests originate from the host, so host proxy settings apply.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Next Steps" id="learn-more">
+        <p>Explore <a href="Work-with-Jira-Issues.topic">Working with Jira Issues</a> to filter, search, and manage your tickets.</p>
+    </chapter>
+
+</topic>

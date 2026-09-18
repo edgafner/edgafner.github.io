@@ -8,7 +8,7 @@
 
 
     <snippet id="azdsn.tree">
-        <toc-element topic="Azd.topic" id="toc_azd_landing" id="toc_azd_root">
+        <toc-element topic="Azd.topic" id="toc_azd_root">
             <toc-element topic="Azd-Whats-New.topic" id="toc_azd_whats_new"/>
             <toc-element topic="Azd-Installation.topic" id="toc_azd_installation"/>
             <toc-element topic="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" id="toc_azd_manage"/>
