@@ -8,7 +8,7 @@
     <primary-label ref="jirai"/>
     <secondary-label ref="jirai_version"/>
 
-    <p>Discover the latest features, enhancements, and architecture in the JirAI plugin V2026.3.10.</p>
+    <p>Discover the latest features, enhancements, and architecture in the JirAI plugin V2026.3.11.</p>
 
     <chapter title="Full Jira Cloud Experience in Your IDE" id="jirai-core-experience">
         <p>JirAI brings your everyday Jira Cloud workflow directly into IntelliJ IDEA, PyCharm, WebStorm, GoLand, Rider, and the rest of the JetBrains IDE family. Stop alt-tabbing to your browser to check requirements, triage tickets, or update statuses.</p>
@@ -20,6 +20,7 @@
             <li><p><b>Instant Search &amp; Direct Key Jump:</b> Search issue summaries or jump immediately to any issue key (such as <code>PROJ-123</code>) regardless of creation date.</p></li>
             <li><p><b>Dynamic Issue Creation:</b> Create new issues directly within the IDE using dynamic forms generated from your project's create metadata. The Description field accepts Markdown, with a Preview before you create.</p></li>
             <li><p><b>Push a Markdown Doc to Jira:</b> A <ui-path>Push to Jira</ui-path> button on <code>.md</code> editors creates an issue from the document or updates the linked one, and warns if the issue changed in Jira since your last push.</p></li>
+            <li><p><b>Doc Presets for AI Workflows:</b> Superpowers and spec-kit documents are recognized by path and open the Create form pre-filled with your project, issue type, labels, and components. Manage them in <ui-path>Settings | Tools | JirAI | Doc Push</ui-path>. See <a href="JirAI-AI-Workflows.topic">AI Workflows</a>.</p></li>
         </list>
     </chapter>
 
@@ -68,7 +69,7 @@
         </list>
     </chapter>
 
-    <chapter title="Recent Improvements (2026.3.5 – 2026.3.10)" id="recent-improvements">
+    <chapter title="Recent Improvements (2026.3.5 – 2026.3.11)" id="recent-improvements">
         <list>
             <li><p><b>Field Visibility:</b> Hide unneeded custom fields from an inline eye icon on each field row, and manage visibility for a whole site, project, or single issue under <ui-path>Tools | JirAI</ui-path>.</p></li>
             <li><p><b>Faster Metrics:</b> A space downloads once for all its tabs; switching tabs, filters, and date ranges recompute locally without downloading again.</p></li>

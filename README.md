@@ -21,6 +21,10 @@ your IDE.
 
 Seamlessly integrate browser functionality into your development workflow.
 
+### [JirAI - Jira Cloud Integration](https://edgafner.github.io/jirai.html)
+
+Complete Jira Cloud experience for JetBrains IDEs. Browse, filter, edit issues, and track discussions with native Split Mode and Remote Development support.
+
 ### [Codecov - Code Coverage](https://edgafner.github.io/codecov.html)
 
 Visualize and track code coverage directly in your IDE.
@@ -28,11 +32,6 @@ Visualize and track code coverage directly in your IDE.
 ### [QueryFlag - Query Management](https://edgafner.github.io/queryflag.html)
 
 Efficient query management and execution tools.
-
-### [JirAI - Jira Cloud Integration](https://edgafner.github.io/jirai.html)
-
-Complete Jira Cloud experience for JetBrains IDEs. Browse, filter, edit issues, and track discussions with native Split Mode and Remote Development support.
-
 
 ## 🚀 Quick Start
 

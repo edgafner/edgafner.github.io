@@ -23,6 +23,6 @@
     </secondary-label>
     <secondary-label id="queryflag_version" name="V2026.3.1" color="blue">New in version 2026.3
     </secondary-label>
-    <secondary-label id="jirai_version" name="V2026.3.10" color="blue">New in version 2026.3
+    <secondary-label id="jirai_version" name="V2026.3.11" color="blue">New in version 2026.3
     </secondary-label>
 </labels>

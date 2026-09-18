@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AI Workflows: From Markdown Docs to Jira Work Items" id="JirAI-AI-Workflows">
+
+    <primary-label ref="jirai"/>
+    <secondary-label ref="jirai_version"/>
+
+    <p>AI-assisted development produces a lot of Markdown: design specs, implementation plans, and task lists written by tools such as
+        <a href="https://github.com/obra/superpowers">Superpowers</a> or <a href="https://github.com/github/spec-kit">spec-kit</a>.
+        JirAI turns those documents into Jira work items and keeps them in sync, without leaving the IDE.</p>
+
+    <chapter title="How It Fits Together" id="overview">
+        <list>
+            <li><p><b>Write Markdown:</b> Your AI tool or you write a spec or plan as a <code>.md</code> file in the project.</p></li>
+            <li><p><b>Push to Jira:</b> A <ui-path>Push to Jira</ui-path> button on the editor creates a Jira work item from the document, or updates the one it is already linked to.</p></li>
+            <li><p><b>Presets Choose the Target:</b> JirAI recognizes the kind of document (for example a Superpowers spec) and pre-fills the project, issue type, labels, and components you use for it.</p></li>
+            <li><p><b>Stay in Sync Safely:</b> A hidden marker links the document to its issue, and JirAI warns you before overwriting edits someone made in Jira.</p></li>
+        </list>
+        <note>
+            <p>JirAI never rewrites your document except to add the one-line link marker, and it never truncates, summarizes, or attaches a document that is too large for Jira. It tells you exactly how far over the limit it is.</p>
+        </note>
+    </chapter>
+
+    <chapter title="Markdown in the Create Form" id="markdown-create">
+        <p>The <ui-path>Description</ui-path> field of the Create form accepts Markdown. JirAI converts it to Jira's native formatting when the issue is created, so nothing arrives as raw text.</p>
+        <img src="jirai_create_issue_markdown_preview.png" alt="Create Task form with the Markdown Description Preview" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Supported Markdown:</b> Headings, bold and italic, links, tables, nested and task lists, block quotes, code blocks, and collapsible sections.</p></li>
+            <li><p><b>Preview Before You Create:</b> Click <ui-path>Preview</ui-path> next to the Description to see the converted result, and <ui-path>Edit</ui-path> to go back.</p></li>
+            <li><p><b>Warnings, Not Surprises:</b> Anything that cannot be represented exactly in Jira is listed under the field before you create, with the line it came from. Warnings never block Create.</p></li>
+            <li><p><b>Required Fields Respected:</b> Clearing a required field disables <ui-path>Create</ui-path> instead of failing in Jira.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Push a Markdown Document to Jira" id="push-to-jira">
+        <p>Open any <code>.md</code> file while signed in to Jira and click the <ui-path>Push to Jira</ui-path> button that floats at the top right of the editor.</p>
+        <img src="jirai_push_chip.png" alt="Markdown editor with the Push to Jira button at the top right" style="block" thumbnail="true"/>
+        <list>
+            <li><p><b>Other Entry Points:</b> <ui-path>Push to Jira</ui-path> is also in the editor context menu and in the Project view context menu, which is handy when the editor is in preview-only layout.</p></li>
+            <li><p><b>Includes Unsaved Edits:</b> JirAI pushes the text currently in the editor, not only what is saved on disk.</p></li>
+            <li><p><b>Signed-Out State:</b> If you are not signed in, JirAI asks you to sign in through the JirAI tool window first.</p></li>
+        </list>
+        <p>The button opens the <control>Push to Jira</control> dialog. It inspects the document, shows how big it is as Jira counts it, lists any conversion warnings, and offers the action that fits the document's state.</p>
+
+        <chapter title="Create a New Issue" id="push-create">
+            <img src="jirai_push_dialog_create.png" alt="Push to Jira dialog for an unlinked Superpowers spec with size and Create issue button" style="block" thumbnail="true"/>
+            <procedure id="push-create-proc" title="Create an issue from a document">
+                <step><p>Open the document and click <ui-path>Push to Jira</ui-path>.</p></step>
+                <step><p>In the dialog, click <ui-path>Create issue…</ui-path>.</p></step>
+                <step><p>JirAI opens the Create form with the <ui-path>Summary</ui-path> set to the document's first heading and the <ui-path>Description</ui-path> set to the document body.</p></step>
+                <step><p>Choose the project, issue type, and any required fields, review the Preview, and click <ui-path>Create</ui-path>.</p></step>
+            </procedure>
+            <img src="jirai_create_from_doc_preset.png" alt="Create form opened from a document with the project and issue type pre-selected and the Remember checkbox" style="block" thumbnail="true"/>
+            <p>After the issue is created, JirAI adds a link marker as the first line of the document, <code>&lt;!-- jira: PROJ-123 --&gt;</code> (after the front matter, if there is any). It is a normal Markdown comment: invisible in rendered Markdown, and one undo step in the editor.</p>
+            <img src="jirai_doc_jira_marker.png" alt="Markdown document showing the Jira link marker on its first line" style="block" thumbnail="true"/>
+        </chapter>
+
+        <chapter title="Update a Linked Issue" id="push-update">
+            <p>Once a document has a marker, the dialog offers <ui-path>Update PROJ-123</ui-path> instead of Create. Updating replaces the issue's description with the current document.</p>
+            <img src="jirai_push_dialog_update.png" alt="Push to Jira dialog offering to update a linked issue" style="block" thumbnail="true"/>
+        </chapter>
+
+        <chapter title="Edited in Jira? JirAI Tells You" id="push-conflict">
+            <p>Each push stores a fingerprint of the description in a Jira issue property, so the Markdown file itself never changes. On the next push, JirAI compares it with what Jira holds now.</p>
+            <img src="jirai_push_dialog_edited_in_jira.png" alt="Push to Jira dialog warning that the issue was edited in Jira since the last push" style="block" thumbnail="true"/>
+            <table style="header-row" border="true">
+                <tr><td>Dialog state</td><td>What it means</td><td>Your options</td></tr>
+                <tr><td>Update PROJ-123</td><td>The issue is unchanged since your last push.</td><td><ui-path>Update</ui-path>, Cancel</td></tr>
+                <tr><td>Edited in Jira</td><td>The issue changed in Jira since your last push; updating replaces those edits.</td><td><ui-path>Open in browser</ui-path>, <ui-path>Overwrite</ui-path>, Cancel</td></tr>
+                <tr><td>No record of a push</td><td>The document is linked, but JirAI never pushed it, so it cannot tell whether the issue was edited.</td><td><ui-path>Open in browser</ui-path>, <ui-path>Update anyway</ui-path>, Cancel</td></tr>
+                <tr><td>Issue missing</td><td>The linked issue does not exist or you cannot see it.</td><td><ui-path>Link a different issue…</ui-path>, Cancel. JirAI never silently creates a second issue.</td></tr>
+                <tr><td>Several markers</td><td>The document links to more than one issue.</td><td>Keep one marker line, then push again.</td></tr>
+            </table>
+            <note>
+                <p>The check detects an edit made in Jira between two of your pushes. It is a safeguard for a normal team workflow, not a lock: Jira does not offer atomic updates.</p>
+            </note>
+        </chapter>
+
+        <chapter title="Documents That Are Too Big" id="push-too-big">
+            <p>Jira limits a description to 32,767 characters. AI-written specs and plans often exceed this, so JirAI measures the document the way Jira counts it before anything is sent.</p>
+            <list>
+                <li><p><b>Exact Numbers:</b> The dialog reads <emphasis>About N of 32,767 characters as Jira counts them — shorten or split</emphasis> and lists the largest sections.</p></li>
+                <li><p><b>Push Blocked:</b> <ui-path>Create issue…</ui-path> and <ui-path>Update</ui-path> are disabled until the document fits. If Jira itself rejects a document the estimate accepted, JirAI shows the same message.</p></li>
+                <li><p><b>Nothing Is Silently Cut:</b> JirAI never truncates, summarizes, or attaches the document. Shorten it, or split it into several documents.</p></li>
+            </list>
+        </chapter>
+    </chapter>
+
+    <chapter title="Doc Presets: Which Documents Create Which Issues" id="doc-presets">
+        <p>A preset recognizes the kind of document by its path, and pre-fills the Create form for that kind. One document still creates exactly one issue.</p>
+        <table style="header-row" border="true">
+            <tr><td>Preset</td><td>Kind</td><td>Matches</td></tr>
+            <tr><td>Superpowers</td><td>Spec</td><td><code>docs/superpowers/specs/*-design.md</code></td></tr>
+            <tr><td>Superpowers</td><td>Plan</td><td><code>docs/superpowers/plans/*.md</code></td></tr>
+            <tr><td>spec-kit</td><td>Spec</td><td><code>specs/*/spec.md</code></td></tr>
+            <tr><td>spec-kit</td><td>Plan</td><td><code>specs/*/plan.md</code></td></tr>
+            <tr><td>spec-kit</td><td>Tasks</td><td><code>specs/*/tasks.md</code></td></tr>
+        </table>
+        <list>
+            <li><p><b>Detected Automatically:</b> The first time you use Push to Jira in a project, JirAI picks the preset: a <code>docs/superpowers/</code> folder selects Superpowers, otherwise a <code>specs/*/spec.md</code> file selects spec-kit, otherwise no preset.</p></li>
+            <li><p><b>Named in the Dialog:</b> The Push dialog shows the kind it recognized, for example <emphasis>Superpowers · Spec</emphasis>, and the target once one is known, for example <emphasis>Superpowers · Spec → PROJ · Task</emphasis>.</p></li>
+            <li><p><b>Pre-filled Create Form:</b> The project and issue type are pre-selected, and the labels and components for that kind are applied. If something cannot be applied (for example, the issue type does not exist in that project), a note under the pickers says so and you choose by hand.</p></li>
+            <li><p><b>No Match, Same as Before:</b> A document that matches no kind behaves exactly like any other Markdown document.</p></li>
+        </list>
+
+        <chapter title="Remember for This Kind" id="presets-remember">
+            <img src="jirai_create_from_doc_remember.png" alt="Create form opened from a Superpowers spec with the Remember for Superpowers Spec checkbox ticked" style="block" thumbnail="true"/>
+            <p>When Create opens from a recognized document, a <ui-path>Remember for &lt;kind&gt;</ui-path> checkbox is ticked by default. Create the first issue, and JirAI stores the project, issue type, labels, and components you actually used. The next document of that kind opens Create already set up, and the Push dialog names the target.</p>
+            <img src="jirai_push_dialog_target_remembered.png" alt="Push to Jira dialog naming the remembered target Superpowers Spec to JPROBE Task" style="block" thumbnail="true"/>
+        </chapter>
+
+        <chapter title="Configure Presets in Settings" id="presets-settings">
+            <p>Open <ui-path>Settings | Tools | JirAI | Doc Push</ui-path> to review or change what JirAI does for each kind of document.</p>
+            <img src="jirai_settings_doc_push.png" alt="Settings page JirAI Doc Push with the preset selector and the document kinds table" style="block" thumbnail="true"/>
+            <list>
+                <li><p><b>Preset:</b> Choose Superpowers, spec-kit, or None.</p></li>
+                <li><p><b>Doc Kinds Table:</b> Custom kinds come first, then the preset's built-in kinds. The first row whose path pattern matches the document wins.</p></li>
+                <li><p><b>Custom Kinds:</b> Add your own kinds with a name and a path pattern, using <code>*</code> (within a folder), <code>**</code> (across folders), and <code>?</code> (one character). Move them up or down to change priority.</p></li>
+                <li><p><b>Targets:</b> For each kind, set the project key, issue type, labels, and components. You can type them by name; JirAI resolves them when the Create form opens.</p></li>
+                <li><p><b>Per Project, Not Committed:</b> Presets and targets are stored per IDE project in your local workspace settings, not in the repository, and targets are kept separately for each Jira site.</p></li>
+            </list>
+            <note>
+                <p>The targets table edits the Jira site the JirAI tool window is connected to. Sign in first if the target columns are read-only.</p>
+            </note>
+        </chapter>
+    </chapter>
+
+    <chapter title="Remote Development and Split Mode" id="ai-split-mode">
+        <p>Push to Jira works the same in Split Mode and JetBrains Gateway. The document text is read in the IDE editor; converting, measuring, and writing to Jira happen on the backend, and the preset and project-relative path are resolved on the backend too, so they match the project you actually opened.</p>
+    </chapter>
+
+    <chapter title="Good to Know" id="ai-limits">
+        <list>
+            <li><p><b>One Document, One Issue:</b> Sections of a plan are not split into child issues, and document fields such as front matter are not mapped to Jira fields.</p></li>
+            <li><p><b>Push Only:</b> Changes made in Jira are detected and reported, but are not written back into the Markdown file.</p></li>
+            <li><p><b>Front Matter:</b> YAML front matter is not sent to Jira; the link marker is placed after it.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Next Steps" id="next">
+        <p>See <a href="Work-with-Jira-Issues.topic">Working with Jira Issues</a> for the Create form, or <a href="JirAI-Metrics.topic">Metrics</a> to measure the work you create.</p>
+    </chapter>
+
+</topic>
