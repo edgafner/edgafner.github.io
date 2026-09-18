@@ -23,11 +23,6 @@
 
     <chapter title="Full IDE Description Editor" id="description-editor">
         <p>JirAI enables editing ticket descriptions inside a dedicated IDE editor tab rather than a cramped popup form.</p>
-        <note>
-            <p><b>[Screenshot Placeholder: Issue Description Markdown Editor]</b></p>
-            <p><i>Planned image: <code>jirai_description_markdown_editor.png</code></i></p>
-            <p><i>Capture: Description editor tab showing Markdown conversion, split preview, conflict warning bar, and visual diff confirmation.</i></p>
-        </note>
         <list>
             <li><p><b>Bidirectional Markdown Conversion:</b> Jira's Atlassian Document Format (ADF) is converted to clean Markdown for natural IDE editing, and converted back to ADF when saving.</p></li>
             <li><p><b>Remote Conflict Detection:</b> JirAI verifies against remote modifications made by teammates since you loaded the issue, preventing accidental overwrites.</p></li>

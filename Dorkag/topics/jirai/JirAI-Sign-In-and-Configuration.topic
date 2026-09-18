@@ -12,11 +12,6 @@
 
     <chapter title="Sign In to Jira Cloud" id="sign-in">
         <p>Open the <control>JirAI</control> tool window on the left side of your IDE and click <ui-path>Log In</ui-path>.</p>
-        <note>
-            <p><b>[Screenshot Placeholder: JirAI Sign-In Dialog]</b></p>
-            <p><i>Planned image: <code>jirai_sign_in_dialog.png</code></i></p>
-            <p><i>Capture: Modal sign-in dialog showing Server, Email, and API Token fields with the link to Atlassian API tokens.</i></p>
-        </note>
 
         <p>The dialog requests three pieces of information:</p>
         <deflist>
