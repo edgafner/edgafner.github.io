@@ -20,8 +20,7 @@
     <chapter title="Codecov 2026.3" id="platform-support">
         <p>Codecov 2026.3.1 and 2026.3.2 (September 2026) target the IntelliJ Platform 2026.3 and update dependencies.
             They add no new user features.</p>
-        <p>The current version requires IntelliJ-based IDEs 2026.3 (build 263) or later.
-            For IntelliJ-based IDEs 2026.2, the Marketplace provides Codecov 2026.2.5.</p>
+        <p>For the supported IDE versions, see <a href="Codecov-Installation.topic" anchor="codecov-requirements"/>.</p>
     </chapter>
 
     <chapter title="Codecov 2026.2" id="release-2026-2">
@@ -54,7 +53,7 @@
     <chapter title="Earlier versions" id="release-2025">
         <p>
             The 2025.2 releases introduced line coverage in the editor gutter with show, hide and refresh actions, the coverage popup with <control>Open in Codecov</control>, AI prompt templates, automatic repository detection from Git remotes, and support for GitHub, GitLab, Bitbucket and self-hosted Codecov servers.
-            Completion and validation for <path>codecov.yml</path> are available since the first version.
+            Completion and validation for <path>codecov.yml</path> have been available since the first version.
         </p>
     </chapter>
 

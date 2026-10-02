@@ -5,7 +5,6 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Codecov" id="Codecov">
 
-  <primary-label ref="codecov"/>
 
   <link-summary>Codecov plugin documentation: line coverage in the editor, the Codecov Metrics dashboard, folder coverage and codecov.yml support.</link-summary>
   <card-summary>Codecov line coverage, pull request impact and coverage trends in the editor.</card-summary>
@@ -28,12 +27,12 @@
       <a href="Codecov-Folder-Coverage.topic" type="tools" summary="Mark folders in the Project tool window with their Codecov coverage.">Folder coverage</a>
       <a href="Codecov-AI-Prompts.topic" type="learn" summary="Copy a ready-made test-writing prompt for a line to the clipboard.">Generate AI prompts</a>
       <a href="Codecov-Usage.topic" type="development" summary="Get completion for codecov.yml and validate it against the Codecov server.">Edit and validate codecov.yml</a>
-      <a href="Codecov-Whats-New.topic" type="learn" summary="Release notes for recent Codecov plugin versions.">What's new</a>
     </primary>
 
     <secondary>
       <title>Configure and get help</title>
       <a href="Codecov-Settings-Reference.topic" type="settings" summary="Every Codecov option, its default and where it is stored.">Settings reference</a>
+      <a href="Codecov-Whats-New.topic" type="learn" summary="Release notes for recent Codecov plugin versions.">What's new</a>
       <a href="Codecov-FAQ.topic" type="support" summary="Solutions for missing coverage, connection errors and validation problems.">FAQ and troubleshooting</a>
       <a href="Codecov-Reference-and-Support.topic" type="support" summary="Report a problem or contact the developer.">Support</a>
     </secondary>

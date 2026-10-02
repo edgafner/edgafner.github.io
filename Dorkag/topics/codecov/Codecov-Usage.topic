@@ -46,7 +46,8 @@
     <chapter title="Validate codecov.yml" id="validate-codecov-yml">
         <p>
             Validation sends the content of the file to the Codecov server set in <control>Server URL</control> and reports the result.
-            It works for files named exactly <path>codecov.yml</path> or <path>codecov.yaml</path>, and it needs the API token from <a href="Codecov-Installation.topic"/>.
+            It is offered for files named exactly <path>codecov.yml</path> or <path>codecov.yaml</path> while <control>Inject codecov YAML schema</control> is on.
+            It needs the API token that you set when you <a href="Codecov-Installation.topic" anchor="codecov-sign-in">connect the project</a>.
         </p>
         <procedure title="Validate the file" id="validate-config">
             <step>
@@ -54,10 +55,8 @@
             </step>
             <step>
                 Select <control>Validate Codecov YAML</control>.
-                <!-- planned-image src="codecov_validate_menu.png" alt="Validate Codecov YAML in the Project view context menu" -->
-            </step>
-            <step>
-                Read the notification: "Codecov configuration is valid." or "Codecov configuration is invalid.", with the file name.
+                <!-- planned-image src="codecov_validate_menu.png" alt="Validate Codecov YAML in the Project tool window context menu" -->
+                A notification reports "Codecov configuration is valid." or "Codecov configuration is invalid." and names the file.
                 <!-- planned-image src="codecov_validation_result.png" alt="Notification that the Codecov configuration is valid, with View Validation Results" -->
             </step>
             <step>

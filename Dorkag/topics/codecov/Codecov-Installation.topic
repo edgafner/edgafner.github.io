@@ -16,7 +16,7 @@
 
     <link-summary>Install the Codecov plugin, start the trial or activate a license, and connect the project to Codecov with an API token.</link-summary>
     <card-summary>Install the plugin, activate it and connect the project to Codecov.</card-summary>
-    <web-summary>Install the Codecov plugin in JetBrains IDEs, start the 10-day trial and connect your project to Codecov with an API token and Test Connection.</web-summary>
+    <web-summary>Install the Codecov plugin in JetBrains IDEs, start the 10-day trial and connect your project to Codecov with an API token from your Codecov account.</web-summary>
 
     <p>
         The Codecov plugin reads the coverage that your CI uploads to Codecov.
@@ -25,8 +25,9 @@
 
     <chapter title="Requirements" id="codecov-requirements">
         <list>
-            <li>The current version requires IntelliJ-based IDEs 2026.3 (build 263) or later.
-                For IntelliJ-based IDEs 2026.2, the Marketplace provides Codecov 2026.2.5.</li>
+            <li>The current version works only with JetBrains IDEs 2026.3, from build 263.3889 (the 2026.3 EAP) on.
+                It does not install on earlier or later major versions.
+                For JetBrains IDEs 2026.2, the Marketplace provides Codecov 2026.2.5.</li>
             <li>The project is a Git repository with a remote on GitHub, GitLab or Bitbucket.</li>
             <li>The repository is activated on Codecov, and your CI uploads coverage reports to it.</li>
             <li>A Codecov API token for an account that can access the repository.</li>
@@ -36,7 +37,7 @@
     <chapter title="Install the Codecov plugin" id="codecov_install">
         <procedure title="Install from JetBrains Marketplace" id="codecov-installation-procedure">
             <step>
-                Press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>) and go to <ui-path>Settings | Plugins</ui-path>.
+                Open <ui-path>Settings | Plugins</ui-path> (<shortcut>Ctrl+Alt+S</shortcut>, macOS: <shortcut>⌘ ,</shortcut>).
             </step>
             <step>
                 On the <control>Marketplace</control> tab, search for <code>Codecov</code>.
@@ -54,22 +55,26 @@
         <p>
             Codecov is a paid plugin with a 10-day free trial.
             Start the trial or activate a license in <ui-path>Help | Register</ui-path>.
+            In free IDEs, such as Android Studio, use <ui-path>Help | Register Plugins</ui-path>.
         </p>
     </chapter>
 
     <chapter title="Connect the project to Codecov" id="codecov-sign-in">
         <p>
             The plugin authenticates with a Codecov API token.
-            Create the token in Codecov under your account's access settings.
             The settings page shows the hint "Generate a token at codecov.io/api/" under the token field.
         </p>
 
         <procedure title="Connect with an API token" id="sign-in-procedure">
             <step>
+                In Codecov, create an API token in the access settings of your account.
+                For details, see <a href="https://docs.codecov.com/reference/overview">Codecov API reference: getting started</a>.
+            </step>
+            <step>
                 Open the project in the IDE.
             </step>
             <step>
-                Press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>) and go to <ui-path>Settings | Tools | Codecov</ui-path>.
+                Open <ui-path>Settings | Tools | Codecov</ui-path> (<shortcut>Ctrl+Alt+S</shortcut>, macOS: <shortcut>⌘ ,</shortcut>).
             </step>
             <step>
                 In the <control>Codecov Connection</control> group, keep <control>Server URL</control> at <code>https://api.codecov.io</code>.
@@ -110,11 +115,11 @@
             <def title="Connection Test Successful, without a repository" id="test-result-no-repository">
                 <p>A warning reads "Connected to Codecov but could not detect repository. Please ensure your repository is activated on Codecov."
                     The token works, but no Codecov repository matches the Git remote.
-                    Check that the repository is activated on Codecov and that <control>Service Provider</control> matches the Git host.</p>
+                    To fix it, see <a href="Codecov-FAQ.topic" anchor="no-repository-detected"/>.</p>
             </def>
             <def title="Connection Test Failed" id="test-result-failed">
                 <p>The dialog reads "Connection failed. Please check your token.", or shows the error returned by the server.
-                    Check the token, <control>Server URL</control> and <control>Service Provider</control>, then click <control>Test Connection</control> again.</p>
+                    To fix it, see <a href="Codecov-FAQ.topic" anchor="auth-errors"/>.</p>
             </def>
         </deflist>
     </chapter>

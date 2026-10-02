@@ -19,14 +19,16 @@
 
     <p>
         The plugin has two settings pages.
-        Settings marked <emphasis>all projects</emphasis> apply to every project in the IDE; the rest are saved in the project.
+        Settings with "Scope: all projects" apply to every project in the IDE.
+        All other settings are saved in the project.
     </p>
 
     <chapter title="Codecov page" id="codecov-settings-page">
         <p>Path: <ui-path>Settings | Tools | Codecov</ui-path>.</p>
         <!-- planned-image src="codecov_settings_connection.png" alt="Codecov settings page connected to a GitHub repository" -->
 
-        <chapter title="Codecov Connection" id="settings-connection">
+        <chapter title="Connection" id="settings-connection">
+            <p>Group: <control>Codecov Connection</control>.</p>
             <deflist type="medium">
                 <def title="Server URL" id="setting-server-url">
                     The Codecov API server.
@@ -59,7 +61,8 @@
             </deflist>
         </chapter>
 
-        <chapter title="AI Prompt Templates" id="settings-ai-prompts">
+        <chapter title="AI prompt templates" id="settings-ai-prompts">
+            <p>Group: <control>AI Prompt Templates</control>.</p>
             <deflist type="medium">
                 <def title="Enable AI prompt generation from coverage gutters" id="setting-enable-ai-prompts">
                     Lets <control>Generate AI Prompt</control> in the coverage popup copy a prompt to the clipboard.
@@ -82,6 +85,7 @@
             <deflist type="medium">
                 <def title="Inject codecov YAML schema" id="setting-inject-schema">
                     Applies the bundled Codecov schema to YAML files whose name contains <code>codecov</code>, for completion and quick documentation.
+                    It also limits <control>Validate Codecov YAML</control> to <path>codecov.yml</path> and <path>codecov.yaml</path>; when it is off, the action appears for every file.
                     Default: on.
                 </def>
                 <def title="Switch to v1 endpoint" id="setting-v1-endpoint">
@@ -124,14 +128,14 @@
     <chapter title="Settings outside the Codecov pages" id="other-settings">
         <deflist type="medium">
             <def title="Shortcut" id="setting-keymap">
-                <control>Show Codecov Coverage</control> uses <shortcut>Ctrl+Shift+Alt+C</shortcut> by default.
+                <control>Show Codecov Coverage</control> uses <shortcut>Ctrl+Shift+Alt+C</shortcut> (macOS: <shortcut>⌥ ⇧ ⌘ C</shortcut>) by default.
                 Change it in <ui-path>Settings | Keymap</ui-path>.
             </def>
             <def title="Notifications" id="setting-notifications">
                 Coverage drop, validation and connection messages belong to the <control>Codecov notifications</control> group in <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path>.
             </def>
             <def title="Dashboard filters" id="setting-dashboard-filters">
-                The <control>Metric</control>, branch and <control>Time range</control> filters of the Codecov Metrics dashboard are saved per project.
+                The metric, branch and time range filters of the <a href="Codecov-Metrics.topic" anchor="dashboard-filters">Codecov Metrics dashboard</a> are saved per project.
             </def>
             <def title="Folder coverage on or off" id="setting-folder-coverage-toggle">
                 <control>Show Coverage on Folders</control> is saved per project.
@@ -164,12 +168,8 @@
                 Reloads folder coverage.
             </def>
             <def title="Validate Codecov YAML" id="action-validate-yaml">
-                Location: editor and Project tool window context menus, for <path>codecov.yml</path> and <path>codecov.yaml</path>.
+                Location: editor and Project tool window context menus, for <path>codecov.yml</path> and <path>codecov.yaml</path> while <control>Inject codecov YAML schema</control> is on.
                 Validates the file on the Codecov server.
-            </def>
-            <def title="Upload Local Report" id="action-upload-local-report">
-                Location: <ui-path>Tools</ui-path> menu and editor context menu.
-                Uploads a local coverage report file (XML or JSON) to Codecov for the current commit.
             </def>
         </deflist>
     </chapter>

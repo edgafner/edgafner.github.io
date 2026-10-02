@@ -46,8 +46,9 @@
                 The <control>Prompt for covered code</control> template, with the text of that line.
             </def>
             <def title="Partially covered or not covered line" id="prompt-uncovered">
-                The <control>Prompt for uncovered code</control> template, with the whole method or function when it contains the block of missed lines around the line.
-                Otherwise, the prompt contains only that block of missed lines.
+                The <control>Prompt for uncovered code</control> template.
+                If the block of missed lines around the line is inside a method or function, the prompt contains that whole method or function.
+                Otherwise, it contains only the block of missed lines.
             </def>
         </deflist>
     </chapter>
@@ -55,7 +56,7 @@
     <chapter title="Customize the prompt templates" id="customize-templates">
         <procedure title="Edit a template" id="edit-ai-prompt-template">
             <step>
-                Press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>) and go to <ui-path>Settings | Tools | Codecov</ui-path>.
+                Open <ui-path>Settings | Tools | Codecov</ui-path> (<shortcut>Ctrl+Alt+S</shortcut>, macOS: <shortcut>⌘ ,</shortcut>).
             </step>
             <step>
                 In the <control>AI Prompt Templates</control> group, expand <control>Prompt Templates</control>.

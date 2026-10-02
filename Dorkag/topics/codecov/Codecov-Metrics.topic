@@ -22,7 +22,7 @@
         It compares the coverage of your current branch with the default branch and charts the coverage of recent commits.
         The dashboard follows the IDE theme.
     </p>
-    <!-- planned-image src="codecov_metrics_dashboard.png" alt="Codecov Metrics dashboard with PR impact cards and the coverage trend chart" -->
+    <!-- planned-image src="codecov_metrics_dashboard.png" alt="Codecov Metrics dashboard with pull request impact cards and the coverage trend chart" -->
 
     <chapter title="Open the dashboard" id="open-dashboard">
         <procedure title="Open Codecov Metrics" id="open-codecov-metrics" type="choices">
@@ -55,8 +55,9 @@
             Click <control>View on Codecov ↗</control> to open the head commit on Codecov in your browser.
         </p>
         <p>
-            To find the comparison, the plugin first uses the GitHub pull request of the branch, if you checked it out with the GitHub CLI or the GitHub plugin of the IDE.
-            Otherwise, it compares the newest commit of the branch that Codecov has processed with the point where the branch left the default branch.
+            To find the comparison on GitHub, the plugin first uses the pull request of the branch, if you checked it out with the GitHub CLI or the GitHub plugin of the IDE.
+            Otherwise, it compares your current commit with the point where the branch left the default branch.
+            If Codecov has not processed your current commit yet, it uses the newest commit of the branch that Codecov has processed.
         </p>
         <p>
             On the default branch, or when Codecov has no comparison, the dashboard shows "No Codecov compare report available for the current branch."
@@ -66,7 +67,7 @@
     <chapter title="Coverage trend" id="coverage-trend">
         <p>
             The chart shows the selected metric for each commit that Codecov processed, oldest on the left.
-            Its title names the time range and, if selected, the branch, for example "Coverage Trend (Last 3 Months)".
+            Its title names the time range and, if selected, the branch, for example "Coverage Trend (Last 3 months)".
         </p>
         <list>
             <li>Hover over a point to see the short commit hash, the date and the value.</li>

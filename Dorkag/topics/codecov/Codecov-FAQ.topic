@@ -12,20 +12,22 @@
     <card-summary>Solutions for missing coverage, connection errors and validation problems.</card-summary>
     <web-summary>Troubleshoot the Codecov plugin in JetBrains IDEs: missing coverage, undetected repositories, failed connection tests, empty dashboards and validation.</web-summary>
 
-    <chapter title="Why can't I see coverage for my branch?" id="missing-coverage">
+    <chapter title="Why doesn't the gutter show my branch's coverage?" id="missing-coverage">
         <p>
-            The editor gutter shows the coverage of the latest Codecov report on the repository's default branch, not of your current branch.
-            If a file shows no coverage at all, check the following:
+            The editor gutter shows the coverage of the repository's default branch, as described in <a href="Codecov-Editor-Coverage.topic" anchor="coverage-source"/>.
+            To see the coverage effect of your current branch, use the <a href="Codecov-Metrics.topic">Codecov Metrics dashboard</a> or <a href="Codecov-Folder-Coverage.topic">folder coverage</a>.
         </p>
+    </chapter>
+
+    <chapter title="Why does a file show no coverage?" id="file-no-coverage">
+        <p>If a file shows no coverage at all, check the following:</p>
         <list>
             <li>Your CI uploaded a coverage report to Codecov for the default branch, and the report includes the file.</li>
             <li>The file paths in the report match the paths in the Git repository.</li>
-            <li>Coverage is not hidden: right-click in the editor and look for <control>Show Codecov Coverage</control>.</li>
+            <li>Coverage is not hidden.
+                If the editor context menu shows <control>Show Codecov Coverage</control>, select it.</li>
             <li>The project is connected and the repository is detected in <ui-path>Settings | Tools | Codecov</ui-path>.</li>
         </list>
-        <p>
-            To see the coverage effect of your current branch, use the <a href="Codecov-Metrics.topic">Codecov Metrics dashboard</a> or <a href="Codecov-Folder-Coverage.topic">folder coverage</a>.
-        </p>
     </chapter>
 
     <chapter title="Why is no repository detected?" id="no-repository-detected">
@@ -44,7 +46,7 @@
             <control>Connection Test Failed</control> with "Connection failed. Please check your token." usually means the API token is wrong, revoked or expired, or <control>Server URL</control> is wrong.
         </p>
         <procedure title="Replace the API token" id="refresh-token">
-            <step>Create a new API token in Codecov.</step>
+            <step><a href="Codecov-Installation.topic" anchor="sign-in-procedure">Create a new API token</a> in Codecov.</step>
             <step>Go to <ui-path>Settings | Tools | Codecov</ui-path>.</step>
             <step>Paste the token into <control>API Token</control> and click <control>Test Connection</control>.</step>
         </procedure>
@@ -74,7 +76,7 @@
         <list>
             <li>You are on the default branch, which has nothing to compare.</li>
             <li>Codecov has no processed commit of the current branch yet.
-                Push the branch and wait for CI to upload coverage, then click <control>Refresh</control>.</li>
+                Push the branch and wait for CI to upload coverage, then click <control>Refresh</control> on the Codecov Metrics toolbar.</li>
         </list>
     </chapter>
 
@@ -95,7 +97,8 @@
                 Set it as described in <a href="Codecov-Installation.topic"/>.
             </li>
             <li>
-                <control>Validate Codecov YAML</control> is available only for files named exactly <path>codecov.yml</path> or <path>codecov.yaml</path>.
+                While <control>Inject codecov YAML schema</control> is on, <control>Validate Codecov YAML</control> is offered only for files named exactly <path>codecov.yml</path> or <path>codecov.yaml</path>.
+                Keep that option on, because otherwise the menu item appears for every file.
                 Completion also works in files such as <path>.codecov.yml</path>, but validation does not.
             </li>
         </list>

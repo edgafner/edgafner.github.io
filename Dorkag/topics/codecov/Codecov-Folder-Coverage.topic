@@ -46,7 +46,7 @@
             Hover over a folder to see its exact value, for example "Codecov coverage: 77.8%".
             The dot keeps the folder's own icon, so source and test root markings stay visible.
         </p>
-        <!-- planned-image src="codecov_project_view_folder_coverage.png" alt="Project view folders marked with Codecov coverage colors and a coverage tooltip" -->
+        <!-- planned-image src="codecov_project_view_folder_coverage.png" alt="Folders in the Project tool window marked with Codecov coverage colors and a coverage tooltip" -->
         <p>
             Folder coverage uses the latest Codecov report for the current Git branch.
             When you switch branches, it reloads.
@@ -63,9 +63,9 @@
     </chapter>
 
     <chapter title="Configure coverage bands and colors" id="folder-colors-config">
-        <procedure title="Change the bands" id="configure-folder-colors">
+        <procedure title="Change the coverage bands and colors" id="configure-folder-colors">
             <step>
-                Press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>) and go to <ui-path>Settings | Tools | Codecov | Folder Coverage</ui-path>.
+                Open <ui-path>Settings | Tools | Codecov | Folder Coverage</ui-path> (<shortcut>Ctrl+Alt+S</shortcut>, macOS: <shortcut>⌘ ,</shortcut>).
                 <!-- planned-image src="codecov_settings_folder_coverage.png" alt="Folder Coverage settings with thresholds and colors for each band" -->
             </step>
             <step>
@@ -109,7 +109,8 @@
         </table>
 
         <p>
-            The bounds must be between 0 and 100, each one higher than the next, and <control>Fair</control> must be greater than 0.
+            The bounds must be between 0 and 100, with <control>Excellent</control> higher than <control>Good</control> and <control>Good</control> higher than <control>Fair</control>.
+            <control>Fair</control> must be greater than 0.
             Each band needs its own color.
             To restore the defaults, click <control>Reset to Defaults</control>.
         </p>

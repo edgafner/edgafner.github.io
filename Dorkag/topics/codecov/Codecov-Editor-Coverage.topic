@@ -9,7 +9,7 @@
     <show-structure for="chapter,procedure" depth="2"/>
 
     <tldr>
-        <p>Show or hide coverage: <shortcut>Ctrl+Shift+Alt+C</shortcut></p>
+        <p>Show or hide coverage: <shortcut>Ctrl+Shift+Alt+C</shortcut> (macOS: <shortcut>⌥ ⇧ ⌘ C</shortcut>)</p>
         <p>Menus: editor context menu, gutter context menu</p>
         <p>Requires: a project connected to Codecov</p>
     </tldr>
@@ -65,19 +65,19 @@
     <chapter title="Show, hide and refresh coverage" id="show-hide-coverage">
         <procedure title="Show or hide coverage" id="toggle-coverage" type="choices">
             <step>
-                Press <shortcut>Ctrl+Shift+Alt+C</shortcut>.
+                Press <shortcut>Ctrl+Shift+Alt+C</shortcut> (macOS: <shortcut>⌥ ⇧ ⌘ C</shortcut>).
                 To see or change the shortcut on your operating system, go to <ui-path>Settings | Keymap</ui-path> and search for <code>Show Codecov Coverage</code>.
             </step>
             <step>
                 Right-click in the editor and select <control>Hide Codecov Coverage</control> or <control>Show Codecov Coverage</control>.
+                <!-- planned-image src="codecov_editor_context_menu.png" alt="Editor context menu with Hide Codecov Coverage and Refresh Codecov Coverage" -->
             </step>
             <step>
                 Right-click the editor gutter and select <control>Hide Codecov Coverage</control> or <control>Show Codecov Coverage</control>.
             </step>
         </procedure>
-        <!-- planned-image src="codecov_editor_context_menu.png" alt="Editor context menu with Hide Codecov Coverage, Refresh Codecov Coverage and Upload Local Report" -->
         <p>
-            The setting applies to all editors of the project.
+            Showing or hiding coverage applies to all editors of the project.
             Coverage is shown again the next time you open the project.
             The menu items appear only when the project is connected to Codecov and a repository is detected.
         </p>
@@ -89,7 +89,8 @@
         </procedure>
         <p>
             <control>Refresh Codecov Coverage</control> appears only while coverage is shown.
-            The plugin keeps coverage data for up to 5 minutes, so a refresh within that time can show the same data.
+            The plugin reuses the coverage it loaded in the last 5 minutes, even when you refresh.
+            Coverage from a new upload can take up to 5 minutes to appear.
         </p>
     </chapter>
 
