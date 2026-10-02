@@ -7,7 +7,7 @@
                   start-page="Dorkag.topic">
 
 
-    <toc-element topic="Dorkag.topic">
+    <toc-element topic="Dorkag.topic" toc-title="DORKAG">
         <include from="azdlib" element-id="azdsn.tree"/>
         <include from="gbrowserlib" element-id="gbrowsersn.tree"/>
         <include from="jirailib" element-id="jiraisn.tree"/>

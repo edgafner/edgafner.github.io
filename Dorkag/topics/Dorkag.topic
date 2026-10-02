@@ -19,17 +19,13 @@
 
         <spotlight>
             <card href="Azd.topic" icon="azd_icon.svg" alt="AZD plugin icon"
-                  summary="Create and review Azure DevOps pull requests, track pipeline runs, work with boards and get AI pull request reviews in the IDE."/>
+                  summary="Create and review Azure DevOps pull requests, track pipeline runs, work with boards and get AI pull request reviews in the IDE. Paid, with a 10-day free trial."/>
             <card href="JirAI.topic" icon="jirai_icon.svg" alt="JirAI plugin icon"
-                  summary="Browse, create and edit Jira Cloud issues, move cards on the board and give your AI assistant Jira tools in the IDE."/>
+                  summary="Browse, create and edit Jira Cloud issues, move cards on the board and give your AI assistant Jira tools in the IDE. Paid, with a 7-day free trial."/>
         </spotlight>
 
         <primary>
-            <title>All plugins</title>
-            <card href="Azd.topic" icon="azd_icon.svg" alt="AZD plugin icon"
-                  summary="Azure DevOps pull requests, pipelines and boards in the IDE. Paid, with a 10-day free trial."/>
-            <card href="JirAI.topic" icon="jirai_icon.svg" alt="JirAI plugin icon"
-                  summary="Jira Cloud issues, boards and AI workflows in the IDE. Paid, with a 7-day free trial."/>
+            <title>More plugins</title>
             <card href="Codecov.topic" icon="code_cov.svg" alt="Codecov plugin icon"
                   summary="Codecov line coverage and pull request impact in the editor. Paid, with a 10-day free trial."/>
             <card href="QueryFlag.topic" icon="queryflag.svg" alt="QueryFlag plugin icon"
