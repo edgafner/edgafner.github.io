@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Review pipeline test results" id="Azd-Pipeline-Tests">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Open: a run tab, <control>View Pipeline Diagram</control>, then the <control>Tests</control> tab</p>
+        <p>Requires: a pipeline that publishes test results</p>
+    </tldr>
+
+    <link-summary>Review the test results of a pipeline run, jump to failing tests and link tests to Azure DevOps test cases.</link-summary>
+    <card-summary>Triage pipeline test failures and link automated tests to Azure DevOps test cases.</card-summary>
+    <web-summary>Review Azure Pipelines test results in JetBrains IDEs with AZD: sort and filter tests, jump to the
+        source, analyze stack traces and link tests to test cases.</web-summary>
+
+    <p>
+        When a pipeline publishes test results, AZD shows them next to the stage diagram of the run.
+        From a failed test you can open its source, read the stack trace or link it to a manual test case.
+    </p>
+
+    <chapter title="Open the test results" id="open-test-results">
+        <procedure title="Open the test results of a run" id="open-test-results-procedure">
+            <step>
+                <p>In the <control>AZD Pipelines</control> tool window, open a run.</p>
+            </step>
+            <step>
+                <p>Click <control>View Pipeline Diagram</control>.</p>
+            </step>
+            <step>
+                <p>In the <control>Pipeline !&lt;id&gt;</control> editor tab, select the <control>Tests</control> tab.</p>
+                <img src="pipeline_test_results_v2.png"
+                     alt="Run tab next to the Tests tab with the test summary and a tree of test classes"
+                     width="706" thumbnail="true" border-effect="rounded"/>
+                <!-- planned-image src="azd_pipelines_tests.png" alt="Tests tab with the summary row and a test tree with one failed and one skipped test" replaces="pipeline_test_results_v2.png" -->
+            </step>
+        </procedure>
+        <p>
+            The summary row shows the total, passed, failed, skipped and other tests, the pass rate and the duration.
+            Tests are grouped by class.
+        </p>
+    </chapter>
+
+    <chapter title="Sort and filter tests" id="sort-filter-tests">
+        <p>Use the toolbar above the tree:</p>
+        <list>
+            <li>Click the refresh icon to reload the results.</li>
+            <li>Expand or collapse all groups.</li>
+            <li>Click the filter icon to show only some outcomes.</li>
+            <li>Click the sort icon and select <control>Default</control>, <control>By Name</control> or <control>By Duration</control>.
+                Select <control>Descending</control> to reverse the order.</li>
+        </list>
+    </chapter>
+
+    <chapter title="Work with a test" id="test-actions">
+        <p>Right-click a test or a test class:</p>
+        <!-- planned-image src="azd_pipelines_test_menu.png" alt="Context menu of a failed test with Jump to Test and Analyze Test Stack Trace" -->
+        <deflist type="medium">
+            <def title="Jump to Test">Opens the test method, or the test class for a group, in the editor.</def>
+            <def title="Copy Test Name">Copies the full test name.</def>
+            <def title="Associate to a Test Case">Links the automated test to a manual test case. See <a anchor="associate-test-case"/>.</def>
+            <def title="Open in Browser">Opens the test result on Azure DevOps.</def>
+            <def title="Analyze Test Stack Trace">Opens the stack trace of a failed test in a <control>&lt;Stacktrace&gt;</control> tab with links to your code.</def>
+            <def title="Expand All, Collapse All">Expands or collapses the tree.</def>
+        </deflist>
+    </chapter>
+
+    <chapter title="Link a test to a test case" id="associate-test-case">
+        <p>
+            Associating an automated test with a manual test case in Azure Test Plans lets Azure DevOps track that test case through your pipeline.
+        </p>
+        <procedure title="Associate a test with a test case" id="associate-test-case-procedure">
+            <step>
+                <p>Right-click the test and select <control>Associate to a Test Case</control>.</p>
+            </step>
+            <step>
+                <p>In the <control>Associate Pipeline Test to Test Case</control> dialog, type the test case ID or title in <control>Test case</control>
+                    and select it from the list.</p>
+                <img src="test_case_association.png"
+                     alt="Associate Pipeline Test to Test Case dialog with matching test cases listed for the typed ID"
+                     width="706" thumbnail="true" border-effect="rounded"/>
+                <!-- planned-image src="azd_pipelines_associate_test_case.png" alt="Associate Pipeline Test to Test Case dialog with the test case completion list open" replaces="test_case_association.png" -->
+            </step>
+            <step>
+                <p>Click <control>Associate</control>.</p>
+            </step>
+        </procedure>
+        <p>The list marks test cases that are already associated with another test.</p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azure-DevOps-Pipelines.topic"/>
+            <a href="Azd-Pipeline-Metrics.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/test/review-continuous-test-results-after-build">Review test results (Microsoft Learn)</a>
+            <a href="https://learn.microsoft.com/en-us/azure/devops/test/associate-automated-test-with-test-case">Associate automated tests with test cases (Microsoft Learn)</a>
+        </category>
+    </seealso>
+</topic>

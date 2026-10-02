@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Pipeline metrics and agent pools" id="Azd-Pipeline-Metrics">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Open: <control>Pipeline Metrics</control> in the <control>AZD Pipelines</control> title bar</p>
+        <p>Requires: the IDE built-in browser (JCEF)</p>
+    </tldr>
+
+    <link-summary>Track pipeline pass rate, duration, queue time and failure causes, and manage the agents in your agent pools.</link-summary>
+    <card-summary>Pipeline pass rate, duration, queue time and failure causes, plus agent pools.</card-summary>
+    <web-summary>Track Azure Pipelines pass rate, build duration, queue time and failure causes in JetBrains IDEs with
+        AZD, and inspect and manage agent pools and agents.</web-summary>
+
+    <p>
+        The <control>Pipeline Metrics</control> editor tab has two tabs: <control>Pipeline</control>, a dashboard of the runs in the repository,
+        and <control>Agents</control>, the agent pools of the organization.
+        For metrics about pull requests, see <a href="Work-with-Azure-DevOps-pull-requests.topic" anchor="pr-metrics">Pull request metrics</a>.
+    </p>
+
+    <chapter title="Open the pipeline dashboard" id="pipeline-dashboard">
+        <procedure title="Open pipeline metrics" id="open-pipeline-metrics">
+            <step>
+                <p>Open the <control>AZD Pipelines</control> tool window.</p>
+            </step>
+            <step>
+                <p>In the title bar, click <control>Pipeline Metrics</control>.</p>
+                <p>The <control>Pipeline Metrics</control> editor tab opens on the <control>Pipeline</control> tab.</p>
+                <!-- planned-image src="azd_pipeline_metrics.png" alt="Pipeline Metrics dashboard with the summary row and populated widgets for the last 30 days" -->
+            </step>
+            <step>
+                <p>Narrow the data with the filters at the top: <control>Time range</control>, <control>Pipeline</control>,
+                    <control>Branch</control> and <control>Trigger</control>.
+                    Click <control>Refresh</control> to reload.</p>
+            </step>
+        </procedure>
+        <p>
+            <control>Time range</control> offers <control>Last 7 days</control>, <control>Last 30 days</control>,
+            <control>Last 90 days</control>, <control>Last 6 months</control> and <control>Last year</control>.
+            <control>Pipeline</control>, <control>Branch</control> and <control>Trigger</control> accept several values;
+            use <control>All</control> or <control>Clear</control> at the bottom of the popup.
+        </p>
+    </chapter>
+
+    <chapter title="Read the dashboard" id="dashboard-widgets">
+        <p>The summary row shows:</p>
+        <deflist type="medium">
+            <def title="Total Builds, Passed, Failed">Number of runs in the selected range. <control>Passed</control> includes partially succeeded runs.</def>
+            <def title="Pass Rate">Share of runs that passed.</def>
+            <def title="Avg Execution">Average run time from start to finish, without queue time, with the median below.</def>
+            <def title="Avg Queue, Queue P95">Time runs waited for an agent: average and median, and the 95th percentile.</def>
+        </deflist>
+        <p>The widgets below show:</p>
+        <deflist type="medium">
+            <def title="Pipeline Pass Rate (%)">Pass rate over time.</def>
+            <def title="Build Duration">Run duration over time.</def>
+            <def title="Queue Time">Time spent waiting for an agent, over time.</def>
+            <def title="Top Failing Pipelines">Pipelines with the most failures. Hidden when you filter on one pipeline.</def>
+            <def title="Top Failure Causes">The most frequent failure reasons in a sample of failed runs.</def>
+            <def title="Slowest Stages">Stages with the longest durations in a sample of runs.</def>
+            <def title="Trigger Distribution">How runs were started, for example by CI, by a pull request or manually.</def>
+        </deflist>
+        <p>To enlarge a widget, click its maximize button.</p>
+    </chapter>
+
+    <chapter title="Agent pools" id="agent-pools">
+        <p>
+            The <control>Agents</control> tab lists the agent pools of the organization with the number of online, busy, idle and offline agents.
+        </p>
+        <!-- planned-image src="azd_agent_pools.png" alt="Agents tab with the agent pool list and one pool open on its Agents sub-tab" -->
+        <procedure title="Inspect an agent pool" id="inspect-agent-pool">
+            <step>
+                <p>In the <control>Pipeline Metrics</control> editor tab, select the <control>Agents</control> tab.</p>
+            </step>
+            <step>
+                <p>Optional: click the filter icon to show pools by <control>Type</control> (<control>Self-hosted</control> or <control>Microsoft-hosted</control>)
+                    or by <control>Status</control>, or select <control>Favorites Only</control>.
+                    Click the sort icon to sort by <control>Name</control>, <control>Total agents</control>, <control>Online</control>,
+                    <control>Busy</control> or <control>Offline</control>.</p>
+            </step>
+            <step>
+                <p>Select a pool to open it. The pool has three sub-tabs: <control>Details</control>, <control>Agents</control> and <control>Jobs</control>.</p>
+            </step>
+        </procedure>
+        <p>
+            Mark the pools you use often with <control>Add to favorites</control>, so that <control>Favorites Only</control> shows just those.
+            Double-click an agent or a job row to open its run.
+            The run opens in the <control>AZD Pipelines</control> tool window, or in the browser if
+            <a href="Azd-Settings-Configuration.topic" anchor="general-configuration">Open AZD links in tool window</a> is off.
+        </p>
+
+        <chapter title="Manage agents" id="manage-agents">
+            <p>
+                On the <control>Agents</control> sub-tab, select an agent and use the toolbar.
+                These actions need the <control>Manage</control> permission on the pool; without it, the buttons stay disabled.
+            </p>
+            <deflist type="medium">
+                <def title="Enable">The agent picks up new jobs again.</def>
+                <def title="Disable for Maintenance">The agent finishes its current job and then takes no new work.</def>
+                <def title="Rename…">Changes the agent name.</def>
+                <def title="Edit Capabilities…">Adds, edits or removes user-defined capabilities.</def>
+                <def title="Open in Browser">Opens the agent on Azure DevOps.</def>
+            </deflist>
+        </chapter>
+    </chapter>
+
+    <chapter title="If the dashboard is blank" id="metrics-jcef">
+        <p>
+            The dashboard uses the IDE built-in browser (JCEF).
+            If JCEF is not available, the tab shows a message instead of the charts.
+            See <a href="Azd-FAQ.topic" anchor="jcef-views">A view shows a message instead of content</a>.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azure-DevOps-Pipelines.topic"/>
+            <a href="Azd-Pipeline-Tests.topic"/>
+            <a href="Work-with-Azure-DevOps-pull-requests.topic" anchor="pr-metrics">Pull request metrics</a>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues">Agent pools (Microsoft Learn)</a>
+        </category>
+    </seealso>
+</topic>

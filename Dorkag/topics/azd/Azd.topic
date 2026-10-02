@@ -3,32 +3,53 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Azd" id="Azd">
+       title="AZD" id="Azd">
+
+    <link-summary>Documentation for AZD, the Azure DevOps plugin for JetBrains IDEs.</link-summary>
+    <card-summary>Azure DevOps pull requests, pipelines, boards and AI review in your JetBrains IDE.</card-summary>
+    <web-summary>AZD brings Azure DevOps to JetBrains IDEs: clone repositories, review and merge pull requests, run
+        and approve pipelines, manage work items and use AI review.</web-summary>
 
     <section-starting-page>
         <title>AZD</title>
         <description>
-            Manage Azure DevOps projects directly from your JetBrains IDE. Clone repositories, review Pull Requests, manage Pipelines, and leverage AI to boost your productivity.
+            Work with Azure DevOps Services and Azure DevOps Server without leaving your JetBrains IDE.
+            Clone repositories, review and merge pull requests, run and approve pipelines, track work items, and use AI to
+            write and review changes.
         </description>
 
-
         <spotlight>
-            <a href="Azd-Whats-New.topic" type="learn" summary="What's new in V2026.3.5">What's New</a>
-            <a href="Azd-Installation.topic" type="start" summary="Get started with AZD">Installation</a>
+            <a href="Azd-Installation.topic" type="start"
+               summary="Install AZD and sign in with Microsoft, the Azure CLI or a personal access token">Install and connect</a>
+            <a href="Work-with-Azure-DevOps-pull-requests.topic" type="tools"
+               summary="Find, filter and open pull requests in the AZD Pull Requests tool window">Work with pull requests</a>
         </spotlight>
 
         <primary>
-            <title>Key Features</title>
-            <a href="Work-with-Azure-DevOps-pull-requests.topic" type="tools">Pull Requests</a>
-            <a href="Pull-Request-Details.topic" type="integration">Review a PR</a>
-            <a href="Azure-DevOps-Pipelines.topic" type="cloud">Pipelines</a>
+            <title>Features</title>
+            <a href="Pull-Request-Details.topic" type="integration"
+               summary="Read the timeline, check policies and review changed files">Review a pull request</a>
+            <a href="Azd-AI.topic" type="development"
+               summary="Generate titles, descriptions and commit messages, and review changes with AI">AI assistant</a>
+            <a href="Azure-DevOps-Pipelines.topic" type="cloud"
+               summary="Run pipelines, inspect runs, read logs and view the stage diagram">Work with pipelines</a>
+            <a href="Azd-Pipeline-Yaml.topic" type="development"
+               summary="Completion and validation for Azure Pipelines YAML files">Edit pipeline YAML</a>
+            <a href="Azd-Boards.topic" type="tools"
+               summary="Find, edit and create work items, and use the Kanban board">Boards and work items</a>
+            <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" type="learn"
+               summary="Clone repositories and open files on Azure DevOps">Clone and manage projects</a>
         </primary>
 
         <secondary>
-            <title>AI &amp; Support</title>
-            <a href="AI-Pull-Request-Review.topic" type="learn">AI Code Review</a>
-            <a href="Azd-Reference-And-Support.topic" type="support">Support</a>
-            <a href="Azd-FAQ.topic" type="support">FAQ &amp; Troubleshooting</a>
+            <title>Reference and help</title>
+            <a href="Azd-Whats-New.topic" type="learn" summary="Changes in recent AZD releases">What's new</a>
+            <a href="Azd-Settings-Configuration.topic" type="settings"
+               summary="Every AZD settings page and option">Settings reference</a>
+            <a href="Azd-FAQ.topic" type="support"
+               summary="Fix sign-in, proxy, credential and display problems">FAQ and troubleshooting</a>
+            <a href="Azd-Reference-And-Support.topic" type="support"
+               summary="Report a bug, contact the developer and read about privacy">Support</a>
         </secondary>
 
     </section-starting-page>

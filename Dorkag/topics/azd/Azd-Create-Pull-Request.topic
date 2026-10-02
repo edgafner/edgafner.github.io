@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Create a pull request" id="Azd-Create-Pull-Request">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Start: <control>Create Pull Request…</control> (<control>+</control>) in the <control>AZD Pull Requests</control> tool window</p>
+        <p>Shortcut in the tool window: <shortcut>Alt+Insert</shortcut> (macOS: <shortcut>⌘ N</shortcut>)</p>
+        <p>Templates: <ui-path>Settings | Version Control | AZD | Preferences</ui-path>, <control>Auto-fill description from PR templates</control></p>
+    </tldr>
+
+    <link-summary>Open a new pull request tab, pick the branches, fill in the title, description, reviewers, work items and labels, and create the pull request.</link-summary>
+    <card-summary>Create an Azure DevOps pull request or a draft from the IDE, with reviewers, work items and labels.</card-summary>
+    <web-summary>Create Azure DevOps pull requests and drafts in JetBrains IDEs with AZD: choose branches, use PR
+        templates, add reviewers, work items and labels, and generate text with AI.</web-summary>
+
+    <p>
+        AZD creates pull requests in an editor-like tab of the <control>AZD Pull Requests</control> tool window.
+        The tab title is <control>New Pull Request at</control> followed by the repository name.
+    </p>
+
+    <chapter title="Open the new pull request tab" id="open-create-tab">
+        <procedure title="Start a new pull request" id="start-new-pull-request" type="choices">
+            <step>
+                In the title bar of the <control>AZD Pull Requests</control> tool window, click <control>Create Pull Request…</control> (<control>+</control>).
+                When the tool window has the focus, you can also press <shortcut>Alt+Insert</shortcut> (macOS: <shortcut>⌘ N</shortcut>).
+            </step>
+            <step>
+                Right-click a file or the editor, then select <ui-path>Git | Create Pull Request…</ui-path>.
+            </step>
+            <step>
+                After you push a branch, click <control>Create a pull request</control> in the push notification.
+                If a pull request already exists for the branch, the notification offers <control>Open pull request details</control> instead.
+                <!-- planned-image src="azd_pr_push_notification.png" alt="Push notification with the Create a pull request link" -->
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Fill in and create the pull request" id="create-pull-request">
+        <procedure title="Create a pull request" id="create-pr-procedure">
+            <step>
+                Check the branches in the header of the tab.
+                The header reads <code>repository:target ← repository:source</code>.
+                To change a side, click it, select the <control>Head repository</control> and the <control>Branch</control>, and click <control>Save</control>.
+                <!-- planned-image src="azd_pr_create_branches.png" alt="Head repository and branch selector open in the new pull request tab" -->
+            </step>
+            <step>
+                Review the commits that the pull request will contain.
+            </step>
+            <step>
+                Enter a <control>Title</control>.
+                To generate one, click the AI button in the field; see <a href="AI-Title-Description-Generation.topic"/>.
+            </step>
+            <step>
+                Edit the <control>Description</control>.
+                <p>
+                    AZD fills in the description from the repository's pull request template when one exists and the template option is on.
+                    Otherwise, it lists the commit messages.
+                    The counter under the field shows the length; Azure DevOps accepts up to 4000 characters.
+                </p>
+                <p>
+                    Type <code>!</code> to reference another pull request, or <code>#</code> to reference a work item, and select it from the completion list.
+                </p>
+            </step>
+            <step>
+                Optional: next to <control>Add reviewers</control>, click the pencil icon and select reviewers.
+            </step>
+            <step>
+                Optional: next to <control>Work items to link</control>, select the work items to link.
+            </step>
+            <step>
+                Optional: next to <control>Add labels</control>, select labels.
+                To add a label that does not exist yet, click <control>+</control>, enter it in the <control>Add Custom Label</control> dialog, and click <control>OK</control>.
+                <!-- planned-image src="azd_pr_create_label.png" alt="Add Custom Label dialog with a label name entered" -->
+            </step>
+            <step>
+                Click <control>Create Pull Request</control>.
+                To create a draft instead, click the arrow on the button and select <control>Create Draft Pull Request</control>.
+                <!-- planned-image src="azd_pr_create_form.png" alt="New pull request tab with branches, commits, title, description, a reviewer, a work item and a label" -->
+            </step>
+        </procedure>
+        <p>
+            If the source branch exists only locally, AZD opens the <control>Pull Request Branch</control> dialog.
+            Confirm the <control>Remote branch name</control>; AZD pushes the branch and then creates the pull request.
+        </p>
+        <p>
+            To publish a draft later, see <a href="Azd-PR-Complete.topic" anchor="azd_publish-draft"/>.
+            Labels can be set only while you create the pull request.
+        </p>
+    </chapter>
+
+    <chapter title="Use pull request templates" id="pr-templates">
+        <p>
+            Azure DevOps repositories can store description templates.
+            To use them in AZD, select <control>Auto-fill description from PR templates</control> in <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
+            The option is off by default.
+        </p>
+        <p>AZD looks for a default template in these locations, in this order:</p>
+        <list>
+            <li><path>.azuredevops/pull_request_template.md</path> or <path>.txt</path></li>
+            <li><path>.vsts/pull_request_template.md</path> or <path>.txt</path></li>
+            <li><path>docs/pull_request_template.md</path> or <path>.txt</path></li>
+            <li><path>pull_request_template.md</path> or <path>.txt</path> in the repository root</li>
+        </list>
+        <p>
+            Branch-specific templates in a <path>pull_request_template/branches</path> folder under the same locations are also supported.
+        </p>
+    </chapter>
+
+    <chapter title="Messages in the new pull request tab" id="create-pr-messages">
+        <deflist type="medium">
+            <def title="Pull Request already exists">
+                An active pull request already uses the same branches.
+                Click <control>View</control> to open it.
+            </def>
+            <def title="No changes between 'source' and 'target'">
+                The source branch has no commits that the target branch lacks.
+            </def>
+            <def title="Unable to create pull request from 'source' to 'target'">
+                The branches are in the wrong direction for a pull request.
+                Swap the source and target branches.
+            </def>
+            <def title="Commits will be pushed to the protected branch">
+                Creating the pull request would push commits to a protected branch.
+                Check the source branch before you continue.
+            </def>
+        </deflist>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Work-with-Azure-DevOps-pull-requests.topic"/>
+            <a href="AI-Title-Description-Generation.topic"/>
+            <a href="Pull-Request-Details.topic"/>
+            <a href="Azd-PR-Complete.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/pull-requests">Create pull requests (Microsoft Learn)</a>
+            <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/pull-request-templates">Pull request templates (Microsoft Learn)</a>
+        </category>
+    </seealso>
+</topic>

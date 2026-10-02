@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Vote, complete and merge" id="Azd-PR-Complete">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Actions: <control>Pull Request Actions</control> (⋮) at the bottom of the pull request details</p>
+        <p>Azure DevOps-style buttons: <ui-path>Settings | Version Control | AZD | UI Customization</ui-path>, <control>Adopt Azure DevOps UI style</control></p>
+    </tldr>
+
+    <link-summary>Vote on a pull request, manage reviewers, publish drafts, complete or auto-complete with a merge method, and abandon or reactivate pull requests.</link-summary>
+    <card-summary>Vote, manage reviewers, and complete, auto-complete or abandon an Azure DevOps pull request.</card-summary>
+    <web-summary>Finish Azure DevOps pull requests in JetBrains IDEs with AZD: votes, reviewers, drafts, merge
+        methods, auto-complete and abandon, without opening the browser.</web-summary>
+
+    <p>
+        The buttons at the bottom of the pull request details depend on your role.
+        The author and reviewers see <control>Request Review…</control>, the merge button when the pull request is approved, and the <control>Pull Request Actions</control> menu (⋮).
+        Other users see <control>Set Myself as Reviewer</control> and a shorter menu.
+    </p>
+
+    <chapter title="The pull request actions menu" id="actions-menu">
+        <p>Click <control>Pull Request Actions</control> (⋮) to open the menu:</p>
+        <deflist type="medium">
+            <def title="Review with AI">Opens AI Chat or AI Auto Review; see <a href="AI-Pull-Request-Review.topic"/>.</def>
+            <def title="Approve">The vote submenu; see <a anchor="azd_vote"/>.</def>
+            <def title="Mark as Draft">Turns the pull request back into a draft. Only the author sees this item.</def>
+            <def title="Complete…, Set Auto Complete…, Cancel Set Auto Complete…">Completes the pull request, or sets or cancels auto-complete; see <a anchor="azd_merge"/>.</def>
+            <def title="Request Review…">Adds or re-requests reviewers; see <a anchor="azd_request-review"/>.</def>
+            <def title="Merge Review…">Merge shortcuts for an approved pull request; see <a anchor="merge-shortcuts"/>.</def>
+            <def title="Requeue Expired CI">Appears when a build validation has expired; see <a anchor="requeue-expired-ci"/>.</def>
+            <def title="Close Pull Request">Abandons the pull request; see <a anchor="close-pull-request"/>.</def>
+        </deflist>
+        <!-- planned-image src="azd_pr_actions_menu.png" alt="Pull Request Actions menu of an approved pull request" -->
+    </chapter>
+
+    <chapter title="Vote" id="azd_vote">
+        <procedure title="Vote on a pull request" id="vote-procedure">
+            <step>
+                In the pull request details, click <control>Pull Request Actions</control> (⋮) and point to <control>Approve</control>.
+            </step>
+            <step>
+                Select <control>Approve</control>, <control>Approve With Suggestions</control>, <control>Wait For Author</control> or <control>Reject</control>.
+                To withdraw your vote, select <control>Reset Feedback</control>.
+                <!-- planned-image src="azd_pr_vote_menu.png" alt="Approve submenu with Approve, Approve With Suggestions, Reset Feedback, Wait For Author and Reject" -->
+            </step>
+        </procedure>
+        <p>
+            If you prefer the layout of the Azure DevOps web page, select <control>Adopt Azure DevOps UI style</control>
+            in <ui-path>Settings | Version Control | AZD | UI Customization</ui-path>.
+            The details then show a <control>Submit Review</control> button with the vote options, next to the complete button.
+        </p>
+        <!-- planned-image src="azd_pr_submit_review_ui_style.png" alt="Submit Review button with the vote options open, shown with Adopt Azure DevOps UI style" -->
+    </chapter>
+
+    <chapter title="Manage reviewers" id="azd_request-review">
+        <list>
+            <li>
+                Click <control>Request Review…</control>, search for people or groups, and select them.
+                The search also finds users who have access through Microsoft Entra ID groups.
+                When reviewers are waiting for your changes, the button reads <control>Re-request Review…</control>.
+            </li>
+            <li>
+                If you are not a reviewer, click <control>Set Myself as Reviewer</control>.
+            </li>
+            <li>
+                To remove a reviewer or change whether their vote is required, open the menu of their row in the status area and select
+                <control>Remove … from reviewers</control>, <control>Make '…' Optional</control> or <control>Make '…' Required</control>.
+            </li>
+        </list>
+        <!-- planned-image src="azd_pr_request_review.png" alt="Request Review popup with a search term and two selected reviewers" -->
+        <!-- planned-image src="azd_pr_reviewer_menu.png" alt="Menu of a reviewer row with Remove and Make Optional" -->
+    </chapter>
+
+    <chapter title="Reviewer status" id="reviewer-status">
+        <secondary-label ref="azd_version"/>
+        <p>
+            Each reviewer has a row in the status area of the pull request details.
+            The avatar outline and icon show the vote, and the text says it:
+        </p>
+        <deflist type="medium">
+            <def title="… approved review">The reviewer approved.</def>
+            <def title="… approved with suggestions">The reviewer approved and left suggestions.</def>
+            <def title="… is waiting for updates">The reviewer voted <control>Wait For Author</control>.</def>
+            <def title="… rejected the changes">The reviewer rejected the pull request.</def>
+            <def title="… declined to review">The reviewer declined the review request.</def>
+            <def title="Waiting for review from …">The reviewer has not voted yet.</def>
+        </deflist>
+    </chapter>
+
+    <chapter title="Publish a draft or mark as draft" id="azd_publish-draft">
+        <p>
+            A draft pull request shows <control>Publish Pull Request</control> at the bottom of the details.
+            Click it to make the pull request active and notify the reviewers.
+            To turn an active pull request back into a draft, select <control>Mark as Draft</control> in the <control>Pull Request Actions</control> menu.
+        </p>
+        <!-- planned-image src="azd_pr_publish_draft.png" alt="Draft pull request details with the Publish Pull Request button" -->
+    </chapter>
+
+    <chapter title="Complete a pull request" id="azd_merge">
+        <p>
+            When all required policies pass, AZD offers <control>Complete…</control>.
+            It is the main button of an approved pull request and an item of the <control>Pull Request Actions</control> menu.
+        </p>
+        <procedure title="Complete a pull request" id="complete-pull-request">
+            <step>
+                Click <control>Complete…</control> or select it in the <control>Pull Request Actions</control> menu.
+            </step>
+            <step>
+                In the dialog, select a <control>Merge method</control>.
+                The list contains only the methods that the target branch allows:
+                <list>
+                    <li><control>Merge (no fast-forward)</control> keeps the history exactly as it happened.</li>
+                    <li><control>Squash commit</control> condenses the source commits into one new commit.</li>
+                    <li><control>Rebase and fast-forward</control> replays the source commits onto the target without a merge commit.</li>
+                    <li><control>Semi-linear merge</control> replays the source commits and then creates a merge commit.</li>
+                </list>
+            </step>
+            <step>
+                Select the options you need:
+                <control>Complete associated work items after merging</control>,
+                <control>Delete … after merging</control> for the source branch,
+                and <control>Customize merge commit message</control> to edit the <control>Merge commit message</control>.
+                AZD remembers these choices.
+                <!-- planned-image src="azd_pr_complete_dialog.png" alt="Complete dialog with the Squash commit merge method and the three options" -->
+            </step>
+            <step>
+                Click the confirmation button, which is named after the merge method.
+            </step>
+        </procedure>
+
+        <chapter title="Merge shortcuts" id="merge-shortcuts">
+            <p>
+                For an approved pull request, the arrow on the complete button and the <control>Merge Review…</control> submenu of <control>Pull Request Actions</control>
+                offer <control>Merge…</control>, <control>Squash and Merge…</control>, <control>Rebase</control> and <control>Rebase with a merge commit</control>.
+                Each opens the completion dialog with only that method.
+            </p>
+            <!-- planned-image src="azd_pr_merge_options.png" alt="Complete button with the merge options open" -->
+        </chapter>
+
+        <chapter title="Set auto-complete" id="auto-complete">
+            <p>
+                While required policies are still pending, <control>Complete…</control> changes to <control>Set Auto Complete…</control>.
+                Click it, choose the merge method and options in the <control>Enable automatic completion</control> dialog, and click <control>Set auto-complete</control>.
+                Azure DevOps completes the pull request as soon as all required policies pass.
+            </p>
+            <p>
+                To stop it, click <control>Cancel Set Auto Complete…</control>.
+            </p>
+            <!-- planned-image src="azd_pr_auto_complete.png" alt="Enable automatic completion dialog with a merge method selected" -->
+        </chapter>
+    </chapter>
+
+    <chapter title="Re-queue expired builds" id="requeue-expired-ci">
+        <p>
+            When a build validation policy has expired, <control>Pull Request Actions</control> shows <control>Requeue Expired CI</control>.
+            Select the build to queue it again.
+            You can also re-trigger an expired build from the <control>Details…</control> link of the build checks; see <a href="Pull-Request-Details.topic" anchor="azd_pull_request_status"/>.
+        </p>
+    </chapter>
+
+    <chapter title="Abandon or reactivate" id="close-pull-request">
+        <p>
+            To abandon a pull request, select <control>Close Pull Request</control> in the <control>Pull Request Actions</control> menu.
+            An abandoned pull request shows <control>Reopen Pull Request</control>; click it to make the pull request active again.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Pull-Request-Details.topic"/>
+            <a href="Azd-PR-Comments.topic"/>
+            <a href="Azd-Settings-Configuration.topic" anchor="ui-customization"/>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/complete-pull-requests">Complete pull requests (Microsoft Learn)</a>
+            <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/branch-policies">Branch policies (Microsoft Learn)</a>
+        </category>
+    </seealso>
+</topic>

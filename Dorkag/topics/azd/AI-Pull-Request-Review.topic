@@ -3,144 +3,230 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="AI for Pull Request Review" id="AI-Pull-Request-Review">
+       title="AZD: Review pull requests with AI" id="AI-Pull-Request-Review">
+
     <primary-label ref="azd"/>
-    <secondary-label ref="azd_version"/>
-    <p>AZD now includes AI-powered pull request review capabilities to enhance your code review process.</p>
+    <show-structure for="chapter,procedure" depth="2"/>
 
-    <chapter title="AI Provider Options" id="ai_review_provider_options">
-        <p>Before using the AI review features, you need to configure your preferred AI provider in the settings:</p>
-        <img src="ai_configuration_settings.png" alt="AI Configuration Settings" style="block" thumbnail="true"/>
-        <p>You can select from multiple providers, including support for the latest models and local execution:</p>
-        <list>
-            <li>
-                <p><b>Claude:</b> Use Anthropic's Claude models, including the latest versions. Requires an API key.</p>
-            </li>
-            <li>
-                <p><b>OpenAI:</b> Use OpenAI's models including the latest GPT versions. Requires an API key.</p>
-            </li>
-            <li>
-                <p><b>Gemini:</b> Use Google's Gemini models. Requires an API key.</p>
-            </li>
-            <li>
-                <p><b>Ollama (Local):</b> Run models locally on your machine for maximum privacy. No API key is required, but you need the Ollama runtime and a model (e.g., <code>llama3</code>) installed.</p>
-            </li>
-            <li>
-                <p><b>AZD AI Provider:</b> The default built-in provider. This is a proxy to the latest AI models provided via the plugin subscription (no personal API key required).</p>
-            </li>
-        </list>
-        <img src="ai_setting_provider.png" alt="AI Provider Settings" style="block" thumbnail="true"/>
-        <tip>
-            <p>For providers like OpenAI or Claude, you can also specify a <b>Local URL</b> if you are running a compatible model locally or through a custom proxy.</p>
-        </tip>
-        <note>
-            <p>For Claude, OpenAI, and Gemini options, you'll need to provide your own API keys in the settings.</p>
-        </note>
-    </chapter>
+    <tldr>
+        <p>Start: <control>Pull Request Actions</control> (⋮) | <control>Review with AI</control> in the pull request details</p>
+        <p>Requires: <control>Enable AI assistance</control> in <ui-path>Settings | Version Control | AZD | AI Settings</ui-path></p>
+        <p>MCP tools require Node.js</p>
+    </tldr>
 
-    <chapter title="Customizing AI Reviews" id="ai_review_customization">
-        <p>Configure the AI review system to match your team's needs:</p>
-        <list>
-            <li>
-                <p>Set the scope and depth of AI analysis</p>
-            </li>
-            <li>
-                <p>Define custom rules and coding standards for the AI to enforce</p>
-            </li>
-            <li>
-                <p>Adjust sensitivity for different types of suggestions</p>
-            </li>
-        </list>
-    </chapter>
+    <link-summary>Chat with AI about a pull request, run the guided AI Auto Review, and let AI draft review comments for a file or for selected lines.</link-summary>
+    <card-summary>Chat about a pull request, run AI Auto Review, and draft review comments with AI.</card-summary>
+    <web-summary>Review Azure DevOps pull requests with AI in JetBrains IDEs using AZD: AI Chat, the guided AI
+        Auto Review, AI draft comments and MCP tools for Azure DevOps.</web-summary>
 
-    <chapter title="Key Features" id="key_features">
-        <p>Once configured, the AI pull request review offers several powerful capabilities:</p>
-        <list>
-            <li>
-                <p>Automated code quality checks and best practice suggestions</p>
-            </li>
-            <li>
-                <p>Detection of potential bugs, security vulnerabilities, and performance issues</p>
-            </li>
-            <li>
-                <p>Suggestions for code improvements and refactoring opportunities</p>
-            </li>
-            <li>
-                <p>Summary of changes with highlighted critical areas for human review</p>
-            </li>
-        </list>
-    </chapter>
+    <p id="key_features">
+        AZD offers four ways to review a pull request with AI:
+    </p>
+    <list>
+        <li><a anchor="ai-chat">AI Chat</a> analyzes the whole pull request and answers your follow-up questions.</li>
+        <li><a anchor="ai-auto-review">AI Auto Review</a> finds issues and walks you through them in the diff, one decision at a time.</li>
+        <li><a anchor="ai_draft_comments">AI draft comments</a> adds draft comments to the file that you are viewing.</li>
+        <li><a anchor="ai_generated_comments">Generate AI Code Review</a> writes one comment for the lines you select.</li>
+    </list>
+    <p>
+        AI never posts a comment or casts a vote without your action.
+    </p>
 
-    <chapter title="AI-Assisted Code Reviews" id="ai_assisted_code_reviews">
-        <p>Get intelligent feedback on your pull requests with AI-powered code analysis:
-            <img src="ai_pr_review.png" alt="AI pull request review" style="block" thumbnail="true"/>
+    <chapter title="Before you start" id="ai_review_provider_options">
+        <p>
+            These features work with the built-in AZD provider without any setup.
+            To use your own OpenAI, Claude, Gemini or Ollama model, see <a href="Azd-AI.topic" anchor="ai-providers"/>.
+            For what data AZD sends, see <a href="Azd-AI.topic" anchor="ai-privacy"/>.
         </p>
     </chapter>
 
-    <chapter title="Using AI Reviews" id="using_ai_reviews">
-        <p>Integrate AI reviews into your pull request workflow:</p>
-        <img src="ai-chat-review.png" alt="ai-chat-review"/>
+    <chapter title="Chat about a pull request" id="ai-chat">
+        <p id="ai_assisted_code_reviews">
+            AI Chat sends the changes of the pull request to the AI provider and opens the answer in a chat tab.
+        </p>
+        <procedure title="Start AI Chat" id="start-ai-chat">
+            <step>
+                In the pull request details, click <control>Pull Request Actions</control> (⋮) and select <ui-path>Review with AI | AI Chat</ui-path>, then a provider.
+                You can also right-click the changed files tree and select <ui-path>Review with AI | AI Chat</ui-path>.
+                <!-- planned-image src="azd_ai_review_menu.png" alt="Review with AI submenu with AI Chat and AI Auto Review and their providers" -->
+            </step>
+            <step>
+                Wait for the analysis.
+                It appears in the <control>AI Review (!N) - provider</control> tab of the <control>AZD Pull Requests</control> tool window.
+            </step>
+            <step>
+                Type a follow-up question in the <control>Ask about the Pull Request</control> field and click <control>Send</control>.
+                Click <control>Stop</control> to cancel an answer.
+                <!-- planned-image src="azd_ai_chat.png" alt="AI Review tab with the analysis of a pull request and a follow-up question" -->
+            </step>
+        </procedure>
+        <p id="using_ai_reviews">
+            Keep the chat open to ask more questions about the pull request.
+            To attach a file or image to a question, the active model must accept images.
+            Otherwise, the attach button shows <control>Current Model Does Not Support File Attachments</control>.
+        </p>
+    </chapter>
+
+    <chapter title="Run AI Auto Review" id="ai-auto-review">
+        <p>
+            AI Auto Review analyzes the pull request, then shows each finding as a card next to the code in the diff.
+            For each finding, you decide whether to keep it as a draft, post it, or skip it.
+        </p>
+        <p>
+            AI Auto Review is available when AI assistance is on, the <control>Diff Comment Review</control> prompt is enabled, and at least one provider is enabled.
+            The comments it creates are authored by you.
+            In the right-click menu of the changed files tree, it appears only when you are a reviewer of the pull request.
+        </p>
+        <procedure title="Review a pull request with AI Auto Review" id="run-ai-auto-review">
+            <step>
+                In the pull request details, click <control>Pull Request Actions</control> (⋮) and select <ui-path>Review with AI | AI Auto Review</ui-path>, then a provider.
+            </step>
+            <step>
+                Wait for the analysis.
+                The <control>AI Code Review</control> card reports how many issues AI found, for example <control>AI found 3 issue(s) across 2 file(s)</control>.
+                Choose how to continue:
+                <deflist type="medium">
+                    <def title="Start (Step by Step)">Go through the findings one by one.</def>
+                    <def title="Just Post All">Post all findings as comments after a confirmation. Posted comments cannot be undone.</def>
+                    <def title="Create Drafts for All">Save all findings as draft comments that only you see.</def>
+                    <def title="Skip">Close the review without creating comments.</def>
+                </deflist>
+                <!-- planned-image src="azd_ai_tour_intro.png" alt="AI Code Review card with the number of issues found and the four start options" -->
+            </step>
+            <step>
+                For each finding, read the card in the diff.
+                The severity is <control>risk</control>, <control>high</control>, <control>medium</control> or <control>low</control>.
+                Click <control>Save as Draft</control>, <control>Post Comment Now</control> or <control>Skip This Issue</control>.
+                To stop early, click <control>End Tour</control>.
+                You can drag a card to move it.
+                <!-- planned-image src="azd_ai_tour_step.png" alt="AI finding card in the diff with the severity and the Save as Draft, Post Comment Now and Skip This Issue buttons" -->
+            </step>
+            <step>
+                In the <control>Review Complete</control> card, check the suggested stance and your decisions.
+                Click <control>Approve</control> or <control>Request Changes</control> to vote, or <control>Just Close</control> to finish without voting.
+                <control>Request Changes</control> votes <control>Wait For Author</control>.
+                Before AZD votes, it publishes your drafts.
+                <!-- planned-image src="azd_ai_tour_summary.png" alt="Review Complete card with the suggested stance and the Approve, Request Changes and Just Close buttons" -->
+            </step>
+        </procedure>
+        <p>
+            Only one AI Auto Review can run for a pull request at a time.
+            To show a cover image on the first card, select <control>Show illustrations in AI review tour</control> in <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>.
+        </p>
+    </chapter>
+
+    <chapter title="Generate draft comments for a file" id="ai_draft_comments">
+        <procedure title="Let AI draft comments for the open file" id="generate-file-drafts">
+            <step>
+                Open the diff of a file in the pull request.
+            </step>
+            <step>
+                On the diff toolbar, click the AI button (<control>Post Draft Comments with AI</control>).
+                To use another provider, click the arrow next to the button and select it.
+            </step>
+            <step>
+                Check the draft comments that appear in the diff with a <control>PENDING</control> tag and a severity.
+                Edit or delete them as needed.
+                <!-- planned-image src="azd_ai_diff_drafts.png" alt="Pull request diff with an AI draft comment and the Submit Comments (1) button" -->
+            </step>
+            <step>
+                Click <control>Post now</control> on a draft, or <control>Submit Comments</control> on the toolbar to publish all drafts.
+            </step>
+        </procedure>
+        <p>
+            For more about drafts, see <a href="Azd-PR-Comments.topic" anchor="draft-comments"/>.
+        </p>
+    </chapter>
+
+    <chapter title="Generate a comment for selected lines" id="ai_generated_comments">
+        <procedure title="Let AI write a review comment" id="generate-ai-code-review">
+            <step>
+                In the diff, select the lines and start a new comment.
+            </step>
+            <step>
+                In the comment editor, click the AI review button.
+            </step>
+            <step>
+                In the <control>Generate AI Code Review</control> dialog, set <control>Context lines</control>, the number of lines above and below that AI reads.
+                Check the <control>Code context</control> preview.
+            </step>
+            <step>
+                Optional: enter a <control>Review Focus</control>, such as "error handling".
+                AZD adds it to the <control>Diff Comment Review</control> prompt.
+                To send only your own text instead, clear <control>Use default prompt template</control>.
+                <!-- planned-image src="azd_ai_code_review_dialog.png" alt="Generate AI Code Review dialog with context lines, the code context and a review focus" -->
+            </step>
+            <step>
+                Click <control>Generate Review</control>, then edit the text in the comment editor and post it.
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Customize AI reviews" id="ai_review_customization">
         <list>
-            <li>
-                <p>When you request an AI review, the changes from your pull request are sent to the AI chat</p>
-            </li>
-            <li>
-                <p>A chat tab is automatically opened in the IDE</p>
-            </li>
-            <li>
-                <p>After the analysis is complete, you can chat with the AI to ask for suggestions and other details
-                    about your PR</p>
-            </li>
-            <li>
-                <p>Review AI suggestions directly in the IDE's pull request interface</p>
-            </li>
-            <li>
-                <p>Use the chat to get more context and explanations about the AI's recommendations</p>
-            </li>
+            <li>For a single comment, use <control>Review Focus</control> in the <control>Generate AI Code Review</control> dialog.</li>
+            <li>To change the default instructions of that dialog, edit the <control>Diff Comment Review</control> prompt; see <a href="Azd-AI.topic" anchor="configure-prompts"/>.</li>
+            <li>In AI Chat, ask follow-up questions to focus the review on what matters to you.</li>
         </list>
     </chapter>
 
-    <chapter title="AI-Generated Comments on Code Diffs" id="ai_generated_comments">
-        <p>The latest version introduces AI-generated comments on code diffs, allowing you to get intelligent feedback directly on your code changes:</p>
-        <list>
-            <li>
-                <p>Automatically analyze code changes and generate relevant comments</p>
-            </li>
-            <li>
-                <p>Identify potential issues, bugs, and improvements in the code diff</p>
-            </li>
-            <li>
-                <p>Get suggestions for better implementations or optimizations</p>
-            </li>
-            <li>
-                <p>Generate comments that can be directly posted to the pull request</p>
-            </li>
-        </list>
-        <img src="generatediffcomment.png" alt="generatediffcomment"/>
-        <note>
-            <p>AI-generated comments are initially posted in a <control>draft state</control>. You must click <ui-path>Post Now</ui-path> or <ui-path>Submit All</ui-path> to make them visible to other users on the pull request.</p>
-        </note>
+    <chapter title="Let AI act on Azure DevOps with MCP tools" id="mcp-tools">
+        <p>
+            With MCP tools, AI Chat can use the Azure DevOps MCP server to read and change data in your organization,
+            for example to create work items, manage pull requests or run pipelines.
+            AZD bundles the server and loads its core, work item, repository and pipeline tools.
+        </p>
+        <procedure title="Turn on MCP tools" id="enable-mcp-tools">
+            <p>Install <a href="https://nodejs.org">Node.js</a> first; AZD runs the MCP server with it.</p>
+            <step>
+                In <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>, select <control>Enable MCP Tools</control> and click <control>OK</control>.
+            </step>
+            <step>
+                Start AI Chat on a pull request.
+                The chat shows <control>Azure DevOps MCP Authentication Required</control>.
+            </step>
+            <step>
+                Click <control>Allow</control>.
+                AZD starts the server and opens the browser, where you sign in with your Microsoft account.
+                <!-- planned-image src="azd_ai_mcp_consent.png" alt="AI chat with the Azure DevOps MCP Authentication Required prompt and the Allow and Deny buttons" -->
+            </step>
+        </procedure>
+        <p>
+            The permission lasts for the current IDE session.
+            If you click <control>Deny</control>, or if the server cannot start, AZD clears <control>Enable MCP Tools</control>.
+        </p>
     </chapter>
 
-    <chapter title="AI Draft Comments" id="ai_draft_comments">
-        <p>The AI can now assist you in creating draft comments for pull request reviews, streamlining your review
-            process:</p>
-        <list>
-            <li>
-                <p><b>Bulk Draft Comments:</b> Ask the AI to analyze and post draft comments on all files changed in the
-                    pull request. This provides comprehensive feedback across the entire PR.</p>
-            </li>
-            <li>
-                <p><b>Single File Analysis:</b> When viewing a specific file in the diff editor, you can request the AI
-                    to generate draft comments for that particular file only.</p>
-            </li>
-            <li>
-                <p>Review and edit the AI-generated draft comments before submitting them as part of your review.</p>
-            </li>
-            <li>
-                <p>Use the <ui-path>Submit Comments</ui-path> button to publish all draft comments at once, making them visible to your team.</p>
-            </li>
-        </list>
-        <img src="ai_draft_comments.png" alt="AI draft comments feature" style="block" thumbnail="true"/>
+    <chapter title="Troubleshooting" id="ai-review-troubleshooting">
+        <deflist type="medium">
+            <def title="Review with AI is missing">
+                Select <control>Enable AI assistance</control> in <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>.
+            </def>
+            <def title="AI Auto Review or the AI draft button is missing or disabled">
+                Enable the <control>Diff Comment Review</control> prompt under <control>Configure Prompts</control>, and make sure that at least one provider is enabled.
+            </def>
+            <def title="A review tour is already in progress">
+                Finish or skip the running AI Auto Review of that pull request first.
+            </def>
+            <def title="AI found no issues to discuss">
+                AI Auto Review found nothing to comment on; no comments are created.
+            </def>
+            <def title="A provider fails">
+                Open the provider in the <control>AI Providers</control> table and click <control>Test Connection</control>.
+            </def>
+        </deflist>
     </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-AI.topic"/>
+            <a href="Azd-PR-Comments.topic"/>
+            <a href="Azd-PR-Complete.topic"/>
+            <a href="AI-Title-Description-Generation.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://github.com/microsoft/azure-devops-mcp">Azure DevOps MCP server (GitHub)</a>
+            <a href="https://plugins.jetbrains.com/plugin/22319-azd">AZD on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>

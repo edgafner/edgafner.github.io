@@ -3,37 +3,158 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Settings and Configuration" id="Azd-Settings-Configuration">
-    <primary-label ref="azd"/>
-    <secondary-label ref="azd_version"/>
-    <p>Configure the AZD plugin to match your development workflow.</p>
+       title="AZD: Settings reference" id="Azd-Settings-Configuration">
 
-    <chapter title="General Settings" id="general-settings">
-        <p>Manage your Azure DevOps accounts and general preferences in <ui-path>Settings | Version Control | Azure DevOps</ui-path>.</p>
-        <img src="azd_main_settings.png" alt="Main Settings" style="block" thumbnail="true"/>
+    <primary-label ref="azd"/>
+    <show-structure for="chapter" depth="2"/>
+
+    <tldr>
+        <p>Settings: <ui-path>Settings | Version Control | AZD</ui-path></p>
+        <p>Open Settings: <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>)</p>
+    </tldr>
+
+    <link-summary>Reference for every AZD settings page: accounts, Preferences, AI Settings, UI Customization, Boards and Work Items, and Pipeline Settings.</link-summary>
+    <card-summary>Every AZD settings page and option, with its default value.</card-summary>
+    <web-summary>Reference for the AZD plugin settings in JetBrains IDEs: accounts, preferences, AI, UI, Boards and
+        Work Items, and Pipeline Settings, with default values.</web-summary>
+
+    <p>
+        AZD settings are under <ui-path>Settings | Version Control | AZD</ui-path>.
+        The <control>AZD</control> page holds the accounts; the sub-pages hold the other options.
+        Settings apply to all projects, except <control>Additional pipeline YAML locations</control> and the muted pipelines list,
+        which belong to the current project.
+    </p>
+
+    <chapter title="Accounts" id="accounts">
+        <p>Path: <ui-path>Settings | Version Control | AZD</ui-path></p>
+        <!-- planned-image src="azd_settings_accounts.png" alt="AZD accounts page with one account set as default and Clone git repositories using ssh selected" -->
+        <deflist type="medium">
+            <def title="Accounts list">
+                <p>Your Azure DevOps accounts.
+                    Click <control>+</control> to add one with <control>Sign in with Personal Access Token</control>,
+                    <control>Sign in with Microsoft</control> or <control>Sign in with Azure CLI</control>,
+                    and <control>−</control> to remove one.
+                    See <a href="Azd-Installation.topic" anchor="connect">Connect to Azure DevOps</a>.</p>
+                <p id="oauth-settings">For the permissions requested by Microsoft sign-in, see
+                    <a href="Azd-Installation.topic" anchor="azd-oauth-login">Sign in with Microsoft</a>.</p>
+            </def>
+            <def title="Clone git repositories using ssh">Clones over SSH. When cleared, AZD clones over HTTPS and enables the Git credential helper. Default: on.</def>
+        </deflist>
     </chapter>
 
-    <chapter title="OAuth Authentication" id="oauth-settings">
-        <p>For Azure DevOps Services, you can use the secure OAuth flow for a more convenient login experience.</p>
-        <img src="welcome_login.png" alt="OAuth Welcome" style="block" thumbnail="true"/>
-        <p>You can choose the level of access required when signing in.</p>
-        <img src="oath_scope_login_dialog.png" alt="OAuth Scope Dialog" style="block" thumbnail="true"/>
+    <chapter title="Preferences" id="general-configuration">
+        <p id="general-settings">
+            Path: <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
+            For AI providers and prompts, see <a anchor="ai-settings">AI Settings</a>.
+        </p>
+        <!-- planned-image src="azd_settings_preferences.png" alt="AZD Preferences settings page" -->
+        <deflist type="medium">
+            <def title="Automatically mark opened files as viewed">Marks a pull request file as viewed when you open its diff. Default: off.</def>
+            <def title="Auto-fill description from PR templates">Fills the description of a new pull request from the repository's pull request template. Default: off.</def>
+            <def title="Auto-refresh pipelines, Interval in seconds">Refreshes the pipeline run list and open runs at the set interval (5–1800 seconds). Default: off, 60 seconds.</def>
+            <def title="Auto-refresh pull requests, Interval in seconds">Refreshes the pull request list and open pull requests at the set interval (5–1800 seconds). Default: off, 60 seconds.</def>
+            <def title="Open AZD links in tool window">Opens pipeline links in pull requests, and pull request links in pipeline runs, inside the AZD tool windows instead of the browser. Default: on.</def>
+            <def title="Open commit links from the timeline in the IDE">Opens a commit link in the pull request timeline in the pull request details, with the commit selected, instead of on Azure DevOps. Default: on.</def>
+            <def title="Respect proxy configuration">Uses the proxy configured in the IDE for AZD connections. Default: off.</def>
+            <def title="Accept untrusted SSL certificates">Skips certificate validation for AZD connections only, for networks with a TLS-inspecting proxy. Other IDE connections are not affected. Default: off.</def>
+            <def title="Use API-based diff generation (experimental)">Builds pull request diffs from the Azure DevOps API instead of Git. Faster, but binary files may not show correctly. Default: off.</def>
+            <def title="Azure CLI (az) path (optional)">The <code>az</code> executable for Azure CLI sign-in. Leave empty to detect it automatically, or click <control>Detect</control>.</def>
+            <def title="Filter subject type">Identity types to include when AZD searches project users, for example for reviewers. Default: <code>msa,aad,win,imp,vss</code>.</def>
+            <def title="Share anonymous usage statistics">Sends anonymous usage data that helps improve the plugin. Default: on.</def>
+        </deflist>
     </chapter>
 
     <chapter title="AI Settings" id="ai-settings">
-        <p>Configure your AI providers and feature toggles in <ui-path>Settings | Tools | Azure DevOps | AI</ui-path>.</p>
-        <img src="ai_configuration_settings.png" alt="AI Configuration" style="block" thumbnail="true"/>
-        <list>
-            <li>
-                <p><b>AI Providers:</b> Add and manage configurations for OpenAI, Claude, Gemini, or local Ollama instances.</p>
-                <img src="ai_setting_provider.png" alt="AI Providers" style="block" thumbnail="true"/>
-            </li>
-            <li><p><b>Feature Toggles:</b> Enable or disable specific AI features like commit message generation, PR description generation, and code review.</p></li>
-            <li><p><b>Analyze Issues:</b> Enable this to allow the AI to read linked work items for better context.</p></li>
-        </list>
+        <p>
+            Path: <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>.
+            The page is titled <control>AI Configuration</control>.
+            AI features work without setup: the built-in AZD provider is configured and set as the default.
+        </p>
+        <deflist type="medium">
+            <def title="Enable AI assistance">Turns all AZD AI features on or off. Default: on. See <a href="Azd-AI.topic"/>.</def>
+            <def title="Enable MCP Tools">Lets AI chat create work items, manage pull requests and trigger pipelines. Default: off. See <a href="AI-Pull-Request-Review.topic" anchor="mcp-tools">MCP tools</a>.</def>
+            <def title="Show illustrations in AI review tour">Shows a cover image on the first card of the AI review tour. Default: off. See <a href="AI-Pull-Request-Review.topic" anchor="ai-auto-review">AI review tour</a>.</def>
+            <def title="AI Providers">The providers and models AZD can use. See <a href="Azd-AI.topic" anchor="ai-providers">AI providers</a>.</def>
+            <def title="Configure Prompts">The prompts for titles, descriptions, commit messages and reviews, and whether each feature is enabled. See <a href="Azd-AI.topic" anchor="configure-prompts">Configure prompts</a>.</def>
+        </deflist>
+        <p>For how the default provider handles your data, see <a href="Azd-AI.topic" anchor="ai-privacy">AI and privacy</a>.</p>
+    </chapter>
+
+    <chapter title="UI Customization" id="ui-customization">
+        <p>Path: <ui-path>Settings | Version Control | AZD | UI Customization</ui-path></p>
+        <!-- planned-image src="azd_settings_ui.png" alt="AZD UI Customization settings page" -->
+        <deflist type="medium">
+            <def title="Adopt Azure DevOps UI style">Makes the pull request details look more like the Azure DevOps web UI, with a <control>Submit Review</control> button for votes. Default: off.</def>
+            <def title="Show events in the order ascending by date">Shows the oldest timeline events first. Clear it to show the newest first. Default: on.</def>
+        </deflist>
+    </chapter>
+
+    <chapter title="Boards and Work Items" id="boards-and-work-items">
+        <p id="boards-and-work-ites">Path: <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path></p>
+        <!-- planned-image src="azd_settings_boards.png" alt="AZD Boards and Work Items settings page with the Commit Message Template group" -->
+        <p>The first options control which work items you can pick when you link work items to a pull request or a commit.</p>
+        <deflist type="medium">
+            <def title="Show Work items from all Projects">Lists work items from every project in the organization or collection, not just the project of the repository. Default: off.</def>
+            <def title="Limit work items to recent history">Lists only work items changed within the set number of days (0–60). Default: on, 60 days.</def>
+            <def title="Enable work item commit message action">Adds <control>Select Work Item...</control> to the AZD commit message button. Default: on.
+                See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</def>
+            <def title="Template">The commit message template. Placeholders: <code>{id}</code>, <code>{title}</code>, <code>{type}</code>, <code>{state}</code>. Default: <code>{id} - {title}</code>.</def>
+            <def title="Max work items per commit">How many work items you can select for one commit message (1–10). Default: 5.</def>
+            <def title="Advanced, Custom Work Item Query">The WHERE clause of the query that lists work items for linking.
+                By default it hides work items in the Done, Closed and Removed states.
+                Select <control>Use custom WHERE clause</control> to edit it; the text must start with <code>WHERE</code>.</def>
+        </deflist>
     </chapter>
 
     <chapter title="Pipeline Settings" id="pipeline-settings">
-        <p>Configure pipeline-specific behaviors, such as whether to open runs in the IDE or the browser.</p>
+        <p>Path: <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path></p>
+        <!-- planned-image src="azd_settings_pipelines.png" alt="AZD Pipeline Settings page with one muted pipeline in Approval Notifications" -->
+        <deflist type="medium">
+            <def title="Inject Azure DevOps YAML pipeline schema">Turns on completion and validation in pipeline files through the Azure Pipelines language server. Default: on.
+                See <a href="Azd-Pipeline-Yaml.topic"/>.</def>
+            <def title="Additional pipeline YAML locations">More folders or glob patterns, relative to the project root and separated by semicolons, whose YAML files count as pipeline files. Project setting.
+                See <a href="Azd-Pipeline-Yaml.topic" anchor="pipeline-files">Which files are pipeline files</a>.</def>
+            <def title="Approval Notifications">Pipelines whose approvals do not raise a notification. Changes apply immediately. Project setting.
+                See <a href="Azd-Pipeline-Approvals.topic" anchor="mute-approvals">Mute approval notifications</a>.</def>
+            <def title="Node.js Configuration">The Node.js executable for the language server, and <control>Validate Node.js</control>. Leave the path empty to detect Node.js automatically.</def>
+        </deflist>
     </chapter>
+
+    <chapter title="Pull request filters" id="pull-request-filters">
+        <p>
+            Custom quick filters for the pull request list are managed in the <control>AZD Pull Requests</control> tool window, not in Settings.
+            See <a href="Work-with-Azure-DevOps-pull-requests.topic" anchor="custom-quick-filters">Custom quick filters</a>.
+        </p>
+    </chapter>
+
+    <chapter title="Notifications" id="notifications">
+        <p>
+            AZD notification groups are listed in <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path>:
+            <control>AZD notifications</control>, <control>Azure DevOps AI</control>, <control>Azure DevOps AI Suggestions</control>,
+            <control>AZD agents</control> and <control>AZD Pipeline Approvals</control>.
+        </p>
+    </chapter>
+
+    <chapter title="Registry keys" id="registry-keys" collapsible="true">
+        <p>
+            A few advanced options have no settings page.
+            To change them, press <shortcut>Ctrl+Shift+A</shortcut> (macOS: <shortcut>⌘ ⇧ A</shortcut>), find <control>Registry...</control>, and search for the key.
+        </p>
+        <deflist type="wide">
+            <def title="azd.pipeline.log.page.lines">Lines per page in the stage log viewer. Default: 3000.</def>
+            <def title="azd.pipeline.queue.threshold.seconds">Queue waits shorter than this many seconds are not shown. Default: 5.</def>
+            <def title="azd.pipeline.log.ai.max.tokens">Maximum input tokens sent for AI log analysis. Default: -1 (use the provider's limit).</def>
+        </deflist>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-Installation.topic"/>
+            <a href="Azd-AI.topic"/>
+            <a href="Azd-Pipeline-Yaml.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://www.jetbrains.com/help/idea/settings-version-control.html">Version Control settings (IntelliJ IDEA help)</a>
+        </category>
+    </seealso>
 </topic>

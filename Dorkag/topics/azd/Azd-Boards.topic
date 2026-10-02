@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Boards and work items" id="Azd-Boards">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Open: <ui-path>View | Tool Windows | AZD Boards</ui-path></p>
+        <p>Configure: <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path></p>
+    </tldr>
+
+    <link-summary>Find, view, edit and create Azure Boards work items, use the Kanban board, and add work items to commit messages.</link-summary>
+    <card-summary>Find, edit and create work items, move cards on the Kanban board, and reference them in commits.</card-summary>
+    <web-summary>Work with Azure Boards in JetBrains IDEs with AZD: filter and edit work items, create new ones, move
+        Kanban cards and add work items to commit messages.</web-summary>
+
+    <p>
+        The <control>AZD Boards</control> tool window lists the work items of your Azure DevOps projects.
+        It uses the same connection as the pull request and pipeline tool windows, and appears in projects with an Azure DevOps Git remote.
+    </p>
+
+    <chapter title="Find work items" id="find-work-items">
+        <procedure title="Filter and sort work items" id="filter-work-items">
+            <step>
+                <p>Open the <control>AZD Boards</control> tool window.</p>
+                <!-- planned-image src="azd_boards_list.png" alt="AZD Boards tool window listing work items with the Assigned to me quick filter" -->
+            </step>
+            <step>
+                <p>Click the filter icon and select a quick filter: <control>All</control>, <control>Assigned to me</control>
+                    or <control>Recent activity</control> (the default).</p>
+            </step>
+            <step>
+                <p>Narrow the list with the filter chips: <control>Types</control>, <control>States</control>, <control>Created by</control>,
+                    <control>Area</control>, <control>Iteration</control> and <control>Assigned to</control>.
+                    <control>Assigned to</control> also offers <control>Unassigned</control>.</p>
+            </step>
+            <step>
+                <p>To change the order, click the sort icon and select <control>Default (newest first)</control>, <control>Changed Date</control>,
+                    <control>ID</control> or <control>Priority</control>. Select <control>Descending</control> to reverse it.</p>
+            </step>
+        </procedure>
+        <p>
+            Right-click a work item to <control>Open Work Item on Azure DevOps</control>, <control>Copy Work Item URL</control>
+            or <control>Refresh</control> the list.
+        </p>
+    </chapter>
+
+    <chapter title="View and edit a work item" id="view-work-item">
+        <procedure title="Edit a work item" id="edit-work-item">
+            <step>
+                <p>Double-click a work item.</p>
+                <p>Its details open in a new tab of the tool window, and its timeline opens in the editor as
+                    <control>Work Item #&lt;id&gt; timeline</control>.</p>
+                <!-- planned-image src="azd_boards_work_item.png" alt="Work item details tab with state, area, iteration, priority and assignee fields" -->
+            </step>
+            <step>
+                <p>Change fields such as the state, area path, iteration path, priority or assignee.
+                    To see the other fields of the work item type, expand <control>Show all fields</control>.</p>
+            </step>
+            <step>
+                <p>Click <control>Apply</control>.</p>
+            </step>
+        </procedure>
+        <p>
+            If someone else changed the work item in the meantime, AZD offers <control>Reapply on top of latest</control>
+            or <control>Discard my changes</control>.
+        </p>
+        <p>
+            Right-click in the details tab to <control>Refresh Work Item</control>, <control>Open Work Item on Azure DevOps</control>
+            or <control>Copy Work Item URL</control>.
+        </p>
+    </chapter>
+
+    <chapter title="Create a work item" id="create-work-item">
+        <procedure title="Create a work item" id="create-work-item-procedure">
+            <step>
+                <p>In the <control>AZD Boards</control> title bar, click <control>New Work Item</control>.</p>
+            </step>
+            <step>
+                <p>Select the <control>Type</control>, enter the <control>Title</control>, and set the <control>State</control>.
+                    These three fields are required.</p>
+                <!-- planned-image src="azd_boards_new_work_item.png" alt="New work item form with Bug selected as the type and a title filled in" -->
+            </step>
+            <step>
+                <p>Optional: fill in <control>Description</control>, <control>Assigned To</control>, <control>Area Path</control>,
+                    <control>Iteration Path</control>, <control>Priority</control> and <control>Tags</control>.</p>
+            </step>
+            <step>
+                <p>Click <control>Create</control>.</p>
+                <p>The new work item opens in its own tab.</p>
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Use the Kanban board" id="kanban-board">
+        <p>
+            The Kanban board shows the columns and cards of an Azure Boards team board in an editor tab.
+            You can open the board of any project in your organization.
+        </p>
+        <procedure title="Open the Kanban board" id="open-kanban">
+            <step>
+                <p>In the <control>AZD Boards</control> title bar, click <control>Open Boards Views Hub</control>.</p>
+                <p>The <control>Kanban</control> editor tab opens.</p>
+                <!-- planned-image src="azd_boards_kanban.png" alt="Kanban board in the editor with cards in three columns and the project, team and board selectors" -->
+            </step>
+            <step>
+                <p>Select the <control>Project</control>, <control>Team</control> and <control>Board</control>.</p>
+            </step>
+            <step>
+                <p>Optional: filter the cards by <control>Assigned to</control>, <control>Types</control>, <control>States</control>,
+                    <control>Tags</control> or <control>Iteration</control>.
+                    <control>Iteration</control> includes <code>@CurrentIteration</code>.
+                    In each filter popup, <control>All</control> and <control>Clear</control> select or clear every value.</p>
+            </step>
+        </procedure>
+        <p>Drag a card to another column to change its state. Click <control>Refresh</control> to reload the board.</p>
+        <p>Right-click a card for more actions:</p>
+        <!-- planned-image src="azd_boards_card_menu.png" alt="Context menu of a Kanban card with Open, Move to column, Edit title and Delete" -->
+        <deflist type="medium">
+            <def title="Open">Opens the work item details.</def>
+            <def title="Move to column">Moves the card to the column you select.</def>
+            <def title="Edit title…">Renames the work item.</def>
+            <def title="Delete…">Deletes the work item after you confirm.</def>
+        </deflist>
+        <p>
+            The board uses the IDE built-in browser (JCEF).
+            If it shows a message instead of the board, see <a href="Azd-FAQ.topic" anchor="jcef-views">A view shows a message instead of content</a>.
+        </p>
+    </chapter>
+
+    <chapter title="Add work items to a commit message" id="work-item-commit-template">
+        <p>
+            Reference work items in a commit message, from a template or with AI.
+            The AZD button appears in the commit message toolbar when AI assistance and the commit message prompt are enabled in
+            <a href="Azd-AI.topic">AI settings</a>.
+            The work item option also needs <control>Enable work item commit message action</control>, which is on by default.
+        </p>
+        <procedure title="Write a commit message from work items" id="commit-from-work-items">
+            <step>
+                <p>In the <control>Commit</control> tool window, click the arrow next to the AZD button in the commit message toolbar
+                    and select <control>Select Work Item...</control>.</p>
+            </step>
+            <step>
+                <p>In the <control>Select Work Item for Commit Message</control> dialog, select one or more work items.
+                    By default the list shows your own work items and hides those in the Done, Closed, Removed and Resolved states.
+                    Clear <control>Only my work items</control> or use the state filter to see more.</p>
+                <!-- planned-image src="azd_commit_work_item.png" alt="Select Work Item for Commit Message dialog with two work items selected" -->
+            </step>
+            <step>
+                <p>In <control>Generate with AI</control>, select <control>None - Use template only</control> to fill in the template,
+                    or select an AI provider to write the message from the work items and your changes.</p>
+            </step>
+            <step>
+                <p>Click <control>Generate Message</control>.</p>
+            </step>
+        </procedure>
+        <p>
+            Change the template in <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path>, in the
+            <control>Commit Message Template</control> group.
+            The default template is <code>{id} - {title}</code>; the placeholders are <code>{id}</code>, <code>{title}</code>,
+            <code>{type}</code> and <code>{state}</code>.
+            <control>Max work items per commit</control> limits the selection (5 by default).
+        </p>
+        <p>To generate a commit message from your changes only, see <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>.</p>
+    </chapter>
+
+    <chapter title="Use work items as IDE tasks" id="tasks-integration">
+        <p>
+            With the Task Management plugin, you can open Azure DevOps work items as IDE tasks and switch context between them.
+            AZD adds an <control>AzureDevOps</control> server type to it.
+            The Task Management plugin is not bundled with every IDE; install it from JetBrains Marketplace if your IDE lacks it.
+        </p>
+        <procedure title="Add Azure DevOps as a task server" id="add-task-server">
+            <step>
+                <p>Open <ui-path>Settings | Tools | Tasks | Servers</ui-path>.</p>
+            </step>
+            <step>
+                <p>Click <control>+</control> and select <control>AzureDevOps</control>.</p>
+            </step>
+            <step>
+                <p>Fill in <control>Host</control>, <control>Organization</control> and <control>PAT token</control>, then select the project.</p>
+                <!-- planned-image src="azd_tasks_server.png" alt="Tasks Servers settings with an AzureDevOps server configured" -->
+            </step>
+            <step>
+                <p>Click <control>OK</control>.</p>
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Work item settings" id="work-item-settings">
+        <p>
+            <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path> also controls which work items appear when you link work items
+            to a pull request or a commit.
+            See <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Boards and Work Items settings</a>.
+        </p>
+        <!-- planned-image src="azd_settings_boards.png" alt="AZD Boards and Work Items settings page with the Commit Message Template group" -->
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Boards and Work Items settings</a>
+            <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/boards/">Azure Boards documentation (Microsoft Learn)</a>
+            <a href="https://www.jetbrains.com/help/idea/managing-tasks-and-context.html">Tasks and contexts (IntelliJ IDEA help)</a>
+        </category>
+    </seealso>
+</topic>

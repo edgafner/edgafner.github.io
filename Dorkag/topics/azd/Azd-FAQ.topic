@@ -1,61 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
-<topic id="Azd-FAQ"
-       title="Azd FAQ"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: FAQ and troubleshooting" id="Azd-FAQ">
+
     <primary-label ref="azd"/>
-    <secondary-label ref="azd_version"/>
+    <show-structure for="chapter" depth="2"/>
 
-    <chapter id="token_issue" title="Resolving Token Issues with Azure DevOps Server">
-        <p>If your organization disables native credential storage, you may need to modify your IDE's password settings.</p>
-        
-        <procedure id="fix-password-settings">
-            <step><p>Navigate to <ui-path>Settings | Appearance &amp; Behavior | System Settings | Passwords</ui-path>.</p></step>
-            <step><p>Switch to <ui-path>In KeePass</ui-path> or clear existing passwords if they are corrupted.</p>
-                <img alt="Password settings" src="token_password.png"/>
-            </step>
-        </procedure>
+    <link-summary>Answers to common AZD questions and fixes for sign-in, proxy, credential storage, display and language server problems.</link-summary>
+    <card-summary>Fix sign-in, proxy, credential, display and language server problems in AZD.</card-summary>
+    <web-summary>Troubleshoot the AZD Azure DevOps plugin for JetBrains IDEs: sign-in and token errors, proxies,
+        credential storage, blank views, YAML completion and licensing.</web-summary>
+
+    <chapter title="The AZD tool windows are missing" id="tool-windows-missing">
+        <p>
+            The <control>AZD Pull Requests</control>, <control>AZD Pipelines</control> and <control>AZD Boards</control> tool windows
+            appear only when the project has a Git remote that points to Azure DevOps, such as
+            <code>https://dev.azure.com/demo-org/demo-project/_git/demo-project</code>.
+            Check the remotes in <ui-path>Git | Manage Remotes</ui-path>.
+        </p>
     </chapter>
 
-    <chapter id="create_pat" title="How to Create a PAT in Azure DevOps?">
-        <procedure id="create-pat-procedure">
-            <step><p>Log in to your Azure DevOps organization.</p></step>
-            <step><p>Click your profile picture (top-right) and select <ui-path>User settings | Personal access tokens</ui-path>.</p></step>
-            <step><p>Click <ui-path>New Token</ui-path>, specify a name, and select the required scopes.</p></step>
-            <step><p>Click <ui-path>Create</ui-path> and copy the token.</p></step>
-        </procedure>
-        <note>Treat your PAT like a password — never share it or commit it to source control.</note>
-    </chapter>
-
-    <chapter id="login_pat_issues" title="Common Login Issues">
+    <chapter title="Sign-in fails" id="login_pat_issues">
         <list type="bullet">
-            <li><p><b>Expired Token:</b> Verify the expiration date in Azure DevOps.</p></li>
-            <li><p><b>Missing Scopes:</b> Ensure all required scopes are selected (see <a href="Azd-Installation.topic#azd_generate_pat">Installation</a>).</p></li>
-            <li><p><b>Credential Helper:</b> Enable <ui-path>Use credential helper</ui-path> in <ui-path>Settings | Version Control | Git</ui-path>.</p></li>
-            <li><p><b>Settings Sync:</b> If your account disappears, ensure you're on the latest plugin version to avoid Sync conflicts.</p></li>
+            <li>
+                <p><b>Expired token:</b> check the expiry date of the personal access token in Azure DevOps, and create a new one if needed.
+                    In the tool window, select <control>Change Repository or Account…</control> and then <control>Renew Token</control>.</p>
+            </li>
+            <li>
+                <p><b>Missing scopes or organizations:</b> the token must have the
+                    <a href="Azd-Installation.topic" anchor="generate_pat">required scopes</a> and be created for
+                    <control>All accessible organizations</control>.</p>
+            </li>
+            <li>
+                <p><b>Organization in the URL:</b> enter the server URL in <control>Server</control> and the organization or collection
+                    in <control>Organization/Collection</control>. AZD rejects a URL that contains the organization or collection.</p>
+            </li>
+            <li>
+                <p><b>Azure DevOps Server:</b> Microsoft and Azure CLI sign-in work only with Azure DevOps Services. Use a personal access token.</p>
+            </li>
+            <li>
+                <p><b>Azure CLI:</b> if AZD reports that <code>az</code> was not found, install the Azure CLI or set its path in
+                    <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
+                    If it reports that you are not signed in, run <code>az login</code> in a terminal and try again.</p>
+            </li>
+            <li>
+                <p><b>Sign-in error in a tool window:</b> click <control>Log in again…</control> in the error message.</p>
+            </li>
+            <li>
+                <p><b>Account missing on another computer:</b> AZD accounts are not synchronized by Backup and Sync. Sign in on each computer.</p>
+            </li>
+            <li>
+                <p><b>Git asks for credentials:</b> if the Git credential helper is enabled, Git operations do not use your AZD accounts.
+                    Sign in through the credential helper, or turn it off in your Git configuration.</p>
+            </li>
         </list>
     </chapter>
 
-    <chapter id="mark_file_viewed_401" title="Why does 'Mark file as viewed' fail with a 401?">
-        <p>This feature requires a <ui-path>Full Access</ui-path> PAT due to a known Azure DevOps limitation.</p>
+    <chapter title="How do I create a personal access token?" id="create_pat">
+        <procedure title="Create a PAT in Azure DevOps" id="create-pat-procedure">
+            <step><p>Sign in to Azure DevOps in the browser.</p></step>
+            <step><p>Open <ui-path>User settings | Personal access tokens</ui-path> and click <control>New Token</control>.</p></step>
+            <step><p>Select <control>All accessible organizations</control> and the scopes listed in
+                <a href="Azd-Installation.topic" anchor="generate_pat">Create a personal access token</a>.</p></step>
+            <step><p>Click <control>Create</control> and copy the token.</p></step>
+        </procedure>
+        <note>Treat the token like a password. Do not share it or commit it to source control.</note>
+    </chapter>
+
+    <chapter title="Marking a file as viewed fails" id="mark_file_viewed_401">
+        <p>
+            When AZD cannot mark a pull request file as viewed, it shows <control>File viewed sync requires full access</control>.
+            Azure DevOps allows this only with full access.
+        </p>
         <list type="bullet">
-            <li><p><b>PAT users:</b> Regenerate your token with Full Access.</p></li>
-            <li><p><b>OAuth users:</b> Use the <ui-path>Grant Full Access</ui-path> action in the notification.</p></li>
+            <li><p><b>Sign in with Microsoft:</b> remove the account, then sign in again and select <control>Full access</control>.</p></li>
+            <li><p><b>Personal access token:</b> create a token with <control>Full access</control> and renew the token in AZD.</p></li>
         </list>
     </chapter>
 
-    <chapter id="azd_bug_feature" title="How to Report a Bug or Request a Feature">
-        <procedure id="report-issue">
-            <step><p>Go to the <a href="https://github.com/edgafner/dorkag/issues">GitHub Issues</a> page.</p></step>
-            <step><p>Click <ui-path>New issue</ui-path> and select the appropriate template.</p></step>
-            <step><p>Provide logs and screenshots to help us diagnose the problem.</p></step>
+    <chapter title="Credentials are not saved" id="token_issue">
+        <p>
+            AZD keeps credentials in the IDE password storage.
+            If your system blocks the native keychain, the IDE may keep passwords in memory only, and you must sign in after every restart.
+            The AZD accounts page shows a warning in that case.
+        </p>
+        <procedure title="Store passwords in KeePass" id="fix-password-settings">
+            <step><p>Open <ui-path>Settings | Appearance &amp; Behavior | System Settings | Passwords</ui-path>.</p></step>
+            <step><p>Select <control>In KeePass</control> and click <control>OK</control>.</p></step>
+            <step><p>Sign in to Azure DevOps again.</p></step>
         </procedure>
     </chapter>
 
-    <chapter id="why_not_free" title="Pricing and Support">
-        <p>The plugin is a solo project and requires significant resources to maintain. Reviews on the <a href="https://plugins.jetbrains.com/plugin/22319-azd/reviews">Marketplace</a> are greatly appreciated!</p>
+    <chapter title="Requests fail behind a corporate proxy" id="proxy-tls">
+        <list type="bullet">
+            <li><p>To send AZD requests through the IDE proxy, select <control>Respect proxy configuration</control> in
+                <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.</p></li>
+            <li><p>If the proxy inspects TLS traffic and AZD reports certificate errors, select <control>Accept untrusted SSL certificates</control>
+                on the same page. It affects only AZD connections.</p></li>
+            <li><p>When a proxy interrupts a request, AZD retries it and keeps you signed in.
+                It does not ask you for a new token in that case.</p></li>
+        </list>
     </chapter>
 
+    <chapter title="A view shows a message instead of content" id="jcef-views">
+        <p>
+            The pipeline diagram, the metrics dashboards and the Kanban board use the IDE built-in browser (JCEF).
+            If JCEF is not available, these views show a message instead of staying blank.
+            Make sure the IDE runs on the bundled JetBrains Runtime, which includes JCEF.
+        </p>
+    </chapter>
+
+    <chapter title="Pipeline YAML has no completion" id="lsp-nodejs">
+        <p>Completion and validation in pipeline files come from the Azure Pipelines language server, which needs Node.js 14 or later.</p>
+        <list type="bullet">
+            <li><p>Install Node.js, or set its path in <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path> and click <control>Validate Node.js</control>.</p></li>
+            <li><p>Check that <control>Inject Azure DevOps YAML pipeline schema</control> is selected on the same page.</p></li>
+            <li><p>Check that the file counts as a pipeline file; see <a href="Azd-Pipeline-Yaml.topic" anchor="pipeline-files">Which files are pipeline files</a>.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="The AzureDevOps task server type is missing" id="tasks-missing">
+        <p>
+            The task server integration needs the Task Management plugin.
+            Install it from JetBrains Marketplace; AZD works without it.
+            See <a href="Azd-Boards.topic" anchor="tasks-integration">Use work items as IDE tasks</a>.
+        </p>
+    </chapter>
+
+    <chapter title="How do I report a bug or request a feature?" id="azd_bug_feature">
+        <procedure title="Report an issue" id="report-issue">
+            <step><p>Open the <a href="https://github.com/edgafner/dorkag/issues">DORKAG issue tracker on GitHub</a>.</p></step>
+            <step><p>Click <control>New issue</control> and select the matching template.</p></step>
+            <step><p>Add the AZD and IDE versions, the steps to reproduce, and log excerpts with tokens removed.</p></step>
+        </procedure>
+        <p>
+            If the IDE shows an error from AZD, click <control>Report Exception</control> in the error dialog.
+            It opens a prefilled issue on GitHub.
+            For more ways to get help, see <a href="Azd-Reference-And-Support.topic"/>.
+        </p>
+    </chapter>
+
+    <chapter title="Is AZD free?" id="why_not_free">
+        <p>
+            AZD is a paid plugin with a 10-day free trial.
+            Start the trial or activate a license in <ui-path>Help | Register</ui-path>.
+        </p>
+        <p>
+            Licenses are sold on <a href="https://plugins.jetbrains.com/plugin/22319-azd/pricing">JetBrains Marketplace</a>.
+            Reviews on the <a href="https://plugins.jetbrains.com/plugin/22319-azd/reviews">Marketplace page</a> help other users decide.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-Installation.topic"/>
+            <a href="Azd-Settings-Configuration.topic"/>
+            <a href="Azd-Reference-And-Support.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://github.com/edgafner/dorkag/issues">DORKAG issue tracker</a>
+            <a href="https://www.jetbrains.com/help/idea/reference-ide-settings-password-safe.html">Passwords settings (IntelliJ IDEA help)</a>
+        </category>
+    </seealso>
 </topic>

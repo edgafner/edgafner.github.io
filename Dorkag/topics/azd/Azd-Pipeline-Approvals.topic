@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Approve pipeline runs" id="Azd-Pipeline-Approvals">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Where: the banner at the bottom of a run tab in the <control>AZD Pipelines</control> tool window</p>
+        <p>Mute: <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path>, <control>Approval Notifications</control></p>
+    </tldr>
+
+    <link-summary>Approve, reject or defer environment approvals and manual validations, and control approval notifications.</link-summary>
+    <card-summary>Approve, reject or defer Azure Pipelines approvals and manual validations from the IDE.</card-summary>
+    <web-summary>Approve, reject or defer Azure Pipelines approvals and ManualValidation tasks in JetBrains IDEs with
+        AZD, and mute approval notifications per pipeline.</web-summary>
+
+    <p>
+        When a run waits for an environment approval or a <code>ManualValidation@1</code> task, AZD shows a banner in the run tab
+        and can notify you.
+        You can act on approvals that list you as an approver.
+    </p>
+
+    <chapter title="Approve or reject a run" id="approve-run">
+        <procedure title="Approve or reject a pending approval" id="approve-run-procedure">
+            <step>
+                <p>Open the run in the <control>AZD Pipelines</control> tool window, or click <control>Review</control> in the approval notification.</p>
+            </step>
+            <step>
+                <p>At the bottom of the run tab, find the <control>Awaiting for approval</control> banner.
+                    Hover over the help icon to see how many approvers are needed.</p>
+                <img src="approva_bottom.png" alt="Run tab with the Awaiting for approval banner, a Comment field and the Approve and Reject buttons"
+                     width="512" border-effect="rounded"/>
+                <!-- planned-image src="azd_pipelines_approval_banner.png" alt="Approval banner with the Comment field and the Defer, Approve and Reject buttons" replaces="approva_bottom.png" -->
+            </step>
+            <step>
+                <p>Optional: type a note in <control>Comment</control>.
+                    A comment is required to reject.</p>
+            </step>
+            <step>
+                <p>Click <control>Approve</control> or <control>Reject</control>.</p>
+            </step>
+        </procedure>
+        <p>
+            After you approve, the banner shows <control>You approved</control> and the progress of the other approvers:
+            who approved, who is still waiting, and whether approvers must approve in sequence or in any order.
+        </p>
+    </chapter>
+
+    <chapter title="Defer an approval" id="defer-approval">
+        <p>If the approval check allows deferring, the banner shows <control>Defer...</control>.</p>
+        <procedure title="Defer an approval" id="defer-approval-procedure">
+            <step>
+                <p>In the banner, click <control>Defer...</control>.</p>
+            </step>
+            <step>
+                <p>Select <control>In 1 hour</control>, <control>In 4 hours</control>, <control>Tomorrow 9:00</control> or <control>Next Monday 9:00</control>.
+                    To pick another time, select <control>Custom date/time</control> and enter a time in the future.</p>
+                <!-- planned-image src="azd_pipelines_approval_defer.png" alt="Defer approval until popup with the preset times and a custom date and time" -->
+            </step>
+            <step>
+                <p>Click <control>Defer</control>.</p>
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="When you cannot approve" id="approval-blocked">
+        <p>If you cannot act on an approval, the banner shows <control>Awaiting approval</control> with the reason:</p>
+        <deflist type="wide">
+            <def title="You are the requester; cannot self-approve">The approval check does not let the person who started the run approve it.</def>
+            <def title="You are not on the approvers list for this run">Ask one of the listed approvers.</def>
+            <def title="You do not have permission">Your Azure DevOps permissions do not allow this approval.</def>
+            <def title="Not signed in to Azure DevOps">Sign in again from the tool window.</def>
+            <def title="Custom check — open in Azure DevOps">The check is not an approval AZD can handle. Open the run on Azure DevOps.</def>
+        </deflist>
+    </chapter>
+
+    <chapter title="Approval notifications" id="approval-notifications">
+        <p>
+            AZD checks for approvals that wait for you when you open the <control>AZD Pipelines</control> or
+            <control>AZD Pull Requests</control> tool window, at most once every 30 seconds.
+            Each new approval shows a <control>Pipeline approval requested</control> notification with the pipeline and stage.
+        </p>
+        <!-- planned-image src="azd_pipelines_approval_notification.png" alt="Pipeline approval requested notification with the Review and Open in Azure DevOps actions" -->
+        <deflist type="medium">
+            <def title="Review">Opens the run in the <control>AZD Pipelines</control> tool window.</def>
+            <def title="Open in Azure DevOps">Opens the run in the browser.</def>
+            <def title="Don't show for &quot;&lt;pipeline&gt;&quot;">Mutes approval notifications for that pipeline.</def>
+        </deflist>
+        <p>
+            When more than five new approvals arrive at once, AZD shows one <control>Pipeline approvals requested</control>
+            notification with <control>Show pipelines</control> instead.
+        </p>
+    </chapter>
+
+    <chapter title="Mute approval notifications" id="mute-approvals">
+        <procedure title="Mute approvals for a pipeline" id="mute-approvals-procedure">
+            <step>
+                <p>Open <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path>.</p>
+            </step>
+            <step>
+                <p>In the <control>Approval Notifications</control> group, click <control>+</control> and select the pipeline.</p>
+                <!-- planned-image src="azd_settings_pipelines.png" alt="AZD Pipeline Settings page with one muted pipeline in Approval Notifications" -->
+            </step>
+        </procedure>
+        <p>
+            The change applies immediately.
+            To unmute a pipeline, select it and click <control>−</control>.
+            The list belongs to the current project.
+        </p>
+        <p>
+            To turn off all approval notifications, open <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path>
+            and change the <control>AZD Pipeline Approvals</control> group.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azure-DevOps-Pipelines.topic"/>
+            <a href="Azd-Settings-Configuration.topic" anchor="pipeline-settings">Pipeline Settings</a>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/process/approvals">Define approvals and checks (Microsoft Learn)</a>
+            <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/manual-validation-v1">ManualValidation@1 task (Microsoft Learn)</a>
+        </category>
+    </seealso>
+</topic>
