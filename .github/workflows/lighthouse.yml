@@ -65,10 +65,11 @@ jobs:
           potential_urls=(
             "https://edgafner.github.io"
             "https://edgafner.github.io/dorkag.html"
-            "https://edgafner.github.io/azdlib.html"
-            "https://edgafner.github.io/gbrowserlib.html"
-            "https://edgafner.github.io/codecovlib.html"
-            "https://edgafner.github.io/queryflaglib.html"
+            "https://edgafner.github.io/azd.html"
+            "https://edgafner.github.io/gbrowser.html"
+            "https://edgafner.github.io/jirai.html"
+            "https://edgafner.github.io/codecov.html"
+            "https://edgafner.github.io/queryflag.html"
           )
           
           for url in "${potential_urls[@]}"; do

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI: Settings reference" id="JirAI-Settings-Reference">
+
+    <primary-label ref="jirai"/>
+    <show-structure for="chapter" depth="2"/>
+
+    <tldr>
+        <p>Settings: <ui-path>Settings | Tools | JirAI</ui-path></p>
+        <p>Open the Settings dialog: <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>)</p>
+    </tldr>
+
+    <link-summary>Every JirAI settings page and option, the notification groups and the keyboard shortcuts.</link-summary>
+    <card-summary>All JirAI settings pages, notification groups and keyboard shortcuts in one place.</card-summary>
+    <web-summary>Reference for every JirAI setting in JetBrains IDEs: Jira account, field visibility, doc push presets, metrics sampling, house standard and shortcuts.</web-summary>
+
+    <p>JirAI settings are under <ui-path>Settings | Tools | JirAI</ui-path>.</p>
+    <p>All pages except <control>Doc Push</control> apply to the whole IDE; <control>Doc Push</control> applies to the current project.</p>
+
+    <chapter title="JirAI" id="settings-jirai">
+        <p><ui-path>Settings | Tools | JirAI</ui-path></p>
+        <deflist type="medium">
+            <def title="Account">
+                <p>The Jira Cloud account JirAI is signed in to.</p>
+                <p>Click <control>+</control> to sign in, or select the account and click <control>−</control> to sign out.</p>
+                <p>JirAI connects to one site at a time, so <control>+</control> is unavailable while you are signed in.</p>
+            </def>
+            <def title="Resources">The <control>JirAI documentation</control> link opens this documentation.</def>
+        </deflist>
+        <p>See <a href="JirAI-Sign-In-and-Configuration.topic">Sign in and manage your account</a>.</p>
+    </chapter>
+
+    <chapter title="Field Visibility" id="settings-field-visibility">
+        <p><ui-path>Settings | Tools | JirAI | Field Visibility</ui-path></p>
+        <p>Lists the custom fields hidden from the issue details tab, one rule per row:</p>
+        <include from="Jira-Field-Visibility.topic" element-id="field-visibility-columns"/>
+        <p>Click <control>+</control> to add a rule in the <control>Add Hidden Field Rule</control> dialog, or select rules and click <control>−</control> to unhide the fields.</p>
+        <p>See <a href="Jira-Field-Visibility.topic">Hide custom fields</a>.</p>
+    </chapter>
+
+    <chapter title="Doc Push" id="settings-doc-push">
+        <p><ui-path>Settings | Tools | JirAI | Doc Push</ui-path> (current project only)</p>
+        <include from="JirAI-AI-Workflows.topic" element-id="doc-push-options"/>
+        <p>By default, JirAI picks the preset from the project's folders the first time you push a document.</p>
+        <p>The target columns stay read-only until you open the <control>JirAI</control> tool window while you are signed in.</p>
+        <p>See <a href="JirAI-AI-Workflows.topic" anchor="presets-settings">Configure presets in Settings</a>.</p>
+    </chapter>
+
+    <chapter title="Metrics" id="settings-metrics">
+        <p><ui-path>Settings | Tools | JirAI | Metrics</ui-path></p>
+        <p>When a space has more than 10,000 work items, JirAI loads a sample of 10,000:</p>
+        <include from="JirAI-Metrics.topic" element-id="metrics-sampling-options"/>
+        <p>The change applies the next time a space tab loads or refreshes.</p>
+        <p>See <a href="JirAI-Metrics.topic" anchor="large-spaces">Large spaces</a>.</p>
+    </chapter>
+
+    <chapter title="House Standard" id="settings-house-standard">
+        <p><ui-path>Settings | Tools | JirAI | House Standard</ui-path></p>
+        <p>Rules that AI assistants are told about when they validate a draft issue, stored for the Jira site you are signed in to.</p>
+        <include from="JirAI-Agent-Tools.topic" element-id="house-standard-columns"/>
+        <p>See <a href="JirAI-Agent-Tools.topic" anchor="house-standard">Define a house standard</a>.</p>
+    </chapter>
+
+    <chapter title="Related IDE settings" id="settings-related">
+        <deflist type="wide">
+            <def title="Settings | Tools | MCP Server">Turns on the IDE's MCP server, which the JirAI agent tools need. See <a href="JirAI-Agent-Tools.topic" anchor="enable-agent-tools">Turn on the agent tools</a>.</def>
+            <def title="Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy">The proxy JirAI uses. See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="corporate-proxy">Use JirAI behind a corporate proxy</a>.</def>
+            <def title="Settings | Appearance &amp; Behavior | Notifications">
+                <p>How JirAI notifications are shown.</p>
+                <p>JirAI has the notification groups <control>Jira issue delete</control>, <control>Jira attachments</control>, <control>JirAI doc push</control>, <control>Jira create</control> and <control>JirAI agent tools</control>.</p>
+            </def>
+        </deflist>
+    </chapter>
+
+    <chapter title="Keyboard shortcuts" id="keyboard-shortcuts">
+        <p>JirAI actions such as <control>New Issue</control>, <control>Space Summary</control> and <control>Push to Jira</control> have no default shortcut.</p>
+        <p>Run them with <control>Find Action</control> (<shortcut>Ctrl+Shift+A</shortcut>, macOS: <shortcut>⌘ ⇧ A</shortcut>), or assign shortcuts in <ui-path>Settings | Keymap</ui-path>.</p>
+        <p><control>New Issue</control> and <control>Space Summary</control> become available once the <control>JirAI</control> tool window has opened in the project and shows you signed in.</p>
+        <table style="header-row">
+            <tr><td>Where</td><td>Action</td><td>Keys</td></tr>
+            <tr><td>Issue list</td><td>Open the selected issue</td><td><shortcut>Enter</shortcut> or double-click</td></tr>
+            <tr><td>Issue list</td><td>Reload the list</td><td>The IDE <control>Refresh</control> shortcut (see <ui-path>Settings | Keymap</ui-path>)</td></tr>
+            <tr><td>Issue list and filters</td><td>Exclude a filter value</td><td><shortcut>Shift</shortcut>+click</td></tr>
+            <tr><td>Timeline</td><td>Post a comment</td><td><shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>)</td></tr>
+            <tr><td>Timeline</td><td>New line in a comment</td><td><shortcut>Enter</shortcut></td></tr>
+            <tr><td>Timeline</td><td>Reload the timeline</td><td>The IDE <control>Refresh</control> shortcut</td></tr>
+            <tr><td>Description editor</td><td>Save the description</td><td><shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>)</td></tr>
+            <tr><td>Description editor</td><td>Cancel editing</td><td><shortcut>Escape</shortcut></td></tr>
+            <tr><td>Space List</td><td>Open the selected work item</td><td><shortcut>Enter</shortcut> or double-click</td></tr>
+            <tr><td>Space List</td><td>Unfold or fold the selected parent</td><td><shortcut>Right</shortcut>, <shortcut>Left</shortcut></td></tr>
+            <tr><td>Board</td><td>Next or previous column</td><td><shortcut>Tab</shortcut>, <shortcut>Shift+Tab</shortcut></td></tr>
+            <tr><td>Board</td><td>Move between cards</td><td>Arrow keys</td></tr>
+            <tr><td>Board</td><td>Open the card menu</td><td><shortcut>Shift+Enter</shortcut></td></tr>
+        </table>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="JirAI-Sign-In-and-Configuration.topic"/>
+            <a href="Jira-Field-Visibility.topic"/>
+            <a href="JirAI-AI-Workflows.topic"/>
+            <a href="JirAI-Agent-Tools.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://www.jetbrains.com/help/idea/notifications.html">Notifications in JetBrains IDEs</a>
+        </category>
+    </seealso>
+</topic>

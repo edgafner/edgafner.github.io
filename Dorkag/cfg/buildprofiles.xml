@@ -3,7 +3,7 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <footer>
-        <copyright>DORKAG</copyright>
+        <copyright>2023-2026 DORKAG</copyright>
         <link href="https://github.com/edgafner/dorkag">GitHub</link>
         <social type="twitter" href="https://twitter.com/Jongafner"/>
         <social type="facebook" href="https://www.facebook.com/dorkaag"/>
@@ -18,60 +18,14 @@
         <primary-color>aqua</primary-color>
         <custom-favicons>favicon.png</custom-favicons>
         <header-logo>banner.svg</header-logo>
-        <!--             <download-title>Install Azd</download-title> -->
-        <!--             <download-page>https://plugins.jetbrains.com/plugin/22319-azd</download-page> -->
-        <!--             <showDownloadButton>true</showDownloadButton> -->
-
-
         <noindex-content>false</noindex-content>
         <offline-docs>false</offline-docs>
         <web-root>https://edgafner.github.io</web-root>
+        <product-web-url>https://edgafner.github.io/</product-web-url>
+        <og-image>https://edgafner.github.io/images/og_dorkag.png</og-image>
     </variables>
 
-    <build-profile instance="azdlib">
-        <variables>
-            <header-logo>banner.svg</header-logo>
-            <download-page>https://plugins.jetbrains.com/plugin/22319-azd</download-page>
-            <download-title>Install AZD</download-title>
-            <showDownloadButton>true</showDownloadButton>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
-    <build-profile instance="gbrowserlib">
-        <variables>
-            <download-title>Install GBrowser</download-title>
-            <download-page>https://plugins.jetbrains.com/plugin/14458-gbrowser</download-page>
-            <showDownloadButton>true</showDownloadButton>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
-    <build-profile instance="queryflaglib">
-        <variables>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
-    <build-profile instance="codecovlib">
-        <variables>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
-    <build-profile instance="jirailib">
-        <variables>
-            <download-title>Install JirAI</download-title>
-            <download-page>https://plugins.jetbrains.com/plugin/33954-jirai</download-page>
-            <showDownloadButton>true</showDownloadButton>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
-
-
-    <shortcuts>
-        <src>keymap.xml</src>
-        <layout name="Windows" display-name="Windows"/>
-        <layout name="macOS" display-name="MacOS"/>
-        <layout name="Linux" display-name="Linux"/>
-    </shortcuts>
-
-
+    <sitemap priority="0.35" change-frequency="monthly"/>
+    <llms-txt/>
 
 </buildprofiles>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI: AI agent tools and house standard" id="JirAI-Agent-Tools">
+
+    <primary-label ref="jirai"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Turn on: <ui-path>Settings | Tools | MCP Server</ui-path>, <control>Enable MCP Server</control></p>
+        <p>House standard: <ui-path>Settings | Tools | JirAI | House Standard</ui-path></p>
+        <p>Tools: <code>jirai_describe_target</code>, <code>jirai_validate_draft</code></p>
+    </tldr>
+
+    <link-summary>Let an AI coding assistant read a Jira project's real create screen and check a draft issue against it and your house standard before filing it.</link-summary>
+    <card-summary>Give your AI assistant a project's real create screen and your team's issue rules.</card-summary>
+    <web-summary>JirAI agent tools let AI assistants in JetBrains IDEs read a Jira Cloud project's create screen and check draft issues against it and your house standard.</web-summary>
+
+    <p>When an AI coding assistant files a Jira issue through a generic Jira API, Jira rejects the draft only when a required field is missing.</p>
+    <p>Optional fields that your team relies on, such as acceptance criteria, story points or components, stay empty without any error.</p>
+    <p>JirAI gives the assistant two tools through the IDE's MCP server, so that it can see the real create screen and check a draft before it files anything.</p>
+
+    <chapter title="What the tools do" id="agent-tools">
+        <deflist type="wide">
+            <def title="jirai_describe_target">
+                <p>Takes a project key and an issue type.</p>
+                <p>Returns the real Jira create screen for them: every field, which fields are required, the values Jira accepts, the defaults and the help text your Jira administrator wrote.</p>
+            </def>
+            <def title="jirai_validate_draft">
+                <p>Takes a project key, an issue type, a summary, a description and other field values.</p>
+                <p>Checks the draft against the create screen and your house standard, and returns findings without creating anything.</p>
+            </def>
+        </deflist>
+        <p><code>jirai_validate_draft</code> reports three kinds of finding:</p>
+        <deflist type="medium">
+            <def title="BLOCKS_CREATE">Jira would reject the draft, for example because a required field is missing.</def>
+            <def title="HOUSE_RULE">Jira would accept the draft, but it breaks a rule of your house standard.</def>
+            <def title="NOTE">A field on the create screen that the draft leaves empty.</def>
+        </deflist>
+        <p>Both tools only read from Jira; they never create or change an issue.</p>
+        <p>They use the Jira site you are signed in to in JirAI.</p>
+    </chapter>
+
+    <chapter title="Turn on the agent tools" id="enable-agent-tools">
+        <p>The tools are offered through the IDE's MCP server, which is off by default.</p>
+        <procedure title="Make the JirAI tools available to your assistant" id="enable-agent-tools-proc">
+            <p>Before you start, sign in to Jira Cloud in JirAI.</p>
+            <step><p>Open <ui-path>Settings | Tools | MCP Server</ui-path> and select <control>Enable MCP Server</control>.</p></step>
+            <step>
+                <p>In the IDE's consent dialog, read what a connected assistant can do in the IDE, which goes beyond JirAI, and confirm.</p>
+            </step>
+            <step>
+                <p>Under <control>Clients Auto-Configuration</control>, click <control>Auto-Configure</control> for each assistant you use.</p>
+                <p>Most assistants need a restart afterwards.</p>
+            </step>
+            <step>
+                <p>Check that your assistant offers <code>jirai_describe_target</code> and <code>jirai_validate_draft</code>.</p>
+                <p>If it does not, open <ui-path>Settings | Tools | MCP Server | Exposed Tools</ui-path> and make sure the two tools are enabled.</p>
+                <!-- planned-image src="jirai_mcp_server_settings.png" alt="MCP Server settings with the server enabled and the JirAI tools in Exposed Tools" -->
+            </step>
+        </procedure>
+        <list>
+            <li><p>The tools are available only while the IDE is running with a project open.</p></li>
+            <li><p>They need the bundled <control>MCP Server</control> plugin; if you disable it, you lose only these two tools, and the rest of JirAI keeps working.</p></li>
+        </list>
+
+        <chapter title="The first-run notification" id="mcp-notification">
+            <p>The first time the <control>JirAI</control> tool window shows you signed in while the MCP server is off, JirAI shows the notification <control>JirAI agent tools are not reachable yet</control>.</p>
+            <list>
+                <li><p>Click <control>Open MCP Server settings</control> to go to the MCP server page.</p></li>
+                <li><p>Click <control>Don't show again</control> to dismiss it for good.</p></li>
+            </list>
+            <img src="jirai_mcp_hint.png" alt="Notification that JirAI agent tools are not reachable because the MCP server is off" width="392" border-effect="rounded"/>
+            <p>JirAI shows this notification at most once per IDE installation.</p>
+            <p>It does not appear while the MCP server is on, or when the <control>MCP Server</control> plugin is disabled.</p>
+        </chapter>
+    </chapter>
+
+    <chapter title="Check a draft with your assistant" id="use-agent-tools">
+        <p>Ask your assistant to read the create screen before it drafts an issue and to validate the draft before it files it, for example:</p>
+        <p><emphasis>Draft a bug in DEMO for the login timeout. Call jirai_describe_target for DEMO and Bug first, then check the draft with jirai_validate_draft and fix what it reports before you show it to me.</emphasis></p>
+        <p>To file the issue, the assistant needs a separate Jira tool.</p>
+        <p>You can also have the assistant save the draft as a Markdown file in the project and create the issue from that file with <a href="JirAI-AI-Workflows.topic">Push to Jira</a>.</p>
+    </chapter>
+
+    <chapter title="Define a house standard" id="house-standard">
+        <p>A house standard lists what your team expects on an issue beyond what Jira requires.</p>
+        <p>When an assistant validates a draft that breaks a rule, it receives a <code>HOUSE_RULE</code> finding.</p>
+        <p>House rules never block a create; they inform the assistant, like a review comment.</p>
+        <procedure title="Add house standard rules" id="house-standard-proc">
+            <step><p>Sign in to your Jira site in JirAI.</p></step>
+            <step><p>Open <ui-path>Settings | Tools | JirAI | House Standard</ui-path>.</p></step>
+            <step>
+                <p>Click <control>+</control> to add a row for each rule, and fill in the columns:</p>
+                <deflist type="medium" id="house-standard-columns">
+                    <def title="Project">The project key, or <code>*</code> for any project.</def>
+                    <def title="Issue type">The issue type, or <code>*</code> for any type.</def>
+                    <def title="Rule">The kind of rule: <code>FIELD_SET</code>, <code>DESCRIPTION_HEADING</code> or <code>FIELD_MATCHES</code>.</def>
+                    <def title="Target">The field name, or the heading text for <code>DESCRIPTION_HEADING</code>.</def>
+                    <def title="Pattern">A regular expression; used only by <code>FIELD_MATCHES</code>.</def>
+                    <def title="Note">Optional. Your own explanation, which the assistant receives instead of the generated message.</def>
+                </deflist>
+                <img src="jirai_settings_house_standard.png" alt="House Standard settings with three rules" width="706" border-effect="rounded" thumbnail="true"/>
+            </step>
+            <step><p>Click <control>OK</control> or <control>Apply</control>.</p></step>
+        </procedure>
+        <p>To remove a rule, select its row, click <control>−</control> and apply the change.</p>
+
+        <chapter title="Rule kinds" id="house-rule-kinds">
+            <deflist type="medium">
+                <def title="FIELD_SET">
+                    <p>The field named in <control>Target</control> must have a value.</p>
+                    <p>If the project's create screen has no such field, the assistant is told once that the rule cannot be met.</p>
+                </def>
+                <def title="DESCRIPTION_HEADING">
+                    <p>The description must contain a Markdown heading with the text in <control>Target</control>, for example <code>## Steps to reproduce</code>.</p>
+                    <p>Only headings written with <code>#</code> marks count; underlined headings and bold lines do not.</p>
+                </def>
+                <def title="FIELD_MATCHES">
+                    <p>If the field in <control>Target</control> has a value, the value must contain a match for the <control>Pattern</control>.</p>
+                    <p>Anchor the pattern with <code>^</code> and <code>$</code> to require the whole value to match.</p>
+                    <p>This rule does not require the field to be set; add a <code>FIELD_SET</code> rule for that.</p>
+                </def>
+            </deflist>
+            <p>Every row whose project and issue type match the draft applies.</p>
+            <p>Refer to fields by name, as Jira shows them; field IDs also work, for example when two fields share a name.</p>
+            <p>Issue links cannot be checked by house rules.</p>
+        </chapter>
+
+        <chapter title="Where the house standard is stored" id="house-standard-storage">
+            <p>The house standard is saved in your IDE for the Jira site you are signed in to.</p>
+            <p>It is not shared: each teammate sets up their own.</p>
+            <p>When you are not signed in, the page asks you to sign in under <ui-path>Settings | Tools | JirAI</ui-path> first.</p>
+        </chapter>
+    </chapter>
+
+    <chapter title="Example" id="agent-tools-example">
+        <p>A team requires story points on stories and a <emphasis>Steps to reproduce</emphasis> section in bug reports.</p>
+        <table style="header-row" border="true">
+            <tr><td>Project</td><td>Issue type</td><td>Rule</td><td>Target</td><td>Pattern</td></tr>
+            <tr><td><code>*</code></td><td>Story</td><td><code>FIELD_SET</code></td><td>Story Points</td><td></td></tr>
+            <tr><td>DEMO</td><td>Bug</td><td><code>DESCRIPTION_HEADING</code></td><td>Steps to reproduce</td><td></td></tr>
+            <tr><td><code>*</code></td><td><code>*</code></td><td><code>FIELD_MATCHES</code></td><td>Summary</td><td><code>^[A-Z]</code></td></tr>
+        </table>
+        <p>An assistant that drafts a story without story points and calls <code>jirai_validate_draft</code> receives a <code>HOUSE_RULE</code> finding, adds the points and validates again before it files the issue.</p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="JirAI-AI-Workflows.topic"/>
+            <a href="Jira-Create-Issues.topic"/>
+            <a href="JirAI-Settings-Reference.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://www.jetbrains.com/help/idea/mcp-server.html">MCP server in JetBrains IDEs</a>
+            <a href="https://modelcontextprotocol.io/">Model Context Protocol</a>
+        </category>
+    </seealso>
+</topic>

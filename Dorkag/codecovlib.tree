@@ -8,11 +8,16 @@
 
     <snippet id="codecovsn.tree">
         <toc-element topic="Codecov.topic" id="toc_codecov_root">
-            <toc-element topic="Codecov-Whats-New.topic" id="toc_codecov_whats_new"/>
-            <toc-element topic="Codecov-Installation.topic" id="toc_codecov_installation"/>
-            <toc-element topic="Codecov-Usage.topic" id="toc_codecov_usage"/>
-            <toc-element topic="Codecov-FAQ.topic" id="toc_codecov_faq"/>
-            <toc-element topic="Codecov-Reference-and-Support.topic" id="toc_codecov_support"/>
+            <toc-element topic="Codecov-Whats-New.topic" id="toc_codecov_whats_new" toc-title="What's new"/>
+            <toc-element topic="Codecov-Installation.topic" id="toc_codecov_installation" toc-title="Install and connect"/>
+            <toc-element topic="Codecov-Editor-Coverage.topic" id="toc_codecov_editor_coverage" toc-title="View coverage in the editor"/>
+            <toc-element topic="Codecov-AI-Prompts.topic" id="toc_codecov_ai_prompts" toc-title="Generate AI prompts"/>
+            <toc-element topic="Codecov-Metrics.topic" id="toc_codecov_metrics" toc-title="Metrics dashboard"/>
+            <toc-element topic="Codecov-Folder-Coverage.topic" id="toc_codecov_folder_coverage" toc-title="Folder coverage"/>
+            <toc-element topic="Codecov-Usage.topic" id="toc_codecov_usage" toc-title="Edit and validate codecov.yml"/>
+            <toc-element topic="Codecov-Settings-Reference.topic" id="toc_codecov_settings_reference" toc-title="Settings reference"/>
+            <toc-element topic="Codecov-FAQ.topic" id="toc_codecov_faq" toc-title="FAQ and troubleshooting"/>
+            <toc-element topic="Codecov-Reference-and-Support.topic" id="toc_codecov_support" toc-title="Support"/>
         </toc-element>
     </snippet>
 </instance-profile>

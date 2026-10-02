@@ -3,73 +3,128 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="JirAI: Work with Jira Issues" id="Work-with-Jira-Issues">
+       title="JirAI: Work with Jira issues" id="Work-with-Jira-Issues">
 
     <primary-label ref="jirai"/>
-    <secondary-label ref="jirai_version"/>
+    <show-structure for="chapter,procedure" depth="2"/>
 
-    <p>Manage, filter, search, and create Jira issues directly alongside your code in the IDE.</p>
+    <tldr>
+        <p>Open: <ui-path>View | Tool Windows | JirAI</ui-path></p>
+        <p>Open an issue: select it and press <shortcut>Enter</shortcut></p>
+        <p>Requires: signed in to a Jira Cloud site</p>
+    </tldr>
 
-    <chapter title="The JirAI Tool Window" id="tool-window">
-        <p>The JirAI tool window lives on the left sidebar of your IDE, keeping your Jira queue in view while you write code.</p>
-        <img src="jirai_tool_window.png" alt="JirAI tool window with the issue list, quick filters, and search" style="block" thumbnail="true"/>
+    <link-summary>Find issues in the JirAI tool window with search, quick filters and filter chips, and act on them.</link-summary>
+    <card-summary>Search, filter, sort and act on Jira issues in the JirAI tool window.</card-summary>
+    <web-summary>Browse Jira Cloud issues in the JirAI tool window of JetBrains IDEs: search by text or key, use quick filters and chips, sort, open and delete issues.</web-summary>
+
+    <p>The <control>JirAI</control> tool window lists your Jira issues next to your code.</p>
+    <p>Use it to find an issue, open its details and timeline, and run common actions on it.</p>
+    <p>In JirAI, <emphasis>issue</emphasis> and <emphasis>work item</emphasis> mean the same thing: Jira Cloud calls issues work items in its newer screens, and some JirAI views use that term too.</p>
+
+    <chapter title="The JirAI tool window" id="tool-window">
+        <p>The <control>JirAI</control> tool window opens on the left side of the IDE.</p>
+        <p>On the IDE start screen, where no project is open, click <control>More</control> on the left tool window bar and choose <control>JirAI</control>.</p>
+        <p>Its <control>Jira</control> tab holds the issue list, and each issue you open adds a details tab named after the issue key.</p>
+        <p>The tool window title bar has two buttons:</p>
+        <deflist type="narrow">
+            <def title="+ (New Issue)">Opens the Create form. See <a href="Jira-Create-Issues.topic">Create issues</a>.</def>
+            <def title="Space Summary">Opens a Jira space with its summary, board, list and reports. See <a href="JirAI-Metrics.topic">Spaces</a>.</def>
+        </deflist>
+        <img src="jirai_overview.png" alt="JirAI tool window with the issue list beside an issue&#x27;s Timeline tab" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
-    <chapter title="Quick Filters &amp; Filter Chips" id="filters">
-        <p>Triage your workload efficiently using pre-configured filters and granular dropdown chips:</p>
+    <chapter title="Search and sort" id="search-and-sort">
         <list>
-            <li><p><b>Assigned to Me:</b> Displays all issues assigned to your active account with a single click.</p></li>
-            <li><p><b>Unassigned:</b> Shows tickets needing triage and assignment.</p></li>
-            <li><p><b>All Issues:</b> Clears assignment restrictions to display the broader team's issues.</p></li>
-            <li><p><b>Granular Filter Chips:</b> Filter by <control>Project</control>, <control>Status</control>, <control>Issue Type</control>, <control>Priority</control>, <control>Assignee</control>, <control>Reporter</control>, <control>Epic/Parent</control>, and <control>Unresolved only</control>. <control>Assignee</control> and <control>Reporter</control> accept multiple people at once.</p></li>
-            <li><p><b>Exclude a Value:</b> Click a filter value twice, or <shortcut>Shift</shortcut>-click it, to exclude it instead of including it. Each filter popup also has <ui-path>All</ui-path> and <ui-path>Clear</ui-path> shortcuts.</p></li>
-            <li><p><b>Per-Project Preferences:</b> Your selected filters are saved per IDE project in <code>workspace.xml</code>, so switching projects restores your desired context automatically.</p></li>
+            <li><p>Type in the <control>Search issues</control> field to match issue text.</p></li>
+            <li>
+                <p>Type an issue key on its own, for example <code>DEMO-123</code>, to find that issue whatever its age.</p>
+                <p>The issue must still match the other active filters.</p>
+            </li>
+            <li><p>Click <control>Sort By</control> (the sort icon) and choose <control>Updated</control>, <control>Created</control> or <control>Priority</control>.</p></li>
+            <li><p>Toggle <control>Descending</control> in the same menu to reverse the order.</p></li>
+            <li><p>More issues load as you scroll down the list.</p></li>
         </list>
+        <note>
+            <p>Searches and filters cover issues created in the last 365 days.</p>
+            <p>To open an older issue, type its key.</p>
+        </note>
     </chapter>
 
-    <chapter title="Search, Direct Key Jump &amp; Sorting" id="search-and-sort">
+    <chapter title="Filter the list" id="filters">
+        <procedure title="Apply a quick filter" id="quick-filters-proc">
+            <step><p>Click <control>Filters</control> (the funnel icon) above the list.</p></step>
+            <step>
+                <p>Under <control>Quick Filters</control>, choose <control>Assigned to Me</control>, <control>Unassigned</control> or <control>All Issues</control>.</p>
+                <img src="jirai_quick_filters_sort.png" alt="Filters menu with the Quick Filters group and Assigned to Me selected" width="177" border-effect="rounded"/>
+            </step>
+        </procedure>
+        <p>The first time you open the tool window in a project, the list uses the <control>Assigned to Me</control> quick filter and shows the most recently updated issues first.</p>
+        <p>To see other people's issues and unassigned issues too, choose <control>All Issues</control>.</p>
+        <p>To narrow the list further, use the filter chips: <control>Project</control>, <control>Epic</control>, <control>Status</control>, <control>Assignee</control>, <control>Reporter</control>, <control>Type</control> and <control>Priority</control>.</p>
         <list>
-            <li><p><b>Text Search:</b> Type keywords to instantly match against issue summaries.</p></li>
-            <li><p><b>Direct Issue Key Navigation:</b> Enter an issue key (for example, <code>PROJ-123</code>) to immediately load that ticket, regardless of how long ago it was created.</p></li>
-            <li><p><b>Sorting &amp; Scrolling:</b> Sort tickets by Updated date, Created date, or Priority in ascending or descending order. More rows load seamlessly as you scroll down the list.</p></li>
+            <li><p>Click a value once to include it.</p></li>
+            <li><p>Click it a second time, or <shortcut>Shift</shortcut>+click it, to exclude it; the chip then reads <control>not</control> followed by the value.</p></li>
+            <li><p>Use <control>All</control> and <control>Clear</control> at the top of a chip popup to select or clear every value.</p></li>
+            <li><p>The <control>Status</control> popup also offers <control>Unresolved</control>.</p></li>
+            <li><p><control>Assignee</control> and <control>Reporter</control> accept several people.</p></li>
         </list>
+        <img src="jirai_issue_filters.png" alt="Status filter popup with one value excluded and the All and Clear links" width="184" border-effect="rounded"/>
+        <p>To remove every filter, choose <control>Clear Filters</control> in the <control>Filters</control> menu.</p>
+        <p>When nothing matches, the list shows <control>Nothing matches the filters.</control> with a <control>Clear filters</control> link.</p>
+        <p>JirAI remembers the filters and sort order for each IDE project.</p>
     </chapter>
 
-    <chapter title="Context Actions" id="row-actions">
-        <p>Right-clicking any issue or clicking toolbar buttons exposes contextual actions:</p>
-        <list>
-            <li><p><b>Open Details:</b> Opens the comprehensive issue details tab in the IDE.</p></li>
-            <li><p><b>Open in Browser:</b> Opens the issue directly on your Jira Cloud web portal.</p></li>
-            <li><p><b>Copy Issue Key:</b> Copies the ticket identifier (e.g. <code>PROJ-123</code>) to your clipboard for commit messages or branch names.</p></li>
-            <li><p><b>Refresh:</b> Re-fetches the latest state from Jira Cloud.</p></li>
-            <li><p><b>Delete Issue:</b> Removes the issue, with a safety confirmation dialog listing affected subtasks and children.</p></li>
-        </list>
+    <chapter title="Open an issue" id="open-issue">
+        <p>Select an issue and press <shortcut>Enter</shortcut>, or double-click it.</p>
+        <p>JirAI opens the issue's details tab in the tool window and its <control>Timeline</control> tab in the editor.</p>
+        <p>See <a href="Jira-Issue-Details-and-Editing.topic">Issue details</a> and <a href="Jira-Timeline-and-Description-Editor.topic">Timeline and breakdown</a>.</p>
     </chapter>
 
-    <chapter title="Create New Issues" id="create-issue">
-        <p>Click the <ui-path>New Issue</ui-path> button on the tool window toolbar to create a ticket without leaving the IDE.</p>
-        <img src="jirai_create_issue_markdown_preview.png" alt="Create Task form with the Markdown Description Preview" style="block" thumbnail="true"/>
-        <list>
-            <li><p><b>Dynamic Field Forms:</b> JirAI queries Jira's create metadata for the chosen project and dynamically renders required and optional fields.</p></li>
-            <li><p><b>Project &amp; Type Pickers:</b> Easily switch projects and target issue types (Task, Bug, Story, Epic, etc.).</p></li>
-            <li><p><b>Parent &amp; Epic Association:</b> Prefix-search and assign a parent issue or Epic directly upon creation.</p></li>
-            <li><p><b>Markdown Descriptions:</b> The Description field accepts Markdown — tables, nested and task lists, quotes, code blocks, and collapsible sections — converted to Jira formatting on create, with a Preview and warnings first.</p></li>
-        </list>
+    <chapter title="Issue actions" id="row-actions">
+        <p>Right-click an issue in the list to open its context menu:</p>
+        <deflist type="medium">
+            <def title="Open Details">Opens the details tab and the <control>Timeline</control> tab, as <shortcut>Enter</shortcut> does.</def>
+            <def title="Open in Browser">Opens the issue on your Jira site.</def>
+            <def title="Copy Issue Key">Copies the issue key, for example <code>DEMO-123</code>, to the clipboard.</def>
+            <def title="Refresh">Reloads the list from Jira. It uses the IDE's <control>Refresh</control> shortcut, which you can look up in <ui-path>Settings | Keymap</ui-path>.</def>
+            <def title="Delete">Deletes the issue after a confirmation. See <a anchor="delete-issue">Delete an issue</a>.</def>
+        </deflist>
+        <img src="jirai_issue_context_menu.png" alt="Issue context menu with Open Details, Open in Browser, Copy Issue Key, Refresh and Delete" width="440" border-effect="rounded"/>
     </chapter>
 
-    <chapter title="Push a Markdown Document to Jira" id="push-to-jira">
-        <p>A <ui-path>Push to Jira</ui-path> button appears on <code>.md</code> editors, letting you create or update a Jira issue directly from a Markdown document.</p>
-        <list>
-            <li><p><b>Create or Update:</b> Pushing creates a new issue through the Create form, or updates the already-linked issue.</p></li>
-            <li><p><b>Conflict Warning:</b> If the linked issue was edited in Jira since your last push, JirAI warns you before overwriting it.</p></li>
-            <li><p><b>Presets:</b> Superpowers and spec-kit documents open the Create form with the project, issue type, labels, and components you use for that kind of document.</p></li>
-            <li><p><b>Size Check:</b> A document over Jira's 32,767-character description limit is blocked, with exact numbers and its largest sections.</p></li>
-        </list>
-        <p>See <a href="JirAI-AI-Workflows.topic">AI Workflows</a> for the complete flow, presets, and settings.</p>
+    <chapter title="Delete an issue" id="delete-issue">
+        <procedure title="Delete an issue" id="delete-issue-proc">
+            <step><p>Right-click the issue and choose <control>Delete</control>.</p></step>
+            <step>
+                <p>Wait while the dialog checks your permissions and the issue's child work items.</p>
+                <p>The dialog lists the sub-tasks and other children that would be affected.</p>
+            </step>
+            <step>
+                <p>Type the issue key in the <control>Type DEMO-123 to confirm:</control> field and click <control>Delete</control>.</p>
+                <img src="jirai_delete_dialog.png" alt="Delete dialog asking you to type the issue key to confirm" width="504" border-effect="rounded"/>
+            </step>
+        </procedure>
+        <warning>
+            <p>Deleting an issue cannot be undone, and everything attached to it is deleted with it.</p>
+            <p>Watchers are notified.</p>
+        </warning>
     </chapter>
 
-    <chapter title="Next Steps" id="next">
-        <p>Learn how to view and edit fields in <a href="Jira-Issue-Details-and-Editing.topic">Issue Details and Editing</a>.</p>
+    <chapter title="Create an issue" id="create-issue">
+        <p>Click <control>+</control> in the tool window title bar to open the Create form.</p>
+        <p>See <a href="Jira-Create-Issues.topic">Create issues</a>.</p>
     </chapter>
 
+    <seealso>
+        <category ref="related">
+            <a href="Jira-Create-Issues.topic"/>
+            <a href="Jira-Issue-Details-and-Editing.topic"/>
+            <a href="Jira-Timeline-and-Description-Editor.topic"/>
+            <a href="JirAI-AI-Workflows.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://www.jetbrains.com/help/idea/tool-windows.html">Tool windows in JetBrains IDEs</a>
+        </category>
+    </seealso>
 </topic>

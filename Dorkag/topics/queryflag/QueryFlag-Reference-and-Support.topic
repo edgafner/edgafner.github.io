@@ -3,39 +3,82 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="QueryFlag Reference and Support" id="QueryFlag-Reference-and-Support">
+       title="QueryFlag: Support" id="QueryFlag-Reference-and-Support">
 
   <primary-label ref="queryflag"/>
-    <secondary-label ref="queryflag_version"/>
+
+  <tldr>
+    <p>Issues: <a href="https://github.com/edgafner/dorkag/issues">edgafner/dorkag on GitHub</a></p>
+    <p>E-mail: <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a></p>
+  </tldr>
+
+  <link-summary>Report a QueryFlag bug, request a feature, contact the developer, read about data and privacy, or find the release notes.</link-summary>
+  <card-summary>Report a bug, request a feature, contact the developer, read about privacy, or find the release notes.</card-summary>
+  <web-summary>Get support for the QueryFlag plugin for JetBrains IDEs: report bugs, request features on GitHub, contact the developer, read about data and privacy, and find the release notes.</web-summary>
 
   <p>
-    If you're encountering issues with the QueryFlag IntelliJ Plugin or have suggestions for improvements, we're here to help!
+    Before you report a problem, check <a href="QueryFlag-Troubleshooting.topic"/>.
   </p>
 
-
-  <chapter title="Feature Requests and Bugs" id="feature_request_and_bug">
+  <chapter title="Report a bug or request a feature" id="feature_request_and_bug">
     <p>
-      If you have a feature request or have found a bug, please submit an issue in our <a
-        href="https://github.com/edgafner/dorkag/issues">GitHub repository</a>.
+      Report QueryFlag issues in the public <a href="https://github.com/edgafner/dorkag/issues">edgafner/dorkag</a> repository on GitHub.
+      Use the QueryFlag issue templates and include your IDE version, QueryFlag version, database type, and the steps to reproduce the problem.
     </p>
-    <p>Please use the Feature Request or Bug Report template when submitting an issue, and provide as much detail as
-      possible.
+    <list>
+      <li>
+        <a href="https://github.com/edgafner/dorkag/issues/new?template=bug_queryflag_report.md">Report a QueryFlag bug</a>
+      </li>
+      <li>
+        <a href="https://github.com/edgafner/dorkag/issues/new?template=feature_queryflag_request.md">Request a QueryFlag feature</a>
+      </li>
+    </list>
+    <p>
+      If the IDE shows a QueryFlag error, click <control>Report Exception</control> in the IDE error dialog.
+      It opens a new QueryFlag bug report on GitHub.
+      Copy the stack trace from the error dialog into the report, together with your IDE and QueryFlag versions.
+    </p>
+    <note>
+      Issues on GitHub are public.
+      Remove passwords, host names, and data from queries before you submit a report.
+    </note>
+  </chapter>
+
+  <chapter title="Contact the developer" id="contact_me">
+    <p>
+      For licensing questions or anything you do not want to post publicly, e-mail
+      <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a>.
     </p>
   </chapter>
 
-  <chapter title="Contact Me" id="contact_me">
-    <p>If you have specific concerns, questions, or require immediate assistance, please get in touch with me directly
-      at
-      <emphasis><b>jgafner@dorkag.com</b></emphasis>
+  <chapter title="Data and privacy" id="privacy">
+    <p>
+      QueryFlag sends no usage statistics and does not connect to any server itself.
+      It runs your queries through the data sources of the <control>Database</control> tool window.
+      For what a template stores, see <a href="QueryFlag-Settings.topic" anchor="storage"/>.
+    </p>
+    <p>
+      Read the <a href="privacy-policy.topic">privacy policy</a>.
     </p>
   </chapter>
 
+  <chapter title="Release notes" id="release-notes">
+    <p>
+      The <a href="https://plugins.jetbrains.com/plugin/18269-queryflag/versions">Versions</a> page on JetBrains Marketplace
+      lists every QueryFlag release with its change notes and compatible IDE versions.
+    </p>
+  </chapter>
 
   <seealso>
-    <category ref="external" sorted="asc">
-      <a href="https://plugins.jetbrains.com/plugin/18269-queryflag">QueryFlag on Marketplace</a>
-      <a href="https://dorkag.com">Dorkag Home Page</a>
-      <a href="https://github.com/sponsors/edgafner">Sponsor Me</a>
+    <category ref="related">
+      <a href="QueryFlag-Troubleshooting.topic"/>
+      <a href="QueryFlag-Installation.topic"/>
+    </category>
+    <category ref="external">
+      <a href="https://plugins.jetbrains.com/plugin/18269-queryflag">QueryFlag on JetBrains Marketplace</a>
+      <a href="https://dorkag.com">DORKAG home page</a>
+      <a href="https://dorkag.com/services-terms-and-conditions">DORKAG terms and conditions</a>
+      <a href="https://github.com/sponsors/edgafner">Sponsor DORKAG on GitHub</a>
     </category>
   </seealso>
 </topic>

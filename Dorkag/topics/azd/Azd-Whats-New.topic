@@ -3,101 +3,188 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="What's New in Azd" id="Azd-Whats-New">
+       title="AZD: What's new" id="Azd-Whats-New">
 
     <primary-label ref="azd"/>
-    <secondary-label ref="azd_version"/>
+    <show-structure for="chapter" depth="2"/>
 
-    <p>Discover the latest features and improvements in the AZD plugin V2026.3.5.</p>
+    <link-summary>Notable changes in recent AZD release lines, from the late 2025.2 updates to 2026.3.</link-summary>
+    <card-summary>New features and notable fixes in recent AZD releases.</card-summary>
+    <web-summary>What's new in AZD, the Azure DevOps plugin for JetBrains IDEs: pull request review, sign-in,
+        pipelines, approvals, Boards and AI changes in recent releases.</web-summary>
 
-    <chapter title="New in 2026.2" id="new-in-2026-2">
-        <p>The 2026.2 line targets IntelliJ Platform 2026.2 and adds new filters, board options, and pipeline
-            insights on top of the features described below.</p>
+    <p>
+        This page lists notable changes by release line, newest first.
+        Each release line targets one IDE version; for example, AZD 2026.3 runs on IDEs 2026.3.
+        For every release, see the
+        <a href="https://plugins.jetbrains.com/plugin/22319-azd/versions">version history on JetBrains Marketplace</a>.
+    </p>
 
+    <chapter title="AZD 2026.3" id="azd-2026-3">
+        <chapter title="IDE support" id="platform-support">
+            <p>
+                AZD 2026.3 runs only on JetBrains IDEs 2026.3 (build 263).
+                The latest release, 2026.3.6, needs build 263.5153 or later.
+                IDEs 2026.2 stay on AZD 2026.2.23, the final release for that IDE version.
+            </p>
+        </chapter>
+
+        <chapter title="Pull request review" id="pr-review-improvements">
+            <p>AZD 2026.3.6 makes the state of a pull request easier to read in the <a href="Pull-Request-Details.topic">details panel</a>:</p>
+            <list>
+                <li>Reviewer rows show rejected, waiting for author and approved with suggestions separately.</li>
+                <li>A reviewer who declined to review is shown as declined.</li>
+                <li>A pull request whose merge Azure DevOps is still evaluating says so.</li>
+                <li>A merge blocked by a branch policy is explained in the details panel.</li>
+                <li>The unresolved-comments row links to the comments.</li>
+                <li>The branch popup can open a pull request in a new Git worktree.</li>
+            </list>
+            <p>
+                Fixes in this release: linking a work item reports failures, a newly opened pull request is no longer listed as unmergeable,
+                and refreshing pull requests, pipelines or boards no longer crashes on recent 2026.3 builds.
+            </p>
+        </chapter>
+    </chapter>
+
+    <chapter title="AZD 2026.2" id="new-in-2026-2">
         <list>
-            <li><p><b>Awaiting My Vote filter:</b> A new quick filter in the Pull Requests list shows only the pull
-                requests assigned to you that you have not voted on yet.</p></li>
-            <li><p><b>Zoomable comment images:</b> Click an image in a pull request comment to open it in an editor
-                tab, where you can zoom and pan it like any other image.</p></li>
-            <li><p><b>Per-pipeline approval muting:</b> Approval notifications can now be muted for an individual
-                pipeline, either straight from the notification or from Pipeline Settings.</p></li>
-            <li><p><b>Richer run list:</b> Pipeline runs now show their commit message and a colored status label
-                (Success, Failed, In progress, and so on). Runs on the default branch link back to the pull request
-                that triggered them.</p></li>
-            <li><p><b>Board improvements:</b> Open a Kanban board from any project in your organization, not just the
-                one the current repository belongs to, and filter work items by Iteration (Sprint), including
-                <code>@CurrentIteration</code>.</p></li>
-            <li><p><b>New pipeline metrics:</b> The Metrics view gained widgets for the top failure causes and the
-                slowest stages.</p></li>
-            <li><p><b>AI provider transparency:</b> A startup notice explains that AI features use a built-in cloud
-                provider by default, and lets you switch providers or disable them.</p></li>
+            <li><b>Awaiting My Vote filter:</b> a quick filter in the <a href="Work-with-Azure-DevOps-pull-requests.topic">pull request list</a>
+                shows pull requests assigned to you that you have not voted on yet.</li>
+            <li><b>Zoomable comment images:</b> click an image in a pull request comment to open it in an editor tab.</li>
+            <li><b>Viewed state for deleted and moved files:</b> deleted and moved files in a pull request can be marked as viewed.</li>
+            <li><b>Per-pipeline approval muting:</b> mute approval notifications for one pipeline from the notification or from
+                <a href="Azd-Pipeline-Approvals.topic" anchor="mute-approvals">Pipeline Settings</a>.</li>
+            <li><b>Richer run list:</b> runs show their commit message, and run details show a colored status label.
+                Runs on the default branch link to the pull request that triggered them.</li>
+            <li><b>Boards:</b> open the <a href="Azd-Boards.topic" anchor="kanban-board">Kanban board</a> of any project in the organization,
+                and filter work items by iteration, including <code>@CurrentIteration</code>.</li>
+            <li><b>Pipeline metrics:</b> new <control>Top Failure Causes</control> and <control>Slowest Stages</control> widgets in
+                <a href="Azd-Pipeline-Metrics.topic"/>.</li>
+            <li><b>Default AI provider notice:</b> a notification at startup explains that AI features use the built-in AZD cloud provider by default,
+                with a link to the AI settings.</li>
+            <li><b>Optional task integration:</b> AZD loads without the Issue Trackers plugin (formerly Task Management), which is no longer bundled with every IDE.
+                Only the <a href="Azd-Boards.topic" anchor="tasks-integration">task server integration</a> needs it.</li>
+        </list>
+        <p>
+            Performance and reliability: watching a long-running build uses less memory, large test result lists sort and filter faster,
+            opening Settings no longer freezes the IDE, and views that need the built-in browser explain why when it is not available.
+            Completed pull requests show their changed, binary, renamed and deleted files.
+        </p>
+
+        <chapter title="AI models" id="enhanced-ai">
+            <p>
+                AZD 2026.2.23 added newer OpenAI, Claude and Gemini models to the AI settings.
+                Providers set to a retired Gemini model move to its successor.
+                See <a href="Azd-AI.topic" anchor="ai-providers">AI providers</a>.
+            </p>
+        </chapter>
+
+        <chapter title="Sign-in reliability" id="ui-improvements">
+            <p>
+                Since AZD 2026.2.21, Microsoft Entra ID and Azure CLI sign-in no longer stop working after about an hour.
+                A sign-in error now offers a <control>Log in again…</control> button instead of needing an IDE restart.
+            </p>
+        </chapter>
+    </chapter>
+
+    <chapter title="AZD 2026.1" id="azd-2026-1">
+        <list>
+            <li><b>Sign in with Microsoft:</b> OAuth sign-in with Microsoft Entra ID for Azure DevOps Services, from the tool windows, the clone dialog and Settings.
+                See <a href="Azd-Installation.topic" anchor="azd-oauth-login">Sign in with Microsoft</a>.</li>
+            <li><b>Sign in with Azure CLI:</b> for organizations that block OAuth apps or phase out personal access tokens.
+                See <a href="Azd-Installation.topic" anchor="azd-azcli-login">Sign in with Azure CLI</a>.</li>
+            <li><b>AZD Boards tool window:</b> find, edit and create work items across projects, and move cards on the Kanban board.
+                See <a href="Azd-Boards.topic"/>.</li>
+            <li><b>Metrics dashboards:</b> pipeline and pull request metrics, queue time statistics, and an agent pool view with agent actions.
+                See <a href="Azd-Pipeline-Metrics.topic"/>.</li>
+            <li><b>Queue time:</b> run details show how long a run waited for an agent.</li>
+            <li><b>Auto-refresh:</b> separate settings for pipelines and pull requests.</li>
+            <li><b>Sort popups:</b> the pull request and pipeline lists have a sort button.</li>
+            <li><b>Android Studio:</b> the stage diagram and the metrics dashboards work in Android Studio.</li>
+            <li><b>Corporate proxies:</b> AZD retries requests that a TLS-inspecting proxy interrupts instead of asking for a new token.</li>
+            <li><b>Built-in AI provider:</b> the AZD provider uses GPT-5.4 mini and works without setup.</li>
         </list>
 
-        <note>The Work Item to IDE Tasks integration is now optional. JetBrains unbundled the
-            <b>Task Management</b> plugin in 2026.2, so AZD loads normally without it and only that one integration
-            stays unavailable until you install Task Management.</note>
+        <chapter title="Pipeline approvals" id="pipeline-approvals">
+            <p>
+                Approve, reject or defer environment approvals and <code>ManualValidation@1</code> tasks from the run tab, and get notified when a run waits for you.
+                See <a href="Azd-Pipeline-Approvals.topic"/>.
+            </p>
+            <img src="approva_bottom.png" alt="Run tab with the Awaiting for approval banner, a Comment field and the Approve and Reject buttons"
+                 width="512" border-effect="rounded"/>
+        </chapter>
 
-        <p><b>Performance and reliability:</b> Watching a running build is much lighter on the IDE and no longer
-            leaks memory over long runs, filtering and sorting large test-result lists is significantly faster, and a
-            broad round of diff fixes covers completed pull requests, binary files, renamed and deleted files, and
-            files that switch between a symlink and a regular file.</p>
+        <chapter title="Pipeline test results" id="pipeline-tests">
+            <p>
+                The <control>Tests</control> tab shows a summary of the run's tests and sorts them by name or duration.
+                Associate automated tests with Azure DevOps test cases from the context menu.
+                See <a href="Azd-Pipeline-Tests.topic"/>.
+            </p>
+            <img src="pipeline_test_results_v2.png"
+                 alt="Run tab next to the Tests tab with the test summary and a tree of test classes"
+                 width="706" thumbnail="true" border-effect="rounded"/>
+        </chapter>
+
+        <chapter title="AI log analysis" id="log-analysis">
+            <p>
+                Stage logs open in the editor page by page.
+                <control>Chat with AI About This Log</control> sends a log to an AI provider that explains the failure and answers follow-up questions.
+                See <a href="Azure-DevOps-Pipelines.topic" anchor="analyze-logs-with-ai">Analyze a log with AI</a>.
+            </p>
+        </chapter>
+
+        <chapter title="Pull request metrics" id="azd_pr_metrics">
+            <p>
+                A dashboard shows pull request cycle time, throughput and review activity for the repository.
+                See <a href="Work-with-Azure-DevOps-pull-requests.topic" anchor="pr-metrics">Pull request metrics</a>.
+            </p>
+        </chapter>
+
+        <chapter title="Pull requests" id="pr-improvements-2026-1">
+            <list>
+                <li>A new pull request can take its description from the repository's <a href="Azd-Create-Pull-Request.topic" anchor="pr-templates">pull request template</a>.</li>
+                <li>Commit links in the timeline open the commit in the pull request details.</li>
+                <li><code>@</code> mentions and <code>!</code> pull request references autocomplete in comments.</li>
+                <li>A toggle shows or hides draft pull requests.</li>
+                <li>An expired build in the CI status popup can be queued again.</li>
+                <li>The <a href="AI-Pull-Request-Review.topic">AI review tour</a> walks you through the changes.</li>
+            </list>
+        </chapter>
     </chapter>
 
-    <chapter title="IntelliJ Platform 2026.3 &amp; 2026.2 Support" id="platform-support">
-        <p>AZD officially targets the latest IntelliJ Platform 2026.3 EAP as well as 2026.2 GA releases across all JetBrains IDEs. Performance optimizations have reduced the plugin download footprint by approximately 12%.</p>
-    </chapter>
-
-    <chapter title="Expanded AI Models &amp; Providers" id="enhanced-ai">
-        <p>This release brings significant updates to our AI-powered features, including support for the newest frontier models and local providers.</p>
-        <img src="ai_configuration_settings.png" alt="AI Configuration Settings" style="block" thumbnail="true"/>
-        <p><b>Support for Latest Models:</b> Ships with the pre-configured AZD GPT-5.4 Mini provider out of the box, plus support for the latest model families across providers — OpenAI GPT-5.5 and GPT-5.4 (including Pro and Codex variants), Anthropic Claude Opus 4.7 / Sonnet 4.5 / Haiku 4.5, Google Gemini 3.5 Flash and Gemini 3 Pro, and local Ollama models (Llama 4, Qwen 3, DeepSeek R1).</p>
-        <img src="ai_setting_provider.png" alt="AI Provider Settings" style="block" thumbnail="true"/>
-    </chapter>
-
-    <chapter title="Enhanced PR Review Experience" id="pr-review-improvements">
+    <chapter title="AZD 2025.3" id="azd-2025-3">
+        <p>Releases from November 2025 to January 2026 added:</p>
         <list>
-            <li><p><b>Granular Reviewer Statuses:</b> Reviewer rows now differentiate between <emphasis>Rejected</emphasis>, <emphasis>Waiting for author</emphasis>, <emphasis>Approved with suggestions</emphasis>, and <emphasis>Declined</emphasis> reviewers.</p></li>
-            <li><p><b>Branch Policy Explanations:</b> Pull requests blocked by branch policies now clearly detail why the merge is blocked directly within the details panel.</p></li>
-            <li><p><b>Live Merge Evaluation:</b> Status indicators show when a PR merge is actively being evaluated by Azure DevOps.</p></li>
-            <li><p><b>Worktree Integration:</b> Open any pull request branch in an isolated git worktree directly from the branch popup.</p></li>
-            <li><p><b>Unresolved Comments Shortcut:</b> The unresolved comments counter row links directly to the conversation for immediate navigation.</p></li>
-            <li><p><b>File Review Status:</b> Deleted and moved files can now be marked as viewed in the PR changes tree.</p></li>
+            <li><b>Azure Pipelines language server:</b> completion, validation and hover help in pipeline YAML files.
+                See <a href="Azd-Pipeline-Yaml.topic"/>.</li>
+            <li><b>MCP tools:</b> AI chat can create work items, manage pull requests and trigger pipelines.
+                See <a href="AI-Pull-Request-Review.topic" anchor="mcp-tools">MCP tools</a>.</li>
+            <li><b>Several work items per commit:</b> select more than one work item for a commit message.
+                See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
+            <li><b>Viewed files:</b> the viewed state of pull request files syncs with Azure DevOps, and a progress line counts the viewed files.
+                See <a href="Pull-Request-Details.topic" anchor="changed-files">Go through the changed files</a>.</li>
         </list>
     </chapter>
 
-    <chapter title="Pipeline Approvals and Validations" id="pipeline-approvals">
-        <p>Manage pipeline gatekeepers directly from the IDE. You can now view and respond to pending environment approvals and manual validation tasks.</p>
-        <img src="approva_bottom.png" alt="Pipeline Approvals" style="block" thumbnail="true"/>
-        <p>When a pipeline run is blocked, the approvals appear in the build header and the stages list, allowing you to approve or reject with a comment.</p>
-    </chapter>
-
-    <chapter title="Advanced Pipeline Test Insights" id="pipeline-tests">
-        <p>The Pipeline test result panel provides deep traceability and analysis:</p>
-        <img src="pipeline_test_results_v2.png" alt="Pipeline Test Results" style="block" thumbnail="true"/>
+    <chapter title="AZD 2025.2" id="azd-2025-2">
+        <p>Later AZD 2025.2 updates, from September to November 2025, added:</p>
         <list>
-            <li><p><b>Sorting and Filtering:</b> Quickly find failed or long-running tests with toolbar controls.</p></li>
-            <li><p><b>Test Summary:</b> Real-time summary of test execution (passed, failed, skipped, and pass percentage).</p></li>
-            <li><p><b>Traceability:</b> Seamlessly link automated tests to Azure DevOps test cases.</p></li>
+            <li><b>Shallow clone:</b> clone a repository with a truncated history.
+                See <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" anchor="clone-steps">Clone an Azure DevOps repository</a>.</li>
+            <li><b>Work items in commit messages:</b> select work items when you generate a commit message.
+                See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
+            <li><b>Stage diagram:</b> new pipeline stage diagram features, and faster loading of runs and run details.
+                See <a href="Azure-DevOps-Pipelines.topic" anchor="pipeline-diagram">View the stage diagram</a>.</li>
         </list>
     </chapter>
 
-    <chapter title="AI-Powered Log Analysis" id="log-analysis">
-        <p>Diagnose pipeline failures without leaving the IDE. The AI chat integration for logs analyzes failed stages and suggests fixes.</p>
-        <img src="pipeline_logs_ai_chat.png" alt="AI Chat for Logs" style="block" thumbnail="true"/>
-    </chapter>
-
-    <chapter title="PR Metrics Dashboard" id="azd_pr_metrics">
-        <p>Track team Pull Request velocity and review turnaround with the built-in metrics dashboard.</p>
-        <img src="pr_metrics_dashboard.png" alt="PR Metrics Dashboard" style="block" thumbnail="true"/>
-    </chapter>
-
-    <chapter title="Authentication &amp; UI Reliability" id="ui-improvements">
-        <list>
-            <li><p><b>Persistent Auth:</b> Sign-in with Microsoft Entra ID and Azure CLI tokens maintains reliable refresh cycles without hourly expiration.</p></li>
-            <li><p><b>Timeline Commit Links:</b> Clicking on commit SHAs in the PR timeline opens the details view in the IDE.</p></li>
-            <li><p><b>Dedicated Sort Controls:</b> PR and Pipeline lists feature inline sort buttons for fast organization.</p></li>
-        </list>
-        <img src="sort_pipeline_and_pr_inline_button.png" alt="New Sort Button" style="block" thumbnail="true"/>
-    </chapter>
-
+    <seealso>
+        <category ref="related">
+            <a href="Azd-Installation.topic"/>
+            <a href="Azure-DevOps-Pipelines.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/22319-azd/versions">AZD version history on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>

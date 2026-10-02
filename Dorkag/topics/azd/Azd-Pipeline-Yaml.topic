@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Edit Azure Pipelines YAML" id="Azd-Pipeline-Yaml">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Configure: <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path></p>
+        <p>Language server: requires Node.js 14 or later</p>
+    </tldr>
+
+    <link-summary>Get completion, validation and hover help in Azure Pipelines YAML files, and choose which files count as pipelines.</link-summary>
+    <card-summary>Completion and validation for Azure Pipelines YAML through the Azure Pipelines language server.</card-summary>
+    <web-summary>Edit Azure Pipelines YAML in JetBrains IDEs with AZD: completion, validation and hover help from the
+        Azure Pipelines language server, and custom file locations.</web-summary>
+
+    <p>
+        AZD recognizes Azure Pipelines YAML files and adds completion, validation and hover documentation to them.
+        Pipeline files get the Azure Pipelines icon in the <control>Project</control> tool window.
+    </p>
+
+    <chapter title="Completion and validation" id="yaml-completion">
+        <p>
+            When you open a pipeline file, AZD starts the Azure Pipelines language server that ships with the plugin.
+            The language server provides completion of keys such as <code>stages</code>, <code>jobs</code> and <code>steps</code>,
+            hover documentation, and diagnostics for unknown or misplaced keys.
+        </p>
+        <img src="pipeline_injections.png" alt="Completion popup in a pipeline YAML file suggesting stages, steps and strategy"
+             width="706" thumbnail="true" border-effect="rounded"/>
+        <!-- planned-image src="azd_yaml_completion.png" alt="Completion popup in azure-pipelines.yml suggesting stages, steps and strategy" replaces="pipeline_injections.png" -->
+        <p>
+            The language server runs on Node.js 14 or later.
+            If AZD cannot find Node.js, pipeline files get no completion; see <a anchor="yaml-nodejs"/>.
+        </p>
+        <p>
+            To turn the language server off, clear <control>Inject Azure DevOps YAML pipeline schema</control> in
+            <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path>.
+        </p>
+    </chapter>
+
+    <chapter title="Which files are pipeline files" id="pipeline-files">
+        <p>AZD treats a <path>.yml</path> or <path>.yaml</path> file as a pipeline file when:</p>
+        <list>
+            <li>its name contains <code>azure</code> or <code>pipelines</code>, for example <path>azure-pipelines.yml</path> or <path>ci-pipelines.yaml</path>;</li>
+            <li>it is inside a folder named <path>azure-pipelines</path>, <path>.azure-pipelines</path> or <path>.pipelines</path>;</li>
+            <li>it matches an entry in <control>Additional pipeline YAML locations</control>.</li>
+        </list>
+
+        <procedure title="Add pipeline file locations" id="add-yaml-locations">
+            <step>
+                <p>Open <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path>.</p>
+            </step>
+            <step>
+                <p>In <control>Additional pipeline YAML locations</control>, enter folders or glob patterns relative to the project root, separated by semicolons.
+                    For example: <code>ci/pipelines;deploy/**/pipeline-*.yml</code>.</p>
+                <p>A folder makes every YAML file under it a pipeline file.
+                    A glob pattern matches specific files.</p>
+            </step>
+            <step>
+                <p>Click <control>OK</control>.
+                    The <control>Project</control> tool window updates the file icons.</p>
+            </step>
+        </procedure>
+        <p>This setting belongs to the current project.</p>
+    </chapter>
+
+    <chapter title="Set up Node.js for the language server" id="yaml-nodejs">
+        <p>AZD uses the first Node.js 14 or later that it finds, in this order:</p>
+        <list type="decimal">
+            <li>The path in <control>Node.js Path</control>.</li>
+            <li>The Node.js interpreter configured in the IDE, in IDEs with JavaScript support.</li>
+            <li>The <code>PATH</code>.</li>
+            <li>On macOS and Linux: nvm installations, then your login shell.</li>
+        </list>
+        <p>If AZD does not find Node.js, or you want to use another installation, set the path yourself.</p>
+        <procedure title="Configure Node.js" id="configure-nodejs">
+            <step>
+                <p>Open <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path>.</p>
+            </step>
+            <step>
+                <p>In the <control>Node.js Configuration</control> group, enter the Node.js executable in <control>Node.js Path</control>,
+                    or leave it empty to detect Node.js automatically.</p>
+            </step>
+            <step>
+                <p>Click <control>Validate Node.js</control> and check the status line below the field.</p>
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Open the YAML of a run" id="jump-to-yaml">
+        <p>
+            To open the pipeline definition file from a run, use <control>Jump to YAML</control>; see
+            <a href="Azure-DevOps-Pipelines.topic" anchor="run-details">Inspect a run</a>.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azure-DevOps-Pipelines.topic"/>
+            <a href="Azd-Settings-Configuration.topic" anchor="pipeline-settings">Pipeline Settings</a>
+            <a href="Azd-FAQ.topic" anchor="lsp-nodejs">Pipeline YAML has no completion</a>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/">YAML schema reference (Microsoft Learn)</a>
+            <a href="https://github.com/microsoft/azure-pipelines-language-server">Azure Pipelines language server (GitHub)</a>
+        </category>
+    </seealso>
+</topic>

@@ -3,39 +3,240 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Work with Pull Requests" id="Work-with-Azure-DevOps-pull-requests">
+       title="AZD: Work with pull requests" id="Work-with-Azure-DevOps-pull-requests">
+
     <primary-label ref="azd"/>
-    <secondary-label ref="azd_version"/>
-    <p>AZD streamlines the pull request workflow by allowing you to create, view, and manage PRs directly from your JetBrains IDE.</p>
+    <show-structure for="chapter,procedure" depth="2"/>
 
-    <chapter title="View Pull Requests" id="view-pull-requests">
-        <p>The <ui-path>Pull Requests</ui-path> tab provides a comprehensive list of all PRs in your repository.</p>
-        <img src="manage_pr_list.png" alt="Pull Request List" style="block" thumbnail="true"/>
-        <p>Use the new sort button to quickly find the PRs that need your attention.</p>
-        <img src="sort_pipeline_and_pr_inline_button.png" alt="PR Sort Controls" style="block" thumbnail="true"/>
-    </chapter>
+    <tldr>
+        <p>Open: <ui-path>View | Tool Windows | AZD Pull Requests</ui-path> or <ui-path>Git | AZD | Show AZD Pull Requests</ui-path></p>
+        <p>Requires: a project with an Azure DevOps Git remote and a signed-in AZD account</p>
+        <p>Preferences: <ui-path>Settings | Version Control | AZD | Preferences</ui-path></p>
+    </tldr>
 
-    <chapter title="PR Metrics" id="azd_pr_metrics_usage">
-        <p>Analyze your team's performance with the new PR Metrics Dashboard.</p>
-        <img src="pr_metrics_dashboard.png" alt="PR Metrics Dashboard" style="block" thumbnail="true"/>
-    </chapter>
+    <link-summary>Open the AZD Pull Requests tool window, then find, filter, sort and open Azure DevOps pull requests.</link-summary>
+    <card-summary>Find, filter and open Azure DevOps pull requests in the AZD Pull Requests tool window.</card-summary>
+    <web-summary>Browse Azure DevOps pull requests in JetBrains IDEs with AZD: filters, quick filters, custom
+        filters, sorting, drafts and a pull request metrics dashboard.</web-summary>
 
-    <chapter title="Create a Pull Request" id="create-pull-request">
-        <procedure id="create-pr-procedure">
-            <step><p>Navigate to the <ui-path>Pull Requests</ui-path> tab and click the <ui-path>Create Pull Request</ui-path> button.</p></step>
-            <step><p>Select the source and target branches.</p></step>
-            <step><p>The AI can automatically generate a title and description based on your commits.</p></step>
-            <step><p>Click <ui-path>Create</ui-path> to submit the pull request.</p></step>
+    <p>
+        The <control>AZD Pull Requests</control> tool window lists the pull requests of the Azure DevOps repository that your project is cloned from.
+        From the list, you open a pull request, create a new one and track your team's review activity.
+    </p>
+    <!-- planned-image src="azd_pr_overview.png" alt="AZD Pull Requests tool window next to a pull request diff with an open comment thread" -->
+    <p>
+        Tasks for a single pull request have their own topics:
+    </p>
+    <list>
+        <li><a href="Azd-Create-Pull-Request.topic"/></li>
+        <li><a href="Pull-Request-Details.topic"/></li>
+        <li><a href="Azd-PR-Comments.topic"/></li>
+        <li><a href="Azd-PR-Complete.topic"/></li>
+    </list>
+
+    <chapter title="Open the tool window" id="open-tool-window">
+        <p>
+            The tool window is available when the project has a Git remote that points to Azure DevOps Services or Azure DevOps Server.
+            To sign in, see <a href="Azd-Installation.topic" anchor="connect"/>.
+        </p>
+        <procedure title="Open the AZD Pull Requests tool window" id="open-pr-tool-window" type="choices">
+            <step>
+                Select <ui-path>View | Tool Windows | AZD Pull Requests</ui-path>.
+            </step>
+            <step>
+                In the main menu, select <ui-path>Git | AZD | Show AZD Pull Requests</ui-path>.
+                <!-- planned-image src="azd_pr_open_menu.png" alt="Git menu with the AZD submenu open and Show AZD Pull Requests highlighted" -->
+            </step>
+            <step>
+                Click the <control>AZD Pull Requests</control> icon on the tool window bar.
+            </step>
         </procedure>
+        <p>
+            If AZD cannot choose the repository and the account on its own, for example because the project has more than one Azure DevOps repository,
+            the tool window asks you to select them.
+            To select them, or to switch later with <control>Change Repository or Account…</control>, see <a href="Azd-Installation.topic" anchor="azd-select-repository"/>.
+        </p>
     </chapter>
 
-    <chapter title="Manage Reviewers and Labels" id="manage-pr">
-        <p>Quickly add reviewers or labels to your pull requests using the side panel in the PR details view.</p>
-        <p>The multi-select popups have been optimized to handle large organizations without freezing the IDE.</p>
+    <chapter title="View pull requests" id="view-pull-requests">
+        <p>
+            The <control>Pull Requests</control> tab lists the pull requests of the repository, newest first.
+            When you open the list in a project for the first time, it shows only your own active pull requests (the <control>Includes my changes</control> quick filter).
+            To see all active pull requests, select the <control>Active</control> quick filter; see <a anchor="quick-filters"/>.
+            AZD remembers the last filter for the project.
+        </p>
+        <p>
+            Each row shows the title, the pull request number, the creation date and author, labels and reviewer avatars.
+        </p>
+        <!-- planned-image src="azd_pr_list.png" alt="Pull request list with filters, a DRAFT badge, labels and reviewer avatars" -->
+        <deflist type="medium">
+            <def title="DRAFT, MERGED, ABANDONED">
+                The state badge of a pull request that is not active.
+            </def>
+            <def title="Merge conflict icon">
+                The tooltip <control>Pull request can't be merged</control> means that the source branch conflicts with the target branch.
+            </def>
+            <def title="New commits icon">
+                The tooltip <control>New commits since your review</control> means that commits were pushed after you last voted or marked every file as viewed.
+                AZD keeps track of these reviews for 30 days.
+            </def>
+        </deflist>
+        <p>
+            Double-click a pull request, or select it and press <shortcut>Enter</shortcut>, to open its details in a new tab of the tool window.
+            Right-click a pull request for <control>Show Pull Request</control>, <control>Open Pull Request in Browser</control>,
+            <control>Copy Pull Request URL</control> and <control>Refresh</control>.
+        </p>
+        <p>
+            By default, the list hides draft pull requests.
+            To show them, click <control>Include Drafts</control> on the list toolbar.
+            To hide them again, click <control>Exclude Drafts</control>.
+            AZD remembers the choice for the project.
+        </p>
     </chapter>
 
-    <chapter title="Timeline and Navigation" id="timeline">
-        <p>The PR timeline shows all activities, including comments, commits, and status changes.</p>
-        <p>Clicking on commit links in the timeline now opens the commit details directly in the IDE.</p>
+    <chapter title="Filter and search" id="filter-pull-requests">
+        <p>
+            Type in the search field to filter the list as you type.
+            AZD matches the text against the title, the description and the number of each pull request.
+            Use the filter buttons under the search field to narrow the list further:
+        </p>
+        <deflist type="medium">
+            <def title="State">
+                <control>All</control>, <control>Active</control>, <control>Merged</control> or <control>Abandoned</control>.
+            </def>
+            <def title="Author, Reviewer">
+                A person in the organization.
+                Type at least 2 characters to search for a user.
+            </def>
+            <def title="Source Branch, Target Branch">
+                A branch of the repository.
+            </def>
+        </deflist>
+        <p>
+            If no pull request matches, click <control>Clear filters</control> in the empty list.
+        </p>
     </chapter>
+
+    <chapter title="Quick filters" id="quick-filters">
+        <p>
+            Click the filter icon in the search field to open <control>Quick Filters</control>.
+            Every built-in quick filter except <control>Abandoned</control> shows active pull requests only.
+        </p>
+        <!-- planned-image src="azd_pr_quick_filters.png" alt="Quick Filters popup listing the built-in filters and one custom filter" -->
+        <deflist type="medium">
+            <def title="Active">All active pull requests.</def>
+            <def title="Includes my changes">Pull requests that you created.</def>
+            <def title="I am a reviewer">Pull requests where you are a reviewer.</def>
+            <def title="Abandoned">Abandoned pull requests.</def>
+            <def title="Waiting for Author">Pull requests where you voted <control>Wait For Author</control>.</def>
+            <def title="I Reviewed">Pull requests that you approved, with or without suggestions.</def>
+            <def title="Awaiting My Vote">Pull requests where you are a reviewer and have not voted yet.</def>
+            <def title="New Changes Since Review">Pull requests with commits pushed after your last review.</def>
+        </deflist>
+        <p>
+            Your custom quick filters appear in the same popup.
+        </p>
+    </chapter>
+
+    <chapter title="Custom quick filters" id="custom-quick-filters">
+        <p>
+            A custom quick filter saves a combination of criteria under a name, for example "Needs my vote on main".
+        </p>
+        <procedure title="Create a custom quick filter" id="create-custom-quick-filter">
+            <step>
+                In the title bar of the <control>AZD Pull Requests</control> tool window, click <control>Custom Quick Filters</control> (the gear icon).
+                You can also right-click the list and select <control>Custom Quick Filters</control>.
+            </step>
+            <step>
+                In the <control>Custom Quick Filters</control> dialog, click <control>+</control>.
+            </step>
+            <step>
+                In the <control>Add Custom Quick Filter</control> dialog, enter a <control>Name</control>.
+            </step>
+            <step>
+                Under <control>Filter Criteria</control>, set any of <control>State</control>, <control>Sort</control>,
+                <control>Author</control>, <control>Reviewer</control>, <control>Source Branch</control> and <control>Target Branch</control>.
+                <!-- planned-image src="azd_pr_custom_quick_filter.png" alt="Add Custom Quick Filter dialog with a name, the Active state and a reviewer selected" -->
+            </step>
+            <step>
+                Click <control>OK</control>.
+            </step>
+        </procedure>
+        <p>
+            To change or delete a custom quick filter, open the <control>Custom Quick Filters</control> dialog, select the filter and click the edit button or <control>-</control>.
+        </p>
+    </chapter>
+
+    <chapter title="Sort the list" id="sort-pull-requests">
+        <p>
+            Click the sort icon on the list toolbar and select a <control>Sort by</control> option:
+            <control>Default (newest first)</control>, <control>Created Date</control> or <control>Title</control>.
+            Select <control>Descending</control> to reverse the order.
+            AZD remembers the sort order for each project.
+        </p>
+        <!-- planned-image src="azd_pr_sort.png" alt="Sort by popup for pull requests with Created Date selected" -->
+    </chapter>
+
+    <chapter title="Keep the list up to date" id="auto-refresh">
+        <p>
+            To reload the list, right-click it and select <control>Refresh</control>, or press the shortcut assigned to <control>Refresh</control> (see <ui-path>Settings | Keymap</ui-path>).
+        </p>
+        <p>
+            To refresh the list and open pull requests automatically, select <control>Auto-refresh pull requests</control> and set <control>Interval in seconds</control>
+            in <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
+            AZD refreshes the list only while its tab is shown.
+            It refreshes an open pull request only while its details tab is shown and has the focus.
+            For all options on this page, see <a href="Azd-Settings-Configuration.topic" anchor="general-configuration"/>.
+        </p>
+    </chapter>
+
+    <chapter title="PR metrics" id="pr-metrics">
+        <p id="azd_pr_metrics_usage">
+            The <control>PR Metrics</control> dashboard summarizes pull request activity in the repository.
+            It needs the IDE's built-in browser (JCEF).
+        </p>
+        <procedure title="Open the PR metrics dashboard" id="open-pr-metrics">
+            <step>
+                In the title bar of the <control>AZD Pull Requests</control> tool window, click <control>PR Metrics</control> (the chart icon).
+            </step>
+            <step>
+                In the <control>PR Metrics</control> editor tab, use the toolbar to set the <control>Time range</control>
+                and to filter by <control>Author</control>, <control>Reviewer</control> and <control>Target branch</control>.
+                The time range goes from <control>Last 7 days</control> to <control>Last year</control>; the default is <control>Last 90 days</control>.
+            </step>
+        </procedure>
+        <p>The dashboard shows:</p>
+        <list>
+            <li>Summary cards: <control>Total PRs</control>, <control>Active</control>, <control>Merged</control>, <control>Avg Cycle Time</control> and <control>Merges / Week</control>.</li>
+            <li><control>PR Cycle Time</control>: the time from creation to completion of each merged pull request.</li>
+            <li><control>Status Distribution</control> and <control>Review Votes</control>.</li>
+            <li>The number of pull requests merged per day, week or month, depending on the time range.</li>
+            <li><control>Top Authors</control> and <control>Top Reviewers</control>.</li>
+        </list>
+        <p>
+            Click the maximize button of a widget to enlarge it.
+            For pipeline metrics and agent pools, see <a href="Azd-Pipeline-Metrics.topic"/>.
+        </p>
+    </chapter>
+
+    <chapter title="Create a pull request" id="create-pull-request">
+        <p>
+            Click <control>Create Pull Request…</control> (<control>+</control>) in the tool window title bar.
+            For all the ways to start and the fields of the new pull request tab, see <a href="Azd-Create-Pull-Request.topic"/>.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-Create-Pull-Request.topic"/>
+            <a href="Pull-Request-Details.topic"/>
+            <a href="Azd-PR-Comments.topic"/>
+            <a href="Azd-PR-Complete.topic"/>
+            <a href="Azd-AI.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/about-pull-requests">About pull requests (Microsoft Learn)</a>
+            <a href="https://plugins.jetbrains.com/plugin/22319-azd">AZD on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>

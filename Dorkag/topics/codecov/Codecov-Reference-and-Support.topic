@@ -3,24 +3,53 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Codecov Reference and Support" id="Codecov-Reference-and-Support">
+       title="Codecov: Support" id="Codecov-Reference-and-Support">
 
   <primary-label ref="codecov"/>
-    <secondary-label ref="codecov_version"/>
+
+  <tldr>
+    <p>Report a bug: <a href="https://github.com/edgafner/dorkag/issues">DORKAG issue tracker</a></p>
+    <p>Contact: <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a></p>
+  </tldr>
+
+  <link-summary>Report a Codecov plugin problem, suggest an improvement, contact the developer, or read about data and privacy.</link-summary>
+  <card-summary>Report a problem or contact the developer.</card-summary>
+  <web-summary>Get support for the Codecov plugin for JetBrains IDEs: report bugs, request features, read about data and privacy, and find Codecov resources and the JetBrains Marketplace page.</web-summary>
+
   <p>
-    If you're encountering issues with the Codecov IntelliJ Plugin or have suggestions for improvements, we're here to help!
+    To report a problem with the Codecov plugin or suggest an improvement, use one of the channels below.
+    For common problems, see <a href="Codecov-FAQ.topic"/> first.
   </p>
 
   <include from="common-support.topic" element-id="support-content"/>
 
+  <chapter title="Report an IDE error" id="report-exception">
+    <p>
+      When the IDE shows an error that comes from the Codecov plugin, click <control>Report Exception</control> in the error dialog.
+      For details, see <a href="Codecov-FAQ.topic" anchor="codecov_report_bug"/>.
+    </p>
+  </chapter>
+
+  <chapter title="Data and privacy" id="privacy">
+    <p>
+      The Codecov plugin sends no usage statistics.
+    </p>
+    <p>
+      Read the <a href="privacy-policy.topic">privacy policy</a> and the <a href="terms-of-service.topic">terms of service</a>.
+    </p>
+  </chapter>
+
   <seealso>
-    <!--Provide links to related how-to guides, overviews, and tutorials.-->
-    <category ref="external" sorted="asc">
-      <a href="https://plugins.jetbrains.com/plugin/23390-codecov">Codecov on Marketplace</a>
-      <a href="https://docs.codecov.com/reference/overview">Codecov Personal Access Tokens</a>
-      <a href="https://docs.codecov.com/docs/branches">Codecov Branches and default branch</a>
-      <a href="https://dorkag.com">Dorkag Home Page</a>
-      <a href="https://github.com/sponsors/edgafner">Sponsor Me</a>
+    <category ref="related">
+      <a href="Codecov-FAQ.topic"/>
+      <a href="Codecov-Settings-Reference.topic"/>
+    </category>
+    <category ref="external">
+      <a href="https://plugins.jetbrains.com/plugin/23390-codecov">Codecov on JetBrains Marketplace</a>
+      <a href="https://docs.codecov.com/reference/overview">Codecov API reference: getting started</a>
+      <a href="https://docs.codecov.com/docs/codecov-yaml">Codecov YAML documentation</a>
+      <a href="https://dorkag.com">DORKAG website</a>
+      <a href="https://github.com/sponsors/edgafner">Sponsor the developer on GitHub</a>
     </category>
   </seealso>
 </topic>

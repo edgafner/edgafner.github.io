@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI: Create Jira issues" id="Jira-Create-Issues">
+
+    <primary-label ref="jirai"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Open: <control>+</control> (<control>New Issue</control>) in the <control>JirAI</control> tool window title bar</p>
+        <p>Add a child: <control>Add child</control> in the <control>Breakdown</control> section or tab</p>
+    </tldr>
+
+    <link-summary>Create a Jira issue from the IDE with a form built from your project's create screen, including Markdown descriptions and child work items.</link-summary>
+    <card-summary>Create issues from your project's own create screen, with Markdown descriptions and Add child.</card-summary>
+    <web-summary>Create Jira Cloud issues in JetBrains IDEs with JirAI: a form built from your project's create screen, Markdown descriptions with preview, and Add child.</web-summary>
+
+    <p>JirAI builds the Create form from the create screen Jira defines for the chosen project and issue type.</p>
+    <p>The form shows the same fields Jira shows, marks required fields and accepts Markdown in the description.</p>
+
+    <chapter title="Create an issue" id="create-issue">
+        <procedure title="Create an issue" id="create-issue-proc">
+            <step>
+                <p>In the <control>JirAI</control> tool window title bar, click <control>+</control> (<control>New Issue</control>).</p>
+                <p>A <control>Create Issue</control> tab opens in the tool window.</p>
+            </step>
+            <step>
+                <p>Choose the <control>Project:</control> and the <control>Issue type:</control>.</p>
+                <p>The pickers show each project's avatar and each issue type's icon.</p>
+                <img src="jirai_create_pickers.png" alt="Create Issue form with the issue type dropdown showing issue type icons" width="578" border-effect="rounded"/>
+            </step>
+            <step>
+                <p>Fill in the fields.</p>
+                <p>A red asterisk marks a required field, and <control>Create</control> stays disabled until every required field has a value.</p>
+            </step>
+            <step><p>Click <control>Create</control>.</p></step>
+        </procedure>
+        <p>Once you pick a project and an issue type, the tab is renamed after them, for example <control>Create Task — DEMO</control>.</p>
+        <p>If you change the project or the issue type after entering values, JirAI asks whether to discard them.</p>
+        <p>When Jira accepts the issue, JirAI closes the Create tab and opens the new issue: its details tab in the tool window and its <control>Timeline</control> tab in the editor.</p>
+        <p>If Jira rejects the issue, the form stays open and shows the reason.</p>
+    </chapter>
+
+    <chapter title="Fields the form cannot edit" id="unsupported-fields">
+        <p>A few Jira field types cannot be edited in the IDE.</p>
+        <p>Such a field shows <control>Not editable here yet</control> and an <control>Open in browser</control> link to Jira's own create screen.</p>
+        <p>If such a field is required, create the issue in Jira instead.</p>
+        <p>When you have no permission to create issues in a project, or of an issue type, the form says so.</p>
+    </chapter>
+
+    <chapter title="Write the description in Markdown" id="markdown-create">
+        <p>The <control>Description</control> field accepts Markdown.</p>
+        <p>JirAI converts it to Jira formatting when it creates the issue, so headings, bold and italic text, links, tables, nested lists, task lists, quotes, code blocks and collapsible sections arrive formatted.</p>
+        <procedure title="Preview the description" id="markdown-preview-proc">
+            <step><p>Write the description in Markdown.</p></step>
+            <step>
+                <p>Click <control>Preview</control> on the <control>Description</control> row to see how Jira will show it.</p>
+                <img src="jirai_create_markdown_preview.png" alt="Create form with the Markdown description shown in Preview" width="562" border-effect="rounded"/>
+            </step>
+            <step><p>Click <control>Edit</control> to return to the Markdown text.</p></step>
+        </procedure>
+        <p>Anything Jira cannot represent exactly is listed as a warning under the field, with the line it comes from.</p>
+        <p>Warnings never block <control>Create</control>.</p>
+    </chapter>
+
+    <chapter title="Create a child work item" id="add-child">
+        <p>Use <control>Add child</control> to create a work item under an existing issue.</p>
+        <procedure title="Add a child work item" id="add-child-proc">
+            <step>
+                <p>Open the parent issue.</p>
+            </step>
+            <step>
+                <p>Click <control>Add child</control> in the <control>Breakdown</control> section of the details tab, or in the <control>Breakdown</control> tab beside the issue timeline.</p>
+                <p>The Create form opens with the parent already filled in.</p>
+                <!-- planned-image src="jirai_add_child.png" alt="Create form opened from Add child with the parent filled in" -->
+            </step>
+            <step><p>Choose the issue type.</p></step>
+            <step><p>Fill in the fields.</p></step>
+            <step><p>Click <control>Create</control>.</p></step>
+        </procedure>
+        <list>
+            <li><p>When only one issue type can sit under the parent, JirAI picks it for you.</p></li>
+            <li><p>A type that cannot sit under the parent is flagged on the form.</p></li>
+            <li><p>If you cannot create issues in the parent's project, the form says so.</p></li>
+            <li>
+                <p>If a <control>Create Issue</control> tab with unsaved values is already open, JirAI keeps it and asks you to finish or close it first.</p>
+            </li>
+        </list>
+        <p>After you create the child, the parent's <control>Breakdown</control> list refreshes.</p>
+    </chapter>
+
+    <chapter title="Create an issue from a Markdown document" id="create-from-doc">
+        <p>To turn a spec or plan in your project into an issue, use <control>Push to Jira</control> on the Markdown editor.</p>
+        <p>It opens the same Create form with the summary and description filled in from the document.</p>
+        <p>See <a href="JirAI-AI-Workflows.topic">Push Markdown docs to Jira</a>.</p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Work-with-Jira-Issues.topic"/>
+            <a href="Jira-Timeline-and-Description-Editor.topic"/>
+            <a href="JirAI-AI-Workflows.topic"/>
+            <a href="JirAI-Agent-Tools.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://support.atlassian.com/jira-cloud-administration/docs/manage-issue-screens/">Jira Cloud issue screens</a>
+        </category>
+    </seealso>
+</topic>

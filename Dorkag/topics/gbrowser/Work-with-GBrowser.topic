@@ -1,42 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="GBrowser Features" id="Work-with-GBrowser">
-  <primary-label ref="gbrowser"/>
-    <secondary-label ref="gbrowser_version"/>
-  <p>
-    Using the GBrowser plugin is straightforward — just like using a browser, but inside the IDE.
-  </p>
+       title="GBrowser: Browse the web" id="Work-with-GBrowser">
 
-  <chapter title="Open GBrowser" id="open-gbrowser">
+    <primary-label ref="gbrowser"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Open: <ui-path>View | Tool Windows | GBrowser</ui-path></p>
+        <p>New tab: <shortcut>Ctrl+T</shortcut></p>
+        <p>Find on a page: <shortcut>Ctrl+F</shortcut></p>
+    </tldr>
+
+    <link-summary>Open the GBrowser tool window, navigate and search from the address field, work with tabs, find text, zoom and use the More Options menu.</link-summary>
+    <card-summary>Open the browser tool window, navigate, search, use tabs, find text and zoom.</card-summary>
+    <web-summary>Browse the web inside JetBrains IDEs with GBrowser: open the tool window, search from the address field, use tabs, find text on a page and zoom.</web-summary>
+
     <p>
-      To open GBrowser, click the GBrowser icon on the toolbar.
-      That's it — you can start navigating the web.
+        GBrowser shows web pages in the <control>GBrowser</control> tool window, next to the editor.
+        Each tab is a separate Chromium browser with its own address field and toolbar.
     </p>
-    <img src="gbrowser_main_view.png" alt="gbrowser_main_view"/>
-  </chapter>
-
-  <chapter title="GBrowser Actions" id="gbrowser-actions">
-    <p>In the top-right corner of GBrowser, you can find the More actions button
-      <img src="down.svg" alt="down"/>
+    <p>
+        The default shortcuts in this topic are for Windows and Linux.
+        For the full list, see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
+        On macOS, GBrowser shortcuts use <shortcut>⌘</shortcut> instead of <shortcut>Ctrl</shortcut> and <shortcut>⌥</shortcut> instead of <shortcut>Alt</shortcut>; see <a href="GBrowser-Keyboard-Shortcuts.topic" anchor="macos-shortcuts"/>.
     </p>
-    <p>The More actions menu lets you perform additional configurations and actions such as:</p>
-      <list columns="2">
-        <li>Navigate to the home page</li>
-        <li>Find on page and search</li>
-        <li>Open in default browser</li>
-        <li>Reload/Stop Loading Page</li>
-        <li>Open DevTools tool window</li>
-        <li>Clear cookies and history</li>
-        <li>Bookmark functionality</li>
-        <li>Add/Close/Duplicate tab</li>
-        <li>Zoom functionality</li>
-        <li>Open Settings</li>
-      </list>
-    <img src="more_actions.png" alt="more_actions"/>
 
+    <chapter title="Open GBrowser" id="open-gbrowser">
+        <procedure title="Open the tool window" id="open-tool-window" type="choices">
+            <step>
+                Click the <control>GBrowser</control> button on the left tool window bar.
+            </step>
+            <step>
+                Select <ui-path>View | Tool Windows | GBrowser</ui-path>.
+            </step>
+        </procedure>
+        <p>
+            The first tab opens the default home page.
+            You set the home page in <a href="GBrowser-Settings-and-Configuration.topic#default-home-page">settings</a>.
+        </p>
+        <p>
+            To move GBrowser to the right side of the IDE window, drag its button to the right tool window bar.
+        </p>
+        <!-- planned-image src="gbrowser_overview.png" alt="IDE window with the GBrowser tool window open on the left, showing a web page next to the editor" -->
+    </chapter>
 
-  </chapter>
+    <chapter title="Navigate" id="navigate">
+        <p>The browser toolbar sits at the top of each tab:</p>
+        <list>
+            <li>
+                <control>Backward</control> (<shortcut>Alt+Left</shortcut>) and <control>Forward</control> (<shortcut>Alt+Right</shortcut>) move through the tab's history.
+            </li>
+            <li>
+                <control>Home</control> (<shortcut>Ctrl+Alt+H</shortcut>) opens the default home page.
+            </li>
+            <li>
+                <control>Reload Page</control> (<shortcut>Ctrl+R</shortcut>) loads the page again without using the browser cache.
+                To cancel a slow load, select <control>Stop Loading</control> in the <control>More Options</control> menu or press <shortcut>Ctrl+.</shortcut>.
+            </li>
+            <li>
+                The address field shows the current URL and the site icon.
+            </li>
+            <li>
+                The bookmark button adds the page to bookmarks or removes it.
+                See <a href="GBrowser-Bookmarks-and-History.topic"/>.
+            </li>
+            <li>
+                <control>More Options</control> <img src="down.svg" alt="More Options button" width="16" style="inline"/>
+                opens a menu with every browser action.
+                See <a anchor="gbrowser-actions"/>.
+            </li>
+        </list>
+        <img src="gbrowser_toolbar.png" alt="GBrowser toolbar with navigation buttons, address field, bookmark button and More Options, above the bookmarks bar" width="620" border-effect="rounded"/>
+    </chapter>
+
+    <chapter title="Search from the address field" id="search">
+        <procedure title="Open a page or search" id="open-page-or-search">
+            <p>
+                To search the web from the address field, first turn on
+                <a href="GBrowser-Settings-and-Configuration.topic" anchor="enable-suggestion-search">Enable suggestion search</a>.
+                The option is off by default.
+            </p>
+            <step>
+                Click the address field, which shows <control>Search or type a URL</control> when it is empty.
+            </step>
+            <step>
+                Type a URL or a search term.
+                A list of matching pages from your history and bookmarks appears below the field.
+                <img src="gbrowser_address_suggestions.png" alt="GBrowser address field with a list of matching history and bookmark entries" width="620" border-effect="rounded"/>
+            </step>
+            <step>
+                Press <shortcut>Down</shortcut> and <shortcut>Up</shortcut> to select an entry, then press <shortcut>Enter</shortcut>.
+                To load what you typed, press <shortcut>Enter</shortcut> without selecting an entry.
+            </step>
+        </procedure>
+        <p>
+            Press <shortcut>Esc</shortcut> to close the list and restore the previous address.
+        </p>
+        <p>
+            When <control>Enable suggestion search</control> is on, the list also shows Google search suggestions,
+            and GBrowser opens a Google search for text that is not a URL.
+            When the option is off, GBrowser loads the text as an address.
+            For the options that change how the address field looks, see <a href="GBrowser-Settings-and-Configuration.topic#search-settings">Search settings</a>.
+        </p>
+    </chapter>
+
+    <chapter title="Work with tabs" id="tabs">
+        <p>
+            Each tab shows the site icon and the start of the page title.
+            The tool window title bar has the <control>Add Tab</control> and <control>Toggle Toolbar Visibility</control> buttons and the <control>Options</control> menu.
+        </p>
+        <deflist type="medium">
+            <def title="Add Tab" id="add-tab">
+                Opens a new tab with the default home page.
+                Shortcut: <shortcut>Ctrl+T</shortcut>.
+            </def>
+            <def title="Close Tab" id="close-tab">
+                Closes the current tab.
+                Shortcut: <shortcut>Ctrl+W</shortcut>.
+            </def>
+            <def title="Duplicate Tab" id="duplicate-tab">
+                Opens the current page in a new tab.
+                Shortcut: <shortcut>Ctrl+Alt+D</shortcut>.
+            </def>
+            <def title="Restore tabs" id="restore-tabs">
+                To reopen your tabs with the project, turn on <a href="GBrowser-Settings-and-Configuration.topic" anchor="reload-previous-tabs">Reload previous tabs</a>.
+            </def>
+        </deflist>
+        <procedure title="Show two tabs side by side" id="split-tabs">
+            <step>
+                Drag a tab to an edge of the tool window.
+            </step>
+        </procedure>
+        <p>This requires <control>Enable tab splitting</control>, which is on by default.</p>
+        <img src="gbrowser_tabs_title_actions.png" alt="GBrowser tool window header with three tabs and the Add Tab and Toggle Toolbar Visibility buttons" width="620" border-effect="rounded"/>
+    </chapter>
+
+    <chapter title="Hide the browser toolbar" id="hide-toolbar">
+        <p>
+            To give the page more room, click <control>Toggle Toolbar Visibility</control> in the tool window title bar or press <shortcut>Alt+T</shortcut>.
+            The address field, the toolbar and the bookmarks bar of the current tab are hidden.
+            Use the same action to show them again.
+        </p>
+    </chapter>
+
+    <chapter title="Find text on a page" id="find">
+        <procedure title="Find text on the current page" id="find-on-page">
+            <step>
+                Press <shortcut>Ctrl+F</shortcut>, or select <control>Find...</control> in the <control>More Options</control> menu.
+                A search box opens at the top right of the page.
+            </step>
+            <step>
+                Type the text.
+                GBrowser highlights the matches as you type; the search ignores case.
+                <img src="gbrowser_find_in_page.png" alt="GBrowser page with the find box open and matching text highlighted" width="620" border-effect="rounded"/>
+            </step>
+            <step>
+                Press <shortcut>Enter</shortcut> or click <control>Next</control> to go to the next match.
+                Click <control>Previous</control> to go back.
+            </step>
+            <step>
+                Press <shortcut>Esc</shortcut> or click <control>Close</control> to close the search box.
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Zoom" id="zoom">
+        <p>
+            Use <control>Zoom In</control> (<shortcut>Ctrl+Plus</shortcut>), <control>Zoom Out</control> (<shortcut>Ctrl+Minus</shortcut>)
+            and <control>Actual Size</control> (<shortcut>Ctrl+0</shortcut>) to change the page size.
+            Zoom applies to the current tab and is not saved.
+        </p>
+    </chapter>
+
+    <chapter title="Open the page in your default browser" id="open-in-default-browser">
+        <p>
+            Select <control>Open in Default Browser</control> in the <control>More Options</control> menu or press <shortcut>Ctrl+O</shortcut>.
+            The page opens in the browser set in <ui-path>Settings | Tools | Web Browsers and Preview</ui-path>.
+        </p>
+    </chapter>
+
+    <chapter title="Use the page context menu" id="page-context-menu">
+        <p>
+            Right-click a page to open the Chromium context menu.
+            GBrowser adds two items to it: <control>Open DevTools</control> and <control>Add to Bookmarks</control>.
+        </p>
+        <img src="gbrowser_page_context_menu.png" alt="GBrowser page context menu with the Open DevTools and Add to Bookmarks items" width="218" border-effect="rounded"/>
+    </chapter>
+
+    <chapter title="More Options menu" id="gbrowser-actions">
+        <p>
+            The <control>More Options</control> button at the right end of the browser toolbar opens a menu with every GBrowser action.
+            The same actions are in the <control>Options</control> menu of the tool window title bar.
+        </p>
+        <table>
+            <tr>
+                <td>Item</td>
+                <td>What it does</td>
+            </tr>
+            <tr>
+                <td><control>Home</control></td>
+                <td>Opens the default home page in the current tab.</td>
+            </tr>
+            <tr>
+                <td><control>Find...</control></td>
+                <td>Searches for text on the page. See <a anchor="find"/>.</td>
+            </tr>
+            <tr>
+                <td><control>Open DevTools</control></td>
+                <td>Opens Chromium DevTools for the page in a separate window. See <a href="GBrowser-DevTools-and-Device-Emulation.topic"/>.</td>
+            </tr>
+            <tr>
+                <td><control>Emulate Mobile Device Viewport and User Agent</control></td>
+                <td>Turns device emulation on or off for the current tab. While it is on, the item shows the device name.</td>
+            </tr>
+            <tr>
+                <td><control>Open in Default Browser</control></td>
+                <td>Opens the page in the system browser.</td>
+            </tr>
+            <tr>
+                <td><control>Reload Page</control>, <control>Stop Loading</control></td>
+                <td>Reloads the page or cancels loading.</td>
+            </tr>
+            <tr>
+                <td><control>Clear Cookies and History</control></td>
+                <td>Submenu with <control>Clear Cookies</control> and <control>Clear History</control>. See <a href="GBrowser-Bookmarks-and-History.topic"/>.</td>
+            </tr>
+            <tr>
+                <td><control>Add to Bookmarks</control>, <control>Bookmark Manager</control>, <control>Bookmarks</control></td>
+                <td>Bookmark the page, edit bookmarks in settings, or open a saved bookmark.</td>
+            </tr>
+            <tr>
+                <td><control>Add Tab</control>, <control>Close Tab</control>, <control>Duplicate Tab</control></td>
+                <td>Manage tabs. See <a anchor="tabs"/>.</td>
+            </tr>
+            <tr>
+                <td><control>Zoom In</control>, <control>Zoom Out</control>, <control>Actual Size</control></td>
+                <td>Change the page zoom of the current tab.</td>
+            </tr>
+            <tr>
+                <td><control>Preferences</control></td>
+                <td>Opens the GBrowser settings.</td>
+            </tr>
+        </table>
+        <img src="gbrowser_more_options.png" alt="GBrowser More Options menu listing browser, bookmark, tab and zoom actions" width="442" border-effect="rounded"/>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="GBrowser-Bookmarks-and-History.topic"/>
+            <a href="GBrowser-Open-Files-and-Links.topic"/>
+            <a href="GBrowser-DevTools-and-Device-Emulation.topic"/>
+            <a href="GBrowser-Keyboard-Shortcuts.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/14458-gbrowser">GBrowser on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>

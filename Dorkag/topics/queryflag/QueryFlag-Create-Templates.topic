@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="QueryFlag: Create query templates" id="QueryFlag-Create-Templates">
+
+  <primary-label ref="queryflag"/>
+  <show-structure for="chapter,procedure" depth="2"/>
+
+  <tldr>
+    <p>Settings: <ui-path>Settings | Tools | Database | QueryFlag</ui-path> (DataGrip: <ui-path>Settings | Database | QueryFlag</ui-path>)</p>
+    <p>From a query console: select a query, right-click it, and select <control>Add Query Flag</control></p>
+    <p>Token: <code>&lt;QUERY_FLAG_TOKEN&gt;</code></p>
+  </tldr>
+
+  <link-summary>Define, edit, and remove QueryFlag templates: a named query for a data source with a token for the selected text.</link-summary>
+  <card-summary>Save a query for a data source with a token that the selected text replaces.</card-summary>
+  <web-summary>Create QueryFlag query templates in JetBrains IDEs: add a token for the selected text, quote it correctly in SQL and MongoDB, and manage templates.</web-summary>
+
+  <p>
+    A template, which the QueryFlag settings call an entry, is a named query for one data source.
+    The query contains the token <code>&lt;QUERY_FLAG_TOKEN&gt;</code>.
+    When you <a href="Work-with-QueryFlag.topic">run the template</a>, QueryFlag replaces the token with the text you selected in the editor.
+  </p>
+
+  <chapter title="Before you begin" id="before-you-begin">
+    <p>
+      Add the data source that the query runs against in the <control>Database</control> tool window.
+      The template dialog lists the data sources that the current project can use.
+    </p>
+  </chapter>
+
+  <chapter title="Add a template in Settings" id="add-template">
+    <procedure title="Add a template" id="add-template-procedure">
+      <step>
+        Press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>) to open the <control>Settings</control> dialog,
+        and select <ui-path>Tools | Database | QueryFlag</ui-path>.
+        In DataGrip, select <ui-path>Database | QueryFlag</ui-path>.
+        <p>To find the page faster, type <code>QueryFlag</code> in the search field of the <control>Settings</control> dialog.</p>
+        <!-- planned-image src="queryflag_settings_page.png" alt="QueryFlag settings page with three templates and the two options" -->
+      </step>
+      <step>
+        Click <control>Add</control> (<control>+</control>) on the toolbar above the list, or press <shortcut>Alt+Insert</shortcut> (macOS: <shortcut>⌘ N</shortcut>).
+        <p>When the list is empty, you can also click the <control>Add a QueryFlag Entry</control> link.</p>
+      </step>
+      <step>
+        In the <control>Add a QueryFlag Entry</control> dialog, fill in the fields:
+        <deflist type="medium">
+          <def title="Name" id="field-name">
+            The label of the template in the <control>Query Flag in DB</control> menu.
+            The hint under the field recommends a combination of database, table, and column name.
+            Name templates after the database, table, and column they search, for example <code>demo.customers.email</code>,
+            so that you can find them in the <control>Query Flag in DB</control> menu.
+          </def>
+          <def title="DataSource" id="field-datasource">
+            The data source the query runs against.
+            The list shows the data sources from the <control>Database</control> tool window.
+          </def>
+          <def title="QueryFlag with Token" id="field-query">
+            The query, with at least one <code>&lt;QUERY_FLAG_TOKEN&gt;</code> token.
+            The field offers syntax highlighting and code completion for the query language of the data source.
+            See <a anchor="token-rules"/>.
+            If the field highlights the wrong language, see <a href="QueryFlag-Troubleshooting.topic" anchor="wrong-highlighting"/>.
+          </def>
+        </deflist>
+        <!-- planned-image src="queryflag_add_template_dialog.png" alt="Add a QueryFlag Entry dialog with name, data source and a query containing the QUERY_FLAG_TOKEN placeholder" -->
+      </step>
+      <step>
+        Click <control>OK</control>.
+        If a field is empty or the query contains no token, the dialog shows an error and stays open.
+        See <a href="QueryFlag-Troubleshooting.topic" anchor="validation-errors"/>.
+        <p>
+          A token inside a line that starts with <code>//</code> also passes this check,
+          but QueryFlag removes that line when it saves the template.
+        </p>
+      </step>
+      <step>
+        Click <control>Apply</control> or <control>OK</control> in the <control>Settings</control> dialog to save the template.
+      </step>
+    </procedure>
+    <p>
+      The template now appears in the <control>Query Flag in DB</control> context menu of the editor.
+    </p>
+  </chapter>
+
+  <chapter title="Write the template query" id="token-rules">
+    <p>
+      When you run a template, QueryFlag removes every double quote (<code>"</code>) from the selected text
+      and puts the rest in place of each <code>&lt;QUERY_FLAG_TOKEN&gt;</code> token, exactly as it is.
+      It does not add quotes and does not escape the value.
+      Write the query so that it is valid after this replacement:
+    </p>
+    <list>
+      <li>
+        Put quotes around the token wherever the query needs a string literal:
+        single quotes in SQL (<code>'&lt;QUERY_FLAG_TOKEN&gt;'</code>) and double quotes in MongoDB (<code>"&lt;QUERY_FLAG_TOKEN&gt;"</code>).
+      </li>
+      <li>Leave the token unquoted for numbers.</li>
+      <li>Type the token exactly as shown, in upper case and with the angle brackets.</li>
+      <li>Use the token as often as you need: QueryFlag replaces every occurrence.</li>
+      <li>
+        Lines that start with <code>//</code> are notes.
+        QueryFlag removes them when it saves the template, so they never reach the database.
+      </li>
+      <li>
+        Single quotes in the selected text are not escaped,
+        so a selected value with a single quote makes the SQL statement invalid.
+      </li>
+    </list>
+
+    <p>SQL examples:</p>
+    <code-block lang="sql"><![CDATA[
+-- Text value, partial match (the placeholder in the dialog uses this form)
+SELECT * FROM customers WHERE email LIKE '%<QUERY_FLAG_TOKEN>%';
+
+-- Text value, exact match
+SELECT * FROM feature_flags WHERE key = '<QUERY_FLAG_TOKEN>';
+
+-- Numeric value: no quotes
+SELECT * FROM customers WHERE id = <QUERY_FLAG_TOKEN>;
+]]></code-block>
+
+    <p>MongoDB example:</p>
+    <code-block lang="javascript"><![CDATA[
+db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
+]]></code-block>
+
+    <warning>
+      QueryFlag does not ask for confirmation before it runs a template.
+      If the query changes data, for example with <code>UPDATE</code> or <code>DELETE</code>, make sure it is safe for any value you might select.
+      When <control>Allow blank Text</control> is on, that includes an empty value.
+    </warning>
+  </chapter>
+
+  <chapter title="Create a template from a query console" id="create-from-console">
+    <p>
+      If you already have a working query in a query console, turn it into a template.
+      <control>Add Query Flag</control> appears only in the context menu of an editor that is connected to a data source,
+      such as a query console, and only when you have selected some text.
+    </p>
+    <procedure title="Create a template from a query console" id="add-from-console-procedure">
+      <step>
+        In a query console of the data source, select the query.
+        <p>
+          To open a new query console, right-click the data source in the <control>Database</control> tool window
+          and select <ui-path>New | Query Console</ui-path>.
+        </p>
+      </step>
+      <step>
+        Right-click the selection and select <control>Add Query Flag</control>.
+        <!-- planned-image src="queryflag_add_from_console_menu.png" alt="Database console context menu with Add Query Flag" -->
+        <p>
+          The <control>Add a QueryFlag Entry</control> dialog opens with these values:
+          <control>Name</control> and <control>DataSource</control> are set to the console's data source,
+          and <control>QueryFlag with Token</control> contains the selected text without surrounding spaces and surrounding double quotes.
+        </p>
+      </step>
+      <step>
+        Replace the value that should come from the editor selection with <code>&lt;QUERY_FLAG_TOKEN&gt;</code>.
+        <p>
+          If the selection had no token, QueryFlag adds the line
+          <code>// Need to add at least one &lt;QUERY_FLAG_TOKEN&gt; replacement token</code>.
+          Add the token to the query yourself.
+          This line contains the token, so the dialog accepts the query even if you add none.
+          QueryFlag removes the line when it saves the template.
+          A template saved without a token always runs the same query, whatever you select.
+        </p>
+      </step>
+      <step>
+        Optional: change <control>Name</control> to a name you can recognize in the menu.
+        <p>
+          QueryFlag does not check that names are unique.
+          If you keep the suggested name, all templates that you create from the same data source have the same name in the menu.
+        </p>
+      </step>
+      <step>
+        Click <control>OK</control>.
+      </step>
+    </procedure>
+    <p>
+      QueryFlag saves the template immediately.
+      You do not need to click <control>Apply</control> in Settings.
+    </p>
+  </chapter>
+
+  <chapter title="Edit or remove a template" id="edit-remove">
+    <procedure title="Edit a template" id="edit-template">
+      <step>
+        In <ui-path>Settings | Tools | Database | QueryFlag</ui-path>, select the template in the list.
+      </step>
+      <step>
+        Click <control>Edit</control> on the toolbar.
+        The same dialog opens, with the title <control>Add a QueryFlag Entry</control>.
+        <p>
+          If the template's data source is not available in the current project, the <control>DataSource</control> field is empty.
+          To save the template, you must select a data source, and it replaces the original one.
+          To keep the original data source, edit the template in a project where it is available.
+        </p>
+      </step>
+      <step>
+        Change the fields and click <control>OK</control>.
+      </step>
+      <step>
+        Click <control>Apply</control>.
+      </step>
+    </procedure>
+    <procedure title="Remove a template" id="remove-template">
+      <step>
+        In <ui-path>Settings | Tools | Database | QueryFlag</ui-path>, select the template in the list.
+      </step>
+      <step>
+        Click <control>Remove</control> (<control>-</control>) on the toolbar.
+      </step>
+      <step>
+        Click <control>Apply</control>.
+      </step>
+    </procedure>
+  </chapter>
+
+  <chapter title="Where templates are available" id="template-scope">
+    <p>
+      QueryFlag stores templates for the whole IDE, not per project.
+      Every project shows the same list in Settings.
+    </p>
+    <p>
+      The <control>Query Flag in DB</control> menu lists a template only in projects where its data source is available.
+      In other projects, the settings list shows the template with the red text
+      "DataSource not found, please check your Databases settings".
+      See <a href="QueryFlag-Troubleshooting.topic" anchor="datasource-not-found"/>.
+    </p>
+    <p>
+      Templates refer to data sources by their ID, not by name or connection settings.
+      A data source that you create again, even with the same settings, gets a new ID and does not match existing templates.
+      To use the same templates in every project, create them for a global data source, or make their data source global:
+    </p>
+    <procedure title="Make a data source available in every project" id="make-data-source-global">
+      <step>
+        In the <control>Database</control> tool window, right-click the data source and select <control>Properties</control>
+        (<shortcut>Shift+Enter</shortcut>, macOS: <shortcut>⌘ I</shortcut>).
+      </step>
+      <step>
+        In the <control>Data Sources and Drivers</control> dialog, right-click the data source and select <control>Make Global</control>.
+      </step>
+      <step>
+        Click <control>OK</control>.
+      </step>
+    </procedure>
+    <p>
+      To reuse templates on another computer, see <a href="QueryFlag-Settings.topic" anchor="storage"/>.
+    </p>
+  </chapter>
+
+  <seealso>
+    <category ref="related">
+      <a href="Work-with-QueryFlag.topic"/>
+      <a href="QueryFlag-Settings.topic"/>
+      <a href="QueryFlag-Troubleshooting.topic"/>
+    </category>
+    <category ref="external">
+      <a href="https://www.jetbrains.com/help/idea/query-consoles.html">Query consoles (IntelliJ IDEA help)</a>
+      <a href="https://www.jetbrains.com/help/idea/managing-data-sources.html">Data sources (IntelliJ IDEA help)</a>
+    </category>
+  </seealso>
+</topic>

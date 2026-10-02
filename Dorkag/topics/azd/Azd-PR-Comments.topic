@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Comment and suggest changes" id="Azd-PR-Comments">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Add a comment: hover over a line in the pull request diff and click <control>+</control> in the gutter</p>
+        <p>Next and previous comment: <shortcut>Ctrl+Alt+Down</shortcut> and <shortcut>Ctrl+Alt+Up</shortcut> (the <control>Next Occurrence</control> and <control>Previous Occurrence</control> shortcuts)</p>
+        <p>Publish drafts: <control>Submit Comments</control> on the diff toolbar</p>
+    </tldr>
+
+    <link-summary>Comment on lines and on the whole pull request, work with drafts, reply and resolve threads, mention people, attach files and suggest code changes.</link-summary>
+    <card-summary>Comment on code, collect drafts, resolve threads and apply suggested changes in an Azure DevOps pull request.</card-summary>
+    <web-summary>Comment on Azure DevOps pull requests in JetBrains IDEs with AZD: line comments, drafts, thread
+        status, mentions, attachments and suggested changes.</web-summary>
+
+    <p>
+        AZD posts a comment to Azure DevOps when you add it, or keeps it as a draft until you submit all drafts together.
+        Open the diff of a file first; see <a href="Pull-Request-Details.topic" anchor="diff-viewer"/>.
+    </p>
+
+    <chapter title="Comment on code" id="azd_comment">
+        <procedure title="Add a comment to a line or a block" id="add-line-comment">
+            <step>
+                In the diff of the pull request, hover over a line, or select several lines, and click <control>+</control> in the gutter.
+            </step>
+            <step>
+                Type the comment.
+                The editor toolbar offers <control>Polish Grammar and Spelling with AI</control>, <control>Attach File</control>,
+                <control>Insert Suggestion with Selected Lines</control> and the AI button (<control>Generate AI code review for this change</control>).
+            </step>
+            <step>
+                Click <control>Add Comment</control> to post it now.
+                Click the arrow on the button for <control>Add Draft</control> or <control>Comment &amp; Resolve</control>.
+                The button keeps your last choice: after you add a draft, it reads <control>Add Draft</control> until you select <control>Add Comment</control> under the arrow.
+                Press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>) instead of clicking the button.
+                <!-- planned-image src="azd_pr_diff_comment.png" alt="New comment in the pull request diff with the Add Comment options open" -->
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Comment on the whole pull request" id="pr-level-comment">
+        <p>
+            Open the timeline with <control>View Timeline</control> in the pull request details.
+            Type in the comment box at the end of the timeline and click <control>Add Comment</control>.
+        </p>
+    </chapter>
+
+    <chapter title="Review with draft comments" id="draft-comments">
+        <p>
+            Drafts let you go through all files first and publish the review in one step.
+            Other people see a draft only after you publish it.
+        </p>
+        <warning>
+            <p>
+                AZD saves drafts on this computer only.
+                It deletes drafts in these cases:
+            </p>
+            <list>
+                <li>New commits are pushed to the pull request.</li>
+                <li>The source branch of the pull request is deleted.</li>
+                <li>The draft is more than 30 days old.</li>
+                <li>The pull request list refreshes and does not show the pull request, for example because it is completed or a filter hides it.</li>
+            </list>
+            <p>
+                Submit your drafts when you finish a review.
+            </p>
+        </warning>
+        <procedure title="Write and submit draft comments" id="submit-draft-comments">
+            <step>
+                When you add a comment, click the arrow on <control>Add Comment</control> and select <control>Add Draft</control>.
+                The comment shows a <control>PENDING</control> tag.
+            </step>
+            <step>
+                Repeat for the other files.
+                To publish one draft right away, click <control>Post now</control> on it.
+            </step>
+            <step>
+                On the diff toolbar, click <control>Submit Comments</control>.
+                The button shows the number of drafts, for example <control>Submit Comments (3)</control>.
+                <!-- planned-image src="azd_pr_diff_toolbar.png" alt="Diff toolbar with Previous Comment, Next Comment, Refresh Review Data, the AI button and Submit Comments (2)" -->
+            </step>
+            <step>
+                In the <control>Submit Review</control> popup, optionally enter a summary comment and click <control>Submit Comments</control>.
+                To delete all drafts instead, click <control>Discard drafts</control>; this cannot be undone.
+                <!-- planned-image src="azd_pr_submit_review_popup.png" alt="Submit Review popup with 2 pending comments and a summary comment" -->
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Reply to and resolve threads" id="comment-threads">
+        <list>
+            <li>Click <control>Reply</control> under a thread to answer it. Use <control>Reply and Resolve/UnResolve</control> to answer and change the thread status in one step.</li>
+            <li>Click the status link of a thread, for example <control>Active</control>, and select <control>Active</control>, <control>Pending</control>, <control>Resolved</control>, <control>Won't Fix</control> or <control>Closed</control>.</li>
+            <li>Click the like icon to like or unlike a comment.</li>
+            <li>Edit or delete your own comments with the icons next to them.</li>
+        </list>
+        <!-- planned-image src="azd_pr_comment_thread.png" alt="Comment thread in the diff with the status popup open" -->
+        <p>
+            Azure DevOps "By design" status is shown as <control>Resolved</control>.
+            A thread on code that has changed since the comment shows an <control>OUTDATED</control> tag.
+        </p>
+    </chapter>
+
+    <chapter title="Mention people, pull requests and work items" id="mentions">
+        <p>
+            In comments and in the <control>Submit Review</control> popup, type a trigger character and pick an item from the completion list.
+            In the description of a new pull request, only <code>!</code> and <code>#</code> work:
+        </p>
+        <deflist type="narrow">
+            <def title="@">A person or group in the organization.</def>
+            <def title="!">A pull request, including completed and abandoned ones that you created or reviewed.</def>
+            <def title="#">A work item.</def>
+        </deflist>
+        <!-- planned-image src="azd_pr_mentions.png" alt="Mention completion list in a comment editor after typing @" -->
+    </chapter>
+
+    <chapter title="Attach files and images" id="attachments">
+        <p>
+            Click <control>Attach File</control> in the comment editor and select a file, for example a PNG, JPG, GIF, BMP, PDF or TXT file.
+            You can also paste an image from the clipboard with <shortcut>Ctrl+V</shortcut> (macOS: <shortcut>⌘ V</shortcut>).
+            Attachments can be up to 60 MB.
+            You cannot add attachments when you edit an existing comment.
+        </p>
+        <!-- planned-image src="azd_pr_attach_image.png" alt="Comment draft with an attached image preview" -->
+        <p>
+            Images in comments render inline.
+            Click an image to open it in an editor tab, where you can zoom and pan.
+        </p>
+    </chapter>
+
+    <chapter title="Suggest and apply code changes" id="suggested-changes">
+        <procedure title="Suggest a change" id="suggest-change">
+            <step>
+                In the diff, select the lines to change and start a comment.
+            </step>
+            <step>
+                Click <control>Insert Suggestion with Selected Lines</control> and edit the inserted code.
+            </step>
+            <step>
+                Post the comment.
+            </step>
+        </procedure>
+        <procedure title="Apply a suggested change" id="apply-suggested-change">
+            <p>Check out the source branch of the pull request first; see <a href="Pull-Request-Details.topic" anchor="check-out-branch"/>.</p>
+            <step>
+                Find the comment with the <control>Suggested change</control> block.
+            </step>
+            <step>
+                Click <control>Apply Locally</control> to change the file in your working tree.
+                To apply and commit at once, click the arrow on the button and select <control>Commit...</control>.
+                <!-- planned-image src="azd_pr_suggestion.png" alt="Comment with a suggested change block and the Apply Locally button" -->
+            </step>
+        </procedure>
+        <p>
+            A suggestion cannot be applied when it is outdated, when its thread is resolved, or when a different branch is checked out.
+            The button tooltip gives the reason.
+        </p>
+    </chapter>
+
+    <chapter title="Polish a comment with AI" id="polish-comment">
+        <p>
+            Click <control>Polish Grammar and Spelling with AI</control> in the comment editor to fix the grammar and spelling of your text before you post it.
+            It uses your active AI provider; see <a href="Azd-AI.topic"/>.
+        </p>
+        <!-- planned-image src="azd_ai_polish.png" alt="Comment editor with the Polish Grammar and Spelling with AI button highlighted" -->
+        <p>
+            To let AI write a review comment for the selected lines, see <a href="AI-Pull-Request-Review.topic" anchor="ai_generated_comments"/>.
+        </p>
+    </chapter>
+
+    <chapter title="Navigate between comments" id="navigate-comments">
+        <p>
+            In the diff, click <control>Previous Comment</control> or <control>Next Comment</control> on the toolbar.
+            For their shortcuts, see <a href="Pull-Request-Details.topic" anchor="diff-viewer"/>.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Pull-Request-Details.topic"/>
+            <a href="Azd-PR-Complete.topic"/>
+            <a href="AI-Pull-Request-Review.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/review-pull-requests">Review pull requests (Microsoft Learn)</a>
+        </category>
+    </seealso>
+</topic>

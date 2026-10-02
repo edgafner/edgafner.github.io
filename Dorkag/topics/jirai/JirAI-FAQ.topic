@@ -3,55 +3,122 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="JirAI FAQ" id="JirAI-FAQ">
+       title="JirAI: FAQ and known limitations" id="JirAI-FAQ">
 
     <primary-label ref="jirai"/>
-    <secondary-label ref="jirai_version"/>
+    <show-structure for="chapter" depth="2"/>
 
-    <p>Find quick answers to common questions about the JirAI plugin.</p>
+    <link-summary>Answers to common questions about JirAI, troubleshooting tips and the known limitations.</link-summary>
+    <card-summary>Common questions, troubleshooting tips and known limitations.</card-summary>
+    <web-summary>Answers about JirAI for Jira Cloud in JetBrains IDEs: licensing, the 365-day issue list, rejected sign-ins, agent tools, read-only descriptions and known limitations.</web-summary>
 
-    <chapter title="General Questions" id="general-questions">
+    <chapter title="General questions" id="general-questions">
         <deflist>
-            <def title="Does JirAI support Jira Server or Data Center?">
-                <p>No. JirAI is exclusively designed for <b>Jira Cloud</b> (<code>https://&lt;your-domain&gt;.atlassian.net</code>). Jira Server and Jira Data Center rely on distinct authentication mechanisms and legacy REST APIs that are not supported.</p>
+            <def title="Does JirAI support Jira Server or Jira Data Center?">
+                <p>No. JirAI works with Jira Cloud only.</p>
+                <p>Jira Server and Jira Data Center use a different API and sign-in model.</p>
             </def>
-
-            <def title="How does the 7-day free trial work?">
-                <p>When you install JirAI, the IDE presents JetBrains' standard license activation dialog with a <control>Start Trial</control> option. You receive 7 days of full, unrestricted access to all features without providing payment details upfront.</p>
+            <def title="How does the free trial work?">
+                <p>JirAI is a paid plugin with a 7-day free trial.</p>
+                <p>Start the trial or activate a license in <ui-path>Help | Register</ui-path>.</p>
+                <p>See <a href="JirAI-Installation.topic" anchor="licensing-and-trial">Licensing and free trial</a>.</p>
             </def>
-
-            <def title="Does JirAI collect telemetry or send my code to third-party services?">
-                <p>No. JirAI contains <b>zero telemetry, analytics, or third-party tracking</b>. Authenticated network traffic is sent strictly to your configured Jira Cloud domain. Your source code is never read or transmitted.</p>
+            <def title="Does JirAI collect telemetry or send my code anywhere?">
+                <p>No. JirAI has no telemetry or analytics, and it does not read or send your source code.</p>
+                <p>Requests with your credentials go only to the Jira site you signed in to.</p>
+                <p>Markdown documents are sent to Jira only when you push them.</p>
             </def>
-
-            <def title="Why does the general issue list show issues from the last 365 days?">
-                <p>To preserve IDE responsiveness and minimize memory consumption, general queries load issues created within the past 365 days. However, you can instantly look up and load <b>any issue regardless of its age</b> simply by typing its exact issue key (e.g. <code>PROJ-123</code>) into the search box.</p>
+            <def title="Why does the issue list show only issues from the last 365 days?">
+                <p>Every search and filter in the issue list covers issues created in the last 365 days.</p>
+                <p>To open an older issue, type its key, for example <code>DEMO-123</code>, in the search field.</p>
+                <p>See <a href="Work-with-Jira-Issues.topic" anchor="search-and-sort">Search and sort</a>.</p>
             </def>
-
-            <def title="Can I connect multiple Jira Cloud sites at once?">
-                <p>JirAI currently supports one active Jira Cloud site at a time. Signing in to another site switches your active workspace and refreshes local project caches.</p>
+            <def title="Can I connect to several Jira sites?">
+                <p>No. JirAI connects to one Jira Cloud site at a time.</p>
+                <p>To switch sites, sign out and then sign in to the other site.</p>
+                <p>See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="switch-site-or-token">Switch sites or replace the API token</a>.</p>
             </def>
-
-            <def title="Can I see delivery metrics like cycle time or cumulative flow?">
-                <p>Yes. Open any Jira space's <a href="JirAI-Metrics.topic">Metrics</a> from the title bar for throughput, lead time, cycle time, on-time delivery, cumulative flow, and time-in-status charts, sourced from each work item's status history.</p>
+            <def title="Can I see delivery metrics such as cycle time?">
+                <p>Yes. Open a space with <control>Space Summary</control> and use the <control>Reports</control> tab.</p>
+                <p>See <a href="JirAI-Metrics.topic">Space summary, list and reports</a>.</p>
             </def>
         </deflist>
     </chapter>
 
-    <chapter title="Configuration &amp; Troubleshooting" id="troubleshooting-questions">
+    <chapter title="Troubleshooting" id="troubleshooting-questions">
         <deflist>
-            <def title="Where is my Atlassian API token stored?">
-                <p>Tokens are saved directly in the IDE's secure credential store (<code>PasswordSafe</code>, backed by the OS Keychain, KeePass, or Linux Secret Service). Under Remote Development, credentials stay securely on the host.</p>
+            <def title="Why is the issue list empty after I sign in?">
+                <p>The list starts with the <control>Assigned to Me</control> quick filter and shows only issues created in the last 365 days.</p>
+                <p>If no such issue is assigned to you, the list reads <control>Nothing matches the filters.</control></p>
+                <p>To see all issues, click <control>Clear filters</control>, or choose <control>All Issues</control> in the <control>Filters</control> menu.</p>
+                <p>See <a href="Work-with-Jira-Issues.topic" anchor="filters">Filter the list</a>.</p>
             </def>
-
-            <def title="How do I configure a corporate HTTP proxy?">
-                <p>JirAI automatically uses your IDE's proxy configuration in <ui-path>Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy</ui-path>. Stored proxy credentials are used seamlessly without extra prompts.</p>
+            <def title="My AI assistant does not see the JirAI tools. Why?">
+                <p>The tools need the IDE's MCP server, which is off by default.</p>
+                <p>Turn it on in <ui-path>Settings | Tools | MCP Server</ui-path>, configure your assistant with <control>Auto-Configure</control> and check <control>Exposed Tools</control>.</p>
+                <p>The IDE must be running with a project open.</p>
+                <p>See <a href="JirAI-Agent-Tools.topic" anchor="enable-agent-tools">Turn on the agent tools</a>.</p>
             </def>
-
-            <def title="How do I report bugs or submit logs?">
-                <p>Retrieve IDE logs via <ui-path>Help | Show Log in Finder / Explorer</ui-path> and report the issue on our <a href="https://github.com/edgafner/JirAI/issues">GitHub Issues page</a> or email <emphasis>jgafner@dorkag.com</emphasis>.</p>
+            <def title="Why can't I edit a description?">
+                <p>The description contains content that has no Markdown equivalent, such as a table, a panel or an image.</p>
+                <p>Saving it from the IDE would lose that content, so JirAI shows the reason and an <control>Open in browser</control> link.</p>
+                <p>See <a href="Jira-Timeline-and-Description-Editor.topic" anchor="description-readonly">Descriptions you can edit only in Jira</a>.</p>
+            </def>
+            <def title="Why is a board marked Limited?">
+                <p>It is a team-managed board.</p>
+                <p>Team-managed boards do not open in the IDE; choosing one opens it in Jira.</p>
+            </def>
+            <def title="Why does my Scrum board show only some of its sprints?">
+                <p>The <control>Board</control> tab shows a Scrum board's active sprint.</p>
+                <p>When a board has more than one active sprint, it shows the first and names the others in a notice.</p>
+            </def>
+            <def title="Why does JirAI say I am not signed in, or that the sign-in was rejected?">
+                <p>JirAI shows <control>Not signed in to Jira, or the sign-in was rejected.</control> when Jira no longer accepts your API token, for example because the token expired or was revoked.</p>
+                <p>Create a new API token, then sign out and sign in again in the <control>JirAI</control> tool window.</p>
+                <p>See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="switch-site-or-token">Switch sites or replace the API token</a>.</p>
+            </def>
+            <def title="Where is my API token stored?">
+                <p>In the IDE credential store, which is the operating system keychain or the IDE's KeePass file.</p>
+                <p>Under Remote Development, it is stored on the host.</p>
+                <p>See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="credential-storage">Where JirAI stores credentials</a>.</p>
+            </def>
+            <def title="How do I use JirAI behind a corporate proxy?">
+                <p>JirAI uses the proxy in <ui-path>Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy</ui-path>.</p>
+                <p>SOCKS proxies are not supported: with a SOCKS proxy set, JirAI connects to Jira directly.</p>
+                <p>See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="corporate-proxy">Use JirAI behind a corporate proxy</a>.</p>
+            </def>
+            <def title="How do I report a problem?">
+                <p>See <a href="JirAI-Reference-and-Support.topic">Support</a> for where to report it and what to include.</p>
             </def>
         </deflist>
     </chapter>
 
+    <chapter title="Known limitations" id="known-limitations">
+        <list>
+            <li><p>Jira Cloud only, with one site at a time.</p></li>
+            <li><p>Sign-in with an API token only; OAuth is not supported.</p></li>
+            <li><p>Issue list searches cover issues created in the last 365 days, except a search for a single issue key.</p></li>
+            <li><p>No JQL: queries are built from the filters and the search field.</p></li>
+            <li><p>Existing comments cannot be edited, only added and deleted.</p></li>
+            <li><p>Descriptions with tables, panels, media and similar content can be edited only in Jira.</p></li>
+            <li><p><control>Breakdown</control> lists direct children only.</p></li>
+            <li><p>On a board, cards move through the card menu only; team-managed boards open in Jira.</p></li>
+            <li><p>The <control>Timeline</control> tab of a space opens the space in Jira.</p></li>
+            <li><p>There is no branch-from-issue or other version control integration.</p></li>
+            <li><p>In the details tab, custom fields, the reporter and the issue type are read-only.</p></li>
+            <li><p>Board cards do not open the issue in the IDE.</p></li>
+            <li><p><control>Push to Jira</control> works only on files with the <path>.md</path> extension.</p></li>
+        </list>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="JirAI-Reference-and-Support.topic"/>
+            <a href="JirAI-Installation.topic"/>
+            <a href="JirAI-Settings-Reference.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/33954-jirai">JirAI on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>

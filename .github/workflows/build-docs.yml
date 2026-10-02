@@ -12,7 +12,7 @@ permissions:
 env:
   INSTANCE: 'Dorkag/dorkag'
   ARTIFACT: 'webHelpDORKAG2-all.zip'
-  DOCKER_VERSION: '2026.02.8644'
+  DOCKER_VERSION: '2026.09.0357'
 
 jobs:
   build:
@@ -76,6 +76,20 @@ jobs:
 
       - name: Unzip artifact
         run: unzip -O UTF-8 -qq '${{ env.ARTIFACT }}' -d dir
+
+      # og_dorkag.png is the <og-image> in buildprofiles.xml. No topic references it,
+      # so Writerside does not copy it into the build output; add it here.
+      - name: Checkout social preview image
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: Dorkag/images/og_dorkag.png
+          sparse-checkout-cone-mode: false
+          path: src
+
+      - name: Add social preview image
+        run: |
+          mkdir -p dir/images
+          cp src/Dorkag/images/og_dorkag.png dir/images/og_dorkag.png
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

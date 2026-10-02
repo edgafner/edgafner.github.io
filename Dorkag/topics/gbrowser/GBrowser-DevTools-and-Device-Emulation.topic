@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="GBrowser: DevTools and device emulation" id="GBrowser-DevTools-and-Device-Emulation">
+
+    <primary-label ref="gbrowser"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Open DevTools: <shortcut>F12</shortcut></p>
+        <p>Toggle device emulation: <shortcut>Ctrl+Shift+M</shortcut></p>
+        <p>Debug port: <ui-path>Settings | Tools | GBrowser | Developer Options</ui-path></p>
+    </tldr>
+
+    <link-summary>Inspect pages with Chromium DevTools, test layouts on emulated mobile devices, and attach Chrome to the IDE's embedded browser.</link-summary>
+    <card-summary>Inspect pages with DevTools and test layouts on emulated mobile devices.</card-summary>
+    <web-summary>Debug web pages in JetBrains IDEs with GBrowser: open Chromium DevTools, emulate phones and tablets, and attach Chrome through a debugging port.</web-summary>
+
+    <p>
+        GBrowser includes the developer tools of Chromium and a device toolbar similar to the one in Chrome.
+        Use them to inspect the page you are working on and to check how it looks on smaller screens.
+    </p>
+    <p>
+        The default shortcuts in this topic are for Windows and Linux.
+        On macOS, GBrowser shortcuts use <shortcut>⌘</shortcut> instead of <shortcut>Ctrl</shortcut> and <shortcut>⌥</shortcut> instead of <shortcut>Alt</shortcut>; see <a href="GBrowser-Keyboard-Shortcuts.topic" anchor="macos-shortcuts"/>.
+    </p>
+
+    <chapter title="Open DevTools" id="open-devtools">
+        <procedure title="Inspect the current page" id="inspect-page" type="choices">
+            <p>Load a page in GBrowser first; the action is not available for an empty tab.</p>
+            <step>
+                Press <shortcut>F12</shortcut>.
+            </step>
+            <step>
+                Click <control>More Options</control> and select <control>Open DevTools</control>.
+            </step>
+            <step>
+                Right-click the page and select <control>Open DevTools</control>.
+            </step>
+        </procedure>
+        <p>
+            Chromium DevTools opens in a separate window, with the <control>Elements</control>, <control>Console</control>, <control>Network</control> and other panels for the page in the current tab.
+        </p>
+        <!-- planned-image src="gbrowser_devtools.png" alt="Chromium DevTools window inspecting a page that is open in GBrowser" -->
+    </chapter>
+
+    <chapter title="Emulate a mobile device" id="device-emulation">
+        <procedure title="Turn on device emulation" id="turn-on-device-emulation">
+            <step>
+                Click <control>More Options</control> and select <control>Emulate Mobile Device Viewport and User Agent</control>,
+                or press <shortcut>Ctrl+Shift+M</shortcut>.
+                A device toolbar appears above the page, and the page is shown in a frame of the selected size.
+                In the keymap, the action is named <control>Toggle Device Emulation</control>.
+            </step>
+            <step>
+                In the device list, keep <control>Responsive</control> or select a device.
+                <control>Responsive</control> starts at 400 × 626 pixels.
+                <img src="gbrowser_device_emulation.png" alt="GBrowser device toolbar with iPhone SE selected and the page shown in a phone-sized frame" width="620" border-effect="rounded"/>
+            </step>
+            <step>
+                Optional: change the width and height in the two number fields, select a zoom level, or click <control>Rotate</control> to swap the width and height.
+            </step>
+        </procedure>
+
+        <p>
+            When you select a device, GBrowser resizes the page frame to the device's screen size and reloads the page.
+            GBrowser also tries to report the device's user agent to scripts on the page, but requests to the server keep GBrowser's own User-Agent header,
+            so server-side mobile detection does not see the emulated device.
+            Width and height accept values from 50 to 9999 pixels.
+            The zoom list offers 50% to 150%, and you can type another value.
+            If the frame is larger than the tool window, GBrowser scales the page down to fit.
+        </p>
+        <p>
+            Device emulation applies to the current tab only and is not saved.
+            While it is on, the menu item shows the device name, for example <control>Device: iPhone SE</control>.
+            To turn emulation off, select that item again or press <shortcut>Ctrl+Shift+M</shortcut>.
+            GBrowser then shows the page at the full size of the tool window again, resets the zoom to 100% and reloads the page.
+        </p>
+
+        <chapter title="Available devices" id="device-list" collapsible="true">
+            <p>The device list contains <control>Responsive</control> and these profiles:</p>
+            <list columns="3">
+                <li>iPhone SE</li>
+                <li>iPhone XR</li>
+                <li>iPhone 12 Pro</li>
+                <li>iPhone 14 Pro Max</li>
+                <li>Pixel 7</li>
+                <li>Samsung Galaxy S8+</li>
+                <li>Samsung Galaxy S20 Ultra</li>
+                <li>iPad Mini</li>
+                <li>iPad Air</li>
+                <li>iPad Pro</li>
+                <li>Surface Pro 7</li>
+                <li>Surface Duo</li>
+                <li>Galaxy Z Fold 5</li>
+                <li>Asus Zenbook Fold</li>
+                <li>Samsung Galaxy A51/71</li>
+                <li>Nest Hub</li>
+                <li>Nest Hub Max</li>
+            </list>
+        </chapter>
+    </chapter>
+
+    <chapter title="Debug from Chrome through a port" id="remote-debugging">
+        <p>
+            You can also attach desktop Chrome to the IDE's embedded browser and inspect GBrowser pages from there.
+            The port applies to every embedded browser in the IDE, not only to GBrowser.
+        </p>
+        <procedure title="Set the debugging port" id="set-debug-port">
+            <step>
+                Open the <control>Settings</control> dialog (<shortcut>Ctrl+Alt+S</shortcut>, macOS: <shortcut>⌘ ,</shortcut>)
+                and select <ui-path>Tools | GBrowser</ui-path>.
+            </step>
+            <step>
+                Under <control>Developer Options</control>, select <control>Debug port</control> and enter the port number.
+                The default is 9222.
+            </step>
+            <step>
+                Click <control>OK</control> and restart the IDE.
+            </step>
+            <step>
+                In Chrome, open <code>chrome://inspect</code>.
+            </step>
+            <step>
+                Click <control>Configure</control> and add <code>localhost:</code> followed by your port number, for example <code>localhost:9222</code>.
+            </step>
+            <step>
+                Under <control>Remote Target</control>, click <control>inspect</control> next to a page that is open in the IDE.
+            </step>
+        </procedure>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Work-with-GBrowser.topic"/>
+            <a href="GBrowser-Open-Files-and-Links.topic"/>
+            <a href="GBrowser-Settings-and-Configuration.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://developer.chrome.com/docs/devtools">Chrome DevTools documentation</a>
+            <a href="https://plugins.jetbrains.com/plugin/14458-gbrowser">GBrowser on JetBrains Marketplace</a>
+        </category>
+    </seealso>
+</topic>

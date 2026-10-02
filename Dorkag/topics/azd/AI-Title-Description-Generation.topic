@@ -3,91 +3,140 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="AI for Title and Description Generation" id="AI-Title-Description-Generation">
+       title="AZD: Generate titles, descriptions and commit messages" id="AI-Title-Description-Generation">
+
     <primary-label ref="azd"/>
-    <secondary-label ref="azd_version"/>
-    <p>AZD now includes AI-powered title and description generation for your work items and pull requests.</p>
+    <show-structure for="chapter,procedure" depth="2"/>
 
-    <chapter title="AI Provider Options" id="ai_gen_provider_options">
-        <p>Before using the generation features, you need to configure your preferred AI provider in the settings:</p>
-        <img src="ai_configuration_settings.png" alt="AI Configuration Settings" style="block" thumbnail="true"/>
-        <p>You can select from multiple providers, including support for the latest models and local execution:</p>
-        <list>
-            <li>
-                <p><b>Claude:</b> Use Anthropic's Claude models including the latest versions. Requires an API key.</p>
-            </li>
-            <li>
-                <p><b>OpenAI:</b> Use OpenAI's models including the latest GPT versions. Requires an API key.</p>
-            </li>
-            <li>
-                <p><b>Gemini:</b> Use Google's Gemini models. Requires an API key.</p>
-            </li>
-            <li>
-                <p><b>Ollama (Local):</b> Run models locally on your machine for maximum privacy. Requires the Ollama runtime and a model (e.g., <code>llama3</code>).</p>
-            </li>
-            <li>
-                <p><b>AZD AI Provider:</b> The default built-in provider. This is a proxy to the latest AI models provided via the plugin subscription.</p>
-            </li>
-        </list>
-        <img src="ai_setting_provider.png" alt="AI Provider Settings" style="block" thumbnail="true"/>
-        <tip>
-            <p>You can also configure <b>Local URLs</b> for providers like OpenAI or Claude if you are running compatible models through a local server or proxy.</p>
-        </tip>
-        <note>
-            <p>For Claude, OpenAI, and Gemini options, you'll need to provide your own API keys in the settings.</p>
-        </note>
-    </chapter>
+    <tldr>
+        <p>Pull requests: the AI buttons in the <control>Title</control> and <control>Description</control> fields of a new pull request</p>
+        <p>Commits: <control>Generate Commit Message</control> on the commit message toolbar</p>
+        <p>Prompts: <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>, <control>Configure Prompts</control></p>
+    </tldr>
 
-    <chapter title="Customizing AI Suggestions" id="ai_gen_customization">
-        <p>You can customize how the AI generates titles and descriptions:</p>
-        <list>
-            <li>
-                <p>Configure the style and format of generated content in the settings</p>
-            </li>
-            <li>
-                <p>Set up templates that the AI will follow for different types of items</p>
-            </li>
-            <li>
-                <p>Adjust the level of detail included in the generated descriptions</p>
-            </li>
-        </list>
-    </chapter>
+    <link-summary>Generate pull request titles and descriptions, update the description of an open pull request and generate commit messages with AI.</link-summary>
+    <card-summary>Let AI write pull request titles, descriptions and commit messages from your commits and changes.</card-summary>
+    <web-summary>Generate Azure DevOps pull request titles, descriptions and commit messages with AI in JetBrains
+        IDEs using AZD, with the built-in provider or your own model.</web-summary>
 
-    <chapter title="Generate AI Titles and Descriptions" id="ai_title_description_generation">
-        <p>Automatically generate meaningful titles and descriptions for your work items and pull requests using AI:
-            <img src="ai_title_description.png" alt="AI title and description generation" style="block"
-                 thumbnail="true"/>
+    <p>
+        AZD writes pull request text and commit messages on demand, from your commits and code changes.
+        You review and edit the result before you create the pull request or commit.
+    </p>
+
+    <chapter title="Before you start" id="ai_gen_provider_options">
+        <p>
+            The features in this topic work with the built-in AZD provider without any setup.
+            To use OpenAI, Claude, Gemini or Ollama instead, see <a href="Azd-AI.topic" anchor="ai-providers"/>.
+            For what data AZD sends, see <a href="Azd-AI.topic" anchor="ai-privacy"/>.
         </p>
     </chapter>
 
-    <chapter title="How It Works" id="how_it_works">
-        <p>The AI analyzes the context of your changes and suggests appropriate titles and descriptions:</p>
-        <list>
-            <li>
-                <p>It analyzes the code changes and commit messages</p>
-            </li>
-            <li>
-                <p>You can accept the suggestions as-is or modify them before saving</p>
-            </li>
-        </list>
+    <chapter title="Generate a pull request title and description" id="ai_title_description_generation">
+        <procedure title="Generate a title and a description" id="generate-title-description">
+            <step>
+                Open the new pull request tab; see <a href="Azd-Create-Pull-Request.topic"/>.
+            </step>
+            <step>
+                In the <control>Title</control> field, click the AI button (<control>Generate Title with AI</control>).
+                The button shows the icon of the active provider.
+                To use another provider, click the arrow next to the button and select it.
+                <!-- planned-image src="azd_ai_title_generate.png" alt="New pull request tab with the provider list of the title AI button open" -->
+            </step>
+            <step>
+                In the <control>Description</control> field, click the AI button (<control>Generate Description with AI</control>).
+            </step>
+            <step>
+                Edit the generated text if needed, then create the pull request.
+            </step>
+        </procedure>
+        <p id="how_it_works">
+            AZD generates the title and the description from the commit messages and the diff of the pull request.
+            With the default prompt, it starts with a short summary, followed by the reasons for the change and a list of changes.
+            To stop a generation, click the button again (<control>Stop Generation</control>).
+        </p>
     </chapter>
 
-    <chapter title="Commit Message Generation with AI" id="commit_message_generation">
-        <p>The latest version introduces AI-powered commit message generation to help you create more descriptive and
-            standardized commit messages:</p>
-        <list>
-            <li>
-                <p>Automatically generate meaningful commit messages based on your code changes</p>
-            </li>
-            <li>
-                <p>Save time and ensure consistency in your commit history</p>
-            </li>
-            <li>
-                <p>Get suggestions that follow best practices for commit message formatting</p>
-            </li>
-            <li>
-                <p>Edit and refine the AI-generated messages before committing</p>
-            </li>
-        </list>
+    <chapter title="Update the description of an open pull request" id="update-description">
+        <p>
+            After you push more commits, let AI update the description of your pull request.
+            AI keeps the intent of the existing description and adds the new changes.
+            Only the author of the pull request sees this option.
+        </p>
+        <procedure title="Update the description with AI" id="update-description-procedure">
+            <step>
+                In the pull request details, click <control>View Timeline</control>.
+            </step>
+            <step>
+                In the timeline header, click <control>Update description using AI</control>.
+                <!-- planned-image src="azd_ai_update_description.png" alt="Pull request timeline with the Update description using AI button" -->
+            </step>
+            <step>
+                Check the new description.
+                To restore the previous text, click <control>Undo</control> in the <control>Description updated successfully</control> notification within 60 seconds.
+            </step>
+        </procedure>
+        <p>
+            To edit the description yourself, see <a href="Pull-Request-Details.topic" anchor="edit-description"/>.
+        </p>
     </chapter>
+
+    <chapter title="Generate a commit message" id="commit-message">
+        <p id="commit_message_generation">
+            In projects with an Azure DevOps remote, the commit message toolbar has an AZD button, <control>Generate Commit Message</control>.
+            It generates a message from the changes selected for the commit.
+        </p>
+        <procedure title="Generate a commit message with AI" id="generate-commit-message">
+            <step>
+                Open the <control>Commit</control> tool window and select the changes to commit.
+            </step>
+            <step>
+                On the commit message toolbar, click <control>Generate Commit Message</control>.
+                To use another provider, click the arrow next to the button and select it.
+                <!-- planned-image src="azd_ai_commit_message.png" alt="Commit tool window with a generated message and the AZD provider list open" -->
+            </step>
+            <step>
+                Edit the message if needed, and commit.
+            </step>
+        </procedure>
+        <procedure title="Generate a commit message from a work item" id="generate-commit-message-work-item">
+            <step>
+                On the commit message toolbar, click the arrow next to <control>Generate Commit Message</control> and select <control>Select Work Item...</control>.
+                The <control>Select Work Item for Commit Message</control> dialog opens.
+                Later clicks on the button open the dialog again.
+            </step>
+            <step>
+                In the dialog, select the project and one or more work items.
+                Clear <control>Only my work items</control> to see all work items.
+            </step>
+            <step>
+                Click <control>Generate Message</control>.
+            </step>
+        </procedure>
+        <p>
+            AZD asks AI to write the message from the work items and your changes.
+            If AI cannot write one, AZD fills in the commit message template instead.
+            The <control>Select Work Item...</control> option and the template are set in the work item settings;
+            see <a href="Azd-Boards.topic" anchor="work-item-commit-template"/>.
+        </p>
+    </chapter>
+
+    <chapter title="Customize the results" id="ai_gen_customization">
+        <p>
+            Edit the <control>Pull Request title prompt</control>, <control>Pull Request Description Prompt</control> and <control>Commit message prompt</control>
+            to change the style, length or language of the results.
+            See <a href="Azd-AI.topic" anchor="configure-prompts"/>.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-AI.topic"/>
+            <a href="Azd-Create-Pull-Request.topic"/>
+            <a href="AI-Pull-Request-Review.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/22319-azd">AZD on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>

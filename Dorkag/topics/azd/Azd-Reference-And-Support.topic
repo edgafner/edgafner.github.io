@@ -3,24 +3,59 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Azd Reference and Support" id="Azd-Reference-And-Support"
-      >
+       title="AZD: Support" id="Azd-Reference-And-Support">
+
     <primary-label ref="azd"/>
-    <secondary-label ref="azd_version"/>
+
+    <tldr>
+        <p>Report a bug: <a href="https://github.com/edgafner/dorkag/issues">DORKAG issue tracker</a></p>
+        <p>Usage statistics: <ui-path>Settings | Version Control | AZD | Preferences</ui-path></p>
+    </tldr>
+
+    <link-summary>Report AZD bugs, request features, contact the developer, and learn what data AZD sends.</link-summary>
+    <card-summary>Report a bug, request a feature, contact the developer, and read about privacy.</card-summary>
+    <web-summary>Get support for the AZD Azure DevOps plugin for JetBrains IDEs: report bugs, request features,
+        contact the developer and control usage statistics.</web-summary>
+
     <p>
-        If you're encountering issues with the AZD IntelliJ Plugin or have suggestions for improvements, we're here to
-        help!
+        Before you report a problem, check <a href="Azd-FAQ.topic">FAQ and troubleshooting</a>.
     </p>
 
     <include from="common-support.topic" element-id="support-content"/>
 
+    <chapter title="Report an IDE error" id="report-exception">
+        <p>
+            When the IDE shows an error that comes from AZD, click <control>Report Exception</control> in the error dialog.
+            The browser opens a new GitHub issue with the error details filled in.
+            Review the text, remove anything you do not want to share, and submit it.
+        </p>
+    </chapter>
+
+    <chapter title="Privacy and usage statistics" id="privacy">
+        <p>
+            By default, AZD sends anonymous usage statistics only for Microsoft sign-in: an event when a sign-in starts, succeeds or fails.
+            To stop them, clear <control>Share anonymous usage statistics</control> in
+            <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
+        </p>
+        <p>
+            AI features send content to the AI provider you select.
+            For how the built-in AZD provider handles your data, see <a href="Azd-AI.topic" anchor="ai-privacy">AI and privacy</a>.
+        </p>
+        <p>
+            Read the full <a href="privacy-policy.topic">privacy policy</a> and the <a href="terms-of-service.topic">terms of service</a>.
+        </p>
+    </chapter>
+
     <seealso>
-        <!--Provide links to related how-to guides, overviews, and tutorials.-->
-        <category ref="external" sorted="asc">
-            <a href="https://plugins.jetbrains.com/plugin/22319-azd">Azd on Marketplace</a>
-            <a href="https://plugins.jetbrains.com/plugin/22319-azd/reviews">Azd Reviews</a>
-            <a href="https://dorkag.com">Dorkag Home Page</a>
-            <a href="https://github.com/sponsors/edgafner">Sponsor Me</a>
+        <category ref="related">
+            <a href="Azd-FAQ.topic"/>
+            <a href="Azd-Installation.topic" anchor="azd-license">Start the trial or activate a license</a>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/22319-azd">AZD on JetBrains Marketplace</a>
+            <a href="https://plugins.jetbrains.com/plugin/22319-azd/reviews">AZD reviews on JetBrains Marketplace</a>
+            <a href="https://github.com/edgafner/dorkag/issues">DORKAG issue tracker</a>
+            <a href="https://dorkag.com">DORKAG home page</a>
         </category>
     </seealso>
 </topic>
