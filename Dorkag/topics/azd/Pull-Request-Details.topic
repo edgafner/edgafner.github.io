@@ -14,7 +14,7 @@
         <p>Timeline: <control>View Timeline</control> in the pull request details</p>
     </tldr>
 
-    <link-summary>Open a pull request, check out its branch, go through the changed files and the timeline and read its status and branch policies.</link-summary>
+    <link-summary>Open a pull request, check out its branch, go through the changed files and the timeline, edit the description and read the status and branch policies.</link-summary>
     <card-summary>Inspect an Azure DevOps pull request: files, diffs, timeline, checks and branch policies.</card-summary>
     <web-summary>Review Azure DevOps pull requests in JetBrains IDEs with AZD: changed files, diffs, viewed state,
         timeline, branch policies, build checks and linked work items.</web-summary>
@@ -66,11 +66,17 @@
             </def>
             <def title="Open in Worktree">
                 Fetches the source branch and opens it in a new Git worktree, so your current branch stays untouched.
+                The worktree opens as a separate project.
+                AZD stores it under <path>tmp/azdReviewWorktrees</path> in the
+                <a href="https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html">IDE system directory</a>.
                 The option appears for active pull requests that are not from a fork, when the branch is not checked out yet
                 and the project has a single Git repository.
             </def>
             <def title="Show in Git Log">
                 Shows the source branch in the <control>Git</control> tool window.
+            </def>
+            <def title="Copy Branch Name">
+                Copies the name of the source branch to the clipboard.
             </def>
         </deflist>
         <!-- planned-image src="azd_pr_branch_popup.png" alt="Branch popup of a pull request with Checkout, Open in Worktree and Show in Git Log" -->
@@ -89,7 +95,10 @@
                 Opens the details of the pull request.
             </def>
             <def title="Review Mode">
-                Shows the review comments of the pull request in the regular editor.
+                Shows the pull request in the regular editor.
+                Changed lines are marked in the gutter, and unresolved review comments appear between the lines.
+                To add a comment, hover over a changed line and click <control>+</control> in the gutter, as in the diff.
+                Review Mode is on by default, and AZD remembers the setting for the project.
             </def>
             <def title="Update to Enable Review Mode…">
                 Appears when your local branch is out of sync with the remote branch.
@@ -147,7 +156,7 @@
             </def>
         </deflist>
         <p>
-            To hide or show comments in the diff, right-click the gutter of the diff, point to <control>Show Review Discussions</control> and select which comments to show.
+            To hide or show comments in the diff, right-click the gutter of the diff, point to <control>Show Review Discussions</control> and select <control>All</control>, <control>Unresolved Only</control> or <control>Do Not Show</control>.
             To add comments, see <a href="Azd-PR-Comments.topic"/>.
         </p>
     </chapter>
@@ -189,6 +198,30 @@
             The timeline lists events from oldest to newest.
             To show the newest events first, clear <control>Show events in the order ascending by date</control> in <ui-path>Settings | Version Control | AZD | UI Customization</ui-path>.
             To comment on the whole pull request from the timeline, see <a href="Azd-PR-Comments.topic" anchor="pr-level-comment"/>.
+        </p>
+    </chapter>
+
+    <chapter title="Edit the description" id="edit-description">
+        <p>
+            Only the author of a pull request can edit its description.
+        </p>
+        <procedure title="Edit the pull request description" id="edit-description-procedure">
+            <step>
+                In the pull request details, click <control>View Timeline</control>.
+            </step>
+            <step>
+                Hover over the description and click <control>Edit</control> (the pencil icon) in its header.
+            </step>
+            <step>
+                Change the text.
+                Type <code>!</code> to reference a pull request, or <code>#</code> to reference a work item.
+            </step>
+            <step>
+                Click <control>Save Changes</control>.
+            </step>
+        </procedure>
+        <p>
+            To let AI rewrite the description after you push more commits, see <a href="AI-Title-Description-Generation.topic" anchor="update-description"/>.
         </p>
     </chapter>
 
@@ -248,7 +281,27 @@
                 <li><control>Azure DevOps could not compute the merge</control> appears when the merge cannot be calculated.</li>
             </list>
             <p>
-                If the branches conflict, the conflicts row offers to resolve the conflicts locally.
+                If the branches conflict, the conflicts row reads <control>Branch has conflicts that must be resolved</control>.
+            </p>
+            <procedure title="Resolve conflicts locally" id="resolve-conflicts-locally">
+                <step>
+                    In the conflicts row, click <control>Resolve</control>.
+                </step>
+                <step>
+                    In the dialog, click <control>Merge</control> to merge the target branch into the source branch,
+                    or <control>Rebase</control> to rebase the source branch onto the target branch.
+                    The IDE fetches the target branch, checks out the source branch and starts the merge or rebase.
+                </step>
+                <step>
+                    Resolve the conflicts; see <a href="https://www.jetbrains.com/help/idea/resolve-conflicts.html">Resolve Git conflicts (IntelliJ IDEA help)</a>.
+                </step>
+                <step>
+                    Push the source branch.
+                    After a rebase, use <control>Force Push</control>.
+                </step>
+            </procedure>
+            <p>
+                While the source branch is checked out, <control>Resolve</control> is disabled, and its tooltip reads <control>Already resolved locally, push your changes to resolve</control>.
             </p>
         </chapter>
     </chapter>

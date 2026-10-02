@@ -42,7 +42,11 @@
     <chapter title="Summary tab" id="summary-tab">
         <p>The <control>Summary</control> tab shows tiles and charts for the selected date range, which is <control>Last 90 days</control> by default:</p>
         <list>
-            <li><p>Tiles with counts of created, completed and in-progress work items.</p></li>
+            <li>
+                <p>Tiles with counts of created, completed and in-progress work items.</p>
+                <p>The <control>Lead time</control> and <control>Cycle time</control> tiles stay empty here.</p>
+                <p>The <control>Reports</control> tab shows those values.</p>
+            </li>
             <li><p><control>Throughput</control>, <control>Created vs completed</control>, <control>Work in progress by age</control> and <control>Distribution</control> charts.</p></li>
         </list>
         <p>Each chart can be shown as a table with <control>Show as table</control>, or enlarged with <control>Maximize</control>.</p>
@@ -52,6 +56,8 @@
     <chapter title="List tab" id="list-tab">
         <p>The <control>List</control> tab lists the space's work items, with search, filter chips and sorting as in the <a href="Work-with-Jira-Issues.topic">issue list</a>.</p>
         <p>Search matches the work item key and summary.</p>
+        <p>Select a work item and press <shortcut>Enter</shortcut>, or double-click it, to open its details tab and its <control>Timeline</control> tab.</p>
+        <p>Right-click a work item for the same commands as in the <a href="Work-with-Jira-Issues.topic" anchor="row-actions">issue list</a>.</p>
 
         <chapter title="Show work items under their parent" id="list-hierarchy">
             <p>When no filter is set, the list shows child work items indented under their parent, as a foldable tree.</p>
@@ -76,9 +82,26 @@
         <img src="jirai_space_reports.png" alt="Reports tab with lead time, cycle time and cumulative flow charts" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
+    <chapter title="How space metrics are measured" id="metric-definitions">
+        <p>The <control>Completed</control> tile of the <control>Summary</control> tab and the tiles of the <control>Reports</control> tab are measured as follows:</p>
+        <deflist type="medium">
+            <def title="Completed">Work items whose status category became Done in the date range. Jira gadgets count by resolution date, so their numbers can differ.</def>
+            <def title="Lead time">The median time from creation to Done, over the work items completed in the range. The second line shows the 85th percentile.</def>
+            <def title="Cycle time">The median time spent in In Progress statuses before Done. A work item that never went through an In Progress status has no cycle time.</def>
+            <def title="On-time delivery">The share of work items completed in the range on or before their due date, out of those that have a due date.</def>
+            <def title="In progress &gt; 14 days">The work items in an In Progress status now whose current In Progress stretch started more than 14 days ago.</def>
+        </deflist>
+        <list>
+            <li><p>Done means the status category Done, dated by when the work item entered it.</p></li>
+            <li><p>The date range selects work items by the date of the event, not by their creation date.</p></li>
+            <li><p>Days and weeks follow your Jira time zone.</p></li>
+            <li><p>Work items of every hierarchy level are counted.</p></li>
+        </list>
+    </chapter>
+
     <chapter title="Filter a space" id="filtering-and-sampling">
         <list>
-            <li><p>Use the date range chip to change the period.</p></li>
+            <li><p>Use the date range chip to change the period: the last 7, 30, 90, 180 or 365 days.</p></li>
             <li><p>Click <control>☰ Filter</control> to add a filter by <control>Work type</control> or <control>Assignee</control>.</p></li>
             <li><p>On the <control>Reports</control> tab, <control>☰ Filter</control> also offers <control>Sprint</control>, <control>Sprint status</control>, <control>Fix version</control>, <control>Component</control> and <control>Label</control>.</p></li>
             <li><p>Click a value twice, or <shortcut>Shift</shortcut>+click it, to exclude it.</p></li>

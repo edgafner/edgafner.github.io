@@ -14,6 +14,7 @@
     <title>Codecov</title>
     <description>
       See the coverage that your CI uploads to Codecov in the editor gutter, track coverage trends and pull request impact, and validate codecov.yml without leaving your JetBrains IDE.
+      Codecov is a paid plugin with a 10-day free trial.
     </description>
 
     <spotlight>

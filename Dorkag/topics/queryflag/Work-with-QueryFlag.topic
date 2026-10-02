@@ -45,6 +45,7 @@
         </procedure>
         <p>
             The IDE shows the results as for any query that you run from a query console, for example in the <control>Services</control> tool window.
+            If no results appear, see <a href="QueryFlag-Troubleshooting.topic" anchor="no-results"/>.
         </p>
         <!-- planned-image src="queryflag_overview.png" alt="QueryFlag run: the selected value in the editor and the matching rows in the Services tool window" -->
     </chapter>

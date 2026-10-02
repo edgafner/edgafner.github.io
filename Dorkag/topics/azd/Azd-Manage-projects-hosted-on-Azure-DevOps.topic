@@ -48,10 +48,14 @@
             </step>
             <step>
                 <p>Select a repository from the list of all repositories your accounts can access.</p>
+                <p>To filter the list, type in the search field above it.
+                    To clone a repository that is not listed, paste its URL in the search field.
+                    To add an account, click the account icon next to the search field and select <control>Log In with Token…</control>,
+                    which opens the sign-in options.</p>
                 <img src="azd_clone_repositories.png" alt="Clone Repository dialog listing Azure DevOps repositories with the shallow clone option" width="706" thumbnail="true" border-effect="rounded"/>
             </step>
             <step>
-                <p>In <control>Directory</control>, enter the folder for the local repository.</p>
+                <p>In <control>Clone into</control>, enter the folder for the local repository.</p>
             </step>
             <step>
                 <p>Optional: select <control>Shallow clone with a history truncated to</control> and enter the number of commits.</p>
@@ -67,7 +71,9 @@
             AZD clones over SSH by default.
             To clone over HTTPS, clear <control>Clone git repositories using ssh</control> in
             <ui-path>Settings | Version Control | AZD</ui-path>.
-            With HTTPS, AZD also enables the Git credential helper.
+            Over HTTPS, Git uses the token of an AZD account that matches the remote:
+            the default account if it matches, otherwise the only matching account.
+            To set the default account, see <a href="Azd-Installation.topic" anchor="azd-manage-accounts">Manage accounts</a>.
         </p>
         <note>
             With the credential helper enabled, Git asks the credential helper for credentials instead of using your AZD accounts,

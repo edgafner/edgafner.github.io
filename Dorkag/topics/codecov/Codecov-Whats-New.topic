@@ -14,7 +14,7 @@
 
     <p>
         This page summarizes the user-facing changes in recent releases.
-        For every version, see the change notes on <a href="https://plugins.jetbrains.com/plugin/23390-codecov">JetBrains Marketplace</a>.
+        For every version, see the <a href="https://plugins.jetbrains.com/plugin/23390-codecov/versions">version history on JetBrains Marketplace</a>.
     </p>
 
     <chapter title="Codecov 2026.3" id="platform-support">
@@ -64,7 +64,7 @@
             <a href="Codecov-Folder-Coverage.topic"/>
         </category>
         <category ref="external">
-            <a href="https://plugins.jetbrains.com/plugin/23390-codecov">Codecov on JetBrains Marketplace</a>
+            <a href="https://plugins.jetbrains.com/plugin/23390-codecov/versions">Codecov version history on JetBrains Marketplace</a>
         </category>
     </seealso>
 </topic>

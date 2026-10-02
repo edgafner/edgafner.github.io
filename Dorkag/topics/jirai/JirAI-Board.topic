@@ -109,6 +109,16 @@
         </list>
     </chapter>
 
+    <chapter title="Open a card's issue in the IDE" id="open-card-issue">
+        <p>Cards do not open the issue in the IDE, but you can find the issue in the <control>JirAI</control> tool window.</p>
+        <procedure title="Open a card's issue in the IDE" id="open-card-issue-proc">
+            <step><p>In the card menu, choose <control>Copy Key</control>.</p></step>
+            <step><p>In the <control>JirAI</control> tool window, choose <control>All Issues</control> in the <control>Filters</control> menu.</p></step>
+            <step><p>Paste the key into the <control>Search issues</control> field.</p></step>
+            <step><p>Select the issue and press <shortcut>Enter</shortcut>.</p></step>
+        </procedure>
+    </chapter>
+
     <chapter title="Use the board from the keyboard" id="board-keyboard">
         <table style="header-row">
             <tr><td>Action</td><td>Keys</td></tr>

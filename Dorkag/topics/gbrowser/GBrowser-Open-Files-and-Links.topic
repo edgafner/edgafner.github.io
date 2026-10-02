@@ -36,7 +36,7 @@
                 In the <control>Project</control> tool window, right-click the file and select <control>Open in GBrowser</control>.
             </step>
             <step>
-                Press <shortcut>Ctrl+Alt+G</shortcut>.
+                Press <shortcut>Ctrl+Alt+G</shortcut> (macOS: <shortcut>⌥ ⌘ G</shortcut>).
             </step>
         </procedure>
         <p>

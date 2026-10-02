@@ -69,10 +69,14 @@
     </chapter>
 
     <chapter title="Set up Node.js for the language server" id="yaml-nodejs">
-        <p>
-            AZD looks for Node.js on the system.
-            If it is not found, or you want to use another installation, set the path yourself.
-        </p>
+        <p>AZD uses the first Node.js 14 or later that it finds, in this order:</p>
+        <list type="decimal">
+            <li>The path in <control>Node.js Path</control>.</li>
+            <li>The Node.js interpreter configured in the IDE, in IDEs with JavaScript support.</li>
+            <li>The <code>PATH</code>.</li>
+            <li>On macOS and Linux: nvm installations, then your login shell.</li>
+        </list>
+        <p>If AZD does not find Node.js, or you want to use another installation, set the path yourself.</p>
         <procedure title="Configure Node.js" id="configure-nodejs">
             <step>
                 <p>Open <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path>.</p>

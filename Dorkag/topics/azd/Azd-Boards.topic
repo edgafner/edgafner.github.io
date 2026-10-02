@@ -13,9 +13,9 @@
         <p>Configure: <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path></p>
     </tldr>
 
-    <link-summary>Find, view, edit and create Azure Boards work items, use the Kanban board, and add work items to commit messages.</link-summary>
-    <card-summary>Find, edit and create work items, move cards on the Kanban board, and reference them in commits.</card-summary>
-    <web-summary>Work with Azure Boards in JetBrains IDEs with AZD: filter and edit work items, create new ones, move
+    <link-summary>Find, view, edit, comment on and create Azure Boards work items, use the Kanban board, and add work items to commit messages.</link-summary>
+    <card-summary>Find, edit, comment on and create work items, move cards on the Kanban board, and reference them in commits.</card-summary>
+    <web-summary>Work with Azure Boards in JetBrains IDEs with AZD: filter, edit and comment on work items, create new ones, move
         Kanban cards and add work items to commit messages.</web-summary>
 
     <p>
@@ -31,6 +31,13 @@
             <step>
                 <p>Click the filter icon and select a quick filter: <control>All</control>, <control>Assigned to me</control>
                     or <control>Recent activity</control> (the default).</p>
+                <list>
+                    <li><control>All</control>: work items of the project that the repository belongs to.</li>
+                    <li><control>Assigned to me</control>: work items assigned to you in all projects of the organization or collection.</li>
+                    <li><control>Recent activity</control>: work items you recently viewed or changed in all projects of the organization or collection.</li>
+                </list>
+                <p>The list leaves out work items in the Closed, Done and Removed states.
+                    A work item from another project shows the project name as a tag.</p>
                 <!-- planned-image src="azd_boards_list.png" alt="AZD Boards tool window listing work items with the Assigned to me quick filter" -->
             </step>
             <step>
@@ -63,7 +70,7 @@
                     To see the other fields of the work item type, expand <control>Show all fields</control>.</p>
             </step>
             <step>
-                <p>Click <control>Apply</control>.</p>
+                <p>Click <control>Apply</control> at the bottom of the tab, or click <control>Revert</control> to discard your edits.</p>
             </step>
         </procedure>
         <p>
@@ -73,6 +80,37 @@
         <p>
             Right-click in the details tab to <control>Refresh Work Item</control>, <control>Open Work Item on Azure DevOps</control>
             or <control>Copy Work Item URL</control>.
+        </p>
+    </chapter>
+
+    <chapter title="Links, timeline and comments" id="work-item-timeline">
+        <p>
+            The lower part of the details tab lists linked work items under <control>Related Work</control>,
+            with the link type, such as <control>Parent</control> or <control>Child</control>,
+            and linked pull requests under <control>Development</control>.
+            Click a link to open the work item or pull request.
+            A pull request of the connected repository opens in the <control>AZD Pull Requests</control> tool window when
+            <a href="Azd-Settings-Configuration.topic" anchor="general-configuration">Open AZD links in tool window</a> is selected;
+            otherwise, it opens in the browser.
+        </p>
+        <p>
+            The <control>Work Item #&lt;id&gt; timeline</control> editor tab shows the comments and the history of the work item.
+            To open it again after you close it, click <control>Timeline ↗</control> at the top of the details tab.
+        </p>
+        <procedure title="Comment on a work item" id="comment-work-item">
+            <step>
+                <p>In the timeline tab, type in the comment box at the bottom.
+                    Type <code>@</code> to mention a person.</p>
+            </step>
+            <step>
+                <p>Click <control>Add Comment</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>).</p>
+            </step>
+        </procedure>
+        <p>
+            To show only some events, click the filter icon at the top right of the timeline and select one or more of
+            <control>Comments</control>, <control>State Changes</control>, <control>Field Changes</control>,
+            <control>Link Changes</control> and <control>System Fields</control>.
+            Select <control>All Events</control> to show everything again.
         </p>
     </chapter>
 
@@ -128,7 +166,7 @@
             <def title="Open">Opens the work item details.</def>
             <def title="Move to column">Moves the card to the column you select.</def>
             <def title="Edit title…">Renames the work item.</def>
-            <def title="Delete…">Deletes the work item after you confirm.</def>
+            <def title="Delete…">Moves the work item to the Azure DevOps recycle bin after you confirm.</def>
         </deflist>
         <p>
             The board uses the IDE built-in browser (JCEF).
@@ -190,13 +228,27 @@
                 <p>Click <control>+</control> and select <control>AzureDevOps</control>.</p>
             </step>
             <step>
-                <p>Fill in <control>Host</control>, <control>Organization</control> and <control>PAT token</control>, then select the project.</p>
+                <p>Fill in <control>Host</control> (<code>https://dev.azure.com</code> by default), <control>Organization</control> and <control>PAT token</control>,
+                    and click <control>Test</control>.</p>
+            </step>
+            <step>
+                <p>After a successful test, select the project in <control>Project</control>.
+                    <control>Include issues not assigned to me</control> is selected by default; clear it to list only the work items assigned to you.</p>
                 <!-- planned-image src="azd_tasks_server.png" alt="Tasks Servers settings with an AzureDevOps server configured" -->
             </step>
             <step>
                 <p>Click <control>OK</control>.</p>
             </step>
         </procedure>
+        <p>
+            Open a work item as a task with <ui-path>Tools | Tasks &amp; Contexts | Open Task…</ui-path>.
+            To change its state in Azure DevOps at the same time, select <control>Update issue state</control> in the <control>Open Task</control> dialog.
+        </p>
+        <p>
+            While a work item is the active task, AI-generated commit messages refer to it.
+            With the default prompt, they start with the work item ID.
+            See <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>.
+        </p>
     </chapter>
 
     <seealso>

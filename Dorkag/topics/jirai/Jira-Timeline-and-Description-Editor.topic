@@ -23,6 +23,7 @@
     <chapter title="Read the activity feed" id="timeline">
         <p>The <control>Timeline</control> tab shows the description, comments, status changes and field changes in one feed.</p>
         <p>To show only one kind of entry, click the filter icon and choose <control>All</control>, <control>Comments</control>, <control>Status changes</control> or <control>Field changes</control>.</p>
+        <p>To load the latest activity, right-click the feed and choose <control>Refresh</control>, or press the IDE's <control>Refresh</control> shortcut.</p>
         <img src="jirai_timeline.png" alt="Issue timeline with the description and the sprint and assignee changes" width="642" border-effect="rounded"/>
     </chapter>
 
@@ -35,6 +36,7 @@
             <step><p>Click <control>Post</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>).</p></step>
         </procedure>
         <p>Press <shortcut>Enter</shortcut> to start a new line in the comment.</p>
+        <p>Files you attach to a comment are added to the issue's attachments and shown in the comment.</p>
         <p>To delete one of your comments, click the delete icon on it and confirm.</p>
         <p>Jira has no undo for deleted comments, and you can delete only the comments that Jira permissions allow.</p>
         <p>Existing comments cannot be edited.</p>
@@ -49,7 +51,10 @@
                 <p>Edit the Markdown text.</p>
                 <img src="jirai_description_edit.png" alt="Description being edited in place with the Save and Cancel buttons" width="642" border-effect="rounded"/>
             </step>
-            <step><p>Click <control>Save</control>, or <control>Cancel</control> to discard your changes.</p></step>
+            <step>
+                <p>Click <control>Save</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>).</p>
+                <p>To discard your changes, click <control>Cancel</control> or press <shortcut>Escape</shortcut>.</p>
+            </step>
         </procedure>
         <p>After you save, the timeline shows an <control>Updated the description</control> entry.</p>
         <p>Click <control>Show changes</control> on it to see what changed as a diff.</p>

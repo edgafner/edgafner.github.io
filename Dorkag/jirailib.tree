@@ -9,7 +9,7 @@
     <snippet id="jiraisn.tree">
         <toc-element topic="JirAI.topic" id="toc_jirai_root">
             <toc-element topic="JirAI-Whats-New.topic" toc-title="What's new" id="toc_jirai_whats_new"/>
-            <toc-element topic="JirAI-Installation.topic" toc-title="Installation" id="toc_jirai_installation"/>
+            <toc-element topic="JirAI-Installation.topic" toc-title="Install and activate" id="toc_jirai_installation"/>
             <toc-element topic="JirAI-Sign-In-and-Configuration.topic" toc-title="Sign in" id="toc_jirai_signin"/>
             <toc-element topic="Work-with-Jira-Issues.topic" toc-title="Work with issues" id="toc_jirai_issues"/>
             <toc-element topic="Jira-Create-Issues.topic" toc-title="Create issues" id="toc_jirai_create"/>

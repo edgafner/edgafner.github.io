@@ -37,6 +37,11 @@
                     Use the <control>Add</control>, <control>Remove</control>, and <control>Edit</control> toolbar buttons to manage templates.
                     See <a href="QueryFlag-Create-Templates.topic"/>.
                 </p>
+                <p>
+                    The <control>Query Flag in DB</control> menu lists templates in the order of this list.
+                    New templates go to the end of the list, and so does a template that you change.
+                    You cannot sort or reorder the list.
+                </p>
             </def>
             <def title="Open console editor" id="open-console-editor">
                 <p>
@@ -69,7 +74,10 @@
         </p>
         <deflist type="medium">
             <def title="query_flag.xml" id="storage-templates">
-                <p>The templates.</p>
+                <p>
+                    The templates.
+                    Backup and Sync does not sync this file.
+                </p>
                 <p>
                     To reuse your templates on another computer, copy this file to the same folder there while the IDE is closed.
                     Templates refer to data sources by their ID, so they work only where the same data sources exist,
@@ -79,9 +87,12 @@
             </def>
             <def title="query_flag_settings.xml" id="storage-options">
                 <p>The <control>Open console editor</control> and <control>Allow blank Text</control> options.</p>
-                <p>If you use <a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">Settings Sync</a>, these options sync with the <control>Tools</control> category.</p>
+                <p>If you use <a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">Backup and Sync</a> (formerly Settings Sync), these options sync with the <control>Tools</control> category.</p>
             </def>
         </deflist>
+        <p>
+            Uninstalling QueryFlag does not delete these files, so your templates are still there if you install QueryFlag again.
+        </p>
         <p>
             A template stores the name, ID, and URL of its data source, but no password.
             The data source in the <control>Database</control> tool window keeps its own connection settings.
@@ -103,7 +114,7 @@
         </category>
         <category ref="external">
             <a href="https://www.jetbrains.com/help/idea/query-consoles.html">Query consoles (IntelliJ IDEA help)</a>
-            <a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">Share IDE settings (IntelliJ IDEA help)</a>
+            <a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">IDE settings backup and sync (IntelliJ IDEA help)</a>
         </category>
     </seealso>
 </topic>

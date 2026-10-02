@@ -13,9 +13,9 @@
         <p>Report a bug: <control>Report Exception</control> in the IDE error dialog</p>
     </tldr>
 
-    <link-summary>Fix common QueryFlag problems: a missing menu, a data source that is not found, validation errors, and failing queries.</link-summary>
-    <card-summary>Fix a missing menu, data source errors, validation messages, and failing queries.</card-summary>
-    <web-summary>Troubleshoot the QueryFlag plugin in JetBrains IDEs: missing Query Flag in DB menu, DataSource not found, validation errors, and SQL syntax errors.</web-summary>
+    <link-summary>Fix common QueryFlag problems: a missing menu, missing results, a data source that is not found, validation errors, and failing queries.</link-summary>
+    <card-summary>Fix a missing menu, missing results, data source errors, validation messages, and failing queries.</card-summary>
+    <web-summary>Troubleshoot the QueryFlag plugin in JetBrains IDEs: missing Query Flag in DB menu, missing query results, DataSource not found, validation errors, and SQL errors.</web-summary>
 
     <p>
         Find the symptom below and follow the steps to fix it.
@@ -28,11 +28,39 @@
                 If you have no templates yet, <a href="QueryFlag-Create-Templates.topic">create one</a>.
             </li>
             <li>
-                If your templates use a data source of another project, add that data source to this project in the <control>Database</control> tool window,
+                If your templates use a data source of another project, open that project and make the data source global
+                (see <a href="QueryFlag-Create-Templates.topic" anchor="template-scope"/>),
                 or create a template for a data source of this project.
             </li>
             <li>
                 Make sure the Database Tools and SQL plugin and QueryFlag are enabled in <ui-path>Settings | Plugins</ui-path>.
+                The IDE disables QueryFlag when it has no active trial or license; see <a href="QueryFlag-Installation.topic" anchor="license"/>.
+            </li>
+        </list>
+    </chapter>
+
+    <chapter title="The query results do not appear" id="no-results">
+        <p>
+            By default, QueryFlag runs the query in a new query console that does not open in the editor.
+            Look for the results in the <control>Services</control> tool window.
+        </p>
+        <list>
+            <li>
+                Select <ui-path>View | Tool Windows | Services</ui-path> (<shortcut>Alt+8</shortcut>, macOS: <shortcut>⌘ 8</shortcut>)
+                and look under the template's data source.
+            </li>
+            <li>
+                If the <control>Services</control> tool window does not open after a run, make sure that
+                <control>Show Services tool window for query execution output</control> is not set to <control>Never</control> in
+                <ui-path>Settings | Tools | Database | Query Execution | Output and Results</ui-path>
+                (DataGrip: <ui-path>Settings | Database | Query Execution | Output and Results</ui-path>).
+            </li>
+            <li>
+                If QueryFlag shows the warning "Query with blank text is disable, skipping execution", see <a anchor="blank-text-warning"/>.
+            </li>
+            <li>
+                If the data source cannot connect, you get a connection error instead of results.
+                See <a anchor="connection"/>.
             </li>
         </list>
     </chapter>
@@ -47,6 +75,7 @@
         <!-- planned-image src="queryflag_datasource_not_found.png" alt="QueryFlag template whose data source is missing, shown in red" -->
         <p>
             If the template belongs to another project, leave it as it is; it works there.
+            To use it in this project too, make its data source global; see <a href="QueryFlag-Create-Templates.topic" anchor="template-scope"/>.
             Otherwise, connect it to a data source of this project:
         </p>
         <procedure title="Connect the template to a data source" id="fix-datasource">
@@ -98,7 +127,7 @@
         </p>
     </chapter>
 
-    <chapter title="The query fails with a syntax error" id="syntax-error">
+    <chapter title="The query fails with an error" id="syntax-error">
         <list>
             <li>
                 Make sure the template quotes the token where the query needs a string literal, for example
@@ -108,6 +137,11 @@
             <li>
                 If the selected value contains a single quote, the SQL string ends early.
                 Select only the part of the value without the quote.
+            </li>
+            <li>
+                If the database reports that a table does not exist, or that no schema or database is selected,
+                qualify the table name in the template with its schema or database, for example <code>demo.customers</code>.
+                Each run uses a new query console, and its current schema can differ from the one in the console where you wrote the query.
             </li>
             <li>
                 To see the exact query that ran, select <control>Open console editor</control> in the

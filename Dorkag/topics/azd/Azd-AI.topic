@@ -154,6 +154,8 @@
             </def>
             <def title="Test Connection">
                 Sends a test request with the current values.
+                If the test fails, the message names the cause, for example <control>Authentication failed. Please check your API key.</control>
+                or <control>Your API key's plan has no quota for this model</control>.
             </def>
         </deflist>
         <p>
@@ -165,13 +167,15 @@
         <p>
             Expand <control>Configure Prompts</control> on the <control>AI Settings</control> page.
             Select a prompt on the left to edit its text on the right.
-            Clear the checkbox of a prompt to turn off the features that use it; the prompt text then becomes read-only.
+            Clearing the checkbox of a prompt makes its text read-only.
+            For some prompts it also turns off the features that use them, as listed below.
         </p>
         <img src="azd_ai_prompts.png" alt="Configure Prompts section with PR Code Review selected and its prompt text in the editor" width="706" border-effect="rounded" thumbnail="true"/>
         <deflist type="medium">
             <def title="Pull Request title prompt">
                 Generates pull request titles.
                 Placeholders: <code>{commits}</code>, <code>{diffs}</code>.
+                Clearing the checkbox only makes the prompt read-only; title generation stays available.
             </def>
             <def title="Pull Request Description Prompt">
                 Generates and updates pull request descriptions.
@@ -197,6 +201,12 @@
         <p>
             Keep the placeholders in your text; AZD replaces them with the data of the current pull request or commit.
         </p>
+        <note>
+            <p>
+                Changes under <control>Configure Prompts</control> take effect as you make them, even if you then click <control>Cancel</control>.
+                No button restores a default prompt, so copy the text of a prompt before you change it.
+            </p>
+        </note>
     </chapter>
 
     <seealso>

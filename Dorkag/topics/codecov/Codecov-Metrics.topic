@@ -38,6 +38,11 @@
             The button is disabled until the plugin detects the project's Codecov repository.
             For the connection steps, see <a href="Codecov-Installation.topic"/>.
         </p>
+        <p>
+            The dashboard uses the IDE built-in browser (JCEF).
+            If JCEF is not available, the dashboard does not open.
+            Make sure the IDE runs on the bundled JetBrains Runtime, which includes JCEF.
+        </p>
     </chapter>
 
     <chapter title="Pull request impact" id="pr-impact">
@@ -48,11 +53,15 @@
         </p>
         <deflist type="narrow">
             <def title="HEAD" id="pr-impact-head">Total coverage of the head commit.</def>
-            <def title="Patch" id="pr-impact-patch">Coverage of the lines changed in the branch.</def>
+            <def title="Patch" id="pr-impact-patch">
+                Coverage of the lines changed in the branch.
+                A dash (—) means that Codecov reports no patch coverage.
+            </def>
             <def title="Change" id="pr-impact-change">Difference in total coverage from the base: a green up arrow for an increase, a red down arrow for a decrease.</def>
         </deflist>
         <p>
             Click <control>View on Codecov ↗</control> to open the head commit on Codecov in your browser.
+            To open the current branch on Codecov instead, right-click anywhere in the dashboard and select <control>Open in Codecov</control>.
         </p>
         <p>
             To find the comparison on GitHub, the plugin first uses the pull request of the branch, if you checked it out with the GitHub CLI or the GitHub plugin of the IDE.
@@ -82,11 +91,13 @@
         <p>The toolbar above the dashboard has three filters:</p>
         <deflist type="medium">
             <def title="Metric" id="filter-metric">
-                <control>Percentage</control>, <control>Total Lines</control>, <control>Hits</control> or <control>Misses</control>.
+                <control>Percentage</control> (default), <control>Total Lines</control>, <control>Hits</control> or <control>Misses</control>.
             </def>
             <def title="Branch" id="filter-branch">
                 <control>All branches</control> by default.
                 Select a branch to chart only its commits; favorite branches are listed first and marked with a star.
+                The list shows branches from Codecov, not your local Git branches.
+                To chart all branches again, click the close icon (×) next to the branch name.
             </def>
             <def title="Time range" id="filter-time-range">
                 <control>7 Days</control>, <control>30 Days</control>, <control>3 Months</control> (default), <control>6 Months</control>, <control>12 Months</control> or <control>All Time</control>.

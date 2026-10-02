@@ -20,7 +20,8 @@
     <p>
         The plugin has two settings pages.
         Settings with "Scope: all projects" apply to every project in the IDE.
-        All other settings are saved in the project.
+        All other settings are saved in the project, in <path>.idea/codecov.xml</path>.
+        The dashboard filters and <control>Show Coverage on Folders</control> are saved in <path>.idea/workspace.xml</path>.
     </p>
 
     <chapter title="Codecov page" id="codecov-settings-page">
@@ -130,6 +131,10 @@
             <def title="Shortcut" id="setting-keymap">
                 <control>Show Codecov Coverage</control> uses <shortcut>Ctrl+Shift+Alt+C</shortcut> (macOS: <shortcut>⌥ ⇧ ⌘ C</shortcut>) by default.
                 Change it in <ui-path>Settings | Keymap</ui-path>.
+            </def>
+            <def title="Coverage colors" id="setting-coverage-colors">
+                The editor gutter uses the IDE line coverage colors.
+                Change them in <ui-path>Settings | Editor | Color Scheme | General</ui-path>, under <control>Line Coverage</control>.
             </def>
             <def title="Notifications" id="setting-notifications">
                 Coverage drop, validation and connection messages belong to the <control>Codecov notifications</control> group in <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path>.

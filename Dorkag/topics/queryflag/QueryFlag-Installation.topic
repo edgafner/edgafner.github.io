@@ -10,7 +10,7 @@
 
   <tldr>
     <p>Install: <ui-path>Settings | Plugins | Marketplace</ui-path></p>
-    <p>License: <ui-path>Help | Register</ui-path></p>
+    <p>License: 30-day free trial, then <ui-path>Help | Register</ui-path></p>
     <p>Requires: the Database Tools and SQL plugin</p>
   </tldr>
 
@@ -30,10 +30,10 @@
       </li>
       <li>
         QueryFlag depends on the Database Tools and SQL plugin.
-        Use an IDE that includes it, for example IntelliJ IDEA Ultimate or DataGrip, and make sure the plugin is enabled.
+        Use an IDE that includes it, for example IntelliJ IDEA Ultimate, DataGrip, PyCharm, GoLand, or PhpStorm, and make sure the plugin is enabled.
       </li>
       <li>
-        To run queries, add at least one data source in the <control>Database</control> tool window.
+        To run queries, add at least one data source in the <control>Database</control> tool window (in DataGrip, <control>Database Explorer</control>).
         QueryFlag uses your existing data sources and does not store connection credentials.
       </li>
     </list>
@@ -67,7 +67,10 @@
   <chapter title="Start the trial or activate a license" id="license">
     <p>
       QueryFlag is a paid plugin with a 30-day free trial.
-      Without a trial or a license, the IDE disables the plugin.
+      If you have not started the trial or activated a license yet, the IDE opens the <control>Manage Subscriptions</control> dialog when it starts.
+      Start the trial or activate a license there.
+      If you close the dialog without doing either, the IDE disables QueryFlag.
+      The IDE also disables QueryFlag when the trial or the license expires.
     </p>
     <procedure title="Start the trial or activate a license" id="license-procedure">
       <step>

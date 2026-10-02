@@ -78,6 +78,13 @@
         </chapter>
     </chapter>
 
+    <chapter title="Check a draft with your assistant" id="use-agent-tools">
+        <p>Ask your assistant to read the create screen before it drafts an issue and to validate the draft before it files it, for example:</p>
+        <p><emphasis>Draft a bug in DEMO for the login timeout. Call jirai_describe_target for DEMO and Bug first, then check the draft with jirai_validate_draft and fix what it reports before you show it to me.</emphasis></p>
+        <p>To file the issue, the assistant needs a separate Jira tool.</p>
+        <p>You can also have the assistant save the draft as a Markdown file in the project and create the issue from that file with <a href="JirAI-AI-Workflows.topic">Push to Jira</a>.</p>
+    </chapter>
+
     <chapter title="Define a house standard" id="house-standard">
         <p>A house standard lists what your team expects on an issue beyond what Jira requires.</p>
         <p>When an assistant validates a draft that breaks a rule, it receives a <code>HOUSE_RULE</code> finding.</p>
@@ -99,6 +106,7 @@
             </step>
             <step><p>Click <control>OK</control> or <control>Apply</control>.</p></step>
         </procedure>
+        <p>To remove a rule, select its row, click <control>−</control> and apply the change.</p>
 
         <chapter title="Rule kinds" id="house-rule-kinds">
             <deflist type="medium">

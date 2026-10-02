@@ -33,6 +33,10 @@
                 In the GBrowser tool window, click <control>More Options</control> and select <control>Preferences</control>.
             </step>
         </procedure>
+        <p>
+            When you click <control>Apply</control> or <control>OK</control> on this page, GBrowser reloads all open GBrowser tabs in the project.
+            Selecting a <control>Theme</control> option reloads them right away.
+        </p>
         <p>The page has these groups, from top to bottom:</p>
         <list columns="2">
             <li><a anchor="default-home-page">Default Home Page URL</a></li>
@@ -101,6 +105,7 @@
             <def title="Number of history items to persist" id="amount-of-history">
                 The number field next to <control>History enabled</control> sets how many pages GBrowser keeps, from 0 to 60.
                 The default is 20.
+                To stop saving history, clear <control>History enabled</control> instead of setting the number to 0.
             </def>
         </deflist>
         <img src="gbrowser_settings_search_history.png" alt="Search Settings group of the GBrowser settings with the Configuration and Browser History options" width="706" thumbnail="true" border-effect="rounded"/>
@@ -194,6 +199,20 @@
         <p>
             The table starts with a <code>User-Agent</code> row whose <control>URI Regex</control> is empty, so it does not match any request.
         </p>
+        <procedure title="Stop sending a header" id="stop-sending-header">
+            <p>
+                In version 2026.3.1, the remove button does not delete a header: GBrowser keeps sending it, and the row comes back when you reopen the settings.
+            </p>
+            <step>
+                Expand <control>HTTP Response Headers</control> and clear the <control>URI Regex</control> cell of the header.
+            </step>
+            <step>
+                Optional: to also delete a stored value, such as a token, clear the <control>Value</control> cell.
+            </step>
+            <step>
+                Click <control>OK</control>.
+            </step>
+        </procedure>
         <warning>
             Header values are stored in plain text in <path>.idea/gbrowsers.xml</path>.
             Do not commit that file if it contains tokens or passwords.
@@ -215,6 +234,8 @@
                 The domains that the compatibility script applies to.
                 Adding a domain does not change the User-Agent that GBrowser sends to it.
                 The defaults are <code>perplexity.ai</code>, <code>challenges.cloudflare.com</code>, <code>openai.com</code>, <code>chat.openai.com</code> and <code>claude.ai</code>.
+                To change or remove a domain, select it and click the edit or remove button.
+                Changes to the list are saved right away, even if you then click <control>Cancel</control>.
             </def>
         </deflist>
         <procedure title="Add a site" id="add-compatible-site">

@@ -125,6 +125,12 @@ SELECT * FROM customers WHERE id = <QUERY_FLAG_TOKEN>;
     <code-block lang="javascript"><![CDATA[
 db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
 ]]></code-block>
+
+    <warning>
+      QueryFlag does not ask for confirmation before it runs a template.
+      If the query changes data, for example with <code>UPDATE</code> or <code>DELETE</code>, make sure it is safe for any value you might select.
+      When <control>Allow blank Text</control> is on, that includes an empty value.
+    </warning>
   </chapter>
 
   <chapter title="Create a template from a query console" id="create-from-console">
@@ -136,6 +142,10 @@ db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
     <procedure title="Create a template from a query console" id="add-from-console-procedure">
       <step>
         In a query console of the data source, select the query.
+        <p>
+          To open a new query console, right-click the data source in the <control>Database</control> tool window
+          and select <ui-path>New | Query Console</ui-path>.
+        </p>
       </step>
       <step>
         Right-click the selection and select <control>Add Query Flag</control>.
@@ -159,6 +169,10 @@ db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
       </step>
       <step>
         Optional: change <control>Name</control> to a name you can recognize in the menu.
+        <p>
+          QueryFlag does not check that names are unique.
+          If you keep the suggested name, all templates that you create from the same data source have the same name in the menu.
+        </p>
       </step>
       <step>
         Click <control>OK</control>.
@@ -178,6 +192,11 @@ db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
       <step>
         Click <control>Edit</control> on the toolbar.
         The same dialog opens, with the title <control>Add a QueryFlag Entry</control>.
+        <p>
+          If the template's data source is not available in the current project, the <control>DataSource</control> field is empty.
+          To save the template, you must select a data source, and it replaces the original one.
+          To keep the original data source, edit the template in a project where it is available.
+        </p>
       </step>
       <step>
         Change the fields and click <control>OK</control>.
@@ -209,6 +228,26 @@ db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
       In other projects, the settings list shows the template with the red text
       "DataSource not found, please check your Databases settings".
       See <a href="QueryFlag-Troubleshooting.topic" anchor="datasource-not-found"/>.
+    </p>
+    <p>
+      Templates refer to data sources by their ID, not by name or connection settings.
+      A data source that you create again, even with the same settings, gets a new ID and does not match existing templates.
+      To use the same templates in every project, create them for a global data source, or make their data source global:
+    </p>
+    <procedure title="Make a data source available in every project" id="make-data-source-global">
+      <step>
+        In the <control>Database</control> tool window, right-click the data source and select <control>Properties</control>
+        (<shortcut>Shift+Enter</shortcut>, macOS: <shortcut>⌘ I</shortcut>).
+      </step>
+      <step>
+        In the <control>Data Sources and Drivers</control> dialog, right-click the data source and select <control>Make Global</control>.
+      </step>
+      <step>
+        Click <control>OK</control>.
+      </step>
+    </procedure>
+    <p>
+      To reuse templates on another computer, see <a href="QueryFlag-Settings.topic" anchor="storage"/>.
     </p>
   </chapter>
 

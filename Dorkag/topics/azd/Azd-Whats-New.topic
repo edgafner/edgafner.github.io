@@ -8,7 +8,7 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter" depth="2"/>
 
-    <link-summary>Notable changes in the AZD 2026.3, 2026.2 and 2026.1 release lines.</link-summary>
+    <link-summary>Notable changes in recent AZD release lines, from the late 2025.2 updates to 2026.3.</link-summary>
     <card-summary>New features and notable fixes in recent AZD releases.</card-summary>
     <web-summary>What's new in AZD, the Azure DevOps plugin for JetBrains IDEs: pull request review, sign-in,
         pipelines, approvals, Boards and AI changes in recent releases.</web-summary>
@@ -142,6 +142,7 @@
 
         <chapter title="Pull requests" id="pr-improvements-2026-1">
             <list>
+                <li>A new pull request can take its description from the repository's <a href="Azd-Create-Pull-Request.topic" anchor="pr-templates">pull request template</a>.</li>
                 <li>Commit links in the timeline open the commit in the pull request details.</li>
                 <li><code>@</code> mentions and <code>!</code> pull request references autocomplete in comments.</li>
                 <li>A toggle shows or hides draft pull requests.</li>
@@ -149,6 +150,32 @@
                 <li>The <a href="AI-Pull-Request-Review.topic">AI review tour</a> walks you through the changes.</li>
             </list>
         </chapter>
+    </chapter>
+
+    <chapter title="AZD 2025.3" id="azd-2025-3">
+        <p>Releases from November 2025 to January 2026 added:</p>
+        <list>
+            <li><b>Azure Pipelines language server:</b> completion, validation and hover help in pipeline YAML files.
+                See <a href="Azd-Pipeline-Yaml.topic"/>.</li>
+            <li><b>MCP tools:</b> AI chat can create work items, manage pull requests and trigger pipelines.
+                See <a href="AI-Pull-Request-Review.topic" anchor="mcp-tools">MCP tools</a>.</li>
+            <li><b>Several work items per commit:</b> select more than one work item for a commit message.
+                See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
+            <li><b>Viewed files:</b> the viewed state of pull request files syncs with Azure DevOps, and a progress line counts the viewed files.
+                See <a href="Pull-Request-Details.topic" anchor="changed-files">Go through the changed files</a>.</li>
+        </list>
+    </chapter>
+
+    <chapter title="AZD 2025.2" id="azd-2025-2">
+        <p>Later AZD 2025.2 updates, from September to November 2025, added:</p>
+        <list>
+            <li><b>Shallow clone:</b> clone a repository with a truncated history.
+                See <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" anchor="clone-steps">Clone an Azure DevOps repository</a>.</li>
+            <li><b>Work items in commit messages:</b> select work items when you generate a commit message.
+                See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
+            <li><b>Stage diagram:</b> new pipeline stage diagram features, and faster loading of runs and run details.
+                See <a href="Azure-DevOps-Pipelines.topic" anchor="pipeline-diagram">View the stage diagram</a>.</li>
+        </list>
     </chapter>
 
     <seealso>

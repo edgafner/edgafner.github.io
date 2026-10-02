@@ -44,6 +44,7 @@
         <p>
             Each folder with coverage data shows a dot in the color of its band: <control>Excellent</control>, <control>Good</control>, <control>Fair</control> or <control>Poor</control>.
             Hover over a folder to see its exact value, for example "Codecov coverage: 77.8%".
+            If no tooltip appears, click the folder once and hover over it again.
             The dot keeps the folder's own icon, so source and test root markings stay visible.
         </p>
         <!-- planned-image src="codecov_project_view_folder_coverage.png" alt="Folders in the Project tool window marked with Codecov coverage colors and a coverage tooltip" -->

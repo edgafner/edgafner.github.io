@@ -48,7 +48,8 @@
     <chapter title="Sort and filter tests" id="sort-filter-tests">
         <p>Use the toolbar above the tree:</p>
         <list>
-            <li>Click the filter icon to show only some outcomes.</li>
+            <li>Click <control>Filter by Outcome</control> (the filter icon) and select the outcomes to show.
+                Each outcome shows its number of tests; <control>Clear</control> shows all tests again.</li>
             <li>Click the sort icon and select <control>Default</control>, <control>By Name</control> or <control>By Duration</control>.
                 Select <control>Descending</control> to reverse the order.</li>
         </list>
@@ -86,8 +87,13 @@
             </step>
             <step>
                 <p>Click <control>Associate</control>.</p>
+                <p>If the test case was associated with another test, the new association replaces the old one.</p>
             </step>
         </procedure>
+        <p>
+            When a test already has associations, the dialog lists them under <control>Existing Test Cases Associations</control>.
+            To remove one, click its delete icon and confirm.
+        </p>
     </chapter>
 
     <seealso>

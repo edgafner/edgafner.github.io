@@ -15,7 +15,7 @@
 
     <link-summary>Solve common GBrowser problems, learn which data GBrowser sends and stores, and report a bug or contact the author.</link-summary>
     <card-summary>Fix common problems, report a bug or contact the author.</card-summary>
-    <web-summary>Troubleshoot GBrowser in JetBrains IDEs: blank tool window, sites that block embedded browsers, cookies and shortcuts, privacy, and how to report a bug.</web-summary>
+    <web-summary>Troubleshoot GBrowser in JetBrains IDEs: blank tool window and JCEF errors, sites that block embedded browsers, cookies and shortcuts, privacy, and how to report a bug.</web-summary>
 
     <p>
         This page lists common GBrowser problems and their solutions, the data GBrowser sends and stores, and how to report a bug or contact the author.
@@ -29,6 +29,11 @@
                 and that the IDE runs on the bundled JetBrains Runtime.
                 Then restart the IDE.
                 See <a href="GBrowser-Installation.topic" anchor="requirements"/>.
+            </p>
+            <p>
+                The same checks apply when the IDE reports the error <code>JCEF is not supported in this env or failed to initialize</code>.
+                To check or switch the runtime, press <shortcut>Ctrl+Shift+A</shortcut> (macOS: <shortcut>⌘ ⇧ A</shortcut>)
+                and run <control>Choose Boot Java Runtime for the IDE…</control>.
             </p>
         </chapter>
 
@@ -86,6 +91,10 @@
         <list>
             <li>
                 GBrowser loads site icons from Google's favicon service, which receives the domain names of the pages you visit and bookmark.
+            </li>
+            <li>
+                To get page titles, GBrowser can also request a page directly from the IDE, outside the embedded browser and without its cookies.
+                It does this for new tabs and for pages that you bookmark from the page context menu.
             </li>
             <li>
                 When <control>Enable suggestion search</control> is on, the text you type in the address field is sent to Google to get suggestions.
