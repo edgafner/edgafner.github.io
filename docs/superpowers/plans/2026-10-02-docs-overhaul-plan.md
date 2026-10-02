@@ -26,12 +26,12 @@
 - Titles take the form `<Product>: <sentence-case task>` with a short `toc-title`. Brand casing: AZD, JirAI, GBrowser, Codecov, QueryFlag.
 - Every topic has `<link-summary>`, `<card-summary>` and `<web-summary>`.
 - Screenshots:
-  - Islands Light `name.png` plus Islands Dark `name_dark.png`, 1280×800 window, 1x, tight crops.
-  - `width` equals the pixel width, capped at 706 (use `thumbnail="true"` above that), with `border-effect="rounded"`.
+  - Islands Light `name.png` plus Islands Dark `name_dark.png`, 1280×800 window, 2x (offscreen paint helper), tight crops.
+  - `width` equals half the pixel width, capped at 706 (use `thumbnail="true"` above that), with `border-effect="rounded"`.
   - Names are globally unique across `Dorkag/images/**`.
 - Document the latest released plugin version. Never present "Unreleased" changelog items as available.
 - No real names, e-mails, tokens or private hostnames in any image or text.
-- Credentials are never searched for or read. Live-data shots wait for owner-provided tokens.
+- Credentials are never searched for or read. Live-data shots use local mock backends with neutral demo data.
 - Gradle always runs with `--no-scan`. UI tests only run through `docshots.sh` (the screen lock).
 - Paths:
   - Docs: `/Users/jonathangafner/IdeaProjects/edgafner/edgafner.github.io-docs`.

@@ -66,27 +66,27 @@ The audits from 2026-10-02 cover each plugin's code against its docs, the guidel
 | IDE | IntelliJ IDEA Ultimate EAP **IU-263.6259.32** for every plugin (the older pins expire). New UI, fresh config, only the plugin under test installed. |
 | Themes | Two runs of the same test. **Islands Light** produces `name.png`; **Islands Dark** produces `name_dark.png`, which Writerside switches to automatically. |
 | Window | Fixed **1280×800** logical (16:10, above the Marketplace minimum of 1200×760), centred. Never maximised. |
-| Resolution | **1x**. The 144-DPI (2x) rule cannot be met on this display; see "Deviation" below. |
-| Crop | A tight crop of the component the step discusses (dialog, tool window, popup, editor with gutter) plus 8–16 px of context. At most 1–2 whole-window overview shots per plugin. Prefer widths of 706 px or less. |
+| Resolution | **2x** (144 DPI), produced by offscreen painting; see "Capture method" below. |
+| Crop | A tight crop of the component the step discusses (dialog, tool window, popup, editor with gutter) plus 8–16 px of context. At most 1–2 whole-window overview shots per plugin. Prefer logical widths of 706 or less (1412 px at 2x). |
 | Clutter | No balloons, memory indicator, tips, onboarding, cursor, desktop, menu bar or Dock. Window corners are masked to the rounded radius. |
 | Data | Neutral sample data: a folder called `demo-project` with realistic content. No real names, e-mails, avatars, tokens or hostnames. |
 | Naming | `<plugin>_<area>_<subject>[_<state>].png`, lowercase snake_case, globally unique across `Dorkag/images/**`. No dates or versions. |
 | Storage | `Dorkag/images/<plugin>/` (new folders `gbrowser/`, `queryflag/`, `jirai/`; `azd/` and `codecov/` after their dead duplicates are removed). |
-| Markup | `<img src="name.png" alt="One sentence: UI plus state" width="W" border-effect="rounded"/>`. `W` is the pixel width capped at 706. Add `thumbnail="true"` when the image is wider than 706 px. |
+| Markup | `<img src="name.png" alt="One sentence: UI plus state" width="W" border-effect="rounded"/>`. `W` is half the pixel width (the logical width), capped at 706. Add `thumbnail="true"` when the logical width is over 706. |
 | Weight | `oxipng -o 4 --strip safe`. |
 
-**Deviation.**
-JetBrains docs use 2x PNGs, but this machine cannot produce them.
-Robot capture is 1x, and a 2x window would not fit the screen.
-A possible follow-up is a small helper plugin that paints Swing components into a 2x offscreen image (`printAll` with `scale(2,2)`). It would not capture JCEF pages.
-We ship 1x now. The test harness can be re-run later at 2x on a Retina display or with that helper.
+**Capture method (revised 2026-10-02, replaces the 1x plan).**
+Robot capture is 1x on this display and fails silently once the screen locks.
+A test-only helper plugin (`com.dorkag.docshots`) paints the IDE's own windows into a 2x offscreen image (`printAll` per window with a scaled `Graphics2D`, composited in z-order) and drives the UI with synthetic events instead of the Robot.
+Text and icons are true 2x. JCEF pages are a 1x frame scaled up, so they are slightly soft.
+Native macOS chrome (traffic lights, dialog title text) is not painted, so crops start below the title strip; popups get a drawn rounded border.
 
 ### D2. Capture harness
 
 - Each plugin repo gets a `src/uiTest/.../docshots/DocScreenshots.kt` helper and one `<Plugin>DocScreenshotsUI` test, on the local branch `feature/doc-screenshots-2026-10`.
 - Runs go through `docshots.sh`. It holds `~/.cache/dorkag-uitest/screen.lock` and waits until no foreign `ide-tests` process exists. Peer sessions were asked to use the same lock; all four confirmed they have no UI-test runs planned.
 - Credential-free shots are captured now. These are settings pages, sign-in dialogs, AI provider dialogs in AZD mock mode, not-connected tool windows, and everything in GBrowser and QueryFlag.
-- Live-data shots run in a second pass once the owner provides `AZD_TOKEN`, `CODECOV_API_TOKEN`, and the Jira token.
+- Live-data shots run against local mock backends (Azure DevOps Server, Jira Cloud and Codecov APIs served on 127.0.0.1 with neutral demo data), so no owner tokens are needed.
 - Until then, a referenced image that is not available is handled by its audit verdict:
   - An old image that is still correct (verdict `ok`, or `stale-UI` with the right concept) stays.
   - Images with the verdict `wrong-content` are removed.
@@ -169,5 +169,5 @@ We adopt the per-plugin structures proposed in the audits. They are task-oriente
    - One home-page judge panel.
 4. **Integrate.** Reconcile image references with the shot manifests, then build and fix until there are 0 errors.
 5. **Review.** Adversarial fact-check per plugin against code, a style check against the guidelines checklist, then a fix round.
-6. **Shots, pass 2.** Credentialed, if the tokens arrive, followed by a re-integration.
+6. **Shots, pass 2.** At 2x through the offscreen helper: credential-free screens, then live-data screens against the local mock backends, followed by a re-integration.
 7. **Deliver.** PR plus the owner report.
