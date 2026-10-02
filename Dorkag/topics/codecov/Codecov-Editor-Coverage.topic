@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Codecov: View coverage in the editor" id="Codecov-Editor-Coverage">
+
+    <primary-label ref="codecov"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Show or hide coverage: <shortcut>Ctrl+Shift+Alt+C</shortcut></p>
+        <p>Menus: editor context menu, gutter context menu</p>
+        <p>Requires: a project connected to Codecov</p>
+    </tldr>
+
+    <link-summary>Read Codecov line coverage in the editor gutter, open line details, and show, hide or refresh coverage.</link-summary>
+    <card-summary>See covered, partially covered and missed lines in the editor gutter.</card-summary>
+    <web-summary>The Codecov plugin marks covered, partially covered and missed lines in the editor gutter of JetBrains IDEs, using coverage your CI uploads to Codecov.</web-summary>
+
+    <p>
+        When the project is connected to Codecov, the editor gutter shows the coverage that your CI uploaded to Codecov.
+        You do not need to run tests locally.
+    </p>
+
+    <chapter title="Read the coverage gutter" id="coverage-gutter">
+        <p>
+            Open any source file of the project.
+            Colored bars next to the line numbers show the coverage of each line:
+        </p>
+        <list>
+            <li>Green: the line is covered.</li>
+            <li>Yellow: the line is partially covered, for example when only some branches of a condition run.</li>
+            <li>Red: the line is not covered.</li>
+        </list>
+        <p>
+            The bars use the line coverage colors of the current editor color scheme.
+            Lines without a bar have no coverage data in Codecov, such as comments and blank lines.
+        </p>
+        <!-- planned-image src="codecov_editor_gutter.png" alt="Covered, partially covered and missed lines in the editor gutter" -->
+        <p>
+            Coverage is shown by default and loads when you open a file.
+        </p>
+    </chapter>
+
+    <chapter title="Open the details of a line" id="line-popup">
+        <procedure title="View the coverage of a line" id="view-line-coverage">
+            <step>
+                Click the coverage bar next to a line.
+                A popup shows the line number and its status: <control>Covered</control>, <control>Partially Covered</control> or <control>Not Covered</control>.
+                <!-- planned-image src="codecov_gutter_popup.png" alt="Coverage popup for a missed line with Open in Codecov, Generate AI Prompt and Hide Coverage links" -->
+            </step>
+            <step>
+                Click one of the links in the popup:
+                <list>
+                    <li><control>Open in Codecov</control> opens the file in Codecov in your browser, scrolled to the line.</li>
+                    <li><control>Generate AI Prompt</control> copies a test-writing prompt for the code to the clipboard.
+                        For details, see <a href="Codecov-AI-Prompts.topic"/>.</li>
+                    <li><control>Hide Coverage</control> hides coverage in all editors of the project.</li>
+                </list>
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Show, hide and refresh coverage" id="show-hide-coverage">
+        <procedure title="Show or hide coverage" id="toggle-coverage" type="choices">
+            <step>
+                Press <shortcut>Ctrl+Shift+Alt+C</shortcut>.
+                To see or change the shortcut on your operating system, go to <ui-path>Settings | Keymap</ui-path> and search for <code>Show Codecov Coverage</code>.
+            </step>
+            <step>
+                Right-click in the editor and select <control>Hide Codecov Coverage</control> or <control>Show Codecov Coverage</control>.
+            </step>
+            <step>
+                Right-click the editor gutter and select <control>Hide Codecov Coverage</control> or <control>Show Codecov Coverage</control>.
+            </step>
+        </procedure>
+        <!-- planned-image src="codecov_editor_context_menu.png" alt="Editor context menu with Hide Codecov Coverage, Refresh Codecov Coverage and Upload Local Report" -->
+        <p>
+            The setting applies to all editors of the project.
+            Coverage is shown again the next time you open the project.
+            The menu items appear only when the project is connected to Codecov and a repository is detected.
+        </p>
+
+        <procedure title="Refresh coverage after a new upload" id="refresh-coverage">
+            <step>
+                Right-click in the editor and select <control>Refresh Codecov Coverage</control>.
+            </step>
+        </procedure>
+        <p>
+            <control>Refresh Codecov Coverage</control> appears only while coverage is shown.
+            The plugin keeps coverage data for up to 5 minutes, so a refresh within that time can show the same data.
+        </p>
+    </chapter>
+
+    <chapter title="Which coverage the editor shows" id="coverage-source">
+        <p>
+            The plugin requests the coverage of each file from Codecov without naming a branch.
+            Codecov then returns the coverage of the latest report on the repository's default branch.
+            Coverage that is uploaded only for your current feature branch does not appear in the gutter.
+        </p>
+        <p>
+            Files are matched by their path relative to the Git repository root, so the paths in your Codecov reports must match the paths in the repository.
+        </p>
+        <tip>
+            To see the effect of your current branch, open the <a href="Codecov-Metrics.topic">Codecov Metrics dashboard</a>.
+            Folder coverage in the Project tool window also uses the current branch.
+        </tip>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Codecov-AI-Prompts.topic"/>
+            <a href="Codecov-Folder-Coverage.topic"/>
+            <a href="Codecov-FAQ.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://youtu.be/hNEkKONumZg">Codecov plugin demo on YouTube</a>
+            <a href="https://docs.codecov.com/docs/about-code-coverage">Codecov: about code coverage</a>
+        </category>
+    </seealso>
+</topic>

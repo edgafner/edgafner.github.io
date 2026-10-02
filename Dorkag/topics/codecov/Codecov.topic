@@ -5,26 +5,37 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Codecov" id="Codecov">
 
+  <primary-label ref="codecov"/>
+
+  <link-summary>Codecov plugin documentation: line coverage in the editor, the Codecov Metrics dashboard, folder coverage and codecov.yml support.</link-summary>
+  <card-summary>Codecov line coverage, pull request impact and coverage trends in the editor.</card-summary>
+  <web-summary>The Codecov plugin shows Codecov line coverage, coverage trends, pull request impact and codecov.yml validation in JetBrains IDEs, using your CI uploads.</web-summary>
+
   <section-starting-page>
-    <title>Codecov IDEA Plugin</title>
+    <title>Codecov</title>
     <description>
-      Bring Codecov insights directly into your IDE. Visualize line-by-line coverage, analyze PR impact, and monitor project health without leaving your editor.
+      See the coverage that your CI uploads to Codecov in the editor gutter, track coverage trends and pull request impact, and validate codecov.yml without leaving your JetBrains IDE.
     </description>
 
     <spotlight>
-      <a href="Codecov-Whats-New.topic" type="learn" summary="Discover the latest V2026.3.1 features">What's New</a>
-      <a href="Codecov-Installation.topic" type="start" summary="Quick setup and account connection">Installation Guide</a>
+      <a href="Codecov-Installation.topic" type="start" summary="Install the plugin, start the trial and connect the project to Codecov with an API token.">Install and connect</a>
+      <a href="Codecov-Editor-Coverage.topic" type="tools" summary="See covered, partially covered and missed lines in the editor gutter.">View coverage in the editor</a>
     </spotlight>
 
     <primary>
-      <title>Core Features</title>
-      <a href="Codecov-Usage.topic" type="learn">Usage Guide</a>
-      <a href="Codecov-FAQ.topic" type="support">FAQ &amp; Troubleshooting</a>
+      <title>Work with coverage</title>
+      <a href="Codecov-Metrics.topic" type="cloud" summary="Open the Codecov Metrics dashboard with pull request impact cards and the coverage trend.">Metrics dashboard</a>
+      <a href="Codecov-Folder-Coverage.topic" type="tools" summary="Mark folders in the Project tool window with their Codecov coverage.">Folder coverage</a>
+      <a href="Codecov-AI-Prompts.topic" type="learn" summary="Copy a ready-made test-writing prompt for a line to the clipboard.">Generate AI prompts</a>
+      <a href="Codecov-Usage.topic" type="development" summary="Get completion for codecov.yml and validate it against the Codecov server.">Edit and validate codecov.yml</a>
+      <a href="Codecov-Whats-New.topic" type="learn" summary="Release notes for recent Codecov plugin versions.">What's new</a>
     </primary>
 
     <secondary>
-      <title>Reference &amp; Support</title>
-      <a href="Codecov-Reference-and-Support.topic" type="support">Support Channels</a>
+      <title>Configure and get help</title>
+      <a href="Codecov-Settings-Reference.topic" type="settings" summary="Every Codecov option, its default and where it is stored.">Settings reference</a>
+      <a href="Codecov-FAQ.topic" type="support" summary="Solutions for missing coverage, connection errors and validation problems.">FAQ and troubleshooting</a>
+      <a href="Codecov-Reference-and-Support.topic" type="support" summary="Report a problem or contact the developer.">Support</a>
     </secondary>
 
   </section-starting-page>

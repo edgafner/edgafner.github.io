@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Codecov: Settings reference" id="Codecov-Settings-Reference">
+
+    <primary-label ref="codecov"/>
+    <show-structure for="chapter" depth="2"/>
+
+    <tldr>
+        <p>Settings: <ui-path>Settings | Tools | Codecov</ui-path> and <ui-path>Settings | Tools | Codecov | Folder Coverage</ui-path></p>
+        <p>Open Settings: <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>)</p>
+    </tldr>
+
+    <link-summary>Every option on the Codecov settings pages, with defaults and scope, plus the plugin's actions and where to find them.</link-summary>
+    <card-summary>Every Codecov option, its default and where it is stored.</card-summary>
+    <web-summary>Reference for every Codecov plugin setting in JetBrains IDEs: connection, AI prompt templates, codecov.yml schema, folder coverage bands and actions.</web-summary>
+
+    <p>
+        The plugin has two settings pages.
+        Settings marked <emphasis>all projects</emphasis> apply to every project in the IDE; the rest are saved in the project.
+    </p>
+
+    <chapter title="Codecov page" id="codecov-settings-page">
+        <p>Path: <ui-path>Settings | Tools | Codecov</ui-path>.</p>
+        <!-- planned-image src="codecov_settings_connection.png" alt="Codecov settings page connected to a GitHub repository" -->
+
+        <chapter title="Codecov Connection" id="settings-connection">
+            <deflist type="medium">
+                <def title="Server URL" id="setting-server-url">
+                    The Codecov API server.
+                    Default: <code>https://api.codecov.io</code>.
+                    For a self-hosted Codecov server, enter its base URL.
+                    Scope: all projects.
+                </def>
+                <def title="Service Provider" id="setting-service-provider">
+                    Where the repository is hosted: <control>Github</control> (default), <control>Gitlab</control> or <control>Bitbucket</control>.
+                    Scope: all projects.
+                </def>
+                <def title="API Token" id="setting-api-token">
+                    Your Codecov API token.
+                    It is stored in the IDE password safe, not in the project.
+                    Scope: all projects.
+                </def>
+                <def title="Test Connection" id="setting-test-connection">
+                    Checks the token, detects the Codecov repository from the project's Git remote, and saves the token on success.
+                    Enabled when <control>Server URL</control> and <control>API Token</control> are filled in.
+                </def>
+                <def title="Disconnect" id="setting-disconnect">
+                    Removes the connection of the current project.
+                    The stored API token is kept.
+                    Shown only while the project is connected.
+                </def>
+                <def title="Connection status" id="setting-connection-status">
+                    "Not connected", or "Connected to Github: demo-org/demo-project".
+                    When connected, a second line shows "Detected Repository: demo-org/demo-project", or the warning "No repository detected. Please verify your project settings."
+                </def>
+            </deflist>
+        </chapter>
+
+        <chapter title="AI Prompt Templates" id="settings-ai-prompts">
+            <deflist type="medium">
+                <def title="Enable AI prompt generation from coverage gutters" id="setting-enable-ai-prompts">
+                    Lets <control>Generate AI Prompt</control> in the coverage popup copy a prompt to the clipboard.
+                    Default: on.
+                </def>
+                <def title="Prompt for covered code" id="setting-prompt-covered">
+                    Template for covered lines, inside the collapsible <control>Prompt Templates</control> section.
+                    <code>&lt;CODE_TOKEN&gt;</code> marks where the code goes.
+                </def>
+                <def title="Prompt for uncovered code" id="setting-prompt-uncovered">
+                    Template for partially covered and not covered lines.
+                    <code>&lt;CODE_TOKEN&gt;</code> marks where the code goes.
+                </def>
+            </deflist>
+            <p>For the default templates, see <a href="Codecov-AI-Prompts.topic" anchor="customize-templates"/>.</p>
+        </chapter>
+
+        <chapter title="codecov.yml options" id="settings-yaml">
+            <!-- planned-image src="codecov_settings_schema_options.png" alt="Codecov YAML schema and validation endpoint options" -->
+            <deflist type="medium">
+                <def title="Inject codecov YAML schema" id="setting-inject-schema">
+                    Applies the bundled Codecov schema to YAML files whose name contains <code>codecov</code>, for completion and quick documentation.
+                    Default: on.
+                </def>
+                <def title="Switch to v1 endpoint" id="setting-v1-endpoint">
+                    Intended to validate <path>codecov.yml</path> with the older v1 endpoint of the Codecov validation API.
+                    In the current version, validation always uses the v2 endpoint, whatever this option is set to.
+                    Default: off.
+                </def>
+            </deflist>
+        </chapter>
+    </chapter>
+
+    <chapter title="Folder Coverage page" id="folder-coverage-settings-page">
+        <p>Path: <ui-path>Settings | Tools | Codecov | Folder Coverage</ui-path>, group <control>Folder Coverage Colors</control>.</p>
+        <deflist type="medium">
+            <def title="Excellent" id="setting-band-excellent">
+                Lower bound and color of the top band.
+                Default: 80%, green.
+            </def>
+            <def title="Good" id="setting-band-good">
+                Lower bound and color.
+                Default: 60%, yellow.
+            </def>
+            <def title="Fair" id="setting-band-fair">
+                Lower bound and color; must be greater than 0.
+                Default: 40%, orange.
+            </def>
+            <def title="Poor" id="setting-band-poor">
+                Color for everything below the <control>Fair</control> bound.
+                The bound follows <control>Fair</control> and cannot be edited.
+                Default: red.
+            </def>
+            <def title="Reset to Defaults" id="setting-reset-defaults">
+                Restores the default bounds and colors.
+                Click <control>Apply</control> or <control>OK</control> to save them.
+            </def>
+        </deflist>
+        <p>For details, see <a href="Codecov-Folder-Coverage.topic" anchor="folder-colors-config"/>.</p>
+    </chapter>
+
+    <chapter title="Settings outside the Codecov pages" id="other-settings">
+        <deflist type="medium">
+            <def title="Shortcut" id="setting-keymap">
+                <control>Show Codecov Coverage</control> uses <shortcut>Ctrl+Shift+Alt+C</shortcut> by default.
+                Change it in <ui-path>Settings | Keymap</ui-path>.
+            </def>
+            <def title="Notifications" id="setting-notifications">
+                Coverage drop, validation and connection messages belong to the <control>Codecov notifications</control> group in <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path>.
+            </def>
+            <def title="Dashboard filters" id="setting-dashboard-filters">
+                The <control>Metric</control>, branch and <control>Time range</control> filters of the Codecov Metrics dashboard are saved per project.
+            </def>
+            <def title="Folder coverage on or off" id="setting-folder-coverage-toggle">
+                <control>Show Coverage on Folders</control> is saved per project.
+                Default: off.
+            </def>
+        </deflist>
+    </chapter>
+
+    <chapter title="Actions" id="codecov-actions">
+        <p>You can run every action from Find Action (<shortcut>Ctrl+Shift+A</shortcut>, macOS: <shortcut>⌘ ⇧ A</shortcut>).</p>
+        <deflist type="medium">
+            <def title="Show Codecov Coverage / Hide Codecov Coverage" id="action-toggle-coverage">
+                Location: editor context menu and gutter context menu.
+                Shows or hides coverage in all editors of the project.
+            </def>
+            <def title="Refresh Codecov Coverage" id="action-refresh-coverage">
+                Location: editor context menu, while coverage is shown.
+                Reloads the coverage of the current file.
+            </def>
+            <def title="Codecov Metrics" id="action-open-metrics">
+                Location: Project tool window toolbar.
+                Opens the Codecov Metrics dashboard.
+            </def>
+            <def title="Show Coverage on Folders" id="action-folder-coverage">
+                Location: Codecov Metrics toolbar.
+                Turns folder coverage in the Project tool window on or off.
+            </def>
+            <def title="Refresh Folder Coverage" id="action-refresh-folder-coverage">
+                Location: Find Action only, while folder coverage is on.
+                Reloads folder coverage.
+            </def>
+            <def title="Validate Codecov YAML" id="action-validate-yaml">
+                Location: editor and Project tool window context menus, for <path>codecov.yml</path> and <path>codecov.yaml</path>.
+                Validates the file on the Codecov server.
+            </def>
+            <def title="Upload Local Report" id="action-upload-local-report">
+                Location: <ui-path>Tools</ui-path> menu and editor context menu.
+                Uploads a local coverage report file (XML or JSON) to Codecov for the current commit.
+            </def>
+        </deflist>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Codecov-Installation.topic"/>
+            <a href="Codecov-AI-Prompts.topic"/>
+            <a href="Codecov-Folder-Coverage.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://docs.codecov.com/docs/codecov-yaml">Codecov YAML documentation</a>
+        </category>
+    </seealso>
+</topic>

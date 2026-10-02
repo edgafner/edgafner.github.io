@@ -3,33 +3,69 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="What's New in Codecov" id="Codecov-Whats-New">
+       title="Codecov: What's new" id="Codecov-Whats-New">
 
     <primary-label ref="codecov"/>
-    <secondary-label ref="codecov_version"/>
+    <show-structure for="chapter" depth="2"/>
 
-    <p>Discover the latest features and enhancements in the Codecov plugin V2026.3.1.</p>
+    <link-summary>Release notes for the Codecov plugin: platform support in 2026.3 and 2026.2, and the features added in 2026.1.</link-summary>
+    <card-summary>Release notes for recent Codecov plugin versions.</card-summary>
+    <web-summary>What's new in the Codecov plugin for JetBrains IDEs: 2026.3 platform support, the Codecov Metrics dashboard, folder coverage and coverage tools.</web-summary>
 
-    <chapter title="IntelliJ Platform 2026.3 &amp; 2026.2 Support" id="platform-support">
-        <p>Codecov now officially targets the latest IntelliJ Platform 2026.3 EAP and 2026.2 GA builds, ensuring compatibility across all current JetBrains IDEs.</p>
+    <p>
+        This page summarizes the user-facing changes in recent releases.
+        For every version, see the change notes on <a href="https://plugins.jetbrains.com/plugin/23390-codecov">JetBrains Marketplace</a>.
+    </p>
+
+    <chapter title="Codecov 2026.3" id="platform-support">
+        <p>Codecov 2026.3.1 and 2026.3.2 (September 2026) target the IntelliJ Platform 2026.3 and update dependencies.
+            They add no new user features.</p>
+        <p>The current version requires IntelliJ-based IDEs 2026.3 (build 263) or later.
+            For IntelliJ-based IDEs 2026.2, the Marketplace provides Codecov 2026.2.5.</p>
     </chapter>
 
-    <chapter title="Performance &amp; Security Upgrades" id="performance-security">
-        <list>
-            <li><p><b>Large Repository Performance:</b> Major indexing and coverage parsing optimizations reduce memory pressure and background CPU usage in repositories with hundreds of thousands of lines of code.</p></li>
-            <li><p><b>Security and Dependency Alignments:</b> Upgraded to Jackson 2.22.1 for patched serialization security, Kotlin 2.4.10 runtime, and ProGuard Gradle 7.10.0.</p></li>
-            <li><p><b>Streamlined Settings:</b> Simplified configuration flow ensures swift initial token setup and repo linking.</p></li>
-        </list>
+    <chapter title="Codecov 2026.2" id="release-2026-2">
+        <p>Codecov 2026.2.2 to 2026.2.5 (June to August 2026) target the IntelliJ Platform 2026.2 and update dependencies, including security fixes in libraries.</p>
     </chapter>
 
-    <chapter title="Metrics and Visual Trends" id="metrics-graphs">
-        <p>We've introduced new metrics and graphs to help you visualize coverage trends across your project. Get a high-level overview of your code's health directly within the IDE.</p>
-        <img src="metrics-and-folder-icon-annotation.png" alt="Codecov Metrics and Graphs" style="block" thumbnail="true"/>
+    <chapter title="Codecov 2026.1" id="release-2026-1">
+        <p>The 2026.1 releases (January to May 2026) added the dashboard and folder coverage:</p>
+
+        <chapter title="Codecov Metrics dashboard" id="metrics-graphs">
+            <p>
+                The <control>Codecov Metrics</control> editor tab shows pull request impact cards and a coverage trend chart with metric, branch and time range filters.
+                Open it from the Project tool window toolbar.
+            </p>
+            <p>
+                A notification warns when a commit lowers total coverage on a branch, and the dashboard refreshes when you switch Git branches.
+            </p>
+            <p>For details, see <a href="Codecov-Metrics.topic"/>.</p>
+        </chapter>
+
+        <chapter title="Folder coverage" id="folder-colors">
+            <p>
+                Folders in the Project tool window can show a colored dot for their Codecov coverage.
+                You set the coverage bands and their colors in <ui-path>Settings | Tools | Codecov | Folder Coverage</ui-path>.
+            </p>
+            <p>For details, see <a href="Codecov-Folder-Coverage.topic"/>.</p>
+        </chapter>
     </chapter>
 
-    <chapter title="Folder Color Customization" id="folder-colors">
-        <p>You can now customize how coverage status is reflected in your project tree. Configure folder color intensity and style to match your preferences.</p>
-        <img src="codecov-folder-color-settings.png" alt="Folder Color Settings" style="block" thumbnail="true"/>
+    <chapter title="Earlier versions" id="release-2025">
+        <p>
+            The 2025.2 releases introduced line coverage in the editor gutter with show, hide and refresh actions, the coverage popup with <control>Open in Codecov</control>, AI prompt templates, automatic repository detection from Git remotes, and support for GitHub, GitLab, Bitbucket and self-hosted Codecov servers.
+            Completion and validation for <path>codecov.yml</path> are available since the first version.
+        </p>
     </chapter>
 
+    <seealso>
+        <category ref="related">
+            <a href="Codecov-Installation.topic"/>
+            <a href="Codecov-Metrics.topic"/>
+            <a href="Codecov-Folder-Coverage.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/23390-codecov">Codecov on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>

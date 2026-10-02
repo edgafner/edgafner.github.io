@@ -3,35 +3,124 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Codecov FAQ" id="Codecov-FAQ">
+       title="Codecov: FAQ and troubleshooting" id="Codecov-FAQ">
 
     <primary-label ref="codecov"/>
-    <secondary-label ref="codecov_version"/>
+    <show-structure for="chapter" depth="2"/>
+
+    <link-summary>Answers to common Codecov plugin questions: missing coverage, repository detection, connection errors, validation and bug reports.</link-summary>
+    <card-summary>Solutions for missing coverage, connection errors and validation problems.</card-summary>
+    <web-summary>Troubleshoot the Codecov plugin in JetBrains IDEs: missing coverage, undetected repositories, failed connection tests, empty dashboards and validation.</web-summary>
 
     <chapter title="Why can't I see coverage for my branch?" id="missing-coverage">
-        <p>The plugin retrieves coverage data from the Codecov API. If you don't see coverage:</p>
-        <list type="bullet">
-            <li><p>Ensure your CI pipeline successfully uploaded a coverage report to Codecov for the current branch.</p></li>
-            <li><p>Check if the branch name in your local Git matches the branch name in Codecov.</p></li>
-            <li><p>If no coverage is found for the active branch, the plugin will fall back to showing coverage for the <b>default branch</b>.</p></li>
+        <p>
+            The editor gutter shows the coverage of the latest Codecov report on the repository's default branch, not of your current branch.
+            If a file shows no coverage at all, check the following:
+        </p>
+        <list>
+            <li>Your CI uploaded a coverage report to Codecov for the default branch, and the report includes the file.</li>
+            <li>The file paths in the report match the paths in the Git repository.</li>
+            <li>Coverage is not hidden: right-click in the editor and look for <control>Show Codecov Coverage</control>.</li>
+            <li>The project is connected and the repository is detected in <ui-path>Settings | Tools | Codecov</ui-path>.</li>
+        </list>
+        <p>
+            To see the coverage effect of your current branch, use the <a href="Codecov-Metrics.topic">Codecov Metrics dashboard</a> or <a href="Codecov-Folder-Coverage.topic">folder coverage</a>.
+        </p>
+    </chapter>
+
+    <chapter title="Why is no repository detected?" id="no-repository-detected">
+        <p>
+            The settings page shows "No repository detected. Please verify your project settings.", or <control>Test Connection</control> reports that it could not detect the repository.
+        </p>
+        <list>
+            <li>Make sure the project is a Git repository with a remote that points to GitHub, GitLab or Bitbucket.</li>
+            <li>Make sure <control>Service Provider</control> matches the host of that remote.</li>
+            <li>Make sure the repository is activated on Codecov and your token's account can access it.</li>
         </list>
     </chapter>
 
-    <chapter title="How do I resolve 'Unauthorized' errors?" id="auth-errors">
-        <p>This usually means your Personal Access Token is invalid or has expired.</p>
-        <procedure id="refresh-token">
-            <step><p>Generate a new token in your <a href="https://app.codecov.io/account/access">Codecov settings</a>.</p></step>
-            <step><p>Go to <ui-path>Settings | Tools | Codecov</ui-path>.</p></step>
-            <step><p>Paste the new token and click <ui-path>Test connection</ui-path>.</p></step>
+    <chapter title="How do I fix a failed connection test?" id="auth-errors">
+        <p>
+            <control>Connection Test Failed</control> with "Connection failed. Please check your token." usually means the API token is wrong, revoked or expired, or <control>Server URL</control> is wrong.
+        </p>
+        <procedure title="Replace the API token" id="refresh-token">
+            <step>Create a new API token in Codecov.</step>
+            <step>Go to <ui-path>Settings | Tools | Codecov</ui-path>.</step>
+            <step>Paste the token into <control>API Token</control> and click <control>Test Connection</control>.</step>
         </procedure>
+        <p>
+            For a self-hosted Codecov server, check that <control>Server URL</control> is the base URL of that server.
+        </p>
     </chapter>
 
     <chapter title="Does the plugin support private repositories?" id="private-repos">
-        <p>Yes. As long as your Personal Access Token has the necessary permissions to access your private repositories on Codecov, the plugin will detect and display them.</p>
+        <p>
+            Yes.
+            The plugin shows coverage for any repository that the account of your API token can access on Codecov.
+        </p>
+    </chapter>
+
+    <chapter title="Why is the Codecov Metrics button disabled?" id="metrics-disabled">
+        <p>
+            The <control>Codecov Metrics</control> button is enabled after the plugin detects the project's Codecov repository.
+            Connect the project as described in <a href="Codecov-Installation.topic"/>, then reopen the project if needed.
+        </p>
+    </chapter>
+
+    <chapter title="Why does the dashboard show no pull request impact?" id="no-pr-impact">
+        <p>
+            The dashboard shows "No Codecov compare report available for the current branch." in these cases:
+        </p>
+        <list>
+            <li>You are on the default branch, which has nothing to compare.</li>
+            <li>Codecov has no processed commit of the current branch yet.
+                Push the branch and wait for CI to upload coverage, then click <control>Refresh</control>.</li>
+        </list>
+    </chapter>
+
+    <chapter title="Why are there no coverage dots on folders?" id="folder-dots-missing">
+        <list>
+            <li>Folder coverage is off by default.
+                Turn on <control>Show Coverage on Folders</control> on the Codecov Metrics toolbar.</li>
+            <li>Codecov has no report for the current branch.
+                The warning "Codecov: no coverage data for this branch" appears when you turn the feature on.</li>
+            <li>The folder has no files in the Codecov report.</li>
+        </list>
+    </chapter>
+
+    <chapter title="Why can't I validate codecov.yml?" id="validation-problems">
+        <list>
+            <li>
+                "Codecov API token is missing. Please configure it in Settings." means that validation needs the API token.
+                Set it as described in <a href="Codecov-Installation.topic"/>.
+            </li>
+            <li>
+                <control>Validate Codecov YAML</control> is available only for files named exactly <path>codecov.yml</path> or <path>codecov.yaml</path>.
+                Completion also works in files such as <path>.codecov.yml</path>, but validation does not.
+            </li>
+        </list>
     </chapter>
 
     <chapter title="How do I report a bug?" id="codecov_report_bug">
-        <p>Please use the built-in JetBrains ErrorReportSubmitter or open an issue on our <a href="https://github.com/edgafner/dorkag/issues">GitHub repository</a>. Including your IDE logs and the version of the plugin you are using will help us diagnose the issue faster.</p>
+        <p>
+            When the IDE shows an error from the plugin, open the error details and click <control>Report Exception</control>.
+            A prefilled issue opens in the <a href="https://github.com/edgafner/dorkag/issues">edgafner/dorkag repository on GitHub</a>, with the plugin, IDE and operating system versions.
+            Add the steps that lead to the error and submit the issue.
+        </p>
+        <p>
+            You can also open an issue directly in that repository.
+            For other ways to get help, see <a href="Codecov-Reference-and-Support.topic"/>.
+        </p>
     </chapter>
 
+    <seealso>
+        <category ref="related">
+            <a href="Codecov-Installation.topic"/>
+            <a href="Codecov-Editor-Coverage.topic"/>
+            <a href="Codecov-Reference-and-Support.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://docs.codecov.com/docs/quick-start">Codecov quick start</a>
+        </category>
+    </seealso>
 </topic>

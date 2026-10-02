@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Codecov: Folder coverage in the Project tool window" id="Codecov-Folder-Coverage">
+
+    <primary-label ref="codecov"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Turn on: <control>Show Coverage on Folders</control> on the Codecov Metrics toolbar</p>
+        <p>Colors: <ui-path>Settings | Tools | Codecov | Folder Coverage</ui-path></p>
+        <p>Requires: a project connected to Codecov with a detected repository</p>
+    </tldr>
+
+    <link-summary>Mark folders in the Project tool window with their Codecov coverage and configure the coverage bands and colors.</link-summary>
+    <card-summary>Mark folders in the Project tool window with their Codecov coverage.</card-summary>
+    <web-summary>Codecov folder coverage marks each folder in the Project tool window of JetBrains IDEs with a colored dot for its coverage on the current branch.</web-summary>
+
+    <p>
+        Folder coverage adds a colored dot to each folder icon in the Project tool window.
+        The color shows the folder's coverage band, so packages with low coverage stand out.
+        Folder coverage is off by default.
+    </p>
+
+    <chapter title="Turn on folder coverage" id="turn-on-folder-coverage">
+        <procedure title="Show coverage on folders" id="show-coverage-on-folders" type="choices">
+            <step>
+                Open the <a href="Codecov-Metrics.topic">Codecov Metrics dashboard</a> and click <control>Show Coverage on Folders</control> on its toolbar.
+                <!-- planned-image src="codecov_folder_toggle.png" alt="Show Coverage on Folders toggle in the Codecov Metrics toolbar" -->
+            </step>
+            <step>
+                Press <shortcut>Ctrl+Shift+A</shortcut> (macOS: <shortcut>⌘ ⇧ A</shortcut>), type <code>Show Coverage on Folders</code> and press <shortcut>Enter</shortcut>.
+            </step>
+        </procedure>
+        <p>
+            Use the same action to turn folder coverage off.
+            The choice is saved per project.
+        </p>
+    </chapter>
+
+    <chapter title="Read folder coverage" id="read-folder-coverage">
+        <p>
+            Each folder with coverage data shows a dot in the color of its band: <control>Excellent</control>, <control>Good</control>, <control>Fair</control> or <control>Poor</control>.
+            Hover over a folder to see its exact value, for example "Codecov coverage: 77.8%".
+            The dot keeps the folder's own icon, so source and test root markings stay visible.
+        </p>
+        <!-- planned-image src="codecov_project_view_folder_coverage.png" alt="Project view folders marked with Codecov coverage colors and a coverage tooltip" -->
+        <p>
+            Folder coverage uses the latest Codecov report for the current Git branch.
+            When you switch branches, it reloads.
+            While new data loads, the previous dots appear dimmed.
+        </p>
+        <p>
+            To reload folder coverage, click <control>Refresh</control> on the Codecov Metrics toolbar.
+            You can also run <control>Refresh Folder Coverage</control> from Find Action (<shortcut>Ctrl+Shift+A</shortcut>, macOS: <shortcut>⌘ ⇧ A</shortcut>).
+        </p>
+        <p>
+            If Codecov has no report for the current branch when you turn folder coverage on, the warning "Codecov: no coverage data for this branch" appears and names the branch.
+            Push the branch and let your CI upload coverage, or switch to a branch with coverage.
+        </p>
+    </chapter>
+
+    <chapter title="Configure coverage bands and colors" id="folder-colors-config">
+        <procedure title="Change the bands" id="configure-folder-colors">
+            <step>
+                Press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>) and go to <ui-path>Settings | Tools | Codecov | Folder Coverage</ui-path>.
+                <!-- planned-image src="codecov_settings_folder_coverage.png" alt="Folder Coverage settings with thresholds and colors for each band" -->
+            </step>
+            <step>
+                In the <control>Folder Coverage Colors</control> group, set the lower bound in percent for <control>Excellent</control>, <control>Good</control> and <control>Fair</control>.
+                <control>Poor</control> covers everything below the <control>Fair</control> bound.
+            </step>
+            <step>
+                Optional: click a color to pick a different color for a band.
+            </step>
+            <step>
+                Click <control>OK</control>.
+            </step>
+        </procedure>
+
+        <table>
+            <tr>
+                <td>Band</td>
+                <td>Default range</td>
+                <td>Default color</td>
+            </tr>
+            <tr>
+                <td>Excellent</td>
+                <td>80% and above</td>
+                <td>Green</td>
+            </tr>
+            <tr>
+                <td>Good</td>
+                <td>60% to below 80%</td>
+                <td>Yellow</td>
+            </tr>
+            <tr>
+                <td>Fair</td>
+                <td>40% to below 60%</td>
+                <td>Orange</td>
+            </tr>
+            <tr>
+                <td>Poor</td>
+                <td>Below 40%</td>
+                <td>Red</td>
+            </tr>
+        </table>
+
+        <p>
+            The bounds must be between 0 and 100, each one higher than the next, and <control>Fair</control> must be greater than 0.
+            Each band needs its own color.
+            To restore the defaults, click <control>Reset to Defaults</control>.
+        </p>
+        <p>
+            The default colors adapt to light and dark themes.
+            A color you pick is used in every theme.
+            The bands are saved per project.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Codecov-Metrics.topic"/>
+            <a href="Codecov-Settings-Reference.topic"/>
+            <a href="Codecov-FAQ.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://docs.codecov.com/docs/about-code-coverage">Codecov: about code coverage</a>
+        </category>
+    </seealso>
+</topic>

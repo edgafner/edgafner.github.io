@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Codecov: Metrics dashboard" id="Codecov-Metrics">
+
+    <primary-label ref="codecov"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Open: <control>Codecov Metrics</control> button on the Project tool window toolbar</p>
+        <p>Requires: a project connected to Codecov with a detected repository</p>
+    </tldr>
+
+    <link-summary>Open the Codecov Metrics dashboard to see the coverage impact of the current branch and the coverage trend of the repository.</link-summary>
+    <card-summary>See pull request impact cards and the coverage trend in an editor tab.</card-summary>
+    <web-summary>The Codecov Metrics dashboard in JetBrains IDEs shows the coverage impact of your branch or pull request and the coverage trend of the repository.</web-summary>
+
+    <p>
+        The <control>Codecov Metrics</control> dashboard opens in an editor tab.
+        It compares the coverage of your current branch with the default branch and charts the coverage of recent commits.
+        The dashboard follows the IDE theme.
+    </p>
+    <!-- planned-image src="codecov_metrics_dashboard.png" alt="Codecov Metrics dashboard with PR impact cards and the coverage trend chart" -->
+
+    <chapter title="Open the dashboard" id="open-dashboard">
+        <procedure title="Open Codecov Metrics" id="open-codecov-metrics" type="choices">
+            <step>
+                In the Project tool window, click <control>Codecov Metrics</control> (the Codecov logo) at the right end of the toolbar.
+                <!-- planned-image src="codecov_metrics_button.png" alt="Codecov Metrics button in the Project tool window toolbar" -->
+            </step>
+            <step>
+                Press <shortcut>Ctrl+Shift+A</shortcut> (macOS: <shortcut>⌘ ⇧ A</shortcut>), type <code>Codecov Metrics</code> and press <shortcut>Enter</shortcut>.
+            </step>
+        </procedure>
+        <p>
+            The button is disabled until the plugin detects the project's Codecov repository.
+            For the connection steps, see <a href="Codecov-Installation.topic"/>.
+        </p>
+    </chapter>
+
+    <chapter title="Pull request impact" id="pr-impact">
+        <p>
+            The top of the dashboard compares the current branch with the repository's default branch on Codecov.
+            The header reads, for example, "Compared feature/retry-client vs main".
+            Three cards show the result:
+        </p>
+        <deflist type="narrow">
+            <def title="HEAD" id="pr-impact-head">Total coverage of the head commit.</def>
+            <def title="Patch" id="pr-impact-patch">Coverage of the lines changed in the branch.</def>
+            <def title="Change" id="pr-impact-change">Difference in total coverage from the base: a green up arrow for an increase, a red down arrow for a decrease.</def>
+        </deflist>
+        <p>
+            Click <control>View on Codecov ↗</control> to open the head commit on Codecov in your browser.
+        </p>
+        <p>
+            To find the comparison, the plugin first uses the GitHub pull request of the branch, if you checked it out with the GitHub CLI or the GitHub plugin of the IDE.
+            Otherwise, it compares the newest commit of the branch that Codecov has processed with the point where the branch left the default branch.
+        </p>
+        <p>
+            On the default branch, or when Codecov has no comparison, the dashboard shows "No Codecov compare report available for the current branch."
+        </p>
+    </chapter>
+
+    <chapter title="Coverage trend" id="coverage-trend">
+        <p>
+            The chart shows the selected metric for each commit that Codecov processed, oldest on the left.
+            Its title names the time range and, if selected, the branch, for example "Coverage Trend (Last 3 Months)".
+        </p>
+        <list>
+            <li>Hover over a point to see the short commit hash, the date and the value.</li>
+            <li>Click a point to open the commit on Codecov.</li>
+        </list>
+        <p>
+            When no commits match the filters, the chart shows "No commit history to display."
+        </p>
+    </chapter>
+
+    <chapter title="Filter the trend" id="dashboard-filters">
+        <p>The toolbar above the dashboard has three filters:</p>
+        <deflist type="medium">
+            <def title="Metric" id="filter-metric">
+                <control>Percentage</control>, <control>Total Lines</control>, <control>Hits</control> or <control>Misses</control>.
+            </def>
+            <def title="Branch" id="filter-branch">
+                <control>All branches</control> by default.
+                Select a branch to chart only its commits; favorite branches are listed first and marked with a star.
+            </def>
+            <def title="Time range" id="filter-time-range">
+                <control>7 Days</control>, <control>30 Days</control>, <control>3 Months</control> (default), <control>6 Months</control>, <control>12 Months</control> or <control>All Time</control>.
+            </def>
+        </deflist>
+        <!-- planned-image src="codecov_metrics_filters.png" alt="Time range filter of the Codecov Metrics dashboard" -->
+        <p>The filters are saved per project.</p>
+        <p>
+            On the right of the toolbar, <control>Show Coverage on Folders</control> turns <a href="Codecov-Folder-Coverage.topic">folder coverage</a> on or off.
+            <control>Refresh</control> reloads the dashboard, the branch list and folder coverage.
+        </p>
+        <p>
+            When you switch Git branches, the dashboard and folder coverage refresh automatically.
+        </p>
+    </chapter>
+
+    <chapter title="Coverage drop notification" id="coverage-drop-notification">
+        <p>
+            After a Git change on a branch other than the default branch, such as a new commit, the plugin waits until Codecov has processed the current commit.
+            If total coverage is lower than on the latest commit of the default branch, a warning appears: "Codecov: Coverage drop detected".
+            It names the branch and the drop, for example "Total coverage for branch feature/retry-client decreased by 0.42%."
+        </p>
+        <!-- planned-image src="codecov_coverage_drop_notification.png" alt="Notification warning that coverage decreased on the current branch" -->
+        <p>
+            Click <control>View PR Impact Details</control> in the notification to open the dashboard.
+            The plugin warns once per commit.
+            To change how the warning is shown, go to <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path> and find <control>Codecov notifications</control>.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Codecov-Folder-Coverage.topic"/>
+            <a href="Codecov-Editor-Coverage.topic"/>
+            <a href="Codecov-FAQ.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://docs.codecov.com/docs/about-code-coverage">Codecov: about code coverage</a>
+        </category>
+    </seealso>
+</topic>

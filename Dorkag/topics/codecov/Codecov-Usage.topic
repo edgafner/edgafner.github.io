@@ -3,48 +3,81 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Usage Guide" id="Codecov-Usage">
+       title="Codecov: Edit and validate codecov.yml" id="Codecov-Usage">
 
     <primary-label ref="codecov"/>
-    <secondary-label ref="codecov_version"/>
-    
-    <p>Codecov for JetBrains IDEs brings coverage insights directly into your development workflow. This guide explains how to visualize and analyze coverage data.</p>
+    <show-structure for="chapter,procedure" depth="2"/>
 
-    <video src="https://youtu.be/hNEkKONumZg" width="600"/>
+    <tldr>
+        <p>Validate: right-click <path>codecov.yml</path> and select <control>Validate Codecov YAML</control></p>
+        <p>Setting: <ui-path>Settings | Tools | Codecov</ui-path>, <control>Inject codecov YAML schema</control></p>
+        <p>Validation requires: a Codecov API token in the plugin settings</p>
+    </tldr>
 
-    <chapter title="Coverage Visualization" id="codecov_visualization">
-        <p>The plugin displays coverage data directly in your code editor with line-by-line decorations.</p>
-        
-        <list type="bullet">
-            <li><p><b>Gutter Decorations:</b> Green indicators for covered lines, red for uncovered, and yellow for partial coverage.</p></li>
-            <li><p><b>Toggle Visibility:</b> Use the keyboard shortcut <shortcut>⌃Ctrl</shortcut><shortcut>⇧Shift</shortcut><shortcut>⌥Alt</shortcut><shortcut>C</shortcut> or the editor's right-click context menu.</p></li>
-            <li><p><b>Auto-Detection:</b> The plugin automatically matches your local branch with coverage reports on Codecov. It falls back to the default branch if reports for the current branch are missing.</p></li>
+    <link-summary>Get code completion and documentation for codecov.yml, and validate the file against the Codecov server.</link-summary>
+    <card-summary>Get completion for codecov.yml and validate it against the Codecov server.</card-summary>
+    <web-summary>The Codecov plugin adds completion, quick documentation and server-side validation for codecov.yml files to JetBrains IDEs, before you commit.</web-summary>
+
+    <p>
+        The plugin bundles the Codecov YAML schema, so the editor helps you write the Codecov configuration file.
+        Before you commit, you can let the Codecov server check the file.
+    </p>
+
+    <chapter title="Edit codecov.yml with completion" id="config-file">
+        <p>
+            The schema applies to every <path>.yml</path> or <path>.yaml</path> file whose name contains <code>codecov</code>, such as <path>codecov.yml</path> and <path>.codecov.yml</path>.
+            In these files, the editor offers:
+        </p>
+        <list>
+            <li>Code completion for keys and values.</li>
+            <li>Quick documentation for keys.</li>
+            <li>Highlighting of unknown keys and wrong value types.</li>
         </list>
+        <!-- planned-image src="codecov_yaml_completion.png" alt="Code completion for Codecov YAML keys" -->
+        <p>
+            The status bar shows <control>Codecov Yaml</control> as the schema of the file, and the Project tool window and editor tabs show the Codecov logo as its icon.
+        </p>
+        <p>
+            The schema is on by default.
+            To turn it off, clear <control>Inject codecov YAML schema</control> in <ui-path>Settings | Tools | Codecov</ui-path>.
+        </p>
     </chapter>
 
-    <chapter title="Metrics and Graphs" id="codecov_metrics">
-        <p>Access high-level visual insights into your project's coverage trends through integrated metrics and graphs. See a breakdown of coverage by folder and file directly in the IDE.</p>
-        <img src="metrics-and-folder-icon-annotation.png" alt="Metrics and Graphs" style="block" thumbnail="true"/>
-    </chapter>
-
-    <chapter title="Work with codecov.yml" id="config-file">
-        <p>Manage your Codecov configuration without leaving the IDE.</p>
-        <procedure id="validate-config">
-            <step><p>Open your <code>codecov.yml</code> file.</p></step>
-            <step><p>Leverage built-in <b>code completion</b> and schema validation.</p>
-                <img src="autocomplete.png" alt="Autocomplete" thumbnail="true"/>
+    <chapter title="Validate codecov.yml" id="validate-codecov-yml">
+        <p>
+            Validation sends the content of the file to the Codecov server set in <control>Server URL</control> and reports the result.
+            It works for files named exactly <path>codecov.yml</path> or <path>codecov.yaml</path>, and it needs the API token from <a href="Codecov-Installation.topic"/>.
+        </p>
+        <procedure title="Validate the file" id="validate-config">
+            <step>
+                Right-click <path>codecov.yml</path> in the Project tool window, or right-click in the editor of the open file.
             </step>
-            <step><p>Right-click the file and select <ui-path>Validate codecov.yml</ui-path> to check for errors.</p>
-                <img src="validate.png" alt="Validation" thumbnail="true"/>
+            <step>
+                Select <control>Validate Codecov YAML</control>.
+                <!-- planned-image src="codecov_validate_menu.png" alt="Validate Codecov YAML in the Project view context menu" -->
+            </step>
+            <step>
+                Read the notification: "Codecov configuration is valid." or "Codecov configuration is invalid.", with the file name.
+                <!-- planned-image src="codecov_validation_result.png" alt="Notification that the Codecov configuration is valid, with View Validation Results" -->
+            </step>
+            <step>
+                Optional: click <control>View Validation Results</control> to open the full server response as a JSON file in the editor.
+                <!-- planned-image src="codecov_validation_json.png" alt="Validation results opened in the editor" -->
             </step>
         </procedure>
+        <p>
+            If no API token is set, the warning "Codecov API token is missing. Please configure it in Settings." appears instead.
+            If the server cannot be reached, the error starts with "Failed to validate codecov.yml:".
+        </p>
     </chapter>
 
-    <chapter title="Troubleshooting" id="codecov_troubleshooting">
-        <list type="bullet">
-            <li><p><b>Repository not found:</b> Ensure your Git remote URL matches the repository name in Codecov.</p></li>
-            <li><p><b>No coverage for branch:</b> Verify that your CI pipeline is correctly uploading reports to Codecov.</p></li>
-            <li><p><b>401 Unauthorized:</b> Re-verify your Personal Access Token in <ui-path>Settings | Tools | Codecov</ui-path>.</p></li>
-        </list>
-    </chapter>
+    <seealso>
+        <category ref="related">
+            <a href="Codecov-Settings-Reference.topic"/>
+            <a href="Codecov-FAQ.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://docs.codecov.com/docs/codecov-yaml">Codecov YAML documentation</a>
+        </category>
+    </seealso>
 </topic>

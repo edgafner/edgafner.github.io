@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Codecov: Generate AI prompts from coverage" id="Codecov-AI-Prompts">
+
+    <primary-label ref="codecov"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Generate: click a coverage bar, then <control>Generate AI Prompt</control></p>
+        <p>Templates: <ui-path>Settings | Tools | Codecov</ui-path>, group <control>AI Prompt Templates</control></p>
+    </tldr>
+
+    <link-summary>Copy a test-writing prompt for covered or uncovered code to the clipboard and customize the prompt templates.</link-summary>
+    <card-summary>Copy a ready-made test-writing prompt for uncovered code to the clipboard.</card-summary>
+    <web-summary>The Codecov plugin for JetBrains IDEs turns covered or uncovered code into a test-writing prompt that you paste into any AI assistant or agent.</web-summary>
+
+    <p>
+        From the coverage gutter, the plugin builds a prompt that contains the code of a line and copies it to the clipboard.
+        Paste the prompt into the AI chat or coding agent you use.
+        The plugin does not send the code to an AI service itself.
+    </p>
+
+    <chapter title="Generate a prompt" id="generate-ai-prompt">
+        <procedure title="Copy a prompt for a line" id="copy-ai-prompt">
+            <step>
+                In the editor, click the coverage bar next to a line.
+            </step>
+            <step>
+                In the popup, click <control>Generate AI Prompt</control>.
+                A notification confirms that the prompt is on the clipboard, for example "AI prompt for uncovered code copied to clipboard!".
+                <!-- planned-image src="codecov_ai_prompt_copied.png" alt="Notification confirming the AI prompt was copied to the clipboard" -->
+            </step>
+            <step>
+                Paste the prompt into your AI assistant and review the tests it suggests.
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="What the prompt contains" id="prompt-content">
+        <p>The plugin picks the template and the code by the coverage status of the line you clicked:</p>
+        <deflist type="medium">
+            <def title="Covered line" id="prompt-covered">
+                The <control>Prompt for covered code</control> template, with the text of that line.
+            </def>
+            <def title="Partially covered or not covered line" id="prompt-uncovered">
+                The <control>Prompt for uncovered code</control> template, with the whole method or function when it contains the block of missed lines around the line.
+                Otherwise, the prompt contains only that block of missed lines.
+            </def>
+        </deflist>
+    </chapter>
+
+    <chapter title="Customize the prompt templates" id="customize-templates">
+        <procedure title="Edit a template" id="edit-ai-prompt-template">
+            <step>
+                Press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>) and go to <ui-path>Settings | Tools | Codecov</ui-path>.
+            </step>
+            <step>
+                In the <control>AI Prompt Templates</control> group, expand <control>Prompt Templates</control>.
+                <!-- planned-image src="codecov_settings_ai_prompts.png" alt="AI Prompt Templates settings with the covered and uncovered prompt templates" -->
+            </step>
+            <step>
+                Edit <control>Prompt for covered code</control> or <control>Prompt for uncovered code</control>.
+                Keep the <code>&lt;CODE_TOKEN&gt;</code> placeholder where the code goes.
+            </step>
+            <step>
+                Click <control>OK</control>.
+            </step>
+        </procedure>
+        <p>The default template for uncovered code is:</p>
+        <code-block lang="plain text">
+Write comprehensive unit tests for the following code that tests do not cover:
+
+&lt;CODE_TOKEN&gt;
+
+Include edge cases and error scenarios. Use the project's existing test framework and follow the established testing patterns.
+        </code-block>
+        <p>The default template for covered code is:</p>
+        <code-block lang="plain text">
+Analyze the following code already covered by tests:
+
+&lt;CODE_TOKEN&gt;
+
+Suggest potential improvements or edge cases that could be tested.
+        </code-block>
+        <p>The templates are saved per project.</p>
+    </chapter>
+
+    <chapter title="Turn off AI prompts" id="disable-ai-prompts">
+        <procedure title="Turn off prompt generation" id="turn-off-ai-prompts">
+            <step>
+                Go to <ui-path>Settings | Tools | Codecov</ui-path>.
+            </step>
+            <step>
+                Clear <control>Enable AI prompt generation from coverage gutters</control> and click <control>OK</control>.
+            </step>
+        </procedure>
+        <p>
+            The <control>Generate AI Prompt</control> link stays in the coverage popup.
+            When you click it, a notification reads "AI prompts are disabled. Enable them in Codecov settings."
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Codecov-Editor-Coverage.topic"/>
+            <a href="Codecov-Settings-Reference.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/23390-codecov">Codecov on JetBrains Marketplace</a>
+        </category>
+    </seealso>
+</topic>
