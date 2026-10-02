@@ -17,6 +17,10 @@
     <card-summary>Fix common problems, report a bug or contact the author.</card-summary>
     <web-summary>Troubleshoot GBrowser in JetBrains IDEs: blank tool window, sites that block embedded browsers, cookies and shortcuts, privacy, and how to report a bug.</web-summary>
 
+    <p>
+        This page lists common GBrowser problems and their solutions, the data GBrowser sends and stores, and how to report a bug or contact the author.
+    </p>
+
     <chapter title="Common problems" id="common-problems">
         <chapter title="The tool window stays blank" id="blank-tool-window">
             <p>
@@ -24,15 +28,18 @@
                 Check that the bundled <control>Web Browser (JCEF)</control> plugin is enabled in <ui-path>Settings | Plugins | Installed</ui-path>,
                 and that the IDE runs on the bundled JetBrains Runtime.
                 Then restart the IDE.
+                See <a href="GBrowser-Installation.topic" anchor="requirements"/>.
             </p>
         </chapter>
 
         <chapter title="A site blocks GBrowser or keeps showing a check" id="site-blocks-browser">
             <p>
                 Some sites refuse to work in embedded browsers.
-                Add the site's domain to <control>Compatible sites</control> under
-                <a href="GBrowser-Settings-and-Configuration.topic" anchor="browser-compatibility-mode">Browser Compatibility Mode</a>,
-                make sure <control>Enable browser compatibility mode</control> is on, and open the site in a new tab.
+                GBrowser has built-in compatibility handling for perplexity.ai, Cloudflare checks, ChatGPT and claude.ai;
+                see <a href="GBrowser-Settings-and-Configuration.topic" anchor="browser-compatibility-mode">Browser Compatibility Mode</a>.
+                You can add other domains to <control>Compatible sites</control> and open the site in a new tab,
+                but this does not change the User-Agent that GBrowser sends to that site, so it may not help.
+                If the site still blocks GBrowser, use <control>Open in Default Browser</control> (<shortcut>Ctrl+O</shortcut>).
             </p>
             <!-- planned-image src="gbrowser_add_compat_site.png" alt="Add Anti-Detection Site dialog with a domain entered" -->
         </chapter>
@@ -46,8 +53,8 @@
 
         <chapter title="You were signed out of sites" id="signed-out">
             <p>
-                <control>Clear Cookies</control> deletes all cookies of the IDE's embedded browser, so it signs you out of every site.
-                It can also sign you out of other IDE features that show web pages.
+                <control>Clear Cookies</control> deletes all cookies of the IDE's embedded browser;
+                see <a href="GBrowser-Bookmarks-and-History.topic" anchor="clear"/>.
                 Sign in again.
             </p>
         </chapter>
@@ -69,8 +76,8 @@
 
         <chapter title="Links open in a separate window" id="links-open-window">
             <p>
-                Links that a page opens in a new window follow the <control>Life Span in new tab</control> option.
-                Change it in <a href="GBrowser-Settings-and-Configuration.topic" anchor="search-settings">Search Settings</a> and try the link again.
+                Links that a page opens in a new window open in a separate window while <control>Life Span in new tab</control> is on, which is the default.
+                To open them in a new GBrowser tab, clear the option in <a href="GBrowser-Settings-and-Configuration.topic" anchor="search-settings">Search Settings</a> and try the link again.
             </p>
         </chapter>
     </chapter>

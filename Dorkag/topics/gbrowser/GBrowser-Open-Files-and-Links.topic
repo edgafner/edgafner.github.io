@@ -9,10 +9,10 @@
 
     <tldr>
         <p>Open the current file: <shortcut>Ctrl+Alt+G</shortcut></p>
-        <p>File types: HTML, HTM, XHTML, XML, SVG, MD, Markdown</p>
+        <p>File types: HTML, XHTML, XML, SVG; Markdown is not rendered</p>
     </tldr>
 
-    <link-summary>Open HTML, SVG, XML and Markdown files from your project in GBrowser, and open a URL selected in the editor.</link-summary>
+    <link-summary>Preview HTML, XHTML and SVG files from your project in GBrowser, and open a URL selected in the editor.</link-summary>
     <card-summary>Open HTML and SVG files from your project and URLs from the editor.</card-summary>
     <web-summary>Open project files and links in GBrowser from the editor of JetBrains IDEs: preview HTML and SVG files and open a URL selected in your code.</web-summary>
 
@@ -30,6 +30,7 @@
         <procedure title="Open the current file" id="open-current-file" type="choices">
             <step>
                 In the editor, right-click and select <control>Open in GBrowser</control>.
+                <!-- planned-image src="gbrowser_open_in_gbrowser.png" alt="Editor context menu for an HTML file with the Open in GBrowser item" -->
             </step>
             <step>
                 In the <control>Project</control> tool window, right-click the file and select <control>Open in GBrowser</control>.
@@ -41,25 +42,25 @@
         <p>
             GBrowser opens the file as a <code>file://</code> URL in a new tab and shows the tool window.
             The page shows the file as it is saved on disk; after you change the file, click <control>Reload Page</control> to see the changes.
-            Chromium renders HTML, XHTML and SVG files; it does not render Markdown, so Markdown files open as plain text.
+            Chromium renders HTML, XHTML and SVG files.
+            It does not render Markdown, so a Markdown file is not shown as formatted text.
         </p>
-        <!-- planned-image src="gbrowser_open_in_gbrowser.png" alt="Editor context menu for an HTML file with the Open in GBrowser item" -->
     </chapter>
 
     <chapter title="Open a URL from the editor" id="open-selected-text">
         <procedure title="Open selected text as a URL" id="open-selected-url">
+            <p>The item appears only when the selected text looks like a URL or contains <code>localhost</code>.</p>
             <step>
                 In the editor, select a URL, for example <code>http://localhost:8080/</code>.
             </step>
             <step>
                 Right-click the selection and select <control>Open Selected Text in GBrowser</control>.
+                <!-- planned-image src="gbrowser_open_selected_text.png" alt="Editor with a localhost URL selected and the Open Selected Text in GBrowser context menu item" -->
             </step>
         </procedure>
         <p>
-            The item appears only when the selected text looks like a URL or contains <code>localhost</code>.
             Use it to open the address of a local development server that you have in a README or configuration file.
         </p>
-        <!-- planned-image src="gbrowser_open_selected_text.png" alt="Editor with a localhost URL selected and the Open Selected Text in GBrowser context menu item" -->
     </chapter>
 
     <seealso>

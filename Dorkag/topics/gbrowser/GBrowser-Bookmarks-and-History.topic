@@ -24,11 +24,11 @@
     </p>
     <p>
         The default shortcuts in this topic are for Windows and Linux.
-        For macOS, see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
+        On macOS, look up the shortcut of an action in <ui-path>Settings | Keymap</ui-path>; see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
     </p>
 
     <chapter title="Bookmark a page" id="bookmark-page">
-        <procedure title="Add or remove a bookmark" id="add-bookmark" type="choices">
+        <procedure title="Bookmark the current page" id="add-bookmark" type="choices">
             <step>
                 Click the bookmark button to the right of the address field.
                 Its tooltip reads <control>Add to Bookmarks</control> or <control>Remove from Bookmarks</control>.
@@ -41,6 +41,10 @@
             </step>
         </procedure>
         <p>GBrowser uses the page title as the bookmark name.</p>
+        <p>
+            To remove the bookmark, click the bookmark button again,
+            or right-click its icon on the bookmarks bar and select <control>Remove Bookmark</control>.
+        </p>
     </chapter>
 
     <chapter title="Use the bookmarks bar" id="bookmarks-bar">
@@ -65,13 +69,13 @@
             </step>
             <step>
                 Select <control>Bookmarks</control> and then the bookmark.
+                <!-- planned-image src="gbrowser_bookmarks_menu.png" alt="GBrowser More Options menu with the Bookmarks submenu listing saved bookmarks" -->
             </step>
         </procedure>
         <p>
             If the current tab shows the home page, the bookmark opens in it.
             Otherwise, it opens in a new tab.
         </p>
-        <!-- planned-image src="gbrowser_bookmarks_menu.png" alt="GBrowser More Options menu with the Bookmarks submenu listing saved bookmarks" -->
     </chapter>
 
     <chapter title="Edit bookmarks" id="edit-bookmarks">
@@ -82,15 +86,19 @@
                 The GBrowser settings open with the <control>Bookmark Management</control> group expanded.
             </step>
             <step>
-                Edit the <control>Name</control> or <control>URL</control> cell of a bookmark.
-                Click the add button to add a bookmark, or select one and click the remove button.
+                Make your changes in the bookmarks table:
+                <list>
+                    <li>To rename or change a bookmark, edit its <control>Name</control> or <control>URL</control> cell.</li>
+                    <li>To add a bookmark, click the add button.</li>
+                    <li>To remove a bookmark, select it and click the remove button.</li>
+                </list>
+                <!-- planned-image src="gbrowser_settings_bookmarks.png" alt="Bookmark Management group in the GBrowser settings with a table of bookmark names and URLs" -->
             </step>
             <step>
                 Click <control>OK</control>.
                 A bookmark must have a URL; otherwise the dialog shows <control>URL cannot be empty</control>.
             </step>
         </procedure>
-        <!-- planned-image src="gbrowser_settings_bookmarks.png" alt="Bookmark Management group in the GBrowser settings with a table of bookmark names and URLs" -->
     </chapter>
 
     <chapter title="Browsing history" id="history">
@@ -110,6 +118,7 @@
             <step>
                 Click <control>More Options</control> and select <ui-path>Clear Cookies and History | Clear History</ui-path>,
                 or press <shortcut>Ctrl+Shift+7</shortcut>.
+                <!-- planned-image src="gbrowser_clear_submenu.png" alt="GBrowser Clear Cookies and History submenu with the Clear Cookies and Clear History items" -->
             </step>
         </procedure>
         <p>The action is available only when the history has entries.</p>
@@ -124,7 +133,6 @@
             <control>Clear Cookies</control> deletes all cookies of the IDE's embedded Chromium browser without asking for confirmation.
             This signs you out of sites in GBrowser and can also affect other IDE features and plugins that show web pages.
         </warning>
-        <!-- planned-image src="gbrowser_clear_submenu.png" alt="GBrowser Clear Cookies and History submenu with the Clear Cookies and Clear History items" -->
     </chapter>
 
     <seealso>

@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="GBrowser: Settings" id="GBrowser-Settings-and-Configuration">
+       title="GBrowser: Settings reference" id="GBrowser-Settings-and-Configuration">
 
     <primary-label ref="gbrowser"/>
     <show-structure for="chapter,procedure" depth="2"/>
@@ -64,7 +64,7 @@
         <p>The <control>Configuration</control> options control the address field and its suggestion list.</p>
         <deflist type="medium">
             <def title="Highlight URL host" id="highlight-url-host">
-                Highlights the host name in the address field.
+                Saved with the settings, but GBrowser 2026.3.1 does not use it: the address field shows the URL without highlighting.
                 On by default.
             </def>
             <def title="Highlight suggestion query" id="highlight-suggestion-query">
@@ -72,7 +72,8 @@
                 On by default.
             </def>
             <def title="Hide URL protocol" id="hide-url-protocol">
-                Hides <code>https://</code> and <code>http://</code> in the address field.
+                Saved with the settings, but GBrowser 2026.3.1 does not use it: the address field always shows the full URL, including the protocol.
+                The suggestion list hides the protocol regardless of this option.
                 On by default.
             </def>
             <def title="Load favicon in popup" id="load-favicon-in-popup">
@@ -85,9 +86,10 @@
                 Off by default.
             </def>
             <def title="Life Span in new tab" id="life-span-in-new-tab">
-                Controls where links open when a page opens them in a new window, for example links with <code>target="_blank"</code>:
-                in a new GBrowser tab or in a separate pop-up window.
-                On by default.
+                Controls where links open when a page opens them in a new window, for example links with <code>target="_blank"</code>.
+                When the option is on, which is the default, such links open in a separate pop-up window.
+                Clear it to open them in a new GBrowser tab instead.
+                In version 2026.3.1, the comment under the option describes the reverse.
             </def>
         </deflist>
         <p>The <control>Browser History</control> options control the history used for suggestions.</p>
@@ -117,8 +119,9 @@
     <chapter title="Developer options" id="developer-options">
         <deflist type="medium">
             <def title="Debug port" id="debug-port">
-                The remote debugging port of the IDE's embedded Chromium browser, from -1 to 9999.
-                The default is 9222.
+                Select the checkbox to edit the remote debugging port of the IDE's embedded Chromium browser in the number field next to it.
+                The checkbox is off by default, and it only unlocks the field: clearing it does not change the port.
+                The field shows 9222 unless the IDE already uses another port.
                 The port applies to the whole IDE, not only to GBrowser, and a change takes effect after you restart the IDE.
                 For how to use it, see <a href="GBrowser-DevTools-and-Device-Emulation.topic" anchor="remote-debugging"/>.
             </def>
@@ -179,9 +182,10 @@
             </step>
             <step>
                 Enter the header <control>Name</control> and <control>Value</control>.
+                <!-- planned-image src="gbrowser_settings_request_headers.png" alt="HTTP Response Headers group of the GBrowser settings with a header rule for a localhost URL" -->
             </step>
             <step>
-                Select <control>Overwrite</control> to replace the header when the request already has it.
+                Optional: select <control>Overwrite</control> to replace the header when the request already has it.
             </step>
             <step>
                 Click <control>OK</control>.
@@ -194,21 +198,22 @@
             Header values are stored in plain text in <path>.idea/gbrowsers.xml</path>.
             Do not commit that file if it contains tokens or passwords.
         </warning>
-        <!-- planned-image src="gbrowser_settings_request_headers.png" alt="HTTP Response Headers group of the GBrowser settings with a header rule for a localhost URL" -->
     </chapter>
 
     <chapter title="Browser compatibility mode" id="browser-compatibility-mode">
         <p>
             Some sites block browsers that are embedded in other applications or that look automated.
-            Browser compatibility mode makes GBrowser look like a regular browser to the sites in its list.
+            For <code>perplexity.ai</code>, <code>challenges.cloudflare.com</code>, <code>openai.com</code>, <code>chat.openai.com</code> and <code>claude.ai</code>,
+            GBrowser always sends the User-Agent of a regular desktop browser, whatever the settings below.
         </p>
         <deflist type="medium">
             <def title="Enable browser compatibility mode" id="enable-compatibility-mode">
-                Turns the mode on for the sites in <control>Compatible sites</control>.
+                When this option is on, GBrowser runs a script that hides automation markers when a new tab's browser is created on one of the domains in <control>Compatible sites</control>.
                 On by default.
             </def>
             <def title="Compatible sites" id="compatible-sites">
-                The domains that get compatibility mode.
+                The domains that the compatibility script applies to.
+                Adding a domain does not change the User-Agent that GBrowser sends to it.
                 The defaults are <code>perplexity.ai</code>, <code>challenges.cloudflare.com</code>, <code>openai.com</code>, <code>chat.openai.com</code> and <code>claude.ai</code>.
             </def>
         </deflist>
@@ -220,7 +225,10 @@
                 In the <control>Add Anti-Detection Site</control> dialog, enter the domain, for example <code>example.com</code>, and click <control>OK</control>.
             </step>
             <step>
-                Click <control>OK</control> in the <control>Settings</control> dialog, then open the site in a new GBrowser tab.
+                Click <control>OK</control>.
+            </step>
+            <step>
+                Open the site in a new GBrowser tab.
             </step>
         </procedure>
         <!-- planned-image src="gbrowser_settings_compatibility.png" alt="Browser Compatibility Mode group of the GBrowser settings with the list of compatible sites" -->

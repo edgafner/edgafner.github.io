@@ -18,7 +18,7 @@
     <p>
         The table lists the default shortcuts that GBrowser defines for Windows and Linux keymaps.
         macOS keymaps can use other modifier keys.
-        To see the shortcut in your keymap, search for the action name in <ui-path>Settings | Keymap</ui-path>.
+        On macOS, or to see the shortcut in your current keymap, search for the action name in <ui-path>Settings | Keymap</ui-path>.
     </p>
 
     <chapter title="Default shortcuts" id="default-shortcuts">
@@ -38,7 +38,7 @@
             <tr><td><control>Actual Size</control></td><td><shortcut>Ctrl+0</shortcut></td></tr>
             <tr><td><control>Open in Default Browser</control></td><td><shortcut>Ctrl+O</shortcut></td></tr>
             <tr><td><control>Open DevTools</control></td><td><shortcut>F12</shortcut></td></tr>
-            <tr><td><control>Toggle Device Emulation</control></td><td><shortcut>Ctrl+Shift+M</shortcut></td></tr>
+            <tr><td><control>Toggle Device Emulation</control> (menu: <control>Emulate Mobile Device Viewport and User Agent</control>)</td><td><shortcut>Ctrl+Shift+M</shortcut></td></tr>
             <tr><td><control>Add to Bookmarks</control></td><td><shortcut>Ctrl+D</shortcut></td></tr>
             <tr><td><control>Bookmark Manager</control></td><td><shortcut>Ctrl+Alt+B</shortcut></td></tr>
             <tr><td><control>Clear History</control></td><td><shortcut>Ctrl+Shift+7</shortcut></td></tr>
@@ -67,10 +67,11 @@
         <procedure title="Assign a shortcut to a GBrowser action" id="assign-shortcut">
             <step>
                 Open the <control>Settings</control> dialog (<shortcut>Ctrl+Alt+S</shortcut>, macOS: <shortcut>⌘ ,</shortcut>)
-                and select <ui-path>Keymap</ui-path>.
+                and select <control>Keymap</control>.
             </step>
             <step>
                 Type the action name in the search field, for example <code>Toggle Device Emulation</code>.
+                <!-- planned-image src="gbrowser_keymap.png" alt="Keymap settings filtered to GBrowser actions with their shortcuts" -->
             </step>
             <step>
                 Right-click the action and select <control>Add Keyboard Shortcut</control>.
@@ -80,7 +81,6 @@
                 If the IDE reports a conflict, decide whether to remove the shortcut from the other action.
             </step>
         </procedure>
-        <!-- planned-image src="gbrowser_keymap.png" alt="Keymap settings filtered to GBrowser actions with their shortcuts" -->
     </chapter>
 
     <seealso>

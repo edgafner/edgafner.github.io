@@ -24,7 +24,8 @@
     </p>
     <p>
         The default shortcuts in this topic are for Windows and Linux.
-        For macOS and for the full list, see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
+        For the full list, see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
+        On macOS, look up the shortcut of an action in <ui-path>Settings | Keymap</ui-path>.
     </p>
 
     <chapter title="Open GBrowser" id="open-gbrowser">
@@ -54,7 +55,7 @@
             </li>
             <li>
                 <control>Reload Page</control> (<shortcut>Ctrl+R</shortcut>) loads the page again.
-                <control>Stop Loading</control> (<shortcut>Ctrl+.</shortcut>) cancels a slow load.
+                To cancel a slow load, select <control>Stop Loading</control> in the <control>More Options</control> menu or press <shortcut>Ctrl+.</shortcut>.
             </li>
             <li>
                 The address field shows the current URL and the site icon.
@@ -80,7 +81,7 @@
             <step>
                 Type a URL or a search term.
                 A list of matching pages from your history and bookmarks appears below the field.
-                If <control>Enable suggestion search</control> is on, Google search suggestions appear too.
+                <!-- planned-image src="gbrowser_address_suggestions.png" alt="GBrowser address field with a list of matching history and bookmark entries" -->
             </step>
             <step>
                 Press <shortcut>Down</shortcut> and <shortcut>Up</shortcut> to select an entry, then press <shortcut>Enter</shortcut>.
@@ -91,17 +92,17 @@
             Press <shortcut>Esc</shortcut> to close the list and restore the previous address.
         </p>
         <p>
-            When the text is not a URL and <control>Enable suggestion search</control> is on, GBrowser opens a Google search for it.
+            When <control>Enable suggestion search</control> is on, the list also shows Google search suggestions,
+            and GBrowser opens a Google search for text that is not a URL.
             When the option is off, which is the default, GBrowser loads the text as an address.
             For the options that change how the address field looks, see <a href="GBrowser-Settings-and-Configuration.topic#search-settings">Search settings</a>.
         </p>
-        <!-- planned-image src="gbrowser_address_suggestions.png" alt="GBrowser address field with a list of matching history and bookmark entries" -->
     </chapter>
 
     <chapter title="Work with tabs" id="tabs">
         <p>
             Each tab shows the site icon and the start of the page title.
-            The tool window title bar has two buttons: <control>Add Tab</control> and <control>Toggle Toolbar Visibility</control>.
+            The tool window title bar has the <control>Add Tab</control> and <control>Toggle Toolbar Visibility</control> buttons and the <control>Options</control> menu.
         </p>
         <deflist type="medium">
             <def title="Add Tab" id="add-tab">
@@ -116,16 +117,16 @@
                 Opens the current page in a new tab.
                 Shortcut: <shortcut>Ctrl+Alt+D</shortcut>.
             </def>
-            <def title="Split the tool window" id="split-tabs">
-                Drag a tab to an edge of the tool window to show two tabs side by side.
-                This works when <control>Enable tab splitting</control> is on, which is the default.
-            </def>
             <def title="Restore tabs" id="restore-tabs">
-                When you close a project, GBrowser saves its first five tabs.
-                With <control>Reload previous tabs</control> on, they open again when you reopen the project.
-                The option is off by default.
+                To reopen your tabs with the project, turn on <a href="GBrowser-Settings-and-Configuration.topic" anchor="reload-previous-tabs">Reload previous tabs</a>.
             </def>
         </deflist>
+        <procedure title="Show two tabs side by side" id="split-tabs">
+            <step>
+                Drag a tab to an edge of the tool window.
+            </step>
+        </procedure>
+        <p>This requires <control>Enable tab splitting</control>, which is on by default.</p>
         <!-- planned-image src="gbrowser_tabs_title_actions.png" alt="GBrowser tool window header with three tabs and the Add Tab and Toggle Toolbar Visibility buttons" -->
     </chapter>
 
@@ -146,6 +147,7 @@
             <step>
                 Type the text.
                 GBrowser highlights the matches as you type; the search ignores case.
+                <!-- planned-image src="gbrowser_find_in_page.png" alt="GBrowser page with the find box open and matching text highlighted" -->
             </step>
             <step>
                 Press <shortcut>Enter</shortcut> or click <control>Next</control> to go to the next match.
@@ -155,7 +157,6 @@
                 Press <shortcut>Esc</shortcut> or click <control>Close</control> to close the search box.
             </step>
         </procedure>
-        <!-- planned-image src="gbrowser_find_in_page.png" alt="GBrowser page with the find box open and matching text highlighted" -->
     </chapter>
 
     <chapter title="Zoom" id="zoom">

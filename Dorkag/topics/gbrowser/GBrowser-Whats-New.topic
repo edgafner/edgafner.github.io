@@ -9,8 +9,8 @@
     <show-structure for="chapter" depth="2"/>
 
     <tldr>
-        <p>Current version: 2026.3.1, for IntelliJ-based IDEs 2026.3</p>
-        <p>For IntelliJ-based IDEs 2026.2: GBrowser 2026.2.3</p>
+        <p>Current version: 2026.3.1, for JetBrains IDEs 2026.3 (EAP builds 263.3889 and later)</p>
+        <p>For JetBrains IDEs 2026.2: GBrowser 2026.2.3</p>
     </tldr>
 
     <link-summary>Release notes for GBrowser: IDE support, device emulation, page theme, browser compatibility mode and fixes.</link-summary>
@@ -25,32 +25,49 @@
     <chapter title="2026.3" id="v2026-3">
         <p><b>2026.3.1</b>, September 5, 2026:</p>
         <list>
-            <li>Support for IntelliJ-based IDEs 2026.3.</li>
+            <li>Support for the 2026.3 EAP of JetBrains IDEs (build 263.3889 and later 263 builds).</li>
             <li>Updated dependencies.</li>
         </list>
     </chapter>
 
     <chapter title="2026.2" id="v2026-2">
-        <p><b>2026.2.3</b>, July 19, 2026: updated dependencies.</p>
-        <p><b>2026.2.1</b>, June 13, 2026: support for IntelliJ-based IDEs 2026.2.</p>
+        <p><b>2026.2.3</b>, July 19, 2026:</p>
+        <list>
+            <li>Updated dependencies.</li>
+        </list>
+        <p><b>2026.2.1</b>, June 13, 2026:</p>
+        <list>
+            <li>Support for JetBrains IDEs 2026.2.</li>
+        </list>
     </chapter>
 
     <chapter title="2026.1" id="v2026-1">
+        <p><b>2026.1.7</b> and <b>2026.1.8</b>, April 11 and May 1, 2026:</p>
         <list>
-            <li>
-                <b>2026.1.1</b> and <b>2026.1.2</b>, January 2026: support for IntelliJ-based IDEs 2026.1.
-                The <control>Enable drag and drop tabs</control> setting is now named <control>Enable tab splitting</control>.
-            </li>
-            <li>
-                <b>2026.1.6</b>, April 8, 2026: fixed the "Access is allowed from Event Dispatch Thread (EDT) only" error.
-            </li>
-            <li>
-                <b>2026.1.3</b> to <b>2026.1.8</b>: platform and dependency updates.
-            </li>
+            <li>Platform and dependency updates.</li>
+        </list>
+        <p><b>2026.1.6</b>, April 8, 2026:</p>
+        <list>
+            <li>Fixed an IDE error ("Access is allowed from Event Dispatch Thread (EDT) only") that GBrowser could cause.</li>
+        </list>
+        <p><b>2026.1.3</b> to <b>2026.1.5</b>, March 2026:</p>
+        <list>
+            <li>Platform and dependency updates.</li>
+        </list>
+        <p><b>2026.1.1</b> and <b>2026.1.2</b>, January 23 and 24, 2026:</p>
+        <list>
+            <li>Support for JetBrains IDEs 2026.1.</li>
+            <li>The <control>Enable drag and drop tabs</control> setting is now named <control>Enable tab splitting</control>.</li>
         </list>
     </chapter>
 
     <chapter title="2025.3" id="v2025-3">
+        <p><b>2025.3.7</b>, November 6, 2025:</p>
+        <list>
+            <li>Fixed an error about a component that must be shown on the screen.</li>
+            <li>Fixed invalid HTML on the page that GBrowser shows when a page cannot be loaded.</li>
+            <li>Fixed an empty menu item text for <control>Open Selected Text in GBrowser</control>.</li>
+        </list>
         <p><b>2025.3.1</b>, September 18, 2025:</p>
         <list>
             <li>
@@ -62,12 +79,6 @@
                 The DevTools tool window is no longer available.
             </li>
         </list>
-        <p><b>2025.3.7</b>, November 6, 2025, fixed these issues:</p>
-        <list>
-            <li>An error about a component that must be shown on the screen.</li>
-            <li>Invalid HTML on the page that GBrowser shows when a page cannot be loaded.</li>
-            <li>An empty menu item text for <control>Open Selected Text in GBrowser</control>.</li>
-        </list>
     </chapter>
 
     <chapter title="2025.2" id="v2025-2">
@@ -75,7 +86,7 @@
         <list>
             <li>
                 <a href="GBrowser-DevTools-and-Device-Emulation.topic" anchor="device-emulation">Device emulation</a>:
-                show pages at the size and with the user agent of phones and tablets.
+                show pages at the screen size of phones and tablets.
             </li>
             <li>
                 <a href="GBrowser-Settings-and-Configuration.topic" anchor="appearance">Page theme</a>:
@@ -84,7 +95,7 @@
             <li>
                 <a href="GBrowser-Open-Files-and-Links.topic"/>: the <control>Open in GBrowser</control> action opens HTML, SVG and other files from your project.
             </li>
-            <li>Support for IntelliJ-based IDEs 2025.2.</li>
+            <li>Support for JetBrains IDEs 2025.2.</li>
         </list>
     </chapter>
 

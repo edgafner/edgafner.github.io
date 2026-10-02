@@ -24,7 +24,7 @@
     </p>
     <p>
         The default shortcuts in this topic are for Windows and Linux.
-        For macOS, see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
+        On macOS, look up the shortcut of an action in <ui-path>Settings | Keymap</ui-path>; see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
     </p>
 
     <chapter title="Open DevTools" id="open-devtools">
@@ -52,20 +52,22 @@
                 Click <control>More Options</control> and select <control>Emulate Mobile Device Viewport and User Agent</control>,
                 or press <shortcut>Ctrl+Shift+M</shortcut>.
                 A device toolbar appears above the page, and the page is shown in a frame of the selected size.
+                In the keymap, the action is named <control>Toggle Device Emulation</control>.
             </step>
             <step>
                 In the device list, keep <control>Responsive</control> or select a device.
                 <control>Responsive</control> starts at 400 × 626 pixels.
+                <!-- planned-image src="gbrowser_device_emulation.png" alt="GBrowser device toolbar with iPhone SE selected and the page shown in a phone-sized frame" -->
             </step>
             <step>
                 Optional: change the width and height in the two number fields, select a zoom level, or click <control>Rotate</control> to swap the width and height.
             </step>
         </procedure>
-        <!-- planned-image src="gbrowser_device_emulation.png" alt="GBrowser device toolbar with iPhone SE selected and the page shown in a phone-sized frame" -->
 
         <p>
-            When you select a device, GBrowser sets its screen size and its browser user agent, and reloads the page.
-            <control>Responsive</control> and custom sizes use an Android phone user agent.
+            When you select a device, GBrowser resizes the page frame to the device's screen size and reloads the page.
+            GBrowser also tries to report the device's user agent to scripts on the page, but requests to the server keep GBrowser's own User-Agent header,
+            so server-side mobile detection does not see the emulated device.
             Width and height accept values from 50 to 9999 pixels.
             The zoom list offers 50% to 150%, and you can type another value.
             If the frame is larger than the tool window, GBrowser scales the page down to fit.
@@ -118,8 +120,13 @@
                 Click <control>OK</control> and restart the IDE.
             </step>
             <step>
-                In Chrome, open <code>chrome://inspect</code>, click <control>Configure</control>, and add <code>localhost:9222</code>, using your port number.
-                The pages open in the IDE appear under <control>Remote Target</control>; click <control>inspect</control> next to one.
+                In Chrome, open <code>chrome://inspect</code>.
+            </step>
+            <step>
+                Click <control>Configure</control> and add <code>localhost:</code> followed by your port number, for example <code>localhost:9222</code>.
+            </step>
+            <step>
+                Under <control>Remote Target</control>, click <control>inspect</control> next to a page that is open in the IDE.
             </step>
         </procedure>
     </chapter>
