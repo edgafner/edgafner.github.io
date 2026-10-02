@@ -69,7 +69,7 @@
         <procedure title="Sign out from the tool window" id="sign-out-proc">
             <step>
                 <p>In the <control>JirAI</control> tool window, click the options menu (<control>⋮</control>).</p>
-                <!-- planned-image src="jirai_gear_menu.png" alt="JirAI tool window options menu with the connected site and Sign Out" -->
+                <img src="jirai_gear_menu.png" alt="JirAI tool window options menu with the connected site and Sign Out" width="380" border-effect="rounded"/>
             </step>
             <step><p>Choose <control>Sign Out</control>.</p></step>
         </procedure>

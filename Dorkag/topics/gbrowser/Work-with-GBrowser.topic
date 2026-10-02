@@ -70,7 +70,7 @@
                 See <a anchor="gbrowser-actions"/>.
             </li>
         </list>
-        <!-- planned-image src="gbrowser_toolbar.png" alt="GBrowser toolbar with navigation buttons, address field, bookmark button and More Options, above the bookmarks bar" -->
+        <img src="gbrowser_toolbar.png" alt="GBrowser toolbar with navigation buttons, address field, bookmark button and More Options, above the bookmarks bar" width="620" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Search from the address field" id="search">
@@ -81,7 +81,7 @@
             <step>
                 Type a URL or a search term.
                 A list of matching pages from your history and bookmarks appears below the field.
-                <!-- planned-image src="gbrowser_address_suggestions.png" alt="GBrowser address field with a list of matching history and bookmark entries" -->
+                <img src="gbrowser_address_suggestions.png" alt="GBrowser address field with a list of matching history and bookmark entries" width="620" border-effect="rounded"/>
             </step>
             <step>
                 Press <shortcut>Down</shortcut> and <shortcut>Up</shortcut> to select an entry, then press <shortcut>Enter</shortcut>.
@@ -127,7 +127,7 @@
             </step>
         </procedure>
         <p>This requires <control>Enable tab splitting</control>, which is on by default.</p>
-        <!-- planned-image src="gbrowser_tabs_title_actions.png" alt="GBrowser tool window header with three tabs and the Add Tab and Toggle Toolbar Visibility buttons" -->
+        <img src="gbrowser_tabs_title_actions.png" alt="GBrowser tool window header with three tabs and the Add Tab and Toggle Toolbar Visibility buttons" width="620" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Hide the browser toolbar" id="hide-toolbar">
@@ -147,7 +147,7 @@
             <step>
                 Type the text.
                 GBrowser highlights the matches as you type; the search ignores case.
-                <!-- planned-image src="gbrowser_find_in_page.png" alt="GBrowser page with the find box open and matching text highlighted" -->
+                <img src="gbrowser_find_in_page.png" alt="GBrowser page with the find box open and matching text highlighted" width="620" border-effect="rounded"/>
             </step>
             <step>
                 Press <shortcut>Enter</shortcut> or click <control>Next</control> to go to the next match.
@@ -179,7 +179,7 @@
             Right-click a page to open the Chromium context menu.
             GBrowser adds two items to it: <control>Open DevTools</control> and <control>Add to Bookmarks</control>.
         </p>
-        <!-- planned-image src="gbrowser_page_context_menu.png" alt="GBrowser page context menu with the Open DevTools and Add to Bookmarks items" -->
+        <img src="gbrowser_page_context_menu.png" alt="GBrowser page context menu with the Open DevTools and Add to Bookmarks items" width="218" border-effect="rounded"/>
     </chapter>
 
     <chapter title="More Options menu" id="gbrowser-actions">
@@ -237,7 +237,7 @@
                 <td>Opens the GBrowser settings.</td>
             </tr>
         </table>
-        <!-- planned-image src="gbrowser_more_options.png" alt="GBrowser More Options menu listing browser, bookmark, tab and zoom actions" -->
+        <img src="gbrowser_more_options.png" alt="GBrowser More Options menu listing browser, bookmark, tab and zoom actions" width="442" border-effect="rounded"/>
     </chapter>
 
     <seealso>

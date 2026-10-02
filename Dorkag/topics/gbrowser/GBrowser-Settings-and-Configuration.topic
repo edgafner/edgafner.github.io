@@ -44,7 +44,7 @@
             <li><a anchor="http-response-headers">HTTP Response Headers</a></li>
             <li><a anchor="browser-compatibility-mode">Browser Compatibility Mode</a></li>
         </list>
-        <!-- planned-image src="gbrowser_settings_overview.png" alt="GBrowser settings page with the home page URL, Search Settings and Appearance groups" -->
+        <img src="gbrowser_settings_overview.png" alt="GBrowser settings page with the home page URL, Search Settings and Appearance groups" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Default home page" id="default-home-page">
@@ -103,7 +103,7 @@
                 The default is 20.
             </def>
         </deflist>
-        <!-- planned-image src="gbrowser_settings_search_history.png" alt="Search Settings group of the GBrowser settings with the Configuration and Browser History options" -->
+        <img src="gbrowser_settings_search_history.png" alt="Search Settings group of the GBrowser settings with the Configuration and Browser History options" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Appearance" id="appearance">
@@ -129,7 +129,7 @@
         <p>
             To inspect a page from inside the IDE, you do not need a port: use <control>Open DevTools</control> (<shortcut>F12</shortcut>).
         </p>
-        <!-- planned-image src="gbrowser_settings_appearance_dev.png" alt="Appearance and Developer Options groups of the GBrowser settings with the Theme options and the Debug port field" -->
+        <img src="gbrowser_settings_appearance_dev.png" alt="Appearance and Developer Options groups of the GBrowser settings with the Theme options and the Debug port field" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Tool window settings" id="toolwindow-settings">
@@ -182,7 +182,7 @@
             </step>
             <step>
                 Enter the header <control>Name</control> and <control>Value</control>.
-                <!-- planned-image src="gbrowser_settings_request_headers.png" alt="HTTP Response Headers group of the GBrowser settings with a header rule for a localhost URL" -->
+                <img src="gbrowser_settings_request_headers.png" alt="HTTP Response Headers group of the GBrowser settings with a header rule for a localhost URL" width="706" thumbnail="true" border-effect="rounded"/>
             </step>
             <step>
                 Optional: select <control>Overwrite</control> to replace the header when the request already has it.
@@ -231,7 +231,7 @@
                 Open the site in a new GBrowser tab.
             </step>
         </procedure>
-        <!-- planned-image src="gbrowser_settings_compatibility.png" alt="Browser Compatibility Mode group of the GBrowser settings with the list of compatible sites" -->
+        <img src="gbrowser_settings_compatibility.png" alt="Browser Compatibility Mode group of the GBrowser settings with the list of compatible sites" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Where GBrowser stores its data" id="storage">

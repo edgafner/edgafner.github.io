@@ -30,7 +30,7 @@
             <def title="+ (New Issue)">Opens the Create form. See <a href="Jira-Create-Issues.topic">Create issues</a>.</def>
             <def title="Space Summary">Opens a Jira space with its summary, board, list and reports. See <a href="JirAI-Metrics.topic">Spaces</a>.</def>
         </deflist>
-        <!-- planned-image src="jirai_overview.png" alt="JirAI tool window with the issue list beside an issue's Timeline tab" -->
+        <img src="jirai_overview.png" alt="JirAI tool window with the issue list beside an issue&#x27;s Timeline tab" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Search and sort" id="search-and-sort">
@@ -55,7 +55,7 @@
             <step><p>Click <control>Filters</control> (the funnel icon) above the list.</p></step>
             <step>
                 <p>Under <control>Quick Filters</control>, choose <control>Assigned to Me</control>, <control>Unassigned</control> or <control>All Issues</control>.</p>
-                <!-- planned-image src="jirai_quick_filters_sort.png" alt="Filters menu with the Quick Filters group and Assigned to Me selected" -->
+                <img src="jirai_quick_filters_sort.png" alt="Filters menu with the Quick Filters group and Assigned to Me selected" width="177" border-effect="rounded"/>
             </step>
         </procedure>
         <p>To narrow the list further, use the filter chips: <control>Project</control>, <control>Epic</control>, <control>Status</control>, <control>Assignee</control>, <control>Reporter</control>, <control>Type</control> and <control>Priority</control>.</p>
@@ -66,7 +66,7 @@
             <li><p>The <control>Status</control> popup also offers <control>Unresolved</control>.</p></li>
             <li><p><control>Assignee</control> and <control>Reporter</control> accept several people.</p></li>
         </list>
-        <!-- planned-image src="jirai_issue_filters.png" alt="Status filter popup with one value excluded and the All and Clear links" -->
+        <img src="jirai_issue_filters.png" alt="Status filter popup with one value excluded and the All and Clear links" width="184" border-effect="rounded"/>
         <p>To remove every filter, choose <control>Clear Filters</control> in the <control>Filters</control> menu.</p>
         <p>When nothing matches, the list shows <control>Nothing matches the filters.</control> with a <control>Clear filters</control> link.</p>
         <p>JirAI remembers the filters and sort order for each IDE project.</p>
@@ -87,7 +87,7 @@
             <def title="Refresh">Reloads the list from Jira. It uses the IDE's <control>Refresh</control> shortcut, which you can look up in <ui-path>Settings | Keymap</ui-path>.</def>
             <def title="Delete">Deletes the issue after a confirmation. See <a anchor="delete-issue">Delete an issue</a>.</def>
         </deflist>
-        <!-- planned-image src="jirai_issue_context_menu.png" alt="Issue context menu with Open Details, Open in Browser, Copy Issue Key, Refresh and Delete" -->
+        <img src="jirai_issue_context_menu.png" alt="Issue context menu with Open Details, Open in Browser, Copy Issue Key, Refresh and Delete" width="440" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Delete an issue" id="delete-issue">
@@ -99,7 +99,7 @@
             </step>
             <step>
                 <p>Type the issue key in the <control>Type DEMO-123 to confirm:</control> field and click <control>Delete</control>.</p>
-                <!-- planned-image src="jirai_delete_dialog.png" alt="Delete dialog asking you to type the issue key to confirm" -->
+                <img src="jirai_delete_dialog.png" alt="Delete dialog asking you to type the issue key to confirm" width="504" border-effect="rounded"/>
             </step>
         </procedure>
         <warning>

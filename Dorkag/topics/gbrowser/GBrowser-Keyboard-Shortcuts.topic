@@ -71,7 +71,7 @@
             </step>
             <step>
                 Type the action name in the search field, for example <code>Toggle Device Emulation</code>.
-                <!-- planned-image src="gbrowser_keymap.png" alt="Keymap settings filtered to GBrowser actions with their shortcuts" -->
+                <img src="gbrowser_keymap.png" alt="Keymap settings filtered to GBrowser actions with their shortcuts" width="706" thumbnail="true" border-effect="rounded"/>
             </step>
             <step>
                 Right-click the action and select <control>Add Keyboard Shortcut</control>.

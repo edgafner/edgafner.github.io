@@ -74,7 +74,7 @@
     <chapter title="When the issue was edited in Jira" id="push-conflict">
         <p>Each push stores a fingerprint of the description in a Jira issue property, so the Markdown file does not change.</p>
         <p>On the next push, JirAI compares the fingerprint with the description Jira holds now.</p>
-        <!-- planned-image src="jirai_push_dialog_edited_in_jira.png" alt="Push to Jira dialog warning that the issue was edited in Jira since the last push" -->
+        <img src="jirai_push_dialog_edited_in_jira.png" alt="Push to Jira dialog warning that the issue was edited in Jira since the last push" width="523" border-effect="rounded"/>
         <table style="header-row" border="true">
             <tr><td>Dialog state</td><td>What it means</td><td>Your options</td></tr>
             <tr><td>Update DEMO-123</td><td>The issue has not changed since your last push.</td><td><control>Update DEMO-123</control>, <control>Cancel</control></td></tr>
@@ -121,7 +121,7 @@
             <p>When the Create form opens from a recognized document, the <control>Remember for Superpowers · Spec</control> checkbox (named after the kind) is selected by default.</p>
             <p>When you create the issue, JirAI stores the project, issue type, labels and components you used.</p>
             <p>The next document of that kind opens the Create form already set up, and the dialog names the target.</p>
-            <!-- planned-image src="jirai_create_from_doc_remember.png" alt="Create form opened from a spec with the Remember for Superpowers Spec checkbox selected" -->
+            <img src="jirai_create_from_doc_remember.png" alt="Create form opened from a spec with the Remember for Superpowers Spec checkbox selected" width="562" border-effect="rounded"/>
         </chapter>
 
         <chapter title="Configure presets in Settings" id="presets-settings">

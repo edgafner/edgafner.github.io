@@ -23,7 +23,7 @@
     <chapter title="Read the activity feed" id="timeline">
         <p>The <control>Timeline</control> tab shows the description, comments, status changes and field changes in one feed.</p>
         <p>To show only one kind of entry, click the filter icon and choose <control>All</control>, <control>Comments</control>, <control>Status changes</control> or <control>Field changes</control>.</p>
-        <!-- planned-image src="jirai_timeline.png" alt="Issue timeline with the description, two comments and a status change" -->
+        <img src="jirai_timeline.png" alt="Issue timeline with the description and the sprint and assignee changes" width="642" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Comment on an issue" id="comments">
@@ -47,13 +47,13 @@
             <step><p>On the description card, click the pencil icon (<control>Edit description</control>).</p></step>
             <step>
                 <p>Edit the Markdown text.</p>
-                <!-- planned-image src="jirai_description_edit.png" alt="Description being edited in place with the Save and Cancel buttons" -->
+                <img src="jirai_description_edit.png" alt="Description being edited in place with the Save and Cancel buttons" width="642" border-effect="rounded"/>
             </step>
             <step><p>Click <control>Save</control>, or <control>Cancel</control> to discard your changes.</p></step>
         </procedure>
         <p>After you save, the timeline shows an <control>Updated the description</control> entry.</p>
         <p>Click <control>Show changes</control> on it to see what changed as a diff.</p>
-        <!-- planned-image src="jirai_description_diff.png" alt="Timeline entry showing the description change as a diff" -->
+        <img src="jirai_description_diff.png" alt="Timeline entry showing the description change as a diff" width="642" border-effect="rounded"/>
 
         <chapter title="When someone else changed the description" id="description-conflict">
             <p>Before saving, JirAI checks whether the description changed in Jira since you started editing.</p>

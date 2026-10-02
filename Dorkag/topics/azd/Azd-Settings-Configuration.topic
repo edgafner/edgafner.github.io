@@ -27,7 +27,7 @@
 
     <chapter title="Accounts" id="accounts">
         <p>Path: <ui-path>Settings | Version Control | AZD</ui-path></p>
-        <!-- planned-image src="azd_settings_accounts.png" alt="AZD accounts page with one account set as default and Clone git repositories using ssh selected" -->
+        <img src="azd_settings_accounts.png" alt="AZD accounts page with an account and Clone git repositories using ssh selected" width="657" border-effect="rounded"/>
         <deflist type="medium">
             <def title="Accounts list">
                 <p>Your Azure DevOps accounts.

@@ -32,7 +32,7 @@
             <step>
                 <p>In the title bar, click <control>Pipeline Metrics</control>.</p>
                 <p>The <control>Pipeline Metrics</control> editor tab opens on the <control>Pipeline</control> tab.</p>
-                <!-- planned-image src="azd_pipeline_metrics.png" alt="Pipeline Metrics dashboard with the summary row and populated widgets for the last 30 days" -->
+                <img src="azd_pipeline_metrics.png" alt="Pipeline Metrics dashboard with the summary row and populated widgets for the last 90 days" width="706" thumbnail="true" border-effect="rounded"/>
             </step>
             <step>
                 <p>Narrow the data with the filters at the top: <control>Time range</control>, <control>Pipeline</control>,
@@ -83,7 +83,7 @@
             <step>
                 <p>Select a pool to open it.
                     The pool has three sub-tabs: <control>Details</control>, <control>Agents</control> and <control>Jobs</control>.</p>
-                <!-- planned-image src="azd_agent_pools.png" alt="Agents tab with the agent pool list and one pool open on its Agents sub-tab" -->
+                <img src="azd_agent_pools.png" alt="Agents tab with the agent pool list and one pool open on its Agents sub-tab" width="706" thumbnail="true" border-effect="rounded"/>
             </step>
         </procedure>
         <p>

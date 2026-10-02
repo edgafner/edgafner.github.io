@@ -30,7 +30,7 @@
         <procedure title="Open the current file" id="open-current-file" type="choices">
             <step>
                 In the editor, right-click and select <control>Open in GBrowser</control>.
-                <!-- planned-image src="gbrowser_open_in_gbrowser.png" alt="Editor context menu for an HTML file with the Open in GBrowser item" -->
+                <img src="gbrowser_open_in_gbrowser.png" alt="Editor context menu for an HTML file with the Open in GBrowser item" width="485" border-effect="rounded"/>
             </step>
             <step>
                 In the <control>Project</control> tool window, right-click the file and select <control>Open in GBrowser</control>.
@@ -55,7 +55,7 @@
             </step>
             <step>
                 Right-click the selection and select <control>Open Selected Text in GBrowser</control>.
-                <!-- planned-image src="gbrowser_open_selected_text.png" alt="Editor with a localhost URL selected and the Open Selected Text in GBrowser context menu item" -->
+                <img src="gbrowser_open_selected_text.png" alt="Editor with a localhost URL selected and the Open Selected Text in GBrowser context menu item" width="456" border-effect="rounded"/>
             </step>
         </procedure>
         <p>

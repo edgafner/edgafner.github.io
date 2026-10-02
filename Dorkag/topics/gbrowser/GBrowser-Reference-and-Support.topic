@@ -41,7 +41,7 @@
                 but this does not change the User-Agent that GBrowser sends to that site, so it may not help.
                 If the site still blocks GBrowser, use <control>Open in Default Browser</control> (<shortcut>Ctrl+O</shortcut>).
             </p>
-            <!-- planned-image src="gbrowser_add_compat_site.png" alt="Add Anti-Detection Site dialog with a domain entered" -->
+            <img src="gbrowser_add_compat_site.png" alt="Dialog for adding an anti-detection site, with a domain entered" width="380" border-effect="rounded"/>
         </chapter>
 
         <chapter title="A page shows an error" id="page-error">

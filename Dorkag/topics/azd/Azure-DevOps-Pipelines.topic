@@ -33,7 +33,7 @@
             The first tab, named after the repository, lists the runs of every pipeline in that repository, newest first.
             Each row shows the run name, commit message, branch, result and the person who requested the run.
         </p>
-        <!-- planned-image src="azd_pipelines_list.png" alt="AZD Pipelines tool window listing runs with the quick filter, filter chips and run results" -->
+        <img src="azd_pipelines_list.png" alt="AZD Pipelines tool window listing runs with the quick filter, filter chips and run results" width="422" border-effect="rounded"/>
 
         <procedure title="Find and open a run" id="open-run">
             <step>
@@ -51,7 +51,7 @@
                     Select <control>Descending</control> to reverse it.</p>
                 <img src="sort_pipeline_and_pr_inline_button.png" alt="Sort popup of the AZD Pipelines run list with Default (newest first) selected"
                      width="510" border-effect="rounded"/>
-                <!-- planned-image src="azd_pipelines_sort.png" alt="Sort popup open over the AZD Pipelines run list" replaces="sort_pipeline_and_pr_inline_button.png" -->
+                <img src="azd_pipelines_sort.png" alt="Sort popup open over the AZD Pipelines run list" width="422" border-effect="rounded"/>
             </step>
             <step>
                 <p>Double-click a run, or right-click it and select <control>Show Pipeline Details</control>, to open it in a new tab.</p>
@@ -87,7 +87,7 @@
             </step>
             <step>
                 <p>Under <control>Pipeline parameters</control>, set the runtime parameters the pipeline defines.</p>
-                <!-- planned-image src="azd_pipelines_run_form.png" alt="Run Pipeline tab with a pipeline, a branch and runtime parameters filled in" -->
+                <img src="azd_pipelines_run_form.png" alt="Run Pipeline tab with a pipeline, a branch and runtime parameters filled in" width="422" border-effect="rounded"/>
             </step>
             <step>
                 <p>Optional: if the pipeline has variables that can be set at queue time, click the browse button in <control>Variables</control>

@@ -86,7 +86,7 @@
             <control>AZD Pull Requests</control> tool window, at most once every 30 seconds.
             Each new approval shows a <control>Pipeline approval requested</control> notification with the pipeline and stage.
         </p>
-        <!-- planned-image src="azd_pipelines_approval_notification.png" alt="Pipeline approval requested notification with the Review and Open in Azure DevOps actions" -->
+        <img src="azd_pipelines_approval_notification.png" alt="Pipeline approval requested notification with the Review action and a More menu" width="314" border-effect="rounded"/>
         <deflist type="medium">
             <def title="Review">Opens the run in the <control>AZD Pipelines</control> tool window.</def>
             <def title="Open in Azure DevOps">Opens the run in the browser.</def>

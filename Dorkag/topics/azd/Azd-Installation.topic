@@ -321,7 +321,7 @@
 
     <chapter title="Manage accounts" id="azd-manage-accounts">
         <p>All accounts are listed in <ui-path>Settings | Version Control | AZD</ui-path>.</p>
-        <!-- planned-image src="azd_settings_accounts.png" alt="AZD accounts page with one account set as default and Clone git repositories using ssh selected" -->
+        <img src="azd_settings_accounts.png" alt="AZD accounts page with an account and Clone git repositories using ssh selected" width="657" border-effect="rounded"/>
         <list>
             <li>To add an account, click <control>+</control> and choose a sign-in method.</li>
             <li>To remove an account, select it and click <control>−</control>.</li>

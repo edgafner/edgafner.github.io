@@ -30,7 +30,7 @@
                 <p>A screen reader announces each card and column.</p>
             </li>
         </list>
-        <!-- planned-image src="jirai_board_kanban.png" alt="Kanban board tab of a space with columns, cards and a column over its WIP limit" -->
+        <img src="jirai_board_kanban.png" alt="Kanban board tab of a space with columns, cards and a column over its WIP limit" width="706" thumbnail="true" border-effect="rounded"/>
         <p>See <a href="JirAI-Board.topic">Board</a>.</p>
     </chapter>
 

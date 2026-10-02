@@ -59,7 +59,7 @@
             To hide the bar, clear <control>Show bookmarks toolbar</control> in
             <a href="GBrowser-Settings-and-Configuration.topic#toolwindow-settings">Tool Window Settings</a>.
         </p>
-        <!-- planned-image src="gbrowser_bookmarks_bar.png" alt="GBrowser bookmarks bar under the address field with the Remove Bookmark menu open" -->
+        <img src="gbrowser_bookmarks_bar.png" alt="GBrowser bookmarks bar under the address field with the Remove Bookmark menu open" width="620" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Open a bookmark from the menu" id="bookmarks-menu">
@@ -69,7 +69,7 @@
             </step>
             <step>
                 Select <control>Bookmarks</control> and then the bookmark.
-                <!-- planned-image src="gbrowser_bookmarks_menu.png" alt="GBrowser More Options menu with the Bookmarks submenu listing saved bookmarks" -->
+                <img src="gbrowser_bookmarks_menu.png" alt="GBrowser More Options menu with the Bookmarks submenu listing saved bookmarks" width="590" border-effect="rounded"/>
             </step>
         </procedure>
         <p>
@@ -92,7 +92,7 @@
                     <li>To add a bookmark, click the add button.</li>
                     <li>To remove a bookmark, select it and click the remove button.</li>
                 </list>
-                <!-- planned-image src="gbrowser_settings_bookmarks.png" alt="Bookmark Management group in the GBrowser settings with a table of bookmark names and URLs" -->
+                <img src="gbrowser_settings_bookmarks.png" alt="Bookmark Management group in the GBrowser settings with a table of bookmark names and URLs" width="706" thumbnail="true" border-effect="rounded"/>
             </step>
             <step>
                 Click <control>OK</control>.
@@ -118,7 +118,7 @@
             <step>
                 Click <control>More Options</control> and select <ui-path>Clear Cookies and History | Clear History</ui-path>,
                 or press <shortcut>Ctrl+Shift+7</shortcut>.
-                <!-- planned-image src="gbrowser_clear_submenu.png" alt="GBrowser Clear Cookies and History submenu with the Clear Cookies and Clear History items" -->
+                <img src="gbrowser_clear_submenu.png" alt="GBrowser Clear Cookies and History submenu with the Clear Cookies and Clear History items" width="630" border-effect="rounded"/>
             </step>
         </procedure>
         <p>The action is available only when the history has entries.</p>

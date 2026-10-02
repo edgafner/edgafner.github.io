@@ -29,7 +29,7 @@
             <step>
                 <p>Choose the <control>Project:</control> and the <control>Issue type:</control>.</p>
                 <p>The pickers show each project's avatar and each issue type's icon.</p>
-                <!-- planned-image src="jirai_create_pickers.png" alt="Create Issue form with the issue type dropdown showing issue type icons" -->
+                <img src="jirai_create_pickers.png" alt="Create Issue form with the issue type dropdown showing issue type icons" width="578" border-effect="rounded"/>
             </step>
             <step>
                 <p>Fill in the fields.</p>
@@ -55,7 +55,7 @@
             <step><p>Write the description in Markdown.</p></step>
             <step>
                 <p>Click <control>Preview</control> on the <control>Description</control> row to see how Jira will show it.</p>
-                <!-- planned-image src="jirai_create_markdown_preview.png" alt="Create form with the Markdown description shown in Preview" -->
+                <img src="jirai_create_markdown_preview.png" alt="Create form with the Markdown description shown in Preview" width="562" border-effect="rounded"/>
             </step>
             <step><p>Click <control>Edit</control> to return to the Markdown text.</p></step>
         </procedure>

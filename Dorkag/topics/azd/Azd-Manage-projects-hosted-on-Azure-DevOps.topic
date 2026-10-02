@@ -48,7 +48,7 @@
             </step>
             <step>
                 <p>Select a repository from the list of all repositories your accounts can access.</p>
-                <!-- planned-image src="azd_clone_repositories.png" alt="Clone Repository dialog listing Azure DevOps repositories with the shallow clone option" -->
+                <img src="azd_clone_repositories.png" alt="Clone Repository dialog listing Azure DevOps repositories with the shallow clone option" width="706" thumbnail="true" border-effect="rounded"/>
             </step>
             <step>
                 <p>In <control>Directory</control>, enter the folder for the local repository.</p>

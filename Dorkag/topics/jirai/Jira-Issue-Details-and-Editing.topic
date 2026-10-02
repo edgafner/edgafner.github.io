@@ -23,7 +23,7 @@
         <p>In the <control>JirAI</control> tool window, select an issue and press <shortcut>Enter</shortcut>, double-click it, or right-click it and choose <control>Open Details</control>.</p>
         <p>The details tab opens in the tool window, named after the issue key, and the issue's <control>Timeline</control> tab opens in the editor.</p>
         <p>The header shows the key and summary, with a <control>Timeline ↗</control> link that opens the issue timeline.</p>
-        <!-- planned-image src="jirai_issue_details.png" alt="Issue details tab with the type icon, the parent link and the Breakdown section" -->
+        <img src="jirai_issue_details.png" alt="Issue details tab with the type icon, the parent link and the Linked issues section" width="562" border-effect="rounded"/>
         <p>The tab lists the standard fields, such as <control>Status</control>, <control>Assignee</control>, <control>Reporter</control>, <control>Priority</control>, <control>Type</control>, <control>Parent</control>, <control>Due date</control>, <control>Labels</control>, <control>Components</control> and <control>Fix versions</control>, followed by the custom fields.</p>
         <list>
             <li><p>Each field is shown according to the type Jira declares for it.</p></li>
@@ -52,12 +52,12 @@
             <step>
                 <p>Click the <control>Status</control> value.</p>
                 <p>The list shows the transitions your Jira workflow allows from the current status.</p>
-                <!-- planned-image src="jirai_transition_popup.png" alt="Status dropdown listing the available workflow transitions" -->
+                <img src="jirai_transition_popup.png" alt="Status dropdown listing the available workflow transitions" width="207" border-effect="rounded"/>
             </step>
             <step><p>Choose a transition.</p></step>
             <step>
                 <p>If the transition has a screen with fields, such as <control>Resolution</control>, fill them in the dialog that opens.</p>
-                <!-- planned-image src="jirai_transition_screen.png" alt="Transition dialog asking for the required Resolution field" -->
+                <img src="jirai_transition_screen.png" alt="Transition dialog asking for the required Resolution field" width="387" border-effect="rounded"/>
             </step>
             <step>
                 <p>Click the button named after the transition, for example <control>Done</control>.</p>
@@ -75,7 +75,7 @@
             <li><p>To delete an attachment, click the delete icon (<control>Delete</control>) on its row and confirm; the icon appears only when Jira lets you delete that attachment.</p></li>
         </list>
         <p>On macOS and Windows, JirAI uses the operating system file dialog; on Linux, it uses the IDE file chooser.</p>
-        <!-- planned-image src="jirai_attachments_links.png" alt="Attachments section with an image thumbnail, and the Linked issues section" -->
+        <img src="jirai_attachments_links.png" alt="Attachments section with an image thumbnail, and the Linked issues section" width="562" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Issue links" id="issue-links">

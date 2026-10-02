@@ -57,7 +57,7 @@
             <step>
                 In the device list, keep <control>Responsive</control> or select a device.
                 <control>Responsive</control> starts at 400 × 626 pixels.
-                <!-- planned-image src="gbrowser_device_emulation.png" alt="GBrowser device toolbar with iPhone SE selected and the page shown in a phone-sized frame" -->
+                <img src="gbrowser_device_emulation.png" alt="GBrowser device toolbar with iPhone SE selected and the page shown in a phone-sized frame" width="620" border-effect="rounded"/>
             </step>
             <step>
                 Optional: change the width and height in the two number fields, select a zoom level, or click <control>Rotate</control> to swap the width and height.

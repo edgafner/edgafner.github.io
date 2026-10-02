@@ -32,7 +32,7 @@
             <step><p>In the issue details tab, click the eye icon on the custom field row.</p></step>
             <step>
                 <p>In the <control>Hide Field</control> popup, choose <control>In All Projects</control>, <control>In Project: DEMO</control> or <control>In Issue: DEMO-123</control>.</p>
-                <!-- planned-image src="jirai_hide_field_popup.png" alt="Hide Field popup with the All Projects, Project and Issue scopes" -->
+                <img src="jirai_hide_field_popup.png" alt="Hide Field popup with the All Projects, Project and Issue scopes" width="184" border-effect="rounded"/>
             </step>
         </procedure>
     </chapter>
@@ -43,7 +43,7 @@
             <step>
                 <p>In the <control>Hide Fields</control> dialog, select the fields to hide.</p>
                 <p>Type in the <control>Filter fields</control> box to narrow the list, and use <control>All</control> or <control>Clear</control> to change the selection.</p>
-                <!-- planned-image src="jirai_hide_fields_dialog.png" alt="Hide Fields dialog with two fields selected" -->
+                <img src="jirai_hide_fields_dialog.png" alt="Hide Fields dialog with two fields selected" width="384" border-effect="rounded"/>
             </step>
             <step><p>Click the button for the scope you want, for example <control>Hide 2 in Project: DEMO</control>.</p></step>
         </procedure>

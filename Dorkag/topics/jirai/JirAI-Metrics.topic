@@ -26,7 +26,7 @@
             <step><p>In the <control>JirAI</control> tool window title bar, click <control>Space Summary</control> (the chart icon).</p></step>
             <step>
                 <p>In the space chooser, pick a space from <control>Starred</control> or <control>All spaces</control>, or type in <control>Search spaces</control>.</p>
-                <!-- planned-image src="jirai_space_chooser.png" alt="Space chooser with the Starred and All spaces groups" -->
+                <img src="jirai_space_chooser.png" alt="Space chooser with the Starred and All spaces groups" width="246" border-effect="rounded"/>
             </step>
         </procedure>
         <p>The header of the space page shows the space avatar and name, and has these controls:</p>
@@ -46,7 +46,7 @@
             <li><p><control>Throughput</control>, <control>Created vs completed</control>, <control>Work in progress by age</control> and <control>Distribution</control> charts.</p></li>
         </list>
         <p>Each chart can be shown as a table with <control>Show as table</control>, or enlarged with <control>Maximize</control>.</p>
-        <!-- planned-image src="jirai_space_summary.png" alt="Space Summary tab with throughput and created vs completed charts" -->
+        <img src="jirai_space_summary.png" alt="Space Summary tab with throughput and created vs completed charts" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
     <chapter title="List tab" id="list-tab">
@@ -73,7 +73,7 @@
             <li><p><control>Control chart</control>, <control>Cumulative flow</control>, <control>Time in status</control> and <control>Throughput</control> charts.</p></li>
             <li><p>A <control>Jira default</control> / <control>First pass</control> switch that sets how reopened work is counted: as Jira counts it, or by the first pass through each status.</p></li>
         </list>
-        <!-- planned-image src="jirai_space_reports.png" alt="Reports tab with lead time, cycle time and cumulative flow charts" -->
+        <img src="jirai_space_reports.png" alt="Reports tab with lead time, cycle time and cumulative flow charts" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Filter a space" id="filtering-and-sampling">

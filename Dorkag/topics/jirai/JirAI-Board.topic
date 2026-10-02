@@ -28,7 +28,7 @@
             <step><p>Select the <control>Board</control> tab.</p></step>
             <step>
                 <p>If the space has more than one board, click the board picker and choose a board, or type in <control>Search boards</control>.</p>
-                <!-- planned-image src="jirai_board_picker.png" alt="Board picker listing the boards of a space, with a team-managed board marked Limited" -->
+                <img src="jirai_board_picker.png" alt="Board picker listing the boards of a space, with a team-managed board marked Limited" width="299" border-effect="rounded"/>
             </step>
         </procedure>
         <p>JirAI remembers the board you picked for each space.</p>
@@ -39,7 +39,7 @@
     <chapter title="Read the board" id="read-board">
         <p>Each column shows its name and its number of cards, for example <control>(4)</control>.</p>
         <p>Each card shows the issue type icon, the key, the summary, labels and the assignee.</p>
-        <!-- planned-image src="jirai_board_kanban.png" alt="Kanban board tab of a space with columns, cards and a column over its WIP limit" -->
+        <img src="jirai_board_kanban.png" alt="Kanban board tab of a space with columns, cards and a column over its WIP limit" width="706" thumbnail="true" border-effect="rounded"/>
         <list>
             <li><p>When a column has a WIP limit, a column above the maximum reads <control>Over this column's limit of N</control>, and a column below the minimum reads <control>Below this column's minimum of N</control>.</p></li>
             <li><p>A long column shows a <control>+N more</control> footer; click it, or focus it and press <shortcut>Enter</shortcut>, to show the remaining cards.</p></li>
@@ -52,7 +52,7 @@
                 <li><p>When no sprint is active, the tab says so, and there is nothing to show until a sprint starts in Jira.</p></li>
                 <li><p>When the board has more than one active sprint, it shows the first and names the others in a notice.</p></li>
             </list>
-            <!-- planned-image src="jirai_board_scrum.png" alt="Scrum board tab showing the cards of the active sprint" -->
+            <img src="jirai_board_scrum.png" alt="Scrum board tab showing the cards of the active sprint" width="706" thumbnail="true" border-effect="rounded"/>
         </chapter>
 
         <chapter title="Board notices" id="board-notices">
@@ -75,7 +75,7 @@
         </deflist>
         <p>As in other JirAI filters, click a value twice or <shortcut>Shift</shortcut>+click it to exclude it.</p>
         <p>An empty column tells you when its cards are hidden by the filters.</p>
-        <!-- planned-image src="jirai_board_filters.png" alt="Board filter row with a quick filter on and the Assignee filter open" -->
+        <img src="jirai_board_filters.png" alt="Board filter row with a quick filter on and the Assignee filter open" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
     <chapter title="Move a card" id="move-card">
