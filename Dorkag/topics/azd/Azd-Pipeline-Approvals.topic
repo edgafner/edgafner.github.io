@@ -30,15 +30,16 @@
                 <p>Open the run in the <control>AZD Pipelines</control> tool window, or click <control>Review</control> in the approval notification.</p>
             </step>
             <step>
-                <p>At the bottom of the run tab, find the <control>Awaiting for approval</control> banner.
-                    Hover over the help icon to see how many approvers are needed.</p>
+                <p>At the bottom of the run tab, go to the <control>Awaiting for approval</control> banner.</p>
+                <p>To see how many approvers are needed, hover over its help icon.</p>
                 <img src="approva_bottom.png" alt="Run tab with the Awaiting for approval banner, a Comment field and the Approve and Reject buttons"
                      width="512" border-effect="rounded"/>
                 <!-- planned-image src="azd_pipelines_approval_banner.png" alt="Approval banner with the Comment field and the Defer, Approve and Reject buttons" replaces="approva_bottom.png" -->
             </step>
             <step>
-                <p>Optional: type a note in <control>Comment</control>.
-                    A comment is required to reject.</p>
+                <p>Optional: type a note in <control>Comment</control>.</p>
+                <p>Some environments require a comment to reject.
+                    If so, AZD shows <control>A comment is required to reject this approval.</control></p>
             </step>
             <step>
                 <p>Click <control>Approve</control> or <control>Reject</control>.</p>
@@ -52,7 +53,7 @@
 
     <chapter title="Defer an approval" id="defer-approval">
         <p>If the approval check allows deferring, the banner shows <control>Defer...</control>.</p>
-        <procedure title="Defer an approval" id="defer-approval-procedure">
+        <procedure title="Defer an approval" id="defer-approval-procedure" hide-from-structure="true">
             <step>
                 <p>In the banner, click <control>Defer...</control>.</p>
             </step>
@@ -74,7 +75,8 @@
             <def title="You are not on the approvers list for this run">Ask one of the listed approvers.</def>
             <def title="You do not have permission">Your Azure DevOps permissions do not allow this approval.</def>
             <def title="Not signed in to Azure DevOps">Sign in again from the tool window.</def>
-            <def title="Custom check — open in Azure DevOps">The check is not an approval AZD can handle. Open the run on Azure DevOps.</def>
+            <def title="Custom check — open in Azure DevOps">The check is not an approval AZD can handle.
+                Open the run on Azure DevOps.</def>
         </deflist>
     </chapter>
 
@@ -112,8 +114,8 @@
             The list belongs to the current project.
         </p>
         <p>
-            To turn off all approval notifications, open <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path>
-            and change the <control>AZD Pipeline Approvals</control> group.
+            To turn off approval popups for all pipelines, open <ui-path>Settings | Appearance &amp; Behavior | Notifications</ui-path>,
+            select the <control>AZD Pipeline Approvals</control> group, and set <control>Popup type</control> to <control>No popup</control>.
         </p>
     </chapter>
 

@@ -17,11 +17,11 @@
     <link-summary>Open the AZD Pull Requests tool window, then find, filter, sort and open Azure DevOps pull requests.</link-summary>
     <card-summary>Find, filter and open Azure DevOps pull requests in the AZD Pull Requests tool window.</card-summary>
     <web-summary>Browse Azure DevOps pull requests in JetBrains IDEs with AZD: filters, quick filters, custom
-        filters, sorting, drafts and a PR metrics dashboard.</web-summary>
+        filters, sorting, drafts and a pull request metrics dashboard.</web-summary>
 
     <p>
         The <control>AZD Pull Requests</control> tool window lists the pull requests of the Azure DevOps repository that your project is cloned from.
-        From the list, you open a pull request, create a new one, and track your team's review activity.
+        From the list, you open a pull request, create a new one and track your team's review activity.
     </p>
     <!-- planned-image src="azd_pr_overview.png" alt="AZD Pull Requests tool window next to a pull request diff with an open comment thread" -->
     <p>
@@ -60,7 +60,7 @@
     <chapter title="View pull requests" id="view-pull-requests">
         <p>
             The <control>Pull Requests</control> tab lists the pull requests of the repository, newest first.
-            Each row shows the title, the pull request number, the creation date and author, labels, and reviewer avatars.
+            Each row shows the title, the pull request number, the creation date and author, labels and reviewer avatars.
         </p>
         <!-- planned-image src="azd_pr_list.png" alt="Pull request list with filters, a DRAFT badge, labels and reviewer avatars" -->
         <deflist type="medium">
@@ -80,7 +80,8 @@
             <control>Copy Pull Request URL</control> and <control>Refresh</control>.
         </p>
         <p>
-            To hide or show draft pull requests, click <control>Show Draft Pull Requests</control> on the list toolbar.
+            To hide draft pull requests, click <control>Exclude Drafts</control> on the list toolbar.
+            To show them again, click <control>Include Drafts</control>.
         </p>
     </chapter>
 
@@ -152,7 +153,7 @@
             </step>
         </procedure>
         <p>
-            To change or delete a custom quick filter, open the <control>Custom Quick Filters</control> dialog, select the filter, and click the edit button or <control>-</control>.
+            To change or delete a custom quick filter, open the <control>Custom Quick Filters</control> dialog, select the filter and click the edit button or <control>-</control>.
         </p>
     </chapter>
 
@@ -168,7 +169,7 @@
 
     <chapter title="Keep the list up to date" id="auto-refresh">
         <p>
-            To reload the list, right-click it and select <control>Refresh</control>, or press the <control>Refresh</control> shortcut of your keymap.
+            To reload the list, right-click it and select <control>Refresh</control>, or press the shortcut assigned to <control>Refresh</control> (see <ui-path>Settings | Keymap</ui-path>).
         </p>
         <p>
             To refresh the list and open pull requests automatically, select <control>Auto-refresh pull requests</control> and set <control>Interval in seconds</control>
@@ -181,6 +182,7 @@
     <chapter title="PR metrics" id="pr-metrics">
         <p id="azd_pr_metrics_usage">
             The <control>PR Metrics</control> dashboard summarizes pull request activity in the repository.
+            It needs the IDE's built-in browser (JCEF).
         </p>
         <procedure title="Open the PR metrics dashboard" id="open-pr-metrics">
             <step>
@@ -202,7 +204,6 @@
         </list>
         <p>
             Click the maximize button of a widget to enlarge it.
-            The dashboard needs the IDE's built-in browser (JCEF).
             For pipeline metrics and agent pools, see <a href="Azd-Pipeline-Metrics.topic"/>.
         </p>
     </chapter>

@@ -7,6 +7,11 @@
 
     <primary-label ref="azd"/>
 
+    <tldr>
+        <p>Report a bug: <a href="https://github.com/edgafner/dorkag/issues">DORKAG issue tracker</a></p>
+        <p>Usage statistics: <ui-path>Settings | Version Control | AZD | Preferences</ui-path></p>
+    </tldr>
+
     <link-summary>Report AZD bugs, request features, contact the developer, and learn what data AZD sends.</link-summary>
     <card-summary>Report a bug, request a feature, contact the developer, and read about privacy.</card-summary>
     <web-summary>Get support for the AZD Azure DevOps plugin for JetBrains IDEs: report bugs, request features,

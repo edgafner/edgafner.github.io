@@ -27,11 +27,14 @@
             Clone any <a href="https://learn.microsoft.com/en-us/azure/devops/repos/get-started/what-is-repos">Azure Repos</a>
             Git repository your account can access, and open it as a project.
         </p>
+        <p>
+            AZD clones over SSH by default, which needs an SSH key registered in Azure DevOps.
+            To clone over HTTPS instead, see <a anchor="clone-protocol"/>.
+        </p>
 
         <procedure title="Clone an Azure DevOps repository" id="clone-steps">
             <step>
-                <p>Select <ui-path>Git | Clone…</ui-path>.
-                    On the Welcome screen, click <control>Clone Repository</control>.</p>
+                <p>Select <ui-path>Git | Clone…</ui-path>, or click <control>Clone Repository</control> on the Welcome screen.</p>
             </step>
             <step>
                 <p>In the <control>Clone Repository</control> dialog, select <control>Azure DevOps</control> on the left.</p>
@@ -57,11 +60,6 @@
                 <p>Click <control>Clone</control>, and confirm that you want to open the cloned sources as a project.</p>
             </step>
         </procedure>
-
-        <note>
-            If the Git credential helper is enabled, the dialog warns that Git operations do not use the accounts configured in AZD.
-            Git then asks the credential helper for credentials instead.
-        </note>
     </chapter>
 
     <chapter title="Choose SSH or HTTPS" id="clone-protocol">
@@ -71,7 +69,10 @@
             <ui-path>Settings | Version Control | AZD</ui-path>.
             With HTTPS, AZD also enables the Git credential helper.
         </p>
-        <p>SSH cloning needs an SSH key registered in Azure DevOps.</p>
+        <note>
+            With the credential helper enabled, Git asks the credential helper for credentials instead of using your AZD accounts,
+            and the <control>Clone Repository</control> dialog shows a warning.
+        </note>
     </chapter>
 
     <chapter title="Open a file on Azure DevOps" id="jump-to">
@@ -90,7 +91,10 @@
             </step>
         </procedure>
 
-        <p>The file opens in your default browser. If the browser is not signed in to Azure DevOps, sign in there.</p>
+        <p>
+            The file opens in your default browser.
+            If the browser is not signed in to Azure DevOps, sign in there.
+        </p>
 
         <procedure title="Open a commit from the annotations" id="open-commit-from-blame">
             <step>
@@ -112,22 +116,6 @@
                 <!-- planned-image src="azd_copy_link.png" alt="Copy Path/Reference popup with AZD Repository URL selected" -->
             </step>
         </procedure>
-    </chapter>
-
-    <chapter title="Open the AZD tool windows" id="azd-tool-windows">
-        <p>
-            AZD adds three tool windows to projects that have an Azure DevOps Git remote:
-            <control>AZD Pull Requests</control>, <control>AZD Pipelines</control> and <control>AZD Boards</control>.
-            Open them from <ui-path>View | Tool Windows</ui-path> or from the tool window bar.
-        </p>
-        <p>
-            You can also select <ui-path>Git | AZD | Show AZD Pull Requests</ui-path>.
-        </p>
-        <list>
-            <li><a href="Work-with-Azure-DevOps-pull-requests.topic">Work with pull requests</a></li>
-            <li><a href="Azure-DevOps-Pipelines.topic">Work with pipelines</a></li>
-            <li><a href="Azd-Boards.topic">Boards and work items</a></li>
-        </list>
     </chapter>
 
     <seealso>

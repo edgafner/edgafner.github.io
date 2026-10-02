@@ -14,7 +14,7 @@
         <p>Prompts: <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>, <control>Configure Prompts</control></p>
     </tldr>
 
-    <link-summary>Generate pull request titles and descriptions, update the description of an open pull request, and generate commit messages with AI.</link-summary>
+    <link-summary>Generate pull request titles and descriptions, update the description of an open pull request and generate commit messages with AI.</link-summary>
     <card-summary>Let AI write pull request titles, descriptions and commit messages from your commits and changes.</card-summary>
     <web-summary>Generate Azure DevOps pull request titles, descriptions and commit messages with AI in JetBrains
         IDEs using AZD, with the built-in provider or your own model.</web-summary>
@@ -51,8 +51,7 @@
             </step>
         </procedure>
         <p id="how_it_works">
-            The title is generated from the commit messages and the diff of the pull request.
-            The description is generated from the commit messages and the diff.
+            AZD generates the title and the description from the commit messages and the diff of the pull request.
             With the default prompt, it starts with a short summary, followed by the reasons for the change and a list of changes.
             To stop a generation, click the button again (<control>Stop Generation</control>).
         </p>
@@ -100,10 +99,11 @@
         <procedure title="Generate a commit message from a work item" id="generate-commit-message-work-item">
             <step>
                 On the commit message toolbar, click the arrow next to <control>Generate Commit Message</control> and select <control>Select Work Item...</control>.
+                The <control>Select Work Item for Commit Message</control> dialog opens.
+                Later clicks on the button open the dialog again.
             </step>
             <step>
-                Click the button.
-                In the <control>Select Work Item for Commit Message</control> dialog, select the project and one or more work items.
+                In the dialog, select the project and one or more work items.
                 Clear <control>Only my work items</control> to see all work items.
             </step>
             <step>

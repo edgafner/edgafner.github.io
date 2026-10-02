@@ -14,7 +14,7 @@
         <p>Timeline: <control>View Timeline</control> in the pull request details</p>
     </tldr>
 
-    <link-summary>Open a pull request, check out its branch, go through the changed files and the timeline, and read its status and branch policies.</link-summary>
+    <link-summary>Open a pull request, check out its branch, go through the changed files and the timeline and read its status and branch policies.</link-summary>
     <card-summary>Inspect an Azure DevOps pull request: files, diffs, timeline, checks and branch policies.</card-summary>
     <web-summary>Review Azure DevOps pull requests in JetBrains IDEs with AZD: changed files, diffs, viewed state,
         timeline, branch policies, build checks and linked work items.</web-summary>
@@ -22,7 +22,7 @@
     <p>
         When you open a pull request, AZD shows its details in a tab of the <control>AZD Pull Requests</control> tool window.
         The tab title is the pull request number, for example <control>!42</control>.
-        From the details, you open diffs and the timeline, check out the branch, and see what blocks the merge.
+        From the details, you open diffs and the timeline, check out the branch and see what blocks the merge.
     </p>
 
     <chapter title="Open a pull request" id="azd_view_and_apply_changes">
@@ -75,7 +75,7 @@
         </deflist>
         <!-- planned-image src="azd_pr_branch_popup.png" alt="Branch popup of a pull request with Checkout, Open in Worktree and Show in Git Log" -->
         <p>
-            Some features need the branch locally, for example applying suggested changes.
+            Some features need the branch locally, for example <a href="Azd-PR-Comments.topic" anchor="suggested-changes">applying suggested changes</a>.
         </p>
     </chapter>
 
@@ -115,11 +115,12 @@
                 AZD saves the viewed state to Azure DevOps, so it follows you to the browser and other machines.
                 This needs the <control>Full access</control> option when you sign in with Microsoft, or a full-access personal access token (PAT).
                 With standard access, the viewed state is not available.
+                To change the access level, sign in again; see <a href="Azd-Installation.topic" anchor="connect"/>.
             </p>
         </note>
         <p>
             The right-click menu of a file also has <control>Show Diff</control>, <control>Show Diff in a New Tab</control>,
-            <control>Jump to Source</control>, <control>View Options</control> for grouping, and <control>Expand All</control> and <control>Collapse All</control>.
+            <control>Jump to Source</control>, <control>View Options</control> for grouping, <control>Expand All</control> and <control>Collapse All</control>.
         </p>
     </chapter>
 
@@ -133,6 +134,7 @@
                 Move between the comments of the file.
                 They use the <control>Previous Occurrence</control> and <control>Next Occurrence</control> shortcuts of your keymap,
                 <shortcut>Ctrl+Alt+Up</shortcut> and <shortcut>Ctrl+Alt+Down</shortcut> on Windows and Linux.
+                To see the macOS keys, search for these actions in <ui-path>Settings | Keymap</ui-path>.
             </def>
             <def title="Refresh Review Data">
                 Reloads the comments of the pull request.
@@ -145,7 +147,7 @@
             </def>
         </deflist>
         <p>
-            To hide or show comments in the diff, right-click the gutter and select <control>Show Review Discussions</control> in the editor settings.
+            To hide or show comments in the diff, right-click the gutter of the diff, point to <control>Show Review Discussions</control> and select which comments to show.
             To add comments, see <a href="Azd-PR-Comments.topic"/>.
         </p>
     </chapter>
@@ -159,12 +161,12 @@
                 In the pull request details, click <control>View Timeline</control>.
                 <p>
                     The <control>Timeline for !N</control> tab opens.
-                    It starts with the author, the source and target branches, and the description, followed by the events.
+                    It starts with the author, the source and target branches and the description, followed by the events.
                 </p>
                 <!-- planned-image src="azd_pr_timeline.png" alt="Pull request timeline with the description, a commits event, a comment thread and a vote" -->
             </step>
             <step>
-                To show only some events, click the filter icon in the timeline header and select event types.
+                Optional: to show only some events, click the filter icon in the timeline header and select event types.
                 <!-- planned-image src="azd_pr_timeline_filter.png" alt="Timeline event filter with Comments and Commits selected" -->
             </step>
         </procedure>
@@ -184,7 +186,8 @@
             To open such links in the browser instead, clear <control>Open commit links from the timeline in the IDE</control> in <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
         </p>
         <p>
-            To list events from oldest to newest, select <control>Show events in the order ascending by date</control> in <ui-path>Settings | Version Control | AZD | UI Customization</ui-path>.
+            The timeline lists events from oldest to newest.
+            To show the newest events first, clear <control>Show events in the order ascending by date</control> in <ui-path>Settings | Version Control | AZD | UI Customization</ui-path>.
             To comment on the whole pull request from the timeline, see <a href="Azd-PR-Comments.topic" anchor="pr-level-comment"/>.
         </p>
     </chapter>
@@ -230,8 +233,8 @@
             </def>
         </deflist>
         <p>
-            When the IDE opens links in the AZD tool windows, build runs open in the <control>AZD Pipelines</control> tool window; otherwise they open in the browser.
-            The option is <control>Open AZD links in tool window</control> in <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
+            If <control>Open AZD links in tool window</control> is selected in <ui-path>Settings | Version Control | AZD | Preferences</ui-path>,
+            build runs open in the <control>AZD Pipelines</control> tool window; otherwise, they open in the browser.
         </p>
 
         <chapter title="Merge status" id="merge-status">
@@ -273,7 +276,7 @@
     <chapter title="Comment, vote and complete" id="azd_review-actions">
         <list>
             <li>To comment on code, reply to threads and suggest changes, see <a href="Azd-PR-Comments.topic"/>.</li>
-            <li>To vote, manage reviewers, and complete or abandon the pull request, see <a href="Azd-PR-Complete.topic"/>.</li>
+            <li>To vote, manage reviewers and complete or abandon the pull request, see <a href="Azd-PR-Complete.topic"/>.</li>
             <li>To let AI review the pull request, see <a href="AI-Pull-Request-Review.topic"/>.</li>
         </list>
     </chapter>
@@ -281,9 +284,6 @@
     <seealso>
         <category ref="related">
             <a href="Work-with-Azure-DevOps-pull-requests.topic"/>
-            <a href="Azd-PR-Comments.topic"/>
-            <a href="Azd-PR-Complete.topic"/>
-            <a href="AI-Pull-Request-Review.topic"/>
         </category>
         <category ref="external">
             <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/review-pull-requests">Review pull requests (Microsoft Learn)</a>

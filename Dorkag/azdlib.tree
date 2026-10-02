@@ -26,7 +26,7 @@
             </toc-element>
             <toc-element topic="Azd-AI.topic" id="toc_azd_ai" toc-title="AI assistant">
                 <toc-element topic="AI-Title-Description-Generation.topic" id="toc_azd_ai_title"
-                             toc-title="Generate titles, descriptions and commits"/>
+                             toc-title="Generate titles, descriptions and commit messages"/>
                 <toc-element topic="AI-Pull-Request-Review.topic" id="toc_azd_ai_review"
                              toc-title="Review with AI"/>
             </toc-element>
@@ -34,11 +34,11 @@
                 <toc-element topic="Azd-Pipeline-Approvals.topic" id="toc_azd_pipeline_approvals"
                              toc-title="Approve pipeline runs"/>
                 <toc-element topic="Azd-Pipeline-Tests.topic" id="toc_azd_pipeline_tests"
-                             toc-title="Pipeline test results"/>
+                             toc-title="Review test results"/>
                 <toc-element topic="Azd-Pipeline-Metrics.topic" id="toc_azd_pipeline_metrics"
                              toc-title="Pipeline metrics and agent pools"/>
                 <toc-element topic="Azd-Pipeline-Yaml.topic" id="toc_azd_pipeline_yaml"
-                             toc-title="Edit pipeline YAML"/>
+                             toc-title="Edit Azure Pipelines YAML"/>
             </toc-element>
             <toc-element topic="Azd-Boards.topic" id="toc_azd_boards" toc-title="Boards and work items"/>
             <toc-element topic="Azd-Settings-Configuration.topic" id="toc_azd_settings" toc-title="Settings reference"/>

@@ -21,21 +21,21 @@
 
     <p>
         The <control>AZD Pipelines</control> tool window lists the pipeline runs of the current repository and opens each run in its own tab.
-        For completion and validation in pipeline files, see <a href="Azd-Pipeline-Yaml.topic">Edit Azure Pipelines YAML</a>;
-        for the YAML schema, approvals and Node.js options, see
+        For the YAML schema, approvals and Node.js options, see
         <a href="Azd-Settings-Configuration.topic" anchor="pipeline-settings">Pipeline Settings</a>.
     </p>
 
     <chapter title="Find a pipeline run" id="view-pipelines">
         <p>
-            The tool window is available in projects with an Azure DevOps Git remote, after you
-            <a href="Azd-Installation.topic" anchor="connect">sign in</a>.
+            The tool window is available in projects with an Azure DevOps Git remote.
+            If you are not signed in, it shows the sign-in options; see
+            <a href="Azd-Installation.topic" anchor="connect">Connect to Azure DevOps</a>.
             The first tab, named after the repository, lists the runs of every pipeline in that repository, newest first.
             Each row shows the run name, commit message, branch, result and the person who requested the run.
         </p>
         <!-- planned-image src="azd_pipelines_list.png" alt="AZD Pipelines tool window listing runs with the quick filter, filter chips and run results" -->
 
-        <procedure title="Filter and sort runs" id="open-run">
+        <procedure title="Find and open a run" id="open-run">
             <step>
                 <p>Type in the search field, or click the filter icon and select a quick filter:
                     <control>All</control>, <control>In Progress</control>, <control>Triggered by me</control> or <control>Current branch</control>.</p>
@@ -90,16 +90,15 @@
                 <!-- planned-image src="azd_pipelines_run_form.png" alt="Run Pipeline tab with a pipeline, a branch and runtime parameters filled in" -->
             </step>
             <step>
-                <p>Optional: if the pipeline has variables that can be set at queue time, expand <control>Advanced options</control>
-                    and click the browse button in <control>Variables</control> to edit them in the <control>Pipeline Variables</control> dialog.</p>
+                <p>Optional: if the pipeline has variables that can be set at queue time, click the browse button in <control>Variables</control>
+                    under <control>Advanced options</control> to edit them in the <control>Pipeline Variables</control> dialog.</p>
                 <!-- planned-image src="azd_pipelines_variables_dialog.png" alt="Pipeline Variables dialog with two queue-time variables" -->
             </step>
             <step>
                 <p>Click <control>Run Pipeline</control>.</p>
             </step>
         </procedure>
-        <p>To queue the pipeline of an open run again, right-click a stage in its tree and select <control>Run Pipeline</control>.
-            The tab opens with the pipeline and branch of that run filled in.</p>
+        <p>To queue an open run again, see <a anchor="run-details"/>.</p>
     </chapter>
 
     <chapter title="Inspect a run" id="run-details">
@@ -126,10 +125,11 @@
             <def title="Refresh Details">Reloads the run.</def>
         </deflist>
 
-        <procedure title="Cancel a run or rerun failed jobs" id="cancel-rerun">
+        <procedure title="Cancel a run or rerun failed jobs" id="cancel-rerun" type="choices">
             <p>The button at the bottom of the run tab changes with the state of the run.</p>
             <step>
-                <p>To stop a running pipeline, click <control>Cancel</control>. The button shows <control>Cancelling…</control> until Azure DevOps stops the run.</p>
+                <p>To stop a running pipeline, click <control>Cancel</control>.
+                    The button shows <control>Cancelling…</control> until Azure DevOps stops the run.</p>
             </step>
             <step>
                 <p>To rerun the failed jobs of a finished run, click <control>Rerun failed jobs</control>, then click <control>Yes</control> to confirm.</p>
@@ -177,7 +177,7 @@
             </step>
         </procedure>
         <p>
-            The list shows the providers enabled in AZD AI settings.
+            The list shows the providers enabled in <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>.
             To add a provider or switch it off, see <a href="Azd-AI.topic" anchor="ai-providers">AI providers</a>.
         </p>
     </chapter>
@@ -197,9 +197,9 @@
                 or <control>Refresh Details</control>.</li>
             <li>The <control>Tests</control> tab shows the test results of the run; see <a href="Azd-Pipeline-Tests.topic"/>.</li>
         </list>
-        <warning>
-            Right-clicking a failed, canceled or abandoned stage in the diagram reruns that stage at once, without a menu or a confirmation.
-        </warning>
+        <p>
+            To rerun the failed jobs of a run, click <control>Rerun failed jobs</control> at the bottom of the run tab; see <a anchor="cancel-rerun"/>.
+        </p>
     </chapter>
 
     <chapter title="Approvals, tests, metrics and YAML" id="more-pipeline-tasks">
@@ -207,7 +207,7 @@
             To approve, reject or defer a run that waits for you, see <a href="Azd-Pipeline-Approvals.topic"/>.
         </p>
         <p id="tests">
-            To review test results and link tests to test cases, see <a href="Azd-Pipeline-Tests.topic"/>.
+            To review test results and associate tests with test cases, see <a href="Azd-Pipeline-Tests.topic"/>.
         </p>
         <p id="pipeline-metrics">
             To see pass rates, durations, queue times and agent pools, see <a href="Azd-Pipeline-Metrics.topic"/>.
@@ -244,10 +244,9 @@
 
     <seealso>
         <category ref="related">
-            <a href="Azd-Pipeline-Approvals.topic"/>
-            <a href="Azd-Pipeline-Tests.topic"/>
-            <a href="Azd-Pipeline-Metrics.topic"/>
-            <a href="Azd-Pipeline-Yaml.topic"/>
+            <a href="Azd-Settings-Configuration.topic" anchor="pipeline-settings">Pipeline Settings</a>
+            <a href="Azd-FAQ.topic" anchor="jcef-views">A view shows a message instead of content</a>
+            <a href="Work-with-Azure-DevOps-pull-requests.topic">Work with pull requests</a>
         </category>
         <category ref="external">
             <a href="https://youtu.be/tYCUkYnahjA">Video: pipelines in AZD (recorded with an earlier AZD version)</a>

@@ -57,10 +57,12 @@
             <step>
                 <p>In <control>Additional pipeline YAML locations</control>, enter folders or glob patterns relative to the project root, separated by semicolons.
                     For example: <code>ci/pipelines;deploy/**/pipeline-*.yml</code>.</p>
-                <p>A folder makes every YAML file under it a pipeline file. A glob pattern matches specific files.</p>
+                <p>A folder makes every YAML file under it a pipeline file.
+                    A glob pattern matches specific files.</p>
             </step>
             <step>
-                <p>Click <control>OK</control>. The <control>Project</control> tool window updates the file icons.</p>
+                <p>Click <control>OK</control>.
+                    The <control>Project</control> tool window updates the file icons.</p>
             </step>
         </procedure>
         <p>This setting belongs to the current project.</p>
@@ -87,8 +89,8 @@
 
     <chapter title="Open the YAML of a run" id="jump-to-yaml">
         <p>
-            In a run tab of the <control>AZD Pipelines</control> tool window, right-click a stage and select <control>Jump to YAML</control>
-            to open the pipeline definition file.
+            To open the pipeline definition file from a run, use <control>Jump to YAML</control>; see
+            <a href="Azure-DevOps-Pipelines.topic" anchor="run-details">Inspect a run</a>.
         </p>
     </chapter>
 
@@ -96,7 +98,7 @@
         <category ref="related">
             <a href="Azure-DevOps-Pipelines.topic"/>
             <a href="Azd-Settings-Configuration.topic" anchor="pipeline-settings">Pipeline Settings</a>
-            <a href="Azd-FAQ.topic" anchor="lsp-nodejs">The language server does not start</a>
+            <a href="Azd-FAQ.topic" anchor="lsp-nodejs">Pipeline YAML has no completion</a>
         </category>
         <category ref="external">
             <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/">YAML schema reference (Microsoft Learn)</a>

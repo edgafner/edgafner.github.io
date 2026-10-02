@@ -21,6 +21,14 @@
     </p>
 
     <chapter title="AZD 2026.3" id="azd-2026-3">
+        <chapter title="IDE support" id="platform-support">
+            <p>
+                AZD 2026.3 runs only on JetBrains IDEs 2026.3 (build 263).
+                The latest release, 2026.3.6, needs build 263.5153 or later.
+                IDEs 2026.2 stay on AZD 2026.2.23, the final release for that IDE version.
+            </p>
+        </chapter>
+
         <chapter title="Pull request review" id="pr-review-improvements">
             <p>AZD 2026.3.6 makes the state of a pull request easier to read in the <a href="Pull-Request-Details.topic">details panel</a>:</p>
             <list>
@@ -34,13 +42,6 @@
             <p>
                 Fixes in this release: linking a work item reports failures, a newly opened pull request is no longer listed as unmergeable,
                 and refreshing pull requests, pipelines or boards no longer crashes on recent 2026.3 builds.
-            </p>
-        </chapter>
-
-        <chapter title="IDE support" id="platform-support">
-            <p>
-                AZD 2026.3 requires IntelliJ-based IDEs 2026.3 (build 263) or later.
-                IDEs 2026.2 stay on AZD 2026.2.23, the final release for that IDE version.
             </p>
         </chapter>
     </chapter>
@@ -61,7 +62,7 @@
                 <a href="Azd-Pipeline-Metrics.topic"/>.</li>
             <li><b>Default AI provider notice:</b> a notification at startup explains that AI features use the built-in AZD cloud provider by default,
                 with a link to the AI settings.</li>
-            <li><b>Optional task integration:</b> AZD loads without the Task Management plugin, which is no longer bundled with every IDE.
+            <li><b>Optional task integration:</b> AZD loads without the Issue Trackers plugin (formerly Task Management), which is no longer bundled with every IDE.
                 Only the <a href="Azd-Boards.topic" anchor="tasks-integration">task server integration</a> needs it.</li>
         </list>
         <p>
@@ -103,7 +104,6 @@
             <li><b>Corporate proxies:</b> AZD retries requests that a TLS-inspecting proxy interrupts instead of asking for a new token.</li>
             <li><b>Built-in AI provider:</b> the AZD provider uses GPT-5.4 mini and works without setup.</li>
         </list>
-        <!-- planned-image src="azd_boards_kanban.png" alt="Kanban board in the editor with cards in three columns and the project, team and board selectors" -->
 
         <chapter title="Pipeline approvals" id="pipeline-approvals">
             <p>
@@ -117,7 +117,7 @@
         <chapter title="Pipeline test results" id="pipeline-tests">
             <p>
                 The <control>Tests</control> tab shows a summary of the run's tests and sorts them by name or duration.
-                Link automated tests to Azure DevOps test cases from the context menu.
+                Associate automated tests with Azure DevOps test cases from the context menu.
                 See <a href="Azd-Pipeline-Tests.topic"/>.
             </p>
             <img src="pipeline_test_results_v2.png"

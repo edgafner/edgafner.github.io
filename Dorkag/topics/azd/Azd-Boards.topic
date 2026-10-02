@@ -27,11 +27,11 @@
         <procedure title="Filter and sort work items" id="filter-work-items">
             <step>
                 <p>Open the <control>AZD Boards</control> tool window.</p>
-                <!-- planned-image src="azd_boards_list.png" alt="AZD Boards tool window listing work items with the Assigned to me quick filter" -->
             </step>
             <step>
                 <p>Click the filter icon and select a quick filter: <control>All</control>, <control>Assigned to me</control>
                     or <control>Recent activity</control> (the default).</p>
+                <!-- planned-image src="azd_boards_list.png" alt="AZD Boards tool window listing work items with the Assigned to me quick filter" -->
             </step>
             <step>
                 <p>Narrow the list with the filter chips: <control>Types</control>, <control>States</control>, <control>Created by</control>,
@@ -40,7 +40,8 @@
             </step>
             <step>
                 <p>To change the order, click the sort icon and select <control>Default (newest first)</control>, <control>Changed Date</control>,
-                    <control>ID</control> or <control>Priority</control>. Select <control>Descending</control> to reverse it.</p>
+                    <control>ID</control> or <control>Priority</control>.
+                    Select <control>Descending</control> to reverse it.</p>
             </step>
         </procedure>
         <p>
@@ -76,7 +77,7 @@
     </chapter>
 
     <chapter title="Create a work item" id="create-work-item">
-        <procedure title="Create a work item" id="create-work-item-procedure">
+        <procedure title="Create a work item" id="create-work-item-procedure" hide-from-structure="true">
             <step>
                 <p>In the <control>AZD Boards</control> title bar, click <control>New Work Item</control>.</p>
             </step>
@@ -117,7 +118,10 @@
                     In each filter popup, <control>All</control> and <control>Clear</control> select or clear every value.</p>
             </step>
         </procedure>
-        <p>Drag a card to another column to change its state. Click <control>Refresh</control> to reload the board.</p>
+        <p>
+            Drag a card to another column to change its state.
+            Click <control>Refresh</control> to reload the board.
+        </p>
         <p>Right-click a card for more actions:</p>
         <!-- planned-image src="azd_boards_card_menu.png" alt="Context menu of a Kanban card with Open, Move to column, Edit title and Delete" -->
         <deflist type="medium">
@@ -135,8 +139,9 @@
     <chapter title="Add work items to a commit message" id="work-item-commit-template">
         <p>
             Reference work items in a commit message, from a template or with AI.
-            The AZD button appears in the commit message toolbar when AI assistance and the commit message prompt are enabled in
-            <a href="Azd-AI.topic">AI settings</a>.
+            The AZD button (the AZD logo) appears in the commit message toolbar when <control>Enable AI assistance</control> is selected
+            and the <control>Commit message prompt</control> is enabled in <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>;
+            see <a href="Azd-AI.topic" anchor="configure-prompts">Configure prompts</a>.
             The work item option also needs <control>Enable work item commit message action</control>, which is on by default.
         </p>
         <procedure title="Write a commit message from work items" id="commit-from-work-items">
@@ -164,15 +169,18 @@
             The default template is <code>{id} - {title}</code>; the placeholders are <code>{id}</code>, <code>{title}</code>,
             <code>{type}</code> and <code>{state}</code>.
             <control>Max work items per commit</control> limits the selection (5 by default).
+            These settings also control which work items you can link to a pull request or commit; see
+            <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Boards and Work Items settings</a>.
         </p>
+        <!-- planned-image src="azd_settings_boards.png" alt="AZD Boards and Work Items settings page with the Commit Message Template group" -->
         <p>To generate a commit message from your changes only, see <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>.</p>
     </chapter>
 
     <chapter title="Use work items as IDE tasks" id="tasks-integration">
         <p>
-            With the Task Management plugin, you can open Azure DevOps work items as IDE tasks and switch context between them.
+            With the Issue Trackers plugin (formerly Task Management), you can open Azure DevOps work items as IDE tasks and switch context between them.
             AZD adds an <control>AzureDevOps</control> server type to it.
-            The Task Management plugin is not bundled with every IDE; install it from JetBrains Marketplace if your IDE lacks it.
+            The Issue Trackers plugin is not bundled with every IDE; install it from JetBrains Marketplace if your IDE lacks it.
         </p>
         <procedure title="Add Azure DevOps as a task server" id="add-task-server">
             <step>
@@ -189,15 +197,6 @@
                 <p>Click <control>OK</control>.</p>
             </step>
         </procedure>
-    </chapter>
-
-    <chapter title="Work item settings" id="work-item-settings">
-        <p>
-            <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path> also controls which work items appear when you link work items
-            to a pull request or a commit.
-            See <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Boards and Work Items settings</a>.
-        </p>
-        <!-- planned-image src="azd_settings_boards.png" alt="AZD Boards and Work Items settings page with the Commit Message Template group" -->
     </chapter>
 
     <seealso>

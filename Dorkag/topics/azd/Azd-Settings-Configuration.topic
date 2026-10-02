@@ -59,7 +59,8 @@
             <def title="Accept untrusted SSL certificates">Skips certificate validation for AZD connections only, for networks with a TLS-inspecting proxy. Other IDE connections are not affected. Default: off.</def>
             <def title="Use API-based diff generation (experimental)">Builds pull request diffs from the Azure DevOps API instead of Git. Faster, but binary files may not show correctly. Default: off.</def>
             <def title="Azure CLI (az) path (optional)">The <code>az</code> executable for Azure CLI sign-in. Leave empty to detect it automatically, or click <control>Detect</control>.</def>
-            <def title="Filter subject type">Identity types to include when AZD searches project users, for example for reviewers. Default: <code>msa,aad,win,imp,vss</code>.</def>
+            <def title="Filter subject type">Identity types for user searches.
+                In the current version this field has no effect; AZD always searches <code>msa,aad,win,imp,vss</code>.</def>
             <def title="Share anonymous usage statistics">Sends anonymous usage data that helps improve the plugin. Default: on.</def>
         </deflist>
     </chapter>
@@ -67,7 +68,6 @@
     <chapter title="AI Settings" id="ai-settings">
         <p>
             Path: <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>.
-            The page is titled <control>AI Configuration</control>.
             AI features work without setup: the built-in AZD provider is configured and set as the default.
         </p>
         <deflist type="medium">
@@ -90,18 +90,21 @@
     </chapter>
 
     <chapter title="Boards and Work Items" id="boards-and-work-items">
+        <!-- id boards-and-work-ites: misspelled on purpose; the AZD plugin links to it. Do not rename. -->
         <p id="boards-and-work-ites">Path: <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path></p>
         <!-- planned-image src="azd_settings_boards.png" alt="AZD Boards and Work Items settings page with the Commit Message Template group" -->
         <p>The first options control which work items you can pick when you link work items to a pull request or a commit.</p>
         <deflist type="medium">
-            <def title="Show Work items from all Projects">Lists work items from every project in the organization or collection, not just the project of the repository. Default: off.</def>
+            <def title="Show Work items from all Projects">Lists work items from every project in the organization or collection, not only the project of the repository. Default: off.</def>
             <def title="Limit work items to recent history">Lists only work items changed within the set number of days (0–60). Default: on, 60 days.</def>
             <def title="Enable work item commit message action">Adds <control>Select Work Item...</control> to the AZD commit message button. Default: on.
                 See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</def>
             <def title="Template">The commit message template. Placeholders: <code>{id}</code>, <code>{title}</code>, <code>{type}</code>, <code>{state}</code>. Default: <code>{id} - {title}</code>.</def>
             <def title="Max work items per commit">How many work items you can select for one commit message (1–10). Default: 5.</def>
-            <def title="Advanced, Custom Work Item Query">The WHERE clause of the query that lists work items for linking.
+            <def title="Advanced, Custom Work Item Query">The WHERE clause of the query that lists work items for linking to pull requests and commits.
                 By default it hides work items in the Done, Closed and Removed states.
+                The <control>Select Work Item for Commit Message</control> dialog also applies its own state filter; see
+                <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.
                 Select <control>Use custom WHERE clause</control> to edit it; the text must start with <code>WHERE</code>.</def>
         </deflist>
     </chapter>

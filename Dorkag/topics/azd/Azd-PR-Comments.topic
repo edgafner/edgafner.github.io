@@ -9,31 +9,30 @@
     <show-structure for="chapter,procedure" depth="2"/>
 
     <tldr>
-        <p>Add a comment: hover a line in the pull request diff and click <control>+</control> in the gutter</p>
+        <p>Add a comment: hover over a line in the pull request diff and click <control>+</control> in the gutter</p>
         <p>Next and previous comment: <shortcut>Ctrl+Alt+Down</shortcut> and <shortcut>Ctrl+Alt+Up</shortcut> (the <control>Next Occurrence</control> and <control>Previous Occurrence</control> shortcuts)</p>
         <p>Publish drafts: <control>Submit Comments</control> on the diff toolbar</p>
     </tldr>
 
     <link-summary>Comment on lines and on the whole pull request, work with drafts, reply and resolve threads, mention people, attach files and suggest code changes.</link-summary>
     <card-summary>Comment on code, collect drafts, resolve threads and apply suggested changes in an Azure DevOps pull request.</card-summary>
-    <web-summary>Comment on Azure DevOps pull requests in JetBrains IDEs with AZD: line and multi-line comments,
-        drafts, thread status, mentions, attachments and suggested changes.</web-summary>
+    <web-summary>Comment on Azure DevOps pull requests in JetBrains IDEs with AZD: line comments, drafts, thread
+        status, mentions, attachments and suggested changes.</web-summary>
 
     <p>
-        AZD posts comments to Azure DevOps as you write them, or keeps them as drafts until you submit them together.
+        AZD posts a comment to Azure DevOps when you add it, or keeps it as a draft until you submit all drafts together.
         Open the diff of a file first; see <a href="Pull-Request-Details.topic" anchor="diff-viewer"/>.
     </p>
 
     <chapter title="Comment on code" id="azd_comment">
         <procedure title="Add a comment to a line or a block" id="add-line-comment">
             <step>
-                In the diff of the pull request, hover a line and click <control>+</control> in the gutter.
-                To comment on several lines, select them first.
+                In the diff of the pull request, hover over a line, or select several lines, and click <control>+</control> in the gutter.
             </step>
             <step>
                 Type the comment.
                 The editor toolbar offers <control>Polish Grammar and Spelling with AI</control>, <control>Attach File</control>,
-                <control>Insert Suggestion with Selected Lines</control> and an AI review button.
+                <control>Insert Suggestion with Selected Lines</control> and the AI button (<control>Generate AI code review for this change</control>).
             </step>
             <step>
                 Click <control>Add Comment</control> to post it now.
@@ -70,7 +69,7 @@
                 <!-- planned-image src="azd_pr_diff_toolbar.png" alt="Diff toolbar with Previous Comment, Next Comment, Refresh Review Data, the AI button and Submit Comments (2)" -->
             </step>
             <step>
-                In the <control>Submit Review</control> popup, optionally enter a summary comment, and submit.
+                In the <control>Submit Review</control> popup, optionally enter a summary comment and click <control>Submit Comments</control>.
                 To delete all drafts instead, click <control>Discard drafts</control>; this cannot be undone.
                 <!-- planned-image src="azd_pr_submit_review_popup.png" alt="Submit Review popup with 2 pending comments and a summary comment" -->
             </step>
@@ -93,7 +92,8 @@
 
     <chapter title="Mention people, pull requests and work items" id="mentions">
         <p>
-            In comments, in the description of a new pull request and in the <control>Submit Review</control> popup, type a trigger character and pick an item from the completion list:
+            In comments and in the <control>Submit Review</control> popup, type a trigger character and pick an item from the completion list.
+            In the description of a new pull request, only <code>!</code> and <code>#</code> work:
         </p>
         <deflist type="narrow">
             <def title="@">A person or group in the organization.</def>
@@ -160,9 +160,7 @@
     <chapter title="Navigate between comments" id="navigate-comments">
         <p>
             In the diff, click <control>Previous Comment</control> or <control>Next Comment</control> on the toolbar.
-            They use the <control>Previous Occurrence</control> and <control>Next Occurrence</control> shortcuts of your keymap:
-            <shortcut>Ctrl+Alt+Up</shortcut> and <shortcut>Ctrl+Alt+Down</shortcut> on Windows and Linux.
-            To see the macOS keys, search for these actions in <ui-path>Settings | Keymap</ui-path>.
+            For their shortcuts, see <a href="Pull-Request-Details.topic" anchor="diff-viewer"/>.
         </p>
     </chapter>
 

@@ -34,7 +34,7 @@
             <a href="Azure-DevOps-Pipelines.topic" type="cloud"
                summary="Run pipelines, inspect runs, read logs and view the stage diagram">Work with pipelines</a>
             <a href="Azd-Pipeline-Yaml.topic" type="development"
-               summary="Completion and validation for Azure Pipelines YAML files">Edit pipeline YAML</a>
+               summary="Completion and validation for Azure Pipelines YAML files">Edit Azure Pipelines YAML</a>
             <a href="Azd-Boards.topic" type="tools"
                summary="Find, edit and create work items, and use the Kanban board">Boards and work items</a>
             <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" type="learn"

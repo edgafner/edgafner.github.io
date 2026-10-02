@@ -14,24 +14,25 @@
         <p>Own providers: OpenAI, Claude, Gemini or a local Ollama server</p>
     </tldr>
 
-    <link-summary>What the AZD AI assistant does, which data it sends where, and how to configure AI providers and prompts.</link-summary>
+    <link-summary>What the AZD AI assistant does, which data it sends where and how to configure AI providers and prompts.</link-summary>
     <card-summary>Use AI in AZD with the built-in provider or your own OpenAI, Claude, Gemini or Ollama models.</card-summary>
-    <web-summary>The AZD AI assistant for Azure DevOps in JetBrains IDEs: built-in provider, privacy, your own
-        OpenAI, Claude, Gemini or Ollama models, and editable prompts.</web-summary>
+    <web-summary>The AZD AI assistant for Azure DevOps in JetBrains IDEs: built-in provider, privacy,
+        editable prompts and your own OpenAI, Claude, Gemini or Ollama models.</web-summary>
 
     <p>
-        AZD uses AI to write pull request text and commit messages, review pull requests, and explain pipeline logs.
+        AZD uses AI to write pull request text and commit messages, review pull requests and explain pipeline logs.
         It works right after installation with the built-in AZD provider.
         You can add your own providers and edit the prompts.
     </p>
     <deflist type="medium">
         <def title="Write">
-            Pull request titles and descriptions, updated descriptions, and commit messages;
+            Pull request titles and descriptions, updated descriptions and commit messages;
             see <a href="AI-Title-Description-Generation.topic"/>.
         </def>
         <def title="Review">
-            AI Chat about a pull request, the guided AI Auto Review, AI draft comments and comment polishing;
+            AI Chat about a pull request, the guided AI Auto Review and AI draft comments;
             see <a href="AI-Pull-Request-Review.topic"/>.
+            To polish a comment, see <a href="Azd-PR-Comments.topic" anchor="polish-comment"/>.
         </def>
         <def title="Act">
             With MCP tools, AI Chat can read and change work items, pull requests and pipelines;
@@ -86,7 +87,8 @@
             </step>
         </procedure>
         <p>
-            When AI is off, AZD hides the AI generation buttons and the <control>Review with AI</control> menu.
+            When AI is off, AZD hides the AI generation buttons and the <control>Review with AI</control> item of the right-click menus.
+            The <control>Pull Request Actions</control> (⋮) menu still lists <control>Review with AI</control>, but its <control>AI Chat</control> items are disabled.
             The page also has these options:
         </p>
         <deflist type="medium">
@@ -95,8 +97,7 @@
                 Off by default; see <a href="AI-Pull-Request-Review.topic" anchor="mcp-tools"/>.
             </def>
             <def title="Show illustrations in AI review tour">
-                Shows a cover image on the first card of AI Auto Review.
-                Off by default.
+                Shows a cover image on the first card of AI Auto Review; see <a href="AI-Pull-Request-Review.topic" anchor="ai-auto-review"/>.
             </def>
         </deflist>
     </chapter>
@@ -116,7 +117,8 @@
                 In <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>, click <control>+</control> above the <control>AI Providers</control> table.
             </step>
             <step>
-                In the <control>Add AI Provider</control> dialog, select the <control>Provider</control> and the <control>Model</control>, and fill in the other fields.
+                In the <control>Add AI Provider</control> dialog, select the <control>Provider</control> and the <control>Model</control>,
+                and fill in the fields that the provider needs; see <a anchor="ai-provider-fields"/>.
                 <!-- planned-image src="azd_ai_add_provider.png" alt="Add AI Provider dialog with Ollama selected, a model, the default local API URL and the Fetch Models button" -->
             </step>
             <step>
@@ -128,7 +130,7 @@
             </step>
         </procedure>
         <p>The <control>Add AI Provider</control> and <control>Edit AI Provider</control> dialogs have these fields:</p>
-        <deflist type="medium">
+        <deflist type="medium" id="ai-provider-fields">
             <def title="Provider">
                 <control>AZD</control>, <control>OpenAI</control>, <control>Claude</control>, <control>Gemini</control> or <control>Ollama</control>.
             </def>
@@ -157,19 +159,13 @@
         <p>
             To edit, remove or reorder providers, select a row and use the buttons above the table.
         </p>
-        <note>
-            <p>
-                Attaching files and images in AI Chat needs a model that accepts images.
-                The AZD provider is text-only.
-            </p>
-        </note>
     </chapter>
 
     <chapter title="Configure prompts" id="configure-prompts">
         <p>
             Expand <control>Configure Prompts</control> on the <control>AI Settings</control> page.
             Select a prompt on the left to edit its text on the right.
-            Clear the checkbox of a prompt to make it read-only.
+            Clear the checkbox of a prompt to turn off the features that use it; the prompt text then becomes read-only.
         </p>
         <!-- planned-image src="azd_ai_prompts.png" alt="Configure Prompts section with a prompt selected and its text in the editor" -->
         <deflist type="medium">
@@ -188,13 +184,14 @@
                 Clearing the checkbox hides the commit message AI button.
             </def>
             <def title="PR Code Review">
-                A prompt for whole pull request reviews.
-                AI Chat and AI Auto Review use built-in review instructions and do not read this prompt.
+                Not used by the current AI features.
+                AI Chat and AI Auto Review use built-in review instructions.
             </def>
             <def title="Diff Comment Review">
                 The default prompt of the <control>Generate AI Code Review</control> dialog.
                 Placeholder: <code>{diff}</code>.
-                Clearing the checkbox turns off AI Auto Review, the AI draft comments button and the AI button in comment editors.
+                Clearing the checkbox removes AI Auto Review from the right-click menu,
+                and turns off the AI draft comments button and the AI button in comment editors.
             </def>
         </deflist>
         <p>
