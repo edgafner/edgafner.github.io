@@ -49,7 +49,6 @@
     </chapter>
 
     <chapter title="Manage the account in Settings" id="settings-account">
-        <secondary-label ref="jirai_version"/>
         <p>You can also sign in and sign out without opening the tool window.</p>
         <procedure title="Sign in or out from Settings" id="settings-account-proc">
             <step><p>Open <ui-path>Settings | Tools | JirAI</ui-path>.</p></step>
@@ -67,9 +66,14 @@
 
     <chapter title="See the connected site and sign out" id="account-management">
         <p>The tool window's options menu (<control>⋮</control>) shows the connected site and the account you are signed in as, for example <control>demo-org.atlassian.net — Signed in as Alex Doe</control>.</p>
-        <p>Choose <control>Sign Out</control> in the same menu to sign out.</p>
+        <procedure title="Sign out from the tool window" id="sign-out-proc">
+            <step>
+                <p>In the <control>JirAI</control> tool window, click the options menu (<control>⋮</control>).</p>
+                <!-- planned-image src="jirai_gear_menu.png" alt="JirAI tool window options menu with the connected site and Sign Out" -->
+            </step>
+            <step><p>Choose <control>Sign Out</control>.</p></step>
+        </procedure>
         <p>Signing out removes the stored API token.</p>
-        <!-- planned-image src="jirai_gear_menu.png" alt="JirAI tool window options menu with the connected site and Sign Out" -->
         <p>JirAI connects to one site at a time.</p>
         <p>Signing in to another site replaces the current one.</p>
     </chapter>
@@ -78,7 +82,7 @@
         <list>
             <li>
                 <p>The API token is stored in the IDE credential store, which is the operating system keychain or the IDE's KeePass file, depending on the IDE's <control>Passwords</control> setting.</p>
-                <p>The token is never written to an XML file and never sent to the IDE's UI process.</p>
+                <p>The token is never written to an XML file.</p>
             </li>
             <li><p>The site address, your e-mail, display name and account ID are stored without secrets in <path>jira-sites.xml</path> in the IDE configuration directory.</p></li>
             <li><p>Under Remote Development, the token and <path>jira-sites.xml</path> stay on the host.</p></li>
@@ -91,7 +95,7 @@
             <li><p>Under Remote Development, requests run on the host, so the host's proxy settings apply.</p></li>
             <li><p>For an authenticating proxy, JirAI uses the proxy credentials the IDE already has and does not open its own password prompt.</p></li>
             <li><p>When the proxy rejects the credentials, the error names the proxy rather than Jira.</p></li>
-            <li><p>SOCKS proxies are not supported, so requests go directly to Jira.</p></li>
+            <li><p>JirAI does not support SOCKS proxies: when the IDE is set to a SOCKS proxy, JirAI connects to Jira directly, without the proxy, which fails on a network that allows only proxied traffic.</p></li>
             <li><p>Behind an authenticating proxy, user avatars might not load, because they are fetched without credentials.</p></li>
         </list>
         <p>If sign-in through a proxy fails, enter or correct the proxy password in the IDE's <control>HTTP Proxy</control> settings and try again.</p>

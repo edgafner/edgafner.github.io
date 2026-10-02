@@ -28,7 +28,8 @@
 
     <chapter title="Comment on an issue" id="comments">
         <procedure title="Post a comment" id="post-comment-proc">
-            <step><p>Click the <control>Add a comment…</control> field at the bottom of the timeline and type your comment.</p></step>
+            <step><p>Click the <control>Add a comment…</control> field at the bottom of the timeline.</p></step>
+            <step><p>Type your comment.</p></step>
             <step><p>Optional: type <code>@</code> and choose a person to mention them.</p></step>
             <step><p>Optional: click the paperclip to attach files.</p></step>
             <step><p>Click <control>Post</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>).</p></step>
@@ -80,7 +81,7 @@
                 <li>status lozenges and dates</li>
                 <li>column layouts and synced blocks</li>
                 <li>app extensions</li>
-                <li>underline, text colour, subscript and superscript</li>
+                <li>underline, text color, subscript and superscript</li>
                 <li>inline comments</li>
             </list>
             <!-- planned-image src="jirai_description_readonly.png" alt="Description that contains a table, shown as read-only with Open in browser" -->
@@ -88,7 +89,6 @@
     </chapter>
 
     <chapter title="The Breakdown tab" id="breakdown-tab">
-        <secondary-label ref="jirai_version"/>
         <p>The <control>Breakdown</control> tab lists every direct child work item of the issue, sub-tasks included.</p>
         <p>Its title shows the count, for example <control>Breakdown (6)</control>.</p>
         <list>

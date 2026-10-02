@@ -31,6 +31,7 @@
             <def title="Why does the issue list show only issues from the last 365 days?">
                 <p>Every search and filter in the issue list covers issues created in the last 365 days.</p>
                 <p>To open an older issue, type its key, for example <code>DEMO-123</code>, in the search field.</p>
+                <p>See <a href="Work-with-Jira-Issues.topic" anchor="search-and-sort">Search and sort</a>.</p>
             </def>
             <def title="Can I connect to several Jira sites?">
                 <p>No. JirAI connects to one Jira Cloud site at a time; signing in to another site replaces the current one.</p>
@@ -66,15 +67,15 @@
             <def title="Where is my API token stored?">
                 <p>In the IDE credential store, which is the operating system keychain or the IDE's KeePass file.</p>
                 <p>Under Remote Development, it is stored on the host.</p>
+                <p>See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="credential-storage">Where JirAI stores credentials</a>.</p>
             </def>
             <def title="How do I use JirAI behind a corporate proxy?">
                 <p>JirAI uses the proxy in <ui-path>Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy</ui-path>.</p>
-                <p>SOCKS proxies are not supported.</p>
+                <p>SOCKS proxies are not supported: with a SOCKS proxy set, JirAI connects to Jira directly.</p>
                 <p>See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="corporate-proxy">Use JirAI behind a corporate proxy</a>.</p>
             </def>
             <def title="How do I report a problem?">
-                <p>See <a href="JirAI-Reference-and-Support.topic">Support</a>.</p>
-                <p>Include your IDE version, the JirAI version and the relevant part of the IDE log (<ui-path>Help | Show Log in Finder</ui-path> on macOS, <ui-path>Help | Show Log in Explorer</ui-path> on Windows).</p>
+                <p>See <a href="JirAI-Reference-and-Support.topic">Support</a> for where to report it and what to include.</p>
             </def>
         </deflist>
     </chapter>

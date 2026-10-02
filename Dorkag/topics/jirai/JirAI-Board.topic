@@ -39,7 +39,7 @@
     <chapter title="Read the board" id="read-board">
         <p>Each column shows its name and its number of cards, for example <control>(4)</control>.</p>
         <p>Each card shows the issue type icon, the key, the summary, labels and the assignee.</p>
-        <!-- planned-image src="jirai_board_kanban.png" alt="Kanban board tab with columns, cards and a column over its WIP limit" -->
+        <!-- planned-image src="jirai_board_kanban.png" alt="Kanban board tab of a space with columns, cards and a column over its WIP limit" -->
         <list>
             <li><p>When a column has a WIP limit, a column above the maximum reads <control>Over this column's limit of N</control>, and a column below the minimum reads <control>Below this column's minimum of N</control>.</p></li>
             <li><p>A long column shows a <control>+N more</control> footer; click it, or focus it and press <shortcut>Enter</shortcut>, to show the remaining cards.</p></li>
@@ -110,7 +110,7 @@
     </chapter>
 
     <chapter title="Use the board from the keyboard" id="board-keyboard">
-        <table>
+        <table style="header-row">
             <tr><td>Action</td><td>Keys</td></tr>
             <tr><td>Move to the next or previous column</td><td><shortcut>Tab</shortcut>, <shortcut>Shift+Tab</shortcut></td></tr>
             <tr><td>Move between cards</td><td>Arrow keys</td></tr>

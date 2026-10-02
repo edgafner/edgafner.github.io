@@ -42,7 +42,7 @@
             <def title="Assignee">Search for a person, or click <control>Assign to me</control>.</def>
             <def title="Labels, Components, Fix versions">Add or remove values; you can filter the list or type a new label.</def>
             <def title="Due date">Pick a date, or clear it.</def>
-            <def title="Parent">Search all projects by key or summary to choose a new parent, or choose <control>Clear parent</control>.</def>
+            <def title="Parent">Search the issue's project by summary for a work item one level up in the hierarchy, or choose <control>Clear parent</control>.</def>
         </deflist>
         <p>To open the parent work item, click <control>Open ↗</control> beside the <control>Parent</control> field.</p>
     </chapter>
@@ -56,9 +56,12 @@
             </step>
             <step><p>Choose a transition.</p></step>
             <step>
-                <p>If the transition has a screen with fields, such as <control>Resolution</control>, fill them in the dialog that opens and confirm.</p>
-                <p>The confirm button stays disabled while a required field is empty.</p>
+                <p>If the transition has a screen with fields, such as <control>Resolution</control>, fill them in the dialog that opens.</p>
                 <!-- planned-image src="jirai_transition_screen.png" alt="Transition dialog asking for the required Resolution field" -->
+            </step>
+            <step>
+                <p>Click the button named after the transition, for example <control>Done</control>.</p>
+                <p>The button stays disabled while a required field is empty.</p>
             </step>
         </procedure>
         <p>A transition field JirAI cannot edit shows an <control>Open in browser</control> link, so that you can complete the transition in Jira.</p>
@@ -68,7 +71,8 @@
         <list>
             <li><p>To attach files, click the paperclip (<control>Attach files…</control>) and choose the files, or drag files onto the <control>Attachments</control> section.</p></li>
             <li><p>Image attachments show a thumbnail when Jira provides one.</p></li>
-            <li><p>Use the actions on an attachment to download it or delete it; deleting asks for confirmation.</p></li>
+            <li><p>To download an attachment, click the download icon (<control>Download</control>) on its row.</p></li>
+            <li><p>To delete an attachment, click the delete icon (<control>Delete</control>) on its row and confirm; the icon appears only when Jira lets you delete that attachment.</p></li>
         </list>
         <p>On macOS and Windows, JirAI uses the operating system file dialog; on Linux, it uses the IDE file chooser.</p>
         <!-- planned-image src="jirai_attachments_links.png" alt="Attachments section with an image thumbnail, and the Linked issues section" -->
@@ -76,22 +80,21 @@
 
     <chapter title="Issue links" id="issue-links">
         <procedure title="Link two issues" id="link-issue-proc">
-            <step><p>In the <control>Linked issues</control> section, click <control>Add link</control>.</p></step>
-            <step><p>In the <control>Link Issue</control> dialog, choose the <control>Link type:</control>, for example <emphasis>blocks</emphasis> or <emphasis>relates to</emphasis>.</p></step>
-            <step><p>Search for the other issue by key or summary, select it and confirm.</p></step>
+            <step><p>In the <control>Linked issues</control> section, click <control>+</control> (<control>Add link</control>).</p></step>
+            <step><p>In the <control>Link DEMO-123</control> dialog, choose the <control>Link type:</control>, for example <emphasis>blocks</emphasis> or <emphasis>relates to</emphasis>.</p></step>
+            <step><p>In the <control>Search:</control> field, search all projects for the other issue by key or summary, and select it.</p></step>
+            <step><p>Click <control>Link</control>.</p></step>
         </procedure>
-        <p>To remove a link, use <control>Remove link</control> on its row.</p>
+        <p>To remove a link, click the delete icon (<control>Remove link</control>) on its row and confirm.</p>
     </chapter>
 
     <chapter title="Child work items (Breakdown)" id="breakdown-section">
-        <secondary-label ref="jirai_version"/>
         <p>The <control>Breakdown</control> section lists up to five child work items of the issue, sub-tasks included.</p>
         <list>
             <li><p>Click a child to open it in its own details tab.</p></li>
-            <li><p>When there are more children, click <control>+N more ↗</control> or <control>More ↗</control> to open the full list in the <control>Breakdown</control> tab of the editor.</p></li>
+            <li><p>When there are more children, click <control>+N more ↗</control> or <control>More ↗</control> to open the full list in the editor's <a href="Jira-Timeline-and-Description-Editor.topic" anchor="breakdown-tab">Breakdown tab</a>.</p></li>
             <li><p>Click <control>Add child</control> to create a child work item. See <a href="Jira-Create-Issues.topic" anchor="add-child">Create a child work item</a>.</p></li>
         </list>
-        <p>For the full list, see <a href="Jira-Timeline-and-Description-Editor.topic" anchor="breakdown-tab">The Breakdown tab</a>.</p>
     </chapter>
 
     <chapter title="Refresh the details" id="details-refresh">

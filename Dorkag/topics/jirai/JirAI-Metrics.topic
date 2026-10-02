@@ -54,7 +54,6 @@
         <p>Search matches the work item key and summary.</p>
 
         <chapter title="Show work items under their parent" id="list-hierarchy">
-            <secondary-label ref="jirai_version"/>
             <p>When no filter is set, the list shows child work items indented under their parent, as a foldable tree.</p>
             <list>
                 <li><p>Click the <control>Show Hierarchy</control> toggle to switch between the tree and a flat list.</p></li>
@@ -90,7 +89,7 @@
         <chapter title="Large spaces" id="large-spaces">
             <p>For a space with more than 10,000 work items, JirAI loads a sample of 10,000.</p>
             <p>Choose which part to keep in <ui-path>Settings | Tools | JirAI | Metrics</ui-path>:</p>
-            <deflist type="medium">
+            <deflist type="medium" id="metrics-sampling-options">
                 <def title="Keep the newest work items (recent weeks stay exact)">The default. Recent weeks are complete, and the oldest weeks under-count.</def>
                 <def title="Keep the oldest work items (long-running work stays visible)">Long-running work stays in the sample, and recent weeks under-count.</def>
             </deflist>

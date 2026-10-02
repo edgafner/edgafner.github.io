@@ -64,7 +64,6 @@
     </chapter>
 
     <chapter title="Create a child work item" id="add-child">
-        <secondary-label ref="jirai_version"/>
         <p>Use <control>Add child</control> to create a work item under an existing issue.</p>
         <procedure title="Add a child work item" id="add-child-proc">
             <step>
@@ -75,7 +74,9 @@
                 <p>The Create form opens with the parent already filled in.</p>
                 <!-- planned-image src="jirai_add_child.png" alt="Create form opened from Add child with the parent filled in" -->
             </step>
-            <step><p>Choose the issue type, fill in the fields and click <control>Create</control>.</p></step>
+            <step><p>Choose the issue type.</p></step>
+            <step><p>Fill in the fields.</p></step>
+            <step><p>Click <control>Create</control>.</p></step>
         </procedure>
         <list>
             <li><p>When only one issue type can sit under the parent, JirAI picks it for you.</p></li>

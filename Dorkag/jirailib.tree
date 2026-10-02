@@ -14,14 +14,14 @@
             <toc-element topic="Work-with-Jira-Issues.topic" toc-title="Work with issues" id="toc_jirai_issues"/>
             <toc-element topic="Jira-Create-Issues.topic" toc-title="Create issues" id="toc_jirai_create"/>
             <toc-element topic="Jira-Issue-Details-and-Editing.topic" toc-title="Issue details" id="toc_jirai_details"/>
-            <toc-element topic="Jira-Field-Visibility.topic" toc-title="Field visibility" id="toc_jirai_fields"/>
+            <toc-element topic="Jira-Field-Visibility.topic" toc-title="Hide custom fields" id="toc_jirai_fields"/>
             <toc-element topic="Jira-Timeline-and-Description-Editor.topic" toc-title="Timeline and breakdown" id="toc_jirai_timeline"/>
             <toc-element topic="JirAI-Metrics.topic" toc-title="Spaces" id="toc_jirai_metrics"/>
             <toc-element topic="JirAI-Board.topic" toc-title="Board" id="toc_jirai_board"/>
             <toc-element topic="JirAI-AI-Workflows.topic" toc-title="Push Markdown docs" id="toc_jirai_ai_workflows"/>
             <toc-element topic="JirAI-Agent-Tools.topic" toc-title="Agent tools" id="toc_jirai_agent_tools"/>
             <toc-element topic="JirAI-Settings-Reference.topic" toc-title="Settings reference" id="toc_jirai_settings"/>
-            <toc-element topic="JirAI-Remote-Development-and-Architecture.topic" toc-title="Remote development" id="toc_jirai_remotedev"/>
+            <toc-element topic="JirAI-Remote-Development-and-Architecture.topic" toc-title="Remote Development and privacy" id="toc_jirai_remotedev"/>
             <toc-element topic="JirAI-FAQ.topic" toc-title="FAQ" id="toc_jirai_faq"/>
             <toc-element topic="JirAI-Reference-and-Support.topic" toc-title="Support" id="toc_jirai_support"/>
         </toc-element>

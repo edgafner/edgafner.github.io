@@ -5,7 +5,6 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="JirAI" id="JirAI">
 
-    <primary-label ref="jirai"/>
 
     <link-summary>Documentation for JirAI, the Jira Cloud plugin for JetBrains IDEs.</link-summary>
     <card-summary>Browse, create, edit and plan Jira Cloud work from your JetBrains IDE.</card-summary>
@@ -20,7 +19,7 @@
 
         <spotlight>
             <a href="JirAI-Installation.topic" type="start" summary="Install the plugin, start the 7-day trial and check the requirements.">Install JirAI</a>
-            <a href="JirAI-Whats-New.topic" type="learn" summary="Boards, breakdown, agent tools and other recent additions.">What's new</a>
+            <a href="JirAI-Whats-New.topic" type="learn" summary="Highlights of each JirAI release, newest first.">What's new</a>
         </spotlight>
 
         <primary>

@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="JirAI: Remote development and privacy" id="JirAI-Remote-Development-and-Architecture">
+       title="JirAI: Remote Development and privacy" id="JirAI-Remote-Development-and-Architecture">
 
     <primary-label ref="jirai"/>
     <show-structure for="chapter" depth="2"/>
@@ -12,18 +12,12 @@
     <card-summary>How JirAI splits work between client and host, and what data it sends and stores.</card-summary>
     <web-summary>How JirAI for Jira Cloud runs in JetBrains IDEs under Remote Development and split mode, where credentials live, and what it sends over the network.</web-summary>
 
-    <p>JirAI is built for Remote Development: its UI runs in JetBrains Client, while Jira requests and credentials stay on the host.</p>
+    <p>JirAI supports Remote Development: the UI runs in JetBrains Client, while Jira requests and credentials stay on the host.</p>
 
-    <chapter title="Modules" id="architecture">
-        <p>JirAI consists of four modules:</p>
+    <chapter title="What runs where" id="architecture">
         <deflist type="medium">
-            <def title="Jira.frontend">The UI: tool window, dialogs, editors and settings pages. Under Remote Development, it runs in the client and never handles the API token in plain text.</def>
-            <def title="Jira.backend">Jira requests, credentials, proxy handling and caches. Under Remote Development, it runs on the host.</def>
-            <def title="Jira.shared">The data types and RPC interfaces that connect the frontend and the backend.</def>
-            <def title="Jira.mcp">
-                <p>The agent tools for AI assistants.</p>
-                <p>It depends on the bundled <control>MCP Server</control> plugin, so disabling that plugin removes only the agent tools.</p>
-            </def>
+            <def title="Client">The <control>JirAI</control> tool window, dialogs, editors and settings pages.</def>
+            <def title="Host">Jira requests, credentials, proxy handling and caches.</def>
         </deflist>
     </chapter>
 

@@ -20,6 +20,7 @@
 
     <p>The <control>JirAI</control> tool window lists your Jira issues next to your code.</p>
     <p>Use it to find an issue, open its details and timeline, and run common actions on it.</p>
+    <p>In JirAI, <emphasis>issue</emphasis> and <emphasis>work item</emphasis> mean the same thing: Jira Cloud calls issues work items in its newer screens, and some JirAI views use that term too.</p>
 
     <chapter title="The JirAI tool window" id="tool-window">
         <p>The <control>JirAI</control> tool window opens on the left side of the IDE.</p>

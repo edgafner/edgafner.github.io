@@ -9,8 +9,8 @@
     <show-structure for="chapter" depth="2"/>
 
     <link-summary>Highlights of each JirAI release, newest first.</link-summary>
-    <card-summary>Boards, breakdown, agent tools, house standard and other recent JirAI additions.</card-summary>
-    <web-summary>What's new in JirAI for JetBrains IDEs: Kanban and Scrum boards, child work items, AI agent tools, house standard rules and account settings.</web-summary>
+    <card-summary>Highlights of each JirAI release, newest first.</card-summary>
+    <web-summary>Release highlights of JirAI, the Jira Cloud plugin for JetBrains IDEs, newest release first.</web-summary>
 
     <p>This page lists the user-visible changes in each JirAI release, newest first.</p>
     <p>The full change log is on the <a href="https://plugins.jetbrains.com/plugin/33954-jirai/versions">JetBrains Marketplace versions page</a>.</p>
@@ -30,8 +30,8 @@
                 <p>A screen reader announces each card and column.</p>
             </li>
         </list>
-        <p>See <a href="JirAI-Board.topic">Board</a>.</p>
         <!-- planned-image src="jirai_board_kanban.png" alt="Kanban board tab of a space with columns, cards and a column over its WIP limit" -->
+        <p>See <a href="JirAI-Board.topic">Board</a>.</p>
     </chapter>
 
     <chapter title="2026.3.15" id="release-2026-3-15">
@@ -43,7 +43,7 @@
             </li>
             <li><p>A one-time notification points you to the IDE's MCP server setting when the server is off, so that the JirAI agent tools become visible to your assistant.</p></li>
             <li><p><control>Open ↗</control> beside the <control>Parent</control> field opens the parent work item, and the <control>Breakdown</control> tab links to the parent.</p></li>
-            <li><p><control>Add child</control> flags work types that cannot sit under the parent, picks the type when only one fits and tells you when you cannot create in the parent's project.</p></li>
+            <li><p><control>Add child</control> flags issue types that cannot sit under the parent, picks the type when only one fits and tells you when you cannot create in the parent's project.</p></li>
             <li><p>Fixes for the <control>Breakdown</control> list and the <control>List</control> tab of a space: the list keeps its position and selection when you fold, edit or refresh.</p></li>
         </list>
     </chapter>

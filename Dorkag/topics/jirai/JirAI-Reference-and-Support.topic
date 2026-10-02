@@ -15,19 +15,15 @@
 
     <include from="common-support.topic" element-id="support-content"/>
 
-    <chapter title="What to include in a report" id="feature-requests">
+    <chapter title="JirAI details to add to a report" id="feature-requests">
         <list>
-            <li><p>Your IDE name and version, from <ui-path>Help | About</ui-path>.</p></li>
-            <li><p>The JirAI version, from <ui-path>Settings | Plugins</ui-path>.</p></li>
             <li><p>Whether you use Remote Development.</p></li>
-            <li><p>The steps that lead to the problem, and what you expected instead.</p></li>
-            <li><p>The relevant part of the IDE log: <ui-path>Help | Show Log in Finder</ui-path> on macOS, or <ui-path>Help | Show Log in Explorer</ui-path> on Windows.</p></li>
+            <li><p>Never include your API token.</p></li>
         </list>
-        <p>Never include your API token.</p>
     </chapter>
 
     <chapter title="Licensing questions" id="contact">
-        <p>For questions about licenses, write to <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a>.</p>
+        <p>For questions about a JirAI license, use the e-mail address in the <emphasis>Contact</emphasis> section above.</p>
     </chapter>
 
     <chapter title="Terms and privacy" id="legal">
@@ -46,7 +42,6 @@
             <a href="https://plugins.jetbrains.com/plugin/33954-jirai">JirAI on JetBrains Marketplace</a>
             <a href="https://plugins.jetbrains.com/plugin/33954-jirai/reviews">JirAI reviews on JetBrains Marketplace</a>
             <a href="https://github.com/edgafner/dorkag/issues">DORKAG issue tracker</a>
-            <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian API tokens</a>
         </category>
     </seealso>
 </topic>

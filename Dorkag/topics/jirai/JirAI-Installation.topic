@@ -22,7 +22,7 @@
 
     <chapter title="Requirements" id="requirements">
         <list>
-            <li><p>The current version requires IntelliJ-based IDEs 2026.3 (build 263) or later.</p></li>
+            <li><p>The current version requires a JetBrains IDE 2026.3 (build 263) or later.</p></li>
             <li>
                 <p>A Jira Cloud site, for example <code>https://demo-org.atlassian.net</code>.</p>
                 <p>Jira Server and Jira Data Center are not supported.</p>
@@ -36,8 +36,10 @@
             <tab title="In the IDE" id="install-ide">
                 <procedure title="Install JirAI from the IDE" id="install-from-ide-proc">
                     <step><p>Open the <control>Settings</control> dialog: <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>).</p></step>
-                    <step><p>Select <control>Plugins</control> and open the <control>Marketplace</control> tab.</p></step>
-                    <step><p>Search for <control>JirAI</control> and click <control>Install</control>.</p></step>
+                    <step><p>Select <control>Plugins</control>.</p></step>
+                    <step><p>Open the <control>Marketplace</control> tab.</p></step>
+                    <step><p>Search for JirAI.</p></step>
+                    <step><p>Click <control>Install</control>.</p></step>
                     <step><p>Restart the IDE when prompted.</p></step>
                 </procedure>
             </tab>
@@ -45,14 +47,17 @@
                 <procedure title="Install JirAI from the website" id="install-from-web-proc">
                     <step><p>Open the <a href="https://plugins.jetbrains.com/plugin/33954-jirai">JirAI page on JetBrains Marketplace</a>.</p></step>
                     <step><p>Click <control>Install to…</control> and choose the running IDE.</p></step>
-                    <step><p>Confirm the installation in the IDE and restart it when prompted.</p></step>
+                    <step><p>In the IDE, confirm the installation.</p></step>
+                    <step><p>Restart the IDE when prompted.</p></step>
                 </procedure>
             </tab>
             <tab title="From disk" id="install-disk">
                 <procedure title="Install JirAI from a ZIP archive" id="install-from-disk-proc">
                     <step><p>Download the plugin ZIP archive from the <a href="https://plugins.jetbrains.com/plugin/33954-jirai/versions">JirAI versions page</a>.</p></step>
-                    <step><p>In <ui-path>Settings | Plugins</ui-path>, click the gear icon and choose <control>Install Plugin from Disk…</control>.</p></step>
-                    <step><p>Select the ZIP archive and restart the IDE.</p></step>
+                    <step><p>In <ui-path>Settings | Plugins</ui-path>, click the gear icon.</p></step>
+                    <step><p>Choose <control>Install Plugin from Disk…</control>.</p></step>
+                    <step><p>Select the ZIP archive.</p></step>
+                    <step><p>Restart the IDE when prompted.</p></step>
                 </procedure>
                 <note>
                     <p>Under Remote Development, the IDE synchronizes only plugins that come from JetBrains Marketplace or a custom repository.</p>
@@ -60,7 +65,6 @@
                 </note>
             </tab>
         </tabs>
-        <p>Installing or updating JirAI requires an IDE restart.</p>
     </chapter>
 
     <chapter title="Licensing and free trial" id="licensing-and-trial">

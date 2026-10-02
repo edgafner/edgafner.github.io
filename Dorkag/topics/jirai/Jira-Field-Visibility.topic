@@ -38,7 +38,6 @@
     </chapter>
 
     <chapter title="Hide several fields at once" id="hide-several-fields">
-        <secondary-label ref="jirai_version"/>
         <procedure title="Hide several custom fields" id="hide-several-fields-proc">
             <step><p>Right-click the issue details tab, on empty space or on a field name, and choose <control>Hide Fields…</control>.</p></step>
             <step>
@@ -63,7 +62,7 @@
             <step><p>On the <control>Field Visibility</control> page, click <control>+</control>.</p></step>
             <step>
                 <p>In the <control>Add Hidden Field Rule</control> dialog, fill in the fields:</p>
-                <deflist type="medium">
+                <deflist type="medium" id="field-visibility-columns">
                     <def title="Site">The Jira site address, for example <code>https://demo-org.atlassian.net</code>.</def>
                     <def title="Field name">A name shown in the table only.</def>
                     <def title="Field ID">The field ID the rule matches, for example <code>customfield_10020</code>.</def>

@@ -28,10 +28,8 @@
             <li><p>A preset recognizes the kind of document and fills in the project, issue type, labels and components you use for it.</p></li>
             <li><p>A one-line marker links the document to its issue, and JirAI warns you before it overwrites edits someone made in Jira.</p></li>
         </list>
-        <note>
-            <p>JirAI changes your document only to add the link marker.</p>
-            <p>It never truncates, summarizes or attaches a document that is too large for Jira.</p>
-        </note>
+        <p>JirAI changes your document only to add the link marker.</p>
+        <p>It never truncates, summarizes or attaches a document that is too large for Jira.</p>
     </chapter>
 
     <chapter title="Open the Push to Jira dialog" id="push-to-jira">
@@ -42,57 +40,62 @@
             <li><p>JirAI pushes the text currently in the editor, including unsaved changes.</p></li>
         </list>
         <p>The <control>Push to Jira</control> dialog shows the kind of document it recognized, its size as Jira counts it, any conversion warnings and the action that fits the document.</p>
+    </chapter>
 
-        <chapter title="Create an issue from a document" id="push-create">
-            <procedure title="Create an issue from a document" id="push-create-proc">
-                <step><p>Open the document and click <control>Push to Jira</control>.</p></step>
-                <step>
-                    <p>In the dialog, click <control>Create issue…</control>.</p>
-                    <!-- planned-image src="jirai_push_dialog_create.png" alt="Push to Jira dialog for a Superpowers spec with the Create issue button" -->
-                </step>
-                <step>
-                    <p>The Create form opens with the <control>Summary</control> set to the document's first heading and the <control>Description</control> set to the document body.</p>
-                    <p>Check the project, issue type and required fields, and review the description with <control>Preview</control>.</p>
-                </step>
-                <step><p>Click <control>Create</control>.</p></step>
-            </procedure>
-            <p>After the issue is created, JirAI adds a marker as the first line of the document, after the front matter if there is any: <code>&lt;!-- jira: DEMO-123 --&gt;</code>.</p>
-            <p>The marker is a Markdown comment, so it is invisible in rendered Markdown, and you can remove it with one undo step.</p>
-            <!-- planned-image src="jirai_doc_jira_marker.png" alt="First line of a Markdown document holding the Jira link marker" -->
-            <p>If an unsaved Create tab is already open, JirAI asks you to finish or close it first.</p>
-        </chapter>
+    <chapter title="Create an issue from a document" id="push-create">
+        <procedure title="Create an issue from a document" id="push-create-proc">
+            <step><p>Open the document and click <control>Push to Jira</control>.</p></step>
+            <step>
+                <p>In the dialog, click <control>Create issue…</control>.</p>
+                <!-- planned-image src="jirai_push_dialog_create.png" alt="Push to Jira dialog for a Superpowers spec with the Create issue button" -->
+            </step>
+            <step>
+                <p>In the Create form, check the project, the issue type and the required fields.</p>
+                <p>The <control>Summary</control> holds the document's first heading, and the <control>Description</control> holds the document body; to review the description, click <control>Preview</control>.</p>
+            </step>
+            <step><p>Click <control>Create</control>.</p></step>
+        </procedure>
+        <p>After the issue is created, JirAI adds a marker as the first line of the document, after the front matter if there is any: <code>&lt;!-- jira: DEMO-123 --&gt;</code>.</p>
+        <p>The marker is a Markdown comment, so it is invisible in rendered Markdown, and you can remove it with one undo step.</p>
+        <!-- planned-image src="jirai_doc_jira_marker.png" alt="First line of a Markdown document holding the Jira link marker" -->
+        <p>If an unsaved Create tab is already open, JirAI asks you to finish or close it first.</p>
+    </chapter>
 
-        <chapter title="Update a linked issue" id="push-update">
-            <p>When the document has a marker, the dialog offers <control>Update DEMO-123</control> instead of <control>Create issue…</control>.</p>
-            <p>Updating replaces the issue description with the current document.</p>
-        </chapter>
+    <chapter title="Update a linked issue" id="push-update">
+        <p>When the document has a marker, the dialog offers <control>Update DEMO-123</control> instead of <control>Create issue…</control>.</p>
+        <procedure title="Update a linked issue" id="push-update-proc">
+            <step><p>Open the linked document and click <control>Push to Jira</control>.</p></step>
+            <step><p>In the dialog, click <control>Update DEMO-123</control>.</p></step>
+        </procedure>
+        <p>Updating replaces the issue description with the current document.</p>
+        <p>If the dialog shows another state, see <a anchor="push-conflict">When the issue was edited in Jira</a>.</p>
+    </chapter>
 
-        <chapter title="When the issue was edited in Jira" id="push-conflict">
-            <p>Each push stores a fingerprint of the description in a Jira issue property, so the Markdown file does not change.</p>
-            <p>On the next push, JirAI compares the fingerprint with the description Jira holds now.</p>
-            <!-- planned-image src="jirai_push_dialog_edited_in_jira.png" alt="Push to Jira dialog warning that the issue was edited in Jira since the last push" -->
-            <table style="header-row" border="true">
-                <tr><td>Dialog state</td><td>What it means</td><td>Your options</td></tr>
-                <tr><td>Update DEMO-123</td><td>The issue has not changed since your last push.</td><td><control>Update DEMO-123</control>, <control>Cancel</control></td></tr>
-                <tr><td>Edited in Jira</td><td>The issue changed in Jira since your last push, and updating replaces those edits.</td><td><control>Open in browser</control>, <control>Overwrite</control>, <control>Cancel</control></td></tr>
-                <tr><td>No record of a push</td><td>The document is linked, but JirAI has no record of pushing it, so it cannot tell whether the issue was edited.</td><td><control>Open in browser</control>, <control>Update anyway</control>, <control>Cancel</control></td></tr>
-                <tr><td>Issue missing</td><td>The linked issue does not exist, or you cannot see it.</td><td><control>Link a different issue…</control>, <control>Cancel</control></td></tr>
-                <tr><td>Several markers</td><td>The document links to more than one issue.</td><td>Keep one marker line and push again.</td></tr>
-            </table>
-            <p>JirAI never creates a second issue for a linked document on its own.</p>
-            <p>The check detects an edit made in Jira between two of your pushes; it is not a lock.</p>
-        </chapter>
+    <chapter title="When the issue was edited in Jira" id="push-conflict">
+        <p>Each push stores a fingerprint of the description in a Jira issue property, so the Markdown file does not change.</p>
+        <p>On the next push, JirAI compares the fingerprint with the description Jira holds now.</p>
+        <!-- planned-image src="jirai_push_dialog_edited_in_jira.png" alt="Push to Jira dialog warning that the issue was edited in Jira since the last push" -->
+        <table style="header-row" border="true">
+            <tr><td>Dialog state</td><td>What it means</td><td>Your options</td></tr>
+            <tr><td>Update DEMO-123</td><td>The issue has not changed since your last push.</td><td><control>Update DEMO-123</control>, <control>Cancel</control></td></tr>
+            <tr><td>Edited in Jira</td><td>The issue changed in Jira since your last push, and updating replaces those edits.</td><td><control>Open in browser</control>, <control>Overwrite</control>, <control>Cancel</control></td></tr>
+            <tr><td>No record of a push</td><td>The document is linked, but JirAI has no record of pushing it, so it cannot tell whether the issue was edited.</td><td><control>Open in browser</control>, <control>Update anyway</control>, <control>Cancel</control></td></tr>
+            <tr><td>Issue missing</td><td>The linked issue does not exist, or you cannot see it.</td><td><control>Link a different issue…</control>, <control>Cancel</control></td></tr>
+            <tr><td>Several markers</td><td>The document links to more than one issue.</td><td>Keep one marker line and push again.</td></tr>
+        </table>
+        <p>JirAI never creates a second issue for a linked document on its own.</p>
+        <p>The check detects an edit made in Jira between two of your pushes; it is not a lock.</p>
+    </chapter>
 
-        <chapter title="Documents that are too big" id="push-too-big">
-            <p>Jira limits a description to 32,767 characters, and long specs and plans can exceed it.</p>
-            <list>
-                <li><p>The dialog reads <control>About N of 32,767 characters as Jira counts them</control> and lists the largest sections.</p></li>
-                <li><p><control>Create issue…</control> and <control>Update</control> stay disabled until the document fits.</p></li>
-                <li><p>If Jira rejects a document that the estimate accepted, JirAI shows the same message.</p></li>
-            </list>
-            <p>Shorten the document, or split it into several documents.</p>
-            <!-- planned-image src="jirai_push_dialog_too_big.png" alt="Push to Jira dialog reporting a document over Jira's size limit with its largest sections" -->
-        </chapter>
+    <chapter title="Documents that are too big" id="push-too-big">
+        <p>Jira limits a description to 32,767 characters, and long specs and plans can exceed it.</p>
+        <list>
+            <li><p>The dialog reads <control>About N of 32,767 characters as Jira counts them</control> and lists the largest sections.</p></li>
+            <li><p>The dialog offers no <control>Create issue…</control>, <control>Update</control>, <control>Overwrite</control> or <control>Update anyway</control> button until the document fits.</p></li>
+            <li><p>If Jira rejects a document that the estimate accepted, the dialog reads <control>Jira says this doc is too long as Jira counts it — shorten or split.</control> and offers no write button.</p></li>
+        </list>
+        <p>Shorten the document, or split it into several documents.</p>
+        <!-- planned-image src="jirai_push_dialog_too_big.png" alt="Push to Jira dialog reporting a document over Jira's size limit with its largest sections" -->
     </chapter>
 
     <chapter title="Doc presets" id="doc-presets">
@@ -124,7 +127,7 @@
         <chapter title="Configure presets in Settings" id="presets-settings">
             <p>Open <ui-path>Settings | Tools | JirAI | Doc Push</ui-path> to change what JirAI does for each kind of document.</p>
             <!-- planned-image src="jirai_settings_doc_push.png" alt="Doc Push settings with the preset selector and the document kinds table" -->
-            <deflist type="medium">
+            <deflist type="medium" id="doc-push-options">
                 <def title="Preset">Choose <control>Superpowers</control>, <control>spec-kit</control> or <control>None</control>.</def>
                 <def title="Doc kinds table">
                     <p>Lists your own kinds first, then the preset's kinds, with the <control>Kind</control>, <control>Path pattern</control>, <control>Project key</control>, <control>Issue type</control>, <control>Labels</control> and <control>Components</control> columns.</p>
@@ -152,7 +155,7 @@
         <p>The preset and the document path are resolved on the host, so they match the project you opened.</p>
     </chapter>
 
-    <chapter title="Good to know" id="ai-limits">
+    <chapter title="Limitations" id="ai-limits">
         <list>
             <li><p>One document creates one issue: sections of a plan are not split into child issues.</p></li>
             <li><p>Front matter is not sent to Jira and is not mapped to Jira fields; the link marker goes after it.</p></li>

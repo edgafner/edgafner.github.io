@@ -18,12 +18,11 @@
     <card-summary>Give your AI assistant a project's real create screen and your team's issue rules.</card-summary>
     <web-summary>JirAI agent tools let AI assistants in JetBrains IDEs read a Jira Cloud project's create screen and check draft issues against it and your house standard.</web-summary>
 
-    <p>When an AI coding assistant files a Jira issue through a generic Jira API, Jira only complains about missing required fields.</p>
+    <p>When an AI coding assistant files a Jira issue through a generic Jira API, Jira rejects the draft only when a required field is missing.</p>
     <p>Optional fields that your team relies on, such as acceptance criteria, story points or components, stay empty without any error.</p>
     <p>JirAI gives the assistant two tools through the IDE's MCP server, so that it can see the real create screen and check a draft before it files anything.</p>
 
     <chapter title="What the tools do" id="agent-tools">
-        <secondary-label ref="jirai_version"/>
         <deflist type="wide">
             <def title="jirai_describe_target">
                 <p>Takes a project key and an issue type.</p>
@@ -47,11 +46,10 @@
     <chapter title="Turn on the agent tools" id="enable-agent-tools">
         <p>The tools are offered through the IDE's MCP server, which is off by default.</p>
         <procedure title="Make the JirAI tools available to your assistant" id="enable-agent-tools-proc">
+            <p>Before you start, sign in to Jira Cloud in JirAI.</p>
+            <step><p>Open <ui-path>Settings | Tools | MCP Server</ui-path> and select <control>Enable MCP Server</control>.</p></step>
             <step>
-                <p>Open <ui-path>Settings | Tools | MCP Server</ui-path> and select <control>Enable MCP Server</control>.</p>
-                <p>Read and confirm the IDE's consent dialog.</p>
-                <p>It explains what any connected assistant can do in the IDE, which goes beyond JirAI.</p>
-                <!-- planned-image src="jirai_mcp_server_settings.png" alt="MCP Server settings with the server enabled and the JirAI tools in Exposed Tools" -->
+                <p>In the IDE's consent dialog, read what a connected assistant can do in the IDE, which goes beyond JirAI, and confirm.</p>
             </step>
             <step>
                 <p>Under <control>Clients Auto-Configuration</control>, click <control>Auto-Configure</control> for each assistant you use.</p>
@@ -60,6 +58,7 @@
             <step>
                 <p>Check that your assistant offers <code>jirai_describe_target</code> and <code>jirai_validate_draft</code>.</p>
                 <p>If it does not, open <ui-path>Settings | Tools | MCP Server | Exposed Tools</ui-path> and make sure the two tools are enabled.</p>
+                <!-- planned-image src="jirai_mcp_server_settings.png" alt="MCP Server settings with the server enabled and the JirAI tools in Exposed Tools" -->
             </step>
         </procedure>
         <list>
@@ -80,7 +79,6 @@
     </chapter>
 
     <chapter title="Define a house standard" id="house-standard">
-        <secondary-label ref="jirai_version"/>
         <p>A house standard lists what your team expects on an issue beyond what Jira requires.</p>
         <p>When an assistant validates a draft that breaks a rule, it receives a <code>HOUSE_RULE</code> finding.</p>
         <p>House rules never block a create; they inform the assistant, like a review comment.</p>
@@ -89,7 +87,7 @@
             <step><p>Open <ui-path>Settings | Tools | JirAI | House Standard</ui-path>.</p></step>
             <step>
                 <p>Click <control>+</control> to add a row for each rule, and fill in the columns:</p>
-                <deflist type="medium">
+                <deflist type="medium" id="house-standard-columns">
                     <def title="Project">The project key, or <code>*</code> for any project.</def>
                     <def title="Issue type">The issue type, or <code>*</code> for any type.</def>
                     <def title="Rule">The kind of rule: <code>FIELD_SET</code>, <code>DESCRIPTION_HEADING</code> or <code>FIELD_MATCHES</code>.</def>
