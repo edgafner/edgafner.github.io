@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="QueryFlag: Troubleshooting" id="QueryFlag-Troubleshooting">
+
+    <primary-label ref="queryflag"/>
+    <show-structure for="chapter" depth="2"/>
+
+    <tldr>
+        <p>Settings: <ui-path>Settings | Tools | Database | QueryFlag</ui-path></p>
+        <p>Report a bug: <control>Report Exception</control> in the IDE error dialog</p>
+    </tldr>
+
+    <link-summary>Fix common QueryFlag problems: a missing menu, a data source that is not found, validation errors and failing queries.</link-summary>
+    <card-summary>Fix a missing menu, data source errors, validation messages and failing queries.</card-summary>
+    <web-summary>Troubleshoot the QueryFlag plugin in JetBrains IDEs: missing Query Flag in DB menu, DataSource not found, validation errors and SQL syntax errors.</web-summary>
+
+    <p>
+        Find the symptom below and follow the steps to fix it.
+    </p>
+
+    <chapter title="Query Flag in DB is missing from the context menu" id="menu-missing">
+        <p>The editor context menu shows <control>Query Flag in DB</control> only when at least one template can run in the current project.</p>
+        <list>
+            <li>
+                If you have no templates yet, <a href="QueryFlag-Create-Templates.topic">create one</a>.
+            </li>
+            <li>
+                If your templates use a data source of another project, add that data source to this project in the <control>Database</control> tool window,
+                or create a template for a data source of this project.
+            </li>
+            <li>
+                Make sure the Database Tools and SQL plugin and QueryFlag are enabled in <ui-path>Settings | Plugins</ui-path>.
+            </li>
+        </list>
+    </chapter>
+
+    <chapter title="DataSource not found, please check your Databases settings" id="datasource-not-found">
+        <p>
+            The settings list shows this red text for a template whose data source is not available in the current project.
+            This happens when the template belongs to another project, or when the data source was deleted and created again.
+            Templates refer to data sources by ID, so renaming a data source does not cause it.
+        </p>
+        <!-- planned-image src="queryflag_datasource_not_found.png" alt="QueryFlag template whose data source is missing, shown in red" -->
+        <procedure title="Connect the template to a data source" id="fix-datasource">
+            <step>
+                In <ui-path>Settings | Tools | Database | QueryFlag</ui-path>, select the template and click <control>Edit</control>.
+            </step>
+            <step>
+                Select a data source in <control>DataSource</control> and click <control>OK</control>.
+            </step>
+            <step>
+                Click <control>Apply</control>.
+            </step>
+        </procedure>
+        <p>If you use the template in another project, leave it as it is: it works there.</p>
+    </chapter>
+
+    <chapter title="The template dialog does not accept the query" id="validation-errors">
+        <p>When you click <control>OK</control> in the <control>Add a QueryFlag Entry</control> dialog, QueryFlag checks the fields:</p>
+        <deflist type="wide">
+            <def title="QueryFlagName cannot be empty" id="error-name">
+                Enter a <control>Name</control>.
+            </def>
+            <def title="Database cannot be empty" id="error-datasource">
+                Select a <control>DataSource</control>.
+                If the list is empty, add a data source in the <control>Database</control> tool window first.
+            </def>
+            <def title="Database query cannot be empty" id="error-query">
+                Enter a query in <control>QueryFlag with Token</control>.
+            </def>
+            <def title="Database query must contain at least one &lt;QFToken&gt; replacement" id="error-token">
+                Add the token <code>&lt;QUERY_FLAG_TOKEN&gt;</code> to the query.
+                The message says <code>&lt;QFToken&gt;</code>, but the token that QueryFlag replaces is <code>&lt;QUERY_FLAG_TOKEN&gt;</code>.
+            </def>
+        </deflist>
+    </chapter>
+
+    <chapter title="Query with blank text is disable, skipping execution" id="blank-text-warning">
+        <p>
+            You ran a template with an empty selection, or a selection with only spaces.
+            Select the value in the editor and run the template again.
+        </p>
+        <p>
+            QueryFlag also treats the selection as empty in editors that do not show a file, such as the diff viewer.
+            Run the template from an editor tab instead.
+        </p>
+        <p>
+            To run templates with an empty value on purpose, select <control>Allow blank Text</control> in the
+            <a href="QueryFlag-Settings.topic">QueryFlag settings</a>.
+        </p>
+    </chapter>
+
+    <chapter title="The query fails with a syntax error" id="syntax-error">
+        <list>
+            <li>
+                Make sure the template quotes the token where the query needs a string literal, for example
+                <code>WHERE key = '&lt;QUERY_FLAG_TOKEN&gt;'</code>.
+                QueryFlag removes double quotes from the selection and does not add quotes.
+                See <a href="QueryFlag-Create-Templates.topic" anchor="token-rules"/>.
+            </li>
+            <li>
+                If the selected value contains a single quote, the SQL string ends early.
+                Select only the part of the value without the quote.
+            </li>
+            <li>
+                To see the exact query that ran, select <control>Open console editor</control> in the
+                <a href="QueryFlag-Settings.topic">QueryFlag settings</a> and run the template again.
+            </li>
+        </list>
+    </chapter>
+
+    <chapter title="Add Query Flag is missing from the context menu" id="add-query-flag-missing">
+        <p>
+            <control>Add Query Flag</control> appears only in a database query console, and only when you select some text first.
+            To create a template from a query in another file, copy the query into a query console of the data source,
+            or <a href="QueryFlag-Create-Templates.topic" anchor="add-template">add the template in Settings</a>.
+        </p>
+    </chapter>
+
+    <chapter title="The query field highlights the wrong language" id="wrong-highlighting">
+        <p>
+            The query field uses the query language of the data source that is selected when the dialog opens.
+            Save the template, then open it again with <control>Edit</control>: the field now uses the language of the template's data source.
+        </p>
+    </chapter>
+
+    <chapter title="The query does not connect" id="connection">
+        <p>
+            QueryFlag runs the query through the data source of the <control>Database</control> tool window.
+            If the data source cannot connect, for example because its driver files are missing or its credentials are wrong,
+            open the data source properties, click <control>Test Connection</control>, and fix the reported problem.
+        </p>
+    </chapter>
+
+    <chapter title="Report a problem" id="report">
+        <p>
+            If QueryFlag throws an error, the IDE shows it in the error dialog.
+            Click <control>Report Exception</control> to open a prefilled bug report on GitHub with the plugin version, IDE version, operating system and stack trace.
+            Review the report before you submit it.
+        </p>
+        <p>
+            For other problems, see <a href="QueryFlag-Reference-and-Support.topic"/>.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="QueryFlag-Create-Templates.topic"/>
+            <a href="Work-with-QueryFlag.topic"/>
+            <a href="QueryFlag-Settings.topic"/>
+            <a href="QueryFlag-Reference-and-Support.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://www.jetbrains.com/help/idea/managing-data-sources.html">Data sources (IntelliJ IDEA help)</a>
+        </category>
+    </seealso>
+</topic>

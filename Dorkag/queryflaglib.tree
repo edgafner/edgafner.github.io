@@ -8,9 +8,18 @@
 
     <snippet id="queryflagsn.tree">
         <toc-element topic="QueryFlag.topic" id="toc_queryflag_root">
-            <toc-element topic="QueryFlag-Installation.topic" id="toc_queryflag_installation"/>
-            <toc-element topic="Work-with-QueryFlag.topic" id="toc_queryflag_usage"/>
-            <toc-element topic="QueryFlag-Reference-and-Support.topic" id="toc_queryflag_support"/>
+            <toc-element topic="QueryFlag-Installation.topic" id="toc_queryflag_installation"
+                         toc-title="Install and activate"/>
+            <toc-element topic="QueryFlag-Create-Templates.topic" id="toc_queryflag_create_templates"
+                         toc-title="Create query templates"/>
+            <toc-element topic="Work-with-QueryFlag.topic" id="toc_queryflag_usage"
+                         toc-title="Run a query on selected text"/>
+            <toc-element topic="QueryFlag-Settings.topic" id="toc_queryflag_settings"
+                         toc-title="Settings"/>
+            <toc-element topic="QueryFlag-Troubleshooting.topic" id="toc_queryflag_troubleshooting"
+                         toc-title="Troubleshooting"/>
+            <toc-element topic="QueryFlag-Reference-and-Support.topic" id="toc_queryflag_support"
+                         toc-title="Support"/>
         </toc-element>
     </snippet>
 </instance-profile>

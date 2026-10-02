@@ -3,45 +3,101 @@
     SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="QueryFlag Installation" id="QueryFlag-Installation">
+       title="QueryFlag: Install and activate" id="QueryFlag-Installation">
 
   <primary-label ref="queryflag"/>
-    <secondary-label ref="queryflag_version"/>
-  <p>This guide will walk you through the process of installing the <ui-path>QueryFlag</ui-path> plugin.
+  <show-structure for="chapter,procedure" depth="2"/>
+
+  <tldr>
+    <p>Install: <ui-path>Settings | Plugins | Marketplace</ui-path></p>
+    <p>License: <ui-path>Help | Register</ui-path></p>
+    <p>Requires: the Database Tools and SQL plugin</p>
+  </tldr>
+
+  <link-summary>Check the requirements, install QueryFlag from JetBrains Marketplace, and start the trial or activate a license.</link-summary>
+  <card-summary>Check the requirements, install the plugin, and start the trial or activate a license.</card-summary>
+  <web-summary>Install the QueryFlag plugin in JetBrains IDEs from JetBrains Marketplace, check its requirements, and start the 30-day trial or activate a license.</web-summary>
+
+  <p>
+    Install QueryFlag from JetBrains Marketplace, then start the free trial or activate a license.
   </p>
 
+  <chapter title="Before you begin" id="requirements">
+    <list>
+      <li>
+        The current version requires IntelliJ-based IDEs 2026.3 (build 263) or later.
+        For IDE version 2026.2, JetBrains Marketplace offers QueryFlag 2026.2.1.
+      </li>
+      <li>
+        QueryFlag depends on the Database Tools and SQL plugin.
+        Use an IDE that includes it, for example IntelliJ IDEA Ultimate or DataGrip, and make sure the plugin is enabled.
+      </li>
+      <li>
+        To run queries, add at least one data source in the <control>Database</control> tool window.
+        QueryFlag uses your existing data sources and does not store connection credentials.
+      </li>
+    </list>
+  </chapter>
 
-
-  <chapter title="Install the QueryFlag plugin" id="install">
-    <procedure id="QueryFlag-installation">
-      <step><p>Open JetBrains IDE
-      </p>
-        <list type="bullet">
-          <li>
-            <p>Launch your JetBrains IDE and navigate to the
-              <ui-path>Plugins</ui-path>
-              section.
-            </p>
-          </li>
-        </list>
+  <chapter title="Install the plugin" id="install">
+    <procedure title="Install QueryFlag from JetBrains Marketplace" id="QueryFlag-installation">
+      <step>
+        Press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>) to open the <control>Settings</control> dialog,
+        and select <control>Plugins</control>.
       </step>
-      <step><p>Search for QueryFlag Plugin
-      </p>
-        <list type="bullet">
-          <li>
-            <p>Under the plugins' marketplace tab search, type in
-              <ui-path>QueryFlag</ui-path>
-              and click on the
-              <ui-path>Install</ui-path>
-              button.
-            </p>
-          </li>
-          <li><p>Wait for the installation to complete and restart your IDE when prompted.</p>
-          </li>
-        </list>
+      <step>
+        Open the <control>Marketplace</control> tab and type <code>QueryFlag</code> in the search field.
+        <!-- planned-image src="queryflag_install_marketplace.png" alt="Settings dialog, Plugins page, Marketplace tab with QueryFlag in the search results" -->
+      </step>
+      <step>
+        Click <control>Install</control> next to QueryFlag.
+      </step>
+      <step>
+        If the IDE asks for a restart, click <control>Restart IDE</control>.
+      </step>
+    </procedure>
+    <p>
+      JetBrains Marketplace installs the QueryFlag build that matches your IDE version.
+    </p>
+  </chapter>
+
+  <chapter title="Start the trial or activate a license" id="license">
+    <p>
+      QueryFlag is a paid plugin with a 30-day free trial.
+      Start the trial or activate a license in <ui-path>Help | Register</ui-path>.
+    </p>
+    <p>
+      The license terms are on the <a href="https://dorkag.com/services-terms-and-conditions">DORKAG terms and conditions</a> page.
+    </p>
+  </chapter>
+
+  <chapter title="Update the plugin" id="update">
+    <procedure title="Update QueryFlag" id="update-queryflag">
+      <step>
+        Open the <control>Settings</control> dialog and select <control>Plugins</control>.
+      </step>
+      <step>
+        Open the <control>Installed</control> tab, find QueryFlag, and click <control>Update</control> if an update is available.
       </step>
     </procedure>
   </chapter>
 
+  <chapter title="Next steps" id="next-steps">
+    <p>
+      <a href="QueryFlag-Create-Templates.topic">Create a query template</a>, then
+      <a href="Work-with-QueryFlag.topic">run it on selected text</a>.
+    </p>
+  </chapter>
 
+  <seealso>
+    <category ref="related">
+      <a href="QueryFlag-Create-Templates.topic"/>
+      <a href="QueryFlag-Troubleshooting.topic"/>
+    </category>
+    <category ref="external">
+      <a href="https://plugins.jetbrains.com/plugin/18269-queryflag">QueryFlag on JetBrains Marketplace</a>
+      <a href="https://www.jetbrains.com/help/idea/managing-plugins.html">Install plugins (IntelliJ IDEA help)</a>
+      <a href="https://www.jetbrains.com/help/idea/managing-data-sources.html">Data sources (IntelliJ IDEA help)</a>
+    </category>
+  </seealso>
 </topic>
