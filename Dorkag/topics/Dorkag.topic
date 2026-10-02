@@ -12,9 +12,9 @@
     <section-starting-page>
         <title>DORKAG plugins for JetBrains IDEs</title>
         <description>
-            DORKAG plugins bring Azure DevOps, Jira Cloud, Codecov coverage, database query templates and a web browser into your JetBrains IDE.
+            DORKAG is a set of plugins for JetBrains IDEs, built and maintained by Jonathan Gafner.
+            The plugins bring Azure DevOps, Jira Cloud, Codecov coverage, database query templates and a web browser into the IDE.
             AZD, JirAI, Codecov and QueryFlag are paid plugins with a free trial; GBrowser is free and open source.
-            Built and maintained by Jonathan Gafner.
         </description>
 
         <spotlight>
@@ -41,9 +41,11 @@
         <secondary>
             <title>Support and legal</title>
             <a href="https://github.com/edgafner/dorkag/issues/new/choose" type="support"
-               summary="Report a bug or request a feature for any DORKAG plugin. For licensing questions, e-mail jgafner@dorkag.com.">Report a problem</a>
+               summary="Report a bug or request a feature for AZD, JirAI, Codecov or QueryFlag. GBrowser issues go to the GBrowser repository.">Report a problem</a>
+            <a href="mailto:jgafner@dorkag.com" type="support"
+               summary="Licensing questions and anything you do not want to post publicly.">Contact the developer</a>
             <a href="privacy-policy.topic" type="learn"
-               summary="What data the plugins handle, what the AI features send and how long data is kept.">Privacy policy</a>
+               summary="How DORKAG handles data, what AZD's AI features send and how long data is kept.">Privacy policy</a>
             <a href="terms-of-service.topic" type="learn"
                summary="Terms of service and end user license agreement for the DORKAG plugins.">Terms of service</a>
         </secondary>
@@ -68,7 +70,9 @@
                     <a href="https://plugins.jetbrains.com/vendor/jonatha1983"
                        summary="AZD, JirAI, Codecov and QueryFlag on JetBrains Marketplace, with reviews and version history.">Vendor page on JetBrains Marketplace</a>
                     <a href="https://github.com/edgafner/dorkag/issues"
-                       summary="Search known issues and open feature requests for all DORKAG plugins.">GitHub issues</a>
+                       summary="Search known issues and feature requests for AZD, JirAI, Codecov and QueryFlag.">GitHub issues</a>
+                    <a href="https://github.com/edgafner/GBrowser/issues"
+                       summary="Search known issues and feature requests for GBrowser.">GBrowser issues</a>
                     <a href="https://github.com/edgafner/GBrowser"
                        summary="GBrowser source code, licensed under Apache-2.0.">GBrowser source code</a>
                 </group>

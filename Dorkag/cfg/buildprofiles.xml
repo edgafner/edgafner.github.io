@@ -28,46 +28,4 @@
     <sitemap priority="0.35" change-frequency="monthly"/>
     <llms-txt/>
 
-    <build-profile instance="azdlib">
-        <variables>
-            <header-logo>banner.svg</header-logo>
-            <download-page>https://plugins.jetbrains.com/plugin/22319-azd</download-page>
-            <download-title>Install AZD</download-title>
-            <showDownloadButton>true</showDownloadButton>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
-    <build-profile instance="gbrowserlib">
-        <variables>
-            <download-title>Install GBrowser</download-title>
-            <download-page>https://plugins.jetbrains.com/plugin/14458-gbrowser</download-page>
-            <showDownloadButton>true</showDownloadButton>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
-    <build-profile instance="queryflaglib">
-        <variables>
-            <download-title>Install QueryFlag</download-title>
-            <download-page>https://plugins.jetbrains.com/plugin/18269-queryflag</download-page>
-            <showDownloadButton>true</showDownloadButton>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
-    <build-profile instance="codecovlib">
-        <variables>
-            <download-title>Install Codecov</download-title>
-            <download-page>https://plugins.jetbrains.com/plugin/23390-codecov</download-page>
-            <showDownloadButton>true</showDownloadButton>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
-    <build-profile instance="jirailib">
-        <variables>
-            <download-title>Install JirAI</download-title>
-            <download-page>https://plugins.jetbrains.com/plugin/33954-jirai</download-page>
-            <showDownloadButton>true</showDownloadButton>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
-
 </buildprofiles>

@@ -2,47 +2,48 @@
 
 [![Build documentation](https://github.com/edgafner/edgafner.github.io/actions/workflows/build-docs.yml/badge.svg)](https://github.com/edgafner/edgafner.github.io/actions/workflows/build-docs.yml)
 [![Pages](https://img.shields.io/badge/docs-live-brightgreen)](https://edgafner.github.io)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-proprietary-lightgrey.svg)](LICENSE)
 
-> Comprehensive documentation for the DORKAG suite of JetBrains IDE plugins
+> Documentation for the DORKAG plugins for JetBrains IDEs
 
 ## 📚 Documentation
 
 Visit the documentation site: [https://edgafner.github.io](https://edgafner.github.io)
 
-## 🔌 Plugins Suite
+## 🔌 Plugins
 
-### [AZD - Azure DevOps Integration](https://edgafner.github.io/azd.html)
+### [AZD: Azure DevOps](https://edgafner.github.io/azd.html)
 
-Complete Azure DevOps integration for JetBrains IDEs. Manage pull requests, pipelines, and work items without leaving
-your IDE.
+Azure DevOps pull requests, pipelines and boards in JetBrains IDEs.
 
-### [GBrowser - Browser Integration](https://edgafner.github.io/gbrowser.html)
+### [JirAI: Jira Cloud](https://edgafner.github.io/jirai.html)
 
-An embedded web browser inside your JetBrains IDE, with bookmarks, history and DevTools.
+Jira Cloud issues, boards and AI workflows in JetBrains IDEs, with Split Mode and Remote Development support.
 
-### [JirAI - Jira Cloud Integration](https://edgafner.github.io/jirai.html)
+### [Codecov: code coverage](https://edgafner.github.io/codecov.html)
 
-Complete Jira Cloud experience for JetBrains IDEs. Browse, filter, edit issues, and track discussions with native Split Mode and Remote Development support.
+Codecov line coverage and pull request impact in the editor.
 
-### [Codecov - Code Coverage](https://edgafner.github.io/codecov.html)
-
-Visualize and track code coverage directly in your IDE.
-
-### [QueryFlag - Query Management](https://edgafner.github.io/queryflag.html)
+### [QueryFlag: query templates](https://edgafner.github.io/queryflag.html)
 
 Reusable query templates that you run on the text selected in the editor.
 
-## 🚀 Quick Start
+### [GBrowser: web browser](https://edgafner.github.io/gbrowser.html)
 
-### For Plugin Users
+An embedded web browser inside your JetBrains IDE, with bookmarks, history and DevTools.
 
-1. Open your JetBrains IDE (IntelliJ IDEA, WebStorm, PyCharm, etc.)
-2. Go to **Settings/Preferences** → **Plugins**
-3. Search for the plugin name (e.g., "AZD", "GBrowser")
-4. Click **Install** and restart your IDE
+## 🚀 Quick start
 
-### For Contributors
+### For plugin users
+
+1. Open your JetBrains IDE (IntelliJ IDEA, WebStorm, PyCharm and others).
+2. Open **Settings | Plugins** and select the **Marketplace** tab.
+3. Search for the plugin name, for example AZD or GBrowser.
+4. Click **Install**, then restart the IDE if prompted.
+
+AZD, JirAI, Codecov and QueryFlag are paid plugins with a free trial; GBrowser is free.
+
+### For contributors
 
 ```bash
 # Clone the repository
@@ -61,47 +62,54 @@ docker run --rm --platform linux/amd64 -v /tmp/wrs-src:/github/workspace \
 # Result: /tmp/wrs-src/artifacts/webHelpDORKAG2-all.zip and report.json
 ```
 
-## 📖 Documentation Structure
+## 📖 Documentation structure
 
 ```
 Dorkag/
-├── topics/           # Documentation content (.topic XML files)
-│   ├── azd/         # AZD plugin documentation
-│   ├── gbrowser/    # GBrowser plugin documentation
-│   ├── codecov/     # Codecov plugin documentation
-│   ├── queryflag/   # QueryFlag plugin documentation
-│   └── jirai/       # JirAI plugin documentation
-├── images/          # Documentation images and screenshots
-├── writerside.cfg   # Writerside configuration
-└── cfg/            # Build profiles and configuration
+├── topics/                   # Documentation content (.topic XML files)
+│   ├── Dorkag.topic          # Home starting page
+│   ├── common-support.topic  # Shared support snippet (library, never linked)
+│   ├── azd/                  # AZD plugin documentation
+│   ├── jirai/                # JirAI plugin documentation
+│   ├── codecov/              # Codecov plugin documentation
+│   ├── queryflag/            # QueryFlag plugin documentation
+│   └── gbrowser/             # GBrowser plugin documentation
+├── images/                   # All images in one flat folder; unique file names; _dark twin for each new screenshot
+├── *.tree                    # TOC per instance (dorkag.tree includes the five plugin trees)
+├── labels.list               # Plugin and version labels
+├── c.list                    # See also categories
+├── v.list                    # Variables
+├── writerside.cfg            # Writerside configuration
+└── cfg/                      # Build profiles and configuration
 ```
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
+Contributions are welcome:
 
-1. **Report Issues**: Found a bug or have a
-   suggestion? [Open an issue](https://github.com/edgafner/edgafner.github.io/issues)
-2. **Improve Documentation**: Submit a pull request with your improvements
-3. **Add Examples**: Share your use cases and examples
+1. **Report documentation issues**: [open an issue in this repository](https://github.com/edgafner/edgafner.github.io/issues).
+   For plugin bugs, use [edgafner/dorkag](https://github.com/edgafner/dorkag/issues),
+   or [edgafner/GBrowser](https://github.com/edgafner/GBrowser/issues) for GBrowser.
+2. **Improve documentation**: submit a pull request with your improvements.
+3. **Add examples**: share your use cases and examples.
 
-### Documentation Guidelines
+### Documentation guidelines
 
 - Write in clear, concise language
 - Include screenshots for UI-related features
 - Follow the existing Writerside XML structure
 - Test your changes locally before submitting
 
-## 🔧 Technology Stack
+## 🔧 Technology stack
 
-- **Documentation Engine**: [JetBrains Writerside](https://www.jetbrains.com/writerside/)
+- **Documentation engine**: [JetBrains Writerside](https://www.jetbrains.com/writerside/)
 - **Hosting**: GitHub Pages
 - **CI/CD**: GitHub Actions
 - **Format**: XML-based topics with semantic markup
 
-## 📊 Build Status
+## 📊 Build status
 
-The documentation is automatically built and deployed on every push to the main branch. The workflow includes:
+The documentation is built and deployed on every push to the main branch. The workflow includes:
 
 - Building documentation with Writerside
 - Validating content structure
@@ -110,26 +118,27 @@ The documentation is automatically built and deployed on every push to the main 
 
 ## 📝 License
 
-This documentation is licensed under the MIT License. See [LICENSE](LICENSE) file for details.
+Copyright (c) 2023-2026 Dorkag. All rights reserved. See [LICENSE](LICENSE) for details.
 
 ## 🔗 Links
 
-- **Main Plugin Repository**: [github.com/edgafner/dorkag](https://github.com/edgafner/dorkag)
-- **Documentation Site**: [edgafner.github.io](https://edgafner.github.io)
+- **Issue tracker (all plugins except GBrowser)**: [github.com/edgafner/dorkag](https://github.com/edgafner/dorkag/issues)
+- **Documentation site**: [edgafner.github.io](https://edgafner.github.io)
 - **JetBrains Marketplace**: [AZD](https://plugins.jetbrains.com/plugin/22319-azd),
-  [GBrowser](https://plugins.jetbrains.com/plugin/14458-gbrowser),
   [JirAI](https://plugins.jetbrains.com/plugin/33954-jirai),
   [Codecov](https://plugins.jetbrains.com/plugin/23390-codecov),
-  [QueryFlag](https://plugins.jetbrains.com/plugin/18269-queryflag)
+  [QueryFlag](https://plugins.jetbrains.com/plugin/18269-queryflag),
+  [GBrowser](https://plugins.jetbrains.com/plugin/14458-gbrowser)
 
 ## 👥 Support
 
 - **Plugin issues**: [github.com/edgafner/dorkag/issues](https://github.com/edgafner/dorkag/issues)
+  (GBrowser: [github.com/edgafner/GBrowser/issues](https://github.com/edgafner/GBrowser/issues))
 - **Documentation issues**: [github.com/edgafner/edgafner.github.io/issues](https://github.com/edgafner/edgafner.github.io/issues)
 - **Twitter**: [@Jongafner](https://twitter.com/Jongafner)
-- **LinkedIn**: [Connect with us](https://www.linkedin.com/in/jonathan-gafner-3415974b/)
-- **Blue sky**: [Contact us](https://bsky.app/profile/jgafner.bsky.social)
+- **LinkedIn**: [Jonathan Gafner](https://www.linkedin.com/in/jonathan-gafner-3415974b/)
+- **Bluesky**: [@jgafner.bsky.social](https://bsky.app/profile/jgafner.bsky.social)
 
 ---
 
-**Made with ❤️ by DORKAG Team**
+Built and maintained by Jonathan Gafner.

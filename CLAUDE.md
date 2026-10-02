@@ -7,9 +7,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a Writerside documentation site for DORKAG JetBrains IDE plugins hosted on GitHub Pages. The repository contains documentation for multiple JetBrains plugin projects:
 
 - **AZD**: Azure DevOps integration plugin
-- **GBrowser**: Browser integration plugin  
+- **GBrowser**: Web browser in an IDE tool window (free, open source)
 - **Codecov**: Code coverage plugin
-- **QueryFlag**: Query management plugin
+- **QueryFlag**: Query templates run on the selected text
 - **JirAI**: Jira Cloud integration plugin
 
 ## Key Commands
@@ -32,7 +32,7 @@ docker run --rm --platform linux/amd64 -v /tmp/wrs-src:/github/workspace \
 Documentation is automatically deployed to GitHub Pages when pushing to the `main` branch via the GitHub Actions workflow at `.github/workflows/build-docs.yml`.
 
 ### Local Preview
-To preview documentation locally, use the Writerside IDE plugin or the Writerside Docker container.
+To preview documentation locally, use the Writerside IDE plugin. The Docker builder above produces the full site as a zip, plus report.json.
 
 ## Repository Structure
 
@@ -47,10 +47,9 @@ To preview documentation locally, use the Writerside IDE plugin or the Writersid
 - **Topics**: `Dorkag/topics/` - Contains all documentation content in `.topic` XML files
   - Each plugin has its own subdirectory with related topics
   - Topics follow Writerside XML schema for structured documentation
-- **Images**: `Dorkag/images/` - All documentation images organized by plugin
-  - Each plugin has dedicated image directories
-  - Includes screenshots, icons, and diagrams
-  - Writerside resolves images by bare file name, so every file name must be unique across `Dorkag/images/**`
+- **Images**: `Dorkag/images/` holds all images (screenshots, icons, diagrams) in one flat folder, with no per-plugin subfolders
+  - Writerside resolves images by bare file name, so every file name must be unique
+  - Every new screenshot has a `_dark` twin (`name.png` and `name_dark.png`); Writerside switches to it automatically
 
 ### GitHub Actions Workflow
 The `.github/workflows/build-docs.yml` workflow handles:
@@ -70,12 +69,24 @@ The `.github/workflows/build-docs.yml` workflow handles:
 1. Create a new `.topic` file in the appropriate `Dorkag/topics/[plugin]/` directory
 2. Follow the Writerside XML schema for topic structure
 3. Add the topic reference to the corresponding `.tree` file
-4. Place related images in `Dorkag/images/[plugin]/`
+4. Place related images in `Dorkag/images/` with a unique file name
 
 ### Modifying Existing Documentation
 - Edit `.topic` files directly in `Dorkag/topics/`
 - Ensure XML validity according to Writerside DTD
-- Update images in corresponding directories if needed
+- Update images in `Dorkag/images/` if needed
+
+### Writing conventions
+The full rules are in `docs/superpowers/specs/2026-10-02-docs-overhaul-design.md`. The binding ones:
+- Topic titles follow `<Product>: <Sentence-case phrase>` (no second colon, no repeated product name). Plugin start pages use the bare product name.
+- `toc-title` values in `.tree` files are sentence case, without the product prefix. Chapter and procedure titles are sentence case.
+- Every topic has `<link-summary>`, `<card-summary>` and `<web-summary>`.
+- Screenshots that are not captured yet appear as `<!-- planned-image src=... alt=... -->` comments. Keep them.
+- Referenced images: `width` is the pixel width capped at 706, `thumbnail="true"` when the image is wider than 706 px, and `border-effect="rounded"`.
+- Inside `<section-starting-page>`, link entries use `<a href type summary>`.
+- End topics with `<seealso>`, using the `related` and `external` categories from `c.list`.
+- Never link to `common-support.topic`; it is a library topic. Include its `support-content` snippet instead.
+- Document only released versions. Do not present `[Unreleased]` changelog items as available.
 
 ### Build Verification
 The GitHub Actions workflow automatically:
@@ -87,5 +98,5 @@ The GitHub Actions workflow automatically:
 ## Important Notes
 - Documentation is written in Writerside XML format, not Markdown
 - All topics must validate against Writerside DTD schemas
-- Images should be placed in appropriate subdirectories under `Dorkag/images/`
+- Images go in the flat `Dorkag/images/` folder, with unique file names
 - GitHub Pages deployment is automatic on main branch updates
