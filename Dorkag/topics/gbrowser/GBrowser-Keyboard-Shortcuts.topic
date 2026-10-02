@@ -11,14 +11,13 @@
         <p>Change shortcuts: <ui-path>Settings | Keymap</ui-path></p>
     </tldr>
 
-    <link-summary>Default keyboard shortcuts of all GBrowser actions, and how to change them in the IDE keymap.</link-summary>
+    <link-summary>Default keyboard shortcuts of all GBrowser actions on Windows, Linux and macOS, and how to change them in the IDE keymap.</link-summary>
     <card-summary>Default shortcuts for every GBrowser action and how to change them.</card-summary>
-    <web-summary>Default keyboard shortcuts of the GBrowser plugin in JetBrains IDEs, for tabs, navigation, bookmarks and DevTools, and how to reassign them in the keymap.</web-summary>
+    <web-summary>Default keyboard shortcuts of the GBrowser plugin in JetBrains IDEs on Windows, Linux and macOS, for tabs, navigation, bookmarks and DevTools, and how to reassign them in the keymap.</web-summary>
 
     <p>
-        The table lists the default shortcuts that GBrowser defines for Windows and Linux keymaps.
-        macOS keymaps can use other modifier keys.
-        For macOS keymaps, see <a anchor="macos-shortcuts"/>.
+        The first table lists the default shortcuts that GBrowser defines for Windows and Linux keymaps.
+        For the default macOS keymap, see <a anchor="macos-shortcuts"/>.
         To see the shortcut in your current keymap, search for the action name in <ui-path>Settings | Keymap</ui-path>.
     </p>
 
@@ -57,7 +56,7 @@
 
     <chapter title="Default shortcuts on macOS" id="macos-shortcuts">
         <p>
-            For GBrowser actions, macOS keymaps use <shortcut>⌘</shortcut> where Windows and Linux use <shortcut>Ctrl</shortcut>.
+            For GBrowser actions, the default macOS keymap uses <shortcut>⌘</shortcut> where Windows and Linux use <shortcut>Ctrl</shortcut>.
             <shortcut>Alt</shortcut> is the <shortcut>⌥</shortcut> key.
         </p>
         <table>
@@ -90,10 +89,14 @@
         <p>
             Some of these shortcuts, such as <shortcut>⌥ ←</shortcut>, <shortcut>⌘ D</shortcut>, <shortcut>⌘ W</shortcut>, <shortcut>⌘ O</shortcut> and <shortcut>⇧ ⌘ 8</shortcut>, are also assigned to IDE actions.
             See <a anchor="conflicts"/>.
-            macOS itself uses <shortcut>⌥ ⌘ H</shortcut> to hide other apps and <shortcut>⌥ ⌘ D</shortcut> to show or hide the Dock.
-            To run <control>Home</control> or <control>Duplicate Tab</control> from the keyboard, assign a different shortcut; see <a anchor="change-shortcut"/>.
+        </p>
+        <p>
+            macOS uses <shortcut>⌥ ⌘ H</shortcut> to hide other apps and <shortcut>⌥ ⌘ D</shortcut> to show or hide the Dock.
+            To run <control>Home</control> or <control>Duplicate Tab</control> from the keyboard, assign the action a different shortcut.
+            See <a anchor="change-shortcut"/>.
         </p>
     </chapter>
+
     <chapter title="Shortcut conflicts" id="conflicts">
         <p>
             GBrowser shortcuts are part of the IDE keymap, and most GBrowser actions are enabled whenever a GBrowser tab is open, not only when the browser has the focus.

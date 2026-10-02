@@ -42,7 +42,7 @@
     <secondary>
       <title>Get help</title>
       <a href="QueryFlag-Troubleshooting.topic" type="support"
-         summary="Fix a missing menu, validation errors, and failing queries.">Troubleshooting</a>
+         summary="Fix a missing menu, missing results, validation errors, and failing queries.">Troubleshooting</a>
       <a href="QueryFlag-Reference-and-Support.topic" type="support"
          summary="Report a bug, request a feature, or contact the developer.">Support</a>
     </secondary>

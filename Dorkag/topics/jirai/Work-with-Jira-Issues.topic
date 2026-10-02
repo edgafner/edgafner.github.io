@@ -24,7 +24,7 @@
 
     <chapter title="The JirAI tool window" id="tool-window">
         <p>The <control>JirAI</control> tool window opens on the left side of the IDE.</p>
-        <p>On the IDE start screen, where no project is open, click <control>More</control> on the left tool window bar and choose <control>JirAI</control> to open the tool window.</p>
+        <p>On the IDE start screen, where no project is open, click <control>More</control> on the left tool window bar and choose <control>JirAI</control>.</p>
         <p>Its <control>Jira</control> tab holds the issue list, and each issue you open adds a details tab named after the issue key.</p>
         <p>The tool window title bar has two buttons:</p>
         <deflist type="narrow">

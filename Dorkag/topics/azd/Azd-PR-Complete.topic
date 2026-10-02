@@ -117,6 +117,7 @@
             </step>
             <step>
                 In the dialog, select a <control>Merge method</control>.
+                AZD preselects the method that you used last.
                 The list contains only the methods that the target branch allows:
                 <list>
                     <li><control>Merge (no fast-forward)</control> keeps the history exactly as it happened.</li>
@@ -130,6 +131,7 @@
                 <control>Complete associated work items after merging</control>,
                 <control>Delete … after merging</control> for the source branch,
                 and <control>Customize merge commit message</control> to edit the <control>Merge commit message</control>.
+                If you clear <control>Customize merge commit message</control>, the message is <code>Merged PR N: title</code>, followed by the description.
                 AZD remembers these choices.
                 <!-- planned-image src="azd_pr_complete_dialog.png" alt="Complete dialog with the Squash commit merge method and the three options" -->
             </step>

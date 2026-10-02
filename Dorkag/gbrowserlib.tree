@@ -18,7 +18,6 @@
             <toc-element topic="GBrowser-Settings-and-Configuration.topic" id="toc_gbrowser_settings" toc-title="Settings reference"/>
             <toc-element topic="GBrowser-Keyboard-Shortcuts.topic" id="toc_gbrowser_shortcuts" toc-title="Keyboard shortcuts"/>
             <toc-element topic="GBrowser-Reference-and-Support.topic" id="toc_gbrowser_support" toc-title="Troubleshooting and support"/>
-            
         </toc-element>
     </snippet>
 </instance-profile>

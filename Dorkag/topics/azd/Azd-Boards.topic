@@ -13,9 +13,9 @@
         <p>Configure: <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path></p>
     </tldr>
 
-    <link-summary>Find, view, edit and create Azure Boards work items, use the Kanban board, and add work items to commit messages.</link-summary>
-    <card-summary>Find, edit and create work items, move cards on the Kanban board, and reference them in commits.</card-summary>
-    <web-summary>Work with Azure Boards in JetBrains IDEs with AZD: filter and edit work items, create new ones, move
+    <link-summary>Find, view, edit, comment on and create Azure Boards work items, use the Kanban board, and add work items to commit messages.</link-summary>
+    <card-summary>Find, edit, comment on and create work items, move cards on the Kanban board, and reference them in commits.</card-summary>
+    <web-summary>Work with Azure Boards in JetBrains IDEs with AZD: filter, edit and comment on work items, create new ones, move
         Kanban cards and add work items to commit messages.</web-summary>
 
     <p>
@@ -31,7 +31,6 @@
             <step>
                 <p>Click the filter icon and select a quick filter: <control>All</control>, <control>Assigned to me</control>
                     or <control>Recent activity</control> (the default).</p>
-
                 <list>
                     <li><control>All</control>: work items of the project that the repository belongs to.</li>
                     <li><control>Assigned to me</control>: work items assigned to you in all projects of the organization or collection.</li>
@@ -96,9 +95,7 @@
         </p>
         <p>
             The <control>Work Item #&lt;id&gt; timeline</control> editor tab shows the comments and the history of the work item.
-            It opens together with the details tab.
-            To open it again, click <control>Timeline ↗</control> at the top of the details tab.
-            Click the work item ID in the timeline title to open the work item on Azure DevOps.
+            To open it again after you close it, click <control>Timeline ↗</control> at the top of the details tab.
         </p>
         <procedure title="Comment on a work item" id="comment-work-item">
             <step>
@@ -106,7 +103,7 @@
                     Type <code>@</code> to mention a person.</p>
             </step>
             <step>
-                <p>Click <control>Add Comment</control>.</p>
+                <p>Click <control>Add Comment</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>).</p>
             </step>
         </procedure>
         <p>
@@ -117,7 +114,6 @@
         </p>
     </chapter>
 
-    
     <chapter title="Create a work item" id="create-work-item">
         <procedure title="Create a work item" id="create-work-item-procedure" hide-from-structure="true">
             <step>
@@ -234,20 +230,25 @@
             <step>
                 <p>Fill in <control>Host</control> (<code>https://dev.azure.com</code> by default), <control>Organization</control> and <control>PAT token</control>,
                     and click <control>Test</control>.</p>
+            </step>
+            <step>
                 <p>After a successful test, select the project in <control>Project</control>.
                     <control>Include issues not assigned to me</control> is selected by default; clear it to list only the work items assigned to you.</p>
                 <!-- planned-image src="azd_tasks_server.png" alt="Tasks Servers settings with an AzureDevOps server configured" -->
             </step>
             <step>
                 <p>Click <control>OK</control>.</p>
-
-                <p>The work items of the selected project are then available in <ui-path>Tools | Tasks &amp; Contexts | Open Task…</ui-path>.
-                    When you open one, select <control>Update issue state</control> in the <control>Open Task</control> dialog to change its state in Azure DevOps.</p>
-                <p>While a work item is the active task, AI commit message generation adds its ID and title to the prompt,
-                    and the default prompt asks AI to start the message with the work item ID;
-                    see <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>.</p>
             </step>
         </procedure>
+        <p>
+            Open a work item as a task with <ui-path>Tools | Tasks &amp; Contexts | Open Task…</ui-path>.
+            To change its state in Azure DevOps at the same time, select <control>Update issue state</control> in the <control>Open Task</control> dialog.
+        </p>
+        <p>
+            While a work item is the active task, AI-generated commit messages refer to it.
+            With the default prompt, they start with the work item ID.
+            See <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>.
+        </p>
     </chapter>
 
     <seealso>

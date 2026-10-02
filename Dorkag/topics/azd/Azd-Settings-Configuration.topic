@@ -63,7 +63,8 @@
             <def title="Azure CLI (az) path (optional)">The <code>az</code> executable for Azure CLI sign-in. Leave empty to detect it automatically, or click <control>Detect</control>.</def>
             <def title="Filter subject type">Identity types for user searches.
                 In the current version this field has no effect; AZD always searches <code>msa,aad,win,imp,vss</code>.</def>
-            <def title="Share anonymous usage statistics">Sends anonymous usage data that helps improve the plugin. Default: on.</def>
+            <def title="Share anonymous usage statistics">Sends an anonymous event when a Microsoft sign-in starts, succeeds or fails. Default: on.
+                See <a href="Azd-Reference-And-Support.topic" anchor="privacy">Privacy and usage statistics</a>.</def>
         </deflist>
     </chapter>
 
@@ -101,7 +102,8 @@
             <def title="Limit work items to recent history">Lists only work items changed within the set number of days (0–60). Default: on, 60 days.</def>
             <def title="Enable work item commit message action">Adds <control>Select Work Item...</control> to the AZD commit message button. Default: on.
                 See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</def>
-            <def title="Template">The commit message template. Placeholders: <code>{id}</code>, <code>{title}</code>, <code>{type}</code>, <code>{state}</code>. Default: <code>{id} - {title}</code>.</def>
+            <def title="Template">The commit message template. Placeholders: <code>{id}</code>, <code>{title}</code>, <code>{type}</code>, <code>{state}</code>.
+                To insert one at the caret, click <control>+</control> in the field. Default: <code>{id} - {title}</code>.</def>
             <def title="Max work items per commit">How many work items you can select for one commit message (1–10). Default: 5.</def>
             <def title="Advanced, Custom Work Item Query">The WHERE clause of the query that lists work items for linking to pull requests and commits.
                 By default it hides work items in the Done, Closed and Removed states.

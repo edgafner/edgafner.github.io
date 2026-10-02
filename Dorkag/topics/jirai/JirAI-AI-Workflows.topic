@@ -38,7 +38,10 @@
         <list>
             <li><p>Click the button, or right-click in the editor and choose <control>Push to Jira</control>.</p></li>
             <li><p>JirAI pushes the text currently in the editor, including unsaved changes.</p></li>
-            <li><p>The button and the menu command appear only for files with the <path>.md</path> extension, and only while the editor shows the Markdown text; if the Markdown editor shows only the preview, switch it to a layout that shows the text.</p></li>
+            <li>
+                <p>The button and the menu command appear only for files with the <path>.md</path> extension.</p>
+                <p>If the Markdown editor shows only the preview, switch it to a layout that shows the text.</p>
+            </li>
         </list>
         <p>The <control>Push to Jira</control> dialog shows the kind of document it recognized, its size as Jira counts it, any conversion warnings and the action that fits the document.</p>
     </chapter>
@@ -70,7 +73,8 @@
         </procedure>
         <p>Updating replaces the issue description with the current document.</p>
         <procedure title="Link a document to an existing issue" id="push-link-existing-proc">
-            <step><p>Add the line <code>&lt;!-- jira: DEMO-123 --&gt;</code> with the key of the existing issue at the top of the document, after the front matter if there is any.</p></step>
+            <p>To push a document into an issue that already exists, add the link marker yourself.</p>
+            <step><p>At the top of the document, after the front matter if there is any, add the line <code>&lt;!-- jira: DEMO-123 --&gt;</code> with the key of the issue.</p></step>
             <step><p>Click <control>Push to Jira</control>.</p></step>
             <step>
                 <p>If JirAI has never pushed a document to that issue, the dialog says that it has no record of a push.</p>
@@ -123,7 +127,10 @@
             <li><p>The dialog names the kind it recognized, for example <control>Superpowers · Spec</control>, and the target once one is known, for example <control>Superpowers · Spec → DEMO · Task</control>.</p></li>
             <li><p>The Create form opens with the project and issue type selected and the labels and components for that kind applied.</p></li>
             <li><p>If something cannot be applied, for example because the issue type does not exist in the project, a note under the pickers says so and you choose by hand.</p></li>
-            <li><p>A document that matches no kind is pushed like any other Markdown document.</p></li>
+            <li>
+                <p>A document that matches no kind is pushed like any other Markdown document.</p>
+                <p>If it is not linked to an issue yet, the dialog reads <control>No doc kind matched this file</control> and offers <control>Settings…</control>, where you can <a anchor="add-doc-kind-proc">add your own kind</a>.</p>
+            </li>
         </list>
 
         <chapter title="Remember the target for a kind" id="presets-remember">
@@ -150,25 +157,24 @@
                     <p>You can type names; JirAI resolves them when the Create form opens.</p>
                 </def>
             </deflist>
+            <note>
+                <p>The target columns stay read-only until you open the <control>JirAI</control> tool window while you are signed in.</p>
+            </note>
             <procedure title="Add your own document kind" id="add-doc-kind-proc">
                 <p>Add a kind for documents that no preset recognizes, for example architecture decision records in <path>docs/adr/</path>.</p>
-                <p>Before you start, open the <control>JirAI</control> tool window while you are signed in; until then, the target columns are read-only.</p>
                 <step><p>In <ui-path>Settings | Tools | JirAI | Doc Push</ui-path>, click <control>+</control>.</p></step>
                 <step><p>In the new row, enter a <control>Kind</control> name, for example <code>ADR</code>, and a <control>Path pattern</control>, for example <code>docs/adr/*.md</code>.</p></step>
                 <step>
                     <p>Enter a <control>Project key</control> and an <control>Issue type</control>, or leave both empty to choose them in the Create form.</p>
-                    <p>Separate several <control>Labels</control> or <control>Components</control> with commas; they are saved only for a kind that has a project key.</p>
+                    <p>Separate several <control>Labels</control> or <control>Components</control> with commas.</p>
+                    <p>Labels and components are saved only for a kind that has a project key and an issue type.</p>
                 </step>
                 <step><p>Click <control>OK</control> or <control>Apply</control>.</p></step>
             </procedure>
-            <p>To change the order in which your own kinds are tried, move them with the up and down arrows of the table toolbar.</p>
-            <p>Only your own kinds can be renamed or removed; the preset's kinds keep their name and path pattern, but you can set their targets.</p>
-            <p>When no kind matches a document that is not linked to an issue yet, the <control>Push to Jira</control> dialog reads <control>No doc kind matched this file</control> and offers <control>Settings…</control>, which opens this page.</p>
+            <p>To change the order in which your own kinds are tried, select a kind and use the up and down arrows on the table toolbar.</p>
+            <p>Only your own kinds can be renamed or removed.</p>
+            <p>For the preset's kinds, you can change only the targets.</p>
             <p>Presets and targets are stored for each IDE project in your local workspace settings, not in the repository, and targets are kept separately for each Jira site.</p>
-            <note>
-                <p>The targets are editable only while you are signed in.</p>
-                <p>Sign in through the <control>JirAI</control> tool window first if the target columns are read-only.</p>
-            </note>
         </chapter>
     </chapter>
 

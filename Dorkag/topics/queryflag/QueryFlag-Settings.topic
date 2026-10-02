@@ -87,9 +87,12 @@
             </def>
             <def title="query_flag_settings.xml" id="storage-options">
                 <p>The <control>Open console editor</control> and <control>Allow blank Text</control> options.</p>
-                <p>If you use <a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">Backup and Sync</a> (called Settings Sync in IDE versions before 2024.3), these options sync with the <control>Tools</control> category.</p>
+                <p>If you use <a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">Backup and Sync</a> (formerly Settings Sync), these options sync with the <control>Tools</control> category.</p>
             </def>
         </deflist>
+        <p>
+            Uninstalling QueryFlag does not delete these files, so your templates are still there if you install QueryFlag again.
+        </p>
         <p>
             A template stores the name, ID, and URL of its data source, but no password.
             The data source in the <control>Database</control> tool window keeps its own connection settings.
@@ -111,7 +114,7 @@
         </category>
         <category ref="external">
             <a href="https://www.jetbrains.com/help/idea/query-consoles.html">Query consoles (IntelliJ IDEA help)</a>
-            <a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">Share IDE settings (IntelliJ IDEA help)</a>
+            <a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">IDE settings backup and sync (IntelliJ IDEA help)</a>
         </category>
     </seealso>
 </topic>

@@ -107,7 +107,7 @@
     <chapter title="Browsing history" id="history">
         <p>
             When <control>History enabled</control> is on, which is the default, GBrowser remembers the pages you visit.
-            It keeps the 20 most recent pages by default; you can set any number from 0 to 60 in
+            It keeps the 20 most recent pages by default; you can change the number, up to 60, in
             <a href="GBrowser-Settings-and-Configuration.topic#search-settings">Search Settings</a>.
         </p>
         <p>

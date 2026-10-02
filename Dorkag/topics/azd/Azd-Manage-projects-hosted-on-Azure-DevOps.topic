@@ -47,8 +47,7 @@
                 <p>For details about each method, see <a href="Azd-Installation.topic" anchor="connect">Connect to Azure DevOps</a>.</p>
             </step>
             <step>
-                <p>Select a repository from the list of all repositories your accounts can access.
-                    With several accounts, the list is grouped by organization and account.</p>
+                <p>Select a repository from the list of all repositories your accounts can access.</p>
                 <p>To filter the list, type in the search field above it.
                     To clone a repository that is not listed, paste its URL in the search field.
                     To add an account, click the account icon next to the search field and select <control>Log In with Token…</control>,
@@ -72,7 +71,8 @@
             AZD clones over SSH by default.
             To clone over HTTPS, clear <control>Clone git repositories using ssh</control> in
             <ui-path>Settings | Version Control | AZD</ui-path>.
-            Over HTTPS, Git operations use the token of a matching AZD account: the default account, or the only account that matches the remote.
+            Over HTTPS, Git uses the token of an AZD account that matches the remote:
+            the default account if it matches, otherwise the only matching account.
             To set the default account, see <a href="Azd-Installation.topic" anchor="azd-manage-accounts">Manage accounts</a>.
         </p>
         <note>

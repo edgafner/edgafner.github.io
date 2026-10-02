@@ -10,7 +10,7 @@
 
     <link-summary>Answers to common questions about JirAI, troubleshooting tips and the known limitations.</link-summary>
     <card-summary>Common questions, troubleshooting tips and known limitations.</card-summary>
-    <web-summary>Answers about JirAI for Jira Cloud in JetBrains IDEs: licensing, the 365-day issue list, agent tools, read-only descriptions and known limitations.</web-summary>
+    <web-summary>Answers about JirAI for Jira Cloud in JetBrains IDEs: licensing, the 365-day issue list, rejected sign-ins, agent tools, read-only descriptions and known limitations.</web-summary>
 
     <chapter title="General questions" id="general-questions">
         <deflist>
@@ -34,7 +34,9 @@
                 <p>See <a href="Work-with-Jira-Issues.topic" anchor="search-and-sort">Search and sort</a>.</p>
             </def>
             <def title="Can I connect to several Jira sites?">
-                <p>No. JirAI connects to one Jira Cloud site at a time; signing in to another site replaces the current one.</p>
+                <p>No. JirAI connects to one Jira Cloud site at a time.</p>
+                <p>To switch sites, sign out and then sign in to the other site.</p>
+                <p>See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="switch-site-or-token">Switch sites or replace the API token</a>.</p>
             </def>
             <def title="Can I see delivery metrics such as cycle time?">
                 <p>Yes. Open a space with <control>Space Summary</control> and use the <control>Reports</control> tab.</p>
@@ -47,7 +49,8 @@
         <deflist>
             <def title="Why is the issue list empty after I sign in?">
                 <p>The list starts with the <control>Assigned to Me</control> quick filter and shows only issues created in the last 365 days.</p>
-                <p>When nothing matches, it reads <control>Nothing matches the filters.</control>; choose <control>All Issues</control> in the <control>Filters</control> menu, or click <control>Clear filters</control>.</p>
+                <p>If no such issue is assigned to you, the list reads <control>Nothing matches the filters.</control></p>
+                <p>To see all issues, click <control>Clear filters</control>, or choose <control>All Issues</control> in the <control>Filters</control> menu.</p>
                 <p>See <a href="Work-with-Jira-Issues.topic" anchor="filters">Filter the list</a>.</p>
             </def>
             <def title="My AI assistant does not see the JirAI tools. Why?">
@@ -69,9 +72,9 @@
                 <p>The <control>Board</control> tab shows a Scrum board's active sprint.</p>
                 <p>When a board has more than one active sprint, it shows the first and names the others in a notice.</p>
             </def>
-            <def title="JirAI says I am not signed in, or that the sign-in was rejected. What do I do?">
+            <def title="Why does JirAI say I am not signed in, or that the sign-in was rejected?">
                 <p>JirAI shows <control>Not signed in to Jira, or the sign-in was rejected.</control> when Jira no longer accepts your API token, for example because the token expired or was revoked.</p>
-                <p>Create a new API token, choose <control>Sign Out</control> in the options menu (<control>⋮</control>) of the <control>JirAI</control> tool window, and sign in again.</p>
+                <p>Create a new API token, then sign out and sign in again in the <control>JirAI</control> tool window.</p>
                 <p>See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="switch-site-or-token">Switch sites or replace the API token</a>.</p>
             </def>
             <def title="Where is my API token stored?">
@@ -103,7 +106,7 @@
             <li><p>The <control>Timeline</control> tab of a space opens the space in Jira.</p></li>
             <li><p>There is no branch-from-issue or other version control integration.</p></li>
             <li><p>In the details tab, custom fields, the reporter and the issue type are read-only.</p></li>
-            <li><p>Board cards do not open the issue details in the IDE.</p></li>
+            <li><p>Board cards do not open the issue in the IDE.</p></li>
             <li><p><control>Push to Jira</control> works only on files with the <path>.md</path> extension.</p></li>
         </list>
     </chapter>

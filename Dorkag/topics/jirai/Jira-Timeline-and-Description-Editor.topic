@@ -36,6 +36,7 @@
             <step><p>Click <control>Post</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>).</p></step>
         </procedure>
         <p>Press <shortcut>Enter</shortcut> to start a new line in the comment.</p>
+        <p>Files you attach to a comment are added to the issue's attachments and shown in the comment.</p>
         <p>To delete one of your comments, click the delete icon on it and confirm.</p>
         <p>Jira has no undo for deleted comments, and you can delete only the comments that Jira permissions allow.</p>
         <p>Existing comments cannot be edited.</p>
@@ -50,7 +51,10 @@
                 <p>Edit the Markdown text.</p>
                 <!-- planned-image src="jirai_description_edit.png" alt="Description being edited in place with the Save and Cancel buttons" -->
             </step>
-            <step><p>Click <control>Save</control> or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>); to discard your changes, click <control>Cancel</control> or press <shortcut>Escape</shortcut>.</p></step>
+            <step>
+                <p>Click <control>Save</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>).</p>
+                <p>To discard your changes, click <control>Cancel</control> or press <shortcut>Escape</shortcut>.</p>
+            </step>
         </procedure>
         <p>After you save, the timeline shows an <control>Updated the description</control> entry.</p>
         <p>Click <control>Show changes</control> on it to see what changed as a diff.</p>

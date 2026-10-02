@@ -154,8 +154,8 @@
             </def>
             <def title="Test Connection">
                 Sends a test request with the current values.
-                If the test fails, the message names the cause, for example <control>Authentication failed. Please check your API key.</control>,
-                or <control>Your API key's plan has no quota for this model</control> when the plan of the key does not include the model.
+                If the test fails, the message names the cause, for example <control>Authentication failed. Please check your API key.</control>
+                or <control>Your API key's plan has no quota for this model</control>.
             </def>
         </deflist>
         <p>
@@ -200,9 +200,13 @@
         </deflist>
         <p>
             Keep the placeholders in your text; AZD replaces them with the data of the current pull request or commit.
-            AZD applies prompt changes as you type, even if you then click <control>Cancel</control>, and the page has no button that restores a default prompt.
-            Copy the text of a prompt before you change it.
         </p>
+        <note>
+            <p>
+                Changes under <control>Configure Prompts</control> take effect as you make them, even if you then click <control>Cancel</control>.
+                No button restores a default prompt, so copy the text of a prompt before you change it.
+            </p>
+        </note>
     </chapter>
 
     <seealso>

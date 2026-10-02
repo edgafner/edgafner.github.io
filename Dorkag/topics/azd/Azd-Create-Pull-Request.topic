@@ -48,8 +48,8 @@
         <procedure title="Create a pull request" id="create-pr-procedure">
             <step>
                 Check the branches in the header of the tab.
-                By default, the source is your current branch and the target is the default branch of the repository.
                 The header reads <code>repository:target ← repository:source</code>.
+                By default, the source is your current branch and the target is the default branch of the repository.
                 To change a side, click it, select the <control>Head repository</control> and the <control>Branch</control>, then click <control>Save</control>.
                 <!-- planned-image src="azd_pr_create_branches.png" alt="Head repository and branch selector open in the new pull request tab" -->
             </step>
@@ -58,8 +58,9 @@
             </step>
             <step>
                 Enter a <control>Title</control>.
-                AZD fills in the name of your current branch until you type a title; if you leave the field empty, AZD uses the name of the source branch.
-                To generate one, click the AI button in the field; see <a href="AI-Title-Description-Generation.topic"/>.
+                By default, the title is the name of your current branch.
+                To generate a title, click the AI button in the field; see <a href="AI-Title-Description-Generation.topic"/>.
+                If you leave the title empty, AZD uses the name of the source branch.
             </step>
             <step>
                 Edit the <control>Description</control>.
@@ -80,8 +81,7 @@
             <step>
                 Optional: next to <control>Work items to link</control>, click the pencil icon and select work items.
                 If the name of your current branch contains work item numbers, for example <code>feature/1234-login</code>,
-                AZD selects those work items when the tab opens.
-                It selects only work items that the list offers.
+                AZD selects the matching work items from the list when the tab opens.
                 By default, the list offers work items that are assigned to you and match the options in
                 <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items"/>.
             </step>

@@ -8,7 +8,7 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter" depth="2"/>
 
-    <link-summary>Notable changes in the AZD 2026.3, 2026.2 and 2026.1 release lines.</link-summary>
+    <link-summary>Notable changes in recent AZD release lines, from the late 2025.2 updates to 2026.3.</link-summary>
     <card-summary>New features and notable fixes in recent AZD releases.</card-summary>
     <web-summary>What's new in AZD, the Azure DevOps plugin for JetBrains IDEs: pull request review, sign-in,
         pipelines, approvals, Boards and AI changes in recent releases.</web-summary>
@@ -142,6 +142,7 @@
 
         <chapter title="Pull requests" id="pr-improvements-2026-1">
             <list>
+                <li>A new pull request can take its description from the repository's <a href="Azd-Create-Pull-Request.topic" anchor="pr-templates">pull request template</a>.</li>
                 <li>Commit links in the timeline open the commit in the pull request details.</li>
                 <li><code>@</code> mentions and <code>!</code> pull request references autocomplete in comments.</li>
                 <li>A toggle shows or hides draft pull requests.</li>
@@ -152,10 +153,7 @@
     </chapter>
 
     <chapter title="AZD 2025.3" id="azd-2025-3">
-        <p>
-            AZD 2025.3 runs on JetBrains IDEs 2025.3.
-            Releases from November 2025 to January 2026 added:
-        </p>
+        <p>Releases from November 2025 to January 2026 added:</p>
         <list>
             <li><b>Azure Pipelines language server:</b> completion, validation and hover help in pipeline YAML files.
                 See <a href="Azd-Pipeline-Yaml.topic"/>.</li>
@@ -165,7 +163,6 @@
                 See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
             <li><b>Viewed files:</b> the viewed state of pull request files syncs with Azure DevOps, and a progress line counts the viewed files.
                 See <a href="Pull-Request-Details.topic" anchor="changed-files">Go through the changed files</a>.</li>
-            <li><b>Node.js detection:</b> AZD also looks for Node.js through your login shell, so it finds Node.js installed with nvm.</li>
         </list>
     </chapter>
 
@@ -176,11 +173,11 @@
                 See <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" anchor="clone-steps">Clone an Azure DevOps repository</a>.</li>
             <li><b>Work items in commit messages:</b> select work items when you generate a commit message.
                 See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
-            <li><b>Stage diagram:</b> an updated pipeline stage diagram, and faster loading of runs and run details.</li>
+            <li><b>Stage diagram:</b> new pipeline stage diagram features, and faster loading of runs and run details.
+                See <a href="Azure-DevOps-Pipelines.topic" anchor="pipeline-diagram">View the stage diagram</a>.</li>
         </list>
     </chapter>
 
-    
     <seealso>
         <category ref="related">
             <a href="Azd-Installation.topic"/>

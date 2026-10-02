@@ -37,7 +37,7 @@
             <step>
                 Click <control>Add Comment</control> to post it now.
                 Click the arrow on the button for <control>Add Draft</control> or <control>Comment &amp; Resolve</control>.
-                The button keeps your last choice: after you add a draft, it reads <control>Add Draft</control> and <control>Add Comment</control> moves to the arrow, until you click <control>Add Comment</control> again.
+                The button keeps your last choice: after you add a draft, it reads <control>Add Draft</control> until you select <control>Add Comment</control> under the arrow.
                 Press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>) instead of clicking the button.
                 <!-- planned-image src="azd_pr_diff_comment.png" alt="New comment in the pull request diff with the Add Comment options open" -->
             </step>
@@ -58,10 +58,16 @@
         </p>
         <warning>
             <p>
-                AZD saves drafts with the project on this computer, so they survive an IDE restart but are not available on other computers.
-                AZD deletes the drafts of a pull request after new commits are pushed to it, when its source branch is deleted,
-                when they are older than 30 days, and when the pull request list loads without that pull request,
-                for example because the pull request is completed or a filter hides it.
+                AZD saves drafts on this computer only.
+                It deletes drafts in these cases:
+            </p>
+            <list>
+                <li>New commits are pushed to the pull request.</li>
+                <li>The source branch of the pull request is deleted.</li>
+                <li>The draft is more than 30 days old.</li>
+                <li>The pull request list refreshes and does not show the pull request, for example because it is completed or a filter hides it.</li>
+            </list>
+            <p>
                 Submit your drafts when you finish a review.
             </p>
         </warning>

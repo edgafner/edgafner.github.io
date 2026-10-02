@@ -37,9 +37,11 @@
         <p>
             The button is disabled until the plugin detects the project's Codecov repository.
             For the connection steps, see <a href="Codecov-Installation.topic"/>.
+        </p>
+        <p>
             The dashboard uses the IDE built-in browser (JCEF).
             If JCEF is not available, the dashboard does not open.
-            Run the IDE on the bundled JetBrains Runtime, which includes JCEF.
+            Make sure the IDE runs on the bundled JetBrains Runtime, which includes JCEF.
         </p>
     </chapter>
 
@@ -51,7 +53,10 @@
         </p>
         <deflist type="narrow">
             <def title="HEAD" id="pr-impact-head">Total coverage of the head commit.</def>
-            <def title="Patch" id="pr-impact-patch">Coverage of the lines changed in the branch. A dash (—) means that Codecov reports no patch coverage.</def>
+            <def title="Patch" id="pr-impact-patch">
+                Coverage of the lines changed in the branch.
+                A dash (—) means that Codecov reports no patch coverage.
+            </def>
             <def title="Change" id="pr-impact-change">Difference in total coverage from the base: a green up arrow for an increase, a red down arrow for a decrease.</def>
         </deflist>
         <p>

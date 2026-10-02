@@ -79,8 +79,9 @@
     <chapter title="Search from the address field" id="search">
         <procedure title="Open a page or search" id="open-page-or-search">
             <p>
-                To search the web from the address field, turn on
-                <a href="GBrowser-Settings-and-Configuration.topic" anchor="enable-suggestion-search">Enable suggestion search</a> first; it is off by default.
+                To search the web from the address field, first turn on
+                <a href="GBrowser-Settings-and-Configuration.topic" anchor="enable-suggestion-search">Enable suggestion search</a>.
+                The option is off by default.
             </p>
             <step>
                 Click the address field, which shows <control>Search or type a URL</control> when it is empty.
@@ -101,7 +102,7 @@
         <p>
             When <control>Enable suggestion search</control> is on, the list also shows Google search suggestions,
             and GBrowser opens a Google search for text that is not a URL.
-            When the option is off, which is the default, GBrowser loads the text as an address.
+            When the option is off, GBrowser loads the text as an address.
             For the options that change how the address field looks, see <a href="GBrowser-Settings-and-Configuration.topic#search-settings">Search settings</a>.
         </p>
     </chapter>

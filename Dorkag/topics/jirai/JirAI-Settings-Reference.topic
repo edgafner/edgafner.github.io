@@ -26,7 +26,7 @@
             <def title="Account">
                 <p>The Jira Cloud account JirAI is signed in to.</p>
                 <p>Click <control>+</control> to sign in, or select the account and click <control>−</control> to sign out.</p>
-                <p>JirAI connects to one site at a time.</p>
+                <p>JirAI connects to one site at a time, so <control>+</control> is unavailable while you are signed in.</p>
             </def>
             <def title="Resources">The <control>JirAI documentation</control> link opens this documentation.</def>
         </deflist>
@@ -45,7 +45,7 @@
         <p><ui-path>Settings | Tools | JirAI | Doc Push</ui-path> (current project only)</p>
         <include from="JirAI-AI-Workflows.topic" element-id="doc-push-options"/>
         <p>By default, JirAI picks the preset from the project's folders the first time you push a document.</p>
-        <p>The target columns are editable only while you are signed in.</p>
+        <p>The target columns stay read-only until you open the <control>JirAI</control> tool window while you are signed in.</p>
         <p>See <a href="JirAI-AI-Workflows.topic" anchor="presets-settings">Configure presets in Settings</a>.</p>
     </chapter>
 

@@ -19,11 +19,12 @@
             appear only when the project has a Git remote that points to Azure DevOps, such as
             <code>https://dev.azure.com/demo-org/demo-project/_git/demo-project</code>.
             Check the remotes in <ui-path>Git | Manage Remotes</ui-path>.
+            If the remote is there and the tool windows are still missing, see <a anchor="supported-remotes"/>.
         </p>
     </chapter>
 
     <chapter title="AZD does not recognize the Git remote" id="supported-remotes">
-        <p>If the AZD tool windows are missing although the project has an Azure DevOps remote, check that the remote uses one of these formats:</p>
+        <p>AZD shows its tool windows only for a remote URL in one of these formats:</p>
         <list>
             <li>Azure DevOps Services over HTTPS: <code>https://dev.azure.com/&lt;organization&gt;/&lt;project&gt;/_git/&lt;repository&gt;</code>
                 or <code>https://&lt;organization&gt;.visualstudio.com/&lt;project&gt;/_git/&lt;repository&gt;</code>.</li>
@@ -35,23 +36,18 @@
         <p>
             To recognize a remote that none of your accounts matches, AZD contacts the server once per IDE session.
             If the server was not reachable then, for example because the VPN was off, the tool windows stay hidden.
-            Add an account for the organization or server in <ui-path>Settings | Version Control | AZD</ui-path>, or restart the IDE.
+            To fix this, add an account for the organization or server in <ui-path>Settings | Version Control | AZD</ui-path>, or restart the IDE.
         </p>
     </chapter>
 
-    
     <chapter title="Sign-in fails" id="login_pat_issues">
         <list type="bullet">
             <li>
                 <p><b>Expired token:</b> check the expiry date of the personal access token in Azure DevOps, and create a new one if needed.
-                    In the tool window header, click <control>⋮</control>, select <control>Change Repository or Account…</control>,
-                    and then select <control>Renew Token</control>.
-                    See <a href="Azd-Installation.topic" anchor="azd-manage-accounts">Manage accounts</a>.</p>
-
-                <p>If <control>Change Repository or Account…</control> is not offered, click <control>Log in again…</control> in the error message of the tool window,
-                    or click <control>Log in</control> next to the account in <ui-path>Settings | Version Control | AZD</ui-path>;
-                    see <a href="Azd-Installation.topic" anchor="azd-renew-token">Renew a token</a>.
-                    If AZD reports that the account already exists when you add the new token,
+                    Then click <control>Log in again…</control> in the error message of the tool window,
+                    or click <control>Log in</control> next to the account in <ui-path>Settings | Version Control | AZD</ui-path>.
+                    See <a href="Azd-Installation.topic" anchor="azd-renew-token">Renew a token</a>.</p>
+                <p>If AZD reports that the account already exists when you add the new token,
                     renew the token of that account instead, or remove the account and add it again.</p>
             </li>
             <li>
@@ -73,7 +69,6 @@
                 <p><b>Azure CLI:</b> if AZD reports that <code>az</code> was not found, install the Azure CLI or set its path in
                     <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
                     If it reports that you are not signed in, run <code>az login</code> in a terminal and try again.</p>
-
                 <p>If <code>az login</code> reports that no subscriptions were found, run <code>az login --allow-no-subscriptions</code>.
                     If your Azure DevOps organization uses a different Microsoft Entra tenant than your default Azure CLI account,
                     run <code>az login --tenant &lt;tenant-id&gt;</code>.</p>
@@ -87,7 +82,8 @@
             </li>
             <li>
                 <p><b>Git asks for credentials:</b> if the Git credential helper is enabled, Git operations do not use your AZD accounts.
-                    Sign in through the credential helper, or turn it off in your Git configuration.</p>
+                    Sign in through the credential helper, or turn it off in your Git configuration.
+                    See <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" anchor="clone-protocol">Choose SSH or HTTPS</a>.</p>
             </li>
         </list>
     </chapter>

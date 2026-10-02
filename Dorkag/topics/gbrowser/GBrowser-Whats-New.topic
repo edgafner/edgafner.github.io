@@ -82,8 +82,7 @@
                 <control>Open DevTools</control> now opens Chromium DevTools in a separate window.
                 The DevTools tool window is no longer available.
             </li>
-            <li>Support for JetBrains IDEs 2025.3.
-            </li>
+            <li>Support for JetBrains IDEs 2025.3.</li>
         </list>
     </chapter>
 

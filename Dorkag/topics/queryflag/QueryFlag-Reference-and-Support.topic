@@ -12,9 +12,9 @@
     <p>E-mail: <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a></p>
   </tldr>
 
-  <link-summary>Report a QueryFlag bug, request a feature, contact the developer, or read the release notes.</link-summary>
-  <card-summary>Report a bug, request a feature, contact the developer, or read the release notes.</card-summary>
-  <web-summary>Get support for the QueryFlag plugin for JetBrains IDEs: report bugs, request features on GitHub, contact the developer, and read the release notes.</web-summary>
+  <link-summary>Report a QueryFlag bug, request a feature, contact the developer, read about data and privacy, or find the release notes.</link-summary>
+  <card-summary>Report a bug, request a feature, contact the developer, read about privacy, or find the release notes.</card-summary>
+  <web-summary>Get support for the QueryFlag plugin for JetBrains IDEs: report bugs, request features on GitHub, contact the developer, read about data and privacy, and find the release notes.</web-summary>
 
   <p>
     Before you report a problem, check <a href="QueryFlag-Troubleshooting.topic"/>.
@@ -55,12 +55,13 @@
     <p>
       QueryFlag sends no usage statistics and does not connect to any server itself.
       It runs your queries through the data sources of the <control>Database</control> tool window.
-      For what a template stores, see <a href="QueryFlag-Settings.topic" anchor="storage">Where QueryFlag stores settings</a>.
+      For what a template stores, see <a href="QueryFlag-Settings.topic" anchor="storage"/>.
     </p>
     <p>
       Read the <a href="privacy-policy.topic">privacy policy</a>.
     </p>
   </chapter>
+
   <chapter title="Release notes" id="release-notes">
     <p>
       The <a href="https://plugins.jetbrains.com/plugin/18269-queryflag/versions">Versions</a> page on JetBrains Marketplace

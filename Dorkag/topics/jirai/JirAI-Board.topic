@@ -100,8 +100,6 @@
             <step><p>If Jira needs fields for the transition, fill them in on the transition screen that opens and confirm.</p></step>
         </procedure>
         <p>The card menu also has <control>Open in Jira</control> and <control>Copy Key</control>.</p>
-        <p>A card does not open the issue in the IDE.</p>
-        <p>To open it there, choose <control>Copy Key</control>; then, in the <control>JirAI</control> tool window, choose <control>All Issues</control> in the <control>Filters</control> menu, paste the key into the <control>Search issues</control> field and open the issue from the list.</p>
         <p>Cards move through the card menu; dragging cards is not supported.</p>
         <list>
             <li><p>A move into another column runs the Jira workflow transition that leads to that column's status.</p></li>
@@ -109,6 +107,16 @@
             <li><p>Changing a card's position within a column needs the Schedule and Edit permissions in Jira.</p></li>
             <li><p>If Jira does not confirm a move, JirAI refreshes the board to show where the card is.</p></li>
         </list>
+    </chapter>
+
+    <chapter title="Open a card's issue in the IDE" id="open-card-issue">
+        <p>Cards do not open the issue in the IDE, but you can find the issue in the <control>JirAI</control> tool window.</p>
+        <procedure title="Open a card's issue in the IDE" id="open-card-issue-proc">
+            <step><p>In the card menu, choose <control>Copy Key</control>.</p></step>
+            <step><p>In the <control>JirAI</control> tool window, choose <control>All Issues</control> in the <control>Filters</control> menu.</p></step>
+            <step><p>Paste the key into the <control>Search issues</control> field.</p></step>
+            <step><p>Select the issue and press <shortcut>Enter</shortcut>.</p></step>
+        </procedure>
     </chapter>
 
     <chapter title="Use the board from the keyboard" id="board-keyboard">

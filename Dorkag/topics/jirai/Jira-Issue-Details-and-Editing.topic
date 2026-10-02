@@ -36,9 +36,9 @@
 
     <chapter title="Edit fields in place" id="inline-editing">
         <p>Click a field value to change it.</p>
-        <p>A value you pick for <control>Assignee</control>, <control>Priority</control>, <control>Labels</control>, <control>Due date</control>, <control>Components</control>, <control>Fix versions</control> or <control>Parent</control> is saved to Jira right away.</p>
-        <p><control>Reporter</control>, <control>Type</control> and the custom fields are read-only; change them in Jira.</p>
-        <p>Fields such as <control>Priority</control> and <control>Labels</control> are also read-only when Jira does not let you edit them.</p>
+        <p>Except for <control>Summary</control>, the fields below save to Jira as soon as you pick a value.</p>
+        <p><control>Reporter</control>, <control>Type</control> and the custom fields can be changed only in Jira.</p>
+        <p>A field such as <control>Priority</control> or <control>Labels</control> is also read-only when Jira does not let you edit it.</p>
         <deflist type="medium">
             <def title="Summary">
                 <p>Edit the text in the <control>Summary</control> field.</p>
@@ -75,13 +75,17 @@
 
     <chapter title="Attachments" id="attachments">
         <list>
-            <li><p>To attach files, click the paperclip (<control>Attach files…</control>) and choose the files, or drag files onto the <control>Attachments</control> section.</p></li>
+            <li>
+                <p>To attach files, click the paperclip (<control>Attach files…</control>) and choose the files, or drag files onto the <control>Attachments</control> section.</p>
+                <p>Each file can be up to 25 MB, or up to your site's attachment limit if that is lower.</p>
+            </li>
             <li><p>Image attachments show a thumbnail when Jira provides one.</p></li>
             <li>
                 <p>To download an attachment, click the download icon (<control>Download</control>) on its row and choose where to save the file.</p>
-                <p>The save dialog opens in the folder you last saved to, or in your Downloads folder, and a notification with <control>Open</control> and <control>Copy Path</control> appears when the download finishes.</p>
+                <p>When the download finishes, a notification offers <control>Open</control> and <control>Copy Path</control>.</p>
+                <p>JirAI does not download attachments over 250 MB.</p>
+                <p>For such an attachment, the notification offers <control>Open in Browser</control>.</p>
             </li>
-            <li><p>JirAI uploads files of up to 25 MB, or up to your site's attachment limit if that is lower, and downloads files of up to 250 MB; for a larger attachment, the notification offers <control>Open in Browser</control>.</p></li>
             <li><p>To delete an attachment, click the delete icon (<control>Delete</control>) on its row and confirm; the icon appears only when Jira lets you delete that attachment.</p></li>
         </list>
         <p>On macOS and Windows, JirAI uses the operating system file dialog; on Linux, it uses the IDE file chooser.</p>
@@ -95,6 +99,7 @@
             <step><p>In the <control>Search:</control> field, search all projects for the other issue by key or summary, and select it.</p></step>
             <step><p>Click <control>Link</control>.</p></step>
         </procedure>
+        <p>Click a linked issue to open its details tab and its <control>Timeline</control> tab.</p>
         <p>To remove a link, click the delete icon (<control>Remove link</control>) on its row and confirm.</p>
     </chapter>
 

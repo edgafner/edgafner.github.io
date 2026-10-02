@@ -73,7 +73,7 @@
             If the frame is larger than the tool window, GBrowser scales the page down to fit.
         </p>
         <p>
-            Device emulation applies to the current tab only.
+            Device emulation applies to the current tab only and is not saved.
             While it is on, the menu item shows the device name, for example <control>Device: iPhone SE</control>.
             To turn emulation off, select that item again or press <shortcut>Ctrl+Shift+M</shortcut>.
             GBrowser then shows the page at the full size of the tool window again, resets the zoom to 100% and reloads the page.

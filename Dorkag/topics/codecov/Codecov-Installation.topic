@@ -92,6 +92,10 @@
                 In <control>Service Provider</control>, select where the repository is hosted: <control>Github</control>, <control>Gitlab</control> or <control>Bitbucket</control>.
             </step>
             <step>
+                If you changed <control>Server URL</control> or <control>Service Provider</control>, click <control>OK</control>, reopen the project and open <ui-path>Settings | Tools | Codecov</ui-path> again.
+                Repository detection uses the new values only after you reopen the project.
+            </step>
+            <step>
                 Paste the token into <control>API Token</control>.
             </step>
             <step>
@@ -134,7 +138,7 @@
 
     <chapter title="Connect other projects" id="codecov-connect-other-projects">
         <p>
-            You connect each project separately.
+            Each project needs its own connection.
             A project that is not connected shows no coverage, even though the API token is saved for all projects.
         </p>
         <procedure title="Connect another project" id="codecov-connect-another-project">
@@ -143,21 +147,27 @@
                 <control>API Token</control> is already filled in.
             </step>
             <step>
-                Click <control>Test Connection</control>, close the result dialog and click <control>OK</control>.
+                Click <control>Test Connection</control>.
+            </step>
+            <step>
+                Close the result dialog and click <control>OK</control>.
             </step>
         </procedure>
         <p>
-            Clicking <control>OK</control> without <control>Test Connection</control> saves the settings but does not connect the project.
+            If you click <control>OK</control> without <control>Test Connection</control>, the project stays disconnected.
+        </p>
+        <p>
+            <control>Service Provider</control> applies to all projects, so the plugin works with one provider at a time.
+            To connect a project hosted on another provider, for example GitLab instead of GitHub, select that provider in <control>Service Provider</control>, change the API token if needed, and click <control>OK</control>.
+            Then reopen the project and click <control>Test Connection</control> in its Codecov settings.
         </p>
     </chapter>
+
     <chapter title="Disconnect or change the token" id="codecov-disconnect">
         <p>
             <control>Server URL</control>, <control>Service Provider</control> and the API token apply to all projects.
             The token is stored in the IDE password safe.
             The connection to a repository is stored per project.
-            The plugin works with one <control>Service Provider</control> at a time.
-            To work on a project from another provider, for example GitLab instead of GitHub, change <control>Service Provider</control>, and the API token if needed, and click <control>OK</control>.
-            Then reopen that project and click <control>Test Connection</control> in its Codecov settings.
         </p>
         <procedure title="Disconnect the project" id="codecov-disconnect-procedure">
             <step>
@@ -170,8 +180,8 @@
         </procedure>
         <p>
             <control>Disconnect</control> removes the connection for the current project only and keeps the stored API token for other projects.
-            The <control>API Token</control> field is then empty, but the token stays saved, and the plugin has no option to delete it.
-            To stop the token from working, revoke it in the <control>Access</control> settings of your Codecov account.
+            The <control>API Token</control> field is then empty, but the plugin has no option to delete the stored token.
+            To invalidate the token, revoke it in the <control>Access</control> settings of your Codecov account.
             To use a different token, paste it into <control>API Token</control> and click <control>Test Connection</control>.
         </p>
     </chapter>

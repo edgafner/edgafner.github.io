@@ -30,8 +30,7 @@
       </li>
       <li>
         QueryFlag depends on the Database Tools and SQL plugin.
-        Use an IDE that includes it, for example IntelliJ IDEA Ultimate or DataGrip, and make sure the plugin is enabled.
-        JetBrains Marketplace also lists other IDEs as compatible, for example PyCharm, GoLand, and PhpStorm; they need the Database Tools and SQL plugin, too.
+        Use an IDE that includes it, for example IntelliJ IDEA Ultimate, DataGrip, PyCharm, GoLand, or PhpStorm, and make sure the plugin is enabled.
       </li>
       <li>
         To run queries, add at least one data source in the <control>Database</control> tool window (in DataGrip, <control>Database Explorer</control>).

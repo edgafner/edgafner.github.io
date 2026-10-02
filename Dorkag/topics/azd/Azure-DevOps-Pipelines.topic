@@ -96,7 +96,6 @@
             </step>
             <step>
                 <p>Click <control>Run Pipeline</control>.</p>
-
                 <p>AZD queues the run and opens it in a new tab.</p>
             </step>
         </procedure>
@@ -108,9 +107,9 @@
         <list>
             <li>The run number and a status label, such as <control>SUCCESS</control>, <control>FAILED</control> or <control>IN PROGRESS</control>.</li>
             <li><control>Repository and version</control>: links to the repository, the commit and, for runs started by a pull request or by its merge, the pull request.
-                The repository and commit links open in the browser.
-                A pull request of this repository opens in the <control>AZD Pull Requests</control> tool window when
-                <control>Open AZD links in tool window</control> is selected; otherwise it opens in the browser.</li>
+                A pull request of this repository opens in the <control>AZD Pull Requests</control> tool window if
+                <a href="Azd-Settings-Configuration.topic" anchor="general-configuration">Open AZD links in tool window</a> is selected;
+                the other links open in the browser.</li>
             <li><control>Time started and elapsed</control>, and how long the run waited for an agent.</li>
             <li>The stage, job and task tree with live durations.
                 A run that was rerun shows an <control>Attempt #n</control> node for each attempt, and the latest one is marked <control>(latest)</control>.</li>
@@ -160,6 +159,7 @@
         <p>
             The status line shows which lines are on screen, for example <control>Showing lines 1–3000 of 8200</control>.
             A page holds 3000 lines by default; change it with the <code>azd.pipeline.log.page.lines</code> registry key.
+            Sections that the pipeline marks with <code>##[group]</code> are folded under their group name; click the fold to expand one.
         </p>
     </chapter>
 

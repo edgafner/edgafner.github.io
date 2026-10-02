@@ -76,6 +76,9 @@
                 To restore the previous text, click <control>Undo</control> in the <control>Description updated successfully</control> notification within 60 seconds.
             </step>
         </procedure>
+        <p>
+            To edit the description yourself, see <a href="Pull-Request-Details.topic" anchor="edit-description"/>.
+        </p>
     </chapter>
 
     <chapter title="Generate a commit message" id="commit-message">

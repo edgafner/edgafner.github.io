@@ -40,6 +40,7 @@
             For details, see <a href="Codecov-Editor-Coverage.topic" anchor="coverage-source"/>.
         </p>
     </chapter>
+
     <chapter title="Why is no repository detected?" id="no-repository-detected">
         <p>
             The settings page shows "No repository detected. Please verify your project settings.", or <control>Test Connection</control> reports that it could not detect the repository.
@@ -48,11 +49,22 @@
             <li>Make sure the project is a Git repository with a remote that points to GitHub, GitLab or Bitbucket.</li>
             <li>Make sure <control>Service Provider</control> matches the host of that remote.</li>
             <li>Make sure the repository is activated on Codecov and your token's account can access it.</li>
-            <li>Check the reason at the end of the <control>Test Connection</control> warning.
-                "No local repository detected for this project" means that the project has no Git remote on the host that matches <control>Service Provider</control>: <code>github.com</code>, <code>gitlab.com</code> or <code>bitbucket.org</code>.
-                If you changed <control>Service Provider</control> after you opened the project, click <control>OK</control>, reopen the project and test again.
-                "No matching repository found for 'demo-project'." means that Codecov lists no activated repository with that name for the owner in the remote URL.</li>
         </list>
+        <p>The end of the <control>Test Connection</control> warning gives the reason:</p>
+        <deflist type="medium">
+            <def title="No local repository detected for this project" id="reason-no-local-repository">
+                None of the project's Git remotes is on the host that matches <control>Service Provider</control>: <code>github.com</code> for <control>Github</control>, <code>gitlab.com</code> for <control>Gitlab</control> or <code>bitbucket.org</code> for <control>Bitbucket</control>.
+                If you changed <control>Service Provider</control> after you opened the project, click <control>OK</control>, reopen the project and test again.
+            </def>
+            <def title="No matching repository found for 'demo-project'." id="reason-no-matching-repository">
+                Codecov lists no activated repository with that name for the owner in the remote URL.
+            </def>
+            <def title="Repository detection failed: …" id="reason-detection-failed">
+                The plugin could not get the owner's repositories from Codecov.
+                The text after the colon is the error.
+                If you changed <control>Server URL</control> after you opened the project, click <control>OK</control>, reopen the project and test again.
+            </def>
+        </deflist>
     </chapter>
 
     <chapter title="How do I fix a failed connection test?" id="auth-errors">
@@ -85,10 +97,11 @@
 
     <chapter title="Why does the dashboard report no repository?" id="dashboard-no-repository">
         <p>
-            "Error: No Codecov repository detected." means that the dashboard loaded its data while no Codecov repository was detected for the project, for example after you disconnect the project.
+            The dashboard shows "Error: No Codecov repository detected." when it loads data while the project has no detected Codecov repository, for example after you disconnect the project.
             Check the connection in <ui-path>Settings | Tools | Codecov</ui-path>, then click <control>Refresh</control> on the Codecov Metrics toolbar.
         </p>
     </chapter>
+
     <chapter title="Why does the dashboard show no pull request impact?" id="no-pr-impact">
         <p>
             The dashboard shows "No Codecov compare report available for the current branch." in these cases:
@@ -107,8 +120,7 @@
             <li>Codecov has no report for the current branch.
                 The warning "Codecov: no coverage data for this branch" appears when you turn the feature on.</li>
             <li>The folder has no files in the Codecov report.</li>
-            <li><control>Show Coverage on Folders</control> is disabled because the project is not connected or no repository is detected.
-                Its tooltip then shows "Connect to Codecov to enable folder coverage" or "No Codecov repository mapped for this project".
+            <li><control>Show Coverage on Folders</control> is disabled, and its tooltip shows "Connect to Codecov to enable folder coverage" or "No Codecov repository mapped for this project".
                 Check the connection in <ui-path>Settings | Tools | Codecov</ui-path>, then click <control>Refresh</control> on the Codecov Metrics toolbar.</li>
         </list>
     </chapter>

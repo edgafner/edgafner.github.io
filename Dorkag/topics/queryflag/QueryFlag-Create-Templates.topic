@@ -109,11 +109,6 @@
       </li>
     </list>
 
-    <warning>
-      QueryFlag does not ask for confirmation before it runs a template.
-      If the query changes data, for example with <code>UPDATE</code> or <code>DELETE</code>,
-      make sure it is safe for any value you might select, including an empty value when <control>Allow blank Text</control> is on.
-    </warning>
     <p>SQL examples:</p>
     <code-block lang="sql"><![CDATA[
 -- Text value, partial match (the placeholder in the dialog uses this form)
@@ -130,6 +125,12 @@ SELECT * FROM customers WHERE id = <QUERY_FLAG_TOKEN>;
     <code-block lang="javascript"><![CDATA[
 db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
 ]]></code-block>
+
+    <warning>
+      QueryFlag does not ask for confirmation before it runs a template.
+      If the query changes data, for example with <code>UPDATE</code> or <code>DELETE</code>, make sure it is safe for any value you might select.
+      When <control>Allow blank Text</control> is on, that includes an empty value.
+    </warning>
   </chapter>
 
   <chapter title="Create a template from a query console" id="create-from-console">
@@ -192,10 +193,9 @@ db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
         Click <control>Edit</control> on the toolbar.
         The same dialog opens, with the title <control>Add a QueryFlag Entry</control>.
         <p>
-          If the template's data source is not available in the current project, the <control>DataSource</control> field is empty,
-          and you must select another data source to save the template.
-          The template then uses the data source that you select instead of the original one.
-          To keep the original data source, edit the template in a project where that data source is available.
+          If the template's data source is not available in the current project, the <control>DataSource</control> field is empty.
+          To save the template, you must select a data source, and it replaces the original one.
+          To keep the original data source, edit the template in a project where it is available.
         </p>
       </step>
       <step>
@@ -236,7 +236,7 @@ db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
     </p>
     <procedure title="Make a data source available in every project" id="make-data-source-global">
       <step>
-        In the <control>Database</control> tool window, click <control>Data Source Properties</control>
+        In the <control>Database</control> tool window, right-click the data source and select <control>Properties</control>
         (<shortcut>Shift+Enter</shortcut>, macOS: <shortcut>⌘ I</shortcut>).
       </step>
       <step>

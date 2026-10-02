@@ -26,7 +26,8 @@
             <li>
                 The current version, 2026.3.1, works with JetBrains IDEs 2026.3: builds 263.3889 to 263.*, which includes the 2026.3 EAP.
                 It does not install on later IDE versions.
-                For JetBrains IDEs 2026.2, JetBrains Marketplace offers GBrowser 2026.2.3.
+                For earlier IDE versions, JetBrains Marketplace offers the last GBrowser release that supports them.
+                For example, it offers 2026.2.3 for 2026.2, 2026.1.8 for 2026.1 and 2025.3.9 for 2025.3.
             </li>
             <li>
                 The IDE must run on a runtime with JCEF support, such as the bundled JetBrains Runtime.
