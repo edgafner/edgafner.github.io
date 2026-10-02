@@ -80,7 +80,7 @@
             <step>
                 Select or clear <control>Enable AI assistance</control>.
                 AI is on by default.
-                <!-- planned-image src="azd_ai_settings.png" alt="AZD AI Settings page with Enable AI assistance selected and the AI Providers table" -->
+                <img src="azd_ai_settings.png" alt="AZD AI Settings page with Enable AI assistance selected and the AI Providers table" width="706" border-effect="rounded" thumbnail="true"/>
             </step>
             <step>
                 Click <control>OK</control>.
@@ -119,7 +119,7 @@
             <step>
                 In the <control>Add AI Provider</control> dialog, select the <control>Provider</control> and the <control>Model</control>,
                 and fill in the fields that the provider needs; see <a anchor="ai-provider-fields"/>.
-                <!-- planned-image src="azd_ai_add_provider.png" alt="Add AI Provider dialog with Ollama selected, a model, the default local API URL and the Fetch Models button" -->
+                <img src="azd_ai_add_provider.png" alt="Add AI Provider dialog with Ollama selected, a model, the default local API URL and the Fetch Models button" width="489" border-effect="rounded"/>
             </step>
             <step>
                 Click <control>Test Connection</control>.
@@ -167,7 +167,7 @@
             Select a prompt on the left to edit its text on the right.
             Clear the checkbox of a prompt to turn off the features that use it; the prompt text then becomes read-only.
         </p>
-        <!-- planned-image src="azd_ai_prompts.png" alt="Configure Prompts section with a prompt selected and its text in the editor" -->
+        <img src="azd_ai_prompts.png" alt="Configure Prompts section with PR Code Review selected and its prompt text in the editor" width="706" border-effect="rounded" thumbnail="true"/>
         <deflist type="medium">
             <def title="Pull Request title prompt">
                 Generates pull request titles.

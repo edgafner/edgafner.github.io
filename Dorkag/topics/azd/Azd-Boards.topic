@@ -172,7 +172,7 @@
             These settings also control which work items you can link to a pull request or commit; see
             <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Boards and Work Items settings</a>.
         </p>
-        <!-- planned-image src="azd_settings_boards.png" alt="AZD Boards and Work Items settings page with the Commit Message Template group" -->
+        <img src="azd_settings_boards.png" alt="AZD Boards and Work Items settings page with the Commit Message Template group" width="706" border-effect="rounded" thumbnail="true"/>
         <p>To generate a commit message from your changes only, see <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>.</p>
     </chapter>
 

@@ -34,7 +34,7 @@
 
     <chapter title="Open the Push to Jira dialog" id="push-to-jira">
         <p>While you are signed in, a <control>Push to Jira</control> button appears at the top right of every Markdown editor.</p>
-        <!-- planned-image src="jirai_push_chip.png" alt="Push to Jira button at the top right of a Markdown editor" -->
+        <img src="jirai_push_chip.png" alt="Push to Jira button, the JirAI icon, at the top right of a Markdown editor" width="598" border-effect="rounded"/>
         <list>
             <li><p>Click the button, or right-click in the editor and choose <control>Push to Jira</control>.</p></li>
             <li><p>JirAI pushes the text currently in the editor, including unsaved changes.</p></li>
@@ -47,7 +47,7 @@
             <step><p>Open the document and click <control>Push to Jira</control>.</p></step>
             <step>
                 <p>In the dialog, click <control>Create issue…</control>.</p>
-                <!-- planned-image src="jirai_push_dialog_create.png" alt="Push to Jira dialog for a Superpowers spec with the Create issue button" -->
+                <img src="jirai_push_dialog_create.png" alt="Push to Jira dialog for a Superpowers spec with its size, the recognized kind and the Create issue button" width="379" border-effect="rounded"/>
             </step>
             <step>
                 <p>In the Create form, check the project, the issue type and the required fields.</p>
@@ -57,7 +57,7 @@
         </procedure>
         <p>After the issue is created, JirAI adds a marker as the first line of the document, after the front matter if there is any: <code>&lt;!-- jira: DEMO-123 --&gt;</code>.</p>
         <p>The marker is a Markdown comment, so it is invisible in rendered Markdown, and you can remove it with one undo step.</p>
-        <!-- planned-image src="jirai_doc_jira_marker.png" alt="First line of a Markdown document holding the Jira link marker" -->
+        <img src="jirai_doc_jira_marker.png" alt="First lines of a Markdown document, with the Jira link marker on line 1" width="598" border-effect="rounded"/>
         <p>If an unsaved Create tab is already open, JirAI asks you to finish or close it first.</p>
     </chapter>
 
@@ -95,7 +95,7 @@
             <li><p>If Jira rejects a document that the estimate accepted, the dialog reads <control>Jira says this doc is too long as Jira counts it — shorten or split.</control> and offers no write button.</p></li>
         </list>
         <p>Shorten the document, or split it into several documents.</p>
-        <!-- planned-image src="jirai_push_dialog_too_big.png" alt="Push to Jira dialog reporting a document over Jira's size limit with its largest sections" -->
+        <img src="jirai_push_dialog_too_big.png" alt="Push to Jira dialog reporting a document over Jira's size limit with its largest sections" width="706" border-effect="rounded" thumbnail="true"/>
     </chapter>
 
     <chapter title="Doc presets" id="doc-presets">
@@ -126,7 +126,7 @@
 
         <chapter title="Configure presets in Settings" id="presets-settings">
             <p>Open <ui-path>Settings | Tools | JirAI | Doc Push</ui-path> to change what JirAI does for each kind of document.</p>
-            <!-- planned-image src="jirai_settings_doc_push.png" alt="Doc Push settings with the preset selector and the document kinds table" -->
+            <img src="jirai_settings_doc_push.png" alt="Doc Push settings with the preset selector and the document kinds table" width="706" border-effect="rounded" thumbnail="true"/>
             <deflist type="medium" id="doc-push-options">
                 <def title="Preset">Choose <control>Superpowers</control>, <control>spec-kit</control> or <control>None</control>.</def>
                 <def title="Doc kinds table">

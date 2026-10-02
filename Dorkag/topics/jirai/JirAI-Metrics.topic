@@ -94,7 +94,7 @@
                 <def title="Keep the oldest work items (long-running work stays visible)">Long-running work stays in the sample, and recent weeks under-count.</def>
             </deflist>
             <p>The change applies the next time a space tab loads or refreshes.</p>
-            <!-- planned-image src="jirai_settings_metrics.png" alt="Metrics settings for spaces with more than 10,000 work items" -->
+            <img src="jirai_settings_metrics.png" alt="Metrics settings for spaces with more than 10,000 work items" width="652" border-effect="rounded"/>
         </chapter>
     </chapter>
 

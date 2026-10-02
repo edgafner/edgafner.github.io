@@ -81,7 +81,7 @@
         </chapter>
 
         <chapter title="codecov.yml options" id="settings-yaml">
-            <!-- planned-image src="codecov_settings_schema_options.png" alt="Codecov YAML schema and validation endpoint options" -->
+            <img src="codecov_settings_schema_options.png" alt="Inject codecov YAML schema and Switch to v1 endpoint options in the Codecov settings" width="630" border-effect="rounded"/>
             <deflist type="medium">
                 <def title="Inject codecov YAML schema" id="setting-inject-schema">
                     Applies the bundled Codecov schema to YAML files whose name contains <code>codecov</code>, for completion and quick documentation.

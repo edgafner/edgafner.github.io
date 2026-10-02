@@ -66,7 +66,7 @@
         <procedure title="Change the coverage bands and colors" id="configure-folder-colors">
             <step>
                 Open <ui-path>Settings | Tools | Codecov | Folder Coverage</ui-path> (<shortcut>Ctrl+Alt+S</shortcut>, macOS: <shortcut>⌘ ,</shortcut>).
-                <!-- planned-image src="codecov_settings_folder_coverage.png" alt="Folder Coverage settings with thresholds and colors for each band" -->
+                <img src="codecov_settings_folder_coverage.png" alt="Folder Coverage settings with the threshold and color of the Excellent, Good, Fair and Poor bands and the Reset to Defaults link" width="645" border-effect="rounded"/>
             </step>
             <step>
                 In the <control>Folder Coverage Colors</control> group, set the lower bound in percent for <control>Excellent</control>, <control>Good</control> and <control>Fair</control>.

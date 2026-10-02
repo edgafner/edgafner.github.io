@@ -60,7 +60,7 @@
             </step>
             <step>
                 In the <control>AI Prompt Templates</control> group, expand <control>Prompt Templates</control>.
-                <!-- planned-image src="codecov_settings_ai_prompts.png" alt="AI Prompt Templates settings with the covered and uncovered prompt templates" -->
+                <img src="codecov_settings_ai_prompts.png" alt="AI Prompt Templates settings with Prompt Templates expanded, showing the covered and uncovered code templates with the CODE_TOKEN placeholder" width="630" border-effect="rounded"/>
             </step>
             <step>
                 Edit <control>Prompt for covered code</control> or <control>Prompt for uncovered code</control>.

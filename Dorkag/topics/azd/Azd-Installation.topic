@@ -142,7 +142,7 @@
                         <li><control>Full access</control> (recommended): all features, including marking files as viewed in pull requests.</li>
                         <li><control>Standard access</control>: code, builds, pull requests and work items, but files cannot be marked as viewed.</li>
                     </list>
-                    <!-- planned-image src="azd_signin_oauth_scopes.png" alt="Sign in with Microsoft dialog with Full access selected" -->
+                    <img src="azd_signin_oauth_scopes.png" alt="Sign in with Microsoft dialog with Full access selected" width="542" border-effect="rounded"/>
                 </step>
                 <step>
                     <p>Sign in to Microsoft Entra ID in the browser that opens.</p>
@@ -175,7 +175,7 @@
                 If it cannot find it, set the path in <ui-path>Settings | Version Control | AZD | Preferences</ui-path>,
                 in the <control>Azure CLI</control> group, or click <control>Detect</control>.
             </p>
-            <!-- planned-image src="azd_signin_azcli_settings.png" alt="Azure CLI group on the AZD Preferences page with the detected az path" -->
+            <img src="azd_signin_azcli_settings.png" alt="Azure CLI group on the AZD Preferences page with the detected az path" width="706" border-effect="rounded" thumbnail="true"/>
             <p>
                 If the Azure CLI session expires, AZD shows a notification.
                 Run <code>az login</code> again, then retry.
@@ -265,7 +265,7 @@
                 </step>
                 <step>
                     <p>In <control>Organization/Collection</control>, enter the organization name, for example <code>demo-org</code>.</p>
-                    <!-- planned-image src="azd_signin_pat_dialog.png" alt="Add AZD Account dialog with the server URL and organization filled in for Azure DevOps Services" -->
+                    <img src="azd_signin_pat_dialog.png" alt="Add AZD Account dialog with the server URL and organization filled in for Azure DevOps Services" width="374" border-effect="rounded"/>
                 </step>
                 <step>
                     <p>Click <control>Log In</control>.</p>
@@ -277,7 +277,7 @@
                 </step>
                 <step>
                     <p>Click <control>+</control> and select <control>Sign in with Personal Access Token</control>.</p>
-                    <!-- planned-image src="azd_signin_add_account_popup.png" alt="AZD accounts page with the add account menu open" -->
+                    <img src="azd_signin_add_account_popup.png" alt="AZD accounts page with the add account menu open" width="706" border-effect="rounded" thumbnail="true"/>
                 </step>
                 <step>
                     <p>In the <control>Add AZD Account</control> dialog, fill in <control>Server</control>, <control>Token</control>
@@ -310,7 +310,7 @@
                 </step>
                 <step>
                     <p>In <control>Organization/Collection</control>, enter the collection name, for example <code>DefaultCollection</code>.</p>
-                    <!-- planned-image src="azd_signin_server_dialog.png" alt="Add AZD Account dialog with an Azure DevOps Server URL and the DefaultCollection collection" -->
+                    <img src="azd_signin_server_dialog.png" alt="Add AZD Account dialog with an Azure DevOps Server URL and the DefaultCollection collection" width="374" border-effect="rounded"/>
                 </step>
                 <step>
                     <p>Click <control>Log In</control>.</p>

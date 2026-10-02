@@ -105,7 +105,7 @@
             </step>
             <step>
                 <p>In the <control>Approval Notifications</control> group, click <control>+</control> and select the pipeline.</p>
-                <!-- planned-image src="azd_settings_pipelines.png" alt="AZD Pipeline Settings page with one muted pipeline in Approval Notifications" -->
+                <img src="azd_settings_pipelines.png" alt="AZD Pipeline Settings page with one muted pipeline in Approval Notifications" width="706" border-effect="rounded" thumbnail="true"/>
             </step>
         </procedure>
         <p>

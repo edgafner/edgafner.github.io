@@ -33,7 +33,7 @@
             <li>Quick documentation for keys.</li>
             <li>Highlighting of unknown keys and wrong value types.</li>
         </list>
-        <!-- planned-image src="codecov_yaml_completion.png" alt="Code completion for Codecov YAML keys" -->
+        <img src="codecov_yaml_completion.png" alt="Code completion in codecov.yml suggesting the notify, range and round keys under coverage" width="560" border-effect="rounded"/>
         <p>
             The status bar shows <control>Codecov Yaml</control> as the schema of the file, and the Project tool window and editor tabs show the Codecov logo as its icon.
         </p>

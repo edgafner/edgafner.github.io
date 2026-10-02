@@ -26,7 +26,7 @@
             <step>
                 <p>Open the <control>JirAI</control> tool window on the left side of the IDE.</p>
                 <p>When you are not signed in, it shows <control>Connect to Jira</control>.</p>
-                <!-- planned-image src="jirai_connect_panel.png" alt="JirAI tool window asking you to connect to Jira, with the Log In button" -->
+                <img src="jirai_connect_panel.png" alt="JirAI tool window asking you to connect to Jira, with the Log In button" width="415" border-effect="rounded"/>
             </step>
             <step><p>Click <control>Log In</control>.</p></step>
             <step>
@@ -40,7 +40,7 @@
                     <def title="Email">The e-mail address of the Atlassian account that owns the API token.</def>
                     <def title="Token">The API token. The <control>Generate an API token</control> link below the field opens the Atlassian page where you create one.</def>
                 </deflist>
-                <!-- planned-image src="jirai_login_dialog.png" alt="Log in to Jira dialog with the Server, Email and Token fields" -->
+                <img src="jirai_login_dialog.png" alt="Log in to Jira dialog with the Server, Email and Token fields and the Generate an API token link" width="374" border-effect="rounded"/>
             </step>
             <step><p>Click <control>Log In</control>.</p></step>
             <p>JirAI checks the credentials with Jira before it stores anything.</p>
@@ -58,7 +58,7 @@
                     <li><p>To sign in, click <control>+</control> and complete the <control>Log in to Jira</control> dialog.</p></li>
                     <li><p>To sign out, select the account, click <control>−</control> and confirm.</p></li>
                 </list>
-                <!-- planned-image src="jirai_settings_account.png" alt="Settings page Tools JirAI with the signed-in account in the Account group" -->
+                <img src="jirai_settings_account.png" alt="Settings page Tools JirAI with the signed-in account in the Account group" width="652" border-effect="rounded"/>
             </step>
         </procedure>
         <p>The <control>Resources</control> group on the same page links to this documentation.</p>

@@ -47,7 +47,7 @@
             Path: <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
             For AI providers and prompts, see <a anchor="ai-settings">AI Settings</a>.
         </p>
-        <!-- planned-image src="azd_settings_preferences.png" alt="AZD Preferences settings page" -->
+        <img src="azd_settings_preferences.png" alt="AZD Preferences settings page with the pull request, auto-refresh, link and proxy options" width="706" border-effect="rounded" thumbnail="true"/>
         <deflist type="medium">
             <def title="Automatically mark opened files as viewed">Marks a pull request file as viewed when you open its diff. Default: off.</def>
             <def title="Auto-fill description from PR templates">Fills the description of a new pull request from the repository's pull request template. Default: off.</def>
@@ -82,7 +82,7 @@
 
     <chapter title="UI Customization" id="ui-customization">
         <p>Path: <ui-path>Settings | Version Control | AZD | UI Customization</ui-path></p>
-        <!-- planned-image src="azd_settings_ui.png" alt="AZD UI Customization settings page" -->
+        <img src="azd_settings_ui.png" alt="AZD UI Customization settings page with Adopt Azure DevOps UI style and the timeline order option" width="706" border-effect="rounded" thumbnail="true"/>
         <deflist type="medium">
             <def title="Adopt Azure DevOps UI style">Makes the pull request details look more like the Azure DevOps web UI, with a <control>Submit Review</control> button for votes. Default: off.</def>
             <def title="Show events in the order ascending by date">Shows the oldest timeline events first. Clear it to show the newest first. Default: on.</def>
@@ -92,7 +92,7 @@
     <chapter title="Boards and Work Items" id="boards-and-work-items">
         <!-- id boards-and-work-ites: misspelled on purpose; the AZD plugin links to it. Do not rename. -->
         <p id="boards-and-work-ites">Path: <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path></p>
-        <!-- planned-image src="azd_settings_boards.png" alt="AZD Boards and Work Items settings page with the Commit Message Template group" -->
+        <img src="azd_settings_boards.png" alt="AZD Boards and Work Items settings page with the Commit Message Template group" width="706" border-effect="rounded" thumbnail="true"/>
         <p>The first options control which work items you can pick when you link work items to a pull request or a commit.</p>
         <deflist type="medium">
             <def title="Show Work items from all Projects">Lists work items from every project in the organization or collection, not only the project of the repository. Default: off.</def>
@@ -111,7 +111,7 @@
 
     <chapter title="Pipeline Settings" id="pipeline-settings">
         <p>Path: <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path></p>
-        <!-- planned-image src="azd_settings_pipelines.png" alt="AZD Pipeline Settings page with one muted pipeline in Approval Notifications" -->
+        <img src="azd_settings_pipelines.png" alt="AZD Pipeline Settings page with one muted pipeline in Approval Notifications" width="706" border-effect="rounded" thumbnail="true"/>
         <deflist type="medium">
             <def title="Inject Azure DevOps YAML pipeline schema">Turns on completion and validation in pipeline files through the Azure Pipelines language server. Default: on.
                 See <a href="Azd-Pipeline-Yaml.topic"/>.</def>

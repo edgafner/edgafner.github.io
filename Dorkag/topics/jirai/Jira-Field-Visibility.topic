@@ -52,7 +52,7 @@
 
     <chapter title="Review and unhide fields" id="manage-hidden-fields">
         <p>The <ui-path>Settings | Tools | JirAI | Field Visibility</ui-path> page lists every hidden-field rule, with its <control>Field Name</control>, <control>Field ID</control>, <control>Site</control>, <control>Scope</control> and <control>Target</control>.</p>
-        <!-- planned-image src="jirai_settings_field_visibility.png" alt="Field Visibility settings with three hidden field rules" -->
+        <img src="jirai_settings_field_visibility.png" alt="Field Visibility settings with three hidden field rules" width="706" border-effect="rounded" thumbnail="true"/>
         <procedure title="Unhide a field" id="unhide-field-proc">
             <step><p>Open <ui-path>Settings | Tools | JirAI | Field Visibility</ui-path>.</p></step>
             <step><p>Select one or more rules and click <control>−</control>.</p></step>

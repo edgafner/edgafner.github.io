@@ -72,7 +72,7 @@
                 <li><p>Click <control>Open MCP Server settings</control> to go to the MCP server page.</p></li>
                 <li><p>Click <control>Don't show again</control> to dismiss it for good.</p></li>
             </list>
-            <!-- planned-image src="jirai_mcp_hint.png" alt="Notification that JirAI agent tools are not reachable because the MCP server is off" -->
+            <img src="jirai_mcp_hint.png" alt="Notification that JirAI agent tools are not reachable because the MCP server is off" width="392" border-effect="rounded"/>
             <p>JirAI shows this notification at most once per IDE installation.</p>
             <p>It does not appear while the MCP server is on, or when the <control>MCP Server</control> plugin is disabled.</p>
         </chapter>
@@ -95,7 +95,7 @@
                     <def title="Pattern">A regular expression; used only by <code>FIELD_MATCHES</code>.</def>
                     <def title="Note">Optional. Your own explanation, which the assistant receives instead of the generated message.</def>
                 </deflist>
-                <!-- planned-image src="jirai_settings_house_standard.png" alt="House Standard settings with three rules" -->
+                <img src="jirai_settings_house_standard.png" alt="House Standard settings with three rules" width="706" border-effect="rounded" thumbnail="true"/>
             </step>
             <step><p>Click <control>OK</control> or <control>Apply</control>.</p></step>
         </procedure>

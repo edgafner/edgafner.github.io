@@ -43,7 +43,7 @@
                 <p>If you are not signed in, the dialog shows <control>Log In to AZD</control>.
                     Click <control>Sign in with Microsoft</control> or <control>Sign in with Azure CLI</control>,
                     or click <control>Use token…</control> to enter a personal access token.</p>
-                <!-- planned-image src="azd_clone_login.png" alt="Clone Repository dialog with Azure DevOps selected and the Log In to AZD options" -->
+                <img src="azd_clone_login.png" alt="Clone Repository dialog with Azure DevOps selected and the Log In to AZD options" width="706" border-effect="rounded" thumbnail="true"/>
                 <p>For details about each method, see <a href="Azd-Installation.topic" anchor="connect">Connect to Azure DevOps</a>.</p>
             </step>
             <step>
