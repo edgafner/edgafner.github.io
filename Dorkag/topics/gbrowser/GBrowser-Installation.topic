@@ -1,49 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="GBrowser Installation" id="GBrowser-Installation">
+       title="GBrowser: Install" id="GBrowser-Installation">
 
-  <primary-label ref="gbrowser"/>
-    <secondary-label ref="gbrowser_version"/>
-  <p>Installing the GBrowser plugin is straightforward.</p>
+    <primary-label ref="gbrowser"/>
 
+    <tldr>
+        <p>Install: <ui-path>Settings | Plugins | Marketplace</ui-path>, search for GBrowser</p>
+        <p>Requires: IntelliJ-based IDE 2026.3 (build 263) or later</p>
+        <p>License: free and open source (Apache-2.0)</p>
+    </tldr>
 
-  <chapter title="How to install GBrowser" id="install">
-    <p>To install the GBrowser plugin, follow these steps:</p>
+    <link-summary>Check the requirements, install GBrowser from JetBrains Marketplace or from disk, and open the tool window.</link-summary>
+    <card-summary>Check the requirements and install GBrowser from JetBrains Marketplace.</card-summary>
+    <web-summary>Install the free GBrowser plugin in IntelliJ IDEA and other JetBrains IDEs from JetBrains Marketplace or from disk, and check the requirements.</web-summary>
 
-    <list type="decimal" start="1">
-      <li><p>Open JetBrains IDE
-      </p>
-        <list type="bullet">
-          <li>
-            <p>Launch your JetBrains IDE and navigate to the
-              <ui-path>Plugins</ui-path>
-              section.
-            </p>
-          </li>
+    <p>
+        GBrowser is a plugin for IntelliJ-based IDEs that adds the <control>GBrowser</control> tool window, an embedded Chromium browser.
+        It is free and open source (Apache-2.0).
+    </p>
+
+    <chapter title="Requirements" id="requirements">
+        <list>
+            <li>
+                The current version requires IntelliJ-based IDEs 2026.3 (build 263) or later.
+                For IntelliJ-based IDEs 2026.2, JetBrains Marketplace offers GBrowser 2026.2.3.
+            </li>
+            <li>
+                The IDE must run on a runtime with JCEF support, such as the bundled JetBrains Runtime.
+            </li>
+            <li>
+                The bundled <control>Web Browser (JCEF)</control> plugin must be enabled.
+                GBrowser depends on it and cannot be enabled without it.
+            </li>
         </list>
-      </li>
-      <li><p>Search for GBrowser Plugin
-      </p>
-        <list type="bullet">
-          <li>
-            <p>Under the <ui-path>Marketplace</ui-path> tab, type
-              <ui-path>GBrowser</ui-path>
-              and click the
-              <ui-path>Install</ui-path>
-              button.
-            </p>
-          </li>
-          <li><p>Wait for the installation to complete and restart your IDE when prompted.</p>
-          </li>
-        </list>
-      </li>
-    </list>
-  </chapter>
+    </chapter>
 
-  <img src="gbrowser.gif" alt="GBrowser.gif"/>
+    <chapter title="Install GBrowser" id="install">
+        <procedure title="Install from JetBrains Marketplace" id="install-from-marketplace">
+            <step>
+                Open the <control>Settings</control> dialog (<shortcut>Ctrl+Alt+S</shortcut>, macOS: <shortcut>⌘ ,</shortcut>)
+                and select <ui-path>Plugins</ui-path>.
+            </step>
+            <step>
+                Open the <control>Marketplace</control> tab and type <code>GBrowser</code> in the search field.
+            </step>
+            <step>
+                Click <control>Install</control> next to GBrowser.
+            </step>
+            <step>
+                If the IDE asks you to restart, click <control>Restart IDE</control>.
+            </step>
+        </procedure>
 
+        <procedure title="Install from disk" id="install-from-disk">
+            <p>Use this method when the IDE has no access to JetBrains Marketplace.</p>
+            <step>
+                Download the plugin ZIP file that matches your IDE version from the
+                <a href="https://plugins.jetbrains.com/plugin/14458-gbrowser/versions">GBrowser versions page</a>.
+            </step>
+            <step>
+                In the <control>Settings</control> dialog, select <ui-path>Plugins</ui-path>.
+            </step>
+            <step>
+                Click the gear icon and select <control>Install Plugin from Disk...</control>.
+            </step>
+            <step>
+                Select the downloaded ZIP file and click <control>OK</control>.
+            </step>
+        </procedure>
+    </chapter>
 
+    <chapter title="Check the installation" id="verify">
+        <p>
+            After the installation, the <control>GBrowser</control> button appears on the left tool window bar.
+            Click it, or select <ui-path>View | Tool Windows | GBrowser</ui-path>, to open the browser.
+            The first tab opens the default home page, which you can change in the <a href="GBrowser-Settings-and-Configuration.topic#default-home-page">settings</a>.
+        </p>
+    </chapter>
+
+    <chapter title="License" id="license">
+        <p>
+            GBrowser is free and open source under the Apache-2.0 license.
+            There is no trial and no license key.
+            The source code is on <a href="https://github.com/edgafner/GBrowser">GitHub</a>.
+        </p>
+        <p>
+            To support development, use the <control>Support GBrowser and help keep it free</control> link at the top of the GBrowser settings page.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Work-with-GBrowser.topic"/>
+            <a href="GBrowser-Settings-and-Configuration.topic"/>
+            <a href="GBrowser-Whats-New.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/14458-gbrowser">GBrowser on JetBrains Marketplace</a>
+            <a href="https://github.com/edgafner/GBrowser">GBrowser source code on GitHub</a>
+        </category>
+    </seealso>
 </topic>

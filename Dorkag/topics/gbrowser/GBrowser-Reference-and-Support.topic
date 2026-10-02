@@ -1,43 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="GBrowser Reference and Support" id="GBrowser-Reference-and-Support">
-  <primary-label ref="gbrowser"/>
-    <secondary-label ref="gbrowser_version"/>
+       title="GBrowser: Troubleshooting and support" id="GBrowser-Reference-and-Support">
 
-    <p>
-    If you're encountering issues with the GBrowser IntelliJ Plugin or have suggestions for improvements, we're here to
-    help!
-  </p>
+    <primary-label ref="gbrowser"/>
+    <show-structure for="chapter" depth="2"/>
 
-  <chapter title="Feature Requests and Bugs" id="gbrowser_feature_request_and_bug">
-    <p>
-      If you have a feature request or have found a bug, please submit an issue in our <a
-        href="https://github.com/edgafner/dorkag/issues">GitHub repository</a>.
-    </p>
-    <p>Please use the GBrowser Feature Request or Bug Report template when submitting an issue, and provide as much
-      detail as
-      possible.
-    </p>
-  </chapter>
+    <tldr>
+        <p>Report a bug: <a href="https://github.com/edgafner/GBrowser/issues">github.com/edgafner/GBrowser/issues</a></p>
+        <p>Contact: <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a></p>
+    </tldr>
 
-  <chapter title="Contact Me" id="contact_me">
-    <p>If you have specific concerns, questions, or require immediate assistance, please get in touch with me directly
-      at
-      <emphasis><b>jgafner@dorkag.com</b></emphasis>
-    </p>
-  </chapter>
+    <link-summary>Solve common GBrowser problems, learn which data GBrowser sends and stores, and report a bug or contact the author.</link-summary>
+    <card-summary>Fix common problems, report a bug or contact the author.</card-summary>
+    <web-summary>Troubleshoot GBrowser in JetBrains IDEs: blank tool window, sites that block embedded browsers, cookies and shortcuts, privacy, and how to report a bug.</web-summary>
 
+    <chapter title="Common problems" id="common-problems">
+        <chapter title="The tool window stays blank" id="blank-tool-window">
+            <p>
+                GBrowser needs the IDE's embedded Chromium browser (JCEF).
+                Check that the bundled <control>Web Browser (JCEF)</control> plugin is enabled in <ui-path>Settings | Plugins | Installed</ui-path>,
+                and that the IDE runs on the bundled JetBrains Runtime.
+                Then restart the IDE.
+            </p>
+        </chapter>
 
-  <seealso>
-    <!--Provide links to related how-to guides, overviews, and tutorials.-->
-    <category ref="external" sorted="asc">
-      <a href="https://plugins.jetbrains.com/plugin/14458-gbrowser">GBrowser on Marketplace</a>
-      <a href="https://plugins.jetbrains.com/plugin/14458-gbrowser/reviews">GBrowser Reviews</a>
-      <a href="https://dorkag.com">Dorkag Home Page</a>
-      <a href="https://github.com/sponsors/edgafner">Sponsor Me</a>
-    </category>
-  </seealso>
+        <chapter title="A site blocks GBrowser or keeps showing a check" id="site-blocks-browser">
+            <p>
+                Some sites refuse to work in embedded browsers.
+                Add the site's domain to <control>Compatible sites</control> under
+                <a href="GBrowser-Settings-and-Configuration.topic" anchor="browser-compatibility-mode">Browser Compatibility Mode</a>,
+                make sure <control>Enable browser compatibility mode</control> is on, and open the site in a new tab.
+            </p>
+            <!-- planned-image src="gbrowser_add_compat_site.png" alt="Add Anti-Detection Site dialog with a domain entered" -->
+        </chapter>
+
+        <chapter title="A page shows an error" id="page-error">
+            <p>
+                When a page cannot be loaded, GBrowser shows an error page with the error and the address.
+                Check the address, your network connection, and, for a local server, that the server is running.
+            </p>
+        </chapter>
+
+        <chapter title="You were signed out of sites" id="signed-out">
+            <p>
+                <control>Clear Cookies</control> deletes all cookies of the IDE's embedded browser, so it signs you out of every site.
+                It can also sign you out of other IDE features that show web pages.
+                Sign in again.
+            </p>
+        </chapter>
+
+        <chapter title="A shortcut runs a different action" id="shortcut-conflict">
+            <p>
+                Several GBrowser shortcuts are also assigned to IDE actions.
+                Assign a different shortcut in <ui-path>Settings | Keymap</ui-path>.
+                See <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
+            </p>
+        </chapter>
+
+        <chapter title="Device emulation reports an error" id="emulation-error">
+            <p>
+                The <control>Emulation device error</control> notification means that no browser tab is open.
+                Open a tab in the GBrowser tool window and turn on device emulation again.
+            </p>
+        </chapter>
+
+        <chapter title="Links open in a separate window" id="links-open-window">
+            <p>
+                Links that a page opens in a new window follow the <control>Life Span in new tab</control> option.
+                Change it in <a href="GBrowser-Settings-and-Configuration.topic" anchor="search-settings">Search Settings</a> and try the link again.
+            </p>
+        </chapter>
+    </chapter>
+
+    <chapter title="Data and privacy" id="privacy">
+        <list>
+            <li>
+                GBrowser loads site icons from Google's favicon service, which receives the domain names of the pages you visit and bookmark.
+            </li>
+            <li>
+                When <control>Enable suggestion search</control> is on, the text you type in the address field is sent to Google to get suggestions.
+                The option is off by default.
+            </li>
+            <li>
+                Settings, bookmarks, history and request headers are stored in the project, in <path>.idea/gbrowsers.xml</path>.
+                See <a href="GBrowser-Settings-and-Configuration.topic" anchor="storage"/>.
+            </li>
+        </list>
+    </chapter>
+
+    <chapter title="Report a bug or request a feature" id="gbrowser_feature_request_and_bug">
+        <p>
+            GBrowser is open source.
+            Report bugs and request features in the <a href="https://github.com/edgafner/GBrowser/issues">GBrowser issue tracker on GitHub</a>.
+            Include your IDE version, the GBrowser version, your operating system and the steps to reproduce the problem.
+        </p>
+        <p>
+            If the IDE shows a GBrowser error, open the error details and click <control>Report Exception</control>.
+            This opens a new GitHub issue with the error details filled in.
+        </p>
+    </chapter>
+
+    <chapter title="Contact" id="contact_me">
+        <p>
+            For other questions, write to <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a>.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="GBrowser-Settings-and-Configuration.topic"/>
+            <a href="GBrowser-Keyboard-Shortcuts.topic"/>
+            <a href="GBrowser-Whats-New.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/14458-gbrowser">GBrowser on JetBrains Marketplace</a>
+            <a href="https://plugins.jetbrains.com/plugin/14458-gbrowser/reviews">GBrowser reviews</a>
+            <a href="https://github.com/edgafner/GBrowser">GBrowser source code on GitHub</a>
+            <a href="https://github.com/sponsors/edgafner">Sponsor GBrowser on GitHub</a>
+        </category>
+    </seealso>
 </topic>

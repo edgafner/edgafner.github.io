@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="GBrowser: Bookmarks and history" id="GBrowser-Bookmarks-and-History">
+
+    <primary-label ref="gbrowser"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Bookmark the page: <shortcut>Ctrl+D</shortcut></p>
+        <p>Bookmark Manager: <shortcut>Ctrl+Alt+B</shortcut></p>
+        <p>Stored per project in <path>.idea/gbrowsers.xml</path></p>
+    </tldr>
+
+    <link-summary>Bookmark pages in GBrowser, open them from the bookmarks bar or the Bookmarks menu, edit them, and clear history and cookies.</link-summary>
+    <card-summary>Bookmark pages, use the bookmarks bar, and clear history and cookies.</card-summary>
+    <web-summary>Manage GBrowser bookmarks and browsing history in JetBrains IDEs: bookmark pages, use the bookmarks bar, edit bookmarks, clear history and cookies.</web-summary>
+
+    <p>
+        GBrowser keeps bookmarks and a short browsing history for each project.
+        Both are stored with the GBrowser settings in <path>.idea/gbrowsers.xml</path>.
+    </p>
+    <p>
+        The default shortcuts in this topic are for Windows and Linux.
+        For macOS, see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
+    </p>
+
+    <chapter title="Bookmark a page" id="bookmark-page">
+        <procedure title="Add or remove a bookmark" id="add-bookmark" type="choices">
+            <step>
+                Click the bookmark button to the right of the address field.
+                Its tooltip reads <control>Add to Bookmarks</control> or <control>Remove from Bookmarks</control>.
+            </step>
+            <step>
+                Press <shortcut>Ctrl+D</shortcut>, or select <control>Add to Bookmarks</control> in the <control>More Options</control> menu.
+            </step>
+            <step>
+                Right-click the page and select <control>Add to Bookmarks</control>.
+            </step>
+        </procedure>
+        <p>GBrowser uses the page title as the bookmark name.</p>
+    </chapter>
+
+    <chapter title="Use the bookmarks bar" id="bookmarks-bar">
+        <p>
+            The bookmarks bar under the address field shows one site icon for each bookmark.
+            Hover over an icon to see the URL, and click it to open the page in the current tab.
+        </p>
+        <p>
+            To remove a bookmark, right-click its icon and select <control>Remove Bookmark</control>.
+        </p>
+        <p>
+            To hide the bar, clear <control>Show bookmarks toolbar</control> in
+            <a href="GBrowser-Settings-and-Configuration.topic#toolwindow-settings">Tool Window Settings</a>.
+        </p>
+        <!-- planned-image src="gbrowser_bookmarks_bar.png" alt="GBrowser bookmarks bar under the address field with the Remove Bookmark menu open" -->
+    </chapter>
+
+    <chapter title="Open a bookmark from the menu" id="bookmarks-menu">
+        <procedure title="Open a saved bookmark" id="open-bookmark">
+            <step>
+                Click <control>More Options</control> at the right end of the browser toolbar.
+            </step>
+            <step>
+                Select <control>Bookmarks</control> and then the bookmark.
+            </step>
+        </procedure>
+        <p>
+            If the current tab shows the home page, the bookmark opens in it.
+            Otherwise, it opens in a new tab.
+        </p>
+        <!-- planned-image src="gbrowser_bookmarks_menu.png" alt="GBrowser More Options menu with the Bookmarks submenu listing saved bookmarks" -->
+    </chapter>
+
+    <chapter title="Edit bookmarks" id="edit-bookmarks">
+        <procedure title="Rename, add or remove bookmarks" id="bookmark-manager">
+            <p>The <control>Bookmark Manager</control> action is available when you have at least one bookmark.</p>
+            <step>
+                Press <shortcut>Ctrl+Alt+B</shortcut>, or select <control>Bookmark Manager</control> in the <control>More Options</control> menu.
+                The GBrowser settings open with the <control>Bookmark Management</control> group expanded.
+            </step>
+            <step>
+                Edit the <control>Name</control> or <control>URL</control> cell of a bookmark.
+                Click the add button to add a bookmark, or select one and click the remove button.
+            </step>
+            <step>
+                Click <control>OK</control>.
+                A bookmark must have a URL; otherwise the dialog shows <control>URL cannot be empty</control>.
+            </step>
+        </procedure>
+        <!-- planned-image src="gbrowser_settings_bookmarks.png" alt="Bookmark Management group in the GBrowser settings with a table of bookmark names and URLs" -->
+    </chapter>
+
+    <chapter title="Browsing history" id="history">
+        <p>
+            When <control>History enabled</control> is on, which is the default, GBrowser remembers the pages you visit.
+            It keeps the 20 most recent pages by default; you can set any number from 0 to 60 in
+            <a href="GBrowser-Settings-and-Configuration.topic#search-settings">Search Settings</a>.
+        </p>
+        <p>
+            GBrowser uses the history only for the suggestions in the address field.
+            There is no separate history list.
+        </p>
+    </chapter>
+
+    <chapter title="Clear history and cookies" id="clear">
+        <procedure title="Clear the browsing history" id="clear-history">
+            <step>
+                Click <control>More Options</control> and select <ui-path>Clear Cookies and History | Clear History</ui-path>,
+                or press <shortcut>Ctrl+Shift+7</shortcut>.
+            </step>
+        </procedure>
+        <p>The action is available only when the history has entries.</p>
+
+        <procedure title="Clear cookies" id="clear-cookies">
+            <step>
+                Click <control>More Options</control> and select <ui-path>Clear Cookies and History | Clear Cookies</ui-path>,
+                or press <shortcut>Ctrl+Shift+8</shortcut>.
+            </step>
+        </procedure>
+        <warning>
+            <control>Clear Cookies</control> deletes all cookies of the IDE's embedded Chromium browser without asking for confirmation.
+            This signs you out of sites in GBrowser and can also affect other IDE features and plugins that show web pages.
+        </warning>
+        <!-- planned-image src="gbrowser_clear_submenu.png" alt="GBrowser Clear Cookies and History submenu with the Clear Cookies and Clear History items" -->
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Work-with-GBrowser.topic"/>
+            <a href="GBrowser-Settings-and-Configuration.topic"/>
+            <a href="GBrowser-Keyboard-Shortcuts.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/14458-gbrowser">GBrowser on JetBrains Marketplace</a>
+        </category>
+    </seealso>
+</topic>

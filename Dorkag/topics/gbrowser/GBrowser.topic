@@ -1,34 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="GBrowser" id="GBrowser">
-  <section-starting-page>
-    <title>GBrowser</title>
-    <description>An embedded web browser window within your IDE. Cut the context switch between the browser and your IDE.
-    </description>
 
-    <spotlight>
-      <a href="GBrowser-Installation.topic" type="start" summary="Install the GBrowser plugin">GBrowser Installation</a>
-      <a href="GBrowser-Settings-and-Configuration.topic" type="settings" summary="Settings and Configuration">GBrowser
-        Configuration</a>
-    </spotlight>
+    <primary-label ref="gbrowser"/>
 
-    <!--    Add several topics that are most important for this section.    -->
-    <primary>
-      <title>Get started</title>
-      <a href="Work-with-GBrowser.topic" type="tools"
-         summary="Stop the context switch between the browser and your IDE">Features and Usage</a>
-    </primary>
+    <link-summary>Browse the web, preview project files and test mobile layouts in a browser tool window inside a JetBrains IDE.</link-summary>
+    <card-summary>An embedded Chromium browser in a tool window of your JetBrains IDE.</card-summary>
+    <web-summary>GBrowser adds a Chromium-based web browser tool window to JetBrains IDEs, with tabs, bookmarks, DevTools, device emulation and file preview.</web-summary>
 
-    <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->
-    <secondary>
-      <title>Support and references</title>
-      <a href="GBrowser-Reference-and-Support.topic" type="support" summary="Contact us for help">Reference and
-        Support</a>
-    </secondary>
+    <section-starting-page>
+        <title>GBrowser</title>
+        <description>
+            Open web pages, documentation and your running application in a browser tool window, next to your code.
+            GBrowser is free and open source (Apache-2.0).
+        </description>
 
-  </section-starting-page>
+        <spotlight>
+            <a href="GBrowser-Installation.topic" type="start"
+               summary="Check the requirements and install GBrowser from JetBrains Marketplace.">Install</a>
+            <a href="Work-with-GBrowser.topic" type="tools"
+               summary="Open the tool window, navigate, search, use tabs, find text and zoom.">Browse the web</a>
+        </spotlight>
+
+        <primary>
+            <title>Use GBrowser</title>
+            <a href="GBrowser-Bookmarks-and-History.topic" type="tools"
+               summary="Bookmark pages, use the bookmarks bar, and clear history and cookies.">Bookmarks and history</a>
+            <a href="GBrowser-Open-Files-and-Links.topic" type="development"
+               summary="Preview HTML and SVG files and open URLs from the editor.">Open project files and links</a>
+            <a href="GBrowser-DevTools-and-Device-Emulation.topic" type="development"
+               summary="Inspect pages with DevTools and test layouts on emulated mobile devices.">DevTools and device emulation</a>
+            <a href="GBrowser-Settings-and-Configuration.topic" type="settings"
+               summary="Set the home page, search, theme, request headers and compatibility mode.">Settings</a>
+        </primary>
+
+        <secondary>
+            <title>Reference and help</title>
+            <a href="GBrowser-Keyboard-Shortcuts.topic" type="learn"
+               summary="Default shortcuts for every GBrowser action and how to change them.">Keyboard shortcuts</a>
+            <a href="GBrowser-Reference-and-Support.topic" type="support"
+               summary="Fix common problems, report a bug or contact the author.">Troubleshooting and support</a>
+            <a href="GBrowser-Whats-New.topic" type="learn"
+               summary="Release notes for recent GBrowser versions.">What's new</a>
+        </secondary>
+    </section-starting-page>
 
 </topic>

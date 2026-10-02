@@ -1,102 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-    SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="GBrowser Settings and Configuration" id="GBrowser-Settings-and-Configuration">
-  <primary-label ref="gbrowser"/>
-    <secondary-label ref="gbrowser_version"/>
-  <p>
-    Within the GBrowser settings, you can configure the behavior of the GBrowser tool window.
-    This topic describes the available settings and how to configure them.
-  </p>
+       title="GBrowser: Settings" id="GBrowser-Settings-and-Configuration">
 
-  <chapter title="GBrowser Settings" id="gbrowser_settings">
-    <p>Open the IDE settings and navigate to
-      <ui-path>Tools | GBrowser</ui-path>
-      .
-    </p>
+    <primary-label ref="gbrowser"/>
+    <show-structure for="chapter,procedure" depth="2"/>
 
-    <p>The GBrowser settings are divided into the following sections:</p>
-    <list columns="2">
-      <li><a href="#default-home-page">Default Home Page</a></li>
-      <li><a href="#search-settings">Search Settings</a></li>
-      <li><a href="#developer-options">Developer Options</a></li>
-      <li><a href="#toolwindow-settings">Toolwindow Settings</a></li>
-      <li><a href="#bookmarks-management">Bookmarks Management</a></li>
-      <li><a href="#http-response-headers">Http Response Headers</a></li>
-    </list>
-    <img src="gbrowser_settings.png" alt="gbrowser_settings"/>
-  </chapter>
+    <tldr>
+        <p>Settings: <ui-path>Settings | Tools | GBrowser</ui-path></p>
+        <p>From the browser: <ui-path>More Options | Preferences</ui-path></p>
+        <p>Scope: current project, stored in <path>.idea/gbrowsers.xml</path></p>
+    </tldr>
 
-  <chapter title="Default Home Page" id="default-home-page">
+    <link-summary>Reference for every GBrowser setting: home page, search, history, theme, debug port, tool window, bookmarks, request headers and browser compatibility mode.</link-summary>
+    <card-summary>Set the home page, search, theme, request headers and compatibility mode.</card-summary>
+    <web-summary>Reference for the GBrowser settings in JetBrains IDEs: home page, search and history, page theme, debug port, request headers and compatibility mode.</web-summary>
+
     <p>
-      The Default Home Page section allows you to configure the default home page that opens when you start the GBrowser
-      tool window.
+        GBrowser settings apply to the current project.
+        Each project can have its own home page, bookmarks, history and request headers.
     </p>
-  </chapter>
 
-  <chapter title="Search Settings" id="search-settings">
-    <p>
-      The Search Settings section allows you to configure the search settings appearance and the browser history
-      behavior.
-    </p>
-    <p>Search Settings options:</p>
-    <deflist collapsible="true">
-      <def title="Highlight URL host" id="highlight-url-host">Highlight the URL host in the address bar.</def>
-      <def title="Enable suggestion search" id="enable-suggestion-search">When enabled, the GBrowser tool window suggests search queries based on
-        Google search engine.
-      </def>
-      <def title="Hide URL protocol" id="hide-url-protocol">Hide the URL protocol in the address bar.</def>
-      <def title="Load favicon in popup" id="load-favicon-in-popup">Load the favicon in the popup search.</def>
-      <def title="Highlight a suggestion query" id="highlight-suggestion-query">Highlight the suggestion query in the search results.</def>
-      <def title="Life Span in new tab" id="life-span-in-new-tab">Set the life span to be a new tab instead of standalone JFrame.</def>
-    </deflist>
-    <p>Browser History options:</p>
-    <deflist collapsible="true">
-      <def title="Enable browser history" id="enable-browser-history">When enabled, the GBrowser tool window saves under the IDE configuration
-        folder your browser history.
-      </def>
-      <def title="Amount of History" id="amount-of-history">Set the amount of history to be saved in the browser history.</def>
-    </deflist>
-    <img src="search_options.png" alt="search_options"/>
-  </chapter>
+    <chapter title="Open the GBrowser settings" id="gbrowser_settings">
+        <procedure title="Open the settings page" id="open-settings" type="choices">
+            <step>
+                Open the <control>Settings</control> dialog (<shortcut>Ctrl+Alt+S</shortcut>, macOS: <shortcut>⌘ ,</shortcut>)
+                and select <ui-path>Tools | GBrowser</ui-path>.
+            </step>
+            <step>
+                In the GBrowser tool window, click <control>More Options</control> and select <control>Preferences</control>.
+            </step>
+        </procedure>
+        <p>The page has these groups, from top to bottom:</p>
+        <list columns="2">
+            <li><a anchor="default-home-page">Default Home Page URL</a></li>
+            <li><a anchor="search-settings">Search Settings</a></li>
+            <li><a anchor="appearance">Appearance</a></li>
+            <li><a anchor="developer-options">Developer Options</a></li>
+            <li><a anchor="toolwindow-settings">Tool Window Settings</a></li>
+            <li><a anchor="bookmarks-management">Bookmark Management</a></li>
+            <li><a anchor="http-response-headers">HTTP Response Headers</a></li>
+            <li><a anchor="browser-compatibility-mode">Browser Compatibility Mode</a></li>
+        </list>
+        <!-- planned-image src="gbrowser_settings_overview.png" alt="GBrowser settings page with the home page URL, Search Settings and Appearance groups" -->
+    </chapter>
 
-  <chapter title="Developer Options" id="developer-options">
-    <p>
-      When you enable the Developer Options, you can debug the Web Page directly from the GBrowser tool window.
-      Enable and set the port number for debugging.
-    </p>
-  </chapter>
+    <chapter title="Default home page" id="default-home-page">
+        <deflist type="medium">
+            <def title="Default Home Page URL" id="default-home-page-url">
+                The page that opens in the first tab, in every new tab, and when you click <control>Home</control>.
+                The default is <code>https://plugins.jetbrains.com/plugin/14458-gbrowser</code>.
+                The field cannot be empty.
+            </def>
+        </deflist>
+        <tip>
+            Set the home page to the address of your local development server, for example <code>http://localhost:8080/</code>.
+        </tip>
+    </chapter>
 
-  <chapter title="Tool Window Settings" id="toolwindow-settings">
-    <p>
-      The Tool Window Settings section allows you to configure the appearance and the UI of the GBrowser tool window.
-    </p>
-    <p> The following options are available:</p>
-    <deflist collapsible="true">
-      <def title="Hide tool window label" id="hide-tool-window-label">Show or hide the tool window label in the GBrowser tool window.</def>
-      <def title="Show tab icon" id="show-tab-icon">Show or hide the tab icon in the GBrowser tool window.</def>
-      <def title="Show bookmarks toolbar" id="show-bookmarks-toolbar">Show or hide the bookmarks toolbar in the GBrowser tool window.</def>
-      <def title="Enable drag and drop tabs" id="enable-drag-and-drop-tabs">When enabled, you can drag and drop tabs in the GBrowser tool window.</def>
-      <def title="Reload previous tabs" id="reload-previous-tabs">
-        When enabled, the GBrowser tool window reloads the previous tabs when you start the GBrowser tool window.
-        Up to 20 tabs are saved.
-      </def>
-    </deflist>
-  </chapter>
+    <chapter title="Search settings" id="search-settings">
+        <p>The <control>Configuration</control> options control the address field and its suggestion list.</p>
+        <deflist type="medium">
+            <def title="Highlight URL host" id="highlight-url-host">
+                Highlights the host name in the address field.
+                On by default.
+            </def>
+            <def title="Highlight suggestion query" id="highlight-suggestion-query">
+                Highlights the text you typed in the suggestion list.
+                On by default.
+            </def>
+            <def title="Hide URL protocol" id="hide-url-protocol">
+                Hides <code>https://</code> and <code>http://</code> in the address field.
+                On by default.
+            </def>
+            <def title="Load favicon in popup" id="load-favicon-in-popup">
+                Shows site icons next to the entries in the suggestion list.
+                On by default.
+            </def>
+            <def title="Enable suggestion search" id="enable-suggestion-search">
+                Adds Google search suggestions to the suggestion list, and opens a Google search when you enter text that is not a URL.
+                When this option is on, the text you type in the address field is sent to Google.
+                Off by default.
+            </def>
+            <def title="Life Span in new tab" id="life-span-in-new-tab">
+                Controls where links open when a page opens them in a new window, for example links with <code>target="_blank"</code>:
+                in a new GBrowser tab or in a separate pop-up window.
+                On by default.
+            </def>
+        </deflist>
+        <p>The <control>Browser History</control> options control the history used for suggestions.</p>
+        <deflist type="medium">
+            <def title="History enabled" id="enable-browser-history">
+                Saves the pages you visit for the suggestion list.
+                On by default.
+            </def>
+            <def title="Number of history items to persist" id="amount-of-history">
+                The number field next to <control>History enabled</control> sets how many pages GBrowser keeps, from 0 to 60.
+                The default is 20.
+            </def>
+        </deflist>
+        <!-- planned-image src="gbrowser_settings_search_history.png" alt="Search Settings group of the GBrowser settings with the Configuration and Browser History options" -->
+    </chapter>
 
+    <chapter title="Appearance" id="appearance">
+        <deflist type="medium">
+            <def title="Theme" id="theme">
+                Sets the color scheme that GBrowser asks pages to use: <control>Follow IDE</control>, <control>Light</control> or <control>Dark</control>.
+                Sites that support light and dark color schemes follow this setting.
+                With <control>Follow IDE</control>, the default, open pages switch when you change the IDE theme.
+            </def>
+        </deflist>
+    </chapter>
 
-  <chapter title="Bookmarks Management" id="bookmarks-management">
-    <p>
-      The Bookmarks Management section allows you to manage the bookmarks in the GBrowser tool window.
-    </p>
-  </chapter>
+    <chapter title="Developer options" id="developer-options">
+        <deflist type="medium">
+            <def title="Debug port" id="debug-port">
+                The remote debugging port of the IDE's embedded Chromium browser, from -1 to 9999.
+                The default is 9222.
+                The port applies to the whole IDE, not only to GBrowser, and a change takes effect after you restart the IDE.
+                For how to use it, see <a href="GBrowser-DevTools-and-Device-Emulation.topic" anchor="remote-debugging"/>.
+            </def>
+        </deflist>
+        <p>
+            To inspect a page from inside the IDE, you do not need a port: use <control>Open DevTools</control> (<shortcut>F12</shortcut>).
+        </p>
+        <!-- planned-image src="gbrowser_settings_appearance_dev.png" alt="Appearance and Developer Options groups of the GBrowser settings with the Theme options and the Debug port field" -->
+    </chapter>
 
-  <chapter title="HTTP Response Headers" id="http-response-headers">
-    <p>
-      The HTTP Response Headers section allows you to view the HTTP response headers in the GBrowser tool window.
-    </p>
-  </chapter>
+    <chapter title="Tool window settings" id="toolwindow-settings">
+        <deflist type="medium">
+            <def title="Hide toolwindow label" id="hide-tool-window-label">
+                Hides the <control>GBrowser</control> title in the tool window header, which leaves more room for tabs.
+                On by default.
+            </def>
+            <def title="Show tab icon" id="show-tab-icon">
+                Shows the site icon on each tab.
+                On by default.
+            </def>
+            <def title="Show bookmarks toolbar" id="show-bookmarks-toolbar">
+                Shows the bookmarks bar under the address field.
+                On by default.
+            </def>
+            <def title="Enable tab splitting" id="enable-drag-and-drop-tabs">
+                Lets you drag a tab to an edge of the tool window to show two tabs side by side.
+                On by default.
+            </def>
+            <def title="Reload previous tabs" id="reload-previous-tabs">
+                Reopens the saved tabs when you reopen the project.
+                GBrowser saves the first five tabs when you close the project.
+                Off by default.
+            </def>
+        </deflist>
+    </chapter>
 
+    <chapter title="Bookmark management" id="bookmarks-management">
+        <p>
+            The <control>Bookmark Management</control> group is collapsed by default.
+            It contains a table of your bookmarks with <control>Name</control> and <control>URL</control> columns.
+            The <control>Bookmark Manager</control> action (<shortcut>Ctrl+Alt+B</shortcut>) opens this page with the group expanded.
+            For details, see <a href="GBrowser-Bookmarks-and-History.topic" anchor="edit-bookmarks"/>.
+        </p>
+    </chapter>
+
+    <chapter title="Request headers" id="http-response-headers">
+        <p>
+            The <control>HTTP Response Headers</control> group defines headers that GBrowser adds to its requests.
+            Despite the group name, these are request headers, for example an authorization token or a feature flag for your development server.
+        </p>
+        <procedure title="Add a request header" id="add-request-header">
+            <step>
+                Expand <control>HTTP Response Headers</control> and click the add button above the <control>Headers</control> table.
+            </step>
+            <step>
+                In <control>URI Regex</control>, enter a regular expression that must match the whole request URL, for example <code>http://localhost:8080/.*</code>.
+                Use <code>.*</code> to match every URL.
+            </step>
+            <step>
+                Enter the header <control>Name</control> and <control>Value</control>.
+            </step>
+            <step>
+                Select <control>Overwrite</control> to replace the header when the request already has it.
+            </step>
+            <step>
+                Click <control>OK</control>.
+            </step>
+        </procedure>
+        <p>
+            The table starts with a <code>User-Agent</code> row whose <control>URI Regex</control> is empty, so it does not match any request.
+        </p>
+        <warning>
+            Header values are stored in plain text in <path>.idea/gbrowsers.xml</path>.
+            Do not commit that file if it contains tokens or passwords.
+        </warning>
+        <!-- planned-image src="gbrowser_settings_request_headers.png" alt="HTTP Response Headers group of the GBrowser settings with a header rule for a localhost URL" -->
+    </chapter>
+
+    <chapter title="Browser compatibility mode" id="browser-compatibility-mode">
+        <p>
+            Some sites block browsers that are embedded in other applications or that look automated.
+            Browser compatibility mode makes GBrowser look like a regular browser to the sites in its list.
+        </p>
+        <deflist type="medium">
+            <def title="Enable browser compatibility mode" id="enable-compatibility-mode">
+                Turns the mode on for the sites in <control>Compatible sites</control>.
+                On by default.
+            </def>
+            <def title="Compatible sites" id="compatible-sites">
+                The domains that get compatibility mode.
+                The defaults are <code>perplexity.ai</code>, <code>challenges.cloudflare.com</code>, <code>openai.com</code>, <code>chat.openai.com</code> and <code>claude.ai</code>.
+            </def>
+        </deflist>
+        <procedure title="Add a site" id="add-compatible-site">
+            <step>
+                Expand <control>Browser Compatibility Mode</control> and click the add button under <control>Compatible sites</control>.
+            </step>
+            <step>
+                In the <control>Add Anti-Detection Site</control> dialog, enter the domain, for example <code>example.com</code>, and click <control>OK</control>.
+            </step>
+            <step>
+                Click <control>OK</control> in the <control>Settings</control> dialog, then open the site in a new GBrowser tab.
+            </step>
+        </procedure>
+        <!-- planned-image src="gbrowser_settings_compatibility.png" alt="Browser Compatibility Mode group of the GBrowser settings with the list of compatible sites" -->
+    </chapter>
+
+    <chapter title="Where GBrowser stores its data" id="storage">
+        <p>
+            GBrowser stores its settings, bookmarks, history, request headers and compatible sites in <path>.idea/gbrowsers.xml</path> in the project directory.
+            The tabs saved for <control>Reload previous tabs</control> are in <path>.idea/gbrowser_project.xml</path>.
+        </p>
+        <p>
+            If you share the <path>.idea</path> directory through version control, these files are shared too.
+            Add them to your ignore file if you want to keep your bookmarks, history and headers private.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Work-with-GBrowser.topic"/>
+            <a href="GBrowser-Bookmarks-and-History.topic"/>
+            <a href="GBrowser-DevTools-and-Device-Emulation.topic"/>
+            <a href="GBrowser-Reference-and-Support.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/14458-gbrowser">GBrowser on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>

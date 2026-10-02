@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="GBrowser: Keyboard shortcuts" id="GBrowser-Keyboard-Shortcuts">
+
+    <primary-label ref="gbrowser"/>
+
+    <tldr>
+        <p>Change shortcuts: <ui-path>Settings | Keymap</ui-path></p>
+    </tldr>
+
+    <link-summary>Default keyboard shortcuts of all GBrowser actions, and how to change them in the IDE keymap.</link-summary>
+    <card-summary>Default shortcuts for every GBrowser action and how to change them.</card-summary>
+    <web-summary>Default keyboard shortcuts of the GBrowser plugin in JetBrains IDEs, for tabs, navigation, bookmarks and DevTools, and how to reassign them in the keymap.</web-summary>
+
+    <p>
+        The table lists the default shortcuts that GBrowser defines for Windows and Linux keymaps.
+        macOS keymaps can use other modifier keys.
+        To see the shortcut in your keymap, search for the action name in <ui-path>Settings | Keymap</ui-path>.
+    </p>
+
+    <chapter title="Default shortcuts" id="default-shortcuts">
+        <table>
+            <tr>
+                <td>Action</td>
+                <td>Windows and Linux</td>
+            </tr>
+            <tr><td><control>Backward</control></td><td><shortcut>Alt+Left</shortcut></td></tr>
+            <tr><td><control>Forward</control></td><td><shortcut>Alt+Right</shortcut></td></tr>
+            <tr><td><control>Home</control></td><td><shortcut>Ctrl+Alt+H</shortcut></td></tr>
+            <tr><td><control>Reload Page</control></td><td><shortcut>Ctrl+R</shortcut></td></tr>
+            <tr><td><control>Stop Loading</control></td><td><shortcut>Ctrl+.</shortcut></td></tr>
+            <tr><td><control>Find...</control></td><td><shortcut>Ctrl+F</shortcut> or <shortcut>Alt+F3</shortcut></td></tr>
+            <tr><td><control>Zoom In</control></td><td><shortcut>Ctrl+Plus</shortcut></td></tr>
+            <tr><td><control>Zoom Out</control></td><td><shortcut>Ctrl+Minus</shortcut></td></tr>
+            <tr><td><control>Actual Size</control></td><td><shortcut>Ctrl+0</shortcut></td></tr>
+            <tr><td><control>Open in Default Browser</control></td><td><shortcut>Ctrl+O</shortcut></td></tr>
+            <tr><td><control>Open DevTools</control></td><td><shortcut>F12</shortcut></td></tr>
+            <tr><td><control>Toggle Device Emulation</control></td><td><shortcut>Ctrl+Shift+M</shortcut></td></tr>
+            <tr><td><control>Add to Bookmarks</control></td><td><shortcut>Ctrl+D</shortcut></td></tr>
+            <tr><td><control>Bookmark Manager</control></td><td><shortcut>Ctrl+Alt+B</shortcut></td></tr>
+            <tr><td><control>Clear History</control></td><td><shortcut>Ctrl+Shift+7</shortcut></td></tr>
+            <tr><td><control>Clear Cookies</control></td><td><shortcut>Ctrl+Shift+8</shortcut></td></tr>
+            <tr><td><control>Add Tab</control></td><td><shortcut>Ctrl+T</shortcut></td></tr>
+            <tr><td><control>Close Tab</control></td><td><shortcut>Ctrl+W</shortcut></td></tr>
+            <tr><td><control>Duplicate Tab</control></td><td><shortcut>Ctrl+Alt+D</shortcut></td></tr>
+            <tr><td><control>Toggle Toolbar Visibility</control></td><td><shortcut>Alt+T</shortcut></td></tr>
+            <tr><td><control>Open in GBrowser</control></td><td><shortcut>Ctrl+Alt+G</shortcut></td></tr>
+        </table>
+        <p>
+            <control>Open Selected Text in GBrowser</control>, <control>Preferences</control> and the <control>Bookmarks</control> menu have no default shortcut.
+        </p>
+    </chapter>
+
+    <chapter title="Shortcut conflicts" id="conflicts">
+        <p>
+            GBrowser shortcuts are part of the IDE keymap, and most GBrowser actions are enabled whenever a GBrowser tab is open, not only when the browser has the focus.
+            Several of them, such as <shortcut>Ctrl+D</shortcut>, <shortcut>Ctrl+W</shortcut>, <shortcut>Ctrl+R</shortcut>, <shortcut>Ctrl+F</shortcut> and <shortcut>F12</shortcut>,
+            are also assigned to IDE actions.
+            If a shortcut does not do what you expect, assign a different one to the GBrowser action or to the IDE action.
+        </p>
+    </chapter>
+
+    <chapter title="Change a shortcut" id="change-shortcut">
+        <procedure title="Assign a shortcut to a GBrowser action" id="assign-shortcut">
+            <step>
+                Open the <control>Settings</control> dialog (<shortcut>Ctrl+Alt+S</shortcut>, macOS: <shortcut>⌘ ,</shortcut>)
+                and select <ui-path>Keymap</ui-path>.
+            </step>
+            <step>
+                Type the action name in the search field, for example <code>Toggle Device Emulation</code>.
+            </step>
+            <step>
+                Right-click the action and select <control>Add Keyboard Shortcut</control>.
+            </step>
+            <step>
+                Press the new key combination and click <control>OK</control>.
+                If the IDE reports a conflict, decide whether to remove the shortcut from the other action.
+            </step>
+        </procedure>
+        <!-- planned-image src="gbrowser_keymap.png" alt="Keymap settings filtered to GBrowser actions with their shortcuts" -->
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Work-with-GBrowser.topic"/>
+            <a href="GBrowser-Bookmarks-and-History.topic"/>
+            <a href="GBrowser-DevTools-and-Device-Emulation.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://www.jetbrains.com/help/idea/configuring-keyboard-and-mouse-shortcuts.html">Configure keyboard shortcuts in IntelliJ IDEA</a>
+        </category>
+    </seealso>
+</topic>
