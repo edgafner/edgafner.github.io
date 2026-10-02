@@ -3,24 +3,33 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Common Support" id="common-support-library" is-library="true">
+       title="Common support" id="common-support-library" is-library="true">
 
     <snippet id="support-content">
-        <chapter title="Feature Requests and Bugs" id="feature_request_and_bug_common">
+        <chapter title="Feature requests and bugs" id="feature_request_and_bug_common">
             <p>
-                If you have a feature request or have found a bug, please submit an issue in our <a
-                    href="https://github.com/edgafner/dorkag/issues">GitHub repository</a>.
+                To report a bug or request a feature, open an issue in the public
+                <a href="https://github.com/edgafner/dorkag/issues">DORKAG issue tracker on GitHub</a>.
+                The tracker covers all DORKAG plugins.
             </p>
-            <p>Please use the Feature Request or Bug Report template when submitting an issue, and provide as much detail as
-                possible.
+            <p>
+                Pick the bug report or feature request template for your plugin, or the general one if your plugin
+                has none. Name the plugin in the title, and include:
             </p>
+            <list>
+                <li>The plugin version and the IDE name and version (<ui-path>Help | About</ui-path>).</li>
+                <li>The steps that reproduce the problem, and what you expected to happen.</li>
+                <li>Relevant entries from the IDE log, with tokens and other secrets removed. To open the log folder,
+                    select <ui-path>Help | Show Log in Finder</ui-path> on macOS; on Windows and Linux, the menu item
+                    names your file manager.
+                </li>
+            </list>
         </chapter>
 
-        <chapter title="Contact Me" id="contact_me_common">
-            <p>If you have specific concerns, questions, or require immediate assistance, please get in touch with me
-                directly
-                at
-                <emphasis><b>jgafner@dorkag.com</b></emphasis>
+        <chapter title="Contact" id="contact_me_common">
+            <p>
+                For questions about licensing, or anything you do not want to post publicly, send an e-mail to
+                <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a>.
             </p>
         </chapter>
     </snippet>

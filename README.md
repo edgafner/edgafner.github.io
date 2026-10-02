@@ -19,7 +19,7 @@ your IDE.
 
 ### [GBrowser - Browser Integration](https://edgafner.github.io/gbrowser.html)
 
-Seamlessly integrate browser functionality into your development workflow.
+An embedded web browser inside your JetBrains IDE, with bookmarks, history and DevTools.
 
 ### [JirAI - Jira Cloud Integration](https://edgafner.github.io/jirai.html)
 
@@ -31,7 +31,7 @@ Visualize and track code coverage directly in your IDE.
 
 ### [QueryFlag - Query Management](https://edgafner.github.io/queryflag.html)
 
-Efficient query management and execution tools.
+Reusable query templates that you run on the text selected in the editor.
 
 ## 🚀 Quick Start
 
@@ -49,9 +49,16 @@ Efficient query management and execution tools.
 git clone https://github.com/edgafner/edgafner.github.io.git
 cd edgafner.github.io
 
-# Documentation is built with Writerside
-# View locally using Writerside IDE plugin or Docker
-docker run --rm -v $PWD:/opt/sources jetbrains/writerside-builder:2026.02.8644 /opt/builder.sh
+# Documentation is built with Writerside. Preview with the Writerside IDE plugin,
+# or build locally with the same Docker builder CI uses (work on a copy: the builder
+# writes into the source directory, and the output directory must not be a mount point):
+rsync -a --delete --exclude .git ./ /tmp/wrs-src/
+docker run --rm --platform linux/amd64 -v /tmp/wrs-src:/github/workspace \
+  jetbrains/writerside-builder:2026.09.0357 /bin/bash -c '
+    export DISPLAY=:99; Xvfb :99 &
+    /opt/builder/bin/idea.sh helpbuilderinspect -source-dir /github/workspace/ \
+      -product Dorkag/dorkag --runner github -output-dir /github/workspace/artifacts/'
+# Result: /tmp/wrs-src/artifacts/webHelpDORKAG2-all.zip and report.json
 ```
 
 ## 📖 Documentation Structure
@@ -63,6 +70,7 @@ Dorkag/
 │   ├── gbrowser/    # GBrowser plugin documentation
 │   ├── codecov/     # Codecov plugin documentation
 │   ├── queryflag/   # QueryFlag plugin documentation
+│   └── jirai/       # JirAI plugin documentation
 ├── images/          # Documentation images and screenshots
 ├── writerside.cfg   # Writerside configuration
 └── cfg/            # Build profiles and configuration
@@ -108,11 +116,16 @@ This documentation is licensed under the MIT License. See [LICENSE](LICENSE) fil
 
 - **Main Plugin Repository**: [github.com/edgafner/dorkag](https://github.com/edgafner/dorkag)
 - **Documentation Site**: [edgafner.github.io](https://edgafner.github.io)
-- **JetBrains Marketplace**: [AZD Plugin](https://plugins.jetbrains.com/plugin/22319-azd)
+- **JetBrains Marketplace**: [AZD](https://plugins.jetbrains.com/plugin/22319-azd),
+  [GBrowser](https://plugins.jetbrains.com/plugin/14458-gbrowser),
+  [JirAI](https://plugins.jetbrains.com/plugin/33954-jirai),
+  [Codecov](https://plugins.jetbrains.com/plugin/23390-codecov),
+  [QueryFlag](https://plugins.jetbrains.com/plugin/18269-queryflag)
 
 ## 👥 Support
 
-- **Issues**: [GitHub Issues](https://github.com/edgafner/edgafner.github.io/issues)
+- **Plugin issues**: [github.com/edgafner/dorkag/issues](https://github.com/edgafner/dorkag/issues)
+- **Documentation issues**: [github.com/edgafner/edgafner.github.io/issues](https://github.com/edgafner/edgafner.github.io/issues)
 - **Twitter**: [@Jongafner](https://twitter.com/Jongafner)
 - **LinkedIn**: [Connect with us](https://www.linkedin.com/in/jonathan-gafner-3415974b/)
 - **Blue sky**: [Contact us](https://bsky.app/profile/jgafner.bsky.social)

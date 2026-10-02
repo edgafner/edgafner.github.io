@@ -15,10 +15,17 @@ This is a Writerside documentation site for DORKAG JetBrains IDE plugins hosted 
 ## Key Commands
 
 ### Build Documentation
+Documentation is built automatically via GitHub Actions. To build locally with the same Docker builder, work on a copy
+of the repository (the builder writes into the source directory, and the output directory must not be a mount point):
+
 ```bash
-# Documentation is built automatically via GitHub Actions
-# Manual build requires Writerside Docker
-docker run --rm -v $PWD:/opt/sources jetbrains/writerside-builder:2026.02.8644 /opt/builder.sh
+rsync -a --delete --exclude .git ./ /tmp/wrs-src/
+docker run --rm --platform linux/amd64 -v /tmp/wrs-src:/github/workspace \
+  jetbrains/writerside-builder:2026.09.0357 /bin/bash -c '
+    export DISPLAY=:99; Xvfb :99 &
+    /opt/builder/bin/idea.sh helpbuilderinspect -source-dir /github/workspace/ \
+      -product Dorkag/dorkag --runner github -output-dir /github/workspace/artifacts/'
+# Result: /tmp/wrs-src/artifacts/webHelpDORKAG2-all.zip and report.json (inspection results)
 ```
 
 ### Deploy Documentation
@@ -43,6 +50,7 @@ To preview documentation locally, use the Writerside IDE plugin or the Writersid
 - **Images**: `Dorkag/images/` - All documentation images organized by plugin
   - Each plugin has dedicated image directories
   - Includes screenshots, icons, and diagrams
+  - Writerside resolves images by bare file name, so every file name must be unique across `Dorkag/images/**`
 
 ### GitHub Actions Workflow
 The `.github/workflows/build-docs.yml` workflow handles:
@@ -53,7 +61,7 @@ The `.github/workflows/build-docs.yml` workflow handles:
 
 ### Key Configuration Variables
 - **Web Root**: https://edgafner.github.io
-- **Docker Version**: 2026.02.8644
+- **Docker Version**: 2026.09.0357
 - **Primary Color**: Aqua theme
 
 ## Working with Documentation
