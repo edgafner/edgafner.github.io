@@ -3,54 +3,110 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="JirAI Metrics" id="JirAI-Metrics">
+       title="JirAI: Space summary, list and reports" id="JirAI-Metrics">
 
     <primary-label ref="jirai"/>
-    <secondary-label ref="jirai_version"/>
+    <show-structure for="chapter,procedure" depth="2"/>
 
-    <p>Open throughput, cycle-time, and delivery charts for any Jira space without leaving your IDE.</p>
+    <tldr>
+        <p>Open: <control>Space Summary</control> in the <control>JirAI</control> tool window title bar</p>
+        <p>Large spaces: <ui-path>Settings | Tools | JirAI | Metrics</ui-path></p>
+    </tldr>
 
-    <chapter title="Opening Metrics" id="opening-metrics">
-        <p>Open a space's metrics from the title bar. JirAI opens the space in an editor tab named after it, with its avatar, star, and a link back to Jira.</p>
-        <img src="jirai_space_list.png" alt="Metrics editor tab with the Summary, Timeline, Board, List and Reports tabs" style="block" thumbnail="true"/>
+    <link-summary>Open a Jira space in an editor tab to see its summary charts, a hierarchical work item list, its board and flow reports.</link-summary>
+    <card-summary>Summary charts, a hierarchical work item list and flow reports for any Jira space.</card-summary>
+    <web-summary>Open a Jira Cloud space in JetBrains IDEs with JirAI: throughput and work item charts, a list with parent hierarchy, and lead time and cycle time reports.</web-summary>
+
+    <p>A space page shows one Jira space (project) in an editor tab named after the space.</p>
+    <p>It has the <control>Summary</control>, <control>Timeline</control>, <control>Board</control>, <control>List</control> and <control>Reports</control> tabs.</p>
+    <p>A space downloads once for all its tabs, so switching tabs, filters and date ranges does not download it again.</p>
+
+    <chapter title="Open a space" id="opening-metrics">
+        <procedure title="Open a space" id="open-space-proc">
+            <step><p>In the <control>JirAI</control> tool window title bar, click <control>Space Summary</control> (the chart icon).</p></step>
+            <step>
+                <p>In the space chooser, pick a space from <control>Starred</control> or <control>All spaces</control>, or type in <control>Search spaces</control>.</p>
+                <!-- planned-image src="jirai_space_chooser.png" alt="Space chooser with the Starred and All spaces groups" -->
+            </step>
+        </procedure>
+        <p>The header of the space page shows the space avatar and name, and has these controls:</p>
+        <deflist type="narrow">
+            <def title="Star">Stars or unstars the space in Jira.</def>
+            <def title="Refresh">Loads the space again from Jira.</def>
+            <def title="Open in Jira">Opens the space in the browser.</def>
+        </deflist>
+        <p>The <control>Timeline</control> tab is not available in the IDE; it offers <control>Open in Jira</control> instead.</p>
+        <p>For the <control>Board</control> tab, see <a href="JirAI-Board.topic">Board</a>.</p>
+    </chapter>
+
+    <chapter title="Summary tab" id="summary-tab">
+        <p>The <control>Summary</control> tab shows tiles and charts for the selected date range, which is <control>Last 90 days</control> by default:</p>
         <list>
-            <li><p><b>Choose a Space:</b> Pick from your Jira starred spaces or all spaces, and star or unstar a space directly from JirAI.</p></li>
-            <li><p><b>Jira-style Tabs:</b> Each space opens with <control>Summary</control>, <control>Timeline</control>, <control>Board</control>, <control>List</control>, and <control>Reports</control> tabs, matching Jira's own layout.</p></li>
-            <li><p><b>Download Once:</b> A space downloads once for all its tabs; switching tabs, filters, and date ranges recompute locally without downloading again.</p></li>
+            <li><p>Tiles with counts of created, completed and in-progress work items.</p></li>
+            <li><p><control>Throughput</control>, <control>Created vs completed</control>, <control>Work in progress by age</control> and <control>Distribution</control> charts.</p></li>
         </list>
+        <p>Each chart can be shown as a table with <control>Show as table</control>, or enlarged with <control>Maximize</control>.</p>
+        <!-- planned-image src="jirai_space_summary.png" alt="Space Summary tab with throughput and created vs completed charts" -->
     </chapter>
 
-    <chapter title="Summary Tab" id="summary-tab">
-        <p>The <control>Summary</control> tab surfaces tiles and charts for throughput, created vs. completed work, work item age, and status distributions.</p>
-        <img src="jirai_metrics_summary.png" alt="Metrics Summary tab with throughput and created-vs-completed charts" style="block" thumbnail="true"/>
+    <chapter title="List tab" id="list-tab">
+        <p>The <control>List</control> tab lists the space's work items, with search, filter chips and sorting as in the <a href="Work-with-Jira-Issues.topic">issue list</a>.</p>
+        <p>Search matches the work item key and summary.</p>
+
+        <chapter title="Show work items under their parent" id="list-hierarchy">
+            <secondary-label ref="jirai_version"/>
+            <p>When no filter is set, the list shows child work items indented under their parent, as a foldable tree.</p>
+            <list>
+                <li><p>Click the <control>Show Hierarchy</control> toggle to switch between the tree and a flat list.</p></li>
+                <li><p>Click the chevron of a parent to fold or unfold it.</p></li>
+                <li><p>Use <control>Expand All</control> and <control>Collapse All</control> to unfold or fold every parent.</p></li>
+            </list>
+            <!-- planned-image src="jirai_space_list_hierarchy.png" alt="Space List tab showing work items nested under their parents" -->
+            <p>While a filter is active, the list is flat.</p>
+            <p>Spaces with more than 10,000 work items always show a flat list.</p>
+        </chapter>
+    </chapter>
+
+    <chapter title="Reports tab" id="reports-tab">
+        <p>The <control>Reports</control> tab reads each work item's status history to measure how work flows through the space.</p>
         <list>
-            <li><p><b>Table or Chart View:</b> Every tile can be viewed as a chart or maximized into a table for closer inspection.</p></li>
-            <li><p><b>Filters &amp; Date Range:</b> Filter by work type and assignee and adjust the date range; your choices are remembered per space.</p></li>
+            <li><p>Tiles for <control>Lead time</control>, <control>Cycle time</control>, <control>On-time delivery</control> and <control>In progress > 14 days</control>.</p></li>
+            <li><p><control>Control chart</control>, <control>Cumulative flow</control>, <control>Time in status</control> and <control>Throughput</control> charts.</p></li>
+            <li><p>A <control>Jira default</control> / <control>First pass</control> switch that sets how reopened work is counted: as Jira counts it, or by the first pass through each status.</p></li>
         </list>
+        <!-- planned-image src="jirai_space_reports.png" alt="Reports tab with lead time, cycle time and cumulative flow charts" -->
     </chapter>
 
-    <chapter title="Reports Tab" id="reports-tab">
-        <p>The <control>Reports</control> tab reads each work item's status history to compute delivery metrics, with a switch between how reopened work is counted.</p>
-        <img src="jirai_metrics_reports_filtered.png" alt="Metrics Reports tab with a Sprint status filter chip applied" style="block" thumbnail="true"/>
+    <chapter title="Filter a space" id="filtering-and-sampling">
         <list>
-            <li><p><b>Lead Time &amp; Cycle Time:</b> Track how long work items take from creation and from start to completion.</p></li>
-            <li><p><b>On-Time Delivery &amp; Control Chart:</b> See delivery predictability at a glance.</p></li>
-            <li><p><b>Cumulative Flow &amp; Time in Status:</b> Visualize work-in-progress and where items spend the most time.</p></li>
-            <li><p><b>Jira Default / First Pass:</b> Switch how reopened work is counted to match either Jira's own calculation or the first pass through a status.</p></li>
+            <li><p>Use the date range chip to change the period.</p></li>
+            <li><p>Click <control>☰ Filter</control> to add a filter by <control>Work type</control> or <control>Assignee</control>.</p></li>
+            <li><p>On the <control>Reports</control> tab, <control>☰ Filter</control> also offers <control>Sprint</control>, <control>Sprint status</control>, <control>Fix version</control>, <control>Component</control> and <control>Label</control>.</p></li>
+            <li><p>Click a value twice, or <shortcut>Shift</shortcut>+click it, to exclude it.</p></li>
+            <li><p>Use <control>Clear</control> at the top of a filter popup to clear the selection, and <control>All</control>, where offered, to select every value.</p></li>
         </list>
+        <p>JirAI remembers your filters and date range for each space.</p>
+
+        <chapter title="Large spaces" id="large-spaces">
+            <p>For a space with more than 10,000 work items, JirAI loads a sample of 10,000.</p>
+            <p>Choose which part to keep in <ui-path>Settings | Tools | JirAI | Metrics</ui-path>:</p>
+            <deflist type="medium">
+                <def title="Keep the newest work items (recent weeks stay exact)">The default. Recent weeks are complete, and the oldest weeks under-count.</def>
+                <def title="Keep the oldest work items (long-running work stays visible)">Long-running work stays in the sample, and recent weeks under-count.</def>
+            </deflist>
+            <p>The change applies the next time a space tab loads or refreshes.</p>
+            <!-- planned-image src="jirai_settings_metrics.png" alt="Metrics settings for spaces with more than 10,000 work items" -->
+        </chapter>
     </chapter>
 
-    <chapter title="Filtering and Sampling" id="filtering-and-sampling">
-        <list>
-            <li><p><b>Report Filters:</b> Filter Reports by sprint, sprint status, fix version, component, and label.</p></li>
-            <li><p><b>Exclude a Value:</b> Click a filter value twice, or <shortcut>Shift</shortcut>-click it, to exclude it from both the work-items list and Metrics.</p></li>
-            <li><p><b>All / Clear:</b> Use the <ui-path>All</ui-path> and <ui-path>Clear</ui-path> shortcuts at the top of each filter popup.</p></li>
-            <li><p><b>Large Space Sampling:</b> For very large spaces, <ui-path>Settings | Tools | JirAI Metrics</ui-path> lets you sample from the newest or oldest work items instead of loading everything.</p></li>
-        </list>
-    </chapter>
-
-    <chapter title="Next Steps" id="next">
-        <p>Return to <a href="Work-with-Jira-Issues.topic">Working with Jira Issues</a> or check the <a href="JirAI-FAQ.topic">FAQ</a> for common questions.</p>
-    </chapter>
-
+    <seealso>
+        <category ref="related">
+            <a href="JirAI-Board.topic"/>
+            <a href="Work-with-Jira-Issues.topic"/>
+            <a href="JirAI-Settings-Reference.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://support.atlassian.com/jira-software-cloud/docs/what-is-a-jira-software-board/">Jira Cloud boards</a>
+        </category>
+    </seealso>
 </topic>

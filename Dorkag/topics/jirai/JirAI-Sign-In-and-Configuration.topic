@@ -3,62 +3,110 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="JirAI Sign-In and Configuration" id="JirAI-Sign-In-and-Configuration">
+       title="JirAI: Sign in and manage your account" id="JirAI-Sign-In-and-Configuration">
 
     <primary-label ref="jirai"/>
-    <secondary-label ref="jirai_version"/>
+    <show-structure for="chapter,procedure" depth="2"/>
 
-    <p>Connect JirAI to your Jira Cloud workspace using secure API-token authentication.</p>
+    <tldr>
+        <p>Sign in: <control>JirAI</control> tool window, <control>Log In</control></p>
+        <p>Manage the account: <ui-path>Settings | Tools | JirAI</ui-path></p>
+        <p>Requires: a Jira Cloud site and an Atlassian API token</p>
+    </tldr>
 
-    <chapter title="Sign In to Jira Cloud" id="sign-in">
-        <p>Open the <control>JirAI</control> tool window on the left side of your IDE and click <ui-path>Log In</ui-path>.</p>
+    <link-summary>Sign in to Jira Cloud with an API token, manage the account and use JirAI behind a proxy.</link-summary>
+    <card-summary>Sign in with an Atlassian API token, sign out, and see where JirAI stores credentials.</card-summary>
+    <web-summary>Sign in to Jira Cloud from JirAI in JetBrains IDEs with an Atlassian API token, manage the account in Settings and use JirAI behind a corporate proxy.</web-summary>
 
-        <p>The dialog requests three pieces of information:</p>
-        <deflist>
-            <def title="Server">
-                <p>Your Jira Cloud site domain (for example, <code>myorg.atlassian.net</code> or <code>https://myorg.atlassian.net</code>). Plain <code>http://</code> URLs are rejected to prevent unencrypted token transmission.</p>
-            </def>
-            <def title="Email">
-                <p>The email address associated with your Atlassian account.</p>
-            </def>
-            <def title="Token">
-                <p>An Atlassian API token. You can generate a token at <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian API Tokens</a> (the sign-in dialog provides a direct shortcut link).</p>
-            </def>
-        </deflist>
+    <p>JirAI connects to one Jira Cloud site with your Atlassian account e-mail and an API token.</p>
 
-        <note>
-            <p>JirAI immediately validates credentials against Jira's <code>GET /rest/api/3/myself</code> endpoint before persisting any settings. If validation succeeds, your issue view loads instantly.</p>
-        </note>
+    <chapter title="Sign in from the tool window" id="sign-in">
+        <procedure title="Sign in to Jira Cloud" id="sign-in-proc">
+            <p>Before you start, create an API token on the <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian API tokens page</a>.</p>
+            <step>
+                <p>Open the <control>JirAI</control> tool window on the left side of the IDE.</p>
+                <p>When you are not signed in, it shows <control>Connect to Jira</control>.</p>
+                <!-- planned-image src="jirai_connect_panel.png" alt="JirAI tool window asking you to connect to Jira, with the Log In button" -->
+            </step>
+            <step><p>Click <control>Log In</control>.</p></step>
+            <step>
+                <p>In the <control>Log in to Jira</control> dialog, fill in the fields:</p>
+                <deflist type="medium">
+                    <def title="Server">
+                        <p>Your Jira Cloud site, for example <code>demo-org.atlassian.net</code>.</p>
+                        <p>A bare host name is enough, and an <code>https://</code> address copied from the browser also works.</p>
+                        <p>JirAI refuses <code>http://</code> addresses, because the token would travel unencrypted.</p>
+                    </def>
+                    <def title="Email">The e-mail address of the Atlassian account that owns the API token.</def>
+                    <def title="Token">The API token. The <control>Generate an API token</control> link below the field opens the Atlassian page where you create one.</def>
+                </deflist>
+                <!-- planned-image src="jirai_login_dialog.png" alt="Log in to Jira dialog with the Server, Email and Token fields" -->
+            </step>
+            <step><p>Click <control>Log In</control>.</p></step>
+            <p>JirAI checks the credentials with Jira before it stores anything.</p>
+            <p>When the check succeeds, the tool window lists your issues.</p>
+        </procedure>
     </chapter>
 
-    <chapter title="How Credentials and Settings Are Stored" id="credential-storage">
+    <chapter title="Manage the account in Settings" id="settings-account">
+        <secondary-label ref="jirai_version"/>
+        <p>You can also sign in and sign out without opening the tool window.</p>
+        <procedure title="Sign in or out from Settings" id="settings-account-proc">
+            <step><p>Open <ui-path>Settings | Tools | JirAI</ui-path>.</p></step>
+            <step>
+                <p>In the <control>Account</control> group, do one of the following:</p>
+                <list>
+                    <li><p>To sign in, click <control>+</control> and complete the <control>Log in to Jira</control> dialog.</p></li>
+                    <li><p>To sign out, select the account, click <control>−</control> and confirm.</p></li>
+                </list>
+                <!-- planned-image src="jirai_settings_account.png" alt="Settings page Tools JirAI with the signed-in account in the Account group" -->
+            </step>
+        </procedure>
+        <p>The <control>Resources</control> group on the same page links to this documentation.</p>
+    </chapter>
+
+    <chapter title="See the connected site and sign out" id="account-management">
+        <p>The tool window's options menu (<control>⋮</control>) shows the connected site and the account you are signed in as, for example <control>demo-org.atlassian.net — Signed in as Alex Doe</control>.</p>
+        <p>Choose <control>Sign Out</control> in the same menu to sign out.</p>
+        <p>Signing out removes the stored API token.</p>
+        <!-- planned-image src="jirai_gear_menu.png" alt="JirAI tool window options menu with the connected site and Sign Out" -->
+        <p>JirAI connects to one site at a time.</p>
+        <p>Signing in to another site replaces the current one.</p>
+    </chapter>
+
+    <chapter title="Where JirAI stores credentials" id="credential-storage">
         <list>
-            <li><p><b>Secure Token Storage:</b> Your Atlassian API token is saved inside the IDE's secure credential store (<code>PasswordSafe</code>, backed by the OS Keychain on macOS, KeePass, or Linux Secret Service). The secret is never saved in plaintext XML and is never exposed to the UI process.</p></li>
-            <li><p><b>Site Metadata:</b> Site URL, email, display name, account ID, and an internal site UUID are stored without secrets in <code>jira-sites.xml</code> in your IDE configuration directory.</p></li>
-            <li><p><b>Remote Development:</b> In Split Mode (JetBrains Gateway &amp; Client), the token and <code>jira-sites.xml</code> stay strictly on the remote host machine.</p></li>
+            <li>
+                <p>The API token is stored in the IDE credential store, which is the operating system keychain or the IDE's KeePass file, depending on the IDE's <control>Passwords</control> setting.</p>
+                <p>The token is never written to an XML file and never sent to the IDE's UI process.</p>
+            </li>
+            <li><p>The site address, your e-mail, display name and account ID are stored without secrets in <path>jira-sites.xml</path> in the IDE configuration directory.</p></li>
+            <li><p>Under Remote Development, the token and <path>jira-sites.xml</path> stay on the host.</p></li>
         </list>
     </chapter>
 
-    <chapter title="Account Management &amp; Sign Out" id="account-management">
-        <p>The JirAI tool window includes a gear menu on its toolbar displaying:</p>
+    <chapter title="Use JirAI behind a corporate proxy" id="corporate-proxy">
+        <p>JirAI uses the IDE proxy settings in <ui-path>Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy</ui-path>.</p>
         <list>
-            <li><p>The active Jira Cloud site URL</p></li>
-            <li><p>Your signed-in display name and account email</p></li>
-            <li><p>A <ui-path>Sign Out</ui-path> action, which removes the stored token from <code>PasswordSafe</code> and resets local session caches</p></li>
+            <li><p>Under Remote Development, requests run on the host, so the host's proxy settings apply.</p></li>
+            <li><p>For an authenticating proxy, JirAI uses the proxy credentials the IDE already has and does not open its own password prompt.</p></li>
+            <li><p>When the proxy rejects the credentials, the error names the proxy rather than Jira.</p></li>
+            <li><p>SOCKS proxies are not supported, so requests go directly to Jira.</p></li>
+            <li><p>Behind an authenticating proxy, user avatars might not load, because they are fetched without credentials.</p></li>
         </list>
+        <p>If sign-in through a proxy fails, enter or correct the proxy password in the IDE's <control>HTTP Proxy</control> settings and try again.</p>
     </chapter>
 
-    <chapter title="Corporate Proxy Configuration" id="corporate-proxy">
-        <p>JirAI respects your IDE's system HTTP proxy settings configured under <ui-path>Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy</ui-path>.</p>
-        <list>
-            <li><p><b>Transparent Authentication:</b> JirAI uses existing credentials stored for the proxy without prompting with redundant UI popups.</p></li>
-            <li><p><b>Clear Diagnostic Errors:</b> If a corporate proxy blocks connection, error messages explicitly identify the proxy rather than reporting confusing Jira HTTP status codes.</p></li>
-            <li><p><b>Split Mode:</b> When running with JetBrains Gateway, network requests originate from the host, so host proxy settings apply.</p></li>
-        </list>
-    </chapter>
-
-    <chapter title="Next Steps" id="learn-more">
-        <p>Explore <a href="Work-with-Jira-Issues.topic">Working with Jira Issues</a> to filter, search, and manage your tickets.</p>
-    </chapter>
-
+    <seealso>
+        <category ref="related">
+            <a href="JirAI-Installation.topic"/>
+            <a href="Work-with-Jira-Issues.topic"/>
+            <a href="JirAI-Settings-Reference.topic"/>
+            <a href="JirAI-Remote-Development-and-Architecture.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian API tokens</a>
+            <a href="https://www.jetbrains.com/help/idea/settings-http-proxy.html">HTTP Proxy settings in JetBrains IDEs</a>
+        </category>
+    </seealso>
 </topic>

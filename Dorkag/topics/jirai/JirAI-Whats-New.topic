@@ -3,75 +3,110 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="What's New in JirAI" id="JirAI-Whats-New">
+       title="JirAI: What's new" id="JirAI-Whats-New">
 
     <primary-label ref="jirai"/>
-    <secondary-label ref="jirai_version"/>
+    <show-structure for="chapter" depth="2"/>
 
-    <p>Discover the latest features, enhancements, and architecture in the JirAI plugin V2026.3.11.</p>
+    <link-summary>Highlights of each JirAI release, newest first.</link-summary>
+    <card-summary>Boards, breakdown, agent tools, house standard and other recent JirAI additions.</card-summary>
+    <web-summary>What's new in JirAI for JetBrains IDEs: Kanban and Scrum boards, child work items, AI agent tools, house standard rules and account settings.</web-summary>
 
-    <chapter title="Full Jira Cloud Experience in Your IDE" id="jirai-core-experience">
-        <p>JirAI brings your everyday Jira Cloud workflow directly into IntelliJ IDEA, PyCharm, WebStorm, GoLand, Rider, and the rest of the JetBrains IDE family. Stop alt-tabbing to your browser to check requirements, triage tickets, or update statuses.</p>
-        <img src="jirai_tool_window.png" alt="JirAI tool window with the issue list, quick filters, and search" style="block" thumbnail="true"/>
+    <p>This page lists the user-visible changes in each JirAI release, newest first.</p>
+    <p>The full change log is on the <a href="https://plugins.jetbrains.com/plugin/33954-jirai/versions">JetBrains Marketplace versions page</a>.</p>
+
+    <chapter title="2026.3.16" id="release-2026-3-16">
         <list>
-            <li><p><b>Instant Quick Filters:</b> One-click filtering for <emphasis>Assigned to Me</emphasis>, <emphasis>Unassigned</emphasis>, and <emphasis>All Issues</emphasis>.</p></li>
-            <li><p><b>Rich Filter Chips:</b> Filter simultaneously by Project, Status, Issue Type, Priority, Assignee, Reporter, Epic/Parent, and <emphasis>Unresolved only</emphasis>. Assignee and Reporter accept multiple people at once.</p></li>
-            <li><p><b>Exclude a Value:</b> Click a filter value twice, or <shortcut>Shift</shortcut>-click it, to exclude it, with <ui-path>All</ui-path> and <ui-path>Clear</ui-path> shortcuts at the top of every filter popup.</p></li>
-            <li><p><b>Instant Search &amp; Direct Key Jump:</b> Search issue summaries or jump immediately to any issue key (such as <code>PROJ-123</code>) regardless of creation date.</p></li>
-            <li><p><b>Dynamic Issue Creation:</b> Create new issues directly within the IDE using dynamic forms generated from your project's create metadata. The Description field accepts Markdown, with a Preview before you create.</p></li>
-            <li><p><b>Push a Markdown Doc to Jira:</b> A <ui-path>Push to Jira</ui-path> button on <code>.md</code> editors creates an issue from the document or updates the linked one, and warns if the issue changed in Jira since your last push.</p></li>
-            <li><p><b>Doc Presets for AI Workflows:</b> Superpowers and spec-kit documents are recognized by path and open the Create form pre-filled with your project, issue type, labels, and components. Manage them in <ui-path>Settings | Tools | JirAI | Doc Push</ui-path>. See <a href="JirAI-AI-Workflows.topic">AI Workflows</a>.</p></li>
+            <li>
+                <p>The <control>Board</control> tab of a space shows a company-managed Kanban board, or the active sprint of a Scrum board, with columns, cards, WIP limits, quick filters and an <control>Assignee</control> filter.</p>
+                <p>JirAI remembers the board you picked for each space.</p>
+            </li>
+            <li>
+                <p>Move a card to another column, or up and down within its column, from the card menu: the <control>More</control> button, a right-click or <shortcut>Shift+Enter</shortcut>.</p>
+                <p>When Jira needs fields for the transition, its transition screen opens.</p>
+            </li>
+            <li>
+                <p>The board works from the keyboard: <shortcut>Tab</shortcut> moves between columns and the arrow keys move between cards.</p>
+                <p>A screen reader announces each card and column.</p>
+            </li>
+        </list>
+        <p>See <a href="JirAI-Board.topic">Board</a>.</p>
+        <!-- planned-image src="jirai_board_kanban.png" alt="Kanban board tab of a space with columns, cards and a column over its WIP limit" -->
+    </chapter>
+
+    <chapter title="2026.3.15" id="release-2026-3-15">
+        <list>
+            <li>
+                <p>A house standard tells JirAI what your team expects on an issue beyond Jira's required fields: fields that must be set, headings the description must have and patterns a value must match.</p>
+                <p>An AI assistant that validates a draft is told when the draft misses one of these rules.</p>
+                <p>See <a href="JirAI-Agent-Tools.topic">Agent tools and house standard</a>.</p>
+            </li>
+            <li><p>A one-time notification points you to the IDE's MCP server setting when the server is off, so that the JirAI agent tools become visible to your assistant.</p></li>
+            <li><p><control>Open ↗</control> beside the <control>Parent</control> field opens the parent work item, and the <control>Breakdown</control> tab links to the parent.</p></li>
+            <li><p><control>Add child</control> flags work types that cannot sit under the parent, picks the type when only one fits and tells you when you cannot create in the parent's project.</p></li>
+            <li><p>Fixes for the <control>Breakdown</control> list and the <control>List</control> tab of a space: the list keeps its position and selection when you fold, edit or refresh.</p></li>
         </list>
     </chapter>
 
-    <chapter title="Rich Details and In-Place Editing" id="jirai-rich-details">
-        <p>View standard and custom Jira fields formatted cleanly by declared type. Perform updates right from the IDE details pane without loading the web interface.</p>
-        <img src="jirai_issue_timeline_details.png" alt="Issue details with editable fields beside the issue timeline" style="block" thumbnail="true"/>
+    <chapter title="2026.3.14" id="release-2026-3-14">
         <list>
-            <li><p><b>Inline Field Updates:</b> Modify summary, priority, labels, due date, components, fix versions, and parent with immediate feedback.</p></li>
-            <li><p><b>Workflow Transitions:</b> Transition issues across Jira workflow statuses, including screen dialogs for transitions requiring mandatory fields.</p></li>
-            <li><p><b>Attachments &amp; Thumbnails:</b> Drag and drop or browse files to attach, view image thumbnails, download, or delete attachments.</p></li>
-            <li><p><b>Issue Links:</b> Establish and remove links between related issues directly from the IDE.</p></li>
+            <li>
+                <p>The <control>Breakdown</control> section in the issue details and the <control>Breakdown</control> tab beside the issue timeline list an issue's child work items, with <control>Add child</control>.</p>
+                <p>See <a href="Jira-Timeline-and-Description-Editor.topic">Timeline and breakdown</a>.</p>
+            </li>
+            <li><p>The <control>List</control> tab of a space shows work items under their parent as a foldable tree, with <control>Show Hierarchy</control>, <control>Expand All</control> and <control>Collapse All</control>.</p></li>
+            <li><p>Right-click the issue details and choose <control>Hide Fields…</control> to hide several custom fields at once.</p></li>
+            <li><p>The <control>Type</control> row in the issue details shows the issue type icon.</p></li>
+            <li><p>The <control>Push to Jira</control> dialog shows its warnings box only when there are warnings.</p></li>
+        </list>
+        <!-- planned-image src="jirai_breakdown_tab.png" alt="Breakdown tab of an epic listing its child work items with the parent link and Add child" -->
+    </chapter>
+
+    <chapter title="2026.3.12 and 2026.3.13" id="release-2026-3-12">
+        <list>
+            <li><p>The <control>Project</control> and <control>Issue type</control> pickers on the Create form show project avatars and issue type icons.</p></li>
+            <li><p>Agent tools: an AI coding assistant connected to the IDE's MCP server can ask JirAI for a Jira project's real create screen and check a drafted issue against it before filing it.</p></li>
+            <li><p>2026.3.13 is a maintenance release with no visible changes.</p></li>
         </list>
     </chapter>
 
-    <chapter title="Unified Timeline and Full Description Editor" id="jirai-timeline-and-description">
-        <p>Keep context with a unified activity feed and write thorough descriptions using a native IDE editor tab.</p>
-        <img src="jirai_issue_timeline_details.png" alt="Issue timeline showing the description and a posted comment" style="block" thumbnail="true"/>
+    <chapter title="2026.3.11" id="release-2026-3-11">
         <list>
-            <li><p><b>Activity Stream:</b> View comments, status transitions, and field changes in a single chronological feed, with filters for Comments, Status changes, or Field changes.</p></li>
-            <li><p><b>Collaborative Comments:</b> Post comments with <code>@mentions</code> and file attachments; delete comments where permissions permit.</p></li>
-            <li><p><b>Full Editor Description Tab:</b> Edit issue descriptions in a real editor tab with Markdown conversion, conflict detection against remote changes, and visual collapsible diffs before saving.</p></li>
+            <li><p>Sign in and sign out from <ui-path>Settings | Tools | JirAI</ui-path>, in addition to the tool window.</p></li>
+            <li><p>The <control>Sprint</control> filter of space reports lists all sprints when a space has several boards.</p></li>
         </list>
     </chapter>
 
-    <chapter title="Metrics for Every Space" id="jirai-metrics">
-        <p>Open a Jira space's Metrics from the title bar to see throughput, cycle time, and delivery charts without leaving the IDE.</p>
-        <img src="jirai_metrics_summary.png" alt="Metrics Summary tab with throughput and created-vs-completed charts" style="block" thumbnail="true"/>
+    <chapter title="2026.3.5 to 2026.3.10" id="recent-improvements">
         <list>
-            <li><p><b>Summary &amp; Reports Tabs:</b> Tiles and charts for throughput, work item age, and status distributions, plus lead time, cycle time, on-time delivery, a control chart, cumulative flow, and time in status.</p></li>
-            <li><p><b>Filter &amp; Sample:</b> Filter Reports by sprint, sprint status, fix version, component, and label; sample very large spaces from their newest or oldest work items in <ui-path>Settings | Tools | JirAI Metrics</ui-path>.</p></li>
-        </list>
-        <p>See <a href="JirAI-Metrics.topic">JirAI Metrics</a> for the full walkthrough.</p>
-    </chapter>
-
-    <chapter title="Engineered for Remote Development &amp; Split Mode" id="jirai-split-mode">
-        <p>JirAI is architected from the ground up for JetBrains Gateway and Remote Development:</p>
-        <list>
-            <li><p><b>Client-Server Separation:</b> UI components run in JetBrains Client, while network calls and credential access remain securely on the host.</p></li>
-            <li><p><b>Corporate Proxy Support:</b> Leverages the IDE's HTTP Proxy settings and answers authenticating proxies cleanly without disruptive dialog popups.</p></li>
-            <li><p><b>Privacy &amp; Security:</b> API tokens are stored in the IDE's secure credential store (<code>PasswordSafe</code> / OS Keychain). Zero telemetry, zero third-party tracking.</p></li>
+            <li><p>2026.3.10: hide a custom field from the eye icon on its row, and manage hidden fields in <ui-path>Settings | Tools | JirAI | Field Visibility</ui-path>.</p></li>
+            <li><p>2026.3.9: Markdown in the Create form description, <control>Push to Jira</control> for Markdown documents, document presets for Superpowers and spec-kit, and the <control>List</control> tab of a space.</p></li>
+            <li><p>2026.3.8: a space downloads once for all its tabs.</p></li>
+            <li><p>2026.3.7: exclude a filter value with a second click or <shortcut>Shift</shortcut>+click, <control>All</control> and <control>Clear</control> in every filter popup, and several people in the <control>Assignee</control> and <control>Reporter</control> filters.</p></li>
+            <li><p>2026.3.6: filter space reports by sprint, sprint status, fix version, component and label.</p></li>
+            <li><p>2026.3.5: space pages with the <control>Summary</control> and <control>Reports</control> tabs, and the large-space setting in <ui-path>Settings | Tools | JirAI | Metrics</ui-path>.</p></li>
         </list>
     </chapter>
 
-    <chapter title="Recent Improvements (2026.3.5 – 2026.3.11)" id="recent-improvements">
+    <chapter title="2026.3.1 to 2026.3.4" id="jirai-core-experience">
+        <p>The first releases brought the core of JirAI:</p>
         <list>
-            <li><p><b>Field Visibility:</b> Hide unneeded custom fields from an inline eye icon on each field row, and manage visibility for a whole site, project, or single issue under <ui-path>Tools | JirAI</ui-path>.</p></li>
-            <li><p><b>Faster Metrics:</b> A space downloads once for all its tabs; switching tabs, filters, and date ranges recompute locally without downloading again.</p></li>
-            <li><p><b>Capitalization Alignment:</b> Sign-in dialog title, gear menu entries, and IDE Notification settings now strictly follow JetBrains standard capitalization.</p></li>
-            <li><p><b>Special Character Tooltips:</b> Tooltips preserve field names and angle brackets (such as <code>List&lt;String&gt;</code>) without dropping text.</p></li>
-            <li><p><b>Multi-line Error Formatting:</b> Jira API error responses retain their formatting and line breaks in tooltips and notifications.</p></li>
-            <li><p><b>Strict HTTPS:</b> Ensures all connections to Jira sites use secure HTTPS encryption.</p></li>
+            <li><p>The <control>JirAI</control> tool window with quick filters, filter chips, search and sorting.</p></li>
+            <li><p>A Create form built from your project's own create screen.</p></li>
+            <li><p>Issue details with in-place editing, workflow transitions, attachments and issue links.</p></li>
+            <li><p>The issue timeline with comments, <code>@mentions</code> and description editing.</p></li>
+            <li><p>Support for Remote Development, corporate HTTP proxies and the IDE credential store.</p></li>
         </list>
     </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="JirAI-Installation.topic"/>
+            <a href="JirAI-Board.topic"/>
+            <a href="JirAI-Agent-Tools.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/33954-jirai/versions">JirAI versions on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>

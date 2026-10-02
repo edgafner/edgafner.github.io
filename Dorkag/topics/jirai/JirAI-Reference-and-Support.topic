@@ -3,38 +3,50 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="JirAI Reference and Support" id="JirAI-Reference-and-Support">
+       title="JirAI: Support" id="JirAI-Reference-and-Support">
 
     <primary-label ref="jirai"/>
-    <secondary-label ref="jirai_version"/>
 
-    <p>Need help or have suggestions for the JirAI plugin? Here are all the resources and contact options available.</p>
+    <link-summary>Report a problem with JirAI, request a feature, contact the vendor and read the legal terms.</link-summary>
+    <card-summary>Report a problem, request a feature, contact the vendor and read the legal terms.</card-summary>
+    <web-summary>Get help with JirAI for Jira Cloud in JetBrains IDEs: report bugs and feature requests, contact the vendor by e-mail, and read the terms and privacy policy.</web-summary>
 
-    <chapter title="Feature Requests and Bug Reports" id="feature-requests">
-        <p>If you encounter an issue, have feedback, or would like to request new capabilities, please submit an issue on our <a href="https://github.com/edgafner/JirAI/issues">GitHub Issue Tracker</a>.</p>
-        <p>When reporting issues, please include your IDE version, JirAI plugin version, and relevant excerpts from your IDE logs (<ui-path>Help | Show Log in Finder / Explorer</ui-path>).</p>
-    </chapter>
+    <p>Use the options below to get help with JirAI or to suggest an improvement.</p>
 
-    <chapter title="Contact and Vendor Support" id="contact">
-        <p>For licensing, enterprise inquiries, or immediate support, contact us directly at:</p>
-        <p><emphasis><b>jgafner@dorkag.com</b></emphasis></p>
-    </chapter>
+    <include from="common-support.topic" element-id="support-content"/>
 
-    <chapter title="Terms of Service and Privacy" id="legal">
+    <chapter title="What to include in a report" id="feature-requests">
         <list>
-            <li><p><b>Licensing Terms:</b> Subject to the standard JetBrains Marketplace Developer EULA and Dorkag <a href="terms-of-service.topic">Terms of Service</a>.</p></li>
-            <li><p><b>Privacy Policy:</b> Read our commitment to zero tracking in the <a href="privacy-policy.topic">Privacy Policy</a>.</p></li>
+            <li><p>Your IDE name and version, from <ui-path>Help | About</ui-path>.</p></li>
+            <li><p>The JirAI version, from <ui-path>Settings | Plugins</ui-path>.</p></li>
+            <li><p>Whether you use Remote Development.</p></li>
+            <li><p>The steps that lead to the problem, and what you expected instead.</p></li>
+            <li><p>The relevant part of the IDE log: <ui-path>Help | Show Log in Finder</ui-path> on macOS, or <ui-path>Help | Show Log in Explorer</ui-path> on Windows.</p></li>
+        </list>
+        <p>Never include your API token.</p>
+    </chapter>
+
+    <chapter title="Licensing questions" id="contact">
+        <p>For questions about licenses, write to <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a>.</p>
+    </chapter>
+
+    <chapter title="Terms and privacy" id="legal">
+        <list>
+            <li><p>JirAI is licensed under the <a href="terms-of-service.topic">Terms of Service</a>.</p></li>
+            <li><p>The <a href="privacy-policy.topic">Privacy Policy</a> describes what data the DORKAG plugins handle.</p></li>
         </list>
     </chapter>
 
     <seealso>
-        <category ref="external" sorted="asc">
+        <category ref="related">
+            <a href="JirAI-FAQ.topic"/>
+            <a href="JirAI-Installation.topic"/>
+        </category>
+        <category ref="external">
             <a href="https://plugins.jetbrains.com/plugin/33954-jirai">JirAI on JetBrains Marketplace</a>
-            <a href="https://plugins.jetbrains.com/plugin/33954-jirai/reviews">JirAI Marketplace Reviews</a>
-            <a href="https://github.com/edgafner/JirAI">JirAI GitHub Repository</a>
-            <a href="https://dorkag.com">Dorkag Home Page</a>
-            <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian API Tokens Portal</a>
+            <a href="https://plugins.jetbrains.com/plugin/33954-jirai/reviews">JirAI reviews on JetBrains Marketplace</a>
+            <a href="https://github.com/edgafner/dorkag/issues">DORKAG issue tracker</a>
+            <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian API tokens</a>
         </category>
     </seealso>
-
 </topic>

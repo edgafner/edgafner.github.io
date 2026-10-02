@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI: Hide custom fields" id="Jira-Field-Visibility">
+
+    <primary-label ref="jirai"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Hide one field: the eye icon on a custom field row</p>
+        <p>Hide several: right-click the details tab, <control>Hide Fields…</control></p>
+        <p>Manage: <ui-path>Settings | Tools | JirAI | Field Visibility</ui-path></p>
+    </tldr>
+
+    <link-summary>Hide custom fields you do not need from the issue details, in all projects, one project or one issue.</link-summary>
+    <card-summary>Hide unneeded custom fields from the issue details and manage the hidden-field rules.</card-summary>
+    <web-summary>Hide unneeded Jira Cloud custom fields from issue details in JirAI for JetBrains IDEs, for all projects, one project or one issue, and unhide them later.</web-summary>
+
+    <p>Jira sites often carry many custom fields that do not matter for your work.</p>
+    <p>JirAI lets you hide custom fields from the details tab at three scopes:</p>
+    <deflist type="narrow">
+        <def title="In All Projects">Hides the field for every project on the Jira site.</def>
+        <def title="In Project">Hides the field for one project.</def>
+        <def title="In Issue">Hides the field for one issue.</def>
+    </deflist>
+    <p>Hiding a field affects only what JirAI shows in the IDE; the field and its value stay in Jira.</p>
+
+    <chapter title="Hide one field" id="hide-one-field">
+        <procedure title="Hide a custom field" id="hide-one-field-proc">
+            <step><p>In the issue details tab, click the eye icon on the custom field row.</p></step>
+            <step>
+                <p>In the <control>Hide Field</control> popup, choose <control>In All Projects</control>, <control>In Project: DEMO</control> or <control>In Issue: DEMO-123</control>.</p>
+                <!-- planned-image src="jirai_hide_field_popup.png" alt="Hide Field popup with the All Projects, Project and Issue scopes" -->
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Hide several fields at once" id="hide-several-fields">
+        <secondary-label ref="jirai_version"/>
+        <procedure title="Hide several custom fields" id="hide-several-fields-proc">
+            <step><p>Right-click the issue details tab, on empty space or on a field name, and choose <control>Hide Fields…</control>.</p></step>
+            <step>
+                <p>In the <control>Hide Fields</control> dialog, select the fields to hide.</p>
+                <p>Type in the <control>Filter fields</control> box to narrow the list, and use <control>All</control> or <control>Clear</control> to change the selection.</p>
+                <!-- planned-image src="jirai_hide_fields_dialog.png" alt="Hide Fields dialog with two fields selected" -->
+            </step>
+            <step><p>Click the button for the scope you want, for example <control>Hide 2 in Project: DEMO</control>.</p></step>
+        </procedure>
+        <p>The <control>Manage hidden fields…</control> link in the dialog opens the <control>Field Visibility</control> settings page.</p>
+    </chapter>
+
+    <chapter title="Review and unhide fields" id="manage-hidden-fields">
+        <p>The <ui-path>Settings | Tools | JirAI | Field Visibility</ui-path> page lists every hidden-field rule, with its <control>Field Name</control>, <control>Field ID</control>, <control>Site</control>, <control>Scope</control> and <control>Target</control>.</p>
+        <!-- planned-image src="jirai_settings_field_visibility.png" alt="Field Visibility settings with three hidden field rules" -->
+        <procedure title="Unhide a field" id="unhide-field-proc">
+            <step><p>Open <ui-path>Settings | Tools | JirAI | Field Visibility</ui-path>.</p></step>
+            <step><p>Select one or more rules and click <control>−</control>.</p></step>
+            <step><p>Click <control>OK</control> or <control>Apply</control>.</p></step>
+        </procedure>
+        <procedure title="Add a rule by hand" id="add-rule-proc">
+            <step><p>On the <control>Field Visibility</control> page, click <control>+</control>.</p></step>
+            <step>
+                <p>In the <control>Add Hidden Field Rule</control> dialog, fill in the fields:</p>
+                <deflist type="medium">
+                    <def title="Site">The Jira site address, for example <code>https://demo-org.atlassian.net</code>.</def>
+                    <def title="Field name">A name shown in the table only.</def>
+                    <def title="Field ID">The field ID the rule matches, for example <code>customfield_10020</code>.</def>
+                    <def title="Scope">All projects, one project or one issue.</def>
+                    <def title="Target">The project key or issue key; empty for all projects.</def>
+                </deflist>
+            </step>
+            <step><p>Click <control>OK</control>.</p></step>
+        </procedure>
+        <p>Rules match on the field ID within one Jira site.</p>
+        <p>Hidden-field rules are stored in the IDE, not in your project, so they apply to every project you open.</p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Jira-Issue-Details-and-Editing.topic"/>
+            <a href="JirAI-Settings-Reference.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://support.atlassian.com/jira-cloud-administration/docs/manage-issue-screens/">Jira Cloud issue screens</a>
+        </category>
+    </seealso>
+</topic>

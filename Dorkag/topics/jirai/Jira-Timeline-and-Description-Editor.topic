@@ -3,36 +3,114 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="JirAI: Timeline and Description Editor" id="Jira-Timeline-and-Description-Editor">
+       title="JirAI: Timeline, comments and breakdown" id="Jira-Timeline-and-Description-Editor">
 
     <primary-label ref="jirai"/>
-    <secondary-label ref="jirai_version"/>
+    <show-structure for="chapter,procedure" depth="2"/>
 
-    <p>Track complete issue discussions, audit historical changes, and edit descriptions using a full IDE editor tab.</p>
+    <tldr>
+        <p>Open: select an issue in the <control>JirAI</control> tool window and press <shortcut>Enter</shortcut></p>
+        <p>Post a comment: <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>)</p>
+    </tldr>
 
-    <chapter title="Unified Activity Timeline" id="timeline">
-        <p>Open the timeline from the details view to inspect a complete chronological history of the issue.</p>
-        <img src="jirai_issue_timeline_details.png" alt="Issue timeline showing the description and a posted comment" style="block" thumbnail="true"/>
+    <link-summary>Follow an issue's activity, comment with mentions and attachments, edit the description, and see the issue's child work items.</link-summary>
+    <card-summary>Read the activity feed, comment, edit the description in Markdown and browse child work items.</card-summary>
+    <web-summary>Use the JirAI issue timeline in JetBrains IDEs: Jira Cloud comments, history, Markdown description editing and the Breakdown list of child work items.</web-summary>
+
+    <p>Each issue you open gets an editor tab named after its key, for example <control>DEMO-123 Timeline</control>.</p>
+    <p>The tab has two inner tabs: <control>Timeline</control> for activity and discussion, and <control>Breakdown</control> for child work items.</p>
+
+    <chapter title="Read the activity feed" id="timeline">
+        <p>The <control>Timeline</control> tab shows the description, comments, status changes and field changes in one feed.</p>
+        <p>To show only one kind of entry, click the filter icon and choose <control>All</control>, <control>Comments</control>, <control>Status changes</control> or <control>Field changes</control>.</p>
+        <!-- planned-image src="jirai_timeline.png" alt="Issue timeline with the description, two comments and a status change" -->
+    </chapter>
+
+    <chapter title="Comment on an issue" id="comments">
+        <procedure title="Post a comment" id="post-comment-proc">
+            <step><p>Click the <control>Add a comment…</control> field at the bottom of the timeline and type your comment.</p></step>
+            <step><p>Optional: type <code>@</code> and choose a person to mention them.</p></step>
+            <step><p>Optional: click the paperclip to attach files.</p></step>
+            <step><p>Click <control>Post</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>).</p></step>
+        </procedure>
+        <p>Press <shortcut>Enter</shortcut> to start a new line in the comment.</p>
+        <p>To delete one of your comments, click the delete icon on it and confirm.</p>
+        <p>Jira has no undo for deleted comments, and you can delete only the comments that Jira permissions allow.</p>
+        <p>Existing comments cannot be edited.</p>
+    </chapter>
+
+    <chapter title="Edit the description" id="description-editor">
+        <p>You edit the description in place, on the description card at the top of the timeline.</p>
+        <p>JirAI converts Jira's description format to Markdown for editing and converts it back when you save.</p>
+        <procedure title="Edit the description" id="edit-description-proc">
+            <step><p>On the description card, click the pencil icon (<control>Edit description</control>).</p></step>
+            <step>
+                <p>Edit the Markdown text.</p>
+                <!-- planned-image src="jirai_description_edit.png" alt="Description being edited in place with the Save and Cancel buttons" -->
+            </step>
+            <step><p>Click <control>Save</control>, or <control>Cancel</control> to discard your changes.</p></step>
+        </procedure>
+        <p>After you save, the timeline shows an <control>Updated the description</control> entry.</p>
+        <p>Click <control>Show changes</control> on it to see what changed as a diff.</p>
+        <!-- planned-image src="jirai_description_diff.png" alt="Timeline entry showing the description change as a diff" -->
+
+        <chapter title="When someone else changed the description" id="description-conflict">
+            <p>Before saving, JirAI checks whether the description changed in Jira since you started editing.</p>
+            <p>If it did, the card reads <control>The description was changed in Jira while you were editing.</control></p>
+            <list>
+                <li><p>Click <control>Load theirs</control> to replace your text with the version from Jira.</p></li>
+                <li><p>If the new version can no longer be edited in the IDE, click <control>Copy my text and close</control> to keep your text on the clipboard.</p></li>
+            </list>
+            <p>The check catches a change made between loading and saving; it is not a lock.</p>
+        </chapter>
+
+        <chapter title="Descriptions you can edit only in Jira" id="description-readonly">
+            <p>Some Jira content has no Markdown equivalent, and saving it from the IDE would lose it.</p>
+            <p>A description that contains such content is shown but cannot be edited in the IDE.</p>
+            <p>The card explains why, for example <control>This description contains a table, so it can only be edited in Jira.</control>, and offers <control>Open in browser</control>.</p>
+            <p>This applies, among others, to descriptions with:</p>
+            <list columns="2">
+                <li>tables and panels</li>
+                <li>images and attachments</li>
+                <li>smart links</li>
+                <li>@mentions and emoji</li>
+                <li>checklists and decision lists</li>
+                <li>quotes and dividers</li>
+                <li>expandable sections</li>
+                <li>status lozenges and dates</li>
+                <li>column layouts and synced blocks</li>
+                <li>app extensions</li>
+                <li>underline, text colour, subscript and superscript</li>
+                <li>inline comments</li>
+            </list>
+            <!-- planned-image src="jirai_description_readonly.png" alt="Description that contains a table, shown as read-only with Open in browser" -->
+        </chapter>
+    </chapter>
+
+    <chapter title="The Breakdown tab" id="breakdown-tab">
+        <secondary-label ref="jirai_version"/>
+        <p>The <control>Breakdown</control> tab lists every direct child work item of the issue, sub-tasks included.</p>
+        <p>Its title shows the count, for example <control>Breakdown (6)</control>.</p>
         <list>
-            <li><p><b>Single Chronological Stream:</b> Merges discussions, status transitions, and field modifications into one readable feed.</p></li>
-            <li><p><b>Feed Filters:</b> Quick toggle between <control>All</control>, <control>Comments</control>, <control>Status changes</control>, or <control>Field changes</control>.</p></li>
-            <li><p><b>Collaborative Comments:</b> Post new comments with team <code>@mentions</code> and file attachments directly from the IDE.</p></li>
-            <li><p><b>Comment Deletion:</b> Remove your comments when permitted by Jira project permissions.</p></li>
+            <li><p>More children load as you scroll.</p></li>
+            <li><p>Click a child to open it.</p></li>
+            <li><p>Click <control>Parent: KEY ↗</control> at the top to open the parent of the current issue.</p></li>
+            <li><p>Click <control>Add child</control> to create a child work item with this issue as its parent. See <a href="Jira-Create-Issues.topic" anchor="add-child">Create a child work item</a>.</p></li>
         </list>
+        <!-- planned-image src="jirai_breakdown_tab.png" alt="Breakdown tab of an epic listing its child work items with the parent link and Add child" -->
+        <p>An issue without children shows <control>No child work items.</control></p>
+        <p>An issue type that cannot have children shows <control>This work item type can't have child work items.</control></p>
+        <p>Breakdown lists direct children only; grandchildren appear in the <control>Breakdown</control> tab of their own parent.</p>
     </chapter>
 
-    <chapter title="Full IDE Description Editor" id="description-editor">
-        <p>JirAI enables editing ticket descriptions inside a dedicated IDE editor tab rather than a cramped popup form.</p>
-        <list>
-            <li><p><b>Bidirectional Markdown Conversion:</b> Jira's Atlassian Document Format (ADF) is converted to clean Markdown for natural IDE editing, and converted back to ADF when saving.</p></li>
-            <li><p><b>Remote Conflict Detection:</b> JirAI verifies against remote modifications made by teammates since you loaded the issue, preventing accidental overwrites.</p></li>
-            <li><p><b>Visual Collapsible Diffs:</b> Review exact changes in a visual diff comparison before confirming your save.</p></li>
-            <li><p><b>Content Safety:</b> Descriptions containing complex structures not supported by the Markdown converter (e.g. nested panels or custom macros) are protected in read-only mode to prevent content loss.</p></li>
-        </list>
-    </chapter>
-
-    <chapter title="Next Steps" id="next">
-        <p>Learn about running JirAI in <a href="JirAI-Remote-Development-and-Architecture.topic">Remote Development and Split Mode</a>.</p>
-    </chapter>
-
+    <seealso>
+        <category ref="related">
+            <a href="Jira-Issue-Details-and-Editing.topic"/>
+            <a href="Jira-Create-Issues.topic"/>
+            <a href="Work-with-Jira-Issues.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/33954-jirai">JirAI on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>

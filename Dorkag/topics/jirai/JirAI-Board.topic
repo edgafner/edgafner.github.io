@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI: Kanban and Scrum boards" id="JirAI-Board">
+
+    <primary-label ref="jirai"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Open: <control>Space Summary</control> in the <control>JirAI</control> tool window title bar, then the <control>Board</control> tab</p>
+        <p>Card menu: <shortcut>Shift+Enter</shortcut> on a focused card</p>
+        <p>Requires: a company-managed Kanban or Scrum board</p>
+    </tldr>
+
+    <link-summary>Open a Jira Kanban board or the active sprint of a Scrum board in the IDE, filter it and move cards between columns.</link-summary>
+    <card-summary>Open a Kanban board or the active Scrum sprint and move cards between columns.</card-summary>
+    <web-summary>Run Jira Cloud Kanban and Scrum boards in JetBrains IDEs with JirAI: columns, WIP limits, quick filters and card moves with transition screens.</web-summary>
+
+    <p>The <control>Board</control> tab of a space page shows a Jira board with its columns and cards.</p>
+    <p>You can filter the board and move cards between columns or within a column, and JirAI applies the moves in Jira.</p>
+
+    <chapter title="Open a board" id="open-board">
+        <secondary-label ref="jirai_version"/>
+        <procedure title="Open a board" id="open-board-proc">
+            <step><p>Open the space as described in <a href="JirAI-Metrics.topic" anchor="opening-metrics">Open a space</a>.</p></step>
+            <step><p>Select the <control>Board</control> tab.</p></step>
+            <step>
+                <p>If the space has more than one board, click the board picker and choose a board, or type in <control>Search boards</control>.</p>
+                <!-- planned-image src="jirai_board_picker.png" alt="Board picker listing the boards of a space, with a team-managed board marked Limited" -->
+            </step>
+        </procedure>
+        <p>JirAI remembers the board you picked for each space.</p>
+        <p>Team-managed boards are marked <control>Limited</control> in the picker.</p>
+        <p>They do not open in the IDE; choosing one opens it in Jira.</p>
+    </chapter>
+
+    <chapter title="Read the board" id="read-board">
+        <p>Each column shows its name and its number of cards, for example <control>(4)</control>.</p>
+        <p>Each card shows the issue type icon, the key, the summary, labels and the assignee.</p>
+        <!-- planned-image src="jirai_board_kanban.png" alt="Kanban board tab with columns, cards and a column over its WIP limit" -->
+        <list>
+            <li><p>When a column has a WIP limit, a column above the maximum reads <control>Over this column's limit of N</control>, and a column below the minimum reads <control>Below this column's minimum of N</control>.</p></li>
+            <li><p>A long column shows a <control>+N more</control> footer; click it, or focus it and press <shortcut>Enter</shortcut>, to show the remaining cards.</p></li>
+            <li><p>A column that maps to no status reads <control>No status — cards cannot move here.</control></p></li>
+        </list>
+
+        <chapter title="Scrum boards" id="scrum-boards">
+            <p>A Scrum board shows the cards of its active sprint only.</p>
+            <list>
+                <li><p>When no sprint is active, the tab says so, and there is nothing to show until a sprint starts in Jira.</p></li>
+                <li><p>When the board has more than one active sprint, it shows the first and names the others in a notice.</p></li>
+            </list>
+            <!-- planned-image src="jirai_board_scrum.png" alt="Scrum board tab showing the cards of the active sprint" -->
+        </chapter>
+
+        <chapter title="Board notices" id="board-notices">
+            <p>A notice above the columns tells you when the board might differ from Jira's own view, for example:</p>
+            <list>
+                <li><p>The board configuration could not be read, so the columns were derived from the project statuses, without the board's sub-query, WIP limits or column order.</p></li>
+                <li><p>The board's sub-query could not be applied, so the board may show more work items than Jira does.</p></li>
+                <li><p>A quick filter could not be applied and was turned off.</p></li>
+                <li><p>The board holds more work items than JirAI read, so it shows only the first ones Jira returned.</p></li>
+            </list>
+        </chapter>
+    </chapter>
+
+    <chapter title="Filter the board" id="filter-board">
+        <p>The filter row above the columns has:</p>
+        <deflist type="medium">
+            <def title="Quick filters">The quick filters defined on the board in Jira. Click one to turn it on or off.</def>
+            <def title="Assignee">Show or exclude the cards of selected people, or unassigned cards.</def>
+            <def title="Work type">Show or exclude issue types.</def>
+        </deflist>
+        <p>As in other JirAI filters, click a value twice or <shortcut>Shift</shortcut>+click it to exclude it.</p>
+        <p>An empty column tells you when its cards are hidden by the filters.</p>
+        <!-- planned-image src="jirai_board_filters.png" alt="Board filter row with a quick filter on and the Assignee filter open" -->
+    </chapter>
+
+    <chapter title="Move a card" id="move-card">
+        <procedure title="Move a card to another column or position" id="move-card-proc">
+            <step>
+                <p>Open the card menu in one of these ways:</p>
+                <list>
+                    <li><p>Click <control>More</control> (<control>⋯</control>) on the card.</p></li>
+                    <li><p>Right-click the card.</p></li>
+                    <li><p>Focus the card and press <shortcut>Shift+Enter</shortcut>, or the IDE's context menu key.</p></li>
+                </list>
+            </step>
+            <step>
+                <p>Choose the move:</p>
+                <deflist type="medium">
+                    <def title="Move To">Moves the card to the column you pick in the submenu.</def>
+                    <def title="Move Up, Move Down">Moves the card one position within its column.</def>
+                    <def title="Move to Top, Move to Bottom">Moves the card to the top or bottom of its column.</def>
+                </deflist>
+                <!-- planned-image src="jirai_board_card_menu.png" alt="Card menu with the Move To submenu listing the board columns" -->
+            </step>
+            <step><p>If Jira needs fields for the transition, fill them in on the transition screen that opens and confirm.</p></step>
+        </procedure>
+        <p>The card menu also has <control>Open in Jira</control> and <control>Copy Key</control>.</p>
+        <p>Cards move through the card menu; dragging cards is not supported.</p>
+        <list>
+            <li><p>A move into another column runs the Jira workflow transition that leads to that column's status.</p></li>
+            <li><p>When no transition leads from the card's status to the target column, JirAI tells you and leaves the card where it is.</p></li>
+            <li><p>Changing a card's position within a column needs the Schedule and Edit permissions in Jira.</p></li>
+            <li><p>If Jira does not confirm a move, JirAI refreshes the board to show where the card is.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Use the board from the keyboard" id="board-keyboard">
+        <table>
+            <tr><td>Action</td><td>Keys</td></tr>
+            <tr><td>Move to the next or previous column</td><td><shortcut>Tab</shortcut>, <shortcut>Shift+Tab</shortcut></td></tr>
+            <tr><td>Move between cards</td><td>Arrow keys</td></tr>
+            <tr><td>Open the card menu</td><td><shortcut>Shift+Enter</shortcut></td></tr>
+            <tr><td>Show more cards in a column</td><td><shortcut>Enter</shortcut> on the <control>+N more</control> footer</td></tr>
+        </table>
+        <p>A screen reader announces each card with its key, summary, status and assignee, and each column with its name and number of work items.</p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="JirAI-Metrics.topic"/>
+            <a href="Jira-Issue-Details-and-Editing.topic"/>
+            <a href="Work-with-Jira-Issues.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://support.atlassian.com/jira-software-cloud/docs/what-is-a-jira-software-board/">Jira Cloud boards</a>
+        </category>
+    </seealso>
+</topic>

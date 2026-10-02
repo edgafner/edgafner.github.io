@@ -3,60 +3,110 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="JirAI: Issue Details and Editing" id="Jira-Issue-Details-and-Editing">
+       title="JirAI: Issue details and editing" id="Jira-Issue-Details-and-Editing">
 
     <primary-label ref="jirai"/>
-    <secondary-label ref="jirai_version"/>
+    <show-structure for="chapter,procedure" depth="2"/>
 
-    <p>Inspect comprehensive issue details, edit fields in place, transition workflows, and manage attachments within your IDE.</p>
+    <tldr>
+        <p>Open: select an issue in the <control>JirAI</control> tool window and press <shortcut>Enter</shortcut></p>
+        <p>Details menu: right-click the details tab for <control>Refresh</control> and <control>Hide Fields…</control></p>
+    </tldr>
 
-    <chapter title="Issue Details View" id="details-view">
-        <p>Double-clicking an issue or clicking <ui-path>Open Details</ui-path> opens the issue inspector tab.</p>
-        <img src="jirai_issue_timeline_details.png" alt="Issue details with editable fields beside the issue timeline" style="block" thumbnail="true"/>
+    <link-summary>Read an issue's fields, edit them in place, move the issue through its workflow, and manage attachments, links and child work items.</link-summary>
+    <card-summary>Edit fields in place, change status, and manage attachments, links and child work items.</card-summary>
+    <web-summary>Read and edit Jira Cloud issue fields in JetBrains IDEs with JirAI: in-place edits, workflow transitions, attachments, issue links and child work items.</web-summary>
+
+    <p>The details tab shows one issue's fields and lets you change most of them without opening Jira.</p>
+
+    <chapter title="Open the issue details" id="details-view">
+        <p>In the <control>JirAI</control> tool window, select an issue and press <shortcut>Enter</shortcut>, double-click it, or right-click it and choose <control>Open Details</control>.</p>
+        <p>The details tab opens in the tool window, named after the issue key, and the issue's <control>Timeline</control> tab opens in the editor.</p>
+        <p>The header shows the key and summary, with a <control>Timeline ↗</control> link that opens the issue timeline.</p>
+        <!-- planned-image src="jirai_issue_details.png" alt="Issue details tab with the type icon, the parent link and the Breakdown section" -->
+        <p>The tab lists the standard fields, such as <control>Status</control>, <control>Assignee</control>, <control>Reporter</control>, <control>Priority</control>, <control>Type</control>, <control>Parent</control>, <control>Due date</control>, <control>Labels</control>, <control>Components</control> and <control>Fix versions</control>, followed by the custom fields.</p>
         <list>
-            <li><p><b>Type-Aware Field Rendering:</b> Standard and custom fields are displayed according to their declared Jira schema types (dates, text, single/multi-selects, user pickers, and tags).</p></li>
-            <li><p><b>Graceful Fallbacks:</b> If a field uses an unsupported custom renderer, JirAI displays a clean fallback with a direct <ui-path>Open in Jira</ui-path> link to view it on the web.</p></li>
-            <li><p><b>Field Visibility:</b> Hide a custom field you don't need from the inline eye icon on its row, or manage which fields are shown for a whole site, project, or single issue under <ui-path>Tools | JirAI</ui-path>.</p></li>
+            <li><p>Each field is shown according to the type Jira declares for it.</p></li>
+            <li><p>The <control>Type</control> row shows the issue type icon.</p></li>
+            <li><p>A field of a type JirAI cannot show yet reads <control>Not shown here</control>, with an <control>Open in Jira</control> link.</p></li>
+            <li><p>Fields that Jira declares without a specific type, such as <control>Rank</control>, are left out.</p></li>
         </list>
+        <p>To hide custom fields you do not need, see <a href="Jira-Field-Visibility.topic">Hide custom fields</a>.</p>
     </chapter>
 
-    <chapter title="In-Place Field Editing" id="inline-editing">
-        <p>Edit issue attributes without switching to a web browser:</p>
+    <chapter title="Edit fields in place" id="inline-editing">
+        <p>Click a field value to change it.</p>
+        <deflist type="medium">
+            <def title="Summary">Edit the text in place.</def>
+            <def title="Priority">Choose a priority from the list.</def>
+            <def title="Assignee">Search for a person, or click <control>Assign to me</control>.</def>
+            <def title="Labels, Components, Fix versions">Add or remove values; you can filter the list or type a new label.</def>
+            <def title="Due date">Pick a date, or clear it.</def>
+            <def title="Parent">Search all projects by key or summary to choose a new parent, or choose <control>Clear parent</control>.</def>
+        </deflist>
+        <p>To open the parent work item, click <control>Open ↗</control> beside the <control>Parent</control> field.</p>
+    </chapter>
+
+    <chapter title="Change the status" id="workflow-transitions">
+        <procedure title="Move an issue through its workflow" id="transition-proc">
+            <step>
+                <p>Click the <control>Status</control> value.</p>
+                <p>The list shows the transitions your Jira workflow allows from the current status.</p>
+                <!-- planned-image src="jirai_transition_popup.png" alt="Status dropdown listing the available workflow transitions" -->
+            </step>
+            <step><p>Choose a transition.</p></step>
+            <step>
+                <p>If the transition has a screen with fields, such as <control>Resolution</control>, fill them in the dialog that opens and confirm.</p>
+                <p>The confirm button stays disabled while a required field is empty.</p>
+                <!-- planned-image src="jirai_transition_screen.png" alt="Transition dialog asking for the required Resolution field" -->
+            </step>
+        </procedure>
+        <p>A transition field JirAI cannot edit shows an <control>Open in browser</control> link, so that you can complete the transition in Jira.</p>
+    </chapter>
+
+    <chapter title="Attachments" id="attachments">
         <list>
-            <li><p><b>Summary &amp; Priority:</b> Click to edit the title or select a new priority from the dropdown.</p></li>
-            <li><p><b>Labels, Components &amp; Fix Versions:</b> Add or remove tags, components, and target releases with autocompleting chips.</p></li>
-            <li><p><b>Due Date &amp; Parent:</b> Pick due dates from a date picker, or reassign parent Epics/tasks with prefix search.</p></li>
-            <li><p><b>Assignee Management:</b> Reassign issues to team members using searchable user pickers showing team avatars.</p></li>
+            <li><p>To attach files, click the paperclip (<control>Attach files…</control>) and choose the files, or drag files onto the <control>Attachments</control> section.</p></li>
+            <li><p>Image attachments show a thumbnail when Jira provides one.</p></li>
+            <li><p>Use the actions on an attachment to download it or delete it; deleting asks for confirmation.</p></li>
         </list>
+        <p>On macOS and Windows, JirAI uses the operating system file dialog; on Linux, it uses the IDE file chooser.</p>
+        <!-- planned-image src="jirai_attachments_links.png" alt="Attachments section with an image thumbnail, and the Linked issues section" -->
     </chapter>
 
-    <chapter title="Workflow Transitions" id="workflow-transitions">
-        <p>Advance issues through your team's Jira workflow directly from the details header:</p>
+    <chapter title="Issue links" id="issue-links">
+        <procedure title="Link two issues" id="link-issue-proc">
+            <step><p>In the <control>Linked issues</control> section, click <control>Add link</control>.</p></step>
+            <step><p>In the <control>Link Issue</control> dialog, choose the <control>Link type:</control>, for example <emphasis>blocks</emphasis> or <emphasis>relates to</emphasis>.</p></step>
+            <step><p>Search for the other issue by key or summary, select it and confirm.</p></step>
+        </procedure>
+        <p>To remove a link, use <control>Remove link</control> on its row.</p>
+    </chapter>
+
+    <chapter title="Child work items (Breakdown)" id="breakdown-section">
+        <secondary-label ref="jirai_version"/>
+        <p>The <control>Breakdown</control> section lists up to five child work items of the issue, sub-tasks included.</p>
         <list>
-            <li><p><b>Status Dropdown:</b> Select target statuses (e.g. <emphasis>In Progress</emphasis>, <emphasis>In Review</emphasis>, <emphasis>Closed</emphasis>).</p></li>
-            <li><p><b>Transition Screen Dialogs:</b> When a workflow transition enforces required fields (such as Resolution, fix version, or transition comment), JirAI prompts with a modal transition dialog so you can fulfill required fields before completing the transition.</p></li>
+            <li><p>Click a child to open it in its own details tab.</p></li>
+            <li><p>When there are more children, click <control>+N more ↗</control> or <control>More ↗</control> to open the full list in the <control>Breakdown</control> tab of the editor.</p></li>
+            <li><p>Click <control>Add child</control> to create a child work item. See <a href="Jira-Create-Issues.topic" anchor="add-child">Create a child work item</a>.</p></li>
         </list>
+        <p>For the full list, see <a href="Jira-Timeline-and-Description-Editor.topic" anchor="breakdown-tab">The Breakdown tab</a>.</p>
     </chapter>
 
-    <chapter title="Attachments &amp; Thumbnails" id="attachments">
-        <p>Manage file assets without leaving your IDE workspace:</p>
-        <list>
-            <li><p><b>Drag-and-Drop:</b> Drag files from your operating system or IDE project tree directly into the attachments zone.</p></li>
-            <li><p><b>Image Thumbnails:</b> Inline previews for common image formats (PNG, JPEG, GIF, SVG) cached for the session.</p></li>
-            <li><p><b>Download &amp; Delete:</b> Download attachments to your local disk or delete unwanted files with proper confirmation.</p></li>
-        </list>
+    <chapter title="Refresh the details" id="details-refresh">
+        <p>Right-click anywhere in the details tab, including on a field name, and choose <control>Refresh</control> to reload the issue from Jira.</p>
     </chapter>
 
-    <chapter title="Issue Links" id="issue-links">
-        <list>
-            <li><p><b>View Relationships:</b> Browse blocks, blocked-by, relates-to, and duplicates associations.</p></li>
-            <li><p><b>Create Links:</b> Link related tickets with prefix-search on issue keys and summaries.</p></li>
-            <li><p><b>Remove Links:</b> Delete obsolete issue associations with one click.</p></li>
-        </list>
-    </chapter>
-
-    <chapter title="Next Steps" id="next">
-        <p>Learn about comment discussions and the visual Markdown editor in <a href="Jira-Timeline-and-Description-Editor.topic">Timeline and Description Editor</a>.</p>
-    </chapter>
-
+    <seealso>
+        <category ref="related">
+            <a href="Jira-Timeline-and-Description-Editor.topic"/>
+            <a href="Jira-Field-Visibility.topic"/>
+            <a href="Jira-Create-Issues.topic"/>
+            <a href="Work-with-Jira-Issues.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://plugins.jetbrains.com/plugin/33954-jirai">JirAI on JetBrains Marketplace</a>
+        </category>
+    </seealso>
 </topic>
