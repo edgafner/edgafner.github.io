@@ -9,10 +9,10 @@
 
     <toc-element topic="Dorkag.topic" toc-title="DORKAG">
         <include from="azdlib" element-id="azdsn.tree"/>
-        <include from="gbrowserlib" element-id="gbrowsersn.tree"/>
         <include from="jirailib" element-id="jiraisn.tree"/>
         <include from="codecovlib" element-id="codecovsn.tree"/>
         <include from="queryflaglib" element-id="queryflagsn.tree"/>
+        <include from="gbrowserlib" element-id="gbrowsersn.tree"/>
     </toc-element>
     <toc-element topic="privacy-policy.topic"/>
     <toc-element topic="terms-of-service.topic"/>
