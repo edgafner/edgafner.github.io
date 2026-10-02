@@ -15,7 +15,7 @@
 
     <link-summary>Select a value in the editor and run a saved QueryFlag template with it from the context menu.</link-summary>
     <card-summary>Select a value in the editor and run a template with it from the context menu.</card-summary>
-    <web-summary>Run QueryFlag templates on the text you select in the editor of JetBrains IDEs: QueryFlag fills in the value, runs the query and shows the results.</web-summary>
+    <web-summary>Run QueryFlag templates on the text you select in the editor of JetBrains IDEs: QueryFlag fills in the value, runs the query, and shows the results.</web-summary>
 
     <p>
         Select a value in the editor, for example a feature flag key or a customer e-mail in your code,
@@ -42,22 +42,19 @@
                 Right-click the selection and select <ui-path>Query Flag in DB | &lt;template name&gt;</ui-path>.
                 <!-- planned-image src="queryflag_editor_context_menu.png" alt="Editor context menu with Query Flag in DB expanded, showing the saved templates" -->
             </step>
-            <step>
-                Check the results.
-                The IDE shows them as for any query that you run from a query console, for example in the <control>Services</control> tool window.
-                <!-- planned-image src="queryflag_overview.png" alt="QueryFlag run: the selected value in the editor and the matching rows in the Services tool window" -->
-            </step>
         </procedure>
-        <tip>
-            Name templates after the database, table and column they search, for example <code>demo.customers.email</code>,
-            so that the <control>Query Flag in DB</control> menu is easy to scan.
-        </tip>
+        <p>
+            The IDE shows the results as for any query that you run from a query console, for example in the <control>Services</control> tool window.
+        </p>
+        <!-- planned-image src="queryflag_overview.png" alt="QueryFlag run: the selected value in the editor and the matching rows in the Services tool window" -->
     </chapter>
 
     <chapter title="What happens when you run a template" id="what-happens">
         <list type="decimal">
-            <li>QueryFlag removes every double quote (<code>"</code>) from the selected text.</li>
-            <li>It replaces each <code>&lt;QUERY_FLAG_TOKEN&gt;</code> token in the template with the result.</li>
+            <li>
+                QueryFlag replaces each <code>&lt;QUERY_FLAG_TOKEN&gt;</code> token in the template with the selected text, without double quotes
+                (see <a anchor="selection"/>).
+            </li>
             <li>It creates a new query console for the template's data source and writes the query into it.</li>
             <li>It runs the query with the IDE's default query execution settings.</li>
         </list>
@@ -75,7 +72,7 @@
                 Put the quotes the query needs in the template; see <a href="QueryFlag-Create-Templates.topic" anchor="token-rules"/>.
             </li>
             <li>
-                Everything else is kept as it is, including spaces, line breaks and single quotes.
+                Everything else is kept as it is, including spaces, line breaks, and single quotes.
             </li>
             <li>
                 QueryFlag reads the selection in editor tabs that show a file, including query consoles.

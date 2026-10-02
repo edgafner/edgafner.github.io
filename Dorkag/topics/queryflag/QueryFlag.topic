@@ -5,7 +5,6 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="QueryFlag" id="QueryFlag">
 
-  <primary-label ref="queryflag"/>
 
   <link-summary>Run saved database queries on the text you select in the editor of a JetBrains IDE.</link-summary>
   <card-summary>Run saved database queries on the text you select in the editor.</card-summary>
@@ -21,7 +20,7 @@
 
     <spotlight>
       <a href="QueryFlag-Installation.topic" type="start"
-         summary="Check the requirements, install the plugin and start the trial.">Install and activate</a>
+         summary="Check the requirements, install the plugin, and start the trial.">Install and activate</a>
       <a href="QueryFlag-Create-Templates.topic" type="learn"
          summary="Save a query with a token for the selected text.">Create query templates</a>
     </spotlight>
@@ -30,8 +29,8 @@
       <title>Use QueryFlag</title>
       <a href="Work-with-QueryFlag.topic" type="tools"
          summary="Select a value in the editor and run a template from the context menu.">Run a query on selected text</a>
-      <a href="QueryFlag-Create-Templates.topic#create-from-console" type="tools"
-         summary="Turn a query in a database console into a template.">Add a template from a console</a>
+      <a href="QueryFlag-Create-Templates.topic#template-scope" type="learn"
+         summary="Templates are IDE-wide; the menu shows those whose data source is in the project.">Where templates are available</a>
       <a href="QueryFlag-Create-Templates.topic#token-rules" type="learn"
          summary="Quote the token where the query needs a string value.">Write the template query</a>
       <a href="QueryFlag-Settings.topic" type="settings"
@@ -41,9 +40,9 @@
     <secondary>
       <title>Get help</title>
       <a href="QueryFlag-Troubleshooting.topic" type="support"
-         summary="Fix a missing menu, validation errors and failing queries.">Troubleshooting</a>
+         summary="Fix a missing menu, validation errors, and failing queries.">Troubleshooting</a>
       <a href="QueryFlag-Reference-and-Support.topic" type="support"
-         summary="Report a bug, request a feature or contact the developer.">Support</a>
+         summary="Report a bug, request a feature, or contact the developer.">Support</a>
     </secondary>
   </section-starting-page>
 

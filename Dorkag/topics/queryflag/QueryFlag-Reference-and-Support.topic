@@ -22,8 +22,8 @@
 
   <chapter title="Report a bug or request a feature" id="feature_request_and_bug">
     <p>
-      QueryFlag issues are tracked in the public <a href="https://github.com/edgafner/dorkag/issues">edgafner/dorkag</a> repository on GitHub.
-      Use the QueryFlag templates and include your IDE version, QueryFlag version, database type and the steps to reproduce the problem.
+      Report QueryFlag issues in the public <a href="https://github.com/edgafner/dorkag/issues">edgafner/dorkag</a> repository on GitHub.
+      Use the QueryFlag issue templates and include your IDE version, QueryFlag version, database type, and the steps to reproduce the problem.
     </p>
     <list>
       <li>
@@ -35,11 +35,12 @@
     </list>
     <p>
       If the IDE shows a QueryFlag error, click <control>Report Exception</control> in the IDE error dialog.
-      It opens the bug template with the plugin version, IDE version, operating system and stack trace filled in.
+      It opens a new QueryFlag bug report on GitHub.
+      Copy the stack trace from the error dialog into the report, together with your IDE and QueryFlag versions.
     </p>
     <note>
       Issues on GitHub are public.
-      Remove passwords, host names and data from queries before you submit a report.
+      Remove passwords, host names, and data from queries before you submit a report.
     </note>
   </chapter>
 

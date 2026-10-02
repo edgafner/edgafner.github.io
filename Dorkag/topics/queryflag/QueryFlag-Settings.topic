@@ -9,30 +9,32 @@
     <show-structure for="chapter" depth="2"/>
 
     <tldr>
-        <p>Settings: <ui-path>Settings | Tools | Database | QueryFlag</ui-path></p>
+        <p>Settings: <ui-path>Settings | Tools | Database | QueryFlag</ui-path> (DataGrip: <ui-path>Settings | Database | QueryFlag</ui-path>)</p>
         <p>Shortcut: <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>), then search for <code>QueryFlag</code></p>
     </tldr>
 
-    <link-summary>Reference for the QueryFlag settings page: the template list, Open console editor and Allow blank Text.</link-summary>
+    <link-summary>Reference for the QueryFlag settings page: the template list, Open console editor, and Allow blank Text.</link-summary>
     <card-summary>The template list and the Open console editor and Allow blank Text options.</card-summary>
     <web-summary>Reference for the QueryFlag settings in JetBrains IDEs: the template list, the Open console editor and Allow blank Text options, and storage.</web-summary>
 
     <p>
         To open the QueryFlag settings, press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>)
         and select <ui-path>Tools | Database | QueryFlag</ui-path>.
+        In DataGrip, select <ui-path>Database | QueryFlag</ui-path>.
     </p>
 
     <chapter title="Settings reference" id="settings-reference">
+        <!-- planned-image src="queryflag_settings_page.png" alt="QueryFlag settings page with three templates and the two options" -->
         <deflist type="medium">
             <def title="Template list" id="template-list">
                 <p>
                     Lists your templates.
-                    Each row shows the database type icon, the template name and the first 50 characters of the query.
+                    Each row shows the database type icon, the template name, and the first 50 characters of the query.
                     If the template's data source is not available in the current project, the row shows
                     "DataSource not found, please check your Databases settings" in red instead of the query.
                 </p>
                 <p>
-                    Use the toolbar to <control>Add</control>, <control>Remove</control> and <control>Edit</control> templates.
+                    Use the <control>Add</control>, <control>Remove</control>, and <control>Edit</control> toolbar buttons to manage templates.
                     See <a href="QueryFlag-Create-Templates.topic"/>.
                 </p>
             </def>
@@ -51,7 +53,6 @@
                 </p>
             </def>
         </deflist>
-        <!-- planned-image src="queryflag_settings_page.png" alt="QueryFlag settings page with three templates and the two options" -->
     </chapter>
 
     <chapter title="Save changes" id="save-changes">
@@ -63,7 +64,8 @@
 
     <chapter title="Where QueryFlag stores settings" id="storage">
         <p>
-            QueryFlag stores its settings for the whole IDE, not per project, in the <path>options</path> folder of the IDE configuration directory:
+            QueryFlag stores its settings for the whole IDE, not per project, in the <path>options</path> folder of the
+            <a href="https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory">IDE configuration directory</a>:
         </p>
         <deflist type="medium">
             <def title="query_flag.xml" id="storage-templates">
@@ -77,11 +79,11 @@
             </def>
             <def title="query_flag_settings.xml" id="storage-options">
                 <p>The <control>Open console editor</control> and <control>Allow blank Text</control> options.</p>
-                <p>If you use Settings Sync, these options sync with the <control>Tools</control> category.</p>
+                <p>If you use <a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">Settings Sync</a>, these options sync with the <control>Tools</control> category.</p>
             </def>
         </deflist>
         <p>
-            A template stores the name, ID and URL of its data source, but no password.
+            A template stores the name, ID, and URL of its data source, but no password.
             The data source in the <control>Database</control> tool window keeps its own connection settings.
         </p>
     </chapter>
@@ -101,6 +103,7 @@
         </category>
         <category ref="external">
             <a href="https://www.jetbrains.com/help/idea/query-consoles.html">Query consoles (IntelliJ IDEA help)</a>
+            <a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">Share IDE settings (IntelliJ IDEA help)</a>
         </category>
     </seealso>
 </topic>

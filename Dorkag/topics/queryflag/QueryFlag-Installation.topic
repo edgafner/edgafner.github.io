@@ -25,7 +25,7 @@
   <chapter title="Before you begin" id="requirements">
     <list>
       <li>
-        The current version requires IntelliJ-based IDEs 2026.3 (build 263) or later.
+        The current version requires JetBrains IDEs 2026.3 (build 263) or later.
         For IDE version 2026.2, JetBrains Marketplace offers QueryFlag 2026.2.1.
       </li>
       <li>
@@ -46,7 +46,10 @@
         and select <control>Plugins</control>.
       </step>
       <step>
-        Open the <control>Marketplace</control> tab and type <code>QueryFlag</code> in the search field.
+        Open the <control>Marketplace</control> tab.
+      </step>
+      <step>
+        Type <code>QueryFlag</code> in the search field.
         <!-- planned-image src="queryflag_install_marketplace.png" alt="Settings dialog, Plugins page, Marketplace tab with QueryFlag in the search results" -->
       </step>
       <step>
@@ -64,9 +67,18 @@
   <chapter title="Start the trial or activate a license" id="license">
     <p>
       QueryFlag is a paid plugin with a 30-day free trial.
-      Start the trial or activate a license in <ui-path>Help | Register</ui-path>.
+      Without a trial or a license, the IDE disables the plugin.
     </p>
+    <procedure title="Start the trial or activate a license" id="license-procedure">
+      <step>
+        Select <ui-path>Help | Register</ui-path>.
+      </step>
+      <step>
+        Select QueryFlag in the list of plugins, and start the trial or activate your license.
+      </step>
+    </procedure>
     <p>
+      Buy or manage licenses on the <a href="https://plugins.jetbrains.com/plugin/18269-queryflag/pricing">QueryFlag pricing page</a>.
       The license terms are on the <a href="https://dorkag.com/services-terms-and-conditions">DORKAG terms and conditions</a> page.
     </p>
   </chapter>

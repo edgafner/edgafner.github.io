@@ -9,12 +9,12 @@
   <show-structure for="chapter,procedure" depth="2"/>
 
   <tldr>
-    <p>Settings: <ui-path>Settings | Tools | Database | QueryFlag</ui-path></p>
-    <p>From a console: select a query and choose <control>Add Query Flag</control> in the context menu</p>
+    <p>Settings: <ui-path>Settings | Tools | Database | QueryFlag</ui-path> (DataGrip: <ui-path>Settings | Database | QueryFlag</ui-path>)</p>
+    <p>From a query console: select a query, right-click it, and select <control>Add Query Flag</control></p>
     <p>Token: <code>&lt;QUERY_FLAG_TOKEN&gt;</code></p>
   </tldr>
 
-  <link-summary>Define, edit and remove QueryFlag templates: a named query for a data source with a token for the selected text.</link-summary>
+  <link-summary>Define, edit, and remove QueryFlag templates: a named query for a data source with a token for the selected text.</link-summary>
   <card-summary>Save a query for a data source with a token that the selected text replaces.</card-summary>
   <web-summary>Create QueryFlag query templates in JetBrains IDEs: add a token for the selected text, quote it correctly in SQL and MongoDB, and manage templates.</web-summary>
 
@@ -36,6 +36,7 @@
       <step>
         Press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>) to open the <control>Settings</control> dialog,
         and select <ui-path>Tools | Database | QueryFlag</ui-path>.
+        In DataGrip, select <ui-path>Database | QueryFlag</ui-path>.
         <p>To find the page faster, type <code>QueryFlag</code> in the search field of the <control>Settings</control> dialog.</p>
         <!-- planned-image src="queryflag_settings_page.png" alt="QueryFlag settings page with three templates and the two options" -->
       </step>
@@ -48,7 +49,9 @@
         <deflist type="medium">
           <def title="Name" id="field-name">
             The label of the template in the <control>Query Flag in DB</control> menu.
-            The dialog suggests a combination of database, table and column name, for example <code>demo.customers.email</code>.
+            The hint under the field recommends a combination of database, table, and column name.
+            Name templates after the database, table, and column they search, for example <code>demo.customers.email</code>,
+            so that you can find them in the <control>Query Flag in DB</control> menu.
           </def>
           <def title="DataSource" id="field-datasource">
             The data source the query runs against.
@@ -58,13 +61,19 @@
             The query, with at least one <code>&lt;QUERY_FLAG_TOKEN&gt;</code> token.
             The field offers syntax highlighting and code completion for the query language of the data source.
             See <a anchor="token-rules"/>.
+            If the field highlights the wrong language, see <a href="QueryFlag-Troubleshooting.topic" anchor="wrong-highlighting"/>.
           </def>
         </deflist>
         <!-- planned-image src="queryflag_add_template_dialog.png" alt="Add a QueryFlag Entry dialog with name, data source and a query containing the QUERY_FLAG_TOKEN placeholder" -->
       </step>
       <step>
         Click <control>OK</control>.
-        If a field is empty or the query has no token, the dialog shows an error and stays open.
+        If a field is empty or the query contains no token, the dialog shows an error and stays open.
+        See <a href="QueryFlag-Troubleshooting.topic" anchor="validation-errors"/>.
+        <p>
+          A token inside a line that starts with <code>//</code> also passes this check,
+          but QueryFlag removes that line when it saves the template.
+        </p>
       </step>
       <step>
         Click <control>Apply</control> or <control>OK</control> in the <control>Settings</control> dialog to save the template.
@@ -94,6 +103,10 @@
         Lines that start with <code>//</code> are notes.
         QueryFlag removes them when it saves the template, so they never reach the database.
       </li>
+      <li>
+        Single quotes in the selected text are not escaped,
+        so a selected value with a single quote makes the SQL statement invalid.
+      </li>
     </list>
 
     <p>SQL examples:</p>
@@ -112,26 +125,15 @@ SELECT * FROM customers WHERE id = <QUERY_FLAG_TOKEN>;
     <code-block lang="javascript"><![CDATA[
 db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
 ]]></code-block>
-
-    <note>
-      Single quotes in the selected text are not escaped.
-      If you select a value that contains a single quote, the SQL statement is invalid.
-    </note>
-
-    <tip>
-      Syntax highlighting and completion in the query field follow the data source that is selected when the dialog opens.
-      For a new template, that is the first data source of the project.
-      Selecting another data source does not change the highlighting.
-      To get highlighting for another database type, such as MongoDB, save the template and open it again with <control>Edit</control>,
-      or <a anchor="create-from-console">create it from a console</a> of that data source.
-    </tip>
   </chapter>
 
-  <chapter title="Create a template from a database console" id="create-from-console">
+  <chapter title="Create a template from a query console" id="create-from-console">
     <p>
       If you already have a working query in a query console, turn it into a template.
+      <control>Add Query Flag</control> appears only in the context menu of an editor that is connected to a data source,
+      such as a query console, and only when you have selected some text.
     </p>
-    <procedure title="Add a template from a query console" id="add-from-console-procedure">
+    <procedure title="Create a template from a query console" id="add-from-console-procedure">
       <step>
         In a query console of the data source, select the query.
       </step>
@@ -149,21 +151,23 @@ db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
         <p>
           If the selection had no token, QueryFlag adds the line
           <code>// Need to add at least one &lt;QUERY_FLAG_TOKEN&gt; replacement token</code>.
-          Delete this line after you add the token.
-          The line is removed on save anyway, and it does not count as a token in the saved query.
+          Add the token to the query yourself.
+          This line contains the token, so the dialog accepts the query even if you add none.
+          QueryFlag removes the line when it saves the template.
+          A template saved without a token always runs the same query, whatever you select.
         </p>
       </step>
       <step>
-        Change <control>Name</control> to a name you can recognize in the menu, and click <control>OK</control>.
+        Optional: change <control>Name</control> to a name you can recognize in the menu.
+      </step>
+      <step>
+        Click <control>OK</control>.
       </step>
     </procedure>
     <p>
       QueryFlag saves the template immediately.
       You do not need to click <control>Apply</control> in Settings.
     </p>
-    <note>
-      <control>Add Query Flag</control> appears only in the context menu of a database console, and only when the selection is not blank.
-    </note>
   </chapter>
 
   <chapter title="Edit or remove a template" id="edit-remove">
@@ -176,7 +180,10 @@ db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
         The same dialog opens, with the title <control>Add a QueryFlag Entry</control>.
       </step>
       <step>
-        Change the fields, click <control>OK</control>, and then click <control>Apply</control>.
+        Change the fields and click <control>OK</control>.
+      </step>
+      <step>
+        Click <control>Apply</control>.
       </step>
     </procedure>
     <procedure title="Remove a template" id="remove-template">
@@ -184,7 +191,10 @@ db.getCollection("customers").find({email: {$regex: "<QUERY_FLAG_TOKEN>"}})
         In <ui-path>Settings | Tools | Database | QueryFlag</ui-path>, select the template in the list.
       </step>
       <step>
-        Click <control>Remove</control> (<control>-</control>) on the toolbar, and then click <control>Apply</control>.
+        Click <control>Remove</control> (<control>-</control>) on the toolbar.
+      </step>
+      <step>
+        Click <control>Apply</control>.
       </step>
     </procedure>
   </chapter>
