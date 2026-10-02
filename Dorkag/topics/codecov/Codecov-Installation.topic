@@ -9,7 +9,7 @@
     <show-structure for="chapter,procedure" depth="2"/>
 
     <tldr>
-        <p>Install: <ui-path>Settings | Plugins | Marketplace</ui-path></p>
+        <p>License: 10-day free trial, then <ui-path>Help | Register</ui-path></p>
         <p>Connect: <ui-path>Settings | Tools | Codecov</ui-path></p>
         <p>Requires: a Git repository that is activated on Codecov, and a Codecov API token</p>
     </tldr>
@@ -29,7 +29,8 @@
                 It does not install on earlier or later major versions.
                 For JetBrains IDEs 2026.2, the Marketplace provides Codecov 2026.2.5.</li>
             <li>The project is a Git repository with a remote on GitHub, GitLab or Bitbucket.</li>
-            <li>The repository is activated on Codecov, and your CI uploads coverage reports to it.</li>
+            <li>The repository is activated on Codecov, and your CI uploads coverage reports to it.
+                To set this up, see <a href="https://docs.codecov.com/docs/quick-start">Codecov quick start</a>.</li>
             <li>A Codecov API token for an account that can access the repository.</li>
         </list>
     </chapter>
@@ -56,6 +57,7 @@
             Codecov is a paid plugin with a 10-day free trial.
             Start the trial or activate a license in <ui-path>Help | Register</ui-path>.
             In free IDEs, such as Android Studio, use <ui-path>Help | Register Plugins</ui-path>.
+            Buy or manage licenses on the <a href="https://plugins.jetbrains.com/plugin/23390-codecov/pricing">Codecov plugin pricing page</a>.
         </p>
     </chapter>
 
@@ -67,7 +69,13 @@
 
         <procedure title="Connect with an API token" id="sign-in-procedure">
             <step>
-                In Codecov, create an API token in the access settings of your account.
+                In Codecov, create an API token on your personal account, not on an organization account:
+                <list type="decimal">
+                    <li>Click your avatar in the top right corner and select <control>Settings</control>.</li>
+                    <li>In the left menu, select <control>Access</control>.</li>
+                    <li>Click <control>Generate Token</control>, enter a name for the token and click <control>Generate</control>.</li>
+                    <li>Copy the token.</li>
+                </list>
                 For details, see <a href="https://docs.codecov.com/reference/overview">Codecov API reference: getting started</a>.
             </step>
             <step>
@@ -124,11 +132,32 @@
         </deflist>
     </chapter>
 
+    <chapter title="Connect other projects" id="codecov-connect-other-projects">
+        <p>
+            You connect each project separately.
+            A project that is not connected shows no coverage, even though the API token is saved for all projects.
+        </p>
+        <procedure title="Connect another project" id="codecov-connect-another-project">
+            <step>
+                Open the project and go to <ui-path>Settings | Tools | Codecov</ui-path>.
+                <control>API Token</control> is already filled in.
+            </step>
+            <step>
+                Click <control>Test Connection</control>, close the result dialog and click <control>OK</control>.
+            </step>
+        </procedure>
+        <p>
+            Clicking <control>OK</control> without <control>Test Connection</control> saves the settings but does not connect the project.
+        </p>
+    </chapter>
     <chapter title="Disconnect or change the token" id="codecov-disconnect">
         <p>
             <control>Server URL</control>, <control>Service Provider</control> and the API token apply to all projects.
             The token is stored in the IDE password safe.
             The connection to a repository is stored per project.
+            The plugin works with one <control>Service Provider</control> at a time.
+            To work on a project from another provider, for example GitLab instead of GitHub, change <control>Service Provider</control>, and the API token if needed, and click <control>OK</control>.
+            Then reopen that project and click <control>Test Connection</control> in its Codecov settings.
         </p>
         <procedure title="Disconnect the project" id="codecov-disconnect-procedure">
             <step>
@@ -141,6 +170,8 @@
         </procedure>
         <p>
             <control>Disconnect</control> removes the connection for the current project only and keeps the stored API token for other projects.
+            The <control>API Token</control> field is then empty, but the token stays saved, and the plugin has no option to delete it.
+            To stop the token from working, revoke it in the <control>Access</control> settings of your Codecov account.
             To use a different token, paste it into <control>API Token</control> and click <control>Test Connection</control>.
         </p>
     </chapter>

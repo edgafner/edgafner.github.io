@@ -100,6 +100,8 @@
             <step><p>If Jira needs fields for the transition, fill them in on the transition screen that opens and confirm.</p></step>
         </procedure>
         <p>The card menu also has <control>Open in Jira</control> and <control>Copy Key</control>.</p>
+        <p>A card does not open the issue in the IDE.</p>
+        <p>To open it there, choose <control>Copy Key</control>; then, in the <control>JirAI</control> tool window, choose <control>All Issues</control> in the <control>Filters</control> menu, paste the key into the <control>Search issues</control> field and open the issue from the list.</p>
         <p>Cards move through the card menu; dragging cards is not supported.</p>
         <list>
             <li><p>A move into another column runs the Jira workflow transition that leads to that column's status.</p></li>

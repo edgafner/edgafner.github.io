@@ -33,6 +33,10 @@
                 In the GBrowser tool window, click <control>More Options</control> and select <control>Preferences</control>.
             </step>
         </procedure>
+        <p>
+            When you click <control>Apply</control> or <control>OK</control> on this page, GBrowser reloads the pages in all open GBrowser tabs of the project.
+            Selecting a <control>Theme</control> option reloads them right away.
+        </p>
         <p>The page has these groups, from top to bottom:</p>
         <list columns="2">
             <li><a anchor="default-home-page">Default Home Page URL</a></li>
@@ -100,6 +104,7 @@
             </def>
             <def title="Number of history items to persist" id="amount-of-history">
                 The number field next to <control>History enabled</control> sets how many pages GBrowser keeps, from 0 to 60.
+                To stop saving history, clear <control>History enabled</control> instead of setting the number to 0.
                 The default is 20.
             </def>
         </deflist>
@@ -193,6 +198,9 @@
         </procedure>
         <p>
             The table starts with a <code>User-Agent</code> row whose <control>URI Regex</control> is empty, so it does not match any request.
+            To stop sending a header, clear its <control>URI Regex</control> cell and click <control>OK</control>.
+            To also delete a stored value, such as a token, clear its <control>Value</control> cell.
+            In version 2026.3.1, the remove button does not delete a header: GBrowser keeps sending it, and the row is back the next time you open the settings.
         </p>
         <warning>
             Header values are stored in plain text in <path>.idea/gbrowsers.xml</path>.
@@ -215,6 +223,8 @@
                 The domains that the compatibility script applies to.
                 Adding a domain does not change the User-Agent that GBrowser sends to it.
                 The defaults are <code>perplexity.ai</code>, <code>challenges.cloudflare.com</code>, <code>openai.com</code>, <code>chat.openai.com</code> and <code>claude.ai</code>.
+                To change a domain, select it and click the edit button; to remove a domain, select it and click the remove button.
+                Changes to the list are saved right away, even if you then click <control>Cancel</control>.
             </def>
         </deflist>
         <procedure title="Add a site" id="add-compatible-site">

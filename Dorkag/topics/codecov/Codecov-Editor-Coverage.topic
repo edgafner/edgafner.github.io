@@ -35,6 +35,7 @@
         </list>
         <p>
             The bars use the line coverage colors of the current editor color scheme.
+            To change them, go to <ui-path>Settings | Editor | Color Scheme | General</ui-path> and edit <control>Full</control>, <control>Partial</control> and <control>Uncovered</control> under <control>Line Coverage</control>.
             Lines without a bar have no coverage data in Codecov, such as comments and blank lines.
         </p>
         <!-- planned-image src="codecov_editor_gutter.png" alt="Covered, partially covered and missed lines in the editor gutter" -->
@@ -102,6 +103,8 @@
         </p>
         <p>
             Files are matched by their path relative to the Git repository root, so the paths in your Codecov reports must match the paths in the repository.
+            The bars are placed by line number.
+            If your local file has added or removed lines compared with the version that Codecov measured, for example because of changes on your branch, the bars can sit next to the wrong lines.
         </p>
         <tip>
             To see the effect of your current branch, open the <a href="Codecov-Metrics.topic">Codecov Metrics dashboard</a>.

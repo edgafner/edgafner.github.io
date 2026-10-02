@@ -15,16 +15,17 @@
         <description>
             Work with Jira Cloud issues, boards and space reports without leaving your JetBrains IDE.
             JirAI also turns Markdown specs into Jira issues and lets AI assistants check a draft against your project's real create screen.
+            JirAI is a paid plugin with a 7-day free trial.
         </description>
 
         <spotlight>
             <a href="JirAI-Installation.topic" type="start" summary="Install the plugin, start the 7-day trial and check the requirements.">Install JirAI</a>
-            <a href="JirAI-Whats-New.topic" type="learn" summary="Highlights of each JirAI release, newest first.">What's new</a>
+            <a href="Work-with-Jira-Issues.topic" type="tools" summary="Search, filter and open Jira Cloud issues in the JirAI tool window.">Work with issues</a>
         </spotlight>
 
         <primary>
             <title>Work with Jira</title>
-            <a href="Work-with-Jira-Issues.topic" type="tools" summary="Search, filter, sort and act on issues in the JirAI tool window.">Work with issues</a>
+            <a href="JirAI-Sign-In-and-Configuration.topic" type="start" summary="Sign in to your Jira Cloud site with an Atlassian API token and manage the account.">Sign in</a>
             <a href="Jira-Create-Issues.topic" type="tools" summary="Create issues from your project's own create screen, with Markdown descriptions.">Create issues</a>
             <a href="Jira-Issue-Details-and-Editing.topic" type="mixed" summary="Edit fields in place, move issues through the workflow and manage attachments.">Issue details</a>
             <a href="Jira-Timeline-and-Description-Editor.topic" type="development" summary="Read the activity feed, comment, edit the description and see child work items.">Timeline and breakdown</a>
@@ -36,7 +37,7 @@
 
         <secondary>
             <title>Set up and get help</title>
-            <a href="JirAI-Sign-In-and-Configuration.topic" type="start" summary="Sign in with an Atlassian API token and manage the account.">Sign in</a>
+            <a href="JirAI-Whats-New.topic" type="learn" summary="Changes in recent JirAI releases, newest first.">What's new</a>
             <a href="JirAI-Settings-Reference.topic" type="settings" summary="Every JirAI settings page and option in one place.">Settings reference</a>
             <a href="JirAI-FAQ.topic" type="support" summary="Answers to common questions and the known limitations.">FAQ</a>
             <a href="JirAI-Reference-and-Support.topic" type="support" summary="Report a problem, contact the vendor and read the legal terms.">Support</a>

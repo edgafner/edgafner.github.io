@@ -76,6 +76,9 @@
     </chapter>
 
     <chapter title="Keyboard shortcuts" id="keyboard-shortcuts">
+        <p>JirAI actions such as <control>New Issue</control>, <control>Space Summary</control> and <control>Push to Jira</control> have no default shortcut.</p>
+        <p>Run them with <control>Find Action</control> (<shortcut>Ctrl+Shift+A</shortcut>, macOS: <shortcut>⌘ ⇧ A</shortcut>), or assign shortcuts in <ui-path>Settings | Keymap</ui-path>.</p>
+        <p><control>New Issue</control> and <control>Space Summary</control> become available once the <control>JirAI</control> tool window has opened in the project and shows you signed in.</p>
         <table style="header-row">
             <tr><td>Where</td><td>Action</td><td>Keys</td></tr>
             <tr><td>Issue list</td><td>Open the selected issue</td><td><shortcut>Enter</shortcut> or double-click</td></tr>
@@ -83,6 +86,11 @@
             <tr><td>Issue list and filters</td><td>Exclude a filter value</td><td><shortcut>Shift</shortcut>+click</td></tr>
             <tr><td>Timeline</td><td>Post a comment</td><td><shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>)</td></tr>
             <tr><td>Timeline</td><td>New line in a comment</td><td><shortcut>Enter</shortcut></td></tr>
+            <tr><td>Timeline</td><td>Reload the timeline</td><td>The IDE <control>Refresh</control> shortcut</td></tr>
+            <tr><td>Description editor</td><td>Save the description</td><td><shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>)</td></tr>
+            <tr><td>Description editor</td><td>Cancel editing</td><td><shortcut>Escape</shortcut></td></tr>
+            <tr><td>Space List</td><td>Open the selected work item</td><td><shortcut>Enter</shortcut> or double-click</td></tr>
+            <tr><td>Space List</td><td>Unfold or fold the selected parent</td><td><shortcut>Right</shortcut>, <shortcut>Left</shortcut></td></tr>
             <tr><td>Board</td><td>Next or previous column</td><td><shortcut>Tab</shortcut>, <shortcut>Shift+Tab</shortcut></td></tr>
             <tr><td>Board</td><td>Move between cards</td><td>Arrow keys</td></tr>
             <tr><td>Board</td><td>Open the card menu</td><td><shortcut>Shift+Enter</shortcut></td></tr>

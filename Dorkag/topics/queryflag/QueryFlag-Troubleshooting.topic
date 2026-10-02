@@ -28,15 +28,46 @@
                 If you have no templates yet, <a href="QueryFlag-Create-Templates.topic">create one</a>.
             </li>
             <li>
-                If your templates use a data source of another project, add that data source to this project in the <control>Database</control> tool window,
+                If your templates use a data source of another project, open that project and make the data source global so that every project can use it
+                (see <a href="QueryFlag-Create-Templates.topic" anchor="template-scope"/>),
                 or create a template for a data source of this project.
             </li>
             <li>
                 Make sure the Database Tools and SQL plugin and QueryFlag are enabled in <ui-path>Settings | Plugins</ui-path>.
+                The IDE disables QueryFlag when it has no active trial or license; see <a href="QueryFlag-Installation.topic" anchor="license"/>.
             </li>
         </list>
     </chapter>
 
+    <chapter title="The query results do not appear" id="no-results">
+        <p>
+            By default, QueryFlag runs the query in a new query console that does not open in the editor.
+            Look for the results in the <control>Services</control> tool window.
+        </p>
+        <list>
+            <li>
+                Select <ui-path>View | Tool Windows | Services</ui-path> (<shortcut>Alt+8</shortcut>, macOS: <shortcut>⌘ 8</shortcut>)
+                and look under the template's data source.
+            </li>
+            <li>
+                If the <control>Services</control> tool window does not open after a run, check the
+                <control>Show Services tool window for query execution output</control> option in
+                <ui-path>Settings | Tools | Database | Query Execution | Output and Results</ui-path>
+                (DataGrip: <ui-path>Settings | Database | Query Execution | Output and Results</ui-path>).
+            </li>
+            <li>
+                If QueryFlag shows the warning "Query with blank text is disable, skipping execution", see <a anchor="blank-text-warning"/>.
+            </li>
+            <li>
+                If the data source cannot connect, you get a connection error instead of results.
+                See <a anchor="connection"/>.
+            </li>
+            <li>
+                To see the query that ran, select <control>Open console editor</control> in the
+                <a href="QueryFlag-Settings.topic">QueryFlag settings</a>.
+            </li>
+        </list>
+    </chapter>
     <chapter title="A template shows DataSource not found" id="datasource-not-found">
         <p>
             The settings list shows the red text "DataSource not found, please check your Databases settings"
@@ -108,6 +139,11 @@
             <li>
                 If the selected value contains a single quote, the SQL string ends early.
                 Select only the part of the value without the quote.
+            </li>
+            <li>
+                If the database reports that a table does not exist, or that no schema or database is selected,
+                qualify the table name with its schema or database, for example <code>demo.customers</code>.
+                QueryFlag runs each template in a new query console, and its current schema can differ from the one in the console where you wrote the query.
             </li>
             <li>
                 To see the exact query that ran, select <control>Open console editor</control> in the

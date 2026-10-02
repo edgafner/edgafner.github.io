@@ -23,6 +23,7 @@
     <chapter title="Read the activity feed" id="timeline">
         <p>The <control>Timeline</control> tab shows the description, comments, status changes and field changes in one feed.</p>
         <p>To show only one kind of entry, click the filter icon and choose <control>All</control>, <control>Comments</control>, <control>Status changes</control> or <control>Field changes</control>.</p>
+        <p>To load the latest activity, right-click the feed and choose <control>Refresh</control>, or press the IDE's <control>Refresh</control> shortcut.</p>
         <!-- planned-image src="jirai_timeline.png" alt="Issue timeline with the description, two comments and a status change" -->
     </chapter>
 
@@ -49,7 +50,7 @@
                 <p>Edit the Markdown text.</p>
                 <!-- planned-image src="jirai_description_edit.png" alt="Description being edited in place with the Save and Cancel buttons" -->
             </step>
-            <step><p>Click <control>Save</control>, or <control>Cancel</control> to discard your changes.</p></step>
+            <step><p>Click <control>Save</control> or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>); to discard your changes, click <control>Cancel</control> or press <shortcut>Escape</shortcut>.</p></step>
         </procedure>
         <p>After you save, the timeline shows an <control>Updated the description</control> entry.</p>
         <p>Click <control>Show changes</control> on it to see what changed as a diff.</p>

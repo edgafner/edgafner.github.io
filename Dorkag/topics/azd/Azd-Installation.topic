@@ -9,9 +9,9 @@
     <show-structure for="chapter,procedure" depth="2"/>
 
     <tldr>
-        <p>Accounts: <ui-path>Settings | Version Control | AZD</ui-path></p>
+        <p>License: 10-day free trial, then <ui-path>Help | Register</ui-path></p>
         <p>Requires: a JetBrains IDE 2026.3, build 263.5153 or a later 2026.3 build</p>
-        <p>Sign in with Microsoft, the Azure CLI or a personal access token (PAT)</p>
+        <p>Sign in: with Microsoft, the Azure CLI or a personal access token (PAT), from an AZD tool window or <ui-path>Settings | Version Control | AZD</ui-path></p>
     </tldr>
 
     <link-summary>Install AZD, start the trial, and sign in to Azure DevOps Services or Azure DevOps Server.</link-summary>
@@ -130,7 +130,8 @@
             </p>
             <procedure title="Sign in with Microsoft from a tool window" id="azd-login-oauth-procedure">
                 <step>
-                    <p>Open the <control>AZD Pull Requests</control> or <control>AZD Pipelines</control> tool window.</p>
+                    <p>Open the <control>AZD Pull Requests</control>, <control>AZD Pipelines</control> or <control>AZD Boards</control> tool window,
+                        for example from <ui-path>View | Tool Windows</ui-path>.</p>
                 </step>
                 <step>
                     <p>Check that the selector shows the right repository, and click <control>Sign in with Microsoft</control>.</p>
@@ -168,6 +169,10 @@
                 <step>
                     <p>In an AZD tool window, click <control>Sign in with Azure CLI</control>,
                         or in <ui-path>Settings | Version Control | AZD</ui-path> click <control>+</control> and select <control>Sign in with Azure CLI</control>.</p>
+
+                    <p>When you sign in from a tool window, AZD adds an account for the organization of the repository.
+                        From Settings or the <control>Clone Repository</control> dialog, when AZD does not know the organization,
+                        it adds one account for each organization that your Azure CLI identity can reach.</p>
                 </step>
             </procedure>
             <p>
@@ -303,7 +308,9 @@
                     <p>In an AZD tool window, click <control>Use token…</control>, or add an account in <ui-path>Settings | Version Control | AZD</ui-path>.</p>
                 </step>
                 <step>
-                    <p>In <control>Server</control>, enter the server URL without the collection, for example <code>https://ado.example.com</code>.</p>
+                    <p>In <control>Server</control>, enter the server URL without the collection, for example <code>https://ado.example.com</code>.
+                        If the server runs under a <code>tfs</code>, <code>azd</code>, <code>devops</code> or <code>azure</code> virtual directory,
+                        include it, for example <code>https://ado.example.com/tfs</code>.</p>
                 </step>
                 <step>
                     <p>Paste the token in <control>Token</control>.</p>
@@ -340,6 +347,32 @@
         </p>
     </chapter>
 
+    <chapter title="Renew a token" id="azd-renew-token">
+        <p>
+            When a token expires or is revoked, the AZD tool windows show a sign-in error,
+            and the account in <ui-path>Settings | Version Control | AZD</ui-path> shows <control>Invalid access token</control>.
+        </p>
+        <procedure title="Renew the token of an account" id="azd-renew-token-procedure">
+            <step>
+                <p>For a personal access token, create a new token first; see <a anchor="generate_pat"/>.
+                    For an Azure CLI account, run <code>az login</code> in a terminal first.</p>
+            </step>
+            <step>
+                <p>In the AZD tool window, click <control>Log in again…</control> in the error message,
+                    or click <control>Log in</control> next to the account in <ui-path>Settings | Version Control | AZD</ui-path>.</p>
+            </step>
+            <step>
+                <p>For a personal access token, paste the new token in the <control>Update AZD Account</control> dialog and click <control>Log In</control>.
+                    For an account that uses Microsoft sign-in, the <control>Sign in with Microsoft</control> dialog opens; see <a anchor="azd-oauth-login"/>.</p>
+            </step>
+        </procedure>
+        <p>
+            The accounts list shows the sign-in method of each account after its name:
+            <control>[OAuth]</control>, <control>[Azure CLI]</control> or <control>[PAT]</control>.
+        </p>
+    </chapter>
+
+    
     <chapter title="Open the AZD tool windows" id="azd-tool-windows">
         <p>
             AZD adds three tool windows to projects that have an Azure DevOps Git remote:
@@ -356,6 +389,46 @@
         </list>
     </chapter>
 
+    <chapter title="Choose the repository and account" id="azd-select-repository">
+        <p>
+            The <control>AZD Pull Requests</control>, <control>AZD Pipelines</control> and <control>AZD Boards</control> tool windows
+            share one connection: one repository and one account.
+            AZD connects on its own when it can choose for you, for example when the project has one Azure DevOps repository
+            and you have one matching account, or when you connected before.
+            Otherwise, the tool window shows a repository selector and an account selector.
+        </p>
+        <procedure title="Connect the AZD tool windows to a repository" id="azd-select-repository-procedure">
+            <step>
+                <p>Open an AZD tool window, for example <ui-path>View | Tool Windows | AZD Pipelines</ui-path>.</p>
+            </step>
+            <step>
+                <p>Select the repository in the repository selector.</p>
+            </step>
+            <step>
+                <p>Click the account selector and select the account.
+                    The same list offers <control>Use token…</control> and, for Azure DevOps Services,
+                    <control>Sign in with Microsoft</control> and <control>Sign in with Azure CLI</control>.
+                    When an account is selected, it also offers <control>Renew Token</control>.</p>
+                <p>If you have no account for the organization or server of the repository, the tool window shows the sign-in options instead;
+                    see <a anchor="azd_authentication"/>.</p>
+            </step>
+            <step>
+                <p>Click <control>View Pull Requests</control>, <control>View Pipelines</control> or <control>View Work Items</control>,
+                    depending on the tool window.</p>
+            </step>
+        </procedure>
+        <p>
+            All three tool windows then show the selected repository.
+            AZD remembers the repository and account and reconnects to them the next time you open the project.
+        </p>
+        <p>
+            To switch later, click <control>⋮</control> in the <control>AZD Pull Requests</control> tool window header
+            and select <control>Change Repository or Account…</control>.
+            This action is available only when the project has more than one Azure DevOps remote.
+        </p>
+    </chapter>
+
+    
     <chapter title="Open the welcome guide" id="azd-welcome-guide">
         <p>
             Select <ui-path>Help | Show Welcome Guide</ui-path> to open the <control>AZD Welcome</control> tool window.

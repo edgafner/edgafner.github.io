@@ -25,7 +25,7 @@
     <p>
         The default shortcuts in this topic are for Windows and Linux.
         For the full list, see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
-        On macOS, look up the shortcut of an action in <ui-path>Settings | Keymap</ui-path>.
+        On macOS, GBrowser shortcuts use <shortcut>⌘</shortcut> instead of <shortcut>Ctrl</shortcut> and <shortcut>⌥</shortcut> instead of <shortcut>Alt</shortcut>; see <a href="GBrowser-Keyboard-Shortcuts.topic" anchor="macos-shortcuts"/>.
     </p>
 
     <chapter title="Open GBrowser" id="open-gbrowser">
@@ -41,6 +41,9 @@
             The first tab opens the default home page.
             You set the home page in <a href="GBrowser-Settings-and-Configuration.topic#default-home-page">settings</a>.
         </p>
+        <p>
+            To move GBrowser to the right side of the IDE window, drag its button to the right tool window bar.
+        </p>
         <!-- planned-image src="gbrowser_overview.png" alt="IDE window with the GBrowser tool window open on the left, showing a web page next to the editor" -->
     </chapter>
 
@@ -54,7 +57,7 @@
                 <control>Home</control> (<shortcut>Ctrl+Alt+H</shortcut>) opens the default home page.
             </li>
             <li>
-                <control>Reload Page</control> (<shortcut>Ctrl+R</shortcut>) loads the page again.
+                <control>Reload Page</control> (<shortcut>Ctrl+R</shortcut>) loads the page again without using the browser cache.
                 To cancel a slow load, select <control>Stop Loading</control> in the <control>More Options</control> menu or press <shortcut>Ctrl+.</shortcut>.
             </li>
             <li>
@@ -75,6 +78,10 @@
 
     <chapter title="Search from the address field" id="search">
         <procedure title="Open a page or search" id="open-page-or-search">
+            <p>
+                To search the web from the address field, turn on
+                <a href="GBrowser-Settings-and-Configuration.topic" anchor="enable-suggestion-search">Enable suggestion search</a> first; it is off by default.
+            </p>
             <step>
                 Click the address field, which shows <control>Search or type a URL</control> when it is empty.
             </step>

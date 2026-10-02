@@ -9,6 +9,7 @@
 
     <snippet id="gbrowsersn.tree">
         <toc-element topic="GBrowser.topic" id="toc_gbrowser_root">
+            <toc-element topic="GBrowser-Whats-New.topic" toc-title="What's new" id="toc_gbrowser_whats_new"/>
             <toc-element topic="GBrowser-Installation.topic" id="toc_gbrowser_installation" toc-title="Install"/>
             <toc-element topic="Work-with-GBrowser.topic" id="toc_gbrowser_usage" toc-title="Browse the web"/>
             <toc-element topic="GBrowser-Bookmarks-and-History.topic" id="toc_gbrowser_bookmarks" toc-title="Bookmarks and history"/>
@@ -17,7 +18,7 @@
             <toc-element topic="GBrowser-Settings-and-Configuration.topic" id="toc_gbrowser_settings" toc-title="Settings reference"/>
             <toc-element topic="GBrowser-Keyboard-Shortcuts.topic" id="toc_gbrowser_shortcuts" toc-title="Keyboard shortcuts"/>
             <toc-element topic="GBrowser-Reference-and-Support.topic" id="toc_gbrowser_support" toc-title="Troubleshooting and support"/>
-            <toc-element topic="GBrowser-Whats-New.topic" id="toc_gbrowser_whats_new" toc-title="What's new"/>
+            
         </toc-element>
     </snippet>
 </instance-profile>

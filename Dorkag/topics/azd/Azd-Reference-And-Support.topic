@@ -33,7 +33,7 @@
 
     <chapter title="Privacy and usage statistics" id="privacy">
         <p>
-            AZD sends anonymous usage statistics by default.
+            By default, AZD sends anonymous usage statistics only for Microsoft sign-in: an event when a sign-in starts, succeeds or fails.
             To stop them, clear <control>Share anonymous usage statistics</control> in
             <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
         </p>

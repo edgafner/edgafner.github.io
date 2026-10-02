@@ -37,6 +37,8 @@
             </step>
             <step><p>Click <control>Create</control>.</p></step>
         </procedure>
+        <p>When Jira accepts the issue, JirAI closes the Create tab and opens the new issue: its details tab in the tool window and its <control>Timeline</control> tab in the editor.</p>
+        <p>If Jira rejects the issue, the form stays open and shows the reason.</p>
         <p>Once you pick a project and an issue type, the tab is renamed after them, for example <control>Create Task — DEMO</control>.</p>
         <p>If you change the project or the issue type after entering values, JirAI asks whether to discard them.</p>
     </chapter>

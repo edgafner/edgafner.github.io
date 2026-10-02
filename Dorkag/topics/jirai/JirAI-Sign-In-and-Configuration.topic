@@ -23,6 +23,8 @@
     <chapter title="Sign in from the tool window" id="sign-in">
         <procedure title="Sign in to Jira Cloud" id="sign-in-proc">
             <p>Before you start, create an API token on the <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian API tokens page</a>.</p>
+            <p>Use <control>Create API token</control>, not <control>Create API token with scopes</control>: a token with scopes works only through Atlassian's API gateway, while JirAI connects to your site's own address.</p>
+            <p>The token expires on the date you choose when you create it, at most one year later; to replace it, see <a anchor="switch-site-or-token">Switch sites or replace the API token</a>.</p>
             <step>
                 <p>Open the <control>JirAI</control> tool window on the left side of the IDE.</p>
                 <p>When you are not signed in, it shows <control>Connect to Jira</control>.</p>
@@ -44,10 +46,34 @@
             </step>
             <step><p>Click <control>Log In</control>.</p></step>
             <p>JirAI checks the credentials with Jira before it stores anything.</p>
-            <p>When the check succeeds, the tool window lists your issues.</p>
+            <p>When the check succeeds, the tool window lists the issues assigned to you; to see other issues, see <a href="Work-with-Jira-Issues.topic" anchor="filters">Filter the list</a>.</p>
         </procedure>
     </chapter>
 
+    <chapter title="If sign-in fails" id="sign-in-errors">
+        <p>The <control>Log in to Jira</control> dialog shows why the sign-in failed:</p>
+        <deflist type="full">
+            <def title="Jira rejected those credentials. Check the email address, and that the API token is current.">
+                <p>Check that <control>Email</control> is the address of the Atlassian account that owns the token.</p>
+                <p>Check that the token has not expired or been revoked, and that it was created without scopes; if in doubt, create a new token.</p>
+            </def>
+            <def title="Those credentials are valid but do not have access to this site.">
+                <p>Your account cannot use this Jira site; ask the site administrator for access, or sign in to a site you can use.</p>
+            </def>
+            <def title="No Jira site responded at that address, or it is not visible to you.">
+                <p>Check the spelling of <control>Server</control>, for example <code>demo-org.atlassian.net</code>.</p>
+            </def>
+            <def title="Could not reach Jira. Check your network connection.">
+                <p>Check the spelling of <control>Server</control>, your network connection and the IDE proxy settings; see <a anchor="corporate-proxy">Use JirAI behind a corporate proxy</a>.</p>
+            </def>
+            <def title="Could not reach Jira: the HTTP proxy requires credentials. This is not a problem with your Jira token.">
+                <p>Enter or correct the proxy password in the IDE's <control>HTTP Proxy</control> settings, then try again.</p>
+            </def>
+            <def title="Jira is rate-limiting requests right now. Wait a moment and try again.">
+                <p>Wait a minute, then click <control>Log In</control> again.</p>
+            </def>
+        </deflist>
+    </chapter>
     <chapter title="Manage the account in Settings" id="settings-account">
         <p>You can also sign in and sign out without opening the tool window.</p>
         <procedure title="Sign in or out from Settings" id="settings-account-proc">
@@ -75,7 +101,19 @@
         </procedure>
         <p>Signing out removes the stored API token.</p>
         <p>JirAI connects to one site at a time.</p>
-        <p>Signing in to another site replaces the current one.</p>
+        <p>To connect to another site, sign out first and then sign in to the other site.</p>
+        <procedure title="Switch sites or replace the API token" id="switch-site-or-token">
+            <p>Use this procedure when your API token expired or was revoked, or to connect to a different Jira Cloud site.</p>
+            <p>If you need a new token, create it first on the <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian API tokens page</a>.</p>
+            <step>
+                <p>In the <control>JirAI</control> tool window, click the options menu (<control>⋮</control>) and choose <control>Sign Out</control>.</p>
+                <p>Alternatively, select the account in <ui-path>Settings | Tools | JirAI</ui-path>, click <control>−</control> and confirm.</p>
+            </step>
+            <step><p>In the tool window, click <control>Log In</control>.</p></step>
+            <step><p>In the <control>Log in to Jira</control> dialog, check <control>Server</control> and <control>Email</control>, which JirAI fills in from your last sign-in, and change them if you switch sites.</p></step>
+            <step><p>Paste the API token into <control>Token</control> and click <control>Log In</control>.</p></step>
+        </procedure>
+        <p>Signing out keeps your hidden fields, document targets and house standard; they apply again when you sign in to the same site.</p>
     </chapter>
 
     <chapter title="Where JirAI stores credentials" id="credential-storage">

@@ -79,6 +79,10 @@
                 <p>In the <control>Associate Pipeline Test to Test Case</control> dialog, type the test case ID or title in <control>Test case</control>
                     and select it from the list.</p>
                 <p>The list marks test cases that are already associated with another test.</p>
+
+                <p>If the selected test case is already associated with another test, the dialog warns you; associating replaces that association.</p>
+                <p>If the test already has associations, the dialog lists them under <control>Existing Test Cases Associations</control>.
+                    To remove one, click its delete icon and confirm.</p>
                 <img src="test_case_association.png"
                      alt="Associate Pipeline Test to Test Case dialog with matching test cases listed for the typed ID"
                      width="706" thumbnail="true" border-effect="rounded"/>

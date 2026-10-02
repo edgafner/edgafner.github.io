@@ -45,6 +45,11 @@
 
     <chapter title="Troubleshooting" id="troubleshooting-questions">
         <deflist>
+            <def title="Why is the issue list empty after I sign in?">
+                <p>The list starts with the <control>Assigned to Me</control> quick filter and shows only issues created in the last 365 days.</p>
+                <p>When nothing matches, it reads <control>Nothing matches the filters.</control>; choose <control>All Issues</control> in the <control>Filters</control> menu, or click <control>Clear filters</control>.</p>
+                <p>See <a href="Work-with-Jira-Issues.topic" anchor="filters">Filter the list</a>.</p>
+            </def>
             <def title="My AI assistant does not see the JirAI tools. Why?">
                 <p>The tools need the IDE's MCP server, which is off by default.</p>
                 <p>Turn it on in <ui-path>Settings | Tools | MCP Server</ui-path>, configure your assistant with <control>Auto-Configure</control> and check <control>Exposed Tools</control>.</p>
@@ -63,6 +68,11 @@
             <def title="Why does my Scrum board show only some of its sprints?">
                 <p>The <control>Board</control> tab shows a Scrum board's active sprint.</p>
                 <p>When a board has more than one active sprint, it shows the first and names the others in a notice.</p>
+            </def>
+            <def title="JirAI says I am not signed in, or that the sign-in was rejected. What do I do?">
+                <p>JirAI shows <control>Not signed in to Jira, or the sign-in was rejected.</control> when Jira no longer accepts your API token, for example because the token expired or was revoked.</p>
+                <p>Create a new API token, choose <control>Sign Out</control> in the options menu (<control>⋮</control>) of the <control>JirAI</control> tool window, and sign in again.</p>
+                <p>See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="switch-site-or-token">Switch sites or replace the API token</a>.</p>
             </def>
             <def title="Where is my API token stored?">
                 <p>In the IDE credential store, which is the operating system keychain or the IDE's KeePass file.</p>
@@ -92,6 +102,9 @@
             <li><p>On a board, cards move through the card menu only; team-managed boards open in Jira.</p></li>
             <li><p>The <control>Timeline</control> tab of a space opens the space in Jira.</p></li>
             <li><p>There is no branch-from-issue or other version control integration.</p></li>
+            <li><p>In the details tab, custom fields, the reporter and the issue type are read-only.</p></li>
+            <li><p>Board cards do not open the issue details in the IDE.</p></li>
+            <li><p><control>Push to Jira</control> works only on files with the <path>.md</path> extension.</p></li>
         </list>
     </chapter>
 

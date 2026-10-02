@@ -16,6 +16,7 @@
             Work with Azure DevOps Services and Azure DevOps Server without leaving your JetBrains IDE.
             Clone repositories, review and merge pull requests, run and approve pipelines, track work items, and use AI to
             write and review changes.
+            AZD is a paid plugin with a 10-day free trial.
         </description>
 
         <spotlight>

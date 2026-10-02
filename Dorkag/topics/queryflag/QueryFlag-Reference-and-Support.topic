@@ -51,6 +51,16 @@
     </p>
   </chapter>
 
+  <chapter title="Data and privacy" id="privacy">
+    <p>
+      QueryFlag sends no usage statistics and does not connect to any server itself.
+      It runs your queries through the data sources of the <control>Database</control> tool window.
+      For what a template stores, see <a href="QueryFlag-Settings.topic" anchor="storage">Where QueryFlag stores settings</a>.
+    </p>
+    <p>
+      Read the <a href="privacy-policy.topic">privacy policy</a>.
+    </p>
+  </chapter>
   <chapter title="Release notes" id="release-notes">
     <p>
       The <a href="https://plugins.jetbrains.com/plugin/18269-queryflag/versions">Versions</a> page on JetBrains Marketplace

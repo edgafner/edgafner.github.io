@@ -38,6 +38,7 @@
         <list>
             <li><p>Click the button, or right-click in the editor and choose <control>Push to Jira</control>.</p></li>
             <li><p>JirAI pushes the text currently in the editor, including unsaved changes.</p></li>
+            <li><p>The button and the menu command appear only for files with the <path>.md</path> extension, and only while the editor shows the Markdown text; if the Markdown editor shows only the preview, switch it to a layout that shows the text.</p></li>
         </list>
         <p>The <control>Push to Jira</control> dialog shows the kind of document it recognized, its size as Jira counts it, any conversion warnings and the action that fits the document.</p>
     </chapter>
@@ -68,6 +69,14 @@
             <step><p>In the dialog, click <control>Update DEMO-123</control>.</p></step>
         </procedure>
         <p>Updating replaces the issue description with the current document.</p>
+        <procedure title="Link a document to an existing issue" id="push-link-existing-proc">
+            <step><p>Add the line <code>&lt;!-- jira: DEMO-123 --&gt;</code> with the key of the existing issue at the top of the document, after the front matter if there is any.</p></step>
+            <step><p>Click <control>Push to Jira</control>.</p></step>
+            <step>
+                <p>If JirAI has never pushed a document to that issue, the dialog says that it has no record of a push.</p>
+                <p>Click <control>Update anyway</control> to replace the issue description with the document, or <control>Open in browser</control> to check the issue first.</p>
+            </step>
+        </procedure>
         <p>If the dialog shows another state, see <a anchor="push-conflict">When the issue was edited in Jira</a>.</p>
     </chapter>
 
@@ -141,6 +150,20 @@
                     <p>You can type names; JirAI resolves them when the Create form opens.</p>
                 </def>
             </deflist>
+            <procedure title="Add your own document kind" id="add-doc-kind-proc">
+                <p>Add a kind for documents that no preset recognizes, for example architecture decision records in <path>docs/adr/</path>.</p>
+                <p>Before you start, open the <control>JirAI</control> tool window while you are signed in; until then, the target columns are read-only.</p>
+                <step><p>In <ui-path>Settings | Tools | JirAI | Doc Push</ui-path>, click <control>+</control>.</p></step>
+                <step><p>In the new row, enter a <control>Kind</control> name, for example <code>ADR</code>, and a <control>Path pattern</control>, for example <code>docs/adr/*.md</code>.</p></step>
+                <step>
+                    <p>Enter a <control>Project key</control> and an <control>Issue type</control>, or leave both empty to choose them in the Create form.</p>
+                    <p>Separate several <control>Labels</control> or <control>Components</control> with commas; they are saved only for a kind that has a project key.</p>
+                </step>
+                <step><p>Click <control>OK</control> or <control>Apply</control>.</p></step>
+            </procedure>
+            <p>To change the order in which your own kinds are tried, move them with the up and down arrows of the table toolbar.</p>
+            <p>Only your own kinds can be renamed or removed; the preset's kinds keep their name and path pattern, but you can set their targets.</p>
+            <p>When no kind matches a document that is not linked to an issue yet, the <control>Push to Jira</control> dialog reads <control>No doc kind matched this file</control> and offers <control>Settings…</control>, which opens this page.</p>
             <p>Presets and targets are stored for each IDE project in your local workspace settings, not in the repository, and targets are kept separately for each Jira site.</p>
             <note>
                 <p>The targets are editable only while you are signed in.</p>

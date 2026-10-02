@@ -62,6 +62,10 @@
     </chapter>
 
     <chapter title="2025.3" id="v2025-3">
+        <p><b>2025.3.9</b>, December 12, 2025:</p>
+        <list>
+            <li>Platform and dependency updates.</li>
+        </list>
         <p><b>2025.3.7</b>, November 6, 2025:</p>
         <list>
             <li>Fixed an error about a component that must be shown on the screen.</li>
@@ -77,6 +81,8 @@
             <li>
                 <control>Open DevTools</control> now opens Chromium DevTools in a separate window.
                 The DevTools tool window is no longer available.
+            </li>
+            <li>Support for JetBrains IDEs 2025.3.
             </li>
         </list>
     </chapter>

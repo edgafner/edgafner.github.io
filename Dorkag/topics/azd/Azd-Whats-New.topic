@@ -151,6 +151,36 @@
         </chapter>
     </chapter>
 
+    <chapter title="AZD 2025.3" id="azd-2025-3">
+        <p>
+            AZD 2025.3 runs on JetBrains IDEs 2025.3.
+            Releases from November 2025 to January 2026 added:
+        </p>
+        <list>
+            <li><b>Azure Pipelines language server:</b> completion, validation and hover help in pipeline YAML files.
+                See <a href="Azd-Pipeline-Yaml.topic"/>.</li>
+            <li><b>MCP tools:</b> AI chat can create work items, manage pull requests and trigger pipelines.
+                See <a href="AI-Pull-Request-Review.topic" anchor="mcp-tools">MCP tools</a>.</li>
+            <li><b>Several work items per commit:</b> select more than one work item for a commit message.
+                See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
+            <li><b>Viewed files:</b> the viewed state of pull request files syncs with Azure DevOps, and a progress line counts the viewed files.
+                See <a href="Pull-Request-Details.topic" anchor="changed-files">Go through the changed files</a>.</li>
+            <li><b>Node.js detection:</b> AZD also looks for Node.js through your login shell, so it finds Node.js installed with nvm.</li>
+        </list>
+    </chapter>
+
+    <chapter title="AZD 2025.2" id="azd-2025-2">
+        <p>Later AZD 2025.2 updates, from September to November 2025, added:</p>
+        <list>
+            <li><b>Shallow clone:</b> clone a repository with a truncated history.
+                See <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" anchor="clone-steps">Clone an Azure DevOps repository</a>.</li>
+            <li><b>Work items in commit messages:</b> select work items when you generate a commit message.
+                See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
+            <li><b>Stage diagram:</b> an updated pipeline stage diagram, and faster loading of runs and run details.</li>
+        </list>
+    </chapter>
+
+    
     <seealso>
         <category ref="related">
             <a href="Azd-Installation.topic"/>

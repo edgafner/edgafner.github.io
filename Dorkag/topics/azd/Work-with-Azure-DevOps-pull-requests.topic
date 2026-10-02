@@ -52,7 +52,10 @@
             </step>
         </procedure>
         <p>
-            If the project has more than one Azure DevOps repository or you have several accounts,
+            If AZD cannot choose the repository and the account on its own, for example because the project has more than one Azure DevOps repository,
+            the tool window shows a repository list and an account list.
+            Select them and click <control>View Pull Requests</control>; AZD remembers the choice for the project.
+            To switch to another repository or account later,
             open the tool window <control>Options</control> menu and select <control>Change Repository or Account…</control>.
         </p>
     </chapter>
@@ -60,6 +63,9 @@
     <chapter title="View pull requests" id="view-pull-requests">
         <p>
             The <control>Pull Requests</control> tab lists the pull requests of the repository, newest first.
+            When you open the list in a project for the first time, it shows only your own active pull requests (the <control>Includes my changes</control> quick filter).
+            To see all active pull requests, select the <control>Active</control> quick filter; see <a anchor="quick-filters"/>.
+            AZD remembers the last filter for the project.
             Each row shows the title, the pull request number, the creation date and author, labels and reviewer avatars.
         </p>
         <!-- planned-image src="azd_pr_list.png" alt="Pull request list with filters, a DRAFT badge, labels and reviewer avatars" -->
@@ -71,7 +77,8 @@
                 The tooltip <control>Pull request can't be merged</control> means that the source branch conflicts with the target branch.
             </def>
             <def title="New commits icon">
-                The tooltip <control>New commits since your review</control> means that the author pushed commits after you voted.
+                The tooltip <control>New commits since your review</control> means that commits were pushed after your last review.
+                AZD counts your vote as a review, and also marking every file of the pull request as viewed; it remembers your last review in the project for 30 days.
             </def>
         </deflist>
         <p>
@@ -80,14 +87,17 @@
             <control>Copy Pull Request URL</control> and <control>Refresh</control>.
         </p>
         <p>
-            To hide draft pull requests, click <control>Exclude Drafts</control> on the list toolbar.
-            To show them again, click <control>Include Drafts</control>.
+            By default, the list hides draft pull requests.
+            To show them, click <control>Include Drafts</control> on the list toolbar.
+            To hide them again, click <control>Exclude Drafts</control>.
+            AZD remembers the choice for the project.
         </p>
     </chapter>
 
     <chapter title="Filter and search" id="filter-pull-requests">
         <p>
             Type in the search field to filter the list as you type.
+            AZD matches the text against the title, the description and the number of each pull request.
             Use the filter buttons under the search field to narrow the list further:
         </p>
         <deflist type="medium">
@@ -174,7 +184,7 @@
         <p>
             To refresh the list and open pull requests automatically, select <control>Auto-refresh pull requests</control> and set <control>Interval in seconds</control>
             in <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
-            AZD refreshes only while the tool window is visible.
+            AZD refreshes the list only while its tab is shown, and an open pull request only while its details tab is shown and has the focus.
             For all options on this page, see <a href="Azd-Settings-Configuration.topic" anchor="general-configuration"/>.
         </p>
     </chapter>

@@ -38,7 +38,8 @@
                 <p id="oauth-settings">For the permissions requested by Microsoft sign-in, see
                     <a href="Azd-Installation.topic" anchor="azd-oauth-login">Sign in with Microsoft</a>.</p>
             </def>
-            <def title="Clone git repositories using ssh">Clones over SSH. When cleared, AZD clones over HTTPS and enables the Git credential helper. Default: on.</def>
+            <def title="Clone git repositories using ssh">Clones over SSH. When cleared, AZD clones over HTTPS. Default: on.
+                See <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" anchor="clone-protocol">Choose SSH or HTTPS</a>.</def>
         </deflist>
     </chapter>
 
@@ -53,7 +54,8 @@
             <def title="Auto-fill description from PR templates">Fills the description of a new pull request from the repository's pull request template. Default: off.</def>
             <def title="Auto-refresh pipelines, Interval in seconds">Refreshes the pipeline run list and open runs at the set interval (5–1800 seconds). Default: off, 60 seconds.</def>
             <def title="Auto-refresh pull requests, Interval in seconds">Refreshes the pull request list and open pull requests at the set interval (5–1800 seconds). Default: off, 60 seconds.</def>
-            <def title="Open AZD links in tool window">Opens pipeline links in pull requests, and pull request links in pipeline runs, inside the AZD tool windows instead of the browser. Default: on.</def>
+            <def title="Open AZD links in tool window">Opens links between AZD views inside the AZD tool windows instead of the browser:
+                pipeline links in pull requests, pull request links in pipeline runs and work items, and runs opened from agent pools. Default: on.</def>
             <def title="Open commit links from the timeline in the IDE">Opens a commit link in the pull request timeline in the pull request details, with the commit selected, instead of on Azure DevOps. Default: on.</def>
             <def title="Respect proxy configuration">Uses the proxy configured in the IDE for AZD connections. Default: off.</def>
             <def title="Accept untrusted SSL certificates">Skips certificate validation for AZD connections only, for networks with a TLS-inspecting proxy. Other IDE connections are not affected. Default: off.</def>

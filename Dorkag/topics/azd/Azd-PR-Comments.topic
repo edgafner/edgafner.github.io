@@ -37,6 +37,8 @@
             <step>
                 Click <control>Add Comment</control> to post it now.
                 Click the arrow on the button for <control>Add Draft</control> or <control>Comment &amp; Resolve</control>.
+                The button keeps your last choice: after you add a draft, it reads <control>Add Draft</control> and <control>Add Comment</control> moves to the arrow, until you click <control>Add Comment</control> again.
+                Press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>) instead of clicking the button.
                 <!-- planned-image src="azd_pr_diff_comment.png" alt="New comment in the pull request diff with the Add Comment options open" -->
             </step>
         </procedure>
@@ -54,6 +56,15 @@
             Drafts let you go through all files first and publish the review in one step.
             Other people see a draft only after you publish it.
         </p>
+        <warning>
+            <p>
+                AZD saves drafts with the project on this computer, so they survive an IDE restart but are not available on other computers.
+                AZD deletes the drafts of a pull request after new commits are pushed to it, when its source branch is deleted,
+                when they are older than 30 days, and when the pull request list loads without that pull request,
+                for example because the pull request is completed or a filter hides it.
+                Submit your drafts when you finish a review.
+            </p>
+        </warning>
         <procedure title="Write and submit draft comments" id="submit-draft-comments">
             <step>
                 When you add a comment, click the arrow on <control>Add Comment</control> and select <control>Add Draft</control>.

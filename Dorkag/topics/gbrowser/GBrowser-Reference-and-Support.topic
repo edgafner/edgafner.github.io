@@ -30,6 +30,11 @@
                 Then restart the IDE.
                 See <a href="GBrowser-Installation.topic" anchor="requirements"/>.
             </p>
+            <p>
+                The same checks apply when the IDE reports the error <code>JCEF is not supported in this env or failed to initialize</code>.
+                To check or switch the runtime, press <shortcut>Ctrl+Shift+A</shortcut> (macOS: <shortcut>⌘ ⇧ A</shortcut>)
+                and run <control>Choose Boot Java Runtime for the IDE…</control>.
+            </p>
         </chapter>
 
         <chapter title="A site blocks GBrowser or keeps showing a check" id="site-blocks-browser">
@@ -86,6 +91,10 @@
         <list>
             <li>
                 GBrowser loads site icons from Google's favicon service, which receives the domain names of the pages you visit and bookmark.
+            </li>
+            <li>
+                To get the title of a new tab, or of a page that you bookmark from the page context menu,
+                GBrowser can also request the page directly from the IDE, outside the embedded browser and without its cookies.
             </li>
             <li>
                 When <control>Enable suggestion search</control> is on, the text you type in the address field is sent to Google to get suggestions.

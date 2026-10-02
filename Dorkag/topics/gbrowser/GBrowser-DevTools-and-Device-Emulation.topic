@@ -24,7 +24,7 @@
     </p>
     <p>
         The default shortcuts in this topic are for Windows and Linux.
-        On macOS, look up the shortcut of an action in <ui-path>Settings | Keymap</ui-path>; see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
+        On macOS, GBrowser shortcuts use <shortcut>⌘</shortcut> instead of <shortcut>Ctrl</shortcut> and <shortcut>⌥</shortcut> instead of <shortcut>Alt</shortcut>; see <a href="GBrowser-Keyboard-Shortcuts.topic" anchor="macos-shortcuts"/>.
     </p>
 
     <chapter title="Open DevTools" id="open-devtools">
@@ -76,6 +76,7 @@
             Device emulation applies to the current tab only.
             While it is on, the menu item shows the device name, for example <control>Device: iPhone SE</control>.
             To turn emulation off, select that item again or press <shortcut>Ctrl+Shift+M</shortcut>.
+            GBrowser then shows the page at the full size of the tool window again, resets the zoom to 100% and reloads the page.
         </p>
 
         <chapter title="Available devices" id="device-list" collapsible="true">

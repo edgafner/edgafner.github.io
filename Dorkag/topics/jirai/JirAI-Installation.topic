@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="JirAI: Installation and licensing" id="JirAI-Installation">
+       title="JirAI: Install and activate" id="JirAI-Installation">
 
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
@@ -71,6 +71,7 @@
         <p>JirAI is a paid plugin with a 7-day free trial.</p>
         <p>Start the trial or activate a license in <ui-path>Help | Register</ui-path>.</p>
         <p>Without a trial or a license, the IDE disables the plugin.</p>
+        <p>Buy or manage licenses on the <a href="https://plugins.jetbrains.com/plugin/33954-jirai/pricing">JirAI pricing page</a>.</p>
     </chapter>
 
     <chapter title="After installation" id="next-steps">

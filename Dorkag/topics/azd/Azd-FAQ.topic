@@ -22,6 +22,24 @@
         </p>
     </chapter>
 
+    <chapter title="AZD does not recognize the Git remote" id="supported-remotes">
+        <p>If the AZD tool windows are missing although the project has an Azure DevOps remote, check that the remote uses one of these formats:</p>
+        <list>
+            <li>Azure DevOps Services over HTTPS: <code>https://dev.azure.com/&lt;organization&gt;/&lt;project&gt;/_git/&lt;repository&gt;</code>
+                or <code>https://&lt;organization&gt;.visualstudio.com/&lt;project&gt;/_git/&lt;repository&gt;</code>.</li>
+            <li>Azure DevOps Services over SSH: <code>git@ssh.dev.azure.com:v3/&lt;organization&gt;/&lt;project&gt;/&lt;repository&gt;</code>
+                or <code>&lt;organization&gt;@vs-ssh.visualstudio.com:v3/&lt;organization&gt;/&lt;project&gt;/&lt;repository&gt;</code>.</li>
+            <li>Azure DevOps Server: <code>https://&lt;server&gt;/&lt;collection&gt;/&lt;project&gt;/_git/&lt;repository&gt;</code>,
+                also with a virtual directory such as <code>/tfs</code> before the collection, or the matching <code>ssh://</code> URL.</li>
+        </list>
+        <p>
+            To recognize a remote that none of your accounts matches, AZD contacts the server once per IDE session.
+            If the server was not reachable then, for example because the VPN was off, the tool windows stay hidden.
+            Add an account for the organization or server in <ui-path>Settings | Version Control | AZD</ui-path>, or restart the IDE.
+        </p>
+    </chapter>
+
+    
     <chapter title="Sign-in fails" id="login_pat_issues">
         <list type="bullet">
             <li>
@@ -29,6 +47,12 @@
                     In the tool window header, click <control>⋮</control>, select <control>Change Repository or Account…</control>,
                     and then select <control>Renew Token</control>.
                     See <a href="Azd-Installation.topic" anchor="azd-manage-accounts">Manage accounts</a>.</p>
+
+                <p>If <control>Change Repository or Account…</control> is not offered, click <control>Log in again…</control> in the error message of the tool window,
+                    or click <control>Log in</control> next to the account in <ui-path>Settings | Version Control | AZD</ui-path>;
+                    see <a href="Azd-Installation.topic" anchor="azd-renew-token">Renew a token</a>.
+                    If AZD reports that the account already exists when you add the new token,
+                    renew the token of that account instead, or remove the account and add it again.</p>
             </li>
             <li>
                 <p><b>Missing scopes or organizations:</b> the token must have the
@@ -49,6 +73,10 @@
                 <p><b>Azure CLI:</b> if AZD reports that <code>az</code> was not found, install the Azure CLI or set its path in
                     <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.
                     If it reports that you are not signed in, run <code>az login</code> in a terminal and try again.</p>
+
+                <p>If <code>az login</code> reports that no subscriptions were found, run <code>az login --allow-no-subscriptions</code>.
+                    If your Azure DevOps organization uses a different Microsoft Entra tenant than your default Azure CLI account,
+                    run <code>az login --tenant &lt;tenant-id&gt;</code>.</p>
             </li>
             <li>
                 <p><b>Sign-in error in a tool window:</b> click <control>Log in again…</control> in the error message.</p>

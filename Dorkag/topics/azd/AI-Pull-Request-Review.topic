@@ -126,8 +126,10 @@
                 To use another provider, click the arrow next to the button and select it.
             </step>
             <step>
-                Check the draft comments that appear in the diff with a <control>PENDING</control> tag and a severity.
-                Edit or delete them as needed.
+                Check the AI draft at the top of the file.
+                AZD adds one AI draft per file and does not add another while it exists.
+                The draft has a <control>PENDING</control> tag, shows the highest severity of its issues, and lists the issues that AI found in the file, grouped by severity, with a suggestion where AI has one.
+                Edit or delete the draft as needed.
                 <!-- planned-image src="azd_ai_diff_drafts.png" alt="Pull request diff with an AI draft comment and the Submit Comments (1) button" -->
             </step>
             <step>
@@ -178,8 +180,19 @@
             for example to create work items, manage pull requests or run pipelines.
             AZD bundles the server and loads its core, work item, repository and pipeline tools.
         </p>
+        <warning>
+            <p>
+                When you click <control>Allow</control> in the <control>Azure DevOps MCP Authentication Required</control> prompt,
+                AZD also lets AI Chat use every tool of the MCP server without asking you for each tool,
+                including tools that create or change work items and pull requests, and tools that run pipelines.
+                To stop AI Chat from using the tools, clear <control>Enable MCP Tools</control>.
+            </p>
+        </warning>
         <procedure title="Turn on MCP tools" id="enable-mcp-tools">
-            <p>Install <a href="https://nodejs.org">Node.js</a> first; AZD runs the MCP server with it.</p>
+            <p>
+                Install <a href="https://nodejs.org">Node.js</a> first; AZD runs the MCP server with it.
+                AZD finds Node.js the same way as for the Azure Pipelines language server; to set its path, see <a href="Azd-Pipeline-Yaml.topic" anchor="yaml-nodejs"/>.
+            </p>
             <step>
                 In <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>, select <control>Enable MCP Tools</control> and click <control>OK</control>.
             </step>
@@ -212,6 +225,11 @@
             <def title="A review tour is already in progress">
                 Finish or skip the AI Auto Review that is already running.
                 The message names its pull request.
+            </def>
+            <def title="AI-Review error: PR has N files, but maximum supported is 200">
+                AI Auto Review handles pull requests with up to 200 changed files.
+                For a larger pull request, AZD also shows <control>AI found no issues to discuss</control>, although AI did not review it.
+                To use AI on a larger pull request, generate draft comments one file at a time; see <a anchor="ai_draft_comments"/>.
             </def>
             <def title="AI found no issues to discuss">
                 AI Auto Review found nothing to comment on; no comments are created.

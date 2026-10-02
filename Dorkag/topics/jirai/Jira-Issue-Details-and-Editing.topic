@@ -36,10 +36,16 @@
 
     <chapter title="Edit fields in place" id="inline-editing">
         <p>Click a field value to change it.</p>
+        <p>A value you pick for <control>Assignee</control>, <control>Priority</control>, <control>Labels</control>, <control>Due date</control>, <control>Components</control>, <control>Fix versions</control> or <control>Parent</control> is saved to Jira right away.</p>
+        <p><control>Reporter</control>, <control>Type</control> and the custom fields are read-only; change them in Jira.</p>
+        <p>Fields such as <control>Priority</control> and <control>Labels</control> are also read-only when Jira does not let you edit them.</p>
         <deflist type="medium">
-            <def title="Summary">Edit the text in place.</def>
+            <def title="Summary">
+                <p>Edit the text in the <control>Summary</control> field.</p>
+                <p>Click <control>Apply</control> at the bottom of the details tab to save the new summary, or <control>Revert</control> to discard it.</p>
+            </def>
             <def title="Priority">Choose a priority from the list.</def>
-            <def title="Assignee">Search for a person, or click <control>Assign to me</control>.</def>
+            <def title="Assignee">Search for a person, choose <control>Unassigned</control> to remove the assignee, or click <control>Assign to me</control>.</def>
             <def title="Labels, Components, Fix versions">Add or remove values; you can filter the list or type a new label.</def>
             <def title="Due date">Pick a date, or clear it.</def>
             <def title="Parent">Search the issue's project by summary for a work item one level up in the hierarchy, or choose <control>Clear parent</control>.</def>
@@ -71,7 +77,11 @@
         <list>
             <li><p>To attach files, click the paperclip (<control>Attach files…</control>) and choose the files, or drag files onto the <control>Attachments</control> section.</p></li>
             <li><p>Image attachments show a thumbnail when Jira provides one.</p></li>
-            <li><p>To download an attachment, click the download icon (<control>Download</control>) on its row.</p></li>
+            <li>
+                <p>To download an attachment, click the download icon (<control>Download</control>) on its row and choose where to save the file.</p>
+                <p>The save dialog opens in the folder you last saved to, or in your Downloads folder, and a notification with <control>Open</control> and <control>Copy Path</control> appears when the download finishes.</p>
+            </li>
+            <li><p>JirAI uploads files of up to 25 MB, or up to your site's attachment limit if that is lower, and downloads files of up to 250 MB; for a larger attachment, the notification offers <control>Open in Browser</control>.</p></li>
             <li><p>To delete an attachment, click the delete icon (<control>Delete</control>) on its row and confirm; the icon appears only when Jira lets you delete that attachment.</p></li>
         </list>
         <p>On macOS and Windows, JirAI uses the operating system file dialog; on Linux, it uses the IDE file chooser.</p>

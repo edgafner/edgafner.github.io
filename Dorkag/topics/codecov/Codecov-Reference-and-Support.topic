@@ -7,6 +7,11 @@
 
   <primary-label ref="codecov"/>
 
+  <tldr>
+    <p>Report a bug: <a href="https://github.com/edgafner/dorkag/issues">DORKAG issue tracker</a></p>
+    <p>Contact: <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a></p>
+  </tldr>
+
   <link-summary>Report a Codecov plugin problem, suggest an improvement, or contact the developer.</link-summary>
   <card-summary>Report a problem or contact the developer.</card-summary>
   <web-summary>Get support for the Codecov plugin for JetBrains IDEs: report bugs, request features, and find Codecov resources and the JetBrains Marketplace page.</web-summary>
@@ -17,6 +22,22 @@
   </p>
 
   <include from="common-support.topic" element-id="support-content"/>
+
+  <chapter title="Report an IDE error" id="report-exception">
+    <p>
+      When the IDE shows an error that comes from the Codecov plugin, click <control>Report Exception</control> in the error dialog.
+      For details, see <a href="Codecov-FAQ.topic" anchor="codecov_report_bug"/>.
+    </p>
+  </chapter>
+
+  <chapter title="Data and privacy" id="privacy">
+    <p>
+      The Codecov plugin sends no usage statistics.
+    </p>
+    <p>
+      Read the <a href="privacy-policy.topic">privacy policy</a> and the <a href="terms-of-service.topic">terms of service</a>.
+    </p>
+  </chapter>
 
   <seealso>
     <category ref="related">

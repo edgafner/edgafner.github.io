@@ -51,6 +51,10 @@
         </p>
         <procedure title="Validate the file" id="validate-config">
             <step>
+                Save the file (<shortcut>Ctrl+S</shortcut>, macOS: <shortcut>⌘ S</shortcut>).
+                Validation sends the saved content of the file, not unsaved changes in the editor.
+            </step>
+            <step>
                 Right-click <path>codecov.yml</path> in the Project tool window, or right-click in the editor of the open file.
             </step>
             <step>

@@ -24,7 +24,7 @@
     </p>
     <p>
         The default shortcuts in this topic are for Windows and Linux.
-        On macOS, look up the shortcut of an action in <ui-path>Settings | Keymap</ui-path>; see <a href="GBrowser-Keyboard-Shortcuts.topic"/>.
+        On macOS, GBrowser shortcuts use <shortcut>⌘</shortcut> instead of <shortcut>Ctrl</shortcut> and <shortcut>⌥</shortcut> instead of <shortcut>Alt</shortcut>; see <a href="GBrowser-Keyboard-Shortcuts.topic" anchor="macos-shortcuts"/>.
     </p>
 
     <chapter title="Bookmark a page" id="bookmark-page">
@@ -90,7 +90,10 @@
                 <list>
                     <li>To rename or change a bookmark, edit its <control>Name</control> or <control>URL</control> cell.</li>
                     <li>To add a bookmark, click the add button.</li>
-                    <li>To remove a bookmark, select it and click the remove button.</li>
+                    <li>
+                        To remove a bookmark, select it and click the remove button.
+                        GBrowser deletes it right away, even if you then click <control>Cancel</control>.
+                    </li>
                 </list>
                 <!-- planned-image src="gbrowser_settings_bookmarks.png" alt="Bookmark Management group in the GBrowser settings with a table of bookmark names and URLs" -->
             </step>
