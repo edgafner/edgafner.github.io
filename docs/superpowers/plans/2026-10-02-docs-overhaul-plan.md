@@ -34,8 +34,8 @@
 - Credentials are never searched for or read. Live-data shots use local mock backends with neutral demo data.
 - Gradle always runs with `--no-scan`. UI tests only run through `docshots.sh` (the screen lock).
 - Paths:
-  - Docs: `/Users/jonathangafner/IdeaProjects/edgafner/edgafner.github.io-docs`.
-  - Scratch: `$SCRATCH` = `/private/tmp/claude-501/-Users-jonathangafner-IdeaProjects-edgafner-edgafner-github-io/7527572e-3c89-479d-b2fb-e64fbc3d822f/scratchpad`.
+  - Docs: `~/IdeaProjects/edgafner/edgafner.github.io-docs`.
+  - Scratch: `$SCRATCH` = `<session scratchpad>`.
 
 ## Review focus
 
@@ -103,7 +103,7 @@ The failure modes most likely to hurt a reader, and the check each task must pas
 
 - [ ] **Step 1:** Make the edits.
 - [ ] **Step 2:** Run `xmllint --noout` on every changed XML file. Expect no output.
-- [ ] **Step 3:** Run `bash $SCRATCH/site-build/build.sh /Users/jonathangafner/IdeaProjects/edgafner/edgafner.github.io-docs site`. Expect the checker to exit 0, and `llms.txt` plus `sitemap.xml` to exist in `$SCRATCH/site-build/site-site/`.
+- [ ] **Step 3:** Run `bash $SCRATCH/site-build/build.sh ~/IdeaProjects/edgafner/edgafner.github.io-docs site`. Expect the checker to exit 0, and `llms.txt` plus `sitemap.xml` to exist in `$SCRATCH/site-build/site-site/`.
 - [ ] **Step 4:** Commit: `Upgrade Writerside builder to 2026.09.0357 and enable llms.txt and sitemap`.
 
 ### Task 3: Home page (judge panel)
