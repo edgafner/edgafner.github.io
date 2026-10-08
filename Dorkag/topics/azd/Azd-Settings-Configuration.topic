@@ -89,6 +89,7 @@
         <deflist type="medium">
             <def title="Adopt Azure DevOps UI style">Makes the pull request details look more like the Azure DevOps web UI, with a <control>Submit Review</control> button for votes. Default: off.</def>
             <def title="Show events in the order ascending by date">Shows the oldest timeline events first. Clear it to show the newest first. Default: on.</def>
+            <def title="Wrap long text in work items">Wraps long titles, descriptions, field values and timeline entries to the width of the tool window. Clear it to scroll sideways instead. Default: on.</def>
         </deflist>
     </chapter>
 
@@ -111,6 +112,15 @@
                 <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.
                 Select <control>Use custom WHERE clause</control> to edit it; the text must start with <code>WHERE</code>.</def>
         </deflist>
+        <chapter title="Field Visibility" id="field-visibility">
+            <p>Path: <ui-path>Settings | Version Control | AZD | Boards and Work Items | Field Visibility</ui-path></p>
+            <p>
+                Lists the custom fields you hid in the work item details, with the scope of each rule: a work item, a project, or all projects.
+                Click <control>+</control> to add a rule by the field's reference name, for example <code>Custom.Tier</code>,
+                and remove a rule to show the field again.
+                See <a href="Azd-Boards.topic" anchor="custom-fields">Custom fields</a>.
+            </p>
+        </chapter>
     </chapter>
 
     <chapter title="Pipeline Settings" id="pipeline-settings">

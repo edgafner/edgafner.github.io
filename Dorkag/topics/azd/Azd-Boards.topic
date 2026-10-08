@@ -13,7 +13,7 @@
         <p>Configure: <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path></p>
     </tldr>
 
-    <link-summary>Find, view, edit, comment on and create Azure Boards work items, use the Kanban board, and add work items to commit messages.</link-summary>
+    <link-summary>Find, view, edit, comment on and create Azure Boards work items, manage attachments, use the Kanban board, and add work items to commit messages.</link-summary>
     <card-summary>Find, edit, comment on and create work items, move cards on the Kanban board, and reference them in commits.</card-summary>
     <web-summary>Work with Azure Boards in JetBrains IDEs with AZD: filter, edit and comment on work items, create new ones, move
         Kanban cards and add work items to commit messages.</web-summary>
@@ -68,6 +68,11 @@
             <step>
                 <p>Change fields such as the state, area path, iteration path, priority or assignee.
                     To see the other fields of the work item type, expand <control>Show all fields</control>.</p>
+                <p>Rich-text fields, such as <control>Repro Steps</control>, <control>System Info</control> and
+                    <control>Acceptance Criteria</control>, show at the top of the work item in the order of the Azure DevOps web form,
+                    also when they are empty. They are read-only in the IDE: click <control>Open in browser</control> to edit one,
+                    or <control>Open in scratch file</control> to copy its content into a scratch file.
+                    Fields stored as Markdown display formatted, and images in them open when you click them.</p>
             </step>
             <step>
                 <p>Click <control>Apply</control> at the bottom of the tab, or click <control>Revert</control> to discard your edits.</p>
@@ -81,6 +86,76 @@
             Right-click in the details tab to <control>Refresh Work Item</control>, <control>Open Work Item on Azure DevOps</control>
             or <control>Copy Work Item URL</control>.
         </p>
+        <p>
+            Long titles, descriptions and field values wrap to the width of the tool window.
+            To scroll sideways instead, clear <a href="Azd-Settings-Configuration.topic" anchor="ui-customization">Wrap long text in work items</a>.
+        </p>
+    </chapter>
+
+    <chapter title="Custom fields" id="custom-fields">
+        <p>
+            Fields that your process adds to a work item type show in the <control>Custom fields</control> group of the details tab.
+            Edit them like the other fields and click <control>Apply</control>.
+            Custom rich-text fields show at the top of the work item, after the system rich-text fields.
+        </p>
+        <procedure title="Hide custom fields" id="hide-custom-fields">
+            <step>
+                <p>Click the eye button next to a custom field and select where to hide it: for this work item,
+                    in this project, or in all projects.</p>
+            </step>
+            <step>
+                <p>To hide several fields at once, right-click in the details tab and select <control>Hide Fields…</control>.</p>
+            </step>
+        </procedure>
+        <p>
+            Required fields and fields with a save error always show.
+            To show a hidden field again, remove its rule in
+            <a href="Azd-Settings-Configuration.topic" anchor="field-visibility">Field Visibility</a>.
+        </p>
+    </chapter>
+
+    <chapter title="Attachments" id="work-item-attachments">
+        <p>
+            The <control>Attachments</control> section of the details tab lists the files attached to the work item,
+            with their size, date and comment. Switch between <control>List view</control> and <control>Grid view</control> to see rows or thumbnails.
+        </p>
+        <p>To attach files, do one of the following:</p>
+        <list>
+            <li>Click <control>Attach Files…</control> and select one or more files.</li>
+            <li>Drag files from the <control>Project</control> tool window or from your file manager onto the section.</li>
+            <li>Copy a screenshot or files, click the section, and press <shortcut>Ctrl+V</shortcut> (macOS: <shortcut>⌘ V</shortcut>).</li>
+        </list>
+        <p>
+            Each file uploads on its own, and uploads continue when you close the tab.
+            If the work item has unsaved changes, AZD links the file after you click <control>Apply</control> or <control>Revert</control>.
+            Azure DevOps Services accepts files up to 60 MB; Azure DevOps Server allows 4 MB by default, and your administrator can change it.
+        </p>
+        <p>Right-click an attachment for these actions:</p>
+        <deflist type="medium">
+            <def title="Open">Opens an image or a text file of up to 20 MB in an editor tab. Other files open with <control>Save As…</control>.</def>
+            <def title="Save As…">Downloads the file to a folder you choose.</def>
+            <def title="Open in Browser">Opens the file in your browser.</def>
+            <def title="Copy Attachment Link">Copies a download link. Azure DevOps Services only.</def>
+            <def title="Edit Comment…">Changes the comment shown under the file name.</def>
+            <def title="Remove">Removes the file from the work item. Azure DevOps keeps the file for 28 days, and you can still delete it permanently in that time.</def>
+            <def title="Delete Permanently">Deletes the file from Azure DevOps. Every link to it, including images in descriptions and comments, stops working. Azure DevOps Services only.</def>
+        </deflist>
+        <note title="Delete Permanently needs more access">
+            <list>
+                <li><b>Sign in with Microsoft:</b> AZD offers to sign in again; select <control>Full access</control>.</li>
+                <li><b>Personal access token:</b> add <control>Work Items: Read, write &amp; manage</control> to your token.</li>
+                <li>You also need the <control>Permanently delete work items</control> permission in the project.</li>
+            </list>
+        </note>
+        <chapter title="Attachments in remote development" id="attachments-remote-development">
+            <p>When AZD runs on a remote development host:</p>
+            <list>
+                <li><control>Attach Files…</control> and <control>Save As…</control> show the files of the host, not of your computer.</li>
+                <li>Dragging files from your computer and pasting copied files are not supported. Paste a screenshot, or copy the file to the host first.</li>
+                <li><control>Open with System App</control> is not offered after a download.</li>
+                <li><control>Open in Browser</control> works when your browser can reach the Azure DevOps server, for example over the same VPN.</li>
+            </list>
+        </chapter>
     </chapter>
 
     <chapter title="Links, timeline and comments" id="work-item-timeline">
@@ -101,6 +176,10 @@
             <step>
                 <p>In the timeline tab, type in the comment box at the bottom.
                     Type <code>@</code> to mention a person.</p>
+            </step>
+            <step>
+                <p>Optional: to attach files, click the paperclip icon above the comment box, or paste a screenshot or copied files.
+                    AZD uploads each file and inserts a link at the caret. A file that cannot be attached is named under the box with the reason.</p>
             </step>
             <step>
                 <p>Click <control>Add Comment</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>).</p>
@@ -126,7 +205,8 @@
             </step>
             <step>
                 <p>Optional: fill in <control>Description</control>, <control>Assigned To</control>, <control>Area Path</control>,
-                    <control>Iteration Path</control>, <control>Priority</control> and <control>Tags</control>.</p>
+                    <control>Iteration Path</control>, <control>Priority</control> and <control>Tags</control>.
+                    For a type with Repro Steps, such as Bug, a <control>Repro Steps</control> box shows above <control>Description</control>.</p>
             </step>
             <step>
                 <p>Click <control>Create</control>.</p>

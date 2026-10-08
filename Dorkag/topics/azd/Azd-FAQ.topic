@@ -158,6 +158,16 @@
         </p>
     </chapter>
 
+    <chapter title="Deleting an attachment permanently fails" id="attachment-delete-permanently">
+        <p><control>Delete Permanently</control> needs more access than the other attachment actions.</p>
+        <list type="bullet">
+            <li><p><b>Sign in with Microsoft:</b> follow the notification to sign in again and select <control>Full access</control>.</p></li>
+            <li><p><b>Personal access token:</b> add <control>Work Items: Read, write &amp; manage</control> to the token and renew it in AZD.</p></li>
+            <li><p><b>Permission:</b> ask a project administrator for <control>Permanently delete work items</control>.</p></li>
+        </list>
+        <p>See <a href="Azd-Boards.topic" anchor="work-item-attachments">Attachments</a>.</p>
+    </chapter>
+
     <chapter title="Report a bug or request a feature" id="azd_bug_feature">
         <p>
             See <a href="Azd-Reference-And-Support.topic"/>.
