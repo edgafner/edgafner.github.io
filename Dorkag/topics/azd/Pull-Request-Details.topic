@@ -118,6 +118,10 @@
             <li>To show only some files, use the filter above the tree: <control>All Files</control>, <control>Unviewed Only</control> or <control>Viewed Only</control>.</li>
             <li>To mark every file you open as viewed, select <control>Automatically mark opened files as viewed</control> in <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.</li>
         </list>
+        <p>
+            When you have viewed every file of the latest changes, the pull request list counts it as your review;
+            see <a href="Work-with-Azure-DevOps-pull-requests.topic" anchor="new-changes-since-review"/>.
+        </p>
         <!-- planned-image src="azd_pr_files_filter.png" alt="Changed files tree with the Unviewed Only filter selected and one file marked as viewed" -->
         <note>
             <p>

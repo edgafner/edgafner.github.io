@@ -35,7 +35,7 @@
     <chapter title="Before you start" id="ai_review_provider_options">
         <p>
             These features work with the built-in AZD provider without any setup.
-            To use your own OpenAI, Claude, Gemini or Ollama model, see <a href="Azd-AI.topic" anchor="ai-providers"/>.
+            To use your own OpenAI, Claude, Gemini or Ollama model, or your GitHub Copilot plan, see <a href="Azd-AI.topic" anchor="ai-providers"/>.
             For what data AZD sends, see <a href="Azd-AI.topic" anchor="ai-privacy"/>.
         </p>
     </chapter>
@@ -184,6 +184,7 @@
             With MCP tools, AI Chat can use the Azure DevOps MCP server to read and change data in your organization,
             for example to create work items, manage pull requests or run pipelines.
             AZD bundles the server and loads its core, work item, repository and pipeline tools.
+            With the GitHub Copilot provider, Copilot can use only these tools.
         </p>
         <warning>
             <p>

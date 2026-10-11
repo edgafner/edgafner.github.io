@@ -14,7 +14,7 @@
         <p>Preferences: <ui-path>Settings | Version Control | AZD | Preferences</ui-path></p>
     </tldr>
 
-    <link-summary>Open the AZD Pull Requests tool window, then find, filter, sort and open Azure DevOps pull requests.</link-summary>
+    <link-summary>Open the AZD Pull Requests tool window, then find, filter, sort and open Azure DevOps pull requests and see which ones changed since your review.</link-summary>
     <card-summary>Find, filter and open Azure DevOps pull requests in the AZD Pull Requests tool window.</card-summary>
     <web-summary>Browse Azure DevOps pull requests in JetBrains IDEs with AZD: filters, quick filters, custom
         filters, sorting, drafts and a pull request metrics dashboard.</web-summary>
@@ -66,19 +66,30 @@
             AZD remembers the last filter for the project.
         </p>
         <p>
-            Each row shows the title, the pull request number, the creation date and author, labels and reviewer avatars.
+            Each row shows the title, labels and reviewer avatars.
+            The line under the title shows the pull request number, when it was last updated, and when and by whom it was created,
+            for example <code>!42 · updated 2h ago · created Yesterday, by Alex</code>.
+            The last update counts comments, pushes, votes and status changes.
+            AZD shows it only when the pull request changed after it was created.
         </p>
         <!-- planned-image src="azd_pr_list.png" alt="Pull request list with filters, a DRAFT badge, labels and reviewer avatars" -->
         <deflist type="medium">
             <def title="DRAFT, MERGED, ABANDONED">
                 The state badge of a pull request that is not active.
             </def>
+            <def title="Comment counter">
+                The comment icon with two numbers, for example <code>2/5</code>, shows the open comment threads out of all comment threads.
+                Hover over it to see the number of comments and the time of the last activity.
+                Pull requests without comment threads show no counter.
+            </def>
             <def title="Merge conflict icon">
                 The tooltip <control>Pull request can't be merged</control> means that the source branch conflicts with the target branch.
+                If there are also new changes since your review, the tooltip counts them too.
             </def>
-            <def title="New commits icon">
-                The tooltip <control>New commits since your review</control> means that commits were pushed after you last voted or marked every file as viewed.
-                AZD keeps track of these reviews for 30 days.
+            <def title="New changes icon">
+                Someone else pushed to the source branch after your last review.
+                The tooltip shows the number of new pushes and what your last review was, for example <code>you voted 2h ago</code>.
+                See <a anchor="new-changes-since-review"/>.
             </def>
         </deflist>
         <p>
@@ -131,10 +142,35 @@
             <def title="Waiting for Author">Pull requests where you voted <control>Wait For Author</control>.</def>
             <def title="I Reviewed">Pull requests that you approved, with or without suggestions.</def>
             <def title="Awaiting My Vote">Pull requests where you are a reviewer and have not voted yet.</def>
-            <def title="New Changes Since Review">Pull requests with commits pushed after your last review.</def>
+            <def title="New Changes Since Review">Pull requests with new pushes after your last review; see <a anchor="new-changes-since-review"/>.</def>
         </deflist>
         <p>
             Your custom quick filters appear in the same popup.
+        </p>
+    </chapter>
+
+    <chapter title="New changes since review" id="new-changes-since-review">
+        <p>
+            AZD compares the pushes to a pull request with your last review.
+            Your last review is the latest of these:
+        </p>
+        <list>
+            <li>Your vote.</li>
+            <li>Your comment or reply.</li>
+            <li>Your own push to the source branch.</li>
+            <li>The moment you marked every file as viewed in AZD.</li>
+        </list>
+        <p>
+            Votes, comments and pushes count wherever you made them, including the Azure DevOps web page.
+            AZD remembers the viewed mark for 30 days.
+        </p>
+        <p>
+            A push by someone else after your last review counts as a new change.
+            If you have not reviewed a pull request yet, it has no new changes.
+            Your own pull requests and pull requests that are not active never show new changes.
+        </p>
+        <p>
+            With the <control>New Changes Since Review</control> quick filter, the list shows <control>Loading review activity…</control> until AZD has checked the pull requests.
         </p>
     </chapter>
 
@@ -170,7 +206,8 @@
     <chapter title="Sort the list" id="sort-pull-requests">
         <p>
             Click the sort icon on the list toolbar and select a <control>Sort by</control> option:
-            <control>Default (newest first)</control>, <control>Created Date</control> or <control>Title</control>.
+            <control>Default (newest first)</control>, <control>Created Date</control>, <control>Last Updated</control> or <control>Title</control>.
+            <control>Last Updated</control> orders by the last comment, push, vote or status change.
             Select <control>Descending</control> to reverse the order.
             AZD remembers the sort order for each project.
         </p>

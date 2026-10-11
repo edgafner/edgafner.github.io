@@ -10,7 +10,7 @@
 
     <link-summary>Answers to common questions about JirAI, troubleshooting tips and the known limitations.</link-summary>
     <card-summary>Common questions, troubleshooting tips and known limitations.</card-summary>
-    <web-summary>Answers about JirAI for Jira Cloud in JetBrains IDEs: licensing, the 365-day issue list, rejected sign-ins, agent tools, read-only descriptions and known limitations.</web-summary>
+    <web-summary>Answers about JirAI for Jira Cloud in JetBrains IDEs: price, the 365-day issue list, rejected sign-ins, agent tools, branches and commit messages, and known limitations.</web-summary>
 
     <chapter title="General questions" id="general-questions">
         <deflist>
@@ -18,10 +18,8 @@
                 <p>No. JirAI works with Jira Cloud only.</p>
                 <p>Jira Server and Jira Data Center use a different API and sign-in model.</p>
             </def>
-            <def title="How does the free trial work?">
-                <p>JirAI is a paid plugin with a 7-day free trial.</p>
-                <p>Start the trial or activate a license in <ui-path>Help | Register</ui-path>.</p>
-                <p>See <a href="JirAI-Installation.topic" anchor="licensing-and-trial">Licensing and free trial</a>.</p>
+            <def title="Is JirAI free?">
+                <p>Yes. You need no license, trial or subscription to install and use JirAI.</p>
             </def>
             <def title="Does JirAI collect telemetry or send my code anywhere?">
                 <p>No. JirAI has no telemetry or analytics, and it does not read or send your source code.</p>
@@ -71,6 +69,23 @@
             <def title="Why does my Scrum board show only some of its sprints?">
                 <p>The <control>Board</control> tab shows a Scrum board's active sprint.</p>
                 <p>When a board has more than one active sprint, it shows the first and names the others in a notice.</p>
+                <p>When no sprint is active, the board is empty until a sprint starts in Jira.</p>
+            </def>
+            <def title="Why can't I create a branch from an issue?">
+                <p><control>Create Branch…</control> needs the bundled Git plugin; when the plugin is disabled, the command does not appear.</p>
+                <p>When the project has no Git repository, the command is disabled.</p>
+                <p>See <a href="Work-with-Jira-Issues.topic" anchor="create-branch">Create a branch from an issue</a>.</p>
+            </def>
+            <def title="Why doesn't my commit message start with the issue key?">
+                <p>Check the following:</p>
+                <list>
+                    <li><p>The key is added only when you commit with changelists, not with the Git staging area. Turn off <control>Enable staging area</control> in <ui-path>Settings | Version Control | Git</ui-path>.</p></li>
+                    <li><p>The name of the current branch must contain the issue key in capital letters, for example <code>DEMO-42-fix-login-timeout</code>, and you must be signed in to the issue's Jira site.</p></li>
+                    <li><p>The key is added only to an empty commit message. A draft or a Git commit template is never replaced.</p></li>
+                    <li><p>If the project's repositories are on branches of different issues, no key is added.</p></li>
+                    <li><p><control>Start commit messages with the current issue key</control> must be selected in <ui-path>Settings | Tools | JirAI | Development</ui-path>.</p></li>
+                </list>
+                <p>See <a href="Work-with-Jira-Issues.topic" anchor="commit-message-issue-key">Issue key in commit messages</a>.</p>
             </def>
             <def title="Why does JirAI say I am not signed in, or that the sign-in was rejected?">
                 <p>JirAI shows <control>Not signed in to Jira, or the sign-in was rejected.</control> when Jira no longer accepts your API token, for example because the token expired or was revoked.</p>
@@ -99,15 +114,14 @@
             <li><p>Sign-in with an API token only; OAuth is not supported.</p></li>
             <li><p>Issue list searches cover issues created in the last 365 days, except a search for a single issue key.</p></li>
             <li><p>No JQL: queries are built from the filters and the search field.</p></li>
-            <li><p>Existing comments cannot be edited, only added and deleted.</p></li>
+            <li><p>Restricted comments and service-desk comments can be edited only in Jira.</p></li>
             <li><p>Descriptions with tables, panels, media and similar content can be edited only in Jira.</p></li>
-            <li><p><control>Breakdown</control> lists direct children only.</p></li>
-            <li><p>On a board, cards move through the card menu only; team-managed boards open in Jira.</p></li>
+            <li><p>Team-managed boards open in Jira, and a Scrum board shows only its first active sprint.</p></li>
             <li><p>The <control>Timeline</control> tab of a space opens the space in Jira.</p></li>
-            <li><p>There is no branch-from-issue or other version control integration.</p></li>
+            <li><p>Branches, the current issue and the commit-message key work with Git only, and the commit-message key needs changelists, not the staging area.</p></li>
             <li><p>In the details tab, custom fields, the reporter and the issue type are read-only.</p></li>
-            <li><p>Board cards do not open the issue in the IDE.</p></li>
             <li><p><control>Push to Jira</control> works only on files with the <path>.md</path> extension.</p></li>
+            <li><p>Under Remote Development, the Project view does not offer <control>Push to Jira</control>; use the button or the context menu in the editor.</p></li>
         </list>
     </chapter>
 

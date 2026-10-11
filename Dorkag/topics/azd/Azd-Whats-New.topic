@@ -8,10 +8,10 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter" depth="2"/>
 
-    <link-summary>Notable changes in recent AZD release lines, from the late 2025.2 updates to 2026.3.</link-summary>
+    <link-summary>Notable changes in recent AZD release lines, from the late 2025.2 updates to 2026.3.10.</link-summary>
     <card-summary>New features and notable fixes in recent AZD releases.</card-summary>
     <web-summary>What's new in AZD, the Azure DevOps plugin for JetBrains IDEs: pull request review, sign-in,
-        pipelines, approvals, Boards and AI changes in recent releases.</web-summary>
+        pipelines, approvals, Boards, GitHub Copilot and AI changes in recent releases.</web-summary>
 
     <p>
         This page lists notable changes by release line, newest first.
@@ -24,9 +24,62 @@
         <chapter title="IDE support" id="platform-support">
             <p>
                 AZD 2026.3 runs only on JetBrains IDEs 2026.3 (build 263).
-                The latest release, 2026.3.6, needs build 263.5153 or later.
-                IDEs 2026.2 stay on AZD 2026.2.23, the final release for that IDE version.
+                Since 2026.3.8 it needs build 263.6259 or later.
+                IDEs 2026.2 keep receiving AZD 2026.2 updates.
             </p>
+        </chapter>
+
+        <chapter title="Boards and work items" id="boards-2026-3">
+            <p>AZD 2026.3.10 lets you change more of a work item without leaving the IDE:</p>
+            <list>
+                <li>Pick dates from a calendar in work item date fields. See <a href="Azd-Boards.topic" anchor="edit-work-item">Edit a work item</a>.</li>
+                <li>Edit a work item's title in its details tab, and <a href="Azd-Boards.topic" anchor="delete-work-item">delete work items</a> to the recycle bin.</li>
+                <li><a href="Azd-Boards.topic" anchor="edit-work-item-comment">Edit and delete your own comments</a> in the work item timeline.</li>
+            </list>
+            <p>AZD 2026.3.9 added:</p>
+            <list>
+                <li>Long work item titles and descriptions wrap to the panel width.</li>
+                <li>Repro Steps, Acceptance Criteria and other rich-text fields show at the top of the work item. A new bug can have its Repro Steps filled in when you create it.</li>
+                <li><a href="Azd-Boards.topic" anchor="work-item-attachments">Attachments</a>: manage a work item's attachments, and attach files and screenshots to comments.</li>
+                <li>A missing or invalid field value is highlighted on the field itself when you apply or create.</li>
+            </list>
+            <p>AZD 2026.3.8 shows <a href="Azd-Boards.topic" anchor="custom-fields">custom work item fields</a>, which you can edit or hide.</p>
+            <p>
+                Fixes: @mentions and line breaks in comments work on Azure DevOps Server, resolving an edit conflict keeps fields someone else changed,
+                text in angle brackets such as <code>List&lt;String&gt;</code> stays in comments, <control>Delete Permanently</control> on an attachment deletes the file,
+                and the <control>Wrap long text in work items</control> setting applies to open work items right away.
+                Images in descriptions load, and Markdown fields and Azure DevOps Server comments display formatted.
+            </p>
+        </chapter>
+
+        <chapter title="Pull requests" id="pull-requests-2026-3">
+            <p>AZD 2026.3.9:</p>
+            <list>
+                <li>The <a href="Work-with-Azure-DevOps-pull-requests.topic" anchor="view-pull-requests">pull request list</a> shows open comment threads and when each pull request was last updated,
+                    and you can <a href="Work-with-Azure-DevOps-pull-requests.topic" anchor="sort-pull-requests">sort it</a> by <control>Last Updated</control>.</li>
+                <li><a href="Work-with-Azure-DevOps-pull-requests.topic" anchor="new-changes-since-review">New changes since review</a> counts your votes and comments made anywhere, including the web.</li>
+            </list>
+            <p>AZD 2026.3.8 makes <a href="Azd-Create-Pull-Request.topic">creating a pull request</a> faster:</p>
+            <list>
+                <li>New pull requests open with the <a href="Azd-Create-Pull-Request.topic" anchor="branch-prefill">target and source branches filled in</a>, even without a local default branch.
+                    Set preferred target branches for each project in <a href="Azd-Settings-Configuration.topic" anchor="general-configuration">Preferences</a>.</li>
+                <li>Fill in titles from a <a href="Azd-Create-Pull-Request.topic" anchor="title-template">template</a> with work item placeholders, such as <code>EP-{workItemId} {workItemTitle}</code>.</li>
+                <li>The branch picker keeps your choice without clicking <control>Save</control>, and <control>Create</control> waits until the AI title or description is ready.</li>
+            </list>
+            <p>Fix: clearing the delete-branch option when you complete a pull request now keeps the branch.</p>
+        </chapter>
+
+        <chapter title="AI" id="ai-2026-3">
+            <p>AZD 2026.3.8:</p>
+            <list>
+                <li><a href="Azd-AI.topic" anchor="copilot-provider">GitHub Copilot</a> can be an AI provider, using your existing Copilot plan.</li>
+                <li>Claude Opus 5, Claude Sonnet 5 and GPT-5.6 can be selected, with GPT-5.6 Sol as the default OpenAI model. See <a href="Azd-AI.topic" anchor="ai-models">Available models</a>.</li>
+                <li>OpenAI-compatible server URLs ending in <code>/v1</code>, such as LM Studio's, work again.</li>
+            </list>
+        </chapter>
+
+        <chapter title="Security" id="security-2026-3">
+            <p>Since AZD 2026.3.8, images in pull requests and work items no longer send your Azure DevOps credentials to other sites.</p>
         </chapter>
 
         <chapter title="Pull request review" id="pr-review-improvements">

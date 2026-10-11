@@ -14,12 +14,12 @@
         <title>JirAI</title>
         <description>
             Work with Jira Cloud issues, boards and space reports without leaving your JetBrains IDE.
-            JirAI also turns Markdown specs into Jira issues and lets AI assistants check a draft against your project's real create screen.
-            JirAI is a paid plugin with a 7-day free trial.
+            JirAI also creates Git branches from issues, turns Markdown specs into Jira issues and lets AI assistants check a draft against your project's real create screen.
+            JirAI is free.
         </description>
 
         <spotlight>
-            <a href="JirAI-Installation.topic" type="start" summary="Install the plugin, start the 7-day trial and check the requirements.">Install JirAI</a>
+            <a href="JirAI-Installation.topic" type="start" summary="Check the requirements and install the plugin.">Install JirAI</a>
             <a href="Work-with-Jira-Issues.topic" type="tools" summary="Search, filter and open Jira Cloud issues in the JirAI tool window.">Work with issues</a>
         </spotlight>
 

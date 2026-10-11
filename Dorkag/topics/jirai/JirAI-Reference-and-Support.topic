@@ -27,14 +27,9 @@
         </list>
     </chapter>
 
-    <chapter title="Licensing questions" id="contact">
-        <p>To start the trial or activate a license, see <a href="JirAI-Installation.topic" anchor="licensing-and-trial">Licensing and free trial</a>.</p>
-        <p>For other licensing questions, write to <a href="mailto:jgafner@dorkag.com">jgafner@dorkag.com</a>.</p>
-    </chapter>
-
     <chapter title="Terms and privacy" id="legal">
         <list>
-            <li><p>JirAI is licensed under the <a href="terms-of-service.topic">Terms of Service</a>.</p></li>
+            <li><p>The <a href="terms-of-service.topic">Terms of Service</a> govern the use of JirAI.</p></li>
             <li><p>The <a href="privacy-policy.topic">Privacy Policy</a> describes what data the DORKAG plugins handle.</p></li>
         </list>
     </chapter>

@@ -35,12 +35,23 @@
         </deflist>
         <p><code>jirai_validate_draft</code> reports three kinds of finding:</p>
         <deflist type="medium">
-            <def title="BLOCKS_CREATE">Jira would reject the draft, for example because a required field is missing.</def>
+            <def title="BLOCKS_CREATE">Jira would reject the draft, for example because a required field is missing, or because the draft sets a description that the create screen does not carry.</def>
             <def title="HOUSE_RULE">Jira would accept the draft, but it breaks a rule of your house standard.</def>
             <def title="NOTE">A field on the create screen that the draft leaves empty.</def>
         </deflist>
         <p>Both tools only read from Jira; they never create or change an issue.</p>
         <p>They use the Jira site you are signed in to in JirAI.</p>
+        <p>The tools tell your assistant to call them before it creates any Jira issue, whether through the Atlassian MCP server or any other Jira API.</p>
+
+        <chapter title="When a tool call fails" id="agent-tool-errors">
+            <p>A failed call tells the assistant what to do next, so it can act instead of guessing:</p>
+            <list>
+                <li><p>Ask you to sign in under <ui-path>Settings | Tools | JirAI</ui-path>.</p></li>
+                <li><p>Wait and retry, for example when Jira limits the request rate or the site cannot be reached.</p></li>
+                <li><p>Fix its input. When a project key is wrong, the reply lists the projects your account can create issues in; when an issue type is wrong, it lists the types the project offers.</p></li>
+            </list>
+            <p>When <code>jirai_validate_draft</code> fails, the reply says that the draft was not checked, so the assistant does not treat it as a clean draft.</p>
+        </chapter>
     </chapter>
 
     <chapter title="Turn on the agent tools" id="enable-agent-tools">
@@ -79,7 +90,7 @@
     </chapter>
 
     <chapter title="Check a draft with your assistant" id="use-agent-tools">
-        <p>Ask your assistant to read the create screen before it drafts an issue and to validate the draft before it files it, for example:</p>
+        <p>To be sure the assistant uses the tools, ask it to read the create screen before it drafts an issue and to validate the draft before it files it, for example:</p>
         <p><emphasis>Draft a bug in DEMO for the login timeout. Call jirai_describe_target for DEMO and Bug first, then check the draft with jirai_validate_draft and fix what it reports before you show it to me.</emphasis></p>
         <p>To file the issue, the assistant needs a separate Jira tool.</p>
         <p>You can also have the assistant save the draft as a Markdown file in the project and create the issue from that file with <a href="JirAI-AI-Workflows.topic">Push to Jira</a>.</p>

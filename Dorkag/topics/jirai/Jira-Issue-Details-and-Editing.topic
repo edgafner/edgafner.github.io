@@ -10,7 +10,7 @@
 
     <tldr>
         <p>Open: select an issue in the <control>JirAI</control> tool window and press <shortcut>Enter</shortcut></p>
-        <p>Details menu: right-click the details tab for <control>Refresh</control> and <control>Hide Fields…</control></p>
+        <p>Details menu: right-click the details tab for <control>Copy Issue URL</control>, <control>Create Branch…</control>, <control>Refresh</control>, <control>Hide Fields…</control> and more</p>
     </tldr>
 
     <link-summary>Read an issue's fields, edit them in place, move the issue through its workflow, and manage attachments, links and child work items.</link-summary>
@@ -45,7 +45,11 @@
                 <p>Click <control>Apply</control> at the bottom of the details tab to save the new summary, or <control>Revert</control> to discard it.</p>
             </def>
             <def title="Priority">Choose a priority from the list.</def>
-            <def title="Assignee">Search for a person, choose <control>Unassigned</control> to remove the assignee, or click <control>Assign to me</control>.</def>
+            <def title="Assignee">
+                <p>Search for a person, choose <control>Unassigned</control> to remove the assignee, or click <control>Assign to me</control>.</p>
+                <p>You are pinned under <control>Unassigned</control>, above a divider, when Jira lets you be assigned to the issue.</p>
+                <p>The list opens on the current assignee; choosing that person again changes nothing.</p>
+            </def>
             <def title="Labels, Components, Fix versions">Add or remove values; you can filter the list or type a new label.</def>
             <def title="Due date">Pick a date, or clear it.</def>
             <def title="Parent">Search the issue's project by summary for a work item one level up in the hierarchy, or choose <control>Clear parent</control>.</def>
@@ -70,6 +74,8 @@
                 <p>The button stays disabled while a required field is empty.</p>
             </step>
         </procedure>
+        <p>In a person field on the transition screen, you are pinned near the top, above a divider, when Jira lets you be chosen for that field.</p>
+        <p>The list opens on the field's current value.</p>
         <p>A transition field JirAI cannot edit shows an <control>Open in browser</control> link, so that you can complete the transition in Jira.</p>
     </chapter>
 
@@ -86,7 +92,10 @@
                 <p>JirAI does not download attachments over 250 MB.</p>
                 <p>For such an attachment, the notification offers <control>Open in Browser</control>.</p>
             </li>
-            <li><p>To delete an attachment, click the delete icon (<control>Delete</control>) on its row and confirm; the icon appears only when Jira lets you delete that attachment.</p></li>
+            <li>
+                <p>To delete an attachment, click the delete icon (<control>Delete</control>) on its row and confirm; the icon appears only when Jira lets you delete that attachment.</p>
+                <p>If the file is shown inline in the description or in a comment, the confirmation says so, because that image stops rendering there.</p>
+            </li>
         </list>
         <p>On macOS and Windows, JirAI uses the operating system file dialog; on Linux, it uses the IDE file chooser.</p>
         <img src="jirai_attachments_links.png" alt="Attachments section with an image thumbnail, and the Linked issues section" width="562" border-effect="rounded"/>
@@ -105,6 +114,7 @@
 
     <chapter title="Child work items (Breakdown)" id="breakdown-section">
         <p>The <control>Breakdown</control> section lists up to five child work items of the issue, sub-tasks included.</p>
+        <p>It is hidden for a work item whose type cannot have child work items, such as a sub-task.</p>
         <list>
             <li><p>Click a child to open it in its own details tab.</p></li>
             <li><p>When there are more children, click <control>+N more ↗</control> or <control>More ↗</control> to open the full list in the editor's <a href="Jira-Timeline-and-Description-Editor.topic" anchor="breakdown-tab">Breakdown tab</a>.</p></li>
@@ -112,8 +122,16 @@
         </list>
     </chapter>
 
-    <chapter title="Refresh the details" id="details-refresh">
-        <p>Right-click anywhere in the details tab, including on a field name, and choose <control>Refresh</control> to reload the issue from Jira.</p>
+    <chapter title="The details menu" id="details-refresh">
+        <p>Right-click anywhere in the details tab, including on a field name, to open its menu:</p>
+        <deflist type="medium" id="details-menu">
+            <def title="Open in Jira">Opens the issue on your Jira site.</def>
+            <def title="Copy Issue URL">Copies the issue's Jira link to the clipboard.</def>
+            <def title="Copy Issue Key">Copies the issue key, for example <code>DEMO-123</code>, to the clipboard.</def>
+            <def title="Refresh">Reloads the issue from Jira.</def>
+            <def title="Create Branch…">Creates a Git branch for the issue. See <a href="Work-with-Jira-Issues.topic" anchor="create-branch">Create a branch from an issue</a>.</def>
+            <def title="Hide Fields…">Hides several custom fields at once. See <a href="Jira-Field-Visibility.topic" anchor="hide-several-fields">Hide several fields at once</a>.</def>
+        </deflist>
     </chapter>
 
     <seealso>

@@ -52,6 +52,11 @@
         <deflist type="medium">
             <def title="Automatically mark opened files as viewed">Marks a pull request file as viewed when you open its diff. Default: off.</def>
             <def title="Auto-fill description from PR templates">Fills the description of a new pull request from the repository's pull request template. Default: off.</def>
+            <def title="Pull request title template">Fills in the title of new pull requests. Placeholders: <code>{branch}</code>, <code>{workItemId}</code> and <code>{workItemTitle}</code>,
+                for example <code>EP-{workItemId} {workItemTitle}</code>. When it is empty, or a work item placeholder has no linked work item, the title is the source branch name.
+                Applies to all projects. Default: empty. See <a href="Azd-Create-Pull-Request.topic" anchor="title-template">Fill in the title from a template</a>.</def>
+            <def title="Preferred target branches (this project)">Comma-separated branch names, in order. The first one that exists on the remote becomes the default target of new pull requests.
+                Saved for the current project only. Default: empty. See <a href="Azd-Create-Pull-Request.topic" anchor="branch-prefill">How AZD fills in the branches</a>.</def>
             <def title="Auto-refresh pipelines, Interval in seconds">Refreshes the pipeline run list and open runs at the set interval (5–1800 seconds). Default: off, 60 seconds.</def>
             <def title="Auto-refresh pull requests, Interval in seconds">Refreshes the pull request list and open pull requests at the set interval (5–1800 seconds). Default: off, 60 seconds.</def>
             <def title="Open AZD links in tool window">Opens links between AZD views inside the AZD tool windows instead of the browser:
@@ -77,7 +82,7 @@
             <def title="Enable AI assistance">Turns all AZD AI features on or off. Default: on. See <a href="Azd-AI.topic"/>.</def>
             <def title="Enable MCP Tools">Lets AI chat create work items, manage pull requests and trigger pipelines. Default: off. See <a href="AI-Pull-Request-Review.topic" anchor="mcp-tools">MCP tools</a>.</def>
             <def title="Show illustrations in AI review tour">Shows a cover image on the first card of the AI review tour. Default: off. See <a href="AI-Pull-Request-Review.topic" anchor="ai-auto-review">AI review tour</a>.</def>
-            <def title="AI Providers">The providers and models AZD can use. See <a href="Azd-AI.topic" anchor="ai-providers">AI providers</a>.</def>
+            <def title="AI Providers">The providers and models AZD can use, including GitHub Copilot. See <a href="Azd-AI.topic" anchor="ai-providers">AI providers</a>.</def>
             <def title="Configure Prompts">The prompts for titles, descriptions, commit messages and reviews, and whether each feature is enabled. See <a href="Azd-AI.topic" anchor="configure-prompts">Configure prompts</a>.</def>
         </deflist>
         <p>For how the default provider handles your data, see <a href="Azd-AI.topic" anchor="ai-privacy">AI and privacy</a>.</p>
@@ -89,6 +94,7 @@
         <deflist type="medium">
             <def title="Adopt Azure DevOps UI style">Makes the pull request details look more like the Azure DevOps web UI, with a <control>Submit Review</control> button for votes. Default: off.</def>
             <def title="Show events in the order ascending by date">Shows the oldest timeline events first. Clear it to show the newest first. Default: on.</def>
+            <def title="Wrap long text in work items">Wraps long titles, descriptions, field values and timeline entries to the width of the tool window. Clear it to scroll sideways instead. The change applies right away, also to work items that are already open. Default: on.</def>
         </deflist>
     </chapter>
 
@@ -111,6 +117,15 @@
                 <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.
                 Select <control>Use custom WHERE clause</control> to edit it; the text must start with <code>WHERE</code>.</def>
         </deflist>
+        <chapter title="Field Visibility" id="field-visibility">
+            <p>Path: <ui-path>Settings | Version Control | AZD | Boards and Work Items | Field Visibility</ui-path></p>
+            <p>
+                Lists the custom fields you hid in the work item details, with the scope of each rule: a work item, a project, or all projects.
+                Click <control>+</control> to add a rule by the field's reference name, for example <code>Custom.Tier</code>,
+                and remove a rule to show the field again.
+                See <a href="Azd-Boards.topic" anchor="custom-fields">Custom fields</a>.
+            </p>
+        </chapter>
     </chapter>
 
     <chapter title="Pipeline Settings" id="pipeline-settings">

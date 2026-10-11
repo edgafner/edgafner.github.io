@@ -158,6 +158,26 @@
         </p>
     </chapter>
 
+    <chapter title="Deleting an attachment permanently fails" id="attachment-delete-permanently">
+        <p><control>Delete Permanently</control> needs more access than the other attachment actions.</p>
+        <list type="bullet">
+            <li><p><b>Sign in with Microsoft:</b> follow the notification to sign in again and select <control>Full access</control>.</p></li>
+            <li><p><b>Personal access token:</b> add <control>Work Items: Read, write &amp; manage</control> to the token and renew it in AZD.</p></li>
+            <li><p><b>Permission:</b> ask a project administrator for <control>Permanently delete work items</control>.</p></li>
+            <li><p><b>AZD version:</b> in AZD 2026.3.9, <control>Delete Permanently</control> failed for every file. Update to AZD 2026.3.10 or later.</p></li>
+        </list>
+        <p>See <a href="Azd-Boards.topic" anchor="work-item-attachments">Attachments</a>.</p>
+    </chapter>
+
+    <chapter title="Deleting a work item fails" id="work-item-delete-fails">
+        <p>
+            To delete a work item, you need the <control>Delete and restore work items</control> permission in its project.
+            Ask a project administrator for it.
+            If the work item's changes are still being saved, wait for the save to finish and try again.
+        </p>
+        <p>See <a href="Azd-Boards.topic" anchor="delete-work-item">Delete a work item</a>.</p>
+    </chapter>
+
     <chapter title="Report a bug or request a feature" id="azd_bug_feature">
         <p>
             See <a href="Azd-Reference-And-Support.topic"/>.

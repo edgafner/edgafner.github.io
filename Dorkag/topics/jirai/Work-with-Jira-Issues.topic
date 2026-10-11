@@ -11,12 +11,14 @@
     <tldr>
         <p>Open: <ui-path>View | Tool Windows | JirAI</ui-path></p>
         <p>Open an issue: select it and press <shortcut>Enter</shortcut></p>
+        <p>Create a branch: right-click an issue and choose <control>Create Branch…</control></p>
+        <p>Branch settings: <ui-path>Settings | Tools | JirAI | Development</ui-path></p>
         <p>Requires: signed in to a Jira Cloud site</p>
     </tldr>
 
-    <link-summary>Find issues in the JirAI tool window with search, quick filters and filter chips, and act on them.</link-summary>
-    <card-summary>Search, filter, sort and act on Jira issues in the JirAI tool window.</card-summary>
-    <web-summary>Browse Jira Cloud issues in the JirAI tool window of JetBrains IDEs: search by text or key, use quick filters and chips, sort, open and delete issues.</web-summary>
+    <link-summary>Find issues in the JirAI tool window, act on them, and create Git branches and commits that carry the issue key.</link-summary>
+    <card-summary>Search, filter and act on Jira issues, and branch and commit from them.</card-summary>
+    <web-summary>Browse Jira Cloud issues in the JirAI tool window of JetBrains IDEs: search, filter and sort, copy issue links, create a Git branch from an issue, and see the current issue in the status bar.</web-summary>
 
     <p>The <control>JirAI</control> tool window lists your Jira issues next to your code.</p>
     <p>Use it to find an issue, open its details and timeline, and run common actions on it.</p>
@@ -68,6 +70,10 @@
             <li><p>Use <control>All</control> and <control>Clear</control> at the top of a chip popup to select or clear every value.</p></li>
             <li><p>The <control>Status</control> popup also offers <control>Unresolved</control>.</p></li>
             <li><p><control>Assignee</control> and <control>Reporter</control> accept several people.</p></li>
+            <li>
+                <p>The <control>Assignee</control> and <control>Reporter</control> popups have <control>Clear</control> but no <control>All</control>.</p>
+                <p>You are pinned on top, under <control>Unassigned</control> and above a divider.</p>
+            </li>
         </list>
         <img src="jirai_issue_filters.png" alt="Status filter popup with one value excluded and the All and Clear links" width="184" border-effect="rounded"/>
         <p>To remove every filter, choose <control>Clear Filters</control> in the <control>Filters</control> menu.</p>
@@ -86,11 +92,14 @@
         <deflist type="medium">
             <def title="Open Details">Opens the details tab and the <control>Timeline</control> tab, as <shortcut>Enter</shortcut> does.</def>
             <def title="Open in Browser">Opens the issue on your Jira site.</def>
+            <def title="Copy Issue URL">Copies the issue's Jira link, for example <code>https://demo-org.atlassian.net/browse/DEMO-123</code>, to the clipboard.</def>
             <def title="Copy Issue Key">Copies the issue key, for example <code>DEMO-123</code>, to the clipboard.</def>
+            <def title="Create Branch…">Creates a Git branch for the issue. See <a anchor="create-branch">Create a branch from an issue</a>.</def>
             <def title="Refresh">Reloads the list from Jira. It uses the IDE's <control>Refresh</control> shortcut, which you can look up in <ui-path>Settings | Keymap</ui-path>.</def>
             <def title="Delete">Deletes the issue after a confirmation. See <a anchor="delete-issue">Delete an issue</a>.</def>
         </deflist>
         <img src="jirai_issue_context_menu.png" alt="Issue context menu with Open Details, Open in Browser, Copy Issue Key, Refresh and Delete" width="440" border-effect="rounded"/>
+        <p>The issue lists in a space's <control>List</control> tab and in an issue's <control>Breakdown</control> tab have the same menu.</p>
     </chapter>
 
     <chapter title="Delete an issue" id="delete-issue">
@@ -116,15 +125,93 @@
         <p>See <a href="Jira-Create-Issues.topic">Create issues</a>.</p>
     </chapter>
 
+    <chapter title="Create a branch from an issue" id="create-branch">
+        <secondary-label ref="jirai_version"/>
+        <p>JirAI names a Git branch after an issue and opens the IDE's own new-branch dialog.</p>
+        <procedure title="Create a branch for an issue" id="create-branch-proc">
+            <step>
+                <p>Choose <control>Create Branch…</control> in one of these places:</p>
+                <list>
+                    <li><p>the context menu of an issue in the issue list;</p></li>
+                    <li><p>the menu of a card on the <a href="JirAI-Board.topic">board</a>;</p></li>
+                    <li><p>the right-click menu of the issue details tab.</p></li>
+                </list>
+            </step>
+            <step>
+                <p>In the <control>Create Branch for DEMO-42</control> dialog, check the suggested name, for example <code>DEMO-42-fix-login-timeout</code>.</p>
+                <p>Change the name or the <control>Checkout branch</control> option if you need to.</p>
+                <!-- planned-image src="jirai_create_branch_dialog.png" alt="New branch dialog with a name built from the issue key and summary" -->
+            </step>
+            <step><p>Click <control>Create</control>.</p></step>
+        </procedure>
+        <p>If a branch with the suggested name already exists, JirAI does not open the dialog.</p>
+        <p>Instead, a notification says so and offers <control>Check Out</control>.</p>
+        <p>A branch you create without checking it out also gets a <control>Check Out</control> notification.</p>
+
+        <chapter title="Move the issue to In Progress" id="create-branch-in-progress">
+            <p>After you check out the new branch, JirAI offers to move the issue to an In Progress status.</p>
+            <list>
+                <li><p>The first time, the notification lists every In Progress status the workflow allows, for example <control>In Progress</control> and <control>In Review</control>.</p></li>
+                <li><p>JirAI remembers the status you pick for that Jira project.</p></li>
+                <li><p>The next time, the notification asks <control>Branch created. Move DEMO-42 to In Progress?</control> with <control>Move</control>, <control>Change…</control> and <control>Don't Ask Again</control>.</p></li>
+                <li><p>If the move needs fields, such as a resolution, the notification offers to open the issue.</p></li>
+            </list>
+            <p>JirAI makes no offer for an issue that is already in progress or done.</p>
+        </chapter>
+
+        <chapter title="Branch settings" id="create-branch-settings">
+            <p>Open <ui-path>Settings | Tools | JirAI | Development</ui-path> to change the following:</p>
+            <list>
+                <li><p><control>Branch name:</control> the name template, <code>{key}-{summary}</code> by default. It can also use <code>{type}</code>.</p></li>
+                <li><p><control>After creating a branch:</control> <control>Ask to move the issue to In Progress</control> (the default), <control>Move the issue to In Progress</control> or <control>Do nothing</control>.</p></li>
+                <li><p><control>Forget remembered In Progress targets now</control>.</p></li>
+            </list>
+            <p>The template must contain <code>{key}</code>, and names are capped at 60 characters.</p>
+            <p>See <a href="JirAI-Settings-Reference.topic">Settings reference</a>.</p>
+        </chapter>
+        <note>
+            <p><control>Create Branch…</control> needs the IDE's bundled Git plugin.</p>
+            <p>It is disabled when the project has no Git repository.</p>
+        </note>
+    </chapter>
+
+    <chapter title="The current issue in the status bar" id="current-issue-status-bar">
+        <secondary-label ref="jirai_version"/>
+        <p>When the name of your current Git branch contains an issue key, for example <code>DEMO-42-fix-login-timeout</code>, that issue is the <emphasis>current issue</emphasis>.</p>
+        <list>
+            <li><p>The status bar shows the current issue's key with the Jira icon.</p></li>
+            <li><p>Hover over it to see the summary and status.</p></li>
+            <li><p>Click it to open the issue's details tab in the <control>JirAI</control> tool window.</p></li>
+            <li><p>When the project's repositories are on branches for different issues, the widget reads, for example, <control>DEMO-42 +1</control>, and a click lets you choose the issue.</p></li>
+        </list>
+        <p>To open the current issue from the keyboard, press <shortcut>Ctrl+Shift+A</shortcut> (macOS: <shortcut>⌘ ⇧ A</shortcut>) and run <control>Open Current Jira Issue</control>.</p>
+        <p>The key must belong to an issue on the Jira site you are signed in to.</p>
+        <p>To hide the widget, right-click the status bar and clear <control>JirAI Current Issue</control>.</p>
+    </chapter>
+
+    <chapter title="The issue key in commit messages" id="commit-message-issue-key">
+        <secondary-label ref="jirai_version"/>
+        <p>When there is a current issue, JirAI starts an empty commit message with its key, for example <code>DEMO-42 </code>.</p>
+        <list>
+            <li><p>This works when changelists are on, not with the Git staging area.</p></li>
+            <li><p>JirAI never overwrites a draft commit message or a Git commit template.</p></li>
+            <li><p>When the project's repositories are on branches for different issues, JirAI adds no key.</p></li>
+        </list>
+        <p>To turn it off, clear <control>Start commit messages with the current issue key</control> in <ui-path>Settings | Tools | JirAI | Development</ui-path>.</p>
+    </chapter>
+
     <seealso>
         <category ref="related">
             <a href="Jira-Create-Issues.topic"/>
             <a href="Jira-Issue-Details-and-Editing.topic"/>
             <a href="Jira-Timeline-and-Description-Editor.topic"/>
             <a href="JirAI-AI-Workflows.topic"/>
+            <a href="JirAI-Settings-Reference.topic"/>
         </category>
         <category ref="external">
             <a href="https://www.jetbrains.com/help/idea/tool-windows.html">Tool windows in JetBrains IDEs</a>
+            <a href="https://www.jetbrains.com/help/idea/manage-branches.html">Manage Git branches</a>
+            <a href="https://www.jetbrains.com/help/idea/managing-changelists.html">Changelists</a>
         </category>
     </seealso>
 </topic>

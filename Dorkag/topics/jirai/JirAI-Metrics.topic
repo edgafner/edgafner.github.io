@@ -14,8 +14,8 @@
     </tldr>
 
     <link-summary>Open a Jira space in an editor tab to see its summary charts, a hierarchical work item list, its board and flow reports.</link-summary>
-    <card-summary>Summary charts, a hierarchical work item list and flow reports for any Jira space.</card-summary>
-    <web-summary>Open a Jira Cloud space in JetBrains IDEs with JirAI: throughput and work item charts, a list with parent hierarchy, and lead time and cycle time reports.</web-summary>
+    <card-summary>Summary tiles and widgets, a hierarchical work item list and flow reports for any Jira space.</card-summary>
+    <web-summary>Open a Jira Cloud space in JetBrains IDEs with JirAI: a Summary like Jira's, a list with parent hierarchy, and lead time, cycle time and throughput reports.</web-summary>
 
     <p>A space page shows one Jira space (project) in an editor tab named after the space.</p>
     <p>It has the <control>Summary</control>, <control>Timeline</control>, <control>Board</control>, <control>List</control> and <control>Reports</control> tabs.</p>
@@ -40,17 +40,39 @@
     </chapter>
 
     <chapter title="Summary tab" id="summary-tab">
-        <p>The <control>Summary</control> tab shows tiles and charts for the selected date range, which is <control>Last 90 days</control> by default:</p>
-        <list>
-            <li>
-                <p>Tiles with counts of created, completed and in-progress work items.</p>
-                <p>The <control>Lead time</control> and <control>Cycle time</control> tiles stay empty here.</p>
-                <p>The <control>Reports</control> tab shows those values.</p>
-            </li>
-            <li><p><control>Throughput</control>, <control>Created vs completed</control>, <control>Work in progress by age</control> and <control>Distribution</control> charts.</p></li>
-        </list>
-        <p>Each chart can be shown as a table with <control>Show as table</control>, or enlarged with <control>Maximize</control>.</p>
-        <img src="jirai_space_summary.png" alt="Space Summary tab with throughput and created vs completed charts" width="706" thumbnail="true" border-effect="rounded"/>
+        <p>The <control>Summary</control> tab follows the layout of Jira's own Summary page.</p>
+        <p>It opens on <control>Last 7 days</control>, unless you picked another range for the space before.</p>
+        <p>Four tiles sit at the top:</p>
+        <deflist type="narrow">
+            <def title="Completed">Work items completed in the date range.</def>
+            <def title="Updated">Work items changed in the date range.</def>
+            <def title="Created">Work items created in the date range.</def>
+            <def title="Due soon">Work items not yet done that are due in the next 7 days, today included. The date range does not change this tile.</def>
+        </deflist>
+        <p>Below the tiles are six widgets, in Jira's order:</p>
+        <deflist type="medium">
+            <def title="Status overview">Work items by status category: To Do, In Progress and Done.</def>
+            <def title="Recently updated">The ten most recently updated work items. Click one, or select it and press <shortcut>Enter</shortcut>, to open it in the IDE.</def>
+            <def title="Priority breakdown">Work items by priority.</def>
+            <def title="Types of work">Work items by work type.</def>
+            <def title="Team workload">Work items by assignee, unassigned included.</def>
+            <def title="Epic progress">How much of each epic's child work is done, in progress and to do. It shows the ten epics with the most child work items; <control>+N more</control> counts the rest.</def>
+        </deflist>
+        <p>The date range sets only the tiles; the widgets count every work item that matches the filters.</p>
+        <p>Lead time, cycle time, throughput and work in progress are on the <a anchor="reports-tab">Reports</a> tab.</p>
+        <!-- planned-image src="jirai_space_summary.png" alt="Space Summary tab with the four tiles and the Status overview and Recently updated widgets" -->
+
+        <chapter title="Show, hide and enlarge widgets" id="summary-widgets">
+            <p>Click <control>More Actions</control> (<control>⋯</control>) in a widget's title bar for these commands:</p>
+            <deflist type="medium">
+                <def title="Show as table, Show chart">Switches a chart to its table and back. <control>Recently updated</control> is a list, so it has no table.</def>
+                <def title="Maximize, Restore">Enlarges the widget to the full width of the tab, and puts it back.</def>
+                <def title="Hide">Removes the widget from the tab.</def>
+            </deflist>
+            <p>To bring a widget back, click <control>Hidden widgets (N)</control> at the right of the filter row and choose the widget.</p>
+            <p>The widget returns to its own place.</p>
+            <p>JirAI remembers the hidden widgets for each space.</p>
+        </chapter>
     </chapter>
 
     <chapter title="List tab" id="list-tab">
@@ -74,18 +96,22 @@
 
     <chapter title="Reports tab" id="reports-tab">
         <p>The <control>Reports</control> tab reads each work item's status history to measure how work flows through the space.</p>
+        <p>It opens on <control>Last 90 days</control>, unless you picked another range for the space before.</p>
         <list>
             <li><p>Tiles for <control>Lead time</control>, <control>Cycle time</control>, <control>On-time delivery</control> and <control>In progress > 14 days</control>.</p></li>
-            <li><p><control>Control chart</control>, <control>Cumulative flow</control>, <control>Time in status</control> and <control>Throughput</control> charts.</p></li>
+            <li><p><control>Control chart</control>, <control>Cumulative flow</control>, <control>Time in status</control>, <control>Throughput</control>, <control>Created vs completed</control> and <control>Work in progress by age</control> charts.</p></li>
+            <li><p>Each chart can be shown as a table with <control>Show as table</control>, or enlarged with <control>Maximize</control>.</p></li>
             <li><p>A <control>Jira default</control> / <control>First pass</control> switch that sets how reopened work is counted: as Jira counts it, or by the first pass through each status.</p></li>
         </list>
         <img src="jirai_space_reports.png" alt="Reports tab with lead time, cycle time and cumulative flow charts" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
     <chapter title="How space metrics are measured" id="metric-definitions">
-        <p>The <control>Completed</control> tile of the <control>Summary</control> tab and the tiles of the <control>Reports</control> tab are measured as follows:</p>
+        <p>The tiles of the <control>Summary</control> and <control>Reports</control> tabs are measured as follows:</p>
         <deflist type="medium">
             <def title="Completed">Work items whose status category became Done in the date range. Jira gadgets count by resolution date, so their numbers can differ.</def>
+            <def title="Updated, Created">Work items changed, or created, in the date range.</def>
+            <def title="Due soon">Work items not yet done whose due date is today or in the next six days, whatever the date range.</def>
             <def title="Lead time">The median time from creation to Done, over the work items completed in the range. The second line shows the 85th percentile.</def>
             <def title="Cycle time">The median time spent in In Progress statuses before Done. A work item that never went through an In Progress status has no cycle time.</def>
             <def title="On-time delivery">The share of work items completed in the range on or before their due date, out of those that have a due date.</def>
@@ -100,14 +126,20 @@
     </chapter>
 
     <chapter title="Filter a space" id="filtering-and-sampling">
+        <p>The <control>Summary</control> and <control>Reports</control> tabs each have their own filter row.</p>
         <list>
             <li><p>Use the date range chip to change the period: the last 7, 30, 90, 180 or 365 days.</p></li>
-            <li><p>Click <control>☰ Filter</control> to add a filter by <control>Work type</control> or <control>Assignee</control>.</p></li>
-            <li><p>On the <control>Reports</control> tab, <control>☰ Filter</control> also offers <control>Sprint</control>, <control>Sprint status</control>, <control>Fix version</control>, <control>Component</control> and <control>Label</control>.</p></li>
+            <li>
+                <p>Click <control>☰ Filter</control> to add a filter by <control>Work type</control>, <control>Assignee</control>, <control>Status</control>, <control>Priority</control>, <control>Parent</control>, <control>Sprint</control>, <control>Fix version</control>, <control>Component</control> or <control>Label</control>.</p>
+                <p>The <control>Reports</control> tab also offers <control>Sprint status</control>.</p>
+            </li>
+            <li><p>The <control>Created</control>, <control>Updated</control> and <control>Due date</control> filters take a date range: the last 7, 14, 30 or 90 days, or <control>Between…</control> two dates.</p></li>
             <li><p>Click a value twice, or <shortcut>Shift</shortcut>+click it, to exclude it.</p></li>
             <li><p>Use <control>Clear</control> at the top of a filter popup to clear the selection, and <control>All</control>, where offered, to select every value.</p></li>
+            <li><p>In the <control>Assignee</control> filter, you are listed first, under <control>Unassigned</control>.</p></li>
         </list>
-        <p>JirAI remembers your filters and date range for each space.</p>
+        <p>JirAI remembers your filters and date range for each space, and shows the people in a restored <control>Assignee</control> filter by name.</p>
+        <p>A saved filter value that is no longer in the space stays in its list, greyed, with the tooltip <control>No longer in this space</control>, so you can still clear it.</p>
 
         <chapter title="Large spaces" id="large-spaces">
             <p>For a space with more than 10,000 work items, JirAI loads a sample of 10,000.</p>

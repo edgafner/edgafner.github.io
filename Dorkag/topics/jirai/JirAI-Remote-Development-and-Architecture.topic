@@ -31,6 +31,12 @@
         <p>JetBrains Marketplace installs JirAI on both sides as needed.</p>
     </chapter>
 
+    <chapter title="Differences under Remote Development" id="remote-differences">
+        <list>
+            <li><p>The <control>Project</control> tool window does not offer <control>Push to Jira</control>; use the button or the context menu in the Markdown editor. See <a href="JirAI-AI-Workflows.topic" anchor="ai-split-mode">Push Markdown docs: Remote Development</a>.</p></li>
+        </list>
+    </chapter>
+
     <chapter title="Privacy" id="privacy">
         <list>
             <li><p>JirAI has no telemetry, analytics, usage statistics, crash reporting or error submitter.</p></li>
