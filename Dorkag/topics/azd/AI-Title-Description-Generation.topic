@@ -27,7 +27,7 @@
     <chapter title="Before you start" id="ai_gen_provider_options">
         <p>
             The features in this topic work with the built-in AZD provider without any setup.
-            To use OpenAI, Claude, Gemini or Ollama instead, see <a href="Azd-AI.topic" anchor="ai-providers"/>.
+            To use OpenAI, Claude, Gemini, Ollama or GitHub Copilot instead, see <a href="Azd-AI.topic" anchor="ai-providers"/>.
             For what data AZD sends, see <a href="Azd-AI.topic" anchor="ai-privacy"/>.
         </p>
     </chapter>

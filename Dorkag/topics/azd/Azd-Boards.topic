@@ -13,8 +13,8 @@
         <p>Configure: <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path></p>
     </tldr>
 
-    <link-summary>Find, view, edit, comment on and create Azure Boards work items, manage attachments, use the Kanban board, and add work items to commit messages.</link-summary>
-    <card-summary>Find, edit, comment on and create work items, move cards on the Kanban board, and reference them in commits.</card-summary>
+    <link-summary>Find, view, edit, delete, comment on and create Azure Boards work items, manage attachments, use the Kanban board, and add work items to commit messages.</link-summary>
+    <card-summary>Find, edit, delete, comment on and create work items, move cards on the Kanban board, and reference them in commits.</card-summary>
     <web-summary>Work with Azure Boards in JetBrains IDEs with AZD: filter, edit and comment on work items, create new ones, move
         Kanban cards and add work items to commit messages.</web-summary>
 
@@ -52,8 +52,8 @@
             </step>
         </procedure>
         <p>
-            Right-click a work item to <control>Open Work Item on Azure DevOps</control>, <control>Copy Work Item URL</control>
-            or <control>Refresh</control> the list.
+            Right-click a work item to <control>Open Work Item on Azure DevOps</control>, <control>Copy Work Item URL</control>,
+            <control>Refresh</control> the list, or <a anchor="delete-work-item">delete the work item</a>.
         </p>
     </chapter>
 
@@ -66,8 +66,19 @@
                 <!-- planned-image src="azd_boards_work_item.png" alt="Work item details tab with state, area, iteration, priority and assignee fields" -->
             </step>
             <step>
+                <p>To change the title, click the pencil icon next to it (<control>Edit title</control>) and type the new title.
+                    Press <shortcut>Enter</shortcut> or click elsewhere to keep it, or press <shortcut>Esc</shortcut> to cancel.</p>
+                <p>The title is required and can have up to 255 characters.
+                    A title you cannot change has no pencil icon.</p>
+            </step>
+            <step>
                 <p>Change fields such as the state, area path, iteration path, priority or assignee.
                     To see the other fields of the work item type, expand <control>Show all fields</control>.</p>
+                <p>To fill in a date field, such as <control>Start Date</control> or <control>Target Date</control>, type the date,
+                    or click the calendar icon at the right of the field and pick a day.
+                    You can also press <shortcut>Alt+Down</shortcut> (macOS: <shortcut>⌥ ↓</shortcut>) in the field to open the calendar.
+                    To empty a date field that is not required, click <control>Clear</control> in the calendar.
+                    Date fields work the same way when you create a work item.</p>
                 <p>Rich-text fields, such as <control>Repro Steps</control>, <control>System Info</control> and
                     <control>Acceptance Criteria</control>, show at the top of the work item in the order of the Azure DevOps web form,
                     also when they are empty. They are read-only in the IDE: click <control>Open in browser</control> to edit one,
@@ -75,13 +86,20 @@
                     Fields stored as Markdown display formatted, and images in them open when you click them.</p>
             </step>
             <step>
-                <p>Click <control>Apply</control> at the bottom of the tab, or click <control>Revert</control> to discard your edits.</p>
+                <p>Click <control>Apply</control> at the bottom of the tab, or click <control>Revert</control> to discard your edits.
+                    Title and date changes are saved with the other fields.</p>
             </step>
         </procedure>
         <p>
-            If someone else changed the work item in the meantime, AZD offers <control>Reapply on top of latest</control>
-            or <control>Discard my changes</control>.
+            If someone else changed the work item in the meantime, the <control>Work Item Changed</control> dialog says who changed it
+            and which fields you both changed.
         </p>
+        <list>
+            <li><control>Reapply My Changes</control> saves only the fields you edited.
+                Their changes to other fields are kept; for the fields you both changed, your values win.</li>
+            <li><control>Discard My Changes</control> drops your edits and loads the latest version.</li>
+            <li><control>Cancel</control> keeps your edits under a warning banner with the same two actions.</li>
+        </list>
         <p>
             Right-click in the details tab to <control>Refresh Work Item</control>, <control>Open Work Item on Azure DevOps</control>
             or <control>Copy Work Item URL</control>.
@@ -89,6 +107,30 @@
         <p>
             Long titles, descriptions and field values wrap to the width of the tool window.
             To scroll sideways instead, clear <a href="Azd-Settings-Configuration.topic" anchor="ui-customization">Wrap long text in work items</a>.
+            The change applies right away, also to work items that are already open.
+        </p>
+    </chapter>
+
+    <chapter title="Delete a work item" id="delete-work-item">
+        <procedure title="Delete a work item" id="delete-work-item-procedure" hide-from-structure="true">
+            <step>
+                <p>Right-click the work item in the <control>AZD Boards</control> list, or right-click in its details tab,
+                    and select <control>Delete Work Item…</control>.</p>
+            </step>
+            <step>
+                <p>In the <control>Delete Work Item</control> dialog, click <control>Delete</control>.</p>
+                <p>The dialog names the project when the work item belongs to another project,
+                    and warns you when the details tab has unsaved changes, which are lost.</p>
+            </step>
+        </procedure>
+        <p>
+            The work item moves to the Azure DevOps recycle bin, and its details and timeline tabs close.
+            To restore it, use the recycle bin in the Azure DevOps web portal.
+            You need the <control>Delete and restore work items</control> permission in the project.
+        </p>
+        <p>
+            <control>Delete Work Item…</control> is disabled while the work item's changes are being saved.
+            You can also delete a work item from the <a anchor="kanban-board">Kanban board</a>.
         </p>
     </chapter>
 
@@ -185,6 +227,30 @@
                 <p>Click <control>Add Comment</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>).</p>
             </step>
         </procedure>
+        <procedure title="Edit or delete your comment" id="edit-work-item-comment">
+            <p>You can edit and delete only your own comments.</p>
+            <step>
+                <p>In the timeline tab, hover over your comment.
+                    A pencil icon and a delete icon appear at the top right of the comment.</p>
+            </step>
+            <step>
+                <p>To edit the comment, click the pencil icon, change the text, and click <control>Save Changes</control>
+                    or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>).
+                    Press <shortcut>Esc</shortcut> to cancel.
+                    Type <code>@</code> to mention a person.</p>
+                <p>If the comment changed after you started editing, click <control>Reload</control> to load the new text,
+                    or <control>Overwrite</control> to save yours anyway.</p>
+            </step>
+            <step>
+                <p>To delete the comment, click the delete icon, and click <control>Yes</control> in the <control>Delete Comment</control> dialog.</p>
+            </step>
+        </procedure>
+        <p>
+            The IDE edits only comments stored in Markdown on Azure DevOps Services.
+            For your other comments, such as older HTML comments and all comments on Azure DevOps Server,
+            the pencil icon is disabled; edit them in the browser.
+            You can still delete them in the IDE.
+        </p>
         <p>
             To show only some events, click the filter icon at the top right of the timeline and select one or more of
             <control>Comments</control>, <control>State Changes</control>, <control>Field Changes</control>,

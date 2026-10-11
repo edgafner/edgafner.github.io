@@ -131,6 +131,7 @@
                 <control>Complete associated work items after merging</control>,
                 <control>Delete … after merging</control> for the source branch,
                 and <control>Customize merge commit message</control> to edit the <control>Merge commit message</control>.
+                If you clear <control>Delete … after merging</control>, Azure DevOps keeps the source branch.
                 If you clear <control>Customize merge commit message</control>, the message is <code>Merged PR N: title</code>, followed by the description.
                 AZD remembers these choices.
                 <!-- planned-image src="azd_pr_complete_dialog.png" alt="Complete dialog with the Squash commit merge method and the three options" -->
@@ -140,13 +141,6 @@
                 Its label matches the merge method, for example <control>Squash commit</control>.
             </step>
         </procedure>
-        <note>
-            <p>
-                When you use <control>Complete…</control> or <control>Set Auto Complete…</control>, AZD deletes the source branch
-                even if <control>Delete … after merging</control> is cleared.
-                To keep the branch, use a merge shortcut instead; see <a anchor="merge-shortcuts"/>.
-            </p>
-        </note>
 
         <chapter title="Merge shortcuts" id="merge-shortcuts">
             <p>
