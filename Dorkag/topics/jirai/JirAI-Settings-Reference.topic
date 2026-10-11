@@ -15,7 +15,7 @@
 
     <link-summary>Every JirAI settings page and option, the notification groups and the keyboard shortcuts.</link-summary>
     <card-summary>All JirAI settings pages, notification groups and keyboard shortcuts in one place.</card-summary>
-    <web-summary>Reference for every JirAI setting in JetBrains IDEs: Jira account, field visibility, doc push presets, metrics sampling, house standard and shortcuts.</web-summary>
+    <web-summary>Reference for every JirAI setting in JetBrains IDEs: Jira account, field visibility, doc push presets, branch names and commit messages, metrics sampling, house standard and shortcuts.</web-summary>
 
     <p>JirAI settings are under <ui-path>Settings | Tools | JirAI</ui-path>.</p>
     <p>All pages except <control>Doc Push</control> apply to the whole IDE; <control>Doc Push</control> applies to the current project.</p>
@@ -49,6 +49,43 @@
         <p>See <a href="JirAI-AI-Workflows.topic" anchor="presets-settings">Configure presets in Settings</a>.</p>
     </chapter>
 
+    <chapter title="Development" id="settings-development">
+        <p><ui-path>Settings | Tools | JirAI | Development</ui-path></p>
+        <p>How JirAI names the branches you create from issues, what happens after you create one, and how it fills in commit messages.</p>
+        <deflist type="medium">
+            <def title="Branch name">
+                <p>The template for new branch names.</p>
+                <p>Default: <code>{key}-{summary}</code>, which gives names such as <code>DEMO-42-fix-login-timeout</code>.</p>
+                <p>Tokens: <code>{key}</code> (required), <code>{summary}</code> and <code>{type}</code>; any other text, such as <code>feature/</code>, is kept as written.</p>
+                <p><code>{key}</code> keeps Jira's spelling of the issue key; <code>{summary}</code> and <code>{type}</code> become lowercase words joined with hyphens.</p>
+                <p>Names are capped at 60 characters; only the summary and type are shortened.</p>
+                <p>A preview of the name appears under the field while you type.</p>
+                <p>JirAI finds the current issue from the key in the branch name, so a template without <code>{key}</code> is refused.</p>
+            </def>
+            <def title="After creating a branch">
+                <p>What JirAI does with the issue once the branch exists:</p>
+                <list>
+                    <li><p><control>Ask to move the issue to In Progress</control> (default): a notification offers the move.</p></li>
+                    <li><p><control>Move the issue to In Progress</control>: JirAI moves the issue without asking. This applies to any issue you branch from, including a colleague's.</p></li>
+                    <li><p><control>Do nothing</control>: the issue keeps its status.</p></li>
+                </list>
+                <p>The first time in each project, a notification asks which In Progress status to use, and JirAI remembers your choice.</p>
+                <p>Issues that are already in progress or done are left as they are.</p>
+                <p>If the move needs fields filled in, the notification offers to open the issue instead.</p>
+            </def>
+            <def title="Forget remembered In Progress targets now">
+                <p>Clears the In Progress status JirAI remembers for each project, so it asks again.</p>
+                <p>This link acts at once, without <control>Apply</control>.</p>
+            </def>
+            <def title="Start commit messages with the current issue key">
+                <p>Selected by default.</p>
+                <p>An empty commit message starts with the key of the current branch's issue, for example <code>DEMO-42</code>.</p>
+                <p>It works with changelists only, not with the Git staging area, and never replaces a draft or a Git commit template.</p>
+            </def>
+        </deflist>
+        <p>See <a href="Work-with-Jira-Issues.topic" anchor="create-branch">Create a branch from an issue</a>, <a href="Work-with-Jira-Issues.topic" anchor="current-issue-status-bar">The current issue in the status bar</a> and <a href="Work-with-Jira-Issues.topic" anchor="commit-message-issue-key">Issue key in commit messages</a>.</p>
+    </chapter>
+
     <chapter title="Metrics" id="settings-metrics">
         <p><ui-path>Settings | Tools | JirAI | Metrics</ui-path></p>
         <p>When a space has more than 10,000 work items, JirAI loads a sample of 10,000:</p>
@@ -70,13 +107,13 @@
             <def title="Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy">The proxy JirAI uses. See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="corporate-proxy">Use JirAI behind a corporate proxy</a>.</def>
             <def title="Settings | Appearance &amp; Behavior | Notifications">
                 <p>How JirAI notifications are shown.</p>
-                <p>JirAI has the notification groups <control>Jira issue delete</control>, <control>Jira attachments</control>, <control>JirAI doc push</control>, <control>Jira create</control> and <control>JirAI agent tools</control>.</p>
+                <p>JirAI has the notification groups <control>Jira issue delete</control>, <control>Jira attachments</control>, <control>JirAI doc push</control>, <control>Jira create</control>, <control>Jira description drafts</control>, <control>JirAI agent tools</control> and <control>JirAI branches</control>.</p>
             </def>
         </deflist>
     </chapter>
 
     <chapter title="Keyboard shortcuts" id="keyboard-shortcuts">
-        <p>JirAI actions such as <control>New Issue</control>, <control>Space Summary</control> and <control>Push to Jira</control> have no default shortcut.</p>
+        <p>JirAI actions such as <control>New Issue</control>, <control>Space Summary</control>, <control>Push to Jira</control> and <control>Open Current Jira Issue</control> have no default shortcut.</p>
         <p>Run them with <control>Find Action</control> (<shortcut>Ctrl+Shift+A</shortcut>, macOS: <shortcut>⌘ ⇧ A</shortcut>), or assign shortcuts in <ui-path>Settings | Keymap</ui-path>.</p>
         <p><control>New Issue</control> and <control>Space Summary</control> become available once the <control>JirAI</control> tool window has opened in the project and shows you signed in.</p>
         <table style="header-row">
@@ -94,6 +131,7 @@
             <tr><td>Board</td><td>Next or previous column</td><td><shortcut>Tab</shortcut>, <shortcut>Shift+Tab</shortcut></td></tr>
             <tr><td>Board</td><td>Move between cards</td><td>Arrow keys</td></tr>
             <tr><td>Board</td><td>Open the card menu</td><td><shortcut>Shift+Enter</shortcut></td></tr>
+            <tr><td>Board</td><td>Open the card's work item</td><td><shortcut>Enter</shortcut> or double-click</td></tr>
         </table>
     </chapter>
 

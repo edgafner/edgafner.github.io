@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="JirAI: Install and activate" id="JirAI-Installation">
+       title="JirAI: Install" id="JirAI-Installation">
 
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
@@ -11,14 +11,15 @@
     <tldr>
         <p>Install: <ui-path>Settings | Plugins | Marketplace</ui-path>, search for JirAI</p>
         <p>Requires: a JetBrains IDE 2026.3 or later and a Jira Cloud site</p>
-        <p>License: 7-day free trial, then <ui-path>Help | Register</ui-path></p>
+        <p>Price: free</p>
     </tldr>
 
-    <link-summary>Check the requirements, install JirAI from JetBrains Marketplace and start the free trial.</link-summary>
-    <card-summary>Install JirAI, check the requirements and start the 7-day free trial.</card-summary>
-    <web-summary>Install the JirAI plugin for Jira Cloud in IntelliJ IDEA and other JetBrains IDEs, check the requirements, and start the 7-day free trial of the plugin.</web-summary>
+    <link-summary>Check the requirements and install JirAI from JetBrains Marketplace, in the IDE, from the website or from disk.</link-summary>
+    <card-summary>Check the requirements and install the free JirAI plugin.</card-summary>
+    <web-summary>Install the free JirAI plugin for Jira Cloud in IntelliJ IDEA and other JetBrains IDEs from JetBrains Marketplace, and check the requirements.</web-summary>
 
     <p>Install JirAI from JetBrains Marketplace, restart the IDE and sign in to your Jira Cloud site.</p>
+    <p>JirAI is free: you need no license, trial or subscription to install and use it.</p>
 
     <chapter title="Requirements" id="requirements">
         <list>
@@ -28,6 +29,11 @@
                 <p>Jira Server and Jira Data Center are not supported.</p>
             </li>
             <li><p>An Atlassian account with access to the site, and an API token for that account.</p></li>
+            <li>
+                <p>Optional: the bundled Git plugin and a Git repository in the project.</p>
+                <p>They are needed only to create branches from issues, show the current issue in the status bar and start commit messages with the issue key.</p>
+                <p>If you disable the Git plugin, only these features stop working.</p>
+            </li>
         </list>
     </chapter>
 
@@ -65,13 +71,6 @@
                 </note>
             </tab>
         </tabs>
-    </chapter>
-
-    <chapter title="Licensing and free trial" id="licensing-and-trial">
-        <p>JirAI is a paid plugin with a 7-day free trial.</p>
-        <p>Start the trial or activate a license in <ui-path>Help | Register</ui-path>.</p>
-        <p>Without a trial or a license, the IDE disables the plugin.</p>
-        <p>Buy or manage licenses on the <a href="https://plugins.jetbrains.com/plugin/33954-jirai/pricing">JirAI pricing page</a>.</p>
     </chapter>
 
     <chapter title="After installation" id="next-steps">

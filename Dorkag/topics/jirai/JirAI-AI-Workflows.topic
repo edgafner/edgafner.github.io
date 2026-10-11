@@ -9,7 +9,7 @@
     <show-structure for="chapter,procedure" depth="2"/>
 
     <tldr>
-        <p>Push: <control>Push to Jira</control> at the top right of a Markdown editor, or in the editor context menu</p>
+        <p>Push: <control>Push to Jira</control> at the top right of a Markdown editor, or in the context menu of the editor or the Project view</p>
         <p>Presets: <ui-path>Settings | Tools | JirAI | Doc Push</ui-path></p>
         <p>Requires: signed in to a Jira Cloud site</p>
     </tldr>
@@ -37,10 +37,14 @@
         <img src="jirai_push_chip.png" alt="Push to Jira button, the JirAI icon, at the top right of a Markdown editor" width="598" border-effect="rounded"/>
         <list>
             <li><p>Click the button, or right-click in the editor and choose <control>Push to Jira</control>.</p></li>
+            <li>
+                <p>You can also right-click a Markdown file in the <control>Project</control> tool window and choose <control>Push to Jira</control>.</p>
+                <p>Select one file only: the command does not appear when several files are selected.</p>
+            </li>
             <li><p>JirAI pushes the text currently in the editor, including unsaved changes.</p></li>
             <li>
-                <p>The button and the menu command appear only for files with the <path>.md</path> extension.</p>
-                <p>If the Markdown editor shows only the preview, switch it to a layout that shows the text.</p>
+                <p>The button and the menu commands appear only for files with the <path>.md</path> extension.</p>
+                <p>If the Markdown editor shows only the preview, the button does not appear; use the <control>Project</control> tool window, or switch the editor to a layout that shows the text.</p>
             </li>
         </list>
         <p>The <control>Push to Jira</control> dialog shows the kind of document it recognized, its size as Jira counts it, any conversion warnings and the action that fits the document.</p>
@@ -179,7 +183,7 @@
     </chapter>
 
     <chapter title="Remote Development" id="ai-split-mode">
-        <p>Push to Jira works the same under Remote Development.</p>
+        <p>Push to Jira works the same under Remote Development, except that the <control>Project</control> tool window does not offer it; use the button or the context menu in the editor.</p>
         <p>The document text is read in the editor on the client, while converting, measuring and writing to Jira happen on the host.</p>
         <p>The preset and the document path are resolved on the host, so they match the project you opened.</p>
     </chapter>

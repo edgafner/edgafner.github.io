@@ -15,6 +15,61 @@
     <p>This page lists the user-visible changes in each JirAI release, newest first.</p>
     <p>The full change log is on the <a href="https://plugins.jetbrains.com/plugin/33954-jirai/versions">JetBrains Marketplace versions page</a>.</p>
 
+    <chapter title="2026.3.23" id="release-2026-3-23">
+        <list>
+            <li><p>Open a card's work item in the IDE from the board with a double-click, <shortcut>Enter</shortcut> or <control>Open</control>. See <a href="JirAI-Board.topic" anchor="open-card-issue">Open a card's work item in the IDE</a>.</p></li>
+            <li><p>When you drag or reorder a card, the board no longer offers positions next to sub-tasks that Jira cannot keep, and a card dragged to another column lands where Jira places it.</p></li>
+            <li><p>Every person filter and picker lists you first, under <control>Unassigned</control>, and opens on the current value.</p></li>
+            <li><p>Editing a comment or the description shows <control>Cancel</control> and a highlighted <control>Save</control> on the right.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.22" id="release-2026-3-22">
+        <list>
+            <li><p>The <control>Breakdown</control> tab has a filter bar (search, status, type, priority, assignee, reporter, unresolved and sort) and <control>Show Hierarchy</control> with <control>Expand All</control> and <control>Collapse All</control>.
+                See <a href="Jira-Timeline-and-Description-Editor.topic" anchor="breakdown-filters">Filter the breakdown</a>.</p></li>
+            <li><p><control>Copy Issue URL</control> is in every issue menu. The Timeline and details menus also gain <control>Open in Jira</control> and <control>Copy Issue Key</control>.</p></li>
+            <li><p>Work item types that cannot have child work items open with only the <control>Timeline</control> tab.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.21" id="release-2026-3-21">
+        <p>JirAI is free: no licence, trial or subscription is needed to install and use it. See <a href="JirAI-Installation.topic"/>.</p>
+    </chapter>
+
+    <chapter title="2026.3.20" id="release-2026-3-20">
+        <p>Edit your comments from the issue Timeline. Text and formatting are editable; mentions, images, tables and anything else the editor cannot show stay as locked pieces and are kept exactly as they are.
+            Restricted and service-desk comments still open in Jira. See <a href="Jira-Timeline-and-Description-Editor.topic" anchor="edit-comment">Edit a comment</a>.</p>
+    </chapter>
+
+    <chapter title="2026.3.19" id="release-2026-3-19">
+        <list>
+            <li><p>The <control>Summary</control> tab of a space matches Jira's Summary: four tiles (completed, updated and created in the range, and due soon in the next 7 days) and six widgets, each of which can show its table.
+                Hide a widget from its menu and bring it back from <control>Hidden widgets</control>. See <a href="JirAI-Metrics.topic" anchor="summary-tab">Summary tab</a>.</p></li>
+            <li><p>New space filters: <control>Status</control>, <control>Priority</control>, <control>Parent</control>, <control>Created</control>, <control>Updated</control> and <control>Due date</control> on Summary and Reports;
+                Summary also offers <control>Sprint</control>, <control>Fix version</control>, <control>Component</control> and <control>Label</control>. Throughput, Created vs completed and Work in progress by age are on Reports.</p></li>
+            <li><p>Drag a card to another column or to a new place in its column. Jira's transition chooser and screens appear as they do from the card menu. See <a href="JirAI-Board.topic" anchor="move-card">Move a card</a>.</p></li>
+            <li><p><control>Create Branch</control> from an issue opens the IDE's New Branch dialog with a name such as <code>PFX-42-fix-login-timeout</code>, then offers to move the issue to In Progress.
+                See <a href="Work-with-Jira-Issues.topic" anchor="create-branch">Create a branch from an issue</a> and <a href="JirAI-Settings-Reference.topic" anchor="settings-development">Development settings</a>.</p></li>
+            <li><p>The status bar shows the issue of your current Git branch, with <control>Open Current Jira Issue</control>. See <a href="Work-with-Jira-Issues.topic" anchor="current-issue-status-bar"/>.</p></li>
+            <li><p>With changelists on, an empty commit message starts with the current issue's key. Drafts and Git commit templates are never overwritten. See <a href="Work-with-Jira-Issues.topic" anchor="commit-message-issue-key"/>.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.18" id="release-2026-3-18">
+        <list>
+            <li><p>The Lead time and Cycle time tiles moved off the <control>Summary</control> tab; both are on <control>Reports</control>.</p></li>
+            <li><p>The agent tools tell your AI assistant to check with JirAI before it creates an issue, and a failed check says what to do next. See <a href="JirAI-Agent-Tools.topic" anchor="agent-tool-errors">When a tool call fails</a>.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.17" id="release-2026-3-17">
+        <list>
+            <li><p><control>Push to Jira</control> is available from a right-click on a Markdown file in the Project view. It is not offered under Remote Development. See <a href="JirAI-AI-Workflows.topic" anchor="push-to-jira"/>.</p></li>
+            <li><p>Deleting an attachment warns you when the attachment is shown inline in a comment.</p></li>
+        </list>
+    </chapter>
+
     <chapter title="2026.3.16" id="release-2026-3-16">
         <list>
             <li>

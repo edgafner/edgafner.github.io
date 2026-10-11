@@ -10,16 +10,18 @@
 
     <tldr>
         <p>Open: <control>Space Summary</control> in the <control>JirAI</control> tool window title bar, then the <control>Board</control> tab</p>
+        <p>Open a card's work item: double-click the card, or press <shortcut>Enter</shortcut> on it</p>
         <p>Card menu: <shortcut>Shift+Enter</shortcut> on a focused card</p>
         <p>Requires: a company-managed Kanban or Scrum board</p>
     </tldr>
 
-    <link-summary>Open a Jira Kanban board or the active sprint of a Scrum board in the IDE, filter it and move cards between columns.</link-summary>
-    <card-summary>Open a Kanban board or the active Scrum sprint and move cards between columns.</card-summary>
-    <web-summary>Run Jira Cloud Kanban and Scrum boards in JetBrains IDEs with JirAI: columns, WIP limits, quick filters and card moves with transition screens.</web-summary>
+    <link-summary>Open a Jira Kanban board or the active sprint of a Scrum board in the IDE, filter it, drag cards between columns and open their work items.</link-summary>
+    <card-summary>Open a Kanban board or the active Scrum sprint, drag cards between columns and open their work items.</card-summary>
+    <web-summary>Run Jira Cloud Kanban and Scrum boards in JetBrains IDEs with JirAI: columns, WIP limits, quick filters, drag-and-drop card moves with transition screens, and work items that open in the IDE.</web-summary>
 
     <p>The <control>Board</control> tab of a space page shows a Jira board with its columns and cards.</p>
-    <p>You can filter the board and move cards between columns or within a column, and JirAI applies the moves in Jira.</p>
+    <p>You can filter the board, drag cards between columns or within a column, and open a card's work item in the IDE.</p>
+    <p>JirAI applies every move in Jira.</p>
 
     <chapter title="Open a board" id="open-board">
         <secondary-label ref="jirai_version"/>
@@ -70,7 +72,7 @@
         <p>The filter row above the columns has:</p>
         <deflist type="medium">
             <def title="Quick filters">The quick filters defined on the board in Jira. Click one to turn it on or off.</def>
-            <def title="Assignee">Show or exclude the cards of selected people, or unassigned cards.</def>
+            <def title="Assignee">Show or exclude the cards of selected people, or unassigned cards. You are listed first, under <control>Unassigned</control>.</def>
             <def title="Work type">Show or exclude issue types.</def>
         </deflist>
         <p>As in other JirAI filters, click a value twice or <shortcut>Shift</shortcut>+click it to exclude it.</p>
@@ -78,16 +80,44 @@
         <img src="jirai_board_filters.png" alt="Board filter row with a quick filter on and the Assignee filter open" width="706" thumbnail="true" border-effect="rounded"/>
     </chapter>
 
+    <chapter title="Open a card's work item in the IDE" id="open-card-issue">
+        <p>Open a card's work item in one of these ways:</p>
+        <list>
+            <li><p>Double-click the card.</p></li>
+            <li><p>Focus the card and press <shortcut>Enter</shortcut>.</p></li>
+            <li><p>Choose <control>Open</control> in the card menu.</p></li>
+        </list>
+        <p>The work item opens in its details tab and its <control>Timeline</control> tab, as from the space's <a href="JirAI-Metrics.topic" anchor="list-tab">List</a> tab.</p>
+    </chapter>
+
+    <chapter title="Card menu" id="card-menu">
+        <p>Open the card menu in one of these ways:</p>
+        <list>
+            <li><p>Click <control>More</control> (<control>⋯</control>) on the card.</p></li>
+            <li><p>Right-click the card.</p></li>
+            <li><p>Focus the card and press <shortcut>Shift+Enter</shortcut>, or the IDE's context menu key.</p></li>
+        </list>
+        <p>The menu has these commands:</p>
+        <deflist type="medium">
+            <def title="Open">Opens the work item in the IDE.</def>
+            <def title="Open in Jira">Opens the work item in the browser.</def>
+            <def title="Copy URL, Copy Key">Copies the work item's link or key.</def>
+            <def title="Create Branch…">Creates a Git branch for the work item.</def>
+            <def title="Move To, Move Up, Move Down, Move to Top, Move to Bottom">Moves the card; see <a anchor="move-card">Move a card</a>.</def>
+        </deflist>
+        <!-- planned-image src="jirai_board_card_menu.png" alt="Card menu with Open, Open in Jira, Copy URL, Copy Key, Create Branch and the Move To submenu listing the board columns" -->
+    </chapter>
+
     <chapter title="Move a card" id="move-card">
-        <procedure title="Move a card to another column or position" id="move-card-proc">
-            <step>
-                <p>Open the card menu in one of these ways:</p>
-                <list>
-                    <li><p>Click <control>More</control> (<control>⋯</control>) on the card.</p></li>
-                    <li><p>Right-click the card.</p></li>
-                    <li><p>Focus the card and press <shortcut>Shift+Enter</shortcut>, or the IDE's context menu key.</p></li>
-                </list>
-            </step>
+        <p>Move a card by dragging it, or from the card menu.</p>
+        <procedure title="Drag a card" id="drag-card-proc">
+            <step><p>Drag the card to another column, or to a new place in its own column.</p></step>
+            <step><p>To reach a place that is out of view, hold the card near the top or bottom edge of the column; the column scrolls.</p></step>
+            <step><p>Drop the card.</p></step>
+            <step><p>If Jira offers more than one transition into that column, choose one; if Jira needs fields for the transition, fill them in on the transition screen and confirm.</p></step>
+        </procedure>
+        <procedure title="Move a card from the card menu" id="move-card-proc">
+            <step><p>Open the <a anchor="card-menu">card menu</a>.</p></step>
             <step>
                 <p>Choose the move:</p>
                 <deflist type="medium">
@@ -95,28 +125,17 @@
                     <def title="Move Up, Move Down">Moves the card one position within its column.</def>
                     <def title="Move to Top, Move to Bottom">Moves the card to the top or bottom of its column.</def>
                 </deflist>
-                <!-- planned-image src="jirai_board_card_menu.png" alt="Card menu with the Move To submenu listing the board columns" -->
             </step>
-            <step><p>If Jira needs fields for the transition, fill them in on the transition screen that opens and confirm.</p></step>
+            <step><p>Choose a transition or fill in the transition screen, as for a drag.</p></step>
         </procedure>
-        <p>The card menu also has <control>Open in Jira</control> and <control>Copy Key</control>.</p>
-        <p>Cards move through the card menu; dragging cards is not supported.</p>
         <list>
             <li><p>A move into another column runs the Jira workflow transition that leads to that column's status.</p></li>
+            <li><p>A card moved to another column lands where Jira places it, not where you dropped it.</p></li>
+            <li><p>Jira keeps sub-tasks directly under their parent. Positions next to sub-tasks that Jira can't keep are not offered: a drag shows no drop line there, and the matching <control>Move Up</control>, <control>Move Down</control>, <control>Move to Top</control> or <control>Move to Bottom</control> item is disabled.</p></li>
             <li><p>When no transition leads from the card's status to the target column, JirAI tells you and leaves the card where it is.</p></li>
             <li><p>Changing a card's position within a column needs the Schedule and Edit permissions in Jira.</p></li>
             <li><p>If Jira does not confirm a move, JirAI refreshes the board to show where the card is.</p></li>
         </list>
-    </chapter>
-
-    <chapter title="Open a card's issue in the IDE" id="open-card-issue">
-        <p>Cards do not open the issue in the IDE, but you can find the issue in the <control>JirAI</control> tool window.</p>
-        <procedure title="Open a card's issue in the IDE" id="open-card-issue-proc">
-            <step><p>In the card menu, choose <control>Copy Key</control>.</p></step>
-            <step><p>In the <control>JirAI</control> tool window, choose <control>All Issues</control> in the <control>Filters</control> menu.</p></step>
-            <step><p>Paste the key into the <control>Search issues</control> field.</p></step>
-            <step><p>Select the issue and press <shortcut>Enter</shortcut>.</p></step>
-        </procedure>
     </chapter>
 
     <chapter title="Use the board from the keyboard" id="board-keyboard">
@@ -124,10 +143,18 @@
             <tr><td>Action</td><td>Keys</td></tr>
             <tr><td>Move to the next or previous column</td><td><shortcut>Tab</shortcut>, <shortcut>Shift+Tab</shortcut></td></tr>
             <tr><td>Move between cards</td><td>Arrow keys</td></tr>
+            <tr><td>Open the card's work item in the IDE</td><td><shortcut>Enter</shortcut></td></tr>
             <tr><td>Open the card menu</td><td><shortcut>Shift+Enter</shortcut></td></tr>
             <tr><td>Show more cards in a column</td><td><shortcut>Enter</shortcut> on the <control>+N more</control> footer</td></tr>
         </table>
         <p>A screen reader announces each card with its key, summary, status and assignee, and each column with its name and number of work items.</p>
+    </chapter>
+
+    <chapter title="Limitations" id="board-limitations">
+        <list>
+            <li><p>Team-managed boards do not open in the IDE; choosing one in the board picker opens it in Jira.</p></li>
+            <li><p>A Scrum board shows only its first active sprint. Other active sprints are named in a notice.</p></li>
+        </list>
     </chapter>
 
     <seealso>
