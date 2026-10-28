@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI: Virtual board" id="JirAI-Virtual-Board">
+
+    <primary-label ref="jirai"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Start: type <code>/use-virtual-board</code> in your AI agent, or ask it to <emphasis>Use the virtual board tools exposed in the IDE tools.</emphasis></p>
+        <p>Reopen: <ui-path>Tools | JirAI Virtual Boards…</ui-path>, or the same button in the <control>JirAI</control> tool window title bar</p>
+        <p>Colors: <ui-path>Settings | Tools | JirAI | Virtual Board</ui-path></p>
+        <p>Requires: the IDE's MCP server turned on</p>
+    </tldr>
+
+    <link-summary>Watch an AI agent's plan as live phase cards in an IDE editor tab, send it notes, and approve the Jira changes it asks for.</link-summary>
+    <card-summary>See your AI agent's plan and progress as live cards, and approve its Jira changes on the board.</card-summary>
+    <web-summary>The JirAI virtual board shows an AI coding agent's spec, plan and phases as live cards in a JetBrains IDE editor tab, links a board to a Jira parent's children, and sends a Jira change only after you approve it.</web-summary>
+
+    <p>The virtual board shows your AI agent's own plan in an IDE editor tab: one card per phase, moving from <control>To Do</control> to <control>In Progress</control> to <control>Done</control> while the agent works.</p>
+    <p>It works for one agent or for several subagents working together.</p>
+    <p>It is not a Jira board. The board is kept in the IDE on your machine, and it writes nothing to your repository.</p>
+    <p>It writes nothing to Jira either, except a change you approve on it. See <a anchor="approve-jira-changes">Approve the agent's Jira changes</a>.</p>
+
+    <video src="https://youtu.be/SibBcUA0Ot4"/>
+    <p>Watch the <a href="https://youtu.be/SibBcUA0Ot4">virtual board demo on YouTube</a>.</p>
+
+    <chapter title="Start a board" id="start-board">
+        <p>The board needs the IDE's MCP server; see <a href="JirAI-Agent-Tools.topic" anchor="enable-agent-tools">Turn on the agent tools</a>.</p>
+        <p>You do not need to be signed in to Jira, except for a board linked to a Jira issue.</p>
+        <procedure title="Ask your agent for a virtual board" id="start-board-proc">
+            <step>
+                <p>In your agent's main chat session, do one of the following:</p>
+                <list>
+                    <li><p>Type <code>/use-virtual-board</code> (<code>$use-virtual-board</code> in Codex). This needs the <a href="JirAI-Agent-Skills.topic">JirAI agent skill</a>.</p></li>
+                    <li><p>Without the skill, type: <emphasis>Use the virtual board tools exposed in the IDE tools.</emphasis> If the agent does not find the tools, add <emphasis>…exposed in the IDE via the JirAI plugin</emphasis>.</p></li>
+                </list>
+            </step>
+            <step><p>Give the agent its task. From then on, it uses the board whenever it runs subagents or works through a plan with phases.</p></step>
+            <step><p>The board opens in a tab in the background, so it does not take your editor away. Click <control>Show</control> in the notification to bring it forward.</p></step>
+        </procedure>
+        <p>To work on a Jira issue that has children, use <code>/work-on-jira-issue</code> instead; see <a anchor="jira-linked-board">A board linked to Jira</a>.</p>
+        <p>In a later session, ask the agent to <emphasis>continue the plan, and check for an existing virtual board</emphasis> to resume a board.</p>
+        <p>The agent's tools are in their own <control>JirAI virtual board</control> group under <ui-path>Settings | AI | MCP Server | Exposed Tools</ui-path>; turn the group off there if you do not want them.</p>
+    </chapter>
+
+    <chapter title="Read the board" id="read-board">
+        <p>The header shows the board name, the stage strip (<control>Spec</control>, <control>Plan</control>, <control>Implementation</control>, <control>PR</control>), and <control>Open spec</control> and <control>Open plan</control> when the agent named those files.</p>
+        <p>It also shows when the agent last reported, for example <control>Agent updated 2 min ago</control>.</p>
+        <p>When the IDE's MCP server is off, the header reads <control>Agent channel unavailable — the IDE's MCP server is off</control>.</p>
+        <p>Each card shows the phase's number or label, its title, the steps count and, while the phase runs, what the agent is doing now.</p>
+        <list>
+            <li><p>The steps count is colored by real progress. When the agent never reported its steps, it reads <control>N steps · not reported</control> and falls back to the ticked checkboxes in the plan file.</p></li>
+            <li><p>A card shows an icon for the agent's AI provider. An <control>In Progress</control> card's mark spins while the agent reports and stops after 5 quiet minutes.</p></li>
+            <li><p>An <control>In Progress</control> card with no report for 20 minutes shows <control>No update for N min</control>, then hours, then days.</p></li>
+            <li><p>A card warns <control>Plan file shows this done; the agent did not report it</control> when the plan's checklist is ticked but the agent has not reported the phase.</p></li>
+            <li><p>A blocked phase shows <control>Blocked</control> and the reason.</p></li>
+        </list>
+        <p>The stage follows the agent's work.</p>
+
+        <chapter title="Open a card" id="card-detail">
+            <p>Click a card to open the phase's detail:</p>
+            <list>
+                <li><p>What the phase does, why, its steps, what it depends on and what it blocks, and the files it touches.</p></li>
+                <li><p>When the phase last changed, and how long it has been in progress or took.</p></li>
+                <li><p>Links that open the spec or the plan at the phase's heading.</p></li>
+            </list>
+            <p>Where the agent left what, steps or files empty, the card fills them from the plan file's own section. That text is only shown; it never changes a status.</p>
+            <p>A card whose plan file is missing says <control>Plan file not found</control>.</p>
+            <p>The card menu (<control>More</control>) has <control>Show Details</control>, <control>Open Plan Section</control>, <control>Open Spec Section</control>, <control>Color</control> and <control>Copy Phase Title</control>.</p>
+            <p>The agent owns the plan: you cannot change a status, a step or a title it reported.</p>
+        </chapter>
+
+        <chapter title="Colors" id="board-colors">
+            <list>
+                <li><p>To group related phases, choose <control>Color</control> in a card's menu and pick a color, or <control>None</control>.</p></li>
+                <li><p>The colors of the statuses, the steps chips, the stage strip and the warnings are set for the light and dark themes in <ui-path>Settings | Tools | JirAI | Virtual Board</ui-path>, with <control>Reset to Defaults</control>.</p></li>
+            </list>
+        </chapter>
+
+        <chapter title="Graph view" id="graph-view">
+            <p>Switch the header from <control>Board</control> to <control>Graph</control> to draw the phases as a dependency graph.</p>
+            <p>The graph shows how phases depend on each other, why a phase is blocked and how big each plan section is.</p>
+            <p>Click a node to open its phase.</p>
+        </chapter>
+    </chapter>
+
+    <chapter title="Notes to the agent" id="notes">
+        <procedure title="Send a note" id="send-note-proc">
+            <step><p>Open a phase.</p></step>
+            <step><p>Write in its <control>Notes</control> section and click <control>Send</control>.</p></step>
+        </procedure>
+        <list>
+            <li><p>The note goes to the main session, the agent chat that started the board, the next time it reports. Subagents never see notes.</p></li>
+            <li><p>The agent may answer; its reply appears under the note as <control>Reply from …</control>.</p></li>
+            <li><p>Each note and reply has <control>Copy</control>, so you can paste it into a chat that does not use the board. <control>Send again</control> fills the note box with an earlier note.</p></li>
+            <li><p>Notes of phases the agent removed stay under <control>Notes on removed phases</control>.</p></li>
+            <li><p>A finished board keeps its notes until an agent resumes it.</p></li>
+        </list>
+
+        <chapter title="Send notes to the newest session" id="newest-session">
+            <p>The header says where notes go, for example <control>Notes go to claude-code · opus · 3 min ago</control>.</p>
+            <p>When the session that started the board was lost, for example after a restart, and another session has called the board more recently, the header offers <control>Send notes to the newest session</control>.</p>
+            <p>Click it to make that session the one that gets the notes.</p>
+        </chapter>
+    </chapter>
+
+    <chapter title="Refresh and ask for an update" id="refresh">
+        <p>On a plain board, <control>Refresh</control> in the header re-reads the plan file and asks the agent's main session to bring the board up to date.</p>
+        <list>
+            <li><p>The request is delivered the next time the agent calls a board tool. The header shows <control>Asked the agent to update</control>, then <control>Sent to the agent</control>.</p></li>
+            <li><p>After 3 minutes without an answer, the header offers <control>Copy</control>, so you can paste the request into the agent yourself.</p></li>
+            <li><p>The header says so when the plan file cannot be read.</p></li>
+        </list>
+        <p>On a board linked to Jira, <control>Refresh</control> reads Jira only, and <control>Ask the agent for an update</control> sends the request to the agent.</p>
+    </chapter>
+
+    <chapter title="A board linked to Jira" id="jira-linked-board">
+        <p>When the agent starts a board on a Jira Epic, or on a Story or Task that has children, the children become the cards.</p>
+        <p>Ask for it with <code>/work-on-jira-issue</code>, for example: <emphasis>We need to start working on DEMO-12, please read it and its children.</emphasis></p>
+        <p>The board has four columns: <control>To Do</control>, <control>In Progress</control>, <control>Ready to merge</control> and <control>Done</control>.</p>
+        <deflist type="medium">
+            <def title="Done">The child's Jira status is in the Done category.</def>
+            <def title="Ready to merge">The agent finished the child, and Jira still has it in progress.</def>
+            <def title="In Progress">Jira has the child in progress, or the agent is working on it.</def>
+            <def title="To Do">Everything else.</def>
+        </deflist>
+        <list>
+            <li><p>Jira's status always wins: a child a teammate moved to Done shows in <control>Done</control>, whatever the agent reported.</p></li>
+            <li><p>Each card shows the child's key, its Jira summary, its Jira status, for example <control>In Review</control>, and the first lines of its description.</p></li>
+            <li><p>A card flags a mismatch: <control>Not started in Jira</control> when the agent works on a child that Jira still has in To Do, and <control>Reopened in Jira</control> when the agent finished a child that Jira moved back to To Do.</p></li>
+            <li><p>A phase of the agent's plan that is not a child is marked <control>Local</control>; it never goes to Jira.</p></li>
+            <li><p>A child that left the parent shows <control>No longer under …</control> and becomes local.</p></li>
+            <li><p>The board shows the first 50 children; the header says <control>Showing the first 50 children</control> when there are more.</p></li>
+        </list>
+        <p>The header shows when Jira was read, for example <control>Jira read 30 s ago</control>.</p>
+        <p>While the tab is showing, JirAI reads the children's statuses again every 2 minutes.</p>
+        <p>When Jira cannot be reached, the board keeps the last statuses and says <control>Jira not reachable — showing statuses from …</control>.</p>
+        <p>A board started on an issue without children stays a plain board with three columns. When that issue later gets children, the header offers <control>… has children — show them</control>.</p>
+
+        <chapter title="Done is never automatic" id="move-to-done">
+            <p>Done usually means merged, or later. The agent never moves a child to Done; only you do.</p>
+            <procedure title="Move a child to Done" id="move-to-done-proc">
+                <step><p>On the card, click <control>Move to Done…</control>. Cards in <control>Ready to merge</control> show the button; on other cards it is in the card menu.</p></step>
+                <step><p>Confirm <control>Move … to Done?</control>, or choose the transition when Jira offers several. If the transition needs fields, fill them in on the transition screen.</p></step>
+            </procedure>
+            <p>When no Done transition is open to you, the board says <control>No Done transition is available to you for …</control>.</p>
+        </chapter>
+
+        <chapter title="When the plan and the children differ" id="plan-gaps">
+            <p>The agent asks you, for each gap, which you want:</p>
+            <list type="decimal">
+                <li><p>A new child: click <control>Create in Jira…</control> on the local card. The <control>Create</control> tab opens with the parent, the title and the description filled in; review it and create the issue. The card then becomes a linked card.</p></li>
+                <li><p>The missing part added to an existing child as a comment, which you approve on the board.</p></li>
+                <li><p>Keep it local: nothing goes to Jira.</p></li>
+            </list>
+            <p>To join a local card to a child that already exists, choose <control>Link to child…</control> in the card menu.</p>
+            <p>When another Create tab has unsaved work, the board asks you to <control>Finish or close the open Create tab first</control>.</p>
+        </chapter>
+    </chapter>
+
+    <chapter title="Approve the agent's Jira changes" id="approve-jira-changes">
+        <p>The agent asks for a Jira change with <code>jirai_start_jira_issue</code> (move an issue to In Progress) or <code>jirai_add_jira_comment</code> (post a comment).</p>
+        <p>Neither tool changes Jira. Each only queues the change on the board, where you decide.</p>
+        <procedure title="Approve or reject a change" id="approve-proc">
+            <step>
+                <p>When the agent queues a change, the board comes forward: it opens if it was closed, and its tab is selected without taking keyboard focus from your editor.</p>
+                <p>A notification says <control>The agent is waiting for your OK on …</control>; click <control>Open board</control> to go to it.</p>
+            </step>
+            <step><p>On the card, read the request, for example <control>Agent wants to move DEMO-14 → In Progress</control>, or <control>Agent wants to comment on DEMO-14</control> with the comment shown.</p></step>
+            <step><p>Click <control>Approve</control> to send it, or <control>Reject</control>.</p></step>
+        </procedure>
+        <list>
+            <li><p>A change is sent at most once, and only when you click <control>Approve</control>. Nothing is retried automatically.</p></li>
+            <li><p>The agent learns the outcome on its next board call. It does not ask again for a rejected change unless you ask it to.</p></li>
+            <li><p>If the issue changed before you approved, for example it moved or the transition is no longer offered, the change fails with the reason.</p></li>
+            <li><p>A change asked for on one Jira site fails if you are signed in to another site, or to none, when you approve it. Nothing is sent.</p></li>
+            <li><p>Waiting changes are kept with the board, so a restart neither loses nor sends them. A board holds at most 10 waiting changes.</p></li>
+            <li><p>Every comment notifies the issue's watchers, so the agent posts one only when you ask.</p></li>
+            <li><p>On a plain board, a change to its one Jira issue is shown in the header.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Reopen a closed board" id="reopen-board">
+        <p>Closing the tab does not delete the board. Reopen any of the project's boards without the agent:</p>
+        <list>
+            <li><p>Choose <ui-path>Tools | JirAI Virtual Boards…</ui-path>, or find it with <control>Find Action</control>.</p></li>
+            <li><p>Click <control>JirAI Virtual Boards…</control> in the <control>JirAI</control> tool window title bar.</p></li>
+            <li><p>Click <control>Open board</control> in a notification about a waiting change.</p></li>
+        </list>
+        <p>The menu item and the button appear once the project has a board.</p>
+        <p>If you cannot see an agent's board, the agent can resume it; a resume reopens the tab.</p>
+    </chapter>
+
+    <chapter title="Limitations" id="virtual-board-limitations">
+        <list>
+            <li><p>The board needs the IDE's MCP server and the bundled <control>MCP Server</control> plugin. Without them, existing boards stay listed and openable, but agents cannot update them.</p></li>
+            <li><p>Whether your agent asks your permission on each board call depends on the agent. If it asks on every report, allow the <code>jirai_*_virtual_*</code> tools in that agent's own permission settings.</p></li>
+            <li><p>A linked board shows a parent's direct children only.</p></li>
+            <li><p>JirAI does not notice that a child's work merged; move it to Done yourself.</p></li>
+        </list>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="JirAI-Agent-Skills.topic"/>
+            <a href="JirAI-Agent-Tools.topic"/>
+            <a href="JirAI-Settings-Reference.topic" anchor="settings-virtual-board"/>
+        </category>
+        <category ref="external">
+            <a href="https://youtu.be/SibBcUA0Ot4">Virtual board demo on YouTube</a>
+            <a href="https://www.jetbrains.com/help/idea/mcp-server.html">MCP server in JetBrains IDEs</a>
+        </category>
+    </seealso>
+</topic>

@@ -140,6 +140,7 @@
             <step>
                 <p>In the <control>Create Branch for DEMO-42</control> dialog, check the suggested name, for example <code>DEMO-42-fix-login-timeout</code>.</p>
                 <p>Change the name or the <control>Checkout branch</control> option if you need to.</p>
+                <p>To start the branch from another local branch, a remote branch or a tag, select <control>Start from</control> and choose it.</p>
                 <!-- planned-image src="jirai_create_branch_dialog.png" alt="New branch dialog with a name built from the issue key and summary" -->
             </step>
             <step><p>Click <control>Create</control>.</p></step>

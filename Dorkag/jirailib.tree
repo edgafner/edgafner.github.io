@@ -19,7 +19,9 @@
             <toc-element topic="JirAI-Metrics.topic" toc-title="Spaces" id="toc_jirai_metrics"/>
             <toc-element topic="JirAI-Board.topic" toc-title="Board" id="toc_jirai_board"/>
             <toc-element topic="JirAI-AI-Workflows.topic" toc-title="Push Markdown docs" id="toc_jirai_ai_workflows"/>
+            <toc-element topic="JirAI-Virtual-Board.topic" toc-title="Virtual board" id="toc_jirai_virtual_board"/>
             <toc-element topic="JirAI-Agent-Tools.topic" toc-title="Agent tools" id="toc_jirai_agent_tools"/>
+            <toc-element topic="JirAI-Agent-Skills.topic" toc-title="Agent skills" id="toc_jirai_agent_skills"/>
             <toc-element topic="JirAI-Settings-Reference.topic" toc-title="Settings reference" id="toc_jirai_settings"/>
             <toc-element topic="JirAI-Remote-Development-and-Architecture.topic" toc-title="Remote Development and privacy" id="toc_jirai_remotedev"/>
             <toc-element topic="JirAI-FAQ.topic" toc-title="FAQ" id="toc_jirai_faq"/>

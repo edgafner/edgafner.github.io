@@ -23,7 +23,7 @@
 
     <chapter title="Requirements" id="requirements">
         <list>
-            <li><p>The current version requires a JetBrains IDE 2026.3 (build 263) or later.</p></li>
+            <li><p>The current version requires a JetBrains IDE 2026.3 (build 263.6800) or later.</p></li>
             <li>
                 <p>A Jira Cloud site, for example <code>https://demo-org.atlassian.net</code>.</p>
                 <p>Jira Server and Jira Data Center are not supported.</p>

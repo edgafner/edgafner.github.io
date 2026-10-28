@@ -15,10 +15,11 @@
 
     <link-summary>Every JirAI settings page and option, the notification groups and the keyboard shortcuts.</link-summary>
     <card-summary>All JirAI settings pages, notification groups and keyboard shortcuts in one place.</card-summary>
-    <web-summary>Reference for every JirAI setting in JetBrains IDEs: Jira account, field visibility, doc push presets, branch names and commit messages, metrics sampling, house standard and shortcuts.</web-summary>
+    <web-summary>Reference for every JirAI setting in JetBrains IDEs: Jira account, field visibility, doc push presets, agent skills, branch names and commit messages, metrics sampling, virtual board colors, house standard and shortcuts.</web-summary>
 
     <p>JirAI settings are under <ui-path>Settings | Tools | JirAI</ui-path>.</p>
-    <p>All pages except <control>Doc Push</control> apply to the whole IDE; <control>Doc Push</control> applies to the current project.</p>
+    <p>All pages except <control>Doc Push</control> and <control>Agent Skills</control> apply to the whole IDE; those two act on the current project.</p>
+    <p>Every JirAI settings page shows the JirAI icon at the top.</p>
 
     <chapter title="JirAI" id="settings-jirai">
         <p><ui-path>Settings | Tools | JirAI</ui-path></p>
@@ -47,6 +48,14 @@
         <p>By default, JirAI picks the preset from the project's folders the first time you push a document.</p>
         <p>The target columns stay read-only until you open the <control>JirAI</control> tool window while you are signed in.</p>
         <p>See <a href="JirAI-AI-Workflows.topic" anchor="presets-settings">Configure presets in Settings</a>.</p>
+    </chapter>
+
+    <chapter title="Agent Skills" id="settings-agent-skills">
+        <p><ui-path>Settings | Tools | JirAI | Agent Skills</ui-path></p>
+        <p>Lists the JirAI skills in your AI agents' folders, with <control>Skill</control>, <control>Where</control>, <control>Folder</control> and <control>State</control>.</p>
+        <p>Buttons: <control>Add Skills…</control>, <control>Update</control>, <control>Remove</control> and <control>Clean up</control>.</p>
+        <p>Opened from the Welcome screen, the page shows only the skills in your home folder.</p>
+        <p>See <a href="JirAI-Agent-Skills.topic">Agent skills</a>.</p>
     </chapter>
 
     <chapter title="Development" id="settings-development">
@@ -94,6 +103,14 @@
         <p>See <a href="JirAI-Metrics.topic" anchor="large-spaces">Large spaces</a>.</p>
     </chapter>
 
+    <chapter title="Virtual Board" id="settings-virtual-board">
+        <p><ui-path>Settings | Tools | JirAI | Virtual Board</ui-path></p>
+        <p>The colors of the status marks, steps chips, stage strip and warnings on the virtual board.</p>
+        <p>Under <control>Colors</control>, set <control>To Do</control>, <control>In Progress</control>, <control>Done</control>, <control>Blocked</control> and <control>Plan warning</control> for the <control>Light theme</control> and the <control>Dark theme</control>.</p>
+        <p><control>Reset to Defaults</control> restores JirAI's colors. Open virtual boards update when you apply.</p>
+        <p>See <a href="JirAI-Virtual-Board.topic" anchor="board-colors">Colors</a>.</p>
+    </chapter>
+
     <chapter title="House Standard" id="settings-house-standard">
         <p><ui-path>Settings | Tools | JirAI | House Standard</ui-path></p>
         <p>Rules that AI assistants are told about when they validate a draft issue, stored for the Jira site you are signed in to.</p>
@@ -103,11 +120,12 @@
 
     <chapter title="Related IDE settings" id="settings-related">
         <deflist type="wide">
-            <def title="Settings | Tools | MCP Server">Turns on the IDE's MCP server, which the JirAI agent tools need. See <a href="JirAI-Agent-Tools.topic" anchor="enable-agent-tools">Turn on the agent tools</a>.</def>
+            <def title="Settings | AI | MCP Server">Turns on the IDE's MCP server, which the JirAI agent tools need. See <a href="JirAI-Agent-Tools.topic" anchor="enable-agent-tools">Turn on the agent tools</a>.</def>
             <def title="Settings | Appearance &amp; Behavior | System Settings | HTTP Proxy">The proxy JirAI uses. See <a href="JirAI-Sign-In-and-Configuration.topic" anchor="corporate-proxy">Use JirAI behind a corporate proxy</a>.</def>
             <def title="Settings | Appearance &amp; Behavior | Notifications">
                 <p>How JirAI notifications are shown.</p>
-                <p>JirAI has the notification groups <control>Jira issue delete</control>, <control>Jira attachments</control>, <control>JirAI doc push</control>, <control>Jira create</control>, <control>Jira description drafts</control>, <control>JirAI agent tools</control> and <control>JirAI branches</control>.</p>
+                <p>JirAI has the notification groups <control>Jira issue delete</control>, <control>Jira attachments</control>, <control>JirAI doc push</control>, <control>Jira create</control>, <control>Jira description drafts</control>, <control>JirAI agent tools</control>, <control>JirAI branches</control> and <control>Go to</control>.</p>
+                <p>Virtual board and agent skill notifications are in <control>JirAI agent tools</control>.</p>
             </def>
         </deflist>
     </chapter>
@@ -141,6 +159,8 @@
             <a href="Jira-Field-Visibility.topic"/>
             <a href="JirAI-AI-Workflows.topic"/>
             <a href="JirAI-Agent-Tools.topic"/>
+            <a href="JirAI-Agent-Skills.topic"/>
+            <a href="JirAI-Virtual-Board.topic"/>
         </category>
         <category ref="external">
             <a href="https://www.jetbrains.com/help/idea/notifications.html">Notifications in JetBrains IDEs</a>
