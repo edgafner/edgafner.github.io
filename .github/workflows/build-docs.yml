@@ -12,7 +12,7 @@ permissions:
 env:
   INSTANCE: 'Dorkag/dorkag'
   ARTIFACT: 'webHelpDORKAG2-all.zip'
-  DOCKER_VERSION: '2026.09.0357'
+  DOCKER_VERSION: '2026.10.0423'
 
 jobs:
   build:

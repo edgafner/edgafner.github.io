@@ -55,7 +55,7 @@ cd edgafner.github.io
 # writes into the source directory, and the output directory must not be a mount point):
 rsync -a --delete --exclude .git ./ /tmp/wrs-src/
 docker run --rm --platform linux/amd64 -v /tmp/wrs-src:/github/workspace \
-  jetbrains/writerside-builder:2026.09.0357 /bin/bash -c '
+  jetbrains/writerside-builder:2026.10.0423 /bin/bash -c '
     export DISPLAY=:99; Xvfb :99 &
     /opt/builder/bin/idea.sh helpbuilderinspect -source-dir /github/workspace/ \
       -product Dorkag/dorkag --runner github -output-dir /github/workspace/artifacts/'
