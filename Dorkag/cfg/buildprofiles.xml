@@ -26,6 +26,6 @@
     </variables>
 
     <sitemap priority="0.35" change-frequency="monthly"/>
-    <llms-txt/>
+    <llms-txt>true</llms-txt>
 
 </buildprofiles>

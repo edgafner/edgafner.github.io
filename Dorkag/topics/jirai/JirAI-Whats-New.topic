@@ -15,6 +15,112 @@
     <p>This page lists the user-visible changes in each JirAI release, newest first.</p>
     <p>The full change log is on the <a href="https://plugins.jetbrains.com/plugin/33954-jirai/versions">JetBrains Marketplace versions page</a>.</p>
 
+    <timeline>
+        <item title="2026.3.34">
+            <p>Virtual boards linked to Jira, with Jira changes you approve on the board.</p>
+        </item>
+        <item title="2026.3.33">
+            <p>Agent skills for Claude Code, Codex, Copilot CLI and Junie.</p>
+        </item>
+        <item title="2026.3.30 to 2026.3.32">
+            <p>The virtual board, Go To, starred boards and team-managed boards.</p>
+        </item>
+        <item title="2026.3.24 to 2026.3.29">
+            <p>The Backlog tab, Create Branch from another branch or a tag, and fixes.</p>
+        </item>
+    </timeline>
+
+    <chapter title="2026.3.34" id="release-2026-3-34">
+        <list>
+            <li>
+                <p>A virtual board started on a Jira parent shows its children as cards with their live Jira status, in <control>To Do</control>, <control>In Progress</control>, <control>Ready to merge</control> and <control>Done</control>.
+                    Done is never automatic: <control>Move to Done…</control> is on the cards, and <control>Create in Jira…</control> turns a local phase into a child.
+                    See <a href="JirAI-Virtual-Board.topic" anchor="jira-linked-board">A board linked to Jira</a>.</p>
+            </li>
+            <li><p>Approve or reject each Jira change the agent asks for, right on the board. The new agent tools <code>jirai_start_jira_issue</code> and <code>jirai_add_jira_comment</code> only queue a change.
+                See <a href="JirAI-Virtual-Board.topic" anchor="approve-jira-changes">Approve the agent's Jira changes</a>.</p></li>
+            <li><p><control>Send notes to the newest session</control> hands the board's notes to the agent chat that called it most recently. See <a href="JirAI-Virtual-Board.topic" anchor="newest-session">Send notes to the newest session</a>.</p></li>
+            <li><p>Reopen a closed board from the <control>JirAI</control> tool window title bar. See <a href="JirAI-Virtual-Board.topic" anchor="reopen-board">Reopen a closed board</a>.</p></li>
+            <li><p>A new agent skill, <code>/work-on-jira-issue</code>. See <a href="JirAI-Agent-Skills.topic">Agent skills</a>.</p></li>
+            <li><p>Every JirAI settings page shows the JirAI icon.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.33" id="release-2026-3-33">
+        <list>
+            <li><p>JirAI offers once to add the <code>/use-virtual-board</code> and <code>/jira-ticket</code> skills to Claude Code, Codex, Copilot CLI and Junie.
+                Add, update or remove them later in <ui-path>Settings | Tools | JirAI | Agent Skills</ui-path> or from <ui-path>Tools | Add JirAI Skills to AI Agents…</ui-path>.
+                See <a href="JirAI-Agent-Skills.topic">Agent skills</a>.</p></li>
+            <li><p>Virtual board fixes: a card whose plan file is missing says <control>Plan file not found</control>, a finished phase clears its "now doing" text, and the board no longer overrides a stage the agent set.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.32" id="release-2026-3-32">
+        <list>
+            <li><p>Agent work boards are now the virtual board. Its four agent tools are always listed; if you had turned the old ones off, check <ui-path>Settings | AI | MCP Server | Exposed Tools</ui-path> again.</p></li>
+            <li><p>An opened card shows what the phase is about, when it last changed and how long it was in progress, and fills an empty what, steps and files from the plan file.</p></li>
+            <li><p>A card in progress with no update for 20 minutes shows <control>No update for N min</control>. See <a href="JirAI-Virtual-Board.topic" anchor="read-board">Read the board</a>.</p></li>
+            <li><p><control>Refresh</control> asks the agent's main session to update the board, with a <control>Copy</control> fallback. See <a href="JirAI-Virtual-Board.topic" anchor="refresh">Refresh and ask for an update</a>.</p></li>
+            <li><p>Notes go to the agent session that started the board; the <control>Send to</control> choice is gone. Plan and spec files can live outside the open project.</p></li>
+            <li><p>Go To highlights the item you jump to for a moment.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.31" id="release-2026-3-31">
+        <list>
+            <li><p>Leave a note on a phase for your AI agent and read its reply on the card. See <a href="JirAI-Virtual-Board.topic" anchor="notes">Notes to the agent</a>.</p></li>
+            <li><p>Color a phase card from its menu to group related phases, and switch to the <control>Graph</control> view to see how phases depend on each other. See <a href="JirAI-Virtual-Board.topic" anchor="graph-view">Graph view</a>.</p></li>
+            <li><p>The steps count is colored by real progress and falls back to the plan's ticked checkboxes.</p></li>
+            <li><p>Go To greys out an item with nowhere to go and says why.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.30" id="release-2026-3-30">
+        <list>
+            <li><p>Ask your AI agent for a JirAI work board, and it shows its plan as live phase cards in an editor tab. See <a href="JirAI-Virtual-Board.topic">Virtual board</a>.</p></li>
+            <li><p>Go To: from any work item, jump to its card on the <control>Board</control>, its row on the <control>Backlog</control> or the <control>List</control>, or its parent and linked items. See <a href="JirAI-Board.topic" anchor="go-to">Go to a work item's card or row</a>.</p></li>
+            <li><p>Star a board in the board picker to list it first. Until you pick a board, the <control>Board</control> and <control>Backlog</control> tabs open on the board you most recently viewed in Jira, and only a board you pick is remembered. See <a href="JirAI-Board.topic" anchor="open-board">Open a board</a>.</p></li>
+            <li><p>Team-managed boards open in the <control>Board</control> tab, with drag-and-drop. See <a href="JirAI-Board.topic" anchor="team-managed-boards">Team-managed boards</a>.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.29" id="release-2026-3-29">
+        <list>
+            <li><p>Collapsible <code>&lt;details&gt;</code> sections in Create and AI drafts keep their text.</p></li>
+            <li><p>Checking out a branch that was deleted meanwhile says the branch no longer exists.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.27 and 2026.3.28" id="release-2026-3-27">
+        <list>
+            <li><p>JirAI needs a 2026.3 IDE from build 263.6800 on. See <a href="JirAI-Installation.topic" anchor="requirements">Requirements</a>.</p></li>
+            <li><p>When Jira no longer accepts your API token, JirAI says you are not signed in instead of showing an empty list, and a new token takes effect at once.</p></li>
+            <li><p>The draft check of the agent tools rejects labels with a space and texts over Jira's length limits, and names the values it could not check.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.26" id="release-2026-3-26">
+        <list>
+            <li><p>JirAI's buttons and shortcuts work while the IDE is indexing.</p></li>
+            <li><p>The issue list updates by itself a few seconds after you change or create an issue in JirAI.</p></li>
+            <li><p>Signing in or out in one project window updates every open project window.</p></li>
+            <li><p>With several projects open, the agent tools no longer fail with "Unable to determine the target project".</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.25" id="release-2026-3-25">
+        <p>The issue timeline, the <control>Breakdown</control> and the space tabs open again on IDE builds 263.6800 and later. Fixes for the <control>Backlog</control> and the <control>Board</control>.</p>
+    </chapter>
+
+    <chapter title="2026.3.24" id="release-2026-3-24">
+        <list>
+            <li><p>The <control>Backlog</control> tab shows a Scrum board's active and future sprints and its backlog. Move a work item to a sprint or the backlog, or reorder it, from its menu or by dragging. See <a href="JirAI-Board.topic" anchor="backlog-tab">Backlog tab</a>.</p></li>
+            <li><p><control>Create Branch</control> can start from another branch or a tag: select <control>Start from</control> in the dialog.</p></li>
+            <li><p>When uncommitted changes clash, Create Branch and Check Out offer <control>Smart Checkout</control> or <control>Don't Checkout</control>.</p></li>
+            <li><p><control>Maximize</control> on a Summary or Reports widget opens it large over the page.</p></li>
+        </list>
+    </chapter>
+
     <chapter title="2026.3.23" id="release-2026-3-23">
         <list>
             <li><p>Open a card's work item in the IDE from the board with a double-click, <shortcut>Enter</shortcut> or <control>Open</control>. See <a href="JirAI-Board.topic" anchor="open-card-issue">Open a card's work item in the IDE</a>.</p></li>

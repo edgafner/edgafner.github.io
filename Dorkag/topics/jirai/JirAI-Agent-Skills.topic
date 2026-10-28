@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI: Agent skills" id="JirAI-Agent-Skills">
+
+    <primary-label ref="jirai"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <tldr>
+        <p>Add: <ui-path>Tools | Add JirAI Skills to AI Agents…</ui-path></p>
+        <p>Manage: <ui-path>Settings | Tools | JirAI | Agent Skills</ui-path></p>
+        <p>Skills: <code>/use-virtual-board</code>, <code>/jira-ticket</code>, <code>/work-on-jira-issue</code></p>
+    </tldr>
+
+    <link-summary>Add JirAI's skills to Claude Code, Codex, Copilot CLI and Junie, so your agent uses the virtual board and checks Jira tickets without being told how.</link-summary>
+    <card-summary>Teach your AI agents to use the virtual board and to check a Jira ticket before filing it.</card-summary>
+    <web-summary>JirAI agent skills teach Claude Code, Codex, Copilot CLI and Junie to show their plan on the JirAI virtual board, to work on a Jira parent issue and its children, and to check a Jira ticket against your team's rules.</web-summary>
+
+    <p>A skill is a folder with a <path>SKILL.md</path> file that tells an AI agent how to do one job.</p>
+    <p>JirAI ships three skills and copies them only into the folders you choose.</p>
+
+    <chapter title="The skills" id="skills-list">
+        <deflist type="wide">
+            <def title="/use-virtual-board — Use the virtual board">
+                <p>Shows the agent's plan and progress live on the JirAI <a href="JirAI-Virtual-Board.topic">virtual board</a>.</p>
+            </def>
+            <def title="/jira-ticket — Check a Jira ticket">
+                <p>Checks a Jira ticket against your team's rules before the agent files it, with the <a href="JirAI-Agent-Tools.topic">agent tools</a>.</p>
+                <p>Useful once a Jira site is signed in.</p>
+            </def>
+            <def title="/work-on-jira-issue — Work on a Jira issue">
+                <p>Shows a Jira parent's children on the virtual board and asks before every Jira change. See <a href="JirAI-Virtual-Board.topic" anchor="jira-linked-board">A board linked to Jira</a>.</p>
+            </def>
+        </deflist>
+        <p>In Codex, type the skill with <code>$</code> instead of <code>/</code>, for example <code>$use-virtual-board</code>.</p>
+    </chapter>
+
+    <chapter title="The one-time offer" id="skills-offer">
+        <p>The first time you open a project while the IDE's MCP server is on, JirAI asks once: <control>Add JirAI skills to your AI agents?</control></p>
+        <list>
+            <li><p>Click <control>Choose…</control> to pick the skills, the agents and where they go.</p></li>
+            <li><p>Click <control>No thanks</control> to write nothing.</p></li>
+        </list>
+        <p>Nothing is written until you choose where. Closing the notification counts as an answer; you can still add the skills later.</p>
+        <p>When a later JirAI version adds a skill and you said yes before, a <control>New JirAI skill: …</control> notification offers <control>Add…</control>, preset to your earlier agents and level.</p>
+        <p>If you said no before, the new skill is listed as <control>available</control> in Settings instead.</p>
+    </chapter>
+
+    <chapter title="Add skills" id="add-skills">
+        <procedure title="Add JirAI skills to your agents" id="add-skills-proc">
+            <step><p>Choose <ui-path>Tools | Add JirAI Skills to AI Agents…</ui-path>, click <control>Add Skills…</control> in <ui-path>Settings | Tools | JirAI | Agent Skills</ui-path>, or click <control>Choose…</control> in the offer.</p></step>
+            <step><p>Under <control>Skills</control>, select the skills.</p></step>
+            <step>
+                <p>Under <control>Agents</control>, select <control>Claude Code</control>, <control>Codex</control>, <control>Copilot CLI</control> or <control>Junie</control>.</p>
+                <p>JirAI preselects each agent it finds on your machine.</p>
+            </step>
+            <step>
+                <p>Under <control>Level</control>, choose where the skills go:</p>
+                <deflist type="medium">
+                    <def title="For me, in all projects">Your agents' folders in your home folder.</def>
+                    <def title="This project, only me">The project's folders, with a line in <path>.git/info/exclude</path> so Git ignores them. Needs a Git repository.</def>
+                    <def title="This project, shared through source control">The project's folders, visible to Git. Commit them to share with your team; JirAI does not commit.</def>
+                </deflist>
+            </step>
+            <step><p>Check <control>What Will Be Written</control>, which lists every folder and what happens to it, and click <control>Add Skills</control>.</p></step>
+            <step><p>The result notification tells you how to start, for example <emphasis>type /use-virtual-board</emphasis>. Claude Code may need <code>/reload-skills</code> or a new session; Junie may need <code>/skills</code>.</p></step>
+        </procedure>
+
+        <chapter title="Where the files go" id="skills-folders">
+            <p>JirAI writes the smallest set of folders, so that no agent reads the same skill twice:</p>
+            <table style="header-row">
+                <tr><td>Folder</td><td>Read by</td></tr>
+                <tr><td><path>.claude/skills</path></td><td>Claude Code; Copilot CLI reads it too</td></tr>
+                <tr><td><path>.agents/skills</path></td><td>Codex, Copilot CLI and Junie</td></tr>
+                <tr><td><path>.junie/skills</path></td><td>Junie, only when <path>.agents/skills</path> is not written</td></tr>
+            </table>
+            <p>For <control>For me, in all projects</control>, the folders are in your home folder, for example <path>~/.claude/skills</path>; for the project levels, they are in the project folder.</p>
+            <p>Agents started from AI Assistant or Air read only project folders.</p>
+        </chapter>
+    </chapter>
+
+    <chapter title="Update or remove skills" id="manage-skills">
+        <p><ui-path>Settings | Tools | JirAI | Agent Skills</ui-path> lists each skill with its <control>Where</control>, <control>Folder</control> and <control>State</control>, for example <control>installed v2</control> or <control>edited by you</control>.</p>
+        <deflist type="medium">
+            <def title="Add Skills…">Opens the dialog described above.</def>
+            <def title="Update">Replaces a copy with the current JirAI text. For a copy you edited, JirAI asks first.</def>
+            <def title="Remove">Deletes JirAI's copy. For a copy you edited, JirAI asks first.</def>
+            <def title="Clean up">Deletes what JirAI left of a copy you removed yourself.</def>
+        </deflist>
+        <list>
+            <li><p>When JirAI updates, it refreshes your own unedited copies (<control>For me</control> and <control>only me</control>). Shared project copies show <control>update available</control> and change only when you click <control>Update</control>.</p></li>
+            <li><p>JirAI never overwrites a skill it did not write, or one you edited, without asking.</p></li>
+            <li><p>Open agent sessions may show the old text until reloaded.</p></li>
+        </list>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="JirAI-Virtual-Board.topic"/>
+            <a href="JirAI-Agent-Tools.topic"/>
+            <a href="JirAI-Settings-Reference.topic" anchor="settings-agent-skills"/>
+        </category>
+        <category ref="external">
+            <a href="https://www.jetbrains.com/help/idea/mcp-server.html">MCP server in JetBrains IDEs</a>
+        </category>
+    </seealso>
+</topic>

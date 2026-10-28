@@ -12,10 +12,10 @@
         <p>Open: <control>Space Summary</control> in the <control>JirAI</control> tool window title bar, then the <control>Board</control> tab</p>
         <p>Open a card's work item: double-click the card, or press <shortcut>Enter</shortcut> on it</p>
         <p>Card menu: <shortcut>Shift+Enter</shortcut> on a focused card</p>
-        <p>Requires: a company-managed Kanban or Scrum board</p>
+        <p>Go To: <control>Go To | Show in Board</control> or <control>Show in Backlog</control> in any work item's menu</p>
     </tldr>
 
-    <link-summary>Open a Jira Kanban board or the active sprint of a Scrum board in the IDE, filter it, drag cards between columns and open their work items.</link-summary>
+    <link-summary>Open a Jira Kanban board, the active sprint of a Scrum board or its backlog in the IDE, filter it, drag cards between columns and open their work items.</link-summary>
     <card-summary>Open a Kanban board or the active Scrum sprint, drag cards between columns and open their work items.</card-summary>
     <web-summary>Run Jira Cloud Kanban and Scrum boards in JetBrains IDEs with JirAI: columns, WIP limits, quick filters, drag-and-drop card moves with transition screens, and work items that open in the IDE.</web-summary>
 
@@ -30,12 +30,19 @@
             <step><p>Select the <control>Board</control> tab.</p></step>
             <step>
                 <p>If the space has more than one board, click the board picker and choose a board, or type in <control>Search boards</control>.</p>
-                <img src="jirai_board_picker.png" alt="Board picker listing the boards of a space, with a team-managed board marked Limited" width="299" border-effect="rounded"/>
+                <img src="jirai_board_picker.png" alt="Board picker listing the boards of a space" width="299" border-effect="rounded"/>
             </step>
         </procedure>
-        <p>JirAI remembers the board you picked for each space.</p>
-        <p>Team-managed boards are marked <control>Limited</control> in the picker.</p>
-        <p>They do not open in the IDE; choosing one opens it in Jira.</p>
+        <list>
+            <li><p>JirAI remembers the board you pick for each space. A board JirAI opens for you is not remembered.</p></li>
+            <li><p>Until you pick one, the tab opens on the board of the space you most recently viewed in Jira.</p></li>
+            <li><p>Click the star beside a board in the picker to list it first, under <control>Starred</control>. Stars are kept on this computer.</p></li>
+        </list>
+
+        <chapter title="Team-managed boards" id="team-managed-boards">
+            <p>Team-managed boards open in the <control>Board</control> tab, with drag-and-drop to move and reorder cards.</p>
+            <p>A team-managed board that has a backlog or sprints turned on, or that groups its work items into swimlanes, says why and links to it in Jira instead.</p>
+        </chapter>
     </chapter>
 
     <chapter title="Read the board" id="read-board">
@@ -103,6 +110,7 @@
             <def title="Open in Jira">Opens the work item in the browser.</def>
             <def title="Copy URL, Copy Key">Copies the work item's link or key.</def>
             <def title="Create Branch…">Creates a Git branch for the work item.</def>
+            <def title="Go To">Jumps to the work item on another tab, or to its parent or links; see <a anchor="go-to">Go to a work item's card or row</a>.</def>
             <def title="Move To, Move Up, Move Down, Move to Top, Move to Bottom">Moves the card; see <a anchor="move-card">Move a card</a>.</def>
         </deflist>
         <!-- planned-image src="jirai_board_card_menu.png" alt="Card menu with Open, Open in Jira, Copy URL, Copy Key, Create Branch and the Move To submenu listing the board columns" -->
@@ -138,6 +146,28 @@
         </list>
     </chapter>
 
+    <chapter title="Backlog tab" id="backlog-tab">
+        <p>The <control>Backlog</control> tab of a space shows a company-managed Scrum board's active and future sprints and its backlog, with the same filters as the board.</p>
+        <list>
+            <li><p>Move a work item to a sprint or the backlog, or reorder it, by dragging it or from its menu.</p></li>
+            <li><p>A long backlog shows its first work items; click <control>Load all</control> to show the rest.</p></li>
+            <li><p>A team-managed board or a Kanban board has no backlog here; open it in Jira.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="Go to a work item's card or row" id="go-to">
+        <p>The <control>Go To</control> submenu jumps from a work item to the places it appears in its space.</p>
+        <p>It is in the menu of a work item in the issue list, on a board card, on a backlog row, in the space <control>List</control>, in the <control>Breakdown</control>, in the issue details and in the issue editor.</p>
+        <deflist type="medium">
+            <def title="Show in Board">Opens the <control>Board</control> tab with the item's card in view.</def>
+            <def title="Show in Backlog">Opens the <control>Backlog</control> tab with the item's row selected.</def>
+            <def title="Show in List">Opens the space's <control>List</control> tab with the item's row selected and its parents unfolded.</def>
+            <def title="Parent and Links…">Lists the item's parent and linked items; pick one to open it.</def>
+        </deflist>
+        <p>The item you jump to is highlighted for a moment.</p>
+        <p>An item with nowhere to go is greyed out and says why, for example <control>no Scrum board</control>.</p>
+    </chapter>
+
     <chapter title="Use the board from the keyboard" id="board-keyboard">
         <table style="header-row">
             <tr><td>Action</td><td>Keys</td></tr>
@@ -152,7 +182,8 @@
 
     <chapter title="Limitations" id="board-limitations">
         <list>
-            <li><p>Team-managed boards do not open in the IDE; choosing one in the board picker opens it in Jira.</p></li>
+            <li><p>A team-managed board with a backlog or sprints, or grouped into swimlanes, opens in Jira.</p></li>
+            <li><p>The <control>Backlog</control> tab shows company-managed Scrum boards only.</p></li>
             <li><p>A Scrum board shows only its first active sprint. Other active sprints are named in a notice.</p></li>
         </list>
     </chapter>

@@ -8,13 +8,14 @@
 
     <link-summary>Documentation for JirAI, the Jira Cloud plugin for JetBrains IDEs.</link-summary>
     <card-summary>Browse, create, edit and plan Jira Cloud work from your JetBrains IDE.</card-summary>
-    <web-summary>JirAI brings Jira Cloud into JetBrains IDEs: browse and edit issues, run Kanban and Scrum boards, push Markdown docs and give AI assistants Jira context.</web-summary>
+    <web-summary>JirAI brings Jira Cloud into JetBrains IDEs: browse and edit issues, run Kanban and Scrum boards, push Markdown docs, give AI assistants Jira context and watch their plans on a virtual board.</web-summary>
 
     <section-starting-page>
         <title>JirAI</title>
         <description>
             Work with Jira Cloud issues, boards and space reports without leaving your JetBrains IDE.
             JirAI also creates Git branches from issues, turns Markdown specs into Jira issues and lets AI assistants check a draft against your project's real create screen.
+            A virtual board shows an AI agent's plan as live cards, and the agent changes Jira only when you approve it.
             JirAI is free.
         </description>
 
@@ -29,10 +30,12 @@
             <a href="Jira-Create-Issues.topic" type="tools" summary="Create issues from your project's own create screen, with Markdown descriptions.">Create issues</a>
             <a href="Jira-Issue-Details-and-Editing.topic" type="mixed" summary="Edit fields in place, move issues through the workflow and manage attachments.">Issue details</a>
             <a href="Jira-Timeline-and-Description-Editor.topic" type="development" summary="Read the activity feed, comment, edit the description and see child work items.">Timeline and breakdown</a>
-            <a href="JirAI-Board.topic" type="integration" summary="Open a Kanban board or a Scrum sprint and move cards between columns.">Board</a>
+            <a href="JirAI-Board.topic" type="integration" summary="Open a Kanban board, a Scrum sprint or its backlog and move cards between columns.">Board</a>
             <a href="JirAI-Metrics.topic" type="cloud" summary="Summary charts, a hierarchical list and flow reports for any Jira space.">Spaces</a>
             <a href="JirAI-AI-Workflows.topic" type="development" summary="Create or update a Jira issue from a Markdown spec or plan.">Push Markdown docs</a>
+            <a href="JirAI-Virtual-Board.topic" type="development" summary="Watch an AI agent's plan as live cards and approve the Jira changes it asks for.">Virtual board</a>
             <a href="JirAI-Agent-Tools.topic" type="integration" summary="Let an AI assistant read the create screen and check drafts against your house standard.">Agent tools</a>
+            <a href="JirAI-Agent-Skills.topic" type="integration" summary="Add JirAI skills to Claude Code, Codex, Copilot CLI and Junie.">Agent skills</a>
         </primary>
 
         <secondary>

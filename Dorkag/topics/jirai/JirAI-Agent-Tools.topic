@@ -9,9 +9,9 @@
     <show-structure for="chapter,procedure" depth="2"/>
 
     <tldr>
-        <p>Turn on: <ui-path>Settings | Tools | MCP Server</ui-path>, <control>Enable MCP Server</control></p>
+        <p>Turn on: <ui-path>Settings | AI | MCP Server</ui-path>, <control>Enable MCP Server</control></p>
         <p>House standard: <ui-path>Settings | Tools | JirAI | House Standard</ui-path></p>
-        <p>Tools: <code>jirai_describe_target</code>, <code>jirai_validate_draft</code></p>
+        <p>Tools: <code>jirai_describe_target</code>, <code>jirai_validate_draft</code>, <code>jirai_start_jira_issue</code>, <code>jirai_add_jira_comment</code></p>
     </tldr>
 
     <link-summary>Let an AI coding assistant read a Jira project's real create screen and check a draft issue against it and your house standard before filing it.</link-summary>
@@ -21,6 +21,8 @@
     <p>When an AI coding assistant files a Jira issue through a generic Jira API, Jira rejects the draft only when a required field is missing.</p>
     <p>Optional fields that your team relies on, such as acceptance criteria, story points or components, stay empty without any error.</p>
     <p>JirAI gives the assistant two tools through the IDE's MCP server, so that it can see the real create screen and check a draft before it files anything.</p>
+    <p>Two more tools let the assistant ask for a Jira change that you approve on the <a href="JirAI-Virtual-Board.topic">virtual board</a>.</p>
+    <p>The <code>/jira-ticket</code> <a href="JirAI-Agent-Skills.topic">agent skill</a> teaches an assistant to use the draft tools.</p>
 
     <chapter title="What the tools do" id="agent-tools">
         <deflist type="wide">
@@ -39,9 +41,24 @@
             <def title="HOUSE_RULE">Jira would accept the draft, but it breaks a rule of your house standard.</def>
             <def title="NOTE">A field on the create screen that the draft leaves empty.</def>
         </deflist>
-        <p>Both tools only read from Jira; they never create or change an issue.</p>
+        <p>These two tools only read from Jira; they never create or change an issue.</p>
         <p>They use the Jira site you are signed in to in JirAI.</p>
         <p>The tools tell your assistant to call them before it creates any Jira issue, whether through the Atlassian MCP server or any other Jira API.</p>
+
+        <chapter title="Jira changes you approve" id="agent-jira-writes">
+            <deflist type="wide">
+                <def title="jirai_start_jira_issue">
+                    <p>Takes an issue key. Asks to move that issue to In Progress.</p>
+                    <p>When the issue has several In Progress transitions, or the transition needs fields, the tool writes nothing and tells the assistant to ask you.</p>
+                </def>
+                <def title="jirai_add_jira_comment">
+                    <p>Takes an issue key and Markdown. Asks to post the Markdown as a comment on that issue.</p>
+                </def>
+            </deflist>
+            <p>Neither tool changes Jira. Each only queues the change on the virtual board, where you click <control>Approve</control> or <control>Reject</control>; an approved change is sent at most once.</p>
+            <p>They accept only an issue that is on one of the project's virtual boards.</p>
+            <p>See <a href="JirAI-Virtual-Board.topic" anchor="approve-jira-changes">Approve the agent's Jira changes</a>.</p>
+        </chapter>
 
         <chapter title="When a tool call fails" id="agent-tool-errors">
             <p>A failed call tells the assistant what to do next, so it can act instead of guessing:</p>
@@ -58,7 +75,7 @@
         <p>The tools are offered through the IDE's MCP server, which is off by default.</p>
         <procedure title="Make the JirAI tools available to your assistant" id="enable-agent-tools-proc">
             <p>Before you start, sign in to Jira Cloud in JirAI.</p>
-            <step><p>Open <ui-path>Settings | Tools | MCP Server</ui-path> and select <control>Enable MCP Server</control>.</p></step>
+            <step><p>Open <ui-path>Settings | AI | MCP Server</ui-path> and select <control>Enable MCP Server</control>.</p></step>
             <step>
                 <p>In the IDE's consent dialog, read what a connected assistant can do in the IDE, which goes beyond JirAI, and confirm.</p>
             </step>
@@ -68,13 +85,13 @@
             </step>
             <step>
                 <p>Check that your assistant offers <code>jirai_describe_target</code> and <code>jirai_validate_draft</code>.</p>
-                <p>If it does not, open <ui-path>Settings | Tools | MCP Server | Exposed Tools</ui-path> and make sure the two tools are enabled.</p>
+                <p>If it does not, open <ui-path>Settings | AI | MCP Server | Exposed Tools</ui-path> and make sure the JirAI tools are enabled.</p>
                 <!-- planned-image src="jirai_mcp_server_settings.png" alt="MCP Server settings with the server enabled and the JirAI tools in Exposed Tools" -->
             </step>
         </procedure>
         <list>
             <li><p>The tools are available only while the IDE is running with a project open.</p></li>
-            <li><p>They need the bundled <control>MCP Server</control> plugin; if you disable it, you lose only these two tools, and the rest of JirAI keeps working.</p></li>
+            <li><p>They need the bundled <control>MCP Server</control> plugin; if you disable it, you lose only the agent tools and the virtual board tools, and the rest of JirAI keeps working.</p></li>
         </list>
 
         <chapter title="The first-run notification" id="mcp-notification">

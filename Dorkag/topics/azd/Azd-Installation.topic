@@ -233,7 +233,7 @@
             </note>
 
             <chapter title="What each scope is for" id="azd-scope-details" collapsible="true">
-                <table style="header-row">
+                <table style="header-row" sortable="true">
                     <tr>
                         <td>Scope</td>
                         <td>Name in the Azure DevOps portal</td>

@@ -92,7 +92,7 @@
         <p>Each push stores a fingerprint of the description in a Jira issue property, so the Markdown file does not change.</p>
         <p>On the next push, JirAI compares the fingerprint with the description Jira holds now.</p>
         <img src="jirai_push_dialog_edited_in_jira.png" alt="Push to Jira dialog warning that the issue was edited in Jira since the last push" width="523" border-effect="rounded"/>
-        <table style="header-row" border="true">
+        <table style="header-row" border="true" sortable="true">
             <tr><td>Dialog state</td><td>What it means</td><td>Your options</td></tr>
             <tr><td>Update DEMO-123</td><td>The issue has not changed since your last push.</td><td><control>Update DEMO-123</control>, <control>Cancel</control></td></tr>
             <tr><td>Edited in Jira</td><td>The issue changed in Jira since your last push, and updating replaces those edits.</td><td><control>Open in browser</control>, <control>Overwrite</control>, <control>Cancel</control></td></tr>
@@ -118,7 +118,7 @@
     <chapter title="Doc presets" id="doc-presets">
         <p>A preset recognizes the kind of document by its path and pre-fills the Create form for that kind.</p>
         <p>One document still creates exactly one issue.</p>
-        <table style="header-row" border="true">
+        <table style="header-row" border="true" sortable="true">
             <tr><td>Preset</td><td>Kind</td><td>Path pattern</td></tr>
             <tr><td>Superpowers</td><td>Spec</td><td><code>docs/superpowers/specs/*-design.md</code></td></tr>
             <tr><td>Superpowers</td><td>Plan</td><td><code>docs/superpowers/plans/*.md</code></td></tr>
