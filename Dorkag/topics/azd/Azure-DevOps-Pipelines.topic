@@ -45,8 +45,6 @@
                 <p>To change the order, click the sort icon and select <control>Default (newest first)</control>, <control>Started</control>,
                     <control>Finished</control>, <control>Build Number</control> or <control>Pipeline Name</control>.
                     Select <control>Descending</control> to reverse it.</p>
-                <img src="sort_pipeline_and_pr_inline_button.png" alt="Sort popup of the AZD Pipelines run list with Default (newest first) selected"
-                     width="510" border-effect="rounded"/>
                 <img src="azd_pipelines_sort.png" alt="Sort popup open over the AZD Pipelines run list" width="422" border-effect="rounded"/>
             </step>
             <step>
