@@ -34,7 +34,16 @@
                 <toc-element topic="Azd-Pipeline-Yaml.topic" id="toc_azd_pipeline_yaml"
                              toc-title="Edit Azure Pipelines YAML"/>
             </toc-element>
-            <toc-element topic="Azd-Boards.topic" id="toc_azd_boards" toc-title="Boards and work items"/>
+            <toc-element topic="Azd-Boards.topic" id="toc_azd_boards" toc-title="Boards and work items">
+                <toc-element topic="Azd-Boards-Project-Page.topic" id="toc_azd_boards_project"
+                             toc-title="Project summary, board and list"/>
+                <toc-element topic="Azd-Work-Item-Details.topic" id="toc_azd_work_item_details" toc-title="Edit work items"/>
+                <toc-element topic="Azd-Work-Item-Timeline.topic" id="toc_azd_work_item_timeline"
+                             toc-title="Timeline, children and attachments"/>
+                <toc-element topic="Azd-Create-Work-Item.topic" id="toc_azd_work_item_create" toc-title="Create work items"/>
+                <toc-element topic="Azd-Work-Item-Branches-Commits.topic" id="toc_azd_work_item_git"
+                             toc-title="Branches and commits"/>
+            </toc-element>
             <toc-element topic="Azd-AI.topic" id="toc_azd_ai" toc-title="AI assistant">
                 <toc-element topic="AI-Title-Description-Generation.topic" id="toc_azd_ai_title"
                              toc-title="Generate titles, descriptions and commit messages"/>

@@ -133,7 +133,7 @@
 
     <chapter title="A view shows a message instead of content" id="jcef-views">
         <p>
-            The pipeline diagram, the metrics dashboards and the Kanban board use the IDE built-in browser (JCEF).
+            The pipeline diagram and the metrics dashboards use the IDE built-in browser (JCEF).
             If JCEF is not available, these views show a message instead of staying blank.
             Make sure the IDE runs on the bundled JetBrains Runtime, which includes JCEF.
             To check or switch it, press <shortcut>Ctrl+Shift+A</shortcut> (macOS: <shortcut>⌘ ⇧ A</shortcut>)
@@ -154,7 +154,7 @@
         <p>
             The task server integration needs the Issue Trackers plugin (formerly Task Management).
             Install it from JetBrains Marketplace; AZD works without it.
-            See <a href="Azd-Boards.topic" anchor="tasks-integration">Use work items as IDE tasks</a>.
+            See <a href="Azd-Work-Item-Branches-Commits.topic" anchor="tasks-integration">Use work items as IDE tasks</a>.
         </p>
     </chapter>
 
@@ -166,7 +166,7 @@
             <li><p><b>Permission:</b> ask a project administrator for <control>Permanently delete work items</control>.</p></li>
             <li><p><b>AZD version:</b> in AZD 2026.3.9, <control>Delete Permanently</control> failed for every file. Update to AZD 2026.3.10 or later.</p></li>
         </list>
-        <p>See <a href="Azd-Boards.topic" anchor="work-item-attachments">Attachments</a>.</p>
+        <p>See <a href="Azd-Work-Item-Timeline.topic" anchor="work-item-attachments">Attachments</a>.</p>
     </chapter>
 
     <chapter title="Deleting a work item fails" id="work-item-delete-fails">
@@ -175,7 +175,7 @@
             Ask a project administrator for it.
             If the work item's changes are still being saved, wait for the save to finish and try again.
         </p>
-        <p>See <a href="Azd-Boards.topic" anchor="delete-work-item">Delete a work item</a>.</p>
+        <p>See <a href="Azd-Work-Item-Details.topic" anchor="delete-work-item">Delete a work item</a>.</p>
     </chapter>
 
     <chapter title="Report a bug or request a feature" id="azd_bug_feature">

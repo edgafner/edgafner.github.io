@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Work item timeline, children and attachments" id="Azd-Work-Item-Timeline">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <link-summary>Read a work item's history, comment with mentions and files, see its parent, children, related work, pull requests and branches, and manage its attachments.</link-summary>
+    <card-summary>Comment on a work item, see its children and linked pull requests, and attach files.</card-summary>
+    <web-summary>The AZD work item editor in JetBrains IDEs: timeline and comments with @mentions, child and related work items,
+        linked pull requests, commits and branches, and attachments.</web-summary>
+
+    <p>
+        Each open work item has an editor tab named <control>Work Item #&lt;id&gt; timeline</control>, with two tabs:
+        <control>Timeline</control>, and <control>Children</control> or <control>Related</control>.
+        To open it again after you close it, click <control>Timeline ↗</control> at the top of the work item's details tab.
+    </p>
+
+    <chapter title="Timeline" id="work-item-timeline">
+        <p>
+            The <control>Timeline</control> tab shows the comments and the history of the work item.
+            Its top row says who last updated the work item and when.
+        </p>
+        <!-- planned-image src="azd_boards_timeline.png" alt="Work item timeline with the Updated by row, the event filter, comments and the comment box" -->
+        <p>
+            To show only some events, click the filter at the top right and select one or more of
+            <control>Comments</control>, <control>State Changes</control>, <control>Field Changes</control>,
+            <control>Link Changes</control> and <control>System Fields</control>.
+            Select <control>All Events</control> to show everything again.
+        </p>
+        <p>
+            The top row stays visible while you scroll. To let it scroll away, clear
+            <a href="Azd-Settings-Configuration.topic" anchor="ui-customization">Keep the timeline's top row visible while scrolling</a>.
+        </p>
+        <procedure title="Comment on a work item" id="comment-work-item">
+            <step>
+                <p>In the <control>Timeline</control> tab, type in the comment box at the bottom.
+                    Type <code>@</code> to mention a person.</p>
+            </step>
+            <step>
+                <p>Optional: to attach files, click the paperclip icon above the comment box, or paste a screenshot or copied files.
+                    AZD uploads each file and inserts a link at the caret. A file that cannot be attached is named under the box with the reason.</p>
+            </step>
+            <step>
+                <p>Click <control>Add Comment</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>).</p>
+            </step>
+        </procedure>
+        <procedure title="Edit or delete your comment" id="edit-work-item-comment">
+            <p>You can edit and delete only your own comments.</p>
+            <step>
+                <p>Hover over your comment.
+                    A pencil icon and a delete icon appear at the top right of the comment.</p>
+            </step>
+            <step>
+                <p>To edit the comment, click the pencil icon, change the text, and click <control>Save Changes</control>
+                    or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>).
+                    Press <shortcut>Esc</shortcut> to cancel.
+                    Type <code>@</code> to mention a person.</p>
+                <p>If the comment changed after you started editing, click <control>Reload</control> to load the new text,
+                    or <control>Overwrite</control> to save yours anyway.</p>
+            </step>
+            <step>
+                <p>To delete the comment, click the delete icon, and click <control>Yes</control> in the <control>Delete Comment</control> dialog.</p>
+            </step>
+        </procedure>
+        <p>
+            The IDE edits only comments stored in Markdown on Azure DevOps Services.
+            For your other comments, such as older HTML comments and all comments on Azure DevOps Server,
+            the pencil icon is disabled; edit them in the browser.
+            You can still delete them in the IDE.
+        </p>
+    </chapter>
+
+    <chapter title="Children, related work and development" id="children-tab">
+        <p>
+            The second tab is <control>Children</control> for work item types that can have children, such as epics, features and stories,
+            and <control>Related</control> for the others, such as tasks. The number in the tab name counts the linked items.
+        </p>
+        <!-- planned-image src="azd_boards_children.png" alt="Children tab with the parent link, Add child, the children tree and the Related Work and Development sections" -->
+        <list>
+            <li><control>Parent</control> links to the parent work item.</li>
+            <li>The children tree lists the child work items. Select <control>Show hierarchy</control> to see their children too,
+                and use <control>Expand all</control> and <control>Collapse all</control>.
+                Double-click a work item to open it.
+                Click <control>Add child</control> to create a child; see <a href="Azd-Create-Work-Item.topic" anchor="add-child"/>.</li>
+            <li><control>Related Work</control> lists the other links, such as <control>Related</control>, <control>Predecessor</control>,
+                <control>Successor</control> and <control>Duplicate</control>.</li>
+            <li><control>Development</control> lists the linked pull requests, commits and branches.
+                A pull request of the connected repository opens in the <control>AZD Pull Requests</control> tool window when
+                <a href="Azd-Settings-Configuration.topic" anchor="general-configuration">Open AZD links in tool window</a> is selected;
+                otherwise, it opens in the browser.
+                You can open a link in the browser, copy a commit's SHA or a branch name, and check out a branch that exists in your local repository.</li>
+        </list>
+        <p>If you can't see some child work items, for example because they are in a project you can't access, the tab says how many are hidden.</p>
+    </chapter>
+
+    <chapter title="Attachments" id="work-item-attachments">
+        <p>
+            The <control>Attachments</control> section of the <control>Children</control> or <control>Related</control> tab lists the files attached to the work item,
+            with their size, date and comment. Switch between <control>List view</control> and <control>Grid view</control> to see rows or thumbnails.
+        </p>
+        <p>To attach files, do one of the following:</p>
+        <list>
+            <li>Click <control>Attach Files…</control> and select one or more files.</li>
+            <li>Drag files from the <control>Project</control> tool window or from your file manager onto the section.</li>
+            <li>Copy a screenshot or files, click the section, and press <shortcut>Ctrl+V</shortcut> (macOS: <shortcut>⌘ V</shortcut>).</li>
+        </list>
+        <p>
+            Each file uploads on its own, and uploads continue when you close the tab.
+            While the details tab has unsaved changes, attaching is disabled: click <control>Apply</control> or <control>Revert</control> first.
+            Azure DevOps Services accepts files up to 60 MB; Azure DevOps Server allows 4 MB by default, and your administrator can change it.
+        </p>
+        <p>Right-click an attachment for these actions:</p>
+        <deflist type="medium">
+            <def title="Open">Opens an image or a text file of up to 20 MB in an editor tab. Other files open with <control>Save As…</control>.</def>
+            <def title="Save As…">Downloads the file to a folder you choose.</def>
+            <def title="Open in Browser">Opens the file in your browser.</def>
+            <def title="Copy Attachment Link">Copies a download link. Azure DevOps Services only.</def>
+            <def title="Edit Comment…">Changes the comment shown under the file name.</def>
+            <def title="Remove">Removes the file from the work item. Azure DevOps keeps the file for 28 days, and you can still delete it permanently in that time.</def>
+            <def title="Delete Permanently">Deletes the file from Azure DevOps. Every link to it, including images in descriptions and comments, stops working. Azure DevOps Services only.</def>
+        </deflist>
+        <note title="Delete Permanently needs more access">
+            <list>
+                <li><b>Sign in with Microsoft:</b> AZD offers to sign in again; select <control>Full access</control>.</li>
+                <li><b>Personal access token:</b> add <control>Work Items: Read, write &amp; manage</control> to your token.</li>
+                <li>You also need the <control>Permanently delete work items</control> permission in the project.</li>
+            </list>
+        </note>
+        <chapter title="Attachments in remote development" id="attachments-remote-development">
+            <p>When AZD runs on a remote development host:</p>
+            <list>
+                <li><control>Attach Files…</control> and <control>Save As…</control> show the files of the host, not of your computer.</li>
+                <li>Dragging files from your computer and pasting copied files are not supported. Paste a screenshot, or copy the file to the host first.</li>
+                <li><control>Open with System App</control> is not offered after a download.</li>
+                <li><control>Open in Browser</control> works when your browser can reach the Azure DevOps server, for example over the same VPN.</li>
+            </list>
+        </chapter>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-Work-Item-Details.topic"/>
+            <a href="Azd-Create-Work-Item.topic"/>
+            <a href="Azd-Settings-Configuration.topic" anchor="ui-customization">UI Customization settings</a>
+        </category>
+    </seealso>
+</topic>

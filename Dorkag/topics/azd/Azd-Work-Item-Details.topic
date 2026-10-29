@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Edit work items" id="Azd-Work-Item-Details">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <link-summary>Edit an Azure Boards work item in its details tab: title, fields, planning estimates and dates, custom fields, edit conflicts, and delete.</link-summary>
+    <card-summary>Change a work item's title and fields, plan estimates and dates, hide custom fields and delete work items.</card-summary>
+    <web-summary>Edit Azure Boards work items in JetBrains IDEs with AZD: title, state, assignee, story points and dates,
+        custom fields, edit conflicts and deleting to the recycle bin.</web-summary>
+
+    <p>
+        When you open a work item, its details open in a tab of the <control>AZD Boards</control> tool window named <control>#&lt;id&gt;</control>,
+        and its timeline opens in the editor; see <a href="Azd-Work-Item-Timeline.topic"/>.
+        Open a work item from the tool window list, a project page, a card, or the status bar.
+    </p>
+
+    <chapter title="Edit a work item" id="view-work-item">
+        <procedure title="Edit a work item" id="edit-work-item">
+            <step>
+                <p>Open the work item.</p>
+                <!-- planned-image src="azd_boards_work_item.png" alt="Work item details tab with the state, area, iteration, priority and assignee fields and the Planning group expanded" -->
+            </step>
+            <step>
+                <p>To change the title, click the pencil icon next to it (<control>Edit title</control>) and type the new title.
+                    Press <shortcut>Enter</shortcut> or click elsewhere to keep it, or press <shortcut>Esc</shortcut> to cancel.</p>
+                <p>The title is required and can have up to 255 characters.
+                    A title you cannot change has no pencil icon.</p>
+            </step>
+            <step>
+                <p>Change fields such as <control>State</control>, <control>Area Path</control>, <control>Iteration Path</control>,
+                    <control>Priority</control>, <control>Assigned To</control> and <control>Tags</control>.</p>
+            </step>
+            <step>
+                <p>To see more fields, expand a group:</p>
+                <list>
+                    <li><control>Planning</control>: estimates and dates, such as <control>Story Points</control>, <control>Effort</control>,
+                        <control>Original Estimate</control>, <control>Remaining Work</control>, <control>Completed Work</control>,
+                        <control>Start Date</control>, <control>Target Date</control> and <control>Due Date</control>, depending on the work item type.
+                        Numbers must be 0 or more.</li>
+                    <li><control>Custom fields</control>: fields your process adds; see <a anchor="custom-fields"/>.</li>
+                    <li><control>Show all fields</control>: the other fields of the work item type.</li>
+                </list>
+                <p>The groups start collapsed. When you expand or collapse one, AZD remembers it for that work item type.</p>
+            </step>
+            <step>
+                <p>To fill in a date field, type the date, or click the calendar icon at the right of the field and pick a day.
+                    You can also press <shortcut>Alt+Down</shortcut> (macOS: <shortcut>⌥ ↓</shortcut>) in the field to open the calendar.
+                    To empty a date field that is not required, click <control>Clear</control> in the calendar.</p>
+            </step>
+            <step>
+                <p>Click <control>Apply</control> at the bottom of the tab, or click <control>Revert</control> to discard your edits.
+                    Title and date changes are saved with the other fields.</p>
+            </step>
+        </procedure>
+        <p>
+            Rich-text fields, such as <control>Description</control>, <control>Repro Steps</control> and
+            <control>Acceptance Criteria</control>, show at the top of the work item in the order of the Azure DevOps web form,
+            also when they are empty. They are read-only in the IDE: click <control>Open in browser</control> to edit one,
+            or <control>Open in scratch file</control> to copy its content into a scratch file.
+            Fields stored as Markdown display formatted, and images in them open when you click them.
+        </p>
+        <p>
+            The line under the title counts the work item's links, pull requests and attachments.
+            Click one to open it in the work item's editor tab; see <a href="Azd-Work-Item-Timeline.topic" anchor="children-tab"/>.
+        </p>
+        <p>
+            Right-click in the details tab to <control>Refresh Work Item</control>, <control>Open Work Item on Azure DevOps</control>,
+            <control>Copy Work Item URL</control>, <control>Create Branch…</control>, <control>Hide Fields…</control>
+            or <control>Delete Work Item…</control>.
+        </p>
+        <p>
+            Long titles, descriptions and field values wrap to the width of the tool window.
+            To scroll sideways instead, clear <a href="Azd-Settings-Configuration.topic" anchor="ui-customization">Wrap long text in work items</a>.
+        </p>
+    </chapter>
+
+    <chapter title="When someone else changed the work item" id="edit-conflict">
+        <p>
+            If someone else changed the work item while you were editing, the <control>Work Item Changed</control> dialog says who changed it
+            and which fields you both changed.
+        </p>
+        <list>
+            <li><control>Reapply My Changes</control> saves only the fields you edited.
+                Their changes to other fields are kept; for the fields you both changed, your values win.</li>
+            <li><control>Discard My Changes</control> drops your edits and loads the latest version.</li>
+            <li><control>Cancel</control> keeps your edits under a warning banner with the same two actions.</li>
+        </list>
+    </chapter>
+
+    <chapter title="Custom fields" id="custom-fields">
+        <p>
+            Fields that your process adds to a work item type show in the <control>Custom fields</control> group of the details tab.
+            Edit them like the other fields and click <control>Apply</control>.
+            Custom rich-text fields show at the top of the work item, after the system rich-text fields.
+        </p>
+        <procedure title="Hide custom fields" id="hide-custom-fields">
+            <step>
+                <p>Click the eye button next to a custom field and select where to hide it: for this work item,
+                    in this project, or in all projects.</p>
+            </step>
+            <step>
+                <p>To hide several fields at once, right-click in the details tab and select <control>Hide Fields…</control>.</p>
+            </step>
+        </procedure>
+        <p>
+            Required fields and fields with a save error always show.
+            To show a hidden field again, remove its rule in
+            <a href="Azd-Settings-Configuration.topic" anchor="field-visibility">Field Visibility</a>.
+        </p>
+    </chapter>
+
+    <chapter title="Delete a work item" id="delete-work-item">
+        <procedure title="Delete a work item" id="delete-work-item-procedure" hide-from-structure="true">
+            <step>
+                <p>Right-click the work item in the <control>AZD Boards</control> list, in a project page, on a card, or in its details tab,
+                    and select <control>Delete Work Item…</control>.</p>
+            </step>
+            <step>
+                <p>In the <control>Delete Work Item</control> dialog, click <control>Delete</control>.</p>
+                <p>The dialog names the project when the work item belongs to another project,
+                    and warns you when the details tab has unsaved changes, which are lost.</p>
+            </step>
+        </procedure>
+        <p>
+            The work item moves to the Azure DevOps recycle bin, and its tabs close.
+            To restore it, use the recycle bin in the Azure DevOps web portal.
+            You need the <control>Delete and restore work items</control> permission in the project.
+            <control>Delete Work Item…</control> is disabled while the work item's changes are being saved.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-Work-Item-Timeline.topic"/>
+            <a href="Azd-Create-Work-Item.topic"/>
+            <a href="Azd-Settings-Configuration.topic" anchor="field-visibility">Field Visibility settings</a>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/remove-delete-work-items">Remove, delete or restore work items (Microsoft Learn)</a>
+        </category>
+    </seealso>
+</topic>

@@ -9,15 +9,29 @@
     <show-structure for="chapter,procedure" depth="2"/>
 
 
-    <link-summary>Find, view, edit, delete, comment on and create Azure Boards work items, manage attachments, use the Kanban board, and add work items to commit messages.</link-summary>
-    <card-summary>Find, edit, delete, comment on and create work items, move cards on the Kanban board, and reference them in commits.</card-summary>
-    <web-summary>Work with Azure Boards in JetBrains IDEs with AZD: filter, edit and comment on work items, create new ones, move
-        Kanban cards and add work items to commit messages.</web-summary>
+    <link-summary>Find Azure Boards work items in the AZD Boards tool window, and where to go to edit, create and plan them in the IDE.</link-summary>
+    <card-summary>Find, edit and create work items, open a project's summary, board and list, and start a branch from a work item.</card-summary>
+    <web-summary>Work with Azure Boards in JetBrains IDEs with AZD: find and edit work items, open a project's Summary, Board and List,
+        move Kanban cards, and create branches and commits from work items.</web-summary>
 
     <p>
         The <control>AZD Boards</control> tool window lists the work items of your Azure DevOps projects.
         It uses the same connection as the pull request and pipeline tool windows, and appears in projects with an Azure DevOps Git remote.
+        If you are not connected yet, select the repository and account and click <control>View Work Items</control>.
     </p>
+
+    <deflist type="medium">
+        <def title="Find work items">Filter and sort the list in the tool window; see <a anchor="find-work-items"/> below.</def>
+        <def title="Open a project">Open a project's <control>Summary</control>, <control>Board</control> and <control>List</control> in an editor tab;
+            see <a href="Azd-Boards-Project-Page.topic"/>.</def>
+        <def title="Edit a work item">Change fields, plan dates and estimates, hide custom fields and delete work items;
+            see <a href="Azd-Work-Item-Details.topic"/>.</def>
+        <def title="Timeline, children and attachments">Comment, see child and related work items, linked pull requests and branches, and manage attachments;
+            see <a href="Azd-Work-Item-Timeline.topic"/>.</def>
+        <def title="Create a work item">Create a work item or a child of one; see <a href="Azd-Create-Work-Item.topic"/>.</def>
+        <def title="Branches and commits">Create a branch from a work item, see the current branch's work item in the status bar,
+            and reference work items in commits; see <a href="Azd-Work-Item-Branches-Commits.topic"/>.</def>
+    </deflist>
 
     <chapter title="Find work items" id="find-work-items">
         <procedure title="Filter and sort work items" id="filter-work-items">
@@ -34,12 +48,13 @@
                 </list>
                 <p>The list leaves out work items in the Closed, Done and Removed states.
                     A work item from another project shows the project name as a tag.</p>
-                <!-- planned-image src="azd_boards_list.png" alt="AZD Boards tool window listing work items with the Assigned to me quick filter" -->
+                <!-- planned-image src="azd_boards_list.png" alt="AZD Boards tool window listing work items with their type, state, assignee and tags" -->
             </step>
             <step>
-                <p>Narrow the list with the filter chips: <control>Types</control>, <control>States</control>, <control>Created by</control>,
-                    <control>Area</control>, <control>Iteration</control> and <control>Assigned to</control>.
-                    <control>Assigned to</control> also offers <control>Unassigned</control>.</p>
+                <p>Narrow the list with the search field and the filter chips: <control>Types</control>, <control>States</control>, <control>Created by</control>,
+                    <control>Area</control>, <control>Iteration</control>, <control>Assigned to</control> and <control>Tags</control>.
+                    <control>Assigned to</control> also offers <control>Unassigned</control>.
+                    In each filter popup, <control>All</control> and <control>Clear</control> select or clear every value.</p>
             </step>
             <step>
                 <p>To change the order, click the sort icon and select <control>Default (newest first)</control>, <control>Changed Date</control>,
@@ -48,359 +63,29 @@
             </step>
         </procedure>
         <p>
-            Right-click a work item to <control>Open Work Item on Azure DevOps</control>, <control>Copy Work Item URL</control>,
-            <control>Refresh</control> the list, or <a anchor="delete-work-item">delete the work item</a>.
+            Double-click a work item, or select it and press <shortcut>Enter</shortcut>, to open it.
+            Its details open in a tab of the tool window, and its timeline opens in the editor;
+            see <a href="Azd-Work-Item-Details.topic"/>.
         </p>
-    </chapter>
-
-    <chapter title="View and edit a work item" id="view-work-item">
-        <procedure title="Edit a work item" id="edit-work-item">
-            <step>
-                <p>Double-click a work item.</p>
-                <p>Its details open in a new tab of the tool window, and its timeline opens in the editor as
-                    <control>Work Item #&lt;id&gt; timeline</control>.</p>
-                <!-- planned-image src="azd_boards_work_item.png" alt="Work item details tab with state, area, iteration, priority and assignee fields" -->
-            </step>
-            <step>
-                <p>To change the title, click the pencil icon next to it (<control>Edit title</control>) and type the new title.
-                    Press <shortcut>Enter</shortcut> or click elsewhere to keep it, or press <shortcut>Esc</shortcut> to cancel.</p>
-                <p>The title is required and can have up to 255 characters.
-                    A title you cannot change has no pencil icon.</p>
-            </step>
-            <step>
-                <p>Change fields such as the state, area path, iteration path, priority or assignee.
-                    To see the other fields of the work item type, expand <control>Show all fields</control>.</p>
-                <p>To fill in a date field, such as <control>Start Date</control> or <control>Target Date</control>, type the date,
-                    or click the calendar icon at the right of the field and pick a day.
-                    You can also press <shortcut>Alt+Down</shortcut> (macOS: <shortcut>⌥ ↓</shortcut>) in the field to open the calendar.
-                    To empty a date field that is not required, click <control>Clear</control> in the calendar.
-                    Date fields work the same way when you create a work item.</p>
-                <p>Rich-text fields, such as <control>Repro Steps</control>, <control>System Info</control> and
-                    <control>Acceptance Criteria</control>, show at the top of the work item in the order of the Azure DevOps web form,
-                    also when they are empty. They are read-only in the IDE: click <control>Open in browser</control> to edit one,
-                    or <control>Open in scratch file</control> to copy its content into a scratch file.
-                    Fields stored as Markdown display formatted, and images in them open when you click them.</p>
-            </step>
-            <step>
-                <p>Click <control>Apply</control> at the bottom of the tab, or click <control>Revert</control> to discard your edits.
-                    Title and date changes are saved with the other fields.</p>
-            </step>
-        </procedure>
-        <p>
-            If someone else changed the work item in the meantime, the <control>Work Item Changed</control> dialog says who changed it
-            and which fields you both changed.
-        </p>
-        <list>
-            <li><control>Reapply My Changes</control> saves only the fields you edited.
-                Their changes to other fields are kept; for the fields you both changed, your values win.</li>
-            <li><control>Discard My Changes</control> drops your edits and loads the latest version.</li>
-            <li><control>Cancel</control> keeps your edits under a warning banner with the same two actions.</li>
-        </list>
-        <p>
-            Right-click in the details tab to <control>Refresh Work Item</control>, <control>Open Work Item on Azure DevOps</control>
-            or <control>Copy Work Item URL</control>.
-        </p>
-        <p>
-            Long titles, descriptions and field values wrap to the width of the tool window.
-            To scroll sideways instead, clear <a href="Azd-Settings-Configuration.topic" anchor="ui-customization">Wrap long text in work items</a>.
-            The change applies right away, also to work items that are already open.
-        </p>
-    </chapter>
-
-    <chapter title="Delete a work item" id="delete-work-item">
-        <procedure title="Delete a work item" id="delete-work-item-procedure" hide-from-structure="true">
-            <step>
-                <p>Right-click the work item in the <control>AZD Boards</control> list, or right-click in its details tab,
-                    and select <control>Delete Work Item…</control>.</p>
-            </step>
-            <step>
-                <p>In the <control>Delete Work Item</control> dialog, click <control>Delete</control>.</p>
-                <p>The dialog names the project when the work item belongs to another project,
-                    and warns you when the details tab has unsaved changes, which are lost.</p>
-            </step>
-        </procedure>
-        <p>
-            The work item moves to the Azure DevOps recycle bin, and its details and timeline tabs close.
-            To restore it, use the recycle bin in the Azure DevOps web portal.
-            You need the <control>Delete and restore work items</control> permission in the project.
-        </p>
-        <p>
-            <control>Delete Work Item…</control> is disabled while the work item's changes are being saved.
-            You can also delete a work item from the <a anchor="kanban-board">Kanban board</a>.
-        </p>
-    </chapter>
-
-    <chapter title="Custom fields" id="custom-fields">
-        <p>
-            Fields that your process adds to a work item type show in the <control>Custom fields</control> group of the details tab.
-            Edit them like the other fields and click <control>Apply</control>.
-            Custom rich-text fields show at the top of the work item, after the system rich-text fields.
-        </p>
-        <procedure title="Hide custom fields" id="hide-custom-fields">
-            <step>
-                <p>Click the eye button next to a custom field and select where to hide it: for this work item,
-                    in this project, or in all projects.</p>
-            </step>
-            <step>
-                <p>To hide several fields at once, right-click in the details tab and select <control>Hide Fields…</control>.</p>
-            </step>
-        </procedure>
-        <p>
-            Required fields and fields with a save error always show.
-            To show a hidden field again, remove its rule in
-            <a href="Azd-Settings-Configuration.topic" anchor="field-visibility">Field Visibility</a>.
-        </p>
-    </chapter>
-
-    <chapter title="Attachments" id="work-item-attachments">
-        <p>
-            The <control>Attachments</control> section of the details tab lists the files attached to the work item,
-            with their size, date and comment. Switch between <control>List view</control> and <control>Grid view</control> to see rows or thumbnails.
-        </p>
-        <p>To attach files, do one of the following:</p>
-        <list>
-            <li>Click <control>Attach Files…</control> and select one or more files.</li>
-            <li>Drag files from the <control>Project</control> tool window or from your file manager onto the section.</li>
-            <li>Copy a screenshot or files, click the section, and press <shortcut>Ctrl+V</shortcut> (macOS: <shortcut>⌘ V</shortcut>).</li>
-        </list>
-        <p>
-            Each file uploads on its own, and uploads continue when you close the tab.
-            If the work item has unsaved changes, AZD links the file after you click <control>Apply</control> or <control>Revert</control>.
-            Azure DevOps Services accepts files up to 60 MB; Azure DevOps Server allows 4 MB by default, and your administrator can change it.
-        </p>
-        <p>Right-click an attachment for these actions:</p>
+        <p>Right-click a work item for these actions:</p>
         <deflist type="medium">
-            <def title="Open">Opens an image or a text file of up to 20 MB in an editor tab. Other files open with <control>Save As…</control>.</def>
-            <def title="Save As…">Downloads the file to a folder you choose.</def>
-            <def title="Open in Browser">Opens the file in your browser.</def>
-            <def title="Copy Attachment Link">Copies a download link. Azure DevOps Services only.</def>
-            <def title="Edit Comment…">Changes the comment shown under the file name.</def>
-            <def title="Remove">Removes the file from the work item. Azure DevOps keeps the file for 28 days, and you can still delete it permanently in that time.</def>
-            <def title="Delete Permanently">Deletes the file from Azure DevOps. Every link to it, including images in descriptions and comments, stops working. Azure DevOps Services only.</def>
+            <def title="Open Work Item on Azure DevOps">Opens the work item in your browser.</def>
+            <def title="Copy Work Item URL">Copies the link to the work item.</def>
+            <def title="Create Branch…">Creates a Git branch for the work item; see <a href="Azd-Work-Item-Branches-Commits.topic" anchor="create-branch"/>.</def>
+            <def title="Refresh">Reloads the list. The list does not refresh by itself.</def>
+            <def title="Delete Work Item…">Moves the work item to the recycle bin; see <a href="Azd-Work-Item-Details.topic" anchor="delete-work-item"/>.</def>
         </deflist>
-        <note title="Delete Permanently needs more access">
-            <list>
-                <li><b>Sign in with Microsoft:</b> AZD offers to sign in again; select <control>Full access</control>.</li>
-                <li><b>Personal access token:</b> add <control>Work Items: Read, write &amp; manage</control> to your token.</li>
-                <li>You also need the <control>Permanently delete work items</control> permission in the project.</li>
-            </list>
-        </note>
-        <chapter title="Attachments in remote development" id="attachments-remote-development">
-            <p>When AZD runs on a remote development host:</p>
-            <list>
-                <li><control>Attach Files…</control> and <control>Save As…</control> show the files of the host, not of your computer.</li>
-                <li>Dragging files from your computer and pasting copied files are not supported. Paste a screenshot, or copy the file to the host first.</li>
-                <li><control>Open with System App</control> is not offered after a download.</li>
-                <li><control>Open in Browser</control> works when your browser can reach the Azure DevOps server, for example over the same VPN.</li>
-            </list>
-        </chapter>
-    </chapter>
-
-    <chapter title="Links, timeline and comments" id="work-item-timeline">
-        <p>
-            The lower part of the details tab lists linked work items under <control>Related Work</control>,
-            with the link type, such as <control>Parent</control> or <control>Child</control>,
-            and linked pull requests under <control>Development</control>.
-            Click a link to open the work item or pull request.
-            A pull request of the connected repository opens in the <control>AZD Pull Requests</control> tool window when
-            <a href="Azd-Settings-Configuration.topic" anchor="general-configuration">Open AZD links in tool window</a> is selected;
-            otherwise, it opens in the browser.
-        </p>
-        <p>
-            The <control>Work Item #&lt;id&gt; timeline</control> editor tab shows the comments and the history of the work item.
-            To open it again after you close it, click <control>Timeline ↗</control> at the top of the details tab.
-        </p>
-        <procedure title="Comment on a work item" id="comment-work-item">
-            <step>
-                <p>In the timeline tab, type in the comment box at the bottom.
-                    Type <code>@</code> to mention a person.</p>
-            </step>
-            <step>
-                <p>Optional: to attach files, click the paperclip icon above the comment box, or paste a screenshot or copied files.
-                    AZD uploads each file and inserts a link at the caret. A file that cannot be attached is named under the box with the reason.</p>
-            </step>
-            <step>
-                <p>Click <control>Add Comment</control>, or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>).</p>
-            </step>
-        </procedure>
-        <procedure title="Edit or delete your comment" id="edit-work-item-comment">
-            <p>You can edit and delete only your own comments.</p>
-            <step>
-                <p>In the timeline tab, hover over your comment.
-                    A pencil icon and a delete icon appear at the top right of the comment.</p>
-            </step>
-            <step>
-                <p>To edit the comment, click the pencil icon, change the text, and click <control>Save Changes</control>
-                    or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>).
-                    Press <shortcut>Esc</shortcut> to cancel.
-                    Type <code>@</code> to mention a person.</p>
-                <p>If the comment changed after you started editing, click <control>Reload</control> to load the new text,
-                    or <control>Overwrite</control> to save yours anyway.</p>
-            </step>
-            <step>
-                <p>To delete the comment, click the delete icon, and click <control>Yes</control> in the <control>Delete Comment</control> dialog.</p>
-            </step>
-        </procedure>
-        <p>
-            The IDE edits only comments stored in Markdown on Azure DevOps Services.
-            For your other comments, such as older HTML comments and all comments on Azure DevOps Server,
-            the pencil icon is disabled; edit them in the browser.
-            You can still delete them in the IDE.
-        </p>
-        <p>
-            To show only some events, click the filter icon at the top right of the timeline and select one or more of
-            <control>Comments</control>, <control>State Changes</control>, <control>Field Changes</control>,
-            <control>Link Changes</control> and <control>System Fields</control>.
-            Select <control>All Events</control> to show everything again.
-        </p>
-    </chapter>
-
-    <chapter title="Create a work item" id="create-work-item">
-        <procedure title="Create a work item" id="create-work-item-procedure" hide-from-structure="true">
-            <step>
-                <p>In the <control>AZD Boards</control> title bar, click <control>New Work Item</control>.</p>
-            </step>
-            <step>
-                <p>Select the <control>Type</control>, enter the <control>Title</control>, and set the <control>State</control>.
-                    These three fields are required.</p>
-                <!-- planned-image src="azd_boards_new_work_item.png" alt="New work item form with Bug selected as the type and a title filled in" -->
-            </step>
-            <step>
-                <p>Optional: fill in <control>Description</control>, <control>Assigned To</control>, <control>Area Path</control>,
-                    <control>Iteration Path</control>, <control>Priority</control> and <control>Tags</control>.
-                    For a type with Repro Steps, such as Bug, a <control>Repro Steps</control> box shows above <control>Description</control>.</p>
-            </step>
-            <step>
-                <p>Click <control>Create</control>.</p>
-                <p>The new work item opens in its own tab.</p>
-            </step>
-        </procedure>
-    </chapter>
-
-    <chapter title="Use the Kanban board" id="kanban-board">
-        <p>
-            The Kanban board shows the columns and cards of an Azure Boards team board in an editor tab.
-            You can open the board of any project in your organization.
-        </p>
-        <procedure title="Open the Kanban board" id="open-kanban">
-            <step>
-                <p>In the <control>AZD Boards</control> title bar, click <control>Open Boards Views Hub</control>.</p>
-                <p>The <control>Kanban</control> editor tab opens.</p>
-                <!-- planned-image src="azd_boards_kanban.png" alt="Kanban board in the editor with cards in three columns and the project, team and board selectors" -->
-            </step>
-            <step>
-                <p>Select the <control>Project</control>, <control>Team</control> and <control>Board</control>.</p>
-            </step>
-            <step>
-                <p>Optional: filter the cards by <control>Assigned to</control>, <control>Types</control>, <control>States</control>,
-                    <control>Tags</control> or <control>Iteration</control>.
-                    <control>Iteration</control> includes <code>@CurrentIteration</code>.
-                    In each filter popup, <control>All</control> and <control>Clear</control> select or clear every value.</p>
-            </step>
-        </procedure>
-        <p>
-            Drag a card to another column to change its state.
-            Click <control>Refresh</control> to reload the board.
-        </p>
-        <p>Right-click a card for more actions:</p>
-        <!-- planned-image src="azd_boards_card_menu.png" alt="Context menu of a Kanban card with Open, Move to column, Edit title and Delete" -->
-        <deflist type="medium">
-            <def title="Open">Opens the work item details.</def>
-            <def title="Move to column">Moves the card to the column you select.</def>
-            <def title="Edit title…">Renames the work item.</def>
-            <def title="Delete…">Moves the work item to the Azure DevOps recycle bin after you confirm.</def>
-        </deflist>
-        <p>
-            The board is shown in the IDE built-in browser.
-            If it shows a message instead of the board, see <a href="Azd-FAQ.topic" anchor="jcef-views">A view shows a message instead of content</a>.
-        </p>
-    </chapter>
-
-    <chapter title="Add work items to a commit message" id="work-item-commit-template">
-        <p>
-            Reference work items in a commit message, from a template or with AI.
-            The AZD button (the AZD logo) appears in the commit message toolbar when <control>Enable AI assistance</control> is selected
-            and the <control>Commit message prompt</control> is enabled in <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>;
-            see <a href="Azd-AI.topic" anchor="configure-prompts">Configure prompts</a>.
-            The work item option also needs <control>Enable work item commit message action</control>, which is on by default.
-        </p>
-        <procedure title="Write a commit message from work items" id="commit-from-work-items">
-            <step>
-                <p>In the <control>Commit</control> tool window, click the arrow next to the AZD button in the commit message toolbar
-                    and select <control>Select Work Item...</control>.</p>
-            </step>
-            <step>
-                <p>In the <control>Select Work Item for Commit Message</control> dialog, select one or more work items.
-                    By default the list shows your own work items and hides those in the Done, Closed, Removed and Resolved states.
-                    Clear <control>Only my work items</control> or use the state filter to see more.</p>
-                <!-- planned-image src="azd_commit_work_item.png" alt="Select Work Item for Commit Message dialog with two work items selected" -->
-            </step>
-            <step>
-                <p>In <control>Generate with AI</control>, select <control>None - Use template only</control> to fill in the template,
-                    or select an AI provider to write the message from the work items and your changes.</p>
-            </step>
-            <step>
-                <p>Click <control>Generate Message</control>.</p>
-            </step>
-        </procedure>
-        <p>
-            Change the template in <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path>, in the
-            <control>Commit Message Template</control> group.
-            The default template is <code>{id} - {title}</code>; the placeholders are <code>{id}</code>, <code>{title}</code>,
-            <code>{type}</code> and <code>{state}</code>.
-            <control>Max work items per commit</control> limits the selection (5 by default).
-            These settings also control which work items you can link to a pull request or commit; see
-            <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Boards and Work Items settings</a>.
-        </p>
-        <img src="azd_settings_boards.png" alt="AZD Boards and Work Items settings page with the Commit Message Template group" width="706" border-effect="rounded" thumbnail="true"/>
-        <p>To generate a commit message from your changes only, see <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>.</p>
-    </chapter>
-
-    <chapter title="Use work items as IDE tasks" id="tasks-integration">
-        <p>
-            With the Issue Trackers plugin (formerly Task Management), you can open Azure DevOps work items as IDE tasks and switch context between them.
-            AZD adds an <control>AzureDevOps</control> server type to it.
-            The Issue Trackers plugin is not bundled with every IDE; install it from JetBrains Marketplace if your IDE lacks it.
-        </p>
-        <procedure title="Add Azure DevOps as a task server" id="add-task-server">
-            <step>
-                <p>Open <ui-path>Settings | Tools | Tasks | Servers</ui-path>.</p>
-            </step>
-            <step>
-                <p>Click <control>+</control> and select <control>AzureDevOps</control>.</p>
-            </step>
-            <step>
-                <p>Fill in <control>Host</control> (<code>https://dev.azure.com</code> by default), <control>Organization</control> and <control>PAT token</control>,
-                    and click <control>Test</control>.</p>
-            </step>
-            <step>
-                <p>After a successful test, select the project in <control>Project</control>.
-                    <control>Include issues not assigned to me</control> is selected by default; clear it to list only the work items assigned to you.</p>
-                <!-- planned-image src="azd_tasks_server.png" alt="Tasks Servers settings with an AzureDevOps server configured" -->
-            </step>
-            <step>
-                <p>Click <control>OK</control>.</p>
-            </step>
-        </procedure>
-        <p>
-            Open a work item as a task with <ui-path>Tools | Tasks &amp; Contexts | Open Task…</ui-path>.
-            To change its state in Azure DevOps at the same time, select <control>Update issue state</control> in the <control>Open Task</control> dialog.
-        </p>
-        <p>
-            While a work item is the active task, AI-generated commit messages refer to it.
-            With the default prompt, they start with the work item ID.
-            See <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>.
-        </p>
     </chapter>
 
     <seealso>
         <category ref="related">
+            <a href="Azd-Boards-Project-Page.topic"/>
+            <a href="Azd-Work-Item-Details.topic"/>
+            <a href="Azd-Work-Item-Branches-Commits.topic"/>
             <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Boards and Work Items settings</a>
-            <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>
         </category>
         <category ref="external">
             <a href="https://learn.microsoft.com/en-us/azure/devops/boards/">Azure Boards documentation (Microsoft Learn)</a>
-            <a href="https://www.jetbrains.com/help/idea/managing-tasks-and-context.html">Tasks and contexts (IntelliJ IDEA help)</a>
         </category>
     </seealso>
 </topic>

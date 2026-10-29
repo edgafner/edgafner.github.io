@@ -112,7 +112,7 @@
             AZD asks AI to write the message from the work items and your changes.
             If AI cannot write one, AZD fills in the commit message template instead.
             The <control>Select Work Item...</control> option and the template are set in the work item settings;
-            see <a href="Azd-Boards.topic" anchor="work-item-commit-template"/>.
+            see <a href="Azd-Work-Item-Branches-Commits.topic" anchor="work-item-commit-template"/>.
         </p>
     </chapter>
 
