@@ -8,11 +8,6 @@
     <primary-label ref="queryflag"/>
     <show-structure for="chapter" depth="2"/>
 
-    <tldr>
-        <p>Settings: <ui-path>Settings | Tools | Database | QueryFlag</ui-path> (DataGrip: <ui-path>Settings | Database | QueryFlag</ui-path>)</p>
-        <p>Report a bug: <control>Report Exception</control> in the IDE error dialog</p>
-    </tldr>
-
     <link-summary>Fix common QueryFlag problems: a missing menu, missing results, a data source that is not found, validation errors, and failing queries.</link-summary>
     <card-summary>Fix a missing menu, missing results, data source errors, validation messages, and failing queries.</card-summary>
     <web-summary>Troubleshoot the QueryFlag plugin in JetBrains IDEs: missing Query Flag in DB menu, missing query results, DataSource not found, validation errors, and SQL errors.</web-summary>
@@ -80,7 +75,7 @@
         </p>
         <procedure title="Connect the template to a data source" id="fix-datasource">
             <step>
-                In <ui-path>Settings | Tools | Database | QueryFlag</ui-path>, select the template and click <control>Edit</control>.
+                In <ui-path>Settings | Tools | Database | QueryFlag</ui-path> (DataGrip: <ui-path>Settings | Database | QueryFlag</ui-path>), select the template and click <control>Edit</control>.
             </step>
             <step>
                 Select a data source in <control>DataSource</control> and click <control>OK</control>.

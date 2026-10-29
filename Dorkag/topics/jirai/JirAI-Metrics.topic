@@ -8,18 +8,13 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: <control>Space Summary</control> in the <control>JirAI</control> tool window title bar</p>
-        <p>Large spaces: <ui-path>Settings | Tools | JirAI | Metrics</ui-path></p>
-    </tldr>
-
     <link-summary>Open a Jira space in an editor tab to see its summary charts, a hierarchical work item list, its board and flow reports.</link-summary>
     <card-summary>Summary tiles and widgets, a hierarchical work item list and flow reports for any Jira space.</card-summary>
     <web-summary>Open a Jira Cloud space in JetBrains IDEs with JirAI: a Summary like Jira's, a list with parent hierarchy, and lead time, cycle time and throughput reports.</web-summary>
 
     <p>A space page shows one Jira space (project) in an editor tab named after the space.</p>
     <p>It has the <control>Summary</control>, <control>Timeline</control>, <control>Board</control>, <control>List</control> and <control>Reports</control> tabs.</p>
-    <p>A space downloads once for all its tabs, so switching tabs, filters and date ranges does not download it again.</p>
+    <p>JirAI loads a space once for all its tabs, so switching tabs, filters and date ranges is quick.</p>
 
     <chapter title="Open a space" id="opening-metrics">
         <procedure title="Open a space" id="open-space-proc">

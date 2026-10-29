@@ -8,11 +8,6 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: <control>+</control> (<control>New Issue</control>) in the <control>JirAI</control> tool window title bar</p>
-        <p>Add a child: <control>Add child</control> in the <control>Breakdown</control> section or tab</p>
-    </tldr>
-
     <link-summary>Create a Jira issue from the IDE with a form built from your project's create screen, including Markdown descriptions and child work items.</link-summary>
     <card-summary>Create issues from your project's own create screen, with Markdown descriptions and Add child.</card-summary>
     <web-summary>Create Jira Cloud issues in JetBrains IDEs with JirAI: a form built from your project's create screen, Markdown descriptions with preview, and Add child.</web-summary>

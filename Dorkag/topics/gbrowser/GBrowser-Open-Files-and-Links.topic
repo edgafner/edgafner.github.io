@@ -7,11 +7,6 @@
 
     <primary-label ref="gbrowser"/>
 
-    <tldr>
-        <p>Open the current file: <shortcut>Ctrl+Alt+G</shortcut></p>
-        <p>File types: HTML, XHTML, XML, SVG; Markdown is not rendered</p>
-    </tldr>
-
     <link-summary>Preview HTML, XHTML and SVG files from your project in GBrowser, and open a URL selected in the editor.</link-summary>
     <card-summary>Open HTML and SVG files from your project and URLs from the editor.</card-summary>
     <web-summary>Open project files and links in GBrowser from the editor of JetBrains IDEs: preview HTML and SVG files and open a URL selected in your code.</web-summary>

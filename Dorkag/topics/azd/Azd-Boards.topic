@@ -8,10 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: <ui-path>View | Tool Windows | AZD Boards</ui-path></p>
-        <p>Configure: <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path></p>
-    </tldr>
 
     <link-summary>Find, view, edit, delete, comment on and create Azure Boards work items, manage attachments, use the Kanban board, and add work items to commit messages.</link-summary>
     <card-summary>Find, edit, delete, comment on and create work items, move cards on the Kanban board, and reference them in commits.</card-summary>
@@ -26,7 +22,7 @@
     <chapter title="Find work items" id="find-work-items">
         <procedure title="Filter and sort work items" id="filter-work-items">
             <step>
-                <p>Open the <control>AZD Boards</control> tool window.</p>
+                <p>Open the <control>AZD Boards</control> tool window: <ui-path>View | Tool Windows | AZD Boards</ui-path>.</p>
             </step>
             <step>
                 <p>Click the filter icon and select a quick filter: <control>All</control>, <control>Assigned to me</control>
@@ -315,7 +311,7 @@
             <def title="Delete…">Moves the work item to the Azure DevOps recycle bin after you confirm.</def>
         </deflist>
         <p>
-            The board uses the IDE built-in browser (JCEF).
+            The board is shown in the IDE built-in browser.
             If it shows a message instead of the board, see <a href="Azd-FAQ.topic" anchor="jcef-views">A view shows a message instead of content</a>.
         </p>
     </chapter>

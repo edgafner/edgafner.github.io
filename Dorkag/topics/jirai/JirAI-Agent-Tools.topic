@@ -8,12 +8,6 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Turn on: <ui-path>Settings | AI | MCP Server</ui-path>, <control>Enable MCP Server</control></p>
-        <p>House standard: <ui-path>Settings | Tools | JirAI | House Standard</ui-path></p>
-        <p>Tools: <code>jirai_describe_target</code>, <code>jirai_validate_draft</code>, <code>jirai_start_jira_issue</code>, <code>jirai_add_jira_comment</code></p>
-    </tldr>
-
     <link-summary>Let an AI coding assistant read a Jira project's real create screen and check a draft issue against it and your house standard before filing it.</link-summary>
     <card-summary>Give your AI assistant a project's real create screen and your team's issue rules.</card-summary>
     <web-summary>JirAI agent tools let AI assistants in JetBrains IDEs read a Jira Cloud project's create screen and check draft issues against it and your house standard.</web-summary>

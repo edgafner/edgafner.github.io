@@ -7,12 +7,6 @@
 
     <primary-label ref="gbrowser"/>
 
-    <tldr>
-        <p>Install: <ui-path>Settings | Plugins | Marketplace</ui-path>, search for GBrowser</p>
-        <p>Requires: JetBrains IDE 2026.3 (build 263.3889 or a later 263 build)</p>
-        <p>License: free and open source (Apache-2.0)</p>
-    </tldr>
-
     <link-summary>Check the requirements, install GBrowser from JetBrains Marketplace or from disk, and open the tool window.</link-summary>
     <card-summary>Check the requirements and install GBrowser from JetBrains Marketplace.</card-summary>
     <web-summary>Install the free GBrowser plugin in IntelliJ IDEA and other JetBrains IDEs from JetBrains Marketplace or from disk, and check the requirements.</web-summary>

@@ -13,38 +13,49 @@
     <section-starting-page>
         <title>JirAI</title>
         <description>
-            Work with Jira Cloud issues, boards and space reports without leaving your JetBrains IDE.
-            JirAI also creates Git branches from issues, turns Markdown specs into Jira issues and lets AI assistants check a draft against your project's real create screen.
-            A virtual board shows an AI agent's plan as live cards, and the agent changes Jira only when you approve it.
+            Do your everyday Jira Cloud work without leaving your JetBrains IDE: find, create and edit issues,
+            comment, move cards on Kanban and Scrum boards and read space reports.
+            Start by installing JirAI and signing in to your Jira site.
+            JirAI also helps AI coding assistants work with Jira, and they change Jira only when you approve.
             JirAI is free.
         </description>
 
         <spotlight>
-            <a href="JirAI-Installation.topic" type="start" summary="Check the requirements and install the plugin.">Install JirAI</a>
-            <a href="Work-with-Jira-Issues.topic" type="tools" summary="Search, filter and open Jira Cloud issues in the JirAI tool window.">Work with issues</a>
+            <a href="JirAI-Installation.topic" type="install" summary="Check the requirements and install the plugin from JetBrains Marketplace.">Install JirAI</a>
+            <a href="JirAI-Sign-In-and-Configuration.topic" type="account" summary="Connect to your Jira Cloud site with an Atlassian API token and manage the account.">Sign in to Jira</a>
         </spotlight>
 
         <primary>
             <title>Work with Jira</title>
-            <a href="JirAI-Sign-In-and-Configuration.topic" type="start" summary="Sign in to your Jira Cloud site with an Atlassian API token and manage the account.">Sign in</a>
-            <a href="Jira-Create-Issues.topic" type="tools" summary="Create issues from your project's own create screen, with Markdown descriptions.">Create issues</a>
-            <a href="Jira-Issue-Details-and-Editing.topic" type="mixed" summary="Edit fields in place, move issues through the workflow and manage attachments.">Issue details</a>
-            <a href="Jira-Timeline-and-Description-Editor.topic" type="development" summary="Read the activity feed, comment, edit the description and see child work items.">Timeline and breakdown</a>
-            <a href="JirAI-Board.topic" type="integration" summary="Open a Kanban board, a Scrum sprint or its backlog and move cards between columns.">Board</a>
-            <a href="JirAI-Metrics.topic" type="cloud" summary="Summary charts, a hierarchical list and flow reports for any Jira space.">Spaces</a>
-            <a href="JirAI-AI-Workflows.topic" type="development" summary="Create or update a Jira issue from a Markdown spec or plan.">Push Markdown docs</a>
-            <a href="JirAI-Virtual-Board.topic" type="development" summary="Watch an AI agent's plan as live cards and approve the Jira changes it asks for.">Virtual board</a>
-            <a href="JirAI-Agent-Tools.topic" type="integration" summary="Let an AI assistant read the create screen and check drafts against your house standard.">Agent tools</a>
-            <a href="JirAI-Agent-Skills.topic" type="integration" summary="Add JirAI skills to Claude Code, Codex, Copilot CLI and Junie.">Agent skills</a>
+            <a href="Work-with-Jira-Issues.topic" type="search" summary="Search, filter and open Jira Cloud issues in the JirAI tool window.">Find issues</a>
+            <a href="Jira-Create-Issues.topic" type="creative" summary="Create issues from your project's own create screen, with Markdown descriptions.">Create issues</a>
+            <a href="Jira-Issue-Details-and-Editing.topic" type="tools" summary="Edit fields in place, move issues through the workflow and manage attachments.">Edit issues</a>
+            <a href="Jira-Timeline-and-Description-Editor.topic" type="community" summary="Read the activity feed, comment, edit the description and see child work items.">Timeline, comments and breakdown</a>
+            <a href="JirAI-Metrics.topic" type="data" summary="Summary charts, a hierarchical list and flow reports for any Jira space.">Spaces and reports</a>
+            <a href="JirAI-Board.topic" type="check-list" summary="Open a Kanban board, a Scrum sprint or its backlog and move cards between columns.">Kanban and Scrum boards</a>
         </primary>
 
         <secondary>
-            <title>Set up and get help</title>
-            <a href="JirAI-Whats-New.topic" type="learn" summary="Changes in recent JirAI releases, newest first.">What's new</a>
-            <a href="JirAI-Settings-Reference.topic" type="settings" summary="Every JirAI settings page and option in one place.">Settings reference</a>
-            <a href="JirAI-FAQ.topic" type="support" summary="Answers to common questions and the known limitations.">FAQ</a>
-            <a href="JirAI-Reference-and-Support.topic" type="support" summary="Report a problem, contact the vendor and read the legal terms.">Support</a>
+            <title>Work with AI assistants</title>
+            <a href="JirAI-Agent-Skills.topic" type="idea" summary="Add JirAI skills to Claude Code, Codex, Copilot CLI and Junie.">Agent skills</a>
+            <a href="JirAI-Agent-Tools.topic" type="integration" summary="Let an AI assistant read the create screen and check drafts against your house standard.">Agent tools</a>
+            <a href="JirAI-AI-Workflows.topic" type="documents" summary="Create or update a Jira issue from a Markdown spec or plan.">Push Markdown docs</a>
+            <a href="JirAI-Virtual-Board.topic" type="presentation" summary="Watch an AI agent's plan as live cards and approve the Jira changes it asks for.">Virtual board</a>
         </secondary>
+
+        <misc>
+            <links narrow="true">
+                <group>
+                    <title>Reference and help</title>
+                    <a href="JirAI-Whats-New.topic" summary="Changes in recent JirAI releases, newest first.">What's new</a>
+                    <a href="JirAI-Settings-Reference.topic" summary="Every JirAI settings page and option in one place.">Settings reference</a>
+                    <a href="Jira-Field-Visibility.topic" summary="Hide custom fields you never use from the issue details.">Hide custom fields</a>
+                    <a href="JirAI-Remote-Development-and-Architecture.topic" summary="What works under Remote Development and what data goes where.">Remote Development and privacy</a>
+                    <a href="JirAI-FAQ.topic" summary="Answers to common questions and the known limitations.">FAQ</a>
+                    <a href="JirAI-Reference-and-Support.topic" summary="Report a problem, contact the developer and read the legal terms.">Support</a>
+                </group>
+            </links>
+        </misc>
     </section-starting-page>
 
 </topic>

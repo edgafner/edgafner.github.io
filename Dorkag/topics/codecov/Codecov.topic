@@ -18,23 +18,23 @@
     </description>
 
     <spotlight>
-      <a href="Codecov-Installation.topic" type="start" summary="Install the plugin, start the trial and connect the project to Codecov with an API token.">Install and connect</a>
+      <a href="Codecov-Installation.topic" type="install" summary="Install the plugin, start the trial and connect the project to Codecov with an API token.">Install and connect</a>
       <a href="Codecov-Editor-Coverage.topic" type="tools" summary="See covered, partially covered and missed lines in the editor gutter.">View coverage in the editor</a>
     </spotlight>
 
     <primary>
       <title>Work with coverage</title>
-      <a href="Codecov-Metrics.topic" type="cloud" summary="Open the Codecov Metrics dashboard with pull request impact cards and the coverage trend.">Metrics dashboard</a>
-      <a href="Codecov-Folder-Coverage.topic" type="tools" summary="Mark folders in the Project tool window with their Codecov coverage.">Folder coverage</a>
-      <a href="Codecov-AI-Prompts.topic" type="learn" summary="Copy a ready-made test-writing prompt for a line to the clipboard.">Generate AI prompts</a>
-      <a href="Codecov-Usage.topic" type="development" summary="Get completion for codecov.yml and validate it against the Codecov server.">Edit and validate codecov.yml</a>
+      <a href="Codecov-Metrics.topic" type="data" summary="Open the Codecov Metrics dashboard with pull request impact cards and the coverage trend.">Metrics dashboard</a>
+      <a href="Codecov-Folder-Coverage.topic" type="folder" summary="Mark folders in the Project tool window with their Codecov coverage.">Folder coverage</a>
+      <a href="Codecov-AI-Prompts.topic" type="idea" summary="Copy a ready-made test-writing prompt for a line to the clipboard.">Generate AI prompts</a>
+      <a href="Codecov-Usage.topic" type="file" summary="Get completion for codecov.yml and validate it against the Codecov server.">Edit and validate codecov.yml</a>
     </primary>
 
     <secondary>
       <title>Configure and get help</title>
       <a href="Codecov-Settings-Reference.topic" type="settings" summary="Every Codecov option, its default and where it is stored.">Settings reference</a>
-      <a href="Codecov-Whats-New.topic" type="learn" summary="Release notes for recent Codecov plugin versions.">What's new</a>
-      <a href="Codecov-FAQ.topic" type="support" summary="Solutions for missing coverage, connection errors and validation problems.">FAQ and troubleshooting</a>
+      <a href="Codecov-Whats-New.topic" type="top" summary="Release notes for recent Codecov plugin versions.">What's new</a>
+      <a href="Codecov-FAQ.topic" type="bug" summary="Solutions for missing coverage, connection errors and validation problems.">FAQ and troubleshooting</a>
       <a href="Codecov-Reference-and-Support.topic" type="support" summary="Report a problem or contact the developer.">Support</a>
     </secondary>
 

@@ -8,17 +8,13 @@
     <primary-label ref="codecov"/>
     <show-structure for="chapter" depth="2"/>
 
-    <tldr>
-        <p>Settings: <ui-path>Settings | Tools | Codecov</ui-path> and <ui-path>Settings | Tools | Codecov | Folder Coverage</ui-path></p>
-        <p>Open Settings: <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>)</p>
-    </tldr>
-
     <link-summary>Every option on the Codecov settings pages, with defaults and scope, plus the plugin's actions and where to find them.</link-summary>
     <card-summary>Every Codecov option, its default and where it is stored.</card-summary>
     <web-summary>Reference for every Codecov plugin setting in JetBrains IDEs: connection, AI prompt templates, codecov.yml schema, folder coverage bands and actions.</web-summary>
 
     <p>
-        The plugin has two settings pages.
+        The plugin has two settings pages: <ui-path>Settings | Tools | Codecov</ui-path> and <ui-path>Settings | Tools | Codecov | Folder Coverage</ui-path>.
+        To open the Settings dialog, press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>).
         Settings with "Scope: all projects" apply to every project in the IDE.
         All other settings are saved in the project, in <path>.idea/codecov.xml</path>.
         The dashboard filters and <control>Show Coverage on Folders</control> are saved in <path>.idea/workspace.xml</path>.

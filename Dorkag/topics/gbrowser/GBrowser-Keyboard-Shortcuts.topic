@@ -7,10 +7,6 @@
 
     <primary-label ref="gbrowser"/>
 
-    <tldr>
-        <p>Change shortcuts: <ui-path>Settings | Keymap</ui-path></p>
-    </tldr>
-
     <link-summary>Default keyboard shortcuts of all GBrowser actions on Windows, Linux and macOS, and how to change them in the IDE keymap.</link-summary>
     <card-summary>Default shortcuts for every GBrowser action and how to change them.</card-summary>
     <web-summary>Default keyboard shortcuts of the GBrowser plugin in JetBrains IDEs on Windows, Linux and macOS, for tabs, navigation, bookmarks and DevTools, and how to reassign them in the keymap.</web-summary>

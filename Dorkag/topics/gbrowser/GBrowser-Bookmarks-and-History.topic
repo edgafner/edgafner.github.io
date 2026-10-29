@@ -8,12 +8,6 @@
     <primary-label ref="gbrowser"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Bookmark the page: <shortcut>Ctrl+D</shortcut></p>
-        <p>Bookmark Manager: <shortcut>Ctrl+Alt+B</shortcut></p>
-        <p>Stored per project in <path>.idea/gbrowsers.xml</path></p>
-    </tldr>
-
     <link-summary>Bookmark pages in GBrowser, open them from the bookmarks bar or the Bookmarks menu, edit them, and clear history and cookies.</link-summary>
     <card-summary>Bookmark pages, use the bookmarks bar, and clear history and cookies.</card-summary>
     <web-summary>Manage GBrowser bookmarks and browsing history in JetBrains IDEs: bookmark pages, use the bookmarks bar, edit bookmarks, clear history and cookies.</web-summary>

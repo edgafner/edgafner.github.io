@@ -8,10 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: a run tab, <control>View Pipeline Diagram</control>, then the <control>Tests</control> tab</p>
-        <p>Requires: a pipeline that publishes test results</p>
-    </tldr>
 
     <link-summary>Review the test results of a pipeline run, jump to failing tests and associate tests with Azure DevOps test cases.</link-summary>
     <card-summary>Triage pipeline test failures and associate automated tests with Azure DevOps test cases.</card-summary>

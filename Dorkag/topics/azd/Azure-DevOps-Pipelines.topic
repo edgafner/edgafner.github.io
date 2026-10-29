@@ -8,11 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: <ui-path>View | Tool Windows | AZD Pipelines</ui-path></p>
-        <p>Run a pipeline: <shortcut>Alt+Insert</shortcut> (macOS: <shortcut>⌘ N</shortcut>) in the tool window</p>
-        <p>Configure: <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path></p>
-    </tldr>
 
     <link-summary>Find, run, inspect, cancel and rerun Azure Pipelines runs, read stage logs and view the stage diagram.</link-summary>
     <card-summary>Run Azure Pipelines, watch runs, read logs and view the stage diagram in the IDE.</card-summary>
@@ -21,6 +16,7 @@
 
     <p>
         The <control>AZD Pipelines</control> tool window lists the pipeline runs of the current repository and opens each run in its own tab.
+        Open it from <ui-path>View | Tool Windows | AZD Pipelines</ui-path>.
         For the YAML schema, approvals and Node.js options, see
         <a href="Azd-Settings-Configuration.topic" anchor="pipeline-settings">Pipeline Settings</a>.
     </p>

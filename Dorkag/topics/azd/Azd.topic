@@ -20,38 +20,51 @@
         </description>
 
         <spotlight>
-            <a href="Azd-Installation.topic" type="start"
+            <a href="Azd-Installation.topic" type="install"
                summary="Install AZD and sign in with Microsoft, the Azure CLI or a personal access token">Install and connect</a>
-            <a href="Work-with-Azure-DevOps-pull-requests.topic" type="tools"
-               summary="Find, filter and open pull requests in the AZD Pull Requests tool window">Work with pull requests</a>
+            <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" type="folder"
+               summary="Clone repositories and open files on Azure DevOps">Clone and manage projects</a>
         </spotlight>
 
         <primary>
-            <title>Features</title>
-            <a href="Pull-Request-Details.topic" type="integration"
+            <title>Work with Azure DevOps</title>
+            <a href="Work-with-Azure-DevOps-pull-requests.topic" type="branch"
+               summary="Find, filter and open pull requests in the AZD Pull Requests tool window">Work with pull requests</a>
+            <a href="Azd-Create-Pull-Request.topic" type="creative"
+               summary="Create a pull request or a draft, with reviewers, work items and labels">Create a pull request</a>
+            <a href="Pull-Request-Details.topic" type="cross-check"
                summary="Read the timeline, check policies and review changed files">Review a pull request</a>
-            <a href="Azd-AI.topic" type="development"
-               summary="Generate titles, descriptions and commit messages, and review changes with AI">AI assistant</a>
+            <a href="Azd-PR-Complete.topic" type="turn-on"
+               summary="Vote, set auto-complete and merge a pull request">Vote, complete and merge</a>
             <a href="Azure-DevOps-Pipelines.topic" type="cloud"
                summary="Run pipelines, inspect runs, read logs and view the stage diagram">Work with pipelines</a>
-            <a href="Azd-Pipeline-Yaml.topic" type="development"
-               summary="Completion and validation for Azure Pipelines YAML files">Edit Azure Pipelines YAML</a>
-            <a href="Azd-Boards.topic" type="tools"
+            <a href="Azd-Boards.topic" type="check-list"
                summary="Find, edit and create work items, and use the Kanban board">Boards and work items</a>
-            <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" type="learn"
-               summary="Clone repositories and open files on Azure DevOps">Clone and manage projects</a>
         </primary>
 
         <secondary>
-            <title>Reference and help</title>
-            <a href="Azd-Whats-New.topic" type="learn" summary="Changes in recent AZD releases">What's new</a>
-            <a href="Azd-Settings-Configuration.topic" type="settings"
-               summary="Every AZD settings page and option">Settings reference</a>
-            <a href="Azd-FAQ.topic" type="support"
-               summary="Fix sign-in, proxy, credential and display problems">FAQ and troubleshooting</a>
-            <a href="Azd-Reference-And-Support.topic" type="support"
-               summary="Report a bug, contact the developer and read about privacy">Support</a>
+            <title>AI and YAML</title>
+            <a href="Azd-AI.topic" type="idea"
+               summary="Set up the AI assistant and choose an AI provider">AI assistant</a>
+            <a href="AI-Title-Description-Generation.topic" type="documents"
+               summary="Generate pull request titles, descriptions and commit messages">Generate titles and descriptions</a>
+            <a href="AI-Pull-Request-Review.topic" type="bug"
+               summary="Chat about a pull request and get AI review comments">Review with AI</a>
+            <a href="Azd-Pipeline-Yaml.topic" type="file"
+               summary="Completion and validation for Azure Pipelines YAML files">Edit Azure Pipelines YAML</a>
         </secondary>
+
+        <misc>
+            <links narrow="true">
+                <group>
+                    <title>Reference and help</title>
+                    <a href="Azd-Whats-New.topic" summary="Changes in recent AZD releases">What's new</a>
+                    <a href="Azd-Settings-Configuration.topic" summary="Every AZD settings page and option">Settings reference</a>
+                    <a href="Azd-FAQ.topic" summary="Fix sign-in, proxy, credential and display problems">FAQ and troubleshooting</a>
+                    <a href="Azd-Reference-And-Support.topic" summary="Report a bug, contact the developer and read about privacy">Support</a>
+                </group>
+            </links>
+        </misc>
 
     </section-starting-page>
 

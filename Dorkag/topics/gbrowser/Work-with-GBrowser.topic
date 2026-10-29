@@ -8,12 +8,6 @@
     <primary-label ref="gbrowser"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: <ui-path>View | Tool Windows | GBrowser</ui-path></p>
-        <p>New tab: <shortcut>Ctrl+T</shortcut></p>
-        <p>Find on a page: <shortcut>Ctrl+F</shortcut></p>
-    </tldr>
-
     <link-summary>Open the GBrowser tool window, navigate and search from the address field, work with tabs, find text, zoom and use the More Options menu.</link-summary>
     <card-summary>Open the browser tool window, navigate, search, use tabs, find text and zoom.</card-summary>
     <web-summary>Browse the web inside JetBrains IDEs with GBrowser: open the tool window, search from the address field, use tabs, find text on a page and zoom.</web-summary>

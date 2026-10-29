@@ -8,11 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Pull requests: the AI buttons in the <control>Title</control> and <control>Description</control> fields of a new pull request</p>
-        <p>Commits: <control>Generate Commit Message</control> on the commit message toolbar</p>
-        <p>Prompts: <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>, <control>Configure Prompts</control></p>
-    </tldr>
 
     <link-summary>Generate pull request titles and descriptions, update the description of an open pull request and generate commit messages with AI.</link-summary>
     <card-summary>Let AI write pull request titles, descriptions and commit messages from your commits and changes.</card-summary>
@@ -123,7 +118,8 @@
 
     <chapter title="Customize the results" id="ai_gen_customization">
         <p>
-            Edit the <control>Pull Request title prompt</control>, <control>Pull Request Description Prompt</control> and <control>Commit message prompt</control>
+            In <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>, expand <control>Configure Prompts</control> and
+            edit the <control>Pull Request title prompt</control>, <control>Pull Request Description Prompt</control> and <control>Commit message prompt</control>
             to change the style, length or language of the results.
             See <a href="Azd-AI.topic" anchor="configure-prompts"/>.
         </p>

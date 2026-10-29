@@ -21,6 +21,7 @@
         <noindex-content>false</noindex-content>
         <offline-docs>false</offline-docs>
         <web-root>https://edgafner.github.io</web-root>
+        <custom-css>custom.css</custom-css>
         <product-web-url>https://edgafner.github.io/</product-web-url>
         <og-image>https://edgafner.github.io/images/og_dorkag.png</og-image>
     </variables>

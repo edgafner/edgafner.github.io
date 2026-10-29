@@ -36,13 +36,13 @@
 
         <secondary>
             <title>Support and legal</title>
-            <a href="https://github.com/edgafner/dorkag/issues/new/choose" type="support"
+            <a href="https://github.com/edgafner/dorkag/issues/new/choose" type="bug"
                summary="Report a bug or request a feature for AZD, JirAI, Codecov or QueryFlag. GBrowser issues go to the GBrowser repository.">Report a problem</a>
-            <a href="mailto:jgafner@dorkag.com" type="support"
+            <a href="mailto:jgafner@dorkag.com" type="mail"
                summary="Licensing questions and anything you do not want to post publicly.">Contact the developer</a>
-            <a href="privacy-policy.topic" type="learn"
+            <a href="privacy-policy.topic" type="lock"
                summary="How DORKAG handles data, what AZD's AI features send and how long data is kept.">Privacy policy</a>
-            <a href="terms-of-service.topic" type="learn"
+            <a href="terms-of-service.topic" type="documents"
                summary="Terms of service and end user license agreement for the DORKAG plugins.">Terms of service</a>
         </secondary>
 

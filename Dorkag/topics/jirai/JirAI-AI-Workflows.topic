@@ -8,12 +8,6 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Push: <control>Push to Jira</control> at the top right of a Markdown editor, or in the context menu of the editor or the Project view</p>
-        <p>Presets: <ui-path>Settings | Tools | JirAI | Doc Push</ui-path></p>
-        <p>Requires: signed in to a Jira Cloud site</p>
-    </tldr>
-
     <link-summary>Create a Jira issue from a Markdown spec or plan, update it later, and set presets for each kind of document.</link-summary>
     <card-summary>Turn a Markdown spec or plan into a Jira issue and keep the issue up to date.</card-summary>
     <web-summary>Push Markdown specs and plans to Jira Cloud from JetBrains IDEs with JirAI: create or update the linked issue, catch edits made in Jira and use presets.</web-summary>
@@ -89,8 +83,8 @@
     </chapter>
 
     <chapter title="When the issue was edited in Jira" id="push-conflict">
-        <p>Each push stores a fingerprint of the description in a Jira issue property, so the Markdown file does not change.</p>
-        <p>On the next push, JirAI compares the fingerprint with the description Jira holds now.</p>
+        <p>Each push leaves a hidden note on the Jira issue that records what was pushed, so the Markdown file does not change.</p>
+        <p>On the next push, JirAI uses it to tell whether someone edited the description in Jira since then.</p>
         <img src="jirai_push_dialog_edited_in_jira.png" alt="Push to Jira dialog warning that the issue was edited in Jira since the last push" width="523" border-effect="rounded"/>
         <table style="header-row" border="true" sortable="true">
             <tr><td>Dialog state</td><td>What it means</td><td>Your options</td></tr>
@@ -184,8 +178,7 @@
 
     <chapter title="Remote Development" id="ai-split-mode">
         <p>Push to Jira works the same under Remote Development, except that the <control>Project</control> tool window does not offer it; use the button or the context menu in the editor.</p>
-        <p>The document text is read in the editor on the client, while converting, measuring and writing to Jira happen on the host.</p>
-        <p>The preset and the document path are resolved on the host, so they match the project you opened.</p>
+        <p>The text in your editor is sent to the host, which writes it to Jira, and the presets of the project open on the host apply.</p>
     </chapter>
 
     <chapter title="Limitations" id="ai-limits">

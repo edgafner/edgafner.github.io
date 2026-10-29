@@ -8,11 +8,6 @@
     <primary-label ref="queryflag"/>
     <show-structure for="chapter" depth="2"/>
 
-    <tldr>
-        <p>Settings: <ui-path>Settings | Tools | Database | QueryFlag</ui-path> (DataGrip: <ui-path>Settings | Database | QueryFlag</ui-path>)</p>
-        <p>Shortcut: <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>), then search for <code>QueryFlag</code></p>
-    </tldr>
-
     <link-summary>Reference for the QueryFlag settings page: the template list, Open console editor, and Allow blank Text.</link-summary>
     <card-summary>The template list and the Open console editor and Allow blank Text options.</card-summary>
     <web-summary>Reference for the QueryFlag settings in JetBrains IDEs: the template list, the Open console editor and Allow blank Text options, and storage.</web-summary>

@@ -8,11 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Add a comment: hover over a line in the pull request diff and click <control>+</control> in the gutter</p>
-        <p>Next and previous comment: <shortcut>Ctrl+Alt+Down</shortcut> and <shortcut>Ctrl+Alt+Up</shortcut> (the <control>Next Occurrence</control> and <control>Previous Occurrence</control> shortcuts)</p>
-        <p>Publish drafts: <control>Submit Comments</control> on the diff toolbar</p>
-    </tldr>
 
     <link-summary>Comment on lines and on the whole pull request, work with drafts, reply and resolve threads, mention people, attach files and suggest code changes.</link-summary>
     <card-summary>Comment on code, collect drafts, resolve threads and apply suggested changes in an Azure DevOps pull request.</card-summary>

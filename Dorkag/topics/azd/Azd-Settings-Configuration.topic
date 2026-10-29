@@ -8,10 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter" depth="2"/>
 
-    <tldr>
-        <p>Settings: <ui-path>Settings | Version Control | AZD</ui-path></p>
-        <p>Open Settings: <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>)</p>
-    </tldr>
 
     <link-summary>Reference for every AZD settings page: accounts, Preferences, AI Settings, UI Customization, Boards and Work Items, and Pipeline Settings.</link-summary>
     <card-summary>Every AZD settings page and option, with its default value.</card-summary>
@@ -20,6 +16,7 @@
 
     <p>
         AZD settings are under <ui-path>Settings | Version Control | AZD</ui-path>.
+        To open the <control>Settings</control> dialog, press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>).
         The <control>AZD</control> page holds the accounts; the sub-pages hold the other options.
         Settings apply to all projects, except <control>Additional pipeline YAML locations</control> and the muted pipelines list,
         which belong to the current project.
@@ -64,10 +61,9 @@
             <def title="Open commit links from the timeline in the IDE">Opens a commit link in the pull request timeline in the pull request details, with the commit selected, instead of on Azure DevOps. Default: on.</def>
             <def title="Respect proxy configuration">Uses the proxy configured in the IDE for AZD connections. Default: off.</def>
             <def title="Accept untrusted SSL certificates">Skips certificate validation for AZD connections only, for networks with a TLS-inspecting proxy. Other IDE connections are not affected. Default: off.</def>
-            <def title="Use API-based diff generation (experimental)">Builds pull request diffs from the Azure DevOps API instead of Git. Faster, but binary files may not show correctly. Default: off.</def>
+            <def title="Use API-based diff generation (experimental)">Loads pull request diffs from Azure DevOps instead of your local Git repository. Faster, but binary files may not show correctly. Default: off.</def>
             <def title="Azure CLI (az) path (optional)">The <code>az</code> executable for Azure CLI sign-in. Leave empty to detect it automatically, or click <control>Detect</control>.</def>
-            <def title="Filter subject type">Identity types for user searches.
-                In the current version this field has no effect; AZD always searches <code>msa,aad,win,imp,vss</code>.</def>
+            <def title="Filter subject type">Has no effect in the current version.</def>
             <def title="Share anonymous usage statistics">Sends an anonymous event when a Microsoft sign-in starts, succeeds or fails. Default: on.
                 See <a href="Azd-Reference-And-Support.topic" anchor="privacy">Privacy and usage statistics</a>.</def>
         </deflist>

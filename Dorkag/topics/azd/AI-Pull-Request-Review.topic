@@ -8,11 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Start: <ui-path>Pull Request Actions (⋮) | Review with AI</ui-path> in the pull request details</p>
-        <p>Requires: <control>Enable AI assistance</control> in <ui-path>Settings | Version Control | AZD | AI Settings</ui-path></p>
-        <p>MCP tools require Node.js</p>
-    </tldr>
 
     <link-summary>Chat with AI about a pull request, run the guided AI Auto Review and let AI draft review comments for a file or for selected lines.</link-summary>
     <card-summary>Chat about a pull request, run AI Auto Review and draft review comments with AI.</card-summary>
@@ -34,7 +29,8 @@
 
     <chapter title="Before you start" id="ai_review_provider_options">
         <p>
-            These features work with the built-in AZD provider without any setup.
+            The AI features need <control>Enable AI assistance</control> in <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>, which is on by default.
+            They work with the built-in AZD provider without any setup.
             To use your own OpenAI, Claude, Gemini or Ollama model, or your GitHub Copilot plan, see <a href="Azd-AI.topic" anchor="ai-providers"/>.
             For what data AZD sends, see <a href="Azd-AI.topic" anchor="ai-privacy"/>.
         </p>
@@ -183,7 +179,7 @@
         <p>
             With MCP tools, AI Chat can use the Azure DevOps MCP server to read and change data in your organization,
             for example to create work items, manage pull requests or run pipelines.
-            AZD bundles the server and loads its core, work item, repository and pipeline tools.
+            AZD includes the server and offers its work item, repository and pipeline tools.
             With the GitHub Copilot provider, Copilot can use only these tools.
         </p>
         <warning>

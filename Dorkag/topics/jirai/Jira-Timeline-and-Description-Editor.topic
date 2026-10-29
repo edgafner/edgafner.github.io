@@ -8,17 +8,12 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: select an issue in the <control>JirAI</control> tool window and press <shortcut>Enter</shortcut></p>
-        <p>Post a comment: <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ ⏎</shortcut>)</p>
-        <p>Edit a comment: hover over it and click the pencil icon (<control>Edit comment</control>)</p>
-    </tldr>
-
     <link-summary>Follow an issue's activity, post and edit comments, edit the description, and filter the issue's child work items.</link-summary>
     <card-summary>Read the activity feed, post and edit comments, edit the description in Markdown and browse child work items.</card-summary>
     <web-summary>Use the JirAI issue timeline in JetBrains IDEs: Jira Cloud comments and comment editing, history, Markdown description editing, and the Breakdown tree of child work items with filters.</web-summary>
 
     <p>Each issue you open gets an editor tab named after its key, for example <control>DEMO-123 Timeline</control>.</p>
+    <p>To open it, select an issue in the <control>JirAI</control> tool window and press <shortcut>Enter</shortcut>.</p>
     <p>The tab has two inner tabs: <control>Timeline</control> for activity and discussion, and <control>Breakdown</control> for child work items.</p>
     <p>For a work item whose type cannot have child work items, such as a sub-task, only the <control>Timeline</control> tab is shown.</p>
 

@@ -8,13 +8,6 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Start: type <code>/use-virtual-board</code> in your AI agent, or ask it to <emphasis>Use the virtual board tools exposed in the IDE tools.</emphasis></p>
-        <p>Reopen: <ui-path>Tools | JirAI Virtual Boards…</ui-path>, or the same button in the <control>JirAI</control> tool window title bar</p>
-        <p>Colors: <ui-path>Settings | Tools | JirAI | Virtual Board</ui-path></p>
-        <p>Requires: the IDE's MCP server turned on</p>
-    </tldr>
-
     <link-summary>Watch an AI agent's plan as live phase cards in an IDE editor tab, send it notes, and approve the Jira changes it asks for.</link-summary>
     <card-summary>See your AI agent's plan and progress as live cards, and approve its Jira changes on the board.</card-summary>
     <web-summary>The JirAI virtual board shows an AI coding agent's spec, plan and phases as live cards in a JetBrains IDE editor tab, links a board to a Jira parent's children, and sends a Jira change only after you approve it.</web-summary>

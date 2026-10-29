@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="JirAI: Work with AI assistants" id="JirAI-AI">
+
+    <primary-label ref="jirai"/>
+
+    <link-summary>What JirAI adds for AI coding assistants: agent skills, agent tools, Markdown docs pushed to Jira and the virtual board.</link-summary>
+    <card-summary>Give your AI assistant Jira context, push its specs and plans to Jira and approve the changes it asks for.</card-summary>
+    <web-summary>JirAI features for AI coding assistants in JetBrains IDEs: agent skills for Claude Code, Codex, Copilot CLI and Junie, agent tools that check drafts against the real create screen, Markdown docs pushed to Jira and a virtual board for the agent's plan.</web-summary>
+
+    <p>
+        Besides the everyday Jira work, JirAI helps when an AI coding assistant works on your Jira issues.
+        The assistant can check a draft issue against your project before filing it, show its plan on a board in the IDE
+        and turn its specs and plans into Jira issues.
+        It changes Jira only when you approve the change.
+    </p>
+
+    <deflist type="medium">
+        <def title="Agent skills">
+            Add JirAI's skills to Claude Code, Codex, Copilot CLI and Junie, so the agent uses the virtual board
+            and checks a Jira ticket before filing it without being told how.
+            See <a href="JirAI-Agent-Skills.topic"/>.
+        </def>
+        <def title="Agent tools">
+            Let the assistant read a project's real create screen and check a draft issue against it and your house
+            standard before it files anything.
+            See <a href="JirAI-Agent-Tools.topic"/>.
+        </def>
+        <def title="Push Markdown docs">
+            Turn a Markdown spec or plan into a Jira issue and keep the issue description up to date.
+            See <a href="JirAI-AI-Workflows.topic"/>.
+        </def>
+        <def title="Virtual board">
+            Watch the agent's plan as live cards in an IDE editor tab, send it notes and approve the Jira changes it
+            asks for.
+            See <a href="JirAI-Virtual-Board.topic"/>.
+        </def>
+    </deflist>
+
+    <seealso>
+        <category ref="related">
+            <a href="JirAI-Agent-Skills.topic"/>
+            <a href="JirAI-Agent-Tools.topic"/>
+            <a href="JirAI-AI-Workflows.topic"/>
+            <a href="JirAI-Virtual-Board.topic"/>
+        </category>
+    </seealso>
+</topic>

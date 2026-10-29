@@ -8,12 +8,6 @@
   <primary-label ref="queryflag"/>
   <show-structure for="chapter,procedure" depth="2"/>
 
-  <tldr>
-    <p>Settings: <ui-path>Settings | Tools | Database | QueryFlag</ui-path> (DataGrip: <ui-path>Settings | Database | QueryFlag</ui-path>)</p>
-    <p>From a query console: select a query, right-click it, and select <control>Add Query Flag</control></p>
-    <p>Token: <code>&lt;QUERY_FLAG_TOKEN&gt;</code></p>
-  </tldr>
-
   <link-summary>Define, edit, and remove QueryFlag templates: a named query for a data source with a token for the selected text.</link-summary>
   <card-summary>Save a query for a data source with a token that the selected text replaces.</card-summary>
   <web-summary>Create QueryFlag query templates in JetBrains IDEs: add a token for the selected text, quote it correctly in SQL and MongoDB, and manage templates.</web-summary>
