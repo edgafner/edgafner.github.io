@@ -23,15 +23,15 @@
             <step>
                 <p>In the <control>Create Branch for #&lt;id&gt;</control> dialog, check the <control>Branch name</control>.
                     It is filled in from the branch name template.</p>
-                <!-- planned-image src="azd_boards_create_branch.png" alt="Create Branch dialog with the branch name, the Checkout branch option and the Start from list" -->
+                <img src="azd_boards_create_branch.png" alt="Create Branch dialog with the branch name, the Checkout branch option and the Start from option" width="433" border-effect="rounded"/>
             </step>
             <step>
-                <p>In <control>Start from</control>, select the local branch, remote branch or tag to start from.
-                    The note under the list says where the branch will start.</p>
+                <p>The branch starts from the current branch. To start from another one, select <control>Start from</control>
+                    and choose a local branch, remote branch or tag. The note under it says where the branch will start.</p>
                 <p>In a project with several repositories, select the <control>Repository</control>, or <control>All repositories</control>.</p>
             </step>
             <step>
-                <p>Leave <control>Checkout branch</control> selected to switch to the new branch, and confirm the dialog.</p>
+                <p>Leave <control>Checkout branch</control> selected to switch to the new branch, and click <control>Create</control>.</p>
             </step>
         </procedure>
         <list>
@@ -56,7 +56,7 @@
             AZD reads the ID at the position the branch name template puts it.
             It ignores release, hotfix, Dependabot and Renovate branches, and numbers that look like dates.
         </p>
-        <!-- planned-image src="azd_boards_status_bar.png" alt="Status bar showing the current work item next to the branch name" -->
+        <img src="azd_boards_status_bar.png" alt="Status bar showing the current work item, #412" width="242" border-effect="rounded"/>
         <p>
             Click it to open the work item.
             If the branch name matches several work items, select one in the list, or select <control>Ignore this branch</control>

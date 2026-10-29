@@ -23,7 +23,7 @@
         <procedure title="Edit a work item" id="edit-work-item">
             <step>
                 <p>Open the work item.</p>
-                <!-- planned-image src="azd_boards_work_item.png" alt="Work item details tab with the state, area, iteration, priority and assignee fields and the Planning group expanded" -->
+                <img src="azd_boards_work_item.png" alt="Work item details tab with the state, area, iteration, priority and assignee fields and the Planning group expanded" width="546" border-effect="rounded"/>
             </step>
             <step>
                 <p>To change the title, click the pencil icon next to it (<control>Edit title</control>) and type the new title.

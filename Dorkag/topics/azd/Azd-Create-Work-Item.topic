@@ -22,7 +22,7 @@
             <step>
                 <p>Select the <control>Type</control>, enter the <control>Title</control>, and set the <control>State</control>.
                     These three fields are required.</p>
-                <!-- planned-image src="azd_boards_new_work_item.png" alt="New Work Item tab with Bug selected as the type, a title, and the Repro Steps and Description boxes" -->
+                <img src="azd_boards_new_work_item.png" alt="New Work Item tab with Bug selected as the type, a title, and the Repro Steps and Description boxes" width="546" border-effect="rounded"/>
             </step>
             <step>
                 <p>Optional: fill in <control>Description</control>, <control>Assigned To</control>, <control>Area Path</control>,

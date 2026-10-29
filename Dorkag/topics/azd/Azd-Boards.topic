@@ -48,7 +48,7 @@
                 </list>
                 <p>The list leaves out work items in the Closed, Done and Removed states.
                     A work item from another project shows the project name as a tag.</p>
-                <!-- planned-image src="azd_boards_list.png" alt="AZD Boards tool window listing work items with their type, state, assignee and tags" -->
+                <img src="azd_boards_list.png" alt="AZD Boards tool window listing work items with their type, state, assignee and tags" width="546" border-effect="rounded"/>
             </step>
             <step>
                 <p>Narrow the list with the search field and the filter chips: <control>Types</control>, <control>States</control>, <control>Created by</control>,

@@ -24,7 +24,7 @@
             The <control>Timeline</control> tab shows the comments and the history of the work item.
             Its top row says who last updated the work item and when.
         </p>
-        <!-- planned-image src="azd_boards_timeline.png" alt="Work item timeline with the Updated by row, the event filter, comments and the comment box" -->
+        <img src="azd_boards_timeline.png" alt="Work item timeline with the Updated by row, the event filter, comments and the comment box" width="706" border-effect="rounded" thumbnail="true"/>
         <p>
             To show only some events, click the filter at the top right and select one or more of
             <control>Comments</control>, <control>State Changes</control>, <control>Field Changes</control>,
@@ -79,7 +79,7 @@
             The second tab is <control>Children</control> for work item types that can have children, such as epics, features and stories,
             and <control>Related</control> for the others, such as tasks. The number in the tab name counts the linked items.
         </p>
-        <!-- planned-image src="azd_boards_children.png" alt="Children tab with the parent link, Add child, the children tree and the Related Work and Development sections" -->
+        <img src="azd_boards_children.png" alt="Children tab with the parent link, Add child, the children tree and the Related Work and Development sections" width="706" border-effect="rounded" thumbnail="true"/>
         <list>
             <li><control>Parent</control> links to the parent work item.</li>
             <li>The children tree lists the child work items. Select <control>Show hierarchy</control> to see their children too,

@@ -27,7 +27,7 @@
             <step>
                 <p>Type to filter the list, then select a project under <control>Starred</control> or <control>All projects</control>,
                     and press <shortcut>Enter</shortcut> or click it.</p>
-                <!-- planned-image src="azd_boards_project_picker.png" alt="Open Project popup with a starred project and the list of all projects" -->
+                <img src="azd_boards_project_picker.png" alt="Open Project popup with a starred project and the list of all projects" width="566" border-effect="rounded"/>
             </step>
         </procedure>
         <list>
@@ -61,7 +61,7 @@
 
     <chapter title="Summary" id="summary-tab">
         <p>The <control>Summary</control> tab gives an overview of the team's work.</p>
-        <!-- planned-image src="azd_boards_summary.png" alt="Summary tab with the Completed, Updated, Created and Due soon tiles and the Status overview, Recently updated, Types of work and Team workload widgets" -->
+        <img src="azd_boards_summary.png" alt="Summary tab with the Completed, Updated, Created and Due soon tiles and the Status overview, Recently updated, Types of work and Team workload widgets" width="706" border-effect="rounded" thumbnail="true"/>
         <list>
             <li>Four tiles count the work items <control>Completed</control>, <control>Updated</control> and <control>Created</control> in the
                 last 7, 14 or 30 days, and the open ones <control>Due soon</control> in the next 7 days.
@@ -84,7 +84,7 @@
             A column with a work-in-progress limit shows its count and limit, and its tooltip warns you when the column is over the limit.
             Cards show the fields chosen in the team's card settings, the tags, the state, the assignee and the priority.
         </p>
-        <!-- planned-image src="azd_boards_kanban.png" alt="Board tab with Kanban columns, a work-in-progress limit and the Team and Board filters" -->
+        <img src="azd_boards_kanban.png" alt="Board tab with Kanban columns, a work-in-progress limit and the Team and Board filters" width="706" border-effect="rounded" thumbnail="true"/>
         <procedure title="Move a card" id="move-card">
             <step>
                 <p>Drag the card to another column. AZD changes the work item's state in Azure DevOps.</p>
@@ -107,7 +107,7 @@
             The board shows up to 200 of the most recently changed work items, and up to 100 cards in a column.
         </p>
         <p>Right-click a card, or click its <control>More actions</control> button (⋯), for these actions:</p>
-        <!-- planned-image src="azd_boards_card_menu.png" alt="Card menu with Open, Move to Column, Edit Title, Create Branch and Delete Work Item" -->
+        <img src="azd_boards_card_menu.png" alt="Card menu with Open, Move to Column, Edit Title, Create Branch and Delete Work Item" width="496" border-effect="rounded"/>
         <deflist type="medium">
             <def title="Open">Opens the work item; see <a href="Azd-Work-Item-Details.topic"/>.</def>
             <def title="Move to Column">Moves the card to the column you select.</def>
@@ -131,11 +131,11 @@
             Search by title or ID, and filter with the same filters as the <control>Board</control> tab.
         </p>
         <p>
-            Select <control>Show Hierarchy</control> to indent child work items under their parents,
-            and use <control>Expand All</control> and <control>Collapse All</control>.
-            The hierarchy is not shown while a filter is active.
+            Child work items are indented under their parents. Use <control>Expand All</control> and <control>Collapse All</control>
+            in the toolbar, or click <control>Show Hierarchy</control> to turn the hierarchy off and show a flat list.
+            AZD remembers the choice for the project. The hierarchy is not shown while a filter is active.
         </p>
-        <!-- planned-image src="azd_boards_list_hierarchy.png" alt="List tab with Show Hierarchy on and child work items indented under their parents" -->
+        <img src="azd_boards_list_hierarchy.png" alt="List tab with Show Hierarchy on and child work items indented under their parents" width="706" border-effect="rounded" thumbnail="true"/>
         <p>
             Double-click a work item or press <shortcut>Enter</shortcut> to open it.
             Right-click it to open it on Azure DevOps, copy its URL, create a branch, delete it or refresh the list.
