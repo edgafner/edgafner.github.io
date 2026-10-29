@@ -26,7 +26,7 @@ jobs:
       pull-requests: write
       issues: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Wait for GitHub Pages to be fully deployed
         if: github.event_name != 'pull_request'
@@ -147,7 +147,7 @@ jobs:
           
       - name: Save Lighthouse results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: lighthouse-results-${{ github.event_name }}-${{ github.run_attempt }}
           path: |
