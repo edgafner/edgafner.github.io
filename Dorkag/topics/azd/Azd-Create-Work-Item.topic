@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Create work items" id="Azd-Create-Work-Item">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <link-summary>Create an Azure Boards work item, or a child of an existing one, from the AZD Boards tool window.</link-summary>
+    <card-summary>Create work items and child work items without leaving the IDE.</card-summary>
+    <web-summary>Create Azure Boards work items in JetBrains IDEs with AZD: type, title, state, description, repro steps,
+        assignee, area and iteration paths, custom fields, and child work items.</web-summary>
+
+    <chapter title="Create a work item" id="create-work-item">
+        <procedure title="Create a work item" id="create-work-item-procedure">
+            <step>
+                <p>In the <control>AZD Boards</control> title bar, click <control>New Work Item</control> (<control>+</control>).</p>
+                <p>A <control>New Work Item</control> tab opens in the tool window.</p>
+            </step>
+            <step>
+                <p>Select the <control>Type</control>, enter the <control>Title</control>, and set the <control>State</control>.
+                    These three fields are required.</p>
+                <img src="azd_boards_new_work_item.png" alt="New Work Item tab with Bug selected as the type, a title, and the Repro Steps and Description boxes" width="546" border-effect="rounded"/>
+            </step>
+            <step>
+                <p>Optional: fill in <control>Description</control>, <control>Assigned To</control>, <control>Area Path</control>,
+                    <control>Iteration Path</control>, <control>Priority</control> and <control>Tags</control>.
+                    For a type with Repro Steps, such as Bug, a <control>Repro Steps</control> box shows above <control>Description</control>.
+                    Line breaks you type in these boxes are kept.</p>
+            </step>
+            <step>
+                <p>Fill in the fields of the type in the group below, such as fields your process adds.</p>
+                <p>If the type has a required field that the IDE can't fill in, the field says <control>Not editable here</control>;
+                    click <control>Create in Azure DevOps</control> to create the work item in the browser instead.</p>
+            </step>
+            <step>
+                <p>Click <control>Create</control>.</p>
+                <p>The new work item opens in its own tab, and the list refreshes.
+                    If a value is missing or invalid, the field is highlighted; fix it and click <control>Try Again</control>.</p>
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Add a child work item" id="add-child">
+        <procedure title="Add a child work item" id="add-child-proc">
+            <step>
+                <p>Open the parent work item, and in its editor tab select the <control>Children</control> tab.</p>
+            </step>
+            <step>
+                <p>Click <control>Add child</control>.</p>
+                <p>The <control>New Work Item</control> tab opens with <control>Child of #&lt;id&gt;</control> at the top.</p>
+            </step>
+            <step>
+                <p>Fill in the form as for any work item, and click <control>Create</control>.</p>
+            </step>
+        </procedure>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-Work-Item-Details.topic"/>
+            <a href="Azd-Work-Item-Timeline.topic" anchor="children-tab"/>
+        </category>
+    </seealso>
+</topic>

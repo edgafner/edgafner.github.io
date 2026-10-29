@@ -8,7 +8,7 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter" depth="2"/>
 
-    <link-summary>Notable changes in recent AZD release lines, from the late 2025.2 updates to 2026.3.10.</link-summary>
+    <link-summary>Notable changes in recent AZD release lines, from the late 2025.2 updates to 2026.3.19.</link-summary>
     <card-summary>New features and notable fixes in recent AZD releases.</card-summary>
     <web-summary>What's new in AZD, the Azure DevOps plugin for JetBrains IDEs: pull request review, sign-in,
         pipelines, approvals, Boards, GitHub Copilot and AI changes in recent releases.</web-summary>
@@ -30,20 +30,39 @@
         </chapter>
 
         <chapter title="Boards and work items" id="boards-2026-3">
+            <p>AZD 2026.3.12 and 2026.3.13 bring Boards closer to the Azure DevOps web:</p>
+            <list>
+                <li><control>Open Project…</control> opens a project in an editor tab with <control>Summary</control>, <control>Board</control> and <control>List</control> tabs,
+                    with Team and Board filters. The board is native, with drag and drop, and the List can show children under their parents.
+                    Summary widgets can be maximized, shown as a table or hidden.
+                    See <a href="Azd-Boards-Project-Page.topic"/>.</li>
+                <li>Create a branch from a work item, starting from any branch or tag; the status bar shows the current branch's work item,
+                    and new commit messages start with its reference.
+                    See <a href="Azd-Work-Item-Branches-Commits.topic"/>.</li>
+                <li>Story points, estimates and dates have their own <control>Planning</control> group, and the field groups start collapsed.
+                    See <a href="Azd-Work-Item-Details.topic"/>.</li>
+                <li>A work item's editor has a <control>Children</control> or <control>Related</control> tab with its links and attachments,
+                    and the timeline shows who last updated the work item.
+                    See <a href="Azd-Work-Item-Timeline.topic"/>.</li>
+            </list>
+            <p>
+                Fixes in 2026.3.14 to 2026.3.18: dropping a card no longer flashes an error, double-clicking a child or related work item opens it again,
+                line breaks in a new work item's description are kept, and a deleted work item no longer breaks the list.
+            </p>
             <p>AZD 2026.3.10 lets you change more of a work item without leaving the IDE:</p>
             <list>
-                <li>Pick dates from a calendar in work item date fields. See <a href="Azd-Boards.topic" anchor="edit-work-item">Edit a work item</a>.</li>
-                <li>Edit a work item's title in its details tab, and <a href="Azd-Boards.topic" anchor="delete-work-item">delete work items</a> to the recycle bin.</li>
-                <li><a href="Azd-Boards.topic" anchor="edit-work-item-comment">Edit and delete your own comments</a> in the work item timeline.</li>
+                <li>Pick dates from a calendar in work item date fields. See <a href="Azd-Work-Item-Details.topic" anchor="edit-work-item">Edit a work item</a>.</li>
+                <li>Edit a work item's title in its details tab, and <a href="Azd-Work-Item-Details.topic" anchor="delete-work-item">delete work items</a> to the recycle bin.</li>
+                <li><a href="Azd-Work-Item-Timeline.topic" anchor="edit-work-item-comment">Edit and delete your own comments</a> in the work item timeline.</li>
             </list>
             <p>AZD 2026.3.9 added:</p>
             <list>
                 <li>Long work item titles and descriptions wrap to the panel width.</li>
                 <li>Repro Steps, Acceptance Criteria and other rich-text fields show at the top of the work item. A new bug can have its Repro Steps filled in when you create it.</li>
-                <li><a href="Azd-Boards.topic" anchor="work-item-attachments">Attachments</a>: manage a work item's attachments, and attach files and screenshots to comments.</li>
+                <li><a href="Azd-Work-Item-Timeline.topic" anchor="work-item-attachments">Attachments</a>: manage a work item's attachments, and attach files and screenshots to comments.</li>
                 <li>A missing or invalid field value is highlighted on the field itself when you apply or create.</li>
             </list>
-            <p>AZD 2026.3.8 shows <a href="Azd-Boards.topic" anchor="custom-fields">custom work item fields</a>, which you can edit or hide.</p>
+            <p>AZD 2026.3.8 shows <a href="Azd-Work-Item-Details.topic" anchor="custom-fields">custom work item fields</a>, which you can edit or hide.</p>
             <p>
                 Fixes: @mentions and line breaks in comments work on Azure DevOps Server, resolving an edit conflict keeps fields someone else changed,
                 text in angle brackets such as <code>List&lt;String&gt;</code> stays in comments, <control>Delete Permanently</control> on an attachment deletes the file,
@@ -52,7 +71,31 @@
             </p>
         </chapter>
 
+        <chapter title="Pipelines" id="pipelines-2026-3">
+            <p>
+                AZD 2026.3.16 and 2026.3.17: <a href="Azure-DevOps-Pipelines.topic">Run Pipeline</a> shows parameters, variables and stages like the web,
+                lays out long parameter lists without cutting off fields, and checks the run before you start it.
+                Variables can be set for pipelines that also have parameters (2026.3.15), and on Azure DevOps Server a YAML pipeline's parameters
+                and stages show again (2026.3.18).
+            </p>
+        </chapter>
+
+        <chapter title="AI agents and Remote Development" id="agents-remote-2026-3">
+            <list>
+                <li>AI agents in the IDE can open AZD pull requests, pipelines and work items, add draft review comments,
+                    and fill in the Run Pipeline, Create Work Item and New Pull Request forms for you to check (2026.3.15 and 2026.3.17).</li>
+                <li>Under Remote Development, AZD also installs on the JetBrains Client (2026.3.12; restart after updating),
+                    and AZD editor tabs show their names.</li>
+                <li>Newer Claude models (Opus 4.7 and later, and Claude 5) work again (2026.3.12).</li>
+            </list>
+        </chapter>
+
         <chapter title="Pull requests" id="pull-requests-2026-3">
+            <p>
+                AZD 2026.3.13 to 2026.3.15: the timeline shows when the pull request was created, a new push no longer deletes draft comments on the latest changes,
+                and draft comments are kept when their pull request is filtered out of the list.
+                Saved quick filters and approval mutes are no longer stored in the project's shared <path>.idea</path> folder.
+            </p>
             <p>AZD 2026.3.9:</p>
             <list>
                 <li>The <a href="Work-with-Azure-DevOps-pull-requests.topic" anchor="view-pull-requests">pull request list</a> shows open comment threads and when each pull request was last updated,
@@ -109,14 +152,14 @@
                 <a href="Azd-Pipeline-Approvals.topic" anchor="mute-approvals">Pipeline Settings</a>.</li>
             <li><b>Richer run list:</b> runs show their commit message, and run details show a colored status label.
                 Runs on the default branch link to the pull request that triggered them.</li>
-            <li><b>Boards:</b> open the <a href="Azd-Boards.topic" anchor="kanban-board">Kanban board</a> of any project in the organization,
+            <li><b>Boards:</b> open the <a href="Azd-Boards-Project-Page.topic" anchor="kanban-board">Kanban board</a> of any project in the organization,
                 and filter work items by iteration, including <code>@CurrentIteration</code>.</li>
             <li><b>Pipeline metrics:</b> new <control>Top Failure Causes</control> and <control>Slowest Stages</control> widgets in
                 <a href="Azd-Pipeline-Metrics.topic"/>.</li>
             <li><b>Default AI provider notice:</b> a notification at startup explains that AI features use the built-in AZD cloud provider by default,
                 with a link to the AI settings.</li>
             <li><b>Optional task integration:</b> AZD loads without the Issue Trackers plugin (formerly Task Management), which is no longer bundled with every IDE.
-                Only the <a href="Azd-Boards.topic" anchor="tasks-integration">task server integration</a> needs it.</li>
+                Only the <a href="Azd-Work-Item-Branches-Commits.topic" anchor="tasks-integration">task server integration</a> needs it.</li>
         </list>
         <p>
             Performance and reliability: watching a long-running build uses less memory, large test result lists sort and filter faster,
@@ -213,7 +256,7 @@
             <li><b>MCP tools:</b> AI chat can create work items, manage pull requests and trigger pipelines.
                 See <a href="AI-Pull-Request-Review.topic" anchor="mcp-tools">MCP tools</a>.</li>
             <li><b>Several work items per commit:</b> select more than one work item for a commit message.
-                See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
+                See <a href="Azd-Work-Item-Branches-Commits.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
             <li><b>Viewed files:</b> the viewed state of pull request files syncs with Azure DevOps, and a progress line counts the viewed files.
                 See <a href="Pull-Request-Details.topic" anchor="changed-files">Go through the changed files</a>.</li>
         </list>
@@ -225,7 +268,7 @@
             <li><b>Shallow clone:</b> clone a repository with a truncated history.
                 See <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" anchor="clone-steps">Clone an Azure DevOps repository</a>.</li>
             <li><b>Work items in commit messages:</b> select work items when you generate a commit message.
-                See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
+                See <a href="Azd-Work-Item-Branches-Commits.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</li>
             <li><b>Stage diagram:</b> new pipeline stage diagram features, and faster loading of runs and run details.
                 See <a href="Azure-DevOps-Pipelines.topic" anchor="pipeline-diagram">View the stage diagram</a>.</li>
         </list>

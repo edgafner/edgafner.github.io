@@ -39,7 +39,7 @@
             <a href="Azure-DevOps-Pipelines.topic" type="cloud"
                summary="Run pipelines, inspect runs, read logs and view the stage diagram">Work with pipelines</a>
             <a href="Azd-Boards.topic" type="check-list"
-               summary="Find, edit and create work items, and use the Kanban board">Boards and work items</a>
+               summary="Find, edit and create work items, open a project's summary, board and list, and branch from work items">Boards and work items</a>
         </primary>
 
         <secondary>

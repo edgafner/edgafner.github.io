@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Project summary, board and list" id="Azd-Boards-Project-Page">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <link-summary>Open an Azure DevOps project in an editor tab with Summary, Board and List tabs: team charts, a Kanban board with drag and drop, and a list that shows children under their parents.</link-summary>
+    <card-summary>Open a project's Summary, Kanban board and List in the IDE, filter by team, and move cards between columns.</card-summary>
+    <web-summary>Azure Boards projects in JetBrains IDEs with AZD: a Summary of a team's work, a Kanban board with drag and drop,
+        WIP limits and swimlanes, and a List with parent and child hierarchy.</web-summary>
+
+    <p>
+        A project page shows the work of one team in an editor tab, with three tabs: <control>Summary</control>, <control>Board</control> and <control>List</control>.
+        You can open any project of your organization or collection.
+    </p>
+
+    <chapter title="Open a project" id="open-project">
+        <secondary-label ref="azd_boards_page"/>
+        <procedure id="open-project-proc">
+            <step>
+                <p>In the <control>AZD Boards</control> title bar, click <control>Open Project…</control>.</p>
+            </step>
+            <step>
+                <p>Type to filter the list, then select a project under <control>Starred</control> or <control>All projects</control>,
+                    and press <shortcut>Enter</shortcut> or click it.</p>
+                <img src="azd_boards_project_picker.png" alt="Open Project popup with a starred project and the list of all projects" width="566" border-effect="rounded"/>
+            </step>
+        </procedure>
+        <list>
+            <li>The project opens in an editor tab named after the project. Opening a project that is already open switches to its tab.</li>
+            <li>Click the star next to a project in the popup, or in the page header, to list it under <control>Starred</control>.
+                Stars are kept in the IDE on this computer; they are not your Azure DevOps favorites.</li>
+            <li>The page opens on the tab you used last for that project, <control>Summary</control> the first time.</li>
+            <li>Project pages are not reopened after you restart the IDE.</li>
+        </list>
+        <p>
+            The page header has <control>Refresh</control> and <control>Open in Azure DevOps</control>.
+            On the <control>Board</control> tab, <control>Open in Azure DevOps</control> opens that team's board in the browser.
+        </p>
+    </chapter>
+
+    <chapter title="Choose the team and filters" id="team-and-filters">
+        <p>
+            The first filter of every tab is <control>Team</control>. It starts on the team you chose last for the project,
+            otherwise on the project's default team. The <control>Board</control> tab also has a <control>Board</control> filter.
+        </p>
+        <p>
+            Each tab keeps its own filters, and AZD remembers them for each project and team.
+            Changing the team clears the <control>Iteration</control> filter.
+        </p>
+        <p>
+            <control>Summary</control> and <control>List</control> show the backlog work items in the team's area paths.
+            Completed work items are included only if they changed in the last 31 days, and removed ones are left out.
+            The page loads up to 2,000 work items. If the team has no area paths, the page shows the whole project and says so.
+        </p>
+    </chapter>
+
+    <chapter title="Summary" id="summary-tab">
+        <p>The <control>Summary</control> tab gives an overview of the team's work.</p>
+        <img src="azd_boards_summary.png" alt="Summary tab with the Completed, Updated, Created and Due soon tiles and the Status overview, Recently updated, Types of work and Team workload widgets" width="706" border-effect="rounded" thumbnail="true"/>
+        <list>
+            <li>Four tiles count the work items <control>Completed</control>, <control>Updated</control> and <control>Created</control> in the
+                last 7, 14 or 30 days, and the open ones <control>Due soon</control> in the next 7 days.
+                Choose the period in the first filter; it changes only the tiles.
+                <control>Due soon</control> uses the Due Date or Target Date field and does not show when the project has neither.</li>
+            <li>The widgets show <control>Status overview</control>, <control>Recently updated</control>,
+                <control>Types of work</control>, <control>Team workload</control> and, when the project uses Priority,
+                <control>Priority breakdown</control>. Click a work item in <control>Recently updated</control> to open it.</li>
+            <li>Filter by <control>Assigned to</control>, <control>Type</control> and <control>State</control>.</li>
+        </list>
+        <p>
+            Click the <control>More</control> button (⋯) of a widget to select <control>Show as table</control>, <control>Maximize</control> or <control>Hide</control>.
+            Hidden widgets are remembered for the project; click <control>Show widget</control> under the widgets to bring one back.
+        </p>
+    </chapter>
+
+    <chapter title="Board" id="kanban-board">
+        <p>
+            The <control>Board</control> tab shows the columns, swimlanes and cards of the selected team board.
+            A column with a work-in-progress limit shows its count and limit, and its tooltip warns you when the column is over the limit.
+            Cards show the fields chosen in the team's card settings, the tags, the state, the assignee and the priority.
+        </p>
+        <img src="azd_boards_kanban.png" alt="Board tab with Kanban columns, a work-in-progress limit and the Team and Board filters" width="706" border-effect="rounded" thumbnail="true"/>
+        <procedure title="Move a card" id="move-card">
+            <step>
+                <p>Drag the card to another column. AZD changes the work item's state in Azure DevOps.</p>
+            </step>
+            <step>
+                <p>Or right-click the card, select <control>Move to Column</control> and select the column.</p>
+            </step>
+        </procedure>
+        <list>
+            <li>A card can't move to a column that has no state for its work item type, or to another swimlane.</li>
+            <li>If someone else changed the work item in the meantime, the card does not move and the board refreshes.</li>
+            <li>The order of cards inside a column is not saved to Azure DevOps.</li>
+        </list>
+        <p>
+            Filter the cards by <control>Assigned to</control>, <control>Type</control>, <control>State</control>,
+            <control>Iteration</control> and <control>Tags</control>, or with <control>Recently updated</control> (the last 7 days)
+            and <control>Assigned to me</control>. A column whose cards are all filtered out says how many are hidden.
+        </p>
+        <p>
+            The board shows up to 200 of the most recently changed work items, and up to 100 cards in a column.
+        </p>
+        <p>Right-click a card, or click its <control>More actions</control> button (⋯), for these actions:</p>
+        <img src="azd_boards_card_menu.png" alt="Card menu with Open, Move to Column, Edit Title, Create Branch and Delete Work Item" width="496" border-effect="rounded"/>
+        <deflist type="medium">
+            <def title="Open">Opens the work item; see <a href="Azd-Work-Item-Details.topic"/>.</def>
+            <def title="Move to Column">Moves the card to the column you select.</def>
+            <def title="Edit Title…">Renames the work item.</def>
+            <def title="Create Branch…">Creates a Git branch for the work item; see <a href="Azd-Work-Item-Branches-Commits.topic" anchor="create-branch"/>.</def>
+            <def title="Delete Work Item…">Moves the work item to the Azure DevOps recycle bin after you confirm.</def>
+        </deflist>
+        <p>
+            You can use the board from the keyboard: the arrow keys move between cards and columns, <shortcut>Enter</shortcut> opens a card,
+            and <shortcut>Shift+Enter</shortcut> opens its menu.
+        </p>
+        <note>
+            Under Remote Development, dragging cards does not work on the JetBrains Client. Use <control>Move to Column</control> in the card menu instead.
+        </note>
+    </chapter>
+
+    <chapter title="List" id="list-tab">
+        <p>
+            The <control>List</control> tab shows the work items in a table with the type, ID, title, state, assignee, iteration and update date,
+            and the priority when the project uses it. Click a column header to sort.
+            Search by title or ID, and filter with the same filters as the <control>Board</control> tab.
+        </p>
+        <p>
+            Child work items are indented under their parents. Use <control>Expand All</control> and <control>Collapse All</control>
+            in the toolbar, or click <control>Show Hierarchy</control> to turn the hierarchy off and show a flat list.
+            AZD remembers the choice for the project. The hierarchy is not shown while a filter is active.
+        </p>
+        <img src="azd_boards_list_hierarchy.png" alt="List tab with Show Hierarchy on and child work items indented under their parents" width="706" border-effect="rounded" thumbnail="true"/>
+        <p>
+            Double-click a work item or press <shortcut>Enter</shortcut> to open it.
+            Right-click it to open it on Azure DevOps, copy its URL, create a branch, delete it or refresh the list.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-Boards.topic"/>
+            <a href="Azd-Work-Item-Details.topic"/>
+            <a href="Azd-Work-Item-Branches-Commits.topic"/>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/boards/boards/kanban-overview">Kanban boards (Microsoft Learn)</a>
+        </category>
+    </seealso>
+</topic>

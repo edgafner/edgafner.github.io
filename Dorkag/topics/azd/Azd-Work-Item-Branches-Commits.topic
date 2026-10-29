@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="AZD: Branches and commits from work items" id="Azd-Work-Item-Branches-Commits">
+
+    <primary-label ref="azd"/>
+    <show-structure for="chapter,procedure" depth="2"/>
+
+    <link-summary>Create a Git branch from a work item, see the current branch's work item in the status bar, start commit messages with it, and use work items as IDE tasks.</link-summary>
+    <card-summary>Start a branch from a work item, see it in the status bar and reference it in your commits.</card-summary>
+    <web-summary>Connect Azure Boards work items to your Git work in JetBrains IDEs with AZD: branches from work items, the current work item
+        in the status bar, commit messages that reference work items, and work items as IDE tasks.</web-summary>
+
+    <chapter title="Create a branch from a work item" id="create-branch">
+        <secondary-label ref="azd_boards_page"/>
+        <procedure title="Create a branch" id="create-branch-proc">
+            <step>
+                <p>Right-click a work item in the <control>AZD Boards</control> list, a project page, a card or the work item's details tab,
+                    and select <control>Create Branch…</control>.</p>
+            </step>
+            <step>
+                <p>In the <control>Create Branch for #&lt;id&gt;</control> dialog, check the <control>Branch name</control>.
+                    It is filled in from the branch name template.</p>
+                <img src="azd_boards_create_branch.png" alt="Create Branch dialog with the branch name, the Checkout branch option and the Start from option" width="433" border-effect="rounded"/>
+            </step>
+            <step>
+                <p>The branch starts from the current branch. To start from another one, select <control>Start from</control>
+                    and choose a local branch, remote branch or tag. The note under it says where the branch will start.</p>
+                <p>In a project with several repositories, select the <control>Repository</control>, or <control>All repositories</control>.</p>
+            </step>
+            <step>
+                <p>Leave <control>Checkout branch</control> selected to switch to the new branch, and click <control>Create</control>.</p>
+            </step>
+        </procedure>
+        <list>
+            <li>If the branch already exists locally or on the remote, the dialog offers to check it out instead. AZD does not fetch first.</li>
+            <li><control>Create Branch…</control> is disabled while a rebase, merge, cherry-pick or revert is in progress, and in an empty repository.</li>
+            <li>AZD does not link the branch to the work item in Azure DevOps.</li>
+        </list>
+        <p>
+            When you check out a branch for a work item that has not started yet, AZD asks whether to move it to the in-progress state.
+            Click <control>Move</control> to move it, or <control>Never Ask</control> to stop asking.
+        </p>
+        <p>
+            Set the branch name template and what happens to the work item's state in the <control>Development</control> group of
+            <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Boards and Work Items settings</a>.
+        </p>
+    </chapter>
+
+    <chapter title="Current work item in the status bar" id="current-work-item">
+        <secondary-label ref="azd_boards_page"/>
+        <p>
+            When the name of the current branch contains a work item ID, the status bar shows the work item, for example <code>#412</code>.
+            AZD reads the ID at the position the branch name template puts it.
+            It ignores release, hotfix, Dependabot and Renovate branches, and numbers that look like dates.
+        </p>
+        <img src="azd_boards_status_bar.png" alt="Status bar showing the current work item, #412" width="242" border-effect="rounded"/>
+        <p>
+            Click it to open the work item.
+            If the branch name matches several work items, select one in the list, or select <control>Ignore this branch</control>
+            to hide the widget for this branch until you restart the IDE.
+            To hide the widget, right-click the status bar and clear <control>Current Work Item</control>.
+        </p>
+    </chapter>
+
+    <chapter title="Start commit messages with the work item" id="commit-prefill">
+        <secondary-label ref="azd_boards_page"/>
+        <p>
+            When the current branch belongs to one work item, a new commit message starts with its reference:
+            <code>#412</code> when the repository is in Azure Repos, or <code>AB#412</code> when it is not.
+            Azure DevOps uses this reference to link the commit to the work item.
+        </p>
+        <p>AZD does not fill in the message when:</p>
+        <list>
+            <li>The message is not empty, for example when it comes from a Git commit template or a merge.</li>
+            <li>The project mixes Azure Repos and other remotes.</li>
+            <li>The Git staging area is enabled.</li>
+        </list>
+        <p>
+            To turn it off, clear <control>Start new commit messages with the current work item</control> in the
+            <control>Development</control> group of <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Boards and Work Items settings</a>.
+        </p>
+    </chapter>
+
+    <chapter title="Add work items to a commit message" id="work-item-commit-template">
+        <p>
+            Reference several work items in a commit message, from a template or with AI.
+            The AZD button (the AZD logo) appears in the commit message toolbar when <control>Enable AI assistance</control> is selected
+            and the <control>Commit message prompt</control> is enabled in <ui-path>Settings | Version Control | AZD | AI Settings</ui-path>;
+            see <a href="Azd-AI.topic" anchor="configure-prompts">Configure prompts</a>.
+            The work item option also needs <control>Enable work item commit message action</control>, which is on by default.
+        </p>
+        <procedure title="Write a commit message from work items" id="commit-from-work-items">
+            <step>
+                <p>In the <control>Commit</control> tool window, click the arrow next to the AZD button in the commit message toolbar
+                    and select <control>Select Work Item...</control>.</p>
+            </step>
+            <step>
+                <p>In the <control>Select Work Item for Commit Message</control> dialog, select one or more work items.
+                    By default the list shows your own work items and hides those in the Done, Closed, Removed and Resolved states.
+                    Clear <control>Only my work items</control> or use the state filter to see more.</p>
+                <!-- planned-image src="azd_commit_work_item.png" alt="Select Work Item for Commit Message dialog with two work items selected" -->
+            </step>
+            <step>
+                <p>In <control>Generate with AI</control>, select <control>None - Use template only</control> to fill in the template,
+                    or select an AI provider to write the message from the work items and your changes.</p>
+            </step>
+            <step>
+                <p>Click <control>Generate Message</control>.</p>
+            </step>
+        </procedure>
+        <p>
+            Change the template in <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path>, in the
+            <control>Commit Message Template</control> group.
+            The default template is <code>{id} - {title}</code>; the placeholders are <code>{id}</code>, <code>{title}</code>,
+            <code>{type}</code> and <code>{state}</code>.
+            <control>Max work items per commit</control> limits the selection (5 by default).
+        </p>
+        <p>To generate a commit message from your changes only, see <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>.</p>
+    </chapter>
+
+    <chapter title="Use work items as IDE tasks" id="tasks-integration">
+        <p>
+            With the Issue Trackers plugin (formerly Task Management), you can open Azure DevOps work items as IDE tasks and switch context between them.
+            AZD adds an <control>AzureDevOps</control> server type to it.
+            The Issue Trackers plugin is not bundled with every IDE; install it from JetBrains Marketplace if your IDE lacks it.
+        </p>
+        <procedure title="Add Azure DevOps as a task server" id="add-task-server">
+            <step>
+                <p>Open <ui-path>Settings | Tools | Tasks | Servers</ui-path>.</p>
+            </step>
+            <step>
+                <p>Click <control>+</control> and select <control>AzureDevOps</control>.</p>
+            </step>
+            <step>
+                <p>Fill in <control>Host</control> (<code>https://dev.azure.com</code> by default), <control>Organization</control> and <control>PAT token</control>,
+                    and click <control>Test</control>.</p>
+            </step>
+            <step>
+                <p>After a successful test, select the project in <control>Project</control>.
+                    <control>Include issues not assigned to me</control> is selected by default; clear it to list only the work items assigned to you.</p>
+                <!-- planned-image src="azd_tasks_server.png" alt="Tasks Servers settings with an AzureDevOps server configured" -->
+            </step>
+            <step>
+                <p>Click <control>OK</control>.</p>
+            </step>
+        </procedure>
+        <p>
+            Open a work item as a task with <ui-path>Tools | Tasks &amp; Contexts | Open Task…</ui-path>.
+            To change its state in Azure DevOps at the same time, select <control>Update issue state</control> in the <control>Open Task</control> dialog.
+        </p>
+        <p>
+            While a work item is the active task, AI-generated commit messages refer to it.
+            With the default prompt, they start with the work item ID.
+            See <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>.
+        </p>
+    </chapter>
+
+    <seealso>
+        <category ref="related">
+            <a href="Azd-Boards.topic"/>
+            <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Boards and Work Items settings</a>
+            <a href="AI-Title-Description-Generation.topic" anchor="commit-message">Generate commit messages</a>
+        </category>
+        <category ref="external">
+            <a href="https://learn.microsoft.com/en-us/azure/devops/boards/github/link-to-from-github">Link GitHub commits with AB#ID (Microsoft Learn)</a>
+            <a href="https://www.jetbrains.com/help/idea/managing-tasks-and-context.html">Tasks and contexts (IntelliJ IDEA help)</a>
+        </category>
+    </seealso>
+</topic>

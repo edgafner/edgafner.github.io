@@ -90,6 +90,7 @@
         <deflist type="medium">
             <def title="Adopt Azure DevOps UI style">Makes the pull request details look more like the Azure DevOps web UI, with a <control>Submit Review</control> button for votes. Default: off.</def>
             <def title="Show events in the order ascending by date">Shows the oldest timeline events first. Clear it to show the newest first. Default: on.</def>
+            <def title="Keep the timeline's top row visible while scrolling">Keeps the filter row at the top of pull request and work item timelines while you scroll. Default: on.</def>
             <def title="Wrap long text in work items">Wraps long titles, descriptions, field values and timeline entries to the width of the tool window. Clear it to scroll sideways instead. The change applies right away, also to work items that are already open. Default: on.</def>
         </deflist>
     </chapter>
@@ -103,15 +104,27 @@
             <def title="Show Work items from all Projects">Lists work items from every project in the organization or collection, not only the project of the repository. Default: off.</def>
             <def title="Limit work items to recent history">Lists only work items changed within the set number of days (0–60). Default: on, 60 days.</def>
             <def title="Enable work item commit message action">Adds <control>Select Work Item...</control> to the AZD commit message button. Default: on.
-                See <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</def>
+                See <a href="Azd-Work-Item-Branches-Commits.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</def>
             <def title="Template">The commit message template. Placeholders: <code>{id}</code>, <code>{title}</code>, <code>{type}</code>, <code>{state}</code>.
                 To insert one at the caret, click <control>+</control> in the field. Default: <code>{id} - {title}</code>.</def>
             <def title="Max work items per commit">How many work items you can select for one commit message (1–10). Default: 5.</def>
             <def title="Advanced, Custom Work Item Query">The WHERE clause of the query that lists work items for linking to pull requests and commits.
                 By default it hides work items in the Done, Closed and Removed states.
                 The <control>Select Work Item for Commit Message</control> dialog also applies its own state filter; see
-                <a href="Azd-Boards.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.
+                <a href="Azd-Work-Item-Branches-Commits.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.
                 Select <control>Use custom WHERE clause</control> to edit it; the text must start with <code>WHERE</code>.</def>
+        </deflist>
+        <p>The <control>Development</control> group connects work items to your Git branches and commits:</p>
+        <deflist type="medium">
+            <def title="Branch name template">The name <control>Create Branch…</control> suggests for a work item. Placeholders: <code>{id}</code> (required),
+                <code>{title}</code> and <code>{type}</code>; the name can have up to 60 characters, and <control>Example</control> shows the result.
+                Default: <code>feature/{id}-{title}</code>.
+                See <a href="Azd-Work-Item-Branches-Commits.topic" anchor="create-branch">Create a branch from a work item</a>.</def>
+            <def title="After creating a branch for a Proposed work item">Whether AZD moves a work item that has not started to the in-progress state when you check out its branch:
+                <control>Ask to move it to In Progress</control> (default), <control>Always move it to In Progress</control>
+                (this also moves work items assigned to others) or <control>Never move it</control>.</def>
+            <def title="Start new commit messages with the current work item">Starts a new commit message with the reference of the current branch's work item. Default: on.
+                See <a href="Azd-Work-Item-Branches-Commits.topic" anchor="commit-prefill">Start commit messages with the work item</a>.</def>
         </deflist>
         <chapter title="Field Visibility" id="field-visibility">
             <p>Path: <ui-path>Settings | Version Control | AZD | Boards and Work Items | Field Visibility</ui-path></p>
@@ -119,7 +132,7 @@
                 Lists the custom fields you hid in the work item details, with the scope of each rule: a work item, a project, or all projects.
                 Click <control>+</control> to add a rule by the field's reference name, for example <code>Custom.Tier</code>,
                 and remove a rule to show the field again.
-                See <a href="Azd-Boards.topic" anchor="custom-fields">Custom fields</a>.
+                See <a href="Azd-Work-Item-Details.topic" anchor="custom-fields">Custom fields</a>.
             </p>
         </chapter>
     </chapter>
