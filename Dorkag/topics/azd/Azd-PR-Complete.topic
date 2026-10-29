@@ -8,10 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Actions: <control>Pull Request Actions</control> (⋮) at the bottom of the pull request details</p>
-        <p>Azure DevOps-style buttons: <ui-path>Settings | Version Control | AZD | UI Customization</ui-path>, <control>Adopt Azure DevOps UI style</control></p>
-    </tldr>
 
     <link-summary>Vote on a pull request, manage reviewers, publish drafts, complete or auto-complete with a merge method and abandon or reactivate pull requests.</link-summary>
     <card-summary>Vote, manage reviewers and complete, auto-complete or abandon an Azure DevOps pull request.</card-summary>

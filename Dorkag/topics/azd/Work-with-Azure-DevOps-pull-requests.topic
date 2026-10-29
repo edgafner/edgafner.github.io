@@ -8,11 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: <ui-path>View | Tool Windows | AZD Pull Requests</ui-path> or <ui-path>Git | AZD | Show AZD Pull Requests</ui-path></p>
-        <p>Requires: a project with an Azure DevOps Git remote and a signed-in AZD account</p>
-        <p>Preferences: <ui-path>Settings | Version Control | AZD | Preferences</ui-path></p>
-    </tldr>
 
     <link-summary>Open the AZD Pull Requests tool window, then find, filter, sort and open Azure DevOps pull requests and see which ones changed since your review.</link-summary>
     <card-summary>Find, filter and open Azure DevOps pull requests in the AZD Pull Requests tool window.</card-summary>
@@ -230,7 +225,7 @@
     <chapter title="PR metrics" id="pr-metrics">
         <p id="azd_pr_metrics_usage">
             The <control>PR Metrics</control> dashboard summarizes pull request activity in the repository.
-            It needs the IDE's built-in browser (JCEF).
+            It needs the IDE's built-in browser; see <a href="Azd-FAQ.topic" anchor="jcef-views">A view shows a message instead of content</a>.
         </p>
         <procedure title="Open the PR metrics dashboard" id="open-pr-metrics">
             <step>

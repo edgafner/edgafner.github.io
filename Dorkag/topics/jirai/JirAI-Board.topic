@@ -8,13 +8,6 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: <control>Space Summary</control> in the <control>JirAI</control> tool window title bar, then the <control>Board</control> tab</p>
-        <p>Open a card's work item: double-click the card, or press <shortcut>Enter</shortcut> on it</p>
-        <p>Card menu: <shortcut>Shift+Enter</shortcut> on a focused card</p>
-        <p>Go To: <control>Go To | Show in Board</control> or <control>Show in Backlog</control> in any work item's menu</p>
-    </tldr>
-
     <link-summary>Open a Jira Kanban board, the active sprint of a Scrum board or its backlog in the IDE, filter it, drag cards between columns and open their work items.</link-summary>
     <card-summary>Open a Kanban board or the active Scrum sprint, drag cards between columns and open their work items.</card-summary>
     <web-summary>Run Jira Cloud Kanban and Scrum boards in JetBrains IDEs with JirAI: columns, WIP limits, quick filters, drag-and-drop card moves with transition screens, and work items that open in the IDE.</web-summary>
@@ -26,7 +19,7 @@
     <chapter title="Open a board" id="open-board">
         <secondary-label ref="jirai_version"/>
         <procedure title="Open a board" id="open-board-proc">
-            <step><p>Open the space as described in <a href="JirAI-Metrics.topic" anchor="opening-metrics">Open a space</a>.</p></step>
+            <step><p>In the <control>JirAI</control> tool window title bar, click <control>Space Summary</control> and pick the space, as described in <a href="JirAI-Metrics.topic" anchor="opening-metrics">Open a space</a>.</p></step>
             <step><p>Select the <control>Board</control> tab.</p></step>
             <step>
                 <p>If the space has more than one board, click the board picker and choose a board, or type in <control>Search boards</control>.</p>

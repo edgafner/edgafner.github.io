@@ -8,12 +8,6 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Install: <ui-path>Settings | Plugins | Marketplace</ui-path>, search for JirAI</p>
-        <p>Requires: a JetBrains IDE 2026.3 or later and a Jira Cloud site</p>
-        <p>Price: free</p>
-    </tldr>
-
     <link-summary>Check the requirements and install JirAI from JetBrains Marketplace, in the IDE, from the website or from disk.</link-summary>
     <card-summary>Check the requirements and install the free JirAI plugin.</card-summary>
     <web-summary>Install the free JirAI plugin for Jira Cloud in IntelliJ IDEA and other JetBrains IDEs from JetBrains Marketplace, and check the requirements.</web-summary>

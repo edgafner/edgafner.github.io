@@ -9,10 +9,10 @@
 
     <snippet id="azdsn.tree">
         <toc-element topic="Azd.topic" id="toc_azd_root">
-            <toc-element topic="Azd-Whats-New.topic" id="toc_azd_whats_new" toc-title="What's new"/>
-            <toc-element topic="Azd-Installation.topic" id="toc_azd_installation" toc-title="Install and connect"/>
-            <toc-element topic="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" id="toc_azd_manage"
-                         toc-title="Clone and manage projects"/>
+            <toc-element topic="Azd-Installation.topic" id="toc_azd_installation" toc-title="Install and connect">
+                <toc-element topic="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" id="toc_azd_manage"
+                             toc-title="Clone and manage projects"/>
+            </toc-element>
             <toc-element topic="Work-with-Azure-DevOps-pull-requests.topic" id="toc_azd_pr_usage"
                          toc-title="Work with pull requests">
                 <toc-element topic="Azd-Create-Pull-Request.topic" id="toc_azd_pr_create"
@@ -23,12 +23,6 @@
                              toc-title="Comment and suggest changes"/>
                 <toc-element topic="Azd-PR-Complete.topic" id="toc_azd_pr_complete"
                              toc-title="Vote, complete and merge"/>
-            </toc-element>
-            <toc-element topic="Azd-AI.topic" id="toc_azd_ai" toc-title="AI assistant">
-                <toc-element topic="AI-Title-Description-Generation.topic" id="toc_azd_ai_title"
-                             toc-title="Generate titles, descriptions and commit messages"/>
-                <toc-element topic="AI-Pull-Request-Review.topic" id="toc_azd_ai_review"
-                             toc-title="Review with AI"/>
             </toc-element>
             <toc-element topic="Azure-DevOps-Pipelines.topic" id="toc_azd_pipelines" toc-title="Work with pipelines">
                 <toc-element topic="Azd-Pipeline-Approvals.topic" id="toc_azd_pipeline_approvals"
@@ -41,9 +35,18 @@
                              toc-title="Edit Azure Pipelines YAML"/>
             </toc-element>
             <toc-element topic="Azd-Boards.topic" id="toc_azd_boards" toc-title="Boards and work items"/>
-            <toc-element topic="Azd-Settings-Configuration.topic" id="toc_azd_settings" toc-title="Settings reference"/>
-            <toc-element topic="Azd-FAQ.topic" id="toc_azd_faq" toc-title="FAQ and troubleshooting"/>
-            <toc-element topic="Azd-Reference-And-Support.topic" id="toc_azd_support" toc-title="Support"/>
+            <toc-element topic="Azd-AI.topic" id="toc_azd_ai" toc-title="AI assistant">
+                <toc-element topic="AI-Title-Description-Generation.topic" id="toc_azd_ai_title"
+                             toc-title="Generate titles, descriptions and commit messages"/>
+                <toc-element topic="AI-Pull-Request-Review.topic" id="toc_azd_ai_review"
+                             toc-title="Review with AI"/>
+            </toc-element>
+            <toc-element toc-title="Reference and help" id="toc_azd_reference">
+                <toc-element topic="Azd-Whats-New.topic" id="toc_azd_whats_new" toc-title="What's new"/>
+                <toc-element topic="Azd-Settings-Configuration.topic" id="toc_azd_settings" toc-title="Settings reference"/>
+                <toc-element topic="Azd-FAQ.topic" id="toc_azd_faq" toc-title="FAQ and troubleshooting"/>
+                <toc-element topic="Azd-Reference-And-Support.topic" id="toc_azd_support" toc-title="Support"/>
+            </toc-element>
         </toc-element>
     </snippet>
 </instance-profile>

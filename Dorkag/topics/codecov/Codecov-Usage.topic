@@ -8,12 +8,6 @@
     <primary-label ref="codecov"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Validate: right-click <path>codecov.yml</path> and select <control>Validate Codecov YAML</control></p>
-        <p>Setting: <ui-path>Settings | Tools | Codecov</ui-path>, <control>Inject codecov YAML schema</control></p>
-        <p>Validation requires: a Codecov API token in the plugin settings</p>
-    </tldr>
-
     <link-summary>Get code completion and documentation for codecov.yml, and validate the file against the Codecov server.</link-summary>
     <card-summary>Get completion for codecov.yml and validate it against the Codecov server.</card-summary>
     <web-summary>The Codecov plugin adds completion, quick documentation and server-side validation for codecov.yml files to JetBrains IDEs, before you commit.</web-summary>

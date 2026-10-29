@@ -1,0 +1,61 @@
+/*
+ * Compact starting-page cards.
+ * Writerside 2026.10 draws each card icon in a large framed tile with a gradient, glow and orbit line.
+ * These rules bring back the earlier look: a small plain icon above the title and summary.
+ * Selectors are the frontend's public BEM classes (starting-page-card__*); recheck them after a builder upgrade.
+ */
+.starting-page-card {
+    min-height: 0;
+    box-shadow: none;
+}
+
+.starting-page-card__layout,
+.section-starting-page-content__card--compact .starting-page-card__layout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.starting-page-card__media,
+.theme-dark .starting-page-card__media,
+.starting-page-card__media--custom,
+.theme-dark .starting-page-card__media--custom,
+.section-starting-page-content__card--compact .starting-page-card__media {
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    width: 48px;
+    min-width: 0;
+    max-width: 48px;
+    height: 48px;
+    min-height: 0;
+    max-height: 48px;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.starting-page-card__media::after {
+    display: none;
+}
+
+.starting-page-card__media > .starting-page-card__custom-icon,
+.starting-page-card__media > .starting-page-card__standard-icon,
+.starting-page-card__media--illustration > .starting-page-card__standard-icon[data-card-illustration] {
+    width: 48px;
+    max-width: 48px;
+    height: 48px;
+    filter: none;
+}
+
+.starting-page-card__media + .starting-page-card__body {
+    margin-left: 0;
+}
+
+@media screen and (max-width: 640px) {
+    .starting-page-card__media {
+        aspect-ratio: 1;
+    }
+}

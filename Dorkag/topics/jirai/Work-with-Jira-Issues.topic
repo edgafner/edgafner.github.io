@@ -8,24 +8,17 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: <ui-path>View | Tool Windows | JirAI</ui-path></p>
-        <p>Open an issue: select it and press <shortcut>Enter</shortcut></p>
-        <p>Create a branch: right-click an issue and choose <control>Create Branch…</control></p>
-        <p>Branch settings: <ui-path>Settings | Tools | JirAI | Development</ui-path></p>
-        <p>Requires: signed in to a Jira Cloud site</p>
-    </tldr>
-
     <link-summary>Find issues in the JirAI tool window, act on them, and create Git branches and commits that carry the issue key.</link-summary>
     <card-summary>Search, filter and act on Jira issues, and branch and commit from them.</card-summary>
     <web-summary>Browse Jira Cloud issues in the JirAI tool window of JetBrains IDEs: search, filter and sort, copy issue links, create a Git branch from an issue, and see the current issue in the status bar.</web-summary>
 
     <p>The <control>JirAI</control> tool window lists your Jira issues next to your code.</p>
     <p>Use it to find an issue, open its details and timeline, and run common actions on it.</p>
+    <p>The list needs you to be signed in to a Jira Cloud site; see <a href="JirAI-Sign-In-and-Configuration.topic">Sign in and manage your account</a>.</p>
     <p>In JirAI, <emphasis>issue</emphasis> and <emphasis>work item</emphasis> mean the same thing: Jira Cloud calls issues work items in its newer screens, and some JirAI views use that term too.</p>
 
     <chapter title="The JirAI tool window" id="tool-window">
-        <p>The <control>JirAI</control> tool window opens on the left side of the IDE.</p>
+        <p>The <control>JirAI</control> tool window opens on the left side of the IDE. To open it, choose <ui-path>View | Tool Windows | JirAI</ui-path>.</p>
         <p>On the IDE start screen, where no project is open, click <control>More</control> on the left tool window bar and choose <control>JirAI</control>.</p>
         <p>Its <control>Jira</control> tab holds the issue list, and each issue you open adds a details tab named after the issue key.</p>
         <p>The tool window title bar has two buttons:</p>

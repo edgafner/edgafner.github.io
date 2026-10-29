@@ -8,10 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: <control>Pipeline Metrics</control> in the <control>AZD Pipelines</control> title bar</p>
-        <p>Requires: the IDE built-in browser (JCEF)</p>
-    </tldr>
 
     <link-summary>Track pipeline pass rate, duration, queue time and failure causes, and manage the agents in your agent pools.</link-summary>
     <card-summary>Pipeline pass rate, duration, queue time and failure causes, plus agent pools.</card-summary>
@@ -116,8 +112,8 @@
 
     <chapter title="If the dashboard is blank" id="metrics-jcef">
         <p>
-            The dashboard uses the IDE built-in browser (JCEF).
-            If JCEF is not available, the tab shows a message instead of the charts.
+            The dashboard is shown in the IDE built-in browser.
+            If the built-in browser is not available, the tab shows a message instead of the charts.
             See <a href="Azd-FAQ.topic" anchor="jcef-views">A view shows a message instead of content</a>.
         </p>
     </chapter>

@@ -8,12 +8,6 @@
     <primary-label ref="codecov"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>License: 10-day free trial, then <ui-path>Help | Register</ui-path></p>
-        <p>Connect: <ui-path>Settings | Tools | Codecov</ui-path></p>
-        <p>Requires: a Git repository that is activated on Codecov, and a Codecov API token</p>
-    </tldr>
-
     <link-summary>Install the Codecov plugin, start the trial or activate a license, and connect the project to Codecov with an API token.</link-summary>
     <card-summary>Install the plugin, activate it and connect the project to Codecov.</card-summary>
     <web-summary>Install the Codecov plugin in JetBrains IDEs, start the 10-day trial and connect your project to Codecov with an API token from your Codecov account.</web-summary>

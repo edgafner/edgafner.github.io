@@ -8,12 +8,6 @@
     <primary-label ref="gbrowser"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Settings: <ui-path>Settings | Tools | GBrowser</ui-path></p>
-        <p>From the browser: <ui-path>More Options | Preferences</ui-path></p>
-        <p>Scope: current project, stored in <path>.idea/gbrowsers.xml</path></p>
-    </tldr>
-
     <link-summary>Reference for every GBrowser setting: home page, search, history, theme, debug port, tool window, bookmarks, request headers and browser compatibility mode.</link-summary>
     <card-summary>Set the home page, search, theme, request headers and compatibility mode.</card-summary>
     <web-summary>Reference for the GBrowser settings in JetBrains IDEs: home page, search and history, page theme, debug port, request headers and compatibility mode.</web-summary>

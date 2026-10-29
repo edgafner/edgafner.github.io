@@ -8,11 +8,6 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: select an issue in the <control>JirAI</control> tool window and press <shortcut>Enter</shortcut></p>
-        <p>Details menu: right-click the details tab for <control>Copy Issue URL</control>, <control>Create Branch…</control>, <control>Refresh</control>, <control>Hide Fields…</control> and more</p>
-    </tldr>
-
     <link-summary>Read an issue's fields, edit them in place, move the issue through its workflow, and manage attachments, links and child work items.</link-summary>
     <card-summary>Edit fields in place, change status, and manage attachments, links and child work items.</card-summary>
     <web-summary>Read and edit Jira Cloud issue fields in JetBrains IDEs with JirAI: in-place edits, workflow transitions, attachments, issue links and child work items.</web-summary>

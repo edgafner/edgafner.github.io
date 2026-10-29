@@ -8,12 +8,6 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Sign in: <control>JirAI</control> tool window, <control>Log In</control></p>
-        <p>Manage the account: <ui-path>Settings | Tools | JirAI</ui-path></p>
-        <p>Requires: a Jira Cloud site and an Atlassian API token</p>
-    </tldr>
-
     <link-summary>Sign in to Jira Cloud with an API token, fix sign-in errors, manage or switch the account and use JirAI behind a proxy.</link-summary>
     <card-summary>Sign in with an Atlassian API token, fix sign-in errors, switch sites and see where JirAI stores credentials.</card-summary>
     <web-summary>Sign in to Jira Cloud from JirAI in JetBrains IDEs with an Atlassian API token, fix sign-in errors, replace an expired token and use JirAI behind a corporate proxy.</web-summary>
@@ -126,10 +120,10 @@
         <list>
             <li>
                 <p>The API token is stored in the IDE credential store, which is the operating system keychain or the IDE's KeePass file, depending on the IDE's <control>Passwords</control> setting.</p>
-                <p>The token is never written to an XML file.</p>
+                <p>The token is never written to the IDE settings files.</p>
             </li>
-            <li><p>The site address, your e-mail, display name and account ID are stored without secrets in <path>jira-sites.xml</path> in the IDE configuration directory.</p></li>
-            <li><p>Under Remote Development, the token and <path>jira-sites.xml</path> stay on the host.</p></li>
+            <li><p>The site address, your e-mail, display name and account ID are stored, without secrets, in the IDE settings.</p></li>
+            <li><p>Under Remote Development, the token and these account details stay on the host.</p></li>
         </list>
     </chapter>
 

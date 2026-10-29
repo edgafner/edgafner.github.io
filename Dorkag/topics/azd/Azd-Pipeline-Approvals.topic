@@ -8,10 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Where: the banner at the bottom of a run tab in the <control>AZD Pipelines</control> tool window</p>
-        <p>Mute: <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path>, <control>Approval Notifications</control></p>
-    </tldr>
 
     <link-summary>Approve, reject or defer environment approvals and manual validations, and control approval notifications.</link-summary>
     <card-summary>Approve, reject or defer Azure Pipelines approvals and manual validations from the IDE.</card-summary>
@@ -83,7 +79,7 @@
     <chapter title="Approval notifications" id="approval-notifications">
         <p>
             AZD checks for approvals that wait for you when you open the <control>AZD Pipelines</control> or
-            <control>AZD Pull Requests</control> tool window, at most once every 30 seconds.
+            <control>AZD Pull Requests</control> tool window.
             Each new approval shows a <control>Pipeline approval requested</control> notification with the pipeline and stage.
         </p>
         <img src="azd_pipelines_approval_notification.png" alt="Pipeline approval requested notification with the Review action and a More menu" width="314" border-effect="rounded"/>

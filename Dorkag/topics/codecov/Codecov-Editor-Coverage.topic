@@ -8,12 +8,6 @@
     <primary-label ref="codecov"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Show or hide coverage: <shortcut>Ctrl+Shift+Alt+C</shortcut> (macOS: <shortcut>⌥ ⇧ ⌘ C</shortcut>)</p>
-        <p>Menus: editor context menu, gutter context menu</p>
-        <p>Requires: a project connected to Codecov</p>
-    </tldr>
-
     <link-summary>Read Codecov line coverage in the editor gutter, open line details, and show, hide or refresh coverage.</link-summary>
     <card-summary>See covered, partially covered and missed lines in the editor gutter.</card-summary>
     <web-summary>The Codecov plugin marks covered, partially covered and missed lines in the editor gutter of JetBrains IDEs, using coverage your CI uploads to Codecov.</web-summary>

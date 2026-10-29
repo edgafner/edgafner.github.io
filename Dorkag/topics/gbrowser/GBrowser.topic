@@ -18,17 +18,17 @@
         </description>
 
         <spotlight>
-            <a href="GBrowser-Installation.topic" type="start"
+            <a href="GBrowser-Installation.topic" type="install"
                summary="Check the requirements and install GBrowser from JetBrains Marketplace.">Install</a>
-            <a href="Work-with-GBrowser.topic" type="tools"
+            <a href="Work-with-GBrowser.topic" type="world"
                summary="Open the tool window, navigate, search, use tabs, find text and zoom.">Browse the web</a>
         </spotlight>
 
         <primary>
             <title>Use GBrowser</title>
-            <a href="GBrowser-Bookmarks-and-History.topic" type="tools"
+            <a href="GBrowser-Bookmarks-and-History.topic" type="library"
                summary="Bookmark pages, use the bookmarks bar, and clear history and cookies.">Bookmarks and history</a>
-            <a href="GBrowser-Open-Files-and-Links.topic" type="development"
+            <a href="GBrowser-Open-Files-and-Links.topic" type="file"
                summary="Preview HTML and SVG files and open URLs from the editor.">Open project files and links</a>
             <a href="GBrowser-DevTools-and-Device-Emulation.topic" type="development"
                summary="Inspect pages with DevTools and test layouts on emulated mobile devices.">DevTools and device emulation</a>
@@ -38,11 +38,11 @@
 
         <secondary>
             <title>Reference and help</title>
-            <a href="GBrowser-Keyboard-Shortcuts.topic" type="learn"
+            <a href="GBrowser-Keyboard-Shortcuts.topic" type="keyboard"
                summary="Default shortcuts for every GBrowser action and how to change them.">Keyboard shortcuts</a>
             <a href="GBrowser-Reference-and-Support.topic" type="support"
                summary="Fix common problems, report a bug or contact the author.">Troubleshooting and support</a>
-            <a href="GBrowser-Whats-New.topic" type="learn"
+            <a href="GBrowser-Whats-New.topic" type="top"
                summary="Release notes for recent GBrowser versions.">What's new</a>
         </secondary>
     </section-starting-page>

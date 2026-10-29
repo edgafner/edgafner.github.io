@@ -8,12 +8,6 @@
     <primary-label ref="gbrowser"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open DevTools: <shortcut>F12</shortcut></p>
-        <p>Toggle device emulation: <shortcut>Ctrl+Shift+M</shortcut></p>
-        <p>Debug port: <ui-path>Settings | Tools | GBrowser | Developer Options</ui-path></p>
-    </tldr>
-
     <link-summary>Inspect pages with Chromium DevTools, test layouts on emulated mobile devices, and attach Chrome to the IDE's embedded browser.</link-summary>
     <card-summary>Inspect pages with DevTools and test layouts on emulated mobile devices.</card-summary>
     <web-summary>Debug web pages in JetBrains IDEs with GBrowser: open Chromium DevTools, emulate phones and tablets, and attach Chrome through a debugging port.</web-summary>

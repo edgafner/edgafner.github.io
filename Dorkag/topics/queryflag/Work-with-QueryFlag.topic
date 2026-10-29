@@ -8,11 +8,6 @@
     <primary-label ref="queryflag"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Run: right-click the selection and select <ui-path>Query Flag in DB | &lt;template name&gt;</ui-path></p>
-        <p>Requires: a template whose data source is available in the project</p>
-    </tldr>
-
     <link-summary>Select a value in the editor and run a saved QueryFlag template with it from the context menu.</link-summary>
     <card-summary>Select a value in the editor and run a template with it from the context menu.</card-summary>
     <web-summary>Run QueryFlag templates on the text you select in the editor of JetBrains IDEs: QueryFlag fills in the value, runs the query, and shows the results.</web-summary>

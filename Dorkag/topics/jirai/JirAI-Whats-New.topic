@@ -242,7 +242,7 @@
         <list>
             <li><p>2026.3.10: hide a custom field from the eye icon on its row, and manage hidden fields in <ui-path>Settings | Tools | JirAI | Field Visibility</ui-path>.</p></li>
             <li><p>2026.3.9: Markdown in the Create form description, <control>Push to Jira</control> for Markdown documents, document presets for Superpowers and spec-kit, and the <control>List</control> tab of a space.</p></li>
-            <li><p>2026.3.8: a space downloads once for all its tabs.</p></li>
+            <li><p>2026.3.8: switching between a space's tabs no longer loads the space again.</p></li>
             <li><p>2026.3.7: exclude a filter value with a second click or <shortcut>Shift</shortcut>+click, <control>All</control> and <control>Clear</control> in every filter popup, and several people in the <control>Assignee</control> and <control>Reporter</control> filters.</p></li>
             <li><p>2026.3.6: filter space reports by sprint, sprint status, fix version, component and label.</p></li>
             <li><p>2026.3.5: space pages with the <control>Summary</control> and <control>Reports</control> tabs, and the large-space setting in <ui-path>Settings | Tools | JirAI | Metrics</ui-path>.</p></li>

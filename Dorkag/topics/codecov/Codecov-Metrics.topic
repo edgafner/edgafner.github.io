@@ -8,11 +8,6 @@
     <primary-label ref="codecov"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: <control>Codecov Metrics</control> button on the Project tool window toolbar</p>
-        <p>Requires: a project connected to Codecov with a detected repository</p>
-    </tldr>
-
     <link-summary>Open the Codecov Metrics dashboard to see the coverage impact of the current branch and the coverage trend of the repository.</link-summary>
     <card-summary>See pull request impact cards and the coverage trend in an editor tab.</card-summary>
     <web-summary>The Codecov Metrics dashboard in JetBrains IDEs shows the coverage impact of your branch or pull request and the coverage trend of the repository.</web-summary>

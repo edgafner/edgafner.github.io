@@ -8,12 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Start: <control>Create Pull Request…</control> (<control>+</control>) in the <control>AZD Pull Requests</control> tool window</p>
-        <p>Shortcut in the tool window: <shortcut>Alt+Insert</shortcut> (macOS: <shortcut>⌘ N</shortcut>)</p>
-        <p>Settings: <ui-path>Settings | Version Control | AZD | Preferences</ui-path>, <control>Pull request title template</control>, <control>Preferred target branches (this project)</control> and <control>Auto-fill description from PR templates</control></p>
-        <p>Requires: a project with an Azure DevOps Git remote and a signed-in AZD account; see <a href="Azd-Installation.topic" anchor="connect"/></p>
-    </tldr>
 
     <link-summary>Open a new pull request tab, check the pre-filled branches and title, fill in the description, reviewers, work items and labels and create the pull request.</link-summary>
     <card-summary>Create an Azure DevOps pull request or a draft from the IDE, with reviewers, work items and labels.</card-summary>
@@ -24,6 +18,7 @@
         AZD creates pull requests in an editor-like tab of the <control>AZD Pull Requests</control> tool window.
         The tab title is <control>New Pull Request at</control> followed by the organization and the Azure DevOps project,
         for example <control>New Pull Request at contoso/Fabrikam</control>.
+        You need a project with an Azure DevOps Git remote and a signed-in AZD account; see <a href="Azd-Installation.topic" anchor="connect"/>.
     </p>
 
     <chapter title="Open the new pull request tab" id="open-create-tab">

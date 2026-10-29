@@ -8,11 +8,6 @@
     <primary-label ref="codecov"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Generate: click a coverage bar, then <control>Generate AI Prompt</control></p>
-        <p>Templates: <ui-path>Settings | Tools | Codecov</ui-path>, group <control>AI Prompt Templates</control></p>
-    </tldr>
-
     <link-summary>Copy a test-writing prompt for covered or uncovered code to the clipboard and customize the prompt templates.</link-summary>
     <card-summary>Copy a ready-made test-writing prompt for uncovered code to the clipboard.</card-summary>
     <web-summary>The Codecov plugin for JetBrains IDEs turns covered or uncovered code into a test-writing prompt that you paste into any AI assistant or agent.</web-summary>

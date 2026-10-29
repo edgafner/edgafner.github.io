@@ -8,11 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Open: double-click a pull request in the <control>AZD Pull Requests</control> tool window</p>
-        <p>Mark a file as viewed: <shortcut>Ctrl+Shift+S</shortcut> (macOS: see <ui-path>Settings | Keymap</ui-path>)</p>
-        <p>Timeline: <control>View Timeline</control> in the pull request details</p>
-    </tldr>
 
     <link-summary>Open a pull request, check out its branch, go through the changed files and the timeline, edit the description and read the status and branch policies.</link-summary>
     <card-summary>Inspect an Azure DevOps pull request: files, diffs, timeline, checks and branch policies.</card-summary>
@@ -67,8 +62,6 @@
             <def title="Open in Worktree">
                 Fetches the source branch and opens it in a new Git worktree, so your current branch stays untouched.
                 The worktree opens as a separate project.
-                AZD stores it under <path>tmp/azdReviewWorktrees</path> in the
-                <a href="https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html">IDE system directory</a>.
                 The option appears for active pull requests that are not from a fork, when the branch is not checked out yet
                 and the project has a single Git repository.
             </def>
@@ -114,7 +107,7 @@
             The progress line, for example <control>Viewed: 3 out of 7</control>, tracks your review.
         </p>
         <list>
-            <li>To mark a file as viewed, right-click it and select <control>Mark as Viewed</control>, or press <shortcut>Ctrl+Shift+S</shortcut>. Press it again for <control>Mark as Not Viewed</control>.</li>
+            <li>To mark a file as viewed, right-click it and select <control>Mark as Viewed</control>, or press <shortcut>Ctrl+Shift+S</shortcut> (on macOS, find <control>Mark as Viewed</control> in <ui-path>Settings | Keymap</ui-path> for the shortcut). Press it again for <control>Mark as Not Viewed</control>.</li>
             <li>To show only some files, use the filter above the tree: <control>All Files</control>, <control>Unviewed Only</control> or <control>Viewed Only</control>.</li>
             <li>To mark every file you open as viewed, select <control>Automatically mark opened files as viewed</control> in <ui-path>Settings | Version Control | AZD | Preferences</ui-path>.</li>
         </list>

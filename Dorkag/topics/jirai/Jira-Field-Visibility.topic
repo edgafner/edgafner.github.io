@@ -8,12 +8,6 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Hide one field: the eye icon on a custom field row</p>
-        <p>Hide several: right-click the details tab, <control>Hide Fields…</control></p>
-        <p>Manage: <ui-path>Settings | Tools | JirAI | Field Visibility</ui-path></p>
-    </tldr>
-
     <link-summary>Hide custom fields you do not need from the issue details, in all projects, one project or one issue.</link-summary>
     <card-summary>Hide unneeded custom fields from the issue details and manage the hidden-field rules.</card-summary>
     <web-summary>Hide unneeded Jira Cloud custom fields from issue details in JirAI for JetBrains IDEs, for all projects, one project or one issue, and unhide them later.</web-summary>

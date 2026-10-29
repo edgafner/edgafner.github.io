@@ -8,16 +8,11 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter" depth="2"/>
 
-    <tldr>
-        <p>Settings: <ui-path>Settings | Tools | JirAI</ui-path></p>
-        <p>Open the Settings dialog: <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>)</p>
-    </tldr>
-
     <link-summary>Every JirAI settings page and option, the notification groups and the keyboard shortcuts.</link-summary>
     <card-summary>All JirAI settings pages, notification groups and keyboard shortcuts in one place.</card-summary>
     <web-summary>Reference for every JirAI setting in JetBrains IDEs: Jira account, field visibility, doc push presets, agent skills, branch names and commit messages, metrics sampling, virtual board colors, house standard and shortcuts.</web-summary>
 
-    <p>JirAI settings are under <ui-path>Settings | Tools | JirAI</ui-path>.</p>
+    <p>JirAI settings are under <ui-path>Settings | Tools | JirAI</ui-path>. To open the <control>Settings</control> dialog, press <shortcut>Ctrl+Alt+S</shortcut> (macOS: <shortcut>⌘ ,</shortcut>).</p>
     <p>All pages except <control>Doc Push</control> and <control>Agent Skills</control> apply to the whole IDE; those two act on the current project.</p>
     <p>Every JirAI settings page shows the JirAI icon at the top.</p>
 

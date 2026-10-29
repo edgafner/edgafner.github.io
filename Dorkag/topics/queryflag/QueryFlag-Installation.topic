@@ -8,12 +8,6 @@
   <primary-label ref="queryflag"/>
   <show-structure for="chapter,procedure" depth="2"/>
 
-  <tldr>
-    <p>Install: <ui-path>Settings | Plugins | Marketplace</ui-path></p>
-    <p>License: 30-day free trial, then <ui-path>Help | Register</ui-path></p>
-    <p>Requires: the Database Tools and SQL plugin</p>
-  </tldr>
-
   <link-summary>Check the requirements, install QueryFlag from JetBrains Marketplace, and start the trial or activate a license.</link-summary>
   <card-summary>Check the requirements, install the plugin, and start the trial or activate a license.</card-summary>
   <web-summary>Install the QueryFlag plugin in JetBrains IDEs from JetBrains Marketplace, check its requirements, and start the 30-day trial or activate a license.</web-summary>

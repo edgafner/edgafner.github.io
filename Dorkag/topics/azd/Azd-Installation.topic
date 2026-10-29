@@ -8,11 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>License: 10-day free trial, then <ui-path>Help | Register</ui-path></p>
-        <p>Requires: a JetBrains IDE 2026.3, build 263.5153 or a later 2026.3 build</p>
-        <p>Sign in: Microsoft, Azure CLI or personal access token (PAT), in an AZD tool window or <ui-path>Settings | Version Control | AZD</ui-path></p>
-    </tldr>
 
     <link-summary>Install AZD, start the trial, sign in to Azure DevOps Services or Azure DevOps Server, and renew expired tokens.</link-summary>
     <card-summary>Install AZD and sign in with Microsoft, the Azure CLI or a personal access token.</card-summary>
@@ -161,7 +156,7 @@
         </chapter>
 
         <chapter title="Sign in with Azure CLI" id="azd-azcli-login">
-            <p>AZD gets its token from <code>az account get-access-token</code>, so the Azure CLI must be installed and signed in.</p>
+            <p>AZD uses your Azure CLI sign-in, so the Azure CLI must be installed and signed in.</p>
             <procedure title="Connect an Azure CLI account" id="azd-login-azcli-procedure">
                 <step>
                     <p>In a terminal, run <code>az login</code>.</p>
@@ -177,7 +172,7 @@
                 it adds one account for each organization that your Azure CLI identity can reach.
             </p>
             <p>
-                AZD looks for <code>az</code> on the <code>PATH</code> and in the usual install locations.
+                AZD finds <code>az</code> automatically in the usual install locations.
                 If it cannot find it, set the path in <ui-path>Settings | Version Control | AZD | Preferences</ui-path>,
                 in the <control>Azure CLI</control> group, or click <control>Detect</control>.
             </p>
@@ -185,6 +180,7 @@
             <p>
                 If the Azure CLI session expires, AZD shows a notification.
                 Run <code>az login</code> again, then retry.
+                For other Azure CLI sign-in problems, see <a href="Azd-FAQ.topic" anchor="login_pat_issues">Sign-in fails</a>.
             </p>
         </chapter>
 
@@ -291,8 +287,7 @@
                 </step>
             </procedure>
             <p>
-                If AZD reports missing scopes, create a new token with the <a anchor="generate_pat">scopes listed above</a>
-                for <control>All accessible organizations</control>.
+                If sign-in fails, for example because of missing scopes, see <a href="Azd-FAQ.topic" anchor="login_pat_issues">Sign-in fails</a>.
             </p>
         </chapter>
 
@@ -366,7 +361,7 @@
             <step>
                 <p>For a personal access token, paste the new token in the <control>Update AZD Account</control> dialog and click <control>Log In</control>.
                     For Microsoft sign-in, the <control>Sign in with Microsoft</control> dialog opens; see <a anchor="azd-oauth-login"/>.
-                    For the Azure CLI, AZD gets a new token from <code>az</code>.</p>
+                    For the Azure CLI, AZD signs in again with your new Azure CLI session.</p>
             </step>
         </procedure>
     </chapter>

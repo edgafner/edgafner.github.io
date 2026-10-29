@@ -8,12 +8,6 @@
     <primary-label ref="jirai"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Add: <ui-path>Tools | Add JirAI Skills to AI Agents…</ui-path></p>
-        <p>Manage: <ui-path>Settings | Tools | JirAI | Agent Skills</ui-path></p>
-        <p>Skills: <code>/use-virtual-board</code>, <code>/jira-ticket</code>, <code>/work-on-jira-issue</code></p>
-    </tldr>
-
     <link-summary>Add JirAI's skills to Claude Code, Codex, Copilot CLI and Junie, so your agent uses the virtual board and checks Jira tickets without being told how.</link-summary>
     <card-summary>Teach your AI agents to use the virtual board and to check a Jira ticket before filing it.</card-summary>
     <web-summary>JirAI agent skills teach Claude Code, Codex, Copilot CLI and Junie to show their plan on the JirAI virtual board, to work on a Jira parent issue and its children, and to check a Jira ticket against your team's rules.</web-summary>

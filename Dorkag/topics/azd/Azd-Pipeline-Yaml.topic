@@ -8,10 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Configure: <ui-path>Settings | Version Control | AZD | Pipeline Settings</ui-path></p>
-        <p>Language server: requires Node.js 14 or later</p>
-    </tldr>
 
     <link-summary>Get completion, validation and hover help in Azure Pipelines YAML files, and choose which files count as pipelines.</link-summary>
     <card-summary>Completion and validation for Azure Pipelines YAML through the Azure Pipelines language server.</card-summary>
@@ -25,8 +21,8 @@
 
     <chapter title="Completion and validation" id="yaml-completion">
         <p>
-            When you open a pipeline file, AZD starts the Azure Pipelines language server that ships with the plugin.
-            The language server provides completion of keys such as <code>stages</code>, <code>jobs</code> and <code>steps</code>,
+            Pipeline files get help from the Azure Pipelines language server, which is included with AZD:
+            completion of keys such as <code>stages</code>, <code>jobs</code> and <code>steps</code>,
             hover documentation, and diagnostics for unknown or misplaced keys.
         </p>
         <img src="pipeline_injections.png" alt="Completion popup in a pipeline YAML file suggesting stages, steps and strategy"

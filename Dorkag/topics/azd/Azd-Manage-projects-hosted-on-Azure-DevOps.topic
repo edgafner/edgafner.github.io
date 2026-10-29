@@ -8,10 +8,6 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter,procedure" depth="2"/>
 
-    <tldr>
-        <p>Clone: <ui-path>Git | Clone…</ui-path>, then <control>Azure DevOps</control></p>
-        <p>Open a file on the web: <ui-path>Open In | Azure Devops</ui-path> in the context menu</p>
-    </tldr>
 
     <link-summary>Clone Azure DevOps repositories and open files and commits on Azure DevOps from the IDE.</link-summary>
     <card-summary>Clone Azure DevOps repositories and jump from a file to its Azure DevOps web view.</card-summary>

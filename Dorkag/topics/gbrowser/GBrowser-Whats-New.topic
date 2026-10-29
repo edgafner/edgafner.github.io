@@ -8,17 +8,14 @@
     <primary-label ref="gbrowser"/>
     <show-structure for="chapter" depth="2"/>
 
-    <tldr>
-        <p>Current version: 2026.3.1, for JetBrains IDEs 2026.3 (EAP builds 263.3889 and later)</p>
-        <p>For JetBrains IDEs 2026.2: GBrowser 2026.2.3</p>
-    </tldr>
-
     <link-summary>Release notes for GBrowser: IDE support, device emulation, page theme, browser compatibility mode and fixes.</link-summary>
     <card-summary>Release notes for recent GBrowser versions.</card-summary>
     <web-summary>What's new in GBrowser for JetBrains IDEs: support for 2026.3, device emulation, page theme, Open in GBrowser and browser compatibility mode.</web-summary>
 
     <p>
         This page lists the changes in recent GBrowser releases, newest first.
+        The current version, 2026.3.1, is for JetBrains IDEs 2026.3 (build 263.3889 and later 263 builds).
+        For JetBrains IDEs 2026.2, use GBrowser 2026.2.3.
         For every release, see the <a href="https://github.com/edgafner/GBrowser/blob/main/CHANGELOG.md">changelog on GitHub</a>.
     </p>
 
