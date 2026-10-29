@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0  # Full history for better change detection
 
@@ -39,7 +39,7 @@ jobs:
           docker-version: ${{ env.DOCKER_VERSION }}
 
       - name: Save artifact with build results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: docs
           path: |
@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8.0.2
         with:
           name: docs
           path: artifacts
@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8.0.2
         with:
           name: docs
 
@@ -80,7 +80,7 @@ jobs:
       # og_dorkag.png is the <og-image> in buildprofiles.xml. No topic references it,
       # so Writerside does not copy it into the build output; add it here.
       - name: Checkout social preview image
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           sparse-checkout: Dorkag/images/og_dorkag.png
           sparse-checkout-cone-mode: false
@@ -108,7 +108,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8.0.2
         with:
           name: docs
           path: artifacts

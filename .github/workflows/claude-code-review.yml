@@ -2,44 +2,121 @@ name: Claude Code Review
 
 on:
   pull_request:
-    types: [opened, synchronize, ready_for_review, reopened]
-    # Optional: Only run on specific file changes
-    # paths:
-    #   - "src/**/*.ts"
-    #   - "src/**/*.tsx"
-    #   - "src/**/*.js"
-    #   - "src/**/*.jsx"
+    types: [ opened, synchronize, ready_for_review, reopened ]
 
 jobs:
   claude-review:
-    # Optional: Filter by PR author
-    # if: |
-    #   github.event.pull_request.user.login == 'external-contributor' ||
-    #   github.event.pull_request.user.login == 'new-developer' ||
-    #   github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR'
+    # Skip Dependabot PRs, drafts, and external contributors
+    if: |
+      github.event.pull_request.user.login != 'dependabot[bot]' &&
+      github.event.pull_request.user.login != 'dependabot-preview[bot]' &&
+      github.event.pull_request.author_association != 'NONE' &&
+      github.event.pull_request.draft == false &&
+      github.event.pull_request.author_association != 'FIRST_TIME_CONTRIBUTOR'
 
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: read
-      issues: read
+      pull-requests: write  # Required for Claude to comment on PRs
+      issues: write         # Required for issue comments
       id-token: write
+      actions: read         # Required for Claude to read CI results
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
-          fetch-depth: 1
+          fetch-depth: 0  # Full history for accurate diffs
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Run Claude Code Review
         id: claude-review
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@v1.0.262
         with:
+          use_sticky_comment: true
+          track_progress: true
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          plugin_marketplaces: 'https://github.com/anthropics/claude-code.git'
-          plugins: 'code-review@claude-code-plugins'
-          prompt: '/code-review:code-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}'
-          claude_args: '--allowedTools "mcp__github_inline_comment__create_inline_comment"'
-          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://code.claude.com/docs/en/cli-reference for available options
 
+          prompt: |
+            Please review this pull request (#${{ github.event.pull_request.number }}) titled "${{ github.event.pull_request.title }}".
+
+            Repository: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+            PR Author: @${{ github.event.pull_request.user.login }}
+            Base Branch: ${{ github.event.pull_request.base.ref }}
+            Head Branch: ${{ github.event.pull_request.head.ref }}
+            Changed Files: ${{ github.event.pull_request.changed_files }}
+            Additions: +${{ github.event.pull_request.additions }}
+            Deletions: -${{ github.event.pull_request.deletions }}
+
+            ## How to comment
+
+            Use inline comments for issues tied to specific lines via `mcp__github_inline_comment__create_inline_comment`.
+            **Pass `confirmed: true`** when calling that tool — without it, your comment is buffered and post-run classification may drop it (the action's anti-probe defense). Only set `confirmed: true` for real review comments tied to actual changes; never for test/probe comments.
+            Use the sticky comment (already managed by the action) for the general feedback and summary.
+
+            ## Reconciling with your previous review ("resolving")
+
+            If you have previously reviewed this PR (look for the tracking marker below in
+            earlier comments):
+
+            1. First, check which of your previous suggestions have been addressed in the current head.
+            2. Acknowledge the improvements that were made, listing them under a **Resolved** heading
+               with a ✅ and a one-line note on how each was fixed.
+            3. Identify any remaining issues that still need attention, under **Still open**.
+            4. Review any new changes introduced since your last review.
+
+            Do not re-raise an issue you already raised that is still unfixed as if it were new — carry
+            it forward under **Still open** instead. Do not raise an issue about content in lines this
+            PR does not touch.
+
+            ## Project context
+
+            This is the GitHub Pages documentation site for the DORKAG JetBrains IDE plugins, written in
+            Writerside XML (`.topic` files, `.tree` files, `cfg/buildprofiles.xml`). It is end-user
+            documentation, not plugin code. `CLAUDE.md` holds the writing conventions (titles, summaries,
+            image attributes, `_dark` image twins, see-also); read it before forming conclusions.
+
+            Please review this pull request and provide feedback on:
+            - Documentation structure and Writerside XML validity
+            - Accuracy and clarity for end users; no implementation or internal technical details
+            - GitHub Actions workflow configuration and optimization
+            - SEO and meta tags implementation
+            - Static site performance and accessibility
+            - Security headers and CSP considerations
+            - Broken links, anchors and asset references
+            - Mobile responsiveness and cross-browser compatibility
+            - Build artifacts and deployment configuration
+
+            Focus on GitHub Pages specific concerns like build times, artifact sizes, and CDN caching.
+            Be constructive and helpful in your feedback.
+
+            ## Review Format
+
+            Structure the sticky comment as:
+
+            1. **Summary**: Brief overview of the changes and your assessment
+            2. **Resolved**: previous findings now fixed (omit on a first review)
+            3. **Still open**: previous findings not yet addressed (omit on a first review)
+            4. **Issues Found**: new problems, with file paths and line numbers
+            5. **Suggestions**: actionable improvements
+            6. **Overall Assessment**: approve, request changes, or needs discussion
+
+            ## Important Notes
+
+            - Be specific and constructive; reference exact files and line numbers
+            - Verify a finding by reading enough surrounding context to confirm it is real. A false
+              positive costs more than a missed nit, because it trains the author to skim your output.
+            - Binary files (screenshots) cannot be reviewed for content; do not flag them as unreviewed
+            - If the changes are trivial, keep the review brief
+
+            Start your review with this tracking marker for continuity:
+            <!-- claude-review-${{ github.event.pull_request.number }}-${{ github.run_number }} -->
+
+          # The inline-comment MCP tool must be listed explicitly: tag mode's default tool whitelist does
+          # not include it, and without it reviews degrade to a single PR-level comment.
+          # --max-turns 60 is a runaway ceiling, not a budget (same as the AZD and JirAI reviews).
+          claude_args: |
+            --model claude-sonnet-5-5
+            --max-turns 60
+            --allowedTools Read,Grep,Glob,WebFetch,mcp__github_inline_comment__create_inline_comment
