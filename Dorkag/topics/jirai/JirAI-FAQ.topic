@@ -25,6 +25,8 @@
                 <p>No. JirAI has no telemetry or analytics, and it does not read or send your source code.</p>
                 <p>Requests with your credentials go only to the Jira site you signed in to.</p>
                 <p>Markdown documents are sent to Jira only when you push them.</p>
+                <p>Your IDE can send reports about JirAI errors and freezes to JetBrains and the plugin author, as set by the IDE's <control>Send error reports to JetBrains automatically</control> setting. Only errors that JirAI logs itself have their text removed; uncaught exceptions and freeze reports, including their thread dumps, keep it.</p>
+                <p>See <a href="JirAI-Remote-Development-and-Architecture.topic" anchor="error-reports">Error and freeze reports</a>.</p>
             </def>
             <def title="Why does the issue list show only issues from the last 365 days?">
                 <p>Every search and filter in the issue list covers issues created in the last 365 days.</p>

@@ -5,7 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Privacy Policy" id="privacy-policy">
 
-    <p><control>Last Updated: June 10, 2026</control></p>
+    <p><control>Last Updated: November 4, 2026</control></p>
 
     <chapter title="Introduction" id="introduction">
         <p>Dorkag ("we", "our", or "us") is committed to protecting your privacy and being transparent about how our
@@ -147,7 +147,31 @@
             GDPR Recital 26.</p>
 
         <p>You can opt out by switching off <ui-path>Share anonymous usage statistics</ui-path> in the plugin
-            settings. No other usage analytics, crash reporting, or tracking exists in our Products and Services.</p>
+            settings. Apart from the JirAI error and freeze reports described in
+            <a anchor="jirai-error-reports">JirAI Error and Freeze Reports</a>, no other usage analytics, crash
+            reporting, or tracking exists in our Products and Services.</p>
+    </chapter>
+
+    <chapter title="JirAI Error and Freeze Reports" id="jirai-error-reports">
+        <p>JirAI has no telemetry, analytics, or error-sending code of its own. Since version 2026.3.35 it registers
+            the JetBrains Marketplace error reporter, so your JetBrains IDE, not JirAI, can send reports about JirAI
+            errors and freezes to JetBrains. Through JetBrains Marketplace, these reports reach the plugin author.</p>
+
+        <p>Sending follows your own JetBrains consent: the IDE sends a report when you click Report in its error
+            dialog, or without asking when "Send error reports to JetBrains automatically" is on in the IDE's Data
+            Sharing settings (under Remote Development, the client's setting counts). A provisioned IDE can force
+            automatic sending on.</p>
+
+        <p>A report holds the stack trace, IDE and OS details, and a device identifier shared across your JetBrains
+            IDEs. A freeze report also holds thread dumps of the whole IDE, and one from a Remote Development host
+            also holds a Java Flight Recorder file with the JVM's command line and system properties, including your
+            home directory path.</p>
+
+        <p>Only errors that JirAI logs itself have their message text removed. Uncaught exceptions and every freeze
+            report keep their text, including the thread dumps, so a report can contain Jira content such as a site
+            address or an issue key. For details, see the JirAI
+            <a href="JirAI-Remote-Development-and-Architecture.topic" anchor="error-reports">error and freeze
+            reports</a> documentation.</p>
     </chapter>
 
     <chapter title="Third-Party Processing" id="third-party-processing">
@@ -160,6 +184,10 @@
             <li><control>Your chosen AI provider</control> — if you configure OpenAI, Anthropic Claude, Google Gemini,
                 or another provider yourself, your AI requests go directly to that provider under its own terms;
                 Dorkag receives nothing
+            </li>
+            <li><control>JetBrains</control> — receives JirAI error and freeze reports that your IDE sends under your
+                own JetBrains error-report setting, and makes them available to the plugin author through JetBrains
+                Marketplace (see <a anchor="jirai-error-reports">JirAI Error and Freeze Reports</a>)
             </li>
         </list>
 
