@@ -113,16 +113,11 @@
     <chapter title="A board linked to Jira" id="jira-linked-board">
         <p>When the agent starts a board on a Jira Epic, or on a Story or Task that has children, the children become the cards.</p>
         <p>Ask for it with <code>/work-on-jira-issue</code>, for example: <emphasis>We need to start working on DEMO-12, please read it and its children.</emphasis></p>
-        <p>The board has four columns: <control>To Do</control>, <control>In Progress</control>, <control>Ready to merge</control> and <control>Done</control>.</p>
-        <deflist type="medium">
-            <def title="Done">The child's Jira status is in the Done category.</def>
-            <def title="Ready to merge">The agent finished the child, and Jira still has it in progress.</def>
-            <def title="In Progress">Jira has the child in progress, or the agent is working on it.</def>
-            <def title="To Do">Everything else.</def>
-        </deflist>
+        <p>The board shows the columns of your team's own Jira board for the parent's space, and each card sits in the column that holds its live Jira status. Empty columns are shown too, as on the Jira board.</p>
         <list>
-            <li><p>Jira's status always wins: a child a teammate moved to Done shows in <control>Done</control>, whatever the agent reported.</p></li>
-            <li><p>Each card shows the child's key, its Jira summary, its Jira status, for example <control>In Review</control>, and the first lines of its description.</p></li>
+            <li><p>Jira's status always wins: a child a teammate moved to Done shows in the Done column, whatever the agent reported.</p></li>
+            <li><p>Each card shows the child's key, its Jira summary, its Jira status, for example <control>In Review</control>, and the first lines of its description. The status is not repeated when it matches the column name.</p></li>
+            <li><p>A card shows <control>Agent finished</control> when the agent finished the child and Jira does not have it done yet.</p></li>
             <li><p>A card flags a mismatch: <control>Not started in Jira</control> when the agent works on a child that Jira still has in To Do, and <control>Reopened in Jira</control> when the agent finished a child that Jira moved back to To Do.</p></li>
             <li><p>A phase of the agent's plan that is not a child is marked <control>Local</control>; it never goes to Jira.</p></li>
             <li><p>A child that left the parent shows <control>No longer under …</control> and becomes local.</p></li>
@@ -133,10 +128,21 @@
         <p>When Jira cannot be reached, the board keeps the last statuses and says <control>Jira not reachable — showing statuses from …</control>.</p>
         <p>A board started on an issue without children stays a plain board with three columns. When that issue later gets children, the header offers <control>… has children — show them</control>.</p>
 
+        <chapter title="Where the columns come from" id="linked-columns">
+            <p>The header names the source, for example <control>Columns from: DEMO board</control>. To pick another board, click <control>Change…</control> and choose a board in <control>Show Columns From</control>, or choose <control>Automatic</control>.</p>
+            <p>With <control>Automatic</control>, JirAI uses a board located in the parent's space, preferring one you viewed recently in Jira. A board from another space is used only when you choose it.</p>
+            <p>When there is no board to copy, or Jira does not let you read it, the columns are built from the statuses instead, and the header says why, for example <control>Columns from the space's statuses: the space has no Jira board</control>.</p>
+            <list>
+                <li><p>A status that none of the columns holds gets its own extra column, for example <control>QA — Not on board</control>, while a card needs it.</p></li>
+                <li><p>When the board shows only the first 50 children, a phase whose issue is not among them goes in <control>Status unknown</control>.</p></li>
+                <li><p>A local phase goes in the first column, in the first in-progress column while the agent works on it, and keeps that column with the <control>Agent finished</control> badge when it is done.</p></li>
+            </list>
+        </chapter>
+
         <chapter title="Done is never automatic" id="move-to-done">
-            <p>Done usually means merged, or later. The agent never moves a child to Done; only you do.</p>
+            <p>Done usually means merged, or later. Nothing moves a child to Done without you: either you move it, or the agent asks to when you tell it to and you approve the move on the board. See <a anchor="approve-jira-changes">Approve the agent's Jira changes</a>.</p>
             <procedure title="Move a child to Done" id="move-to-done-proc">
-                <step><p>On the card, click <control>Move to Done…</control>. Cards in <control>Ready to merge</control> show the button; on other cards it is in the card menu.</p></step>
+                <step><p>On the card, click <control>Move to Done…</control>. Cards with the <control>Agent finished</control> badge show the button; on other cards it is in the card menu.</p></step>
                 <step><p>Confirm <control>Move … to Done?</control>, or choose the transition when Jira offers several. If the transition needs fields, fill them in on the transition screen.</p></step>
             </procedure>
             <p>When no Done transition is open to you, the board says <control>No Done transition is available to you for …</control>.</p>
@@ -155,20 +161,24 @@
     </chapter>
 
     <chapter title="Approve the agent's Jira changes" id="approve-jira-changes">
-        <p>The agent asks for a Jira change with <code>jirai_start_jira_issue</code> (move an issue to In Progress) or <code>jirai_add_jira_comment</code> (post a comment).</p>
-        <p>Neither tool changes Jira. Each only queues the change on the board, where you decide.</p>
+        <p>The agent asks for a Jira change with <code>jirai_start_jira_issue</code> (move an issue to In Progress), <code>jirai_move_jira_issue</code> (move an issue to any status Jira allows from where it is) or <code>jirai_add_jira_comment</code> (post a comment).</p>
+        <p>None of these tools changes Jira. Each only queues the change on the board, where you decide.</p>
+        <p>To move an issue, tell the agent, for example: <emphasis>Move DEMO-14 to In Review.</emphasis> It tells you the move, for example <emphasis>DEMO-14: In Progress → In Review</emphasis>, before it asks. It can ask for Done when you name it.</p>
         <procedure title="Approve or reject a change" id="approve-proc">
             <step>
                 <p>When the agent queues a change, the board comes forward: it opens if it was closed, and its tab is selected without taking keyboard focus from your editor.</p>
                 <p>A notification says <control>The agent is waiting for your OK on …</control>; click <control>Open board</control> to go to it.</p>
             </step>
-            <step><p>On the card, read the request, for example <control>Agent wants to move DEMO-14 → In Progress</control>, or <control>Agent wants to comment on DEMO-14</control> with the comment shown.</p></step>
-            <step><p>Click <control>Approve</control> to send it, or <control>Reject</control>.</p></step>
+            <step><p>On the card, read the request, for example <control>Agent wants to move DEMO-14: In Progress → In Review</control>, or <control>Agent wants to comment on DEMO-14</control> with the comment shown.</p></step>
+            <step><p>Click <control>Approve</control> to send it, or <control>Reject</control>.</p>
+                <p>When the move needs fields, for example a resolution, <control>Approve</control> opens Jira's transition screen. Fill in the fields to send the move; cancelling the screen leaves the move waiting.</p>
+                <p>When Jira asks for a field the IDE cannot fill, the card offers <control>Open in Jira</control> and <control>Reject</control> instead: finish the move in Jira, or reject it.</p></step>
         </procedure>
         <list>
             <li><p>A change is sent at most once, and only when you click <control>Approve</control>. Nothing is retried automatically.</p></li>
             <li><p>The agent learns the outcome on its next board call. It does not ask again for a rejected change unless you ask it to.</p></li>
-            <li><p>If the issue changed before you approved, for example it moved or the transition is no longer offered, the change fails with the reason.</p></li>
+            <li><p>If the issue changed before you approved, for example it moved or the transition is no longer offered, the change fails with the reason. Nothing is sent; ask the agent again.</p></li>
+            <li><p>An issue has at most one waiting move. To ask for another target, approve or reject the first one.</p></li>
             <li><p>A change asked for on one Jira site fails if you are signed in to another site, or to none, when you approve it. Nothing is sent.</p></li>
             <li><p>Waiting changes are kept with the board, so a restart neither loses nor sends them. A board holds at most 10 waiting changes.</p></li>
             <li><p>Every comment notifies the issue's watchers, so the agent posts one only when you ask.</p></li>
@@ -192,7 +202,7 @@
             <li><p>The board needs the IDE's MCP server and the bundled <control>MCP Server</control> plugin. Without them, existing boards stay listed and openable, but agents cannot update them.</p></li>
             <li><p>Whether your agent asks your permission on each board call depends on the agent. If it asks on every report, allow the <code>jirai_*_virtual_*</code> tools in that agent's own permission settings.</p></li>
             <li><p>A linked board shows a parent's direct children only.</p></li>
-            <li><p>JirAI does not notice that a child's work merged; move it to Done yourself.</p></li>
+            <li><p>JirAI does not notice that a child's work merged; move it to Done yourself, or ask the agent to.</p></li>
         </list>
     </chapter>
 

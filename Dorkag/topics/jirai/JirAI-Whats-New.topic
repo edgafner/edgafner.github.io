@@ -16,6 +16,9 @@
     <p>The full change log is on the <a href="https://plugins.jetbrains.com/plugin/33954-jirai/versions">JetBrains Marketplace versions page</a>.</p>
 
     <timeline>
+        <item title="2026.3.36">
+            <p>Real Jira board columns on linked virtual boards, and agent moves to any status you approve.</p>
+        </item>
         <item title="2026.3.35">
             <p>Error and freeze reports through JetBrains Marketplace.</p>
         </item>
@@ -32,6 +35,19 @@
             <p>The Backlog tab, Create Branch from another branch or a tag, and fixes.</p>
         </item>
     </timeline>
+
+    <chapter title="2026.3.36" id="release-2026-3-36">
+        <list>
+            <li><p>A virtual board linked to a Jira parent shows the columns of your team's own Jira board instead of four fixed ones. Pick another board with <control>Columns from:</control> in the header.
+                See <a href="JirAI-Virtual-Board.topic" anchor="linked-columns">Where the columns come from</a>.</p></li>
+            <li><p><control>Ready to merge</control> is now an <control>Agent finished</control> badge on the card.</p></li>
+            <li><p>The new agent tool <code>jirai_move_jira_issue</code> asks to move an issue to any status Jira allows. You approve <control>DEMO-14: In Progress → In Review</control> on the board, and the move is sent at most once.
+                When the move needs fields, <control>Approve</control> opens Jira's transition screen; when a field cannot be filled in the IDE, the card offers <control>Open in Jira</control>.
+                See <a href="JirAI-Virtual-Board.topic" anchor="approve-jira-changes">Approve the agent's Jira changes</a>.</p></li>
+            <li><p>The <code>/work-on-jira-issue</code> skill is now version 2 and teaches moves to any status, including Done when you name it. Installed copies are offered the update.</p></li>
+            <li><p>Plain boards with no Jira link are unchanged.</p></li>
+        </list>
+    </chapter>
 
     <chapter title="2026.3.35" id="release-2026-3-35">
         <list>

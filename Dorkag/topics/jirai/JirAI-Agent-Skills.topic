@@ -26,6 +26,7 @@
             </def>
             <def title="/work-on-jira-issue — Work on a Jira issue">
                 <p>Shows a Jira parent's children on the virtual board and asks before every Jira change. See <a href="JirAI-Virtual-Board.topic" anchor="jira-linked-board">A board linked to Jira</a>.</p>
+                <p>Version 2 also moves an issue to any status Jira allows, including Done when you name it, after you approve the move on the board. Installed copies are offered the update; see <a anchor="manage-skills">Update or remove skills</a>.</p>
             </def>
         </deflist>
         <p>In Codex, type the skill with <code>$</code> instead of <code>/</code>, for example <code>$use-virtual-board</code>.</p>
