@@ -110,9 +110,18 @@
         <deflist type="narrow">
             <def title="@">A person or group in the organization.</def>
             <def title="!">A pull request, including completed and abandoned ones that you created or reviewed.</def>
-            <def title="#">A work item.</def>
+            <def title="#">A work item, from the <control>Work Item References</control> list.</def>
         </deflist>
         <!-- planned-image src="azd_pr_mentions.png" alt="Mention completion list in a comment editor after typing @" -->
+        <p id="work-items-other-organizations">
+            The <code>#</code> list also shows the work items of the projects you added under
+            <a href="Azd-Settings-Configuration.topic" anchor="work-item-sources">Work items from other organizations</a>.
+            The work items of your own organization come first.
+            A work item from another organization shows the organization and project, and picking it inserts a Markdown link to it,
+            because <code>#</code> followed by an ID always points to a work item in your own organization.
+            The list fills in as each project loads, and it names a project that could not be loaded.
+        </p>
+        <!-- planned-image src="azd_pr_work_item_references.png" alt="Work Item References list with work items of the own organization and of another organization" -->
     </chapter>
 
     <chapter title="Attach files and images" id="attachments">

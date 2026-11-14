@@ -33,7 +33,8 @@
             </step>
             <step>
                 <p>Change fields such as <control>State</control>, <control>Area Path</control>, <control>Iteration Path</control>,
-                    <control>Priority</control>, <control>Assigned To</control> and <control>Tags</control>.</p>
+                    <control>Priority</control>, <control>Assigned To</control> and <control>Tags</control>.
+                    When you pick a person for a field such as <control>Assigned To</control>, you are listed first.</p>
             </step>
             <step>
                 <p>To see more fields, expand a group:</p>

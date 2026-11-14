@@ -67,9 +67,16 @@
             AZD clones over SSH by default.
             To clone over HTTPS, clear <control>Clone git repositories using ssh</control> in
             <ui-path>Settings | Version Control | AZD</ui-path>.
-            Over HTTPS, Git uses the token of an AZD account that matches the remote:
-            the default account if it matches, otherwise the only matching account.
+            Over HTTPS, Git uses the token of an AZD account that matches the remote.
+            When the remote URL names the organization before the host, for example
+            <code>https://demo-org@dev.azure.com/demo-org/demo-project/_git/demo-project</code>,
+            Git uses the account of that organization.
+            When the URL names no user, Git uses the default account if it matches the remote, otherwise the only matching account.
             To set the default account, see <a href="Azd-Installation.topic" anchor="azd-manage-accounts">Manage accounts</a>.
+        </p>
+        <p>
+            With accounts for several organizations, the AZD tool windows also use the account of the remote's organization,
+            so a repository cloned over HTTPS from any of them shows the tool windows.
         </p>
         <note>
             With the credential helper enabled, Git asks the credential helper for credentials instead of using your AZD accounts,

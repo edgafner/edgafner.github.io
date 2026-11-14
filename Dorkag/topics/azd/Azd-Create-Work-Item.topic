@@ -28,7 +28,8 @@
                 <p>Optional: fill in <control>Description</control>, <control>Assigned To</control>, <control>Area Path</control>,
                     <control>Iteration Path</control>, <control>Priority</control> and <control>Tags</control>.
                     For a type with Repro Steps, such as Bug, a <control>Repro Steps</control> box shows above <control>Description</control>.
-                    Line breaks you type in these boxes are kept.</p>
+                    Line breaks you type in these boxes are kept.
+                    When you pick a person for <control>Assigned To</control>, you are listed first.</p>
             </step>
             <step>
                 <p>Fill in the fields of the type in the group below, such as fields your process adds.</p>
