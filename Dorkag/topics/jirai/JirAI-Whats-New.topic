@@ -16,6 +16,9 @@
     <p>The full change log is on the <a href="https://plugins.jetbrains.com/plugin/33954-jirai/versions">JetBrains Marketplace versions page</a>.</p>
 
     <timeline>
+        <item title="2026.3.37 to 2026.3.39">
+            <p>The Backlog tab opens a Scrum board, and JirAI is built against the IntelliJ IDEA 2026.3 release.</p>
+        </item>
         <item title="2026.3.36">
             <p>Real Jira board columns on linked virtual boards, and agent moves to any status you approve.</p>
         </item>
@@ -35,6 +38,16 @@
             <p>The Backlog tab, Create Branch from another branch or a tag, and fixes.</p>
         </item>
     </timeline>
+
+    <chapter title="2026.3.37 to 2026.3.39" id="release-2026-3-37">
+        <list>
+            <li><p>The <control>Backlog</control> tab opens a Scrum board of the space, even when the <control>Board</control> tab shows a recent, starred or remembered Kanban board, which has no backlog.
+                See <a href="JirAI-Board.topic" anchor="backlog-tab">Backlog tab</a>.</p></li>
+            <li><p>When Jira asks JirAI to slow down, a linked virtual board waits as long as Jira asked before it reads the board columns again.</p></li>
+            <li><p>JirAI is built against the IntelliJ IDEA 2026.3 release. The range of supported IDE builds is unchanged.</p></li>
+            <li><p>2026.3.39 updates build dependencies and has no other user-visible change.</p></li>
+        </list>
+    </chapter>
 
     <chapter title="2026.3.36" id="release-2026-3-36">
         <list>
