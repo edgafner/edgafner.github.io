@@ -19,7 +19,7 @@
 
     <chapter title="Requirements" id="codecov-requirements">
         <list>
-            <li>The current version works only with JetBrains IDEs 2026.3, from build 263.3889 (the 2026.3 EAP) on.
+            <li>The current version, 2026.3.6, works only with JetBrains IDEs 2026.3, from build 263.6259 on.
                 It does not install on earlier or later major versions.
                 For JetBrains IDEs 2026.2, the Marketplace provides Codecov 2026.2.5.</li>
             <li>The project is a Git repository with a remote on GitHub, GitLab or Bitbucket.</li>

@@ -14,12 +14,30 @@
 
     <p>
         This page lists the changes in recent GBrowser releases, newest first.
-        The current version, 2026.3.1, is for JetBrains IDEs 2026.3 (build 263.3889 and later 263 builds).
+        The current version, 2026.3.7, is for JetBrains IDEs 2026.3 (build 263.7031 and later 263 builds).
         For JetBrains IDEs 2026.2, use GBrowser 2026.2.3.
         For every release, see the <a href="https://github.com/edgafner/GBrowser/blob/main/CHANGELOG.md">changelog on GitHub</a>.
     </p>
 
     <chapter title="2026.3" id="v2026-3">
+        <p><b>2026.3.7</b>:</p>
+        <list>
+            <li>Updated dependencies.</li>
+        </list>
+        <p><b>2026.3.6</b>, November 11, 2026:</p>
+        <list>
+            <li>Fixed an IDE freeze when a page changes its URL or title rapidly, for example a GitLab merge request (<a href="https://github.com/edgafner/GBrowser/issues/417">#417</a>).</li>
+        </list>
+        <p><b>2026.3.5</b>, November 6, 2026:</p>
+        <list>
+            <li>Built against the IntelliJ IDEA 2026.3 release (build 263.7307.200). The range of supported IDE builds is unchanged.</li>
+            <li>Updated dependencies.</li>
+        </list>
+        <p><b>2026.3.2</b> to <b>2026.3.4</b>, October 2026:</p>
+        <list>
+            <li>Support for later 2026.3 EAP builds and the 2026.3 Beta. Since 2026.3.3, GBrowser needs build 263.7031 or later.</li>
+            <li>Updated dependencies.</li>
+        </list>
         <p><b>2026.3.1</b>, September 5, 2026:</p>
         <list>
             <li>Support for the 2026.3 EAP of JetBrains IDEs (build 263.3889 and later 263 builds).</li>

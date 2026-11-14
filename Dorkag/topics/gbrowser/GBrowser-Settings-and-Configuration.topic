@@ -62,7 +62,7 @@
         <p>The <control>Configuration</control> options control the address field and its suggestion list.</p>
         <deflist type="medium">
             <def title="Highlight URL host" id="highlight-url-host">
-                Saved with the settings, but GBrowser 2026.3.1 does not use it: the address field shows the URL without highlighting.
+                Saved with the settings, but GBrowser 2026.3.7 does not use it: the address field shows the URL without highlighting.
                 On by default.
             </def>
             <def title="Highlight suggestion query" id="highlight-suggestion-query">
@@ -70,7 +70,7 @@
                 On by default.
             </def>
             <def title="Hide URL protocol" id="hide-url-protocol">
-                Saved with the settings, but GBrowser 2026.3.1 does not use it: the address field always shows the full URL, including the protocol.
+                Saved with the settings, but GBrowser 2026.3.7 does not use it: the address field always shows the full URL, including the protocol.
                 The suggestion list hides the protocol regardless of this option.
                 On by default.
             </def>
@@ -87,7 +87,7 @@
                 Controls where links open when a page opens them in a new window, for example links with <code>target="_blank"</code>.
                 When the option is on, which is the default, such links open in a separate pop-up window.
                 Clear it to open them in a new GBrowser tab instead.
-                In version 2026.3.1, the comment under the option describes the reverse.
+                In version 2026.3.7, the comment under the option describes the reverse.
             </def>
         </deflist>
         <p>The <control>Browser History</control> options control the history used for suggestions.</p>
@@ -195,7 +195,7 @@
         </p>
         <procedure title="Stop sending a header" id="stop-sending-header">
             <p>
-                In version 2026.3.1, the remove button does not delete a header: GBrowser keeps sending it, and the row comes back when you reopen the settings.
+                In version 2026.3.7, the remove button does not delete a header: GBrowser keeps sending it, and the row comes back when you reopen the settings.
             </p>
             <step>
                 Expand <control>HTTP Response Headers</control> and clear the <control>URI Regex</control> cell of the header.
