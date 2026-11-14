@@ -53,7 +53,7 @@
             <step>
                 <p>Narrow the list with the search field and the filter chips: <control>Types</control>, <control>States</control>, <control>Created by</control>,
                     <control>Area</control>, <control>Iteration</control>, <control>Assigned to</control> and <control>Tags</control>.
-                    <control>Assigned to</control> also offers <control>Unassigned</control>.
+                    <control>Assigned to</control> lists <control>Unassigned</control> first and you next, and <control>Created by</control> lists you first.
                     In each filter popup, <control>All</control> and <control>Clear</control> select or clear every value.</p>
             </step>
             <step>

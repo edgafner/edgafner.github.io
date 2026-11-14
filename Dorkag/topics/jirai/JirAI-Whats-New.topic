@@ -16,6 +16,15 @@
     <p>The full change log is on the <a href="https://plugins.jetbrains.com/plugin/33954-jirai/versions">JetBrains Marketplace versions page</a>.</p>
 
     <timeline>
+        <item title="2026.3.37 to 2026.3.39">
+            <p>The Backlog tab opens a Scrum board, and JirAI is built against the IntelliJ IDEA 2026.3 release.</p>
+        </item>
+        <item title="2026.3.36">
+            <p>Real Jira board columns on linked virtual boards, and agent moves to any status you approve.</p>
+        </item>
+        <item title="2026.3.35">
+            <p>Error and freeze reports through JetBrains Marketplace.</p>
+        </item>
         <item title="2026.3.34">
             <p>Virtual boards linked to Jira, with Jira changes you approve on the board.</p>
         </item>
@@ -29,6 +38,38 @@
             <p>The Backlog tab, Create Branch from another branch or a tag, and fixes.</p>
         </item>
     </timeline>
+
+    <chapter title="2026.3.37 to 2026.3.39" id="release-2026-3-37">
+        <list>
+            <li><p>The <control>Backlog</control> tab opens a Scrum board of the space, even when the <control>Board</control> tab shows a recent, starred or remembered Kanban board, which has no backlog.
+                See <a href="JirAI-Board.topic" anchor="backlog-tab">Backlog tab</a>.</p></li>
+            <li><p>When Jira asks JirAI to slow down, a linked virtual board waits as long as Jira asked before it reads the board columns again.</p></li>
+            <li><p>JirAI is built against the IntelliJ IDEA 2026.3 release. The range of supported IDE builds is unchanged.</p></li>
+            <li><p>2026.3.39 updates build dependencies and has no other user-visible change.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.36" id="release-2026-3-36">
+        <list>
+            <li><p>A virtual board linked to a Jira parent shows the columns of your team's own Jira board instead of four fixed ones. Pick another board with <control>Columns from:</control> in the header.
+                See <a href="JirAI-Virtual-Board.topic" anchor="linked-columns">Where the columns come from</a>.</p></li>
+            <li><p><control>Ready to merge</control> is now an <control>Agent finished</control> badge on the card.</p></li>
+            <li><p>The new agent tool <code>jirai_move_jira_issue</code> asks to move an issue to any status Jira allows. You approve <control>DEMO-14: In Progress → In Review</control> on the board, and the move is sent at most once.
+                When the move needs fields, <control>Approve</control> opens Jira's transition screen; when a field cannot be filled in the IDE, the card offers <control>Open in Jira</control>.
+                See <a href="JirAI-Virtual-Board.topic" anchor="approve-jira-changes">Approve the agent's Jira changes</a>.</p></li>
+            <li><p>The <code>/work-on-jira-issue</code> skill is now version 2 and teaches moves to any status, including Done when you name it. Installed copies are offered the update.</p></li>
+            <li><p>Plain boards with no Jira link are unchanged.</p></li>
+        </list>
+    </chapter>
+
+    <chapter title="2026.3.35" id="release-2026-3-35">
+        <list>
+            <li><p>With <control>Send error reports to JetBrains automatically</control> on, your IDE sends JirAI errors and freezes to JetBrains and the plugin author without asking. Only errors that JirAI logs itself have their text removed.
+                See <a href="JirAI-Remote-Development-and-Architecture.topic" anchor="error-reports">Error and freeze reports</a>.</p></li>
+            <li><p>Git progress titles no longer show the branch name, because freeze reports can include them.</p></li>
+            <li><p>When a virtual board cannot link to a Jira parent, the agent now hears why: not signed in, an issue it cannot read, a rate limit, or no connection.</p></li>
+        </list>
+    </chapter>
 
     <chapter title="2026.3.34" id="release-2026-3-34">
         <list>

@@ -319,8 +319,23 @@
         </procedure>
         <p>
             AZD confirms with a <control>Work item linked</control> notification, or shows <control>Couldn't link work item</control> with the reason.
+            If the work item is already linked to the pull request, the <control>Work item already linked</control> notification says so.
             To work with work items, see <a href="Azd-Boards.topic"/>.
         </p>
+        <chapter title="Link a work item from another organization" id="link-work-item-other-organization">
+            <secondary-label ref="azd_other_orgs"/>
+            <p>
+                When you have added projects under <a href="Azd-Settings-Configuration.topic" anchor="work-item-sources">Work items from other organizations</a>,
+                the dialog has an <control>Organization</control> list above <control>Project</control>.
+                Select another organization, and <control>Project</control> lists the projects you added for it.
+                Organizations without a signed-in account are not listed.
+            </p>
+            <p>
+                For a work item in another organization, AZD adds a link to the pull request on the work item.
+                The work item does not appear in the pull request's work items.
+                To open it, click <control>Open work item</control> in the <control>Work item linked</control> notification.
+            </p>
+        </chapter>
     </chapter>
 
     <chapter title="Comment, vote and complete" id="azd_review-actions">

@@ -8,7 +8,7 @@
     <primary-label ref="azd"/>
     <show-structure for="chapter" depth="2"/>
 
-    <link-summary>Notable changes in recent AZD release lines, from the late 2025.2 updates to 2026.3.19.</link-summary>
+    <link-summary>Notable changes in recent AZD release lines, from the late 2025.2 updates to 2026.3.27.</link-summary>
     <card-summary>New features and notable fixes in recent AZD releases.</card-summary>
     <web-summary>What's new in AZD, the Azure DevOps plugin for JetBrains IDEs: pull request review, sign-in,
         pipelines, approvals, Boards, GitHub Copilot and AI changes in recent releases.</web-summary>
@@ -24,12 +24,45 @@
         <chapter title="IDE support" id="platform-support">
             <p>
                 AZD 2026.3 runs only on JetBrains IDEs 2026.3 (build 263).
-                Since 2026.3.8 it needs build 263.6259 or later.
+                Since 2026.3.12 it needs build 263.7031 or later; 2026.3.8 to 2026.3.11 need build 263.6259 or later.
+                Since 2026.3.25, AZD is built against the released IntelliJ IDEA 2026.3 (build 263.7307.200).
                 IDEs 2026.2 keep receiving AZD 2026.2 updates.
             </p>
         </chapter>
 
+        <chapter title="Work items from other organizations" id="other-organizations-2026-3">
+            <p>AZD 2026.3.20 to 2026.3.23 let you use work items from projects in your other Azure DevOps organizations:</p>
+            <list>
+                <li>Choose the organizations and their projects in <a href="Azd-Settings-Configuration.topic" anchor="work-item-sources">Settings</a>.
+                    Since 2026.3.22, <control>+</control> adds an organization straight to the table, including one that your signed-in accounts can reach
+                    or one you sign in to, and you pick its projects from a dropdown.</li>
+                <li>Type <code>#</code> in a pull request comment or description to find their work items; picking one inserts a link to it (2026.3.20).
+                    Since 2026.3.23, <code>#</code> also works in work item comments.
+                    See <a href="Azd-PR-Comments.topic" anchor="mentions"/> and <a href="Azd-Work-Item-Timeline.topic" anchor="work-item-references"/>.</li>
+                <li><control>Link Work Item</control> links a work item from another organization to a pull request (2026.3.22).
+                    See <a href="Pull-Request-Details.topic" anchor="link-work-item-other-organization"/>.</li>
+            </list>
+            <p>
+                Since 2026.3.20, a repository cloned over HTTPS from one of several organizations shows the AZD tool windows, and Git no longer asks for a password.
+                See <a href="Azd-Manage-projects-hosted-on-Azure-DevOps.topic" anchor="clone-protocol"/>.
+            </p>
+        </chapter>
+
         <chapter title="Boards and work items" id="boards-2026-3">
+            <p>AZD 2026.3.22 to 2026.3.27:</p>
+            <list>
+                <li>Mark a card on the board with a color from the card menu (2026.3.22).
+                    The color is kept on this computer.
+                    See <a href="Azd-Boards-Project-Page.topic" anchor="kanban-board"/>.</li>
+                <li>The <control>Type</control> filter of a project page shows each type's icon (2026.3.22).</li>
+                <li>When you pick a person for a work item field, such as <control>Assigned To</control>, you are listed first (2026.3.27).
+                    See <a href="Azd-Work-Item-Details.topic" anchor="edit-work-item">Edit a work item</a>.</li>
+            </list>
+            <p>
+                Fixes in 2026.3.21 to 2026.3.25: the hide-field buttons of a collapsed <control>Custom fields</control> group no longer show below it,
+                a maximized Summary widget opens over the grid without moving the others, short Summary widgets leave no empty gap,
+                and closing the IDE project no longer shows an internal error report.
+            </p>
             <p>AZD 2026.3.12 and 2026.3.13 bring Boards closer to the Azure DevOps web:</p>
             <list>
                 <li><control>Open Project…</control> opens a project in an editor tab with <control>Summary</control>, <control>Board</control> and <control>List</control> tabs,
@@ -71,6 +104,19 @@
             </p>
         </chapter>
 
+        <chapter title="Tool windows and filters" id="tool-windows-2026-3">
+            <list>
+                <li>When you filter by a person, you are listed first (2026.3.26):
+                    <control>Author</control> and <control>Reviewer</control> for pull requests, <control>Triggered by</control> for pipelines,
+                    and <control>Assigned to</control> and <control>Created by</control> on Boards.</li>
+                <li>The AZD tool windows have the same title bar order: <control>+</control>, a gear that opens the tool window's settings page, then its view action (2026.3.22).
+                    See <a href="Azd-Settings-Configuration.topic"/>.</li>
+                <li>In the pull request list, <control>Create Quick Filter…</control>, the last entry of the <control>Quick Filters</control> popup,
+                    replaces the title bar button for custom quick filters (2026.3.22).
+                    See <a href="Work-with-Azure-DevOps-pull-requests.topic" anchor="custom-quick-filters"/>.</li>
+            </list>
+        </chapter>
+
         <chapter title="Pipelines" id="pipelines-2026-3">
             <p>
                 AZD 2026.3.16 and 2026.3.17: <a href="Azure-DevOps-Pipelines.topic">Run Pipeline</a> shows parameters, variables and stages like the web,
@@ -91,6 +137,14 @@
         </chapter>
 
         <chapter title="Pull requests" id="pull-requests-2026-3">
+            <p>
+                Fixes in AZD 2026.3.20 to 2026.3.23: a pull request whose build policy has no merge commit yet opens again,
+                typing <code>#</code> at the start of a comment line opens the work item list, and your own work items are listed first in it.
+                Selecting a commit no longer shows every file as viewed, and a pull request with 100 or more pushes no longer fills the IDE's memory.
+                Links in comments whose text has parentheses, colons or quotes show their full text.
+                In the <control>Link Work Item to Pull Request</control> dialog, a long title no longer widens the dialog,
+                and linking a work item that is already linked says so instead of reporting an error.
+            </p>
             <p>
                 AZD 2026.3.13 to 2026.3.15: the timeline shows when the pull request was created, a new push no longer deletes draft comments on the latest changes,
                 and draft comments are kept when their pull request is filtered out of the list.
@@ -113,6 +167,10 @@
         </chapter>
 
         <chapter title="AI" id="ai-2026-3">
+            <p>
+                AZD 2026.3.24 fixes AI Chat with <a href="AI-Pull-Request-Review.topic" anchor="mcp-tools">MCP tools</a> on:
+                creating and updating work items works again, without an error report when the tools start, and Claude no longer fails every message.
+            </p>
             <p>AZD 2026.3.8:</p>
             <list>
                 <li><a href="Azd-AI.topic" anchor="copilot-provider">GitHub Copilot</a> can be an AI provider, using your existing Copilot plan.</li>
@@ -122,6 +180,10 @@
         </chapter>
 
         <chapter title="Security" id="security-2026-3">
+            <p>
+                Since AZD 2026.3.20, links in comments, descriptions and pipeline titles open only web and e-mail addresses.
+                Error messages show Azure DevOps' own explanation instead of the raw server response, and AZD logs no longer contain server responses.
+            </p>
             <p>Since AZD 2026.3.8, images in pull requests and work items no longer send your Azure DevOps credentials to other sites.</p>
         </chapter>
 

@@ -21,6 +21,12 @@
         Settings apply to all projects, except <control>Additional pipeline YAML locations</control> and the muted pipelines list,
         which belong to the current project.
     </p>
+    <p>
+        Each AZD tool window also opens its settings page from the gear in its title bar:
+        <control>Open AZD Settings</control> in <control>AZD Pull Requests</control>,
+        <control>Open AZD Pipelines Settings</control> in <control>AZD Pipelines</control>,
+        and <control>Open Boards and Work Items Settings</control> in <control>AZD Boards</control>.
+    </p>
 
     <chapter title="Accounts" id="accounts">
         <p>Path: <ui-path>Settings | Version Control | AZD</ui-path></p>
@@ -103,6 +109,8 @@
         <deflist type="medium">
             <def title="Show Work items from all Projects">Lists work items from every project in the organization or collection, not only the project of the repository. Default: off.</def>
             <def title="Limit work items to recent history">Lists only work items changed within the set number of days (0–60). Default: on, 60 days.</def>
+            <def title="Work items from other organizations">Projects in your other Azure DevOps organizations whose work items you can reference with <code>#</code>
+                and link to pull requests. Default: empty. See <a anchor="work-item-sources"/>.</def>
             <def title="Enable work item commit message action">Adds <control>Select Work Item...</control> to the AZD commit message button. Default: on.
                 See <a href="Azd-Work-Item-Branches-Commits.topic" anchor="work-item-commit-template">Add work items to a commit message</a>.</def>
             <def title="Template">The commit message template. Placeholders: <code>{id}</code>, <code>{title}</code>, <code>{type}</code>, <code>{state}</code>.
@@ -126,6 +134,40 @@
             <def title="Start new commit messages with the current work item">Starts a new commit message with the reference of the current branch's work item. Default: on.
                 See <a href="Azd-Work-Item-Branches-Commits.topic" anchor="commit-prefill">Start commit messages with the work item</a>.</def>
         </deflist>
+        <chapter title="Work items from other organizations" id="work-item-sources">
+            <secondary-label ref="azd_other_orgs"/>
+            <p>
+                The <control>Work items from other organizations</control> table lists projects in your other Azure DevOps organizations, with one row per organization.
+                Their work items appear when you type <code>#</code> in a pull request or in a work item comment,
+                and in the <control>Link Work Item to Pull Request</control> dialog.
+            </p>
+            <procedure title="Add an organization and its projects" id="add-work-item-source">
+                <step>
+                    <p>In <ui-path>Settings | Version Control | AZD | Boards and Work Items</ui-path>, under <control>Work items from other organizations</control>, click <control>+</control>.</p>
+                </step>
+                <step>
+                    <p>In the <control>Choose Organization</control> popup, select an organization.
+                        The popup lists the organizations of your AZD accounts that are not in the table yet,
+                        and adds the other organizations those accounts can reach as they load.
+                        To add an organization that none of your accounts reaches, select <control>Sign in to another organization…</control> and sign in.</p>
+                </step>
+                <step>
+                    <p>Click the <control>Projects</control> cell of the new row, or press <shortcut>Enter</shortcut>, and select one or more projects in the dropdown.</p>
+                    <!-- planned-image src="azd_settings_work_item_sources.png" alt="Work items from other organizations table with one organization row and its Projects dropdown open" -->
+                </step>
+                <step>
+                    <p>Click <control>OK</control> or <control>Apply</control>.</p>
+                </step>
+            </procedure>
+            <list>
+                <li>Each organization needs at least one project.
+                    While a row has none, its cell reads <control>Select projects…</control>, and <control>OK</control> and <control>Apply</control> are disabled.</li>
+                <li>When you pick an organization that one of your accounts reaches, or sign in to a new one, AZD saves an account for it when you apply.
+                    The account then appears under <a anchor="accounts"/>.</li>
+                <li>An organization without a connected account shows <control>(not connected)</control> after its name.</li>
+                <li>To remove an organization, select its row and click <control>−</control>.</li>
+            </list>
+        </chapter>
         <chapter title="Field Visibility" id="field-visibility">
             <p>Path: <ui-path>Settings | Version Control | AZD | Boards and Work Items | Field Visibility</ui-path></p>
             <p>

@@ -38,7 +38,7 @@
         <procedure title="Comment on a work item" id="comment-work-item">
             <step>
                 <p>In the <control>Timeline</control> tab, type in the comment box at the bottom.
-                    Type <code>@</code> to mention a person.</p>
+                    Type <code>@</code> to mention a person, or <code>#</code> to reference a work item; see <a anchor="work-item-references"/>.</p>
             </step>
             <step>
                 <p>Optional: to attach files, click the paperclip icon above the comment box, or paste a screenshot or copied files.
@@ -58,7 +58,7 @@
                 <p>To edit the comment, click the pencil icon, change the text, and click <control>Save Changes</control>
                     or press <shortcut>Ctrl+Enter</shortcut> (macOS: <shortcut>⌘ Enter</shortcut>).
                     Press <shortcut>Esc</shortcut> to cancel.
-                    Type <code>@</code> to mention a person.</p>
+                    Type <code>@</code> to mention a person, or <code>#</code> to reference a work item.</p>
                 <p>If the comment changed after you started editing, click <control>Reload</control> to load the new text,
                     or <control>Overwrite</control> to save yours anyway.</p>
             </step>
@@ -72,6 +72,23 @@
             the pencil icon is disabled; edit them in the browser.
             You can still delete them in the IDE.
         </p>
+        <chapter title="Reference work items in comments" id="work-item-references">
+            <secondary-label ref="azd_wi_refs"/>
+            <p>
+                Type <code>#</code> in a new or edited comment to open the <control>Work Item References</control> list, then keep typing to narrow it and select a work item.
+                The list does not open inside a code block,
+                and it opens only in work items of the organization that the AZD tool windows are connected to.
+            </p>
+            <list>
+                <li>The list shows the work items of the connected project,
+                    or of every project in the organization when <a href="Azd-Settings-Configuration.topic" anchor="boards-and-work-items">Show Work items from all Projects</a> is selected.</li>
+                <li>It also shows the work items of the projects you added under
+                    <a href="Azd-Settings-Configuration.topic" anchor="work-item-sources">Work items from other organizations</a>, after those of your own organization.</li>
+                <li>A work item of your own organization is inserted as <code>#</code> and its ID, for example <code>#412</code>.</li>
+                <li>A work item of another organization is inserted as a link with the organization, project and ID.
+                    In a work item on Azure DevOps Server, AZD inserts the organization, project, ID and web address as plain text instead.</li>
+            </list>
+        </chapter>
     </chapter>
 
     <chapter title="Children, related work and development" id="children-tab">

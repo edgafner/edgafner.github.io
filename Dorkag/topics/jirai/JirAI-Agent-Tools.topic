@@ -15,7 +15,7 @@
     <p>When an AI coding assistant files a Jira issue through a generic Jira API, Jira rejects the draft only when a required field is missing.</p>
     <p>Optional fields that your team relies on, such as acceptance criteria, story points or components, stay empty without any error.</p>
     <p>JirAI gives the assistant two tools through the IDE's MCP server, so that it can see the real create screen and check a draft before it files anything.</p>
-    <p>Two more tools let the assistant ask for a Jira change that you approve on the <a href="JirAI-Virtual-Board.topic">virtual board</a>.</p>
+    <p>Three more tools let the assistant ask for a Jira change that you approve on the <a href="JirAI-Virtual-Board.topic">virtual board</a>.</p>
     <p>The <code>/jira-ticket</code> <a href="JirAI-Agent-Skills.topic">agent skill</a> teaches an assistant to use the draft tools.</p>
 
     <chapter title="What the tools do" id="agent-tools">
@@ -45,11 +45,16 @@
                     <p>Takes an issue key. Asks to move that issue to In Progress.</p>
                     <p>When the issue has several In Progress transitions, or the transition needs fields, the tool writes nothing and tells the assistant to ask you.</p>
                 </def>
+                <def title="jirai_move_jira_issue">
+                    <p>Takes an issue key and, optionally, a target status. Asks to move that issue to the target, one step, to any status Jira allows from where the issue is, Done included.</p>
+                    <p>Without a target, it queues nothing and returns the issue's current status and every status it can reach, so the assistant can tell you, for example, <emphasis>DEMO-14: In Progress → In Review</emphasis>, before it asks.</p>
+                    <p>When the move needs fields, it is still queued, and the reply names the fields that you fill in when you approve it.</p>
+                </def>
                 <def title="jirai_add_jira_comment">
                     <p>Takes an issue key and Markdown. Asks to post the Markdown as a comment on that issue.</p>
                 </def>
             </deflist>
-            <p>Neither tool changes Jira. Each only queues the change on the virtual board, where you click <control>Approve</control> or <control>Reject</control>; an approved change is sent at most once.</p>
+            <p>None of these tools changes Jira. Each only queues the change on the virtual board, where you click <control>Approve</control> or <control>Reject</control>; an approved change is sent at most once.</p>
             <p>They accept only an issue that is on one of the project's virtual boards.</p>
             <p>See <a href="JirAI-Virtual-Board.topic" anchor="approve-jira-changes">Approve the agent's Jira changes</a>.</p>
         </chapter>

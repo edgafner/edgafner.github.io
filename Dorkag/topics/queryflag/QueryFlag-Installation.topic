@@ -19,7 +19,7 @@
   <chapter title="Before you begin" id="requirements">
     <list>
       <li>
-        The current version requires JetBrains IDEs 2026.3 (build 263) or later.
+        The current version, 2026.3.7, requires JetBrains IDEs 2026.3 (build 263.6259) or later.
         For IDE version 2026.2, JetBrains Marketplace offers QueryFlag 2026.2.1.
       </li>
       <li>

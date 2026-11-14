@@ -141,6 +141,7 @@
 
     <chapter title="Backlog tab" id="backlog-tab">
         <p>The <control>Backlog</control> tab of a space shows a company-managed Scrum board's active and future sprints and its backlog, with the same filters as the board.</p>
+        <p>It opens one of the space's Scrum boards, even when the <control>Board</control> tab shows a Kanban board.</p>
         <list>
             <li><p>Move a work item to a sprint or the backlog, or reorder it, by dragging it or from its menu.</p></li>
             <li><p>A long backlog shows its first work items; click <control>Load all</control> to show the rest.</p></li>

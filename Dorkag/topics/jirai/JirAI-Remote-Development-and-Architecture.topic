@@ -39,13 +39,30 @@
 
     <chapter title="Privacy" id="privacy">
         <list>
-            <li><p>JirAI has no telemetry, analytics, usage statistics, crash reporting or error submitter.</p></li>
+            <li><p>JirAI has no telemetry, analytics or usage statistics, and no error-sending code of its own.</p></li>
             <li><p>Your credentials are sent only to the exact Jira site you signed in to, never to any other address, including look-alike addresses.</p></li>
             <li><p>Avatars are loaded over HTTPS, without credentials, from the host that Jira names for them: Atlassian's avatar service or Gravatar.</p></li>
             <li><p>Attachments and thumbnails are loaded from your Jira site.</p></li>
             <li><p>Avatars and thumbnails are not saved to disk; they are kept only until you close the IDE.</p></li>
         </list>
         <p>For what is stored where, see <a href="JirAI-Sign-In-and-Configuration.topic" anchor="credential-storage">Where JirAI stores credentials</a>.</p>
+
+        <chapter title="Error and freeze reports" id="error-reports">
+            <p>Since 2026.3.35, JirAI registers the JetBrains Marketplace error reporter. Your IDE, not JirAI, can then send reports about JirAI errors and freezes to JetBrains, and through JetBrains Marketplace to the plugin author.</p>
+            <list>
+                <li><p>The IDE sends a report when you click <control>Report</control> in its error dialog, or without asking when <control>Send error reports to JetBrains automatically</control> is on. Under Remote Development, the client's setting counts.</p></li>
+                <li><p>To stop automatic sending, turn the setting off in the IDE's <control>Data Sharing</control> settings. According to the IDE's source code, a provisioned IDE can force automatic sending on.</p></li>
+                <li><p>A report holds the stack trace, IDE and OS details and a device ID shared across your JetBrains IDEs. According to the IDE's source code, it also holds the ID of your last action and the IDs of your other non-bundled plugins.</p></li>
+                <li><p>A freeze report also holds thread dumps of the whole IDE. One from a Remote Development host also holds a Java Flight Recorder file with the JVM's full command line and system properties, including your home directory path.</p></li>
+                <li><p>On early-access IDE builds, according to the IDE's source code, an automatic report also attaches the error's attachments, which can hold file or editor text.</p></li>
+            </list>
+            <p>What JirAI removes from a report is limited:</p>
+            <list>
+                <li><p>Only errors that JirAI logs itself have their message text removed. Linkage errors, such as a missing method or class, keep the JVM's own text, including method signatures and loader and module names.</p></li>
+                <li><p>Every other report, including uncaught exceptions and every freeze report with its thread dumps, keeps its text. It can include Jira text such as a site address or an issue key.</p></li>
+                <li><p>According to the IDE's source code, the IDE masks paths, URLs, email addresses and generic secrets in automatic reports other than freeze reports. It does not mask Jira content, and it masks nothing in manual reports or freeze reports.</p></li>
+            </list>
+        </chapter>
     </chapter>
 
     <seealso>

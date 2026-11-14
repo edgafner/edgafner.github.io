@@ -112,6 +112,7 @@
             </def>
             <def title="Author, Reviewer">
                 A person in the organization.
+                You are listed first.
                 Type at least 2 characters to search for a user.
             </def>
             <def title="Source Branch, Target Branch">
@@ -141,6 +142,7 @@
         </deflist>
         <p>
             Your custom quick filters appear in the same popup.
+            Its last entry, <control>Create Quick Filter…</control>, opens the <control>Custom Quick Filters</control> dialog; see <a anchor="custom-quick-filters"/>.
         </p>
     </chapter>
 
@@ -175,8 +177,8 @@
         </p>
         <procedure title="Create a custom quick filter" id="create-custom-quick-filter">
             <step>
-                In the title bar of the <control>AZD Pull Requests</control> tool window, click <control>Custom Quick Filters</control> (the gear icon).
-                You can also right-click the list and select <control>Custom Quick Filters</control>.
+                Click the filter icon in the search field, and select <control>Create Quick Filter…</control> at the end of the <control>Quick Filters</control> popup.
+                You can also right-click the list and select <control>Create Quick Filter…</control>.
             </step>
             <step>
                 In the <control>Custom Quick Filters</control> dialog, click <control>+</control>.

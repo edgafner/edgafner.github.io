@@ -51,6 +51,7 @@
         <p>
             Each tab keeps its own filters, and AZD remembers them for each project and team.
             Changing the team clears the <control>Iteration</control> filter.
+            The <control>Assigned to</control> filter lists you first, and the <control>Type</control> filter shows each type's icon.
         </p>
         <p>
             <control>Summary</control> and <control>List</control> show the backlog work items in the team's area paths.
@@ -74,7 +75,8 @@
         </list>
         <p>
             Click the <control>More</control> button (⋯) of a widget to select <control>Show as table</control>, <control>Maximize</control> or <control>Hide</control>.
-            Hidden widgets are remembered for the project; click <control>Show widget</control> under the widgets to bring one back.
+            Hidden widgets are remembered for the project.
+            To bring one back, click <control>Hidden widgets</control> at the right end of the filter row, which shows how many are hidden, and select the widget.
         </p>
     </chapter>
 
@@ -112,6 +114,12 @@
             <def title="Open">Opens the work item; see <a href="Azd-Work-Item-Details.topic"/>.</def>
             <def title="Move to Column">Moves the card to the column you select.</def>
             <def title="Edit Title…">Renames the work item.</def>
+            <def title="Color">Marks the card with <control>Red</control>, <control>Orange</control>, <control>Yellow</control>, <control>Green</control>,
+                <control>Cyan</control>, <control>Blue</control>, <control>Purple</control> or <control>Pink</control>.
+                <control>Default</control> removes the color.
+                The color is kept on this computer, not in Azure DevOps.
+                <!-- planned-image src="azd_boards_card_color.png" alt="Card menu with the Color submenu open next to a board with colored cards" -->
+            </def>
             <def title="Create Branch…">Creates a Git branch for the work item; see <a href="Azd-Work-Item-Branches-Commits.topic" anchor="create-branch"/>.</def>
             <def title="Delete Work Item…">Moves the work item to the Azure DevOps recycle bin after you confirm.</def>
         </deflist>

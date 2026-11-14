@@ -22,8 +22,8 @@
     <chapter title="Before you start" id="azd-requirements">
         <list>
             <li>
-                The current version requires a JetBrains IDE 2026.3, build 263.5153 or a later 2026.3 build.
-                IDEs 2026.2 get AZD 2026.2.23, the final release for that IDE version.
+                The current version requires a JetBrains IDE 2026.3, build 263.7031 or a later 2026.3 build.
+                IDEs 2026.2 get AZD 2026.2 updates; the latest for that IDE version is 2026.2.42.
             </li>
             <li>
                 An account on Azure DevOps Services (<code>https://dev.azure.com/&lt;organization&gt;</code>)
