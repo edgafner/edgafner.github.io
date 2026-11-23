@@ -5,7 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Privacy Policy" id="privacy-policy">
 
-    <p><control>Last Updated: November 4, 2026</control></p>
+    <p><control>Last Updated: November 23, 2026</control></p>
 
     <chapter title="Introduction" id="introduction">
         <p>Dorkag ("we", "our", or "us") is committed to protecting your privacy and being transparent about how our
@@ -21,8 +21,8 @@
             <li>We do not store your source code or Azure DevOps content on Dorkag servers</li>
             <li>We do not sell data to anyone</li>
             <li>Optional AI features send the content you explicitly act on directly to a stateless AI model
-                endpoint — there is no Dorkag backend behind it and nothing is stored (see
-                <a anchor="ai-features">AI Features</a>)
+                endpoint — there is no Dorkag backend behind it and nothing is stored; the plugin only fetches an
+                access key from Dorkag's server (see <a anchor="ai-features">AI Features</a>)
             </li>
             <li>Only the new Microsoft Entra ID (OAuth) sign-in sends a small set of anonymous, temporary telemetry
                 events, which you can switch off; PAT and Azure CLI sign-ins send no telemetry at all (see
@@ -84,6 +84,14 @@
                 HTTPS directly from your IDE to an Azure AI Foundry (OpenAI-compatible) model inference endpoint
                 hosted in Dorkag's Microsoft Azure subscription.</p>
 
+            <p>To use this provider, the plugin obtains an access key for the endpoint from Dorkag's server from time
+                to time. That request includes the plugin version, the IDE build and the license confirmation your IDE
+                holds for AZD, which depending on your license can contain license details such as the licensee's
+                name, e-mail address or license ID. The license confirmation is only checked and is never stored or
+                logged; Dorkag keeps only anonymous usage counts. IP addresses and user-agent strings are removed
+                before the logs of these requests are stored. Your AI requests themselves still go directly from your
+                IDE to the model endpoint.</p>
+
             <p>This endpoint is a plain model deployment — currently a standard OpenAI GPT-5.4 model. There is no
                 Dorkag backend, application server, proxy, or database behind it: your IDE talks straight to the
                 model.</p>
@@ -124,7 +132,7 @@
     <chapter title="Anonymous Telemetry" id="anonymous-telemetry">
         <p>Telemetry applies only to the new sign-in with Microsoft Entra ID (OAuth) feature. To measure the
             reliability of this new sign-in flow, the plugin sends anonymous OAuth sign-in telemetry events to a
-            Dorkag endpoint (dorkag.azurewebsites.net, backed by Azure Application Insights). This telemetry is
+            Dorkag endpoint backed by Azure Application Insights. This telemetry is
             enabled by default and you can opt out at any time.</p>
 
         <p><control>Signing in with a Personal Access Token (PAT) or through the Azure CLI sends no telemetry at
@@ -147,9 +155,10 @@
             GDPR Recital 26.</p>
 
         <p>You can opt out by switching off <ui-path>Share anonymous usage statistics</ui-path> in the plugin
-            settings. Apart from the JirAI error and freeze reports described in
-            <a anchor="jirai-error-reports">JirAI Error and Freeze Reports</a>, no other usage analytics, crash
-            reporting, or tracking exists in our Products and Services.</p>
+            settings. Apart from the anonymous usage counts described in
+            <a anchor="ai-default-provider">The default AZD provider</a> and the JirAI error and freeze reports
+            described in <a anchor="jirai-error-reports">JirAI Error and Freeze Reports</a>, no other usage
+            analytics, crash reporting, or tracking exists in our Products and Services.</p>
     </chapter>
 
     <chapter title="JirAI Error and Freeze Reports" id="jirai-error-reports">
@@ -179,7 +188,7 @@
         <list type="bullet">
             <li><control>Microsoft Azure</control> — acts as a sub-processor when you use the default AZD AI provider
                 (stateless model inference via Azure AI Foundry, under Microsoft's Azure OpenAI data-privacy terms)
-                and hosts the anonymous telemetry endpoint (Azure Application Insights)
+                and hosts the anonymous telemetry endpoint (Azure Application Insights) and Dorkag's server
             </li>
             <li><control>Your chosen AI provider</control> — if you configure OpenAI, Anthropic Claude, Google Gemini,
                 or another provider yourself, your AI requests go directly to that provider under its own terms;
