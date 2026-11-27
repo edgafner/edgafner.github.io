@@ -104,7 +104,7 @@
     <chapter title="Configure AI providers" id="ai-providers">
         <p>
             The <control>AI Providers</control> table on the <control>AI Settings</control> page lists the configured providers with their <control>Provider</control>, <control>Model</control> and <control>Enabled</control> state.
-            On first start, the table has one row: the <control>AZD</control> provider with the AZD GPT-5.4 Mini model, enabled and active.
+            On first start, the table has one row: the <control>AZD</control> provider with the AZD GPT-5.6 Terra model, enabled and active.
         </p>
         <p>
             Enabled providers appear in the provider lists of the AI buttons and menus.
@@ -178,7 +178,7 @@
                 </tr>
                 <tr>
                     <td><control>AZD</control></td>
-                    <td><code>GPT-5.4 Mini (Azure)</code></td>
+                    <td><code>GPT-5.6 Terra (Azure)</code></td>
                 </tr>
                 <tr>
                     <td><control>OpenAI</control></td>

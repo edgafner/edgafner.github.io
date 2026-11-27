@@ -5,7 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        title="Privacy Policy" id="privacy-policy">
 
-    <p><control>Last Updated: November 23, 2026</control></p>
+    <p><control>Last Updated: November 27, 2026</control></p>
 
     <chapter title="Introduction" id="introduction">
         <p>Dorkag ("we", "our", or "us") is committed to protecting your privacy and being transparent about how our
@@ -92,7 +92,7 @@
                 before the logs of these requests are stored. Your AI requests themselves still go directly from your
                 IDE to the model endpoint.</p>
 
-            <p>This endpoint is a plain model deployment — currently a standard OpenAI GPT-5.4 model. There is no
+            <p>This endpoint exposes plain model deployments of OpenAI GPT models hosted on Azure. There is no
                 Dorkag backend, application server, proxy, or database behind it: your IDE talks straight to the
                 model.</p>
 
